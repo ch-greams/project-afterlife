@@ -8,13 +8,12 @@ using UnityEngine.Rendering;
 public class CameraControl : MonoBehaviour
 {
     public bool rotateEnabled = true;
-    public float rotateSpeed = 400f;
+    public float rotateSpeed = 400F;
 
-    public List<Renderer> wallsOnLeft = new List<Renderer>();
-    public List<Renderer> wallsOnRight = new List<Renderer>();
-    public List<Renderer> wallsOnFront = new List<Renderer>();
-    public List<Renderer> wallsOnBack = new List<Renderer>();
-    public List<Renderer> walls = new List<Renderer>();
+    public List<Renderer> frontWalls = new List<Renderer>();
+    public List<Renderer> rightWalls = new List<Renderer>();
+    public List<Renderer> backWalls = new List<Renderer>();
+    public List<Renderer> leftWalls = new List<Renderer>();
 
 
     private Vector3 startRotation;
@@ -24,17 +23,14 @@ public class CameraControl : MonoBehaviour
     private float deltaAngle;
 
     private Direction currentDirection = Direction.Front;
+    private List<Renderer> hiddenWalls = new List<Renderer>();
+
     private enum Direction { Front, Right, Back, Left }
 
 
     private void Awake() 
     {
         this.endRotation = this.startRotation = base.transform.localEulerAngles;
-
-        this.walls = this.wallsOnBack
-            .Concat(this.wallsOnLeft)
-            .Concat(this.wallsOnFront)
-            .Concat(this.wallsOnRight).ToList();
     }
 
     private void Start()
@@ -63,7 +59,7 @@ public class CameraControl : MonoBehaviour
                 this.endRotation = new Vector3(this.startRotation.x, this.startRotation.y + 90, this.startRotation.z);
                 this.deltaAngle = Vector3.Distance(this.startRotation, this.endRotation);
 
-                this.UpdateCurrentDirection(true);
+                this.SetCurrentDirection(true);
                 this.SetShadowCastingMode();
             }
             // Rotate right
@@ -75,7 +71,7 @@ public class CameraControl : MonoBehaviour
                 this.endRotation = new Vector3(this.startRotation.x, this.startRotation.y - 90, this.startRotation.z);
                 this.deltaAngle = Vector3.Distance(this.startRotation, this.endRotation);
 
-                this.UpdateCurrentDirection(false);
+                this.SetCurrentDirection(false);
                 this.SetShadowCastingMode();
             }
         }
@@ -101,41 +97,39 @@ public class CameraControl : MonoBehaviour
 
     private void SetShadowCastingMode()
     {
-        List<Renderer> wallsToHide = this.ListToHide(this.currentDirection);
-
-        foreach (Renderer wall in this.walls)
+        foreach (Renderer wall in this.hiddenWalls)
         {
-            wall.shadowCastingMode = wallsToHide.Contains(wall) ? ShadowCastingMode.ShadowsOnly : ShadowCastingMode.On;
+            wall.shadowCastingMode = ShadowCastingMode.On;
+        }
+
+        this.SetHiddenWalls(this.currentDirection);
+
+        foreach (Renderer wall in this.hiddenWalls)
+        {
+            wall.shadowCastingMode = ShadowCastingMode.ShadowsOnly;
         }
     }
 
-    private List<Renderer> ListToHide(Direction direction)
+    private void SetHiddenWalls(Direction direction)
     {
-        List<Renderer> result;
-
         switch (direction)
         {
             case Direction.Front:
-                result = this.wallsOnBack.Concat(this.wallsOnLeft).ToList();
+                this.hiddenWalls = this.backWalls.Concat(this.leftWalls).ToList();
                 break;
             case Direction.Right:
-                result = this.wallsOnFront.Concat(this.wallsOnLeft).ToList();
+                this.hiddenWalls = this.frontWalls.Concat(this.leftWalls).ToList();
                 break;
             case Direction.Back:
-                result = this.wallsOnFront.Concat(this.wallsOnRight).ToList();
+                this.hiddenWalls = this.frontWalls.Concat(this.rightWalls).ToList();
                 break;
             case Direction.Left:
-                result = this.wallsOnBack.Concat(this.wallsOnRight).ToList();
-                break;
-            default:
-                result = new List<Renderer>();
+                this.hiddenWalls = this.backWalls.Concat(this.rightWalls).ToList();
                 break;
         }
-
-        return result;
     }
 
-    private void UpdateCurrentDirection(bool isRight)
+    private void SetCurrentDirection(bool isRight)
     {
         switch (this.currentDirection)
         {

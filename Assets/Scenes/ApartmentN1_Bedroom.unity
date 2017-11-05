@@ -745,24 +745,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114672285671714754, guid: 1cad21be512a1694880f80a805db524f,
         type: 2}
-      propertyPath: wallsOnLeft.Array.data[0]
-      value: 
-      objectReference: {fileID: 560814757}
-    - target: {fileID: 114672285671714754, guid: 1cad21be512a1694880f80a805db524f,
-        type: 2}
-      propertyPath: wallsOnRight.Array.data[0]
-      value: 
-      objectReference: {fileID: 1909244012}
-    - target: {fileID: 114672285671714754, guid: 1cad21be512a1694880f80a805db524f,
-        type: 2}
-      propertyPath: wallsOnFront.Array.data[0]
+      propertyPath: frontWalls.Array.data[0]
       value: 
       objectReference: {fileID: 1986410493}
     - target: {fileID: 114672285671714754, guid: 1cad21be512a1694880f80a805db524f,
         type: 2}
-      propertyPath: wallsOnBack.Array.data[0]
+      propertyPath: rightWalls.Array.data[0]
+      value: 
+      objectReference: {fileID: 1909244012}
+    - target: {fileID: 114672285671714754, guid: 1cad21be512a1694880f80a805db524f,
+        type: 2}
+      propertyPath: backWalls.Array.data[0]
       value: 
       objectReference: {fileID: 204254865}
+    - target: {fileID: 114672285671714754, guid: 1cad21be512a1694880f80a805db524f,
+        type: 2}
+      propertyPath: leftWalls.Array.data[0]
+      value: 
+      objectReference: {fileID: 560814757}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1cad21be512a1694880f80a805db524f, type: 2}
   m_IsPrefabParent: 0

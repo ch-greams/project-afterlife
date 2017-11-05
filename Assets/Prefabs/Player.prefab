@@ -219,22 +219,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2b2bc8ecb90ce46a58c169817b6cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveEnabled: 0
-  moveSpeed: 10
   rotateEnabled: 1
   rotateSpeed: 400
-  currentDirection: 0
-  curDirection: 0
-  newDirection: 1
-  wallsOnLeft:
+  frontWalls:
   - {fileID: 0}
-  wallsOnRight:
+  rightWalls:
   - {fileID: 0}
-  wallsOnFront:
+  backWalls:
   - {fileID: 0}
-  wallsOnBack:
+  leftWalls:
   - {fileID: 0}
-  walls: []
 --- !u!124 &124649471019458278
 Behaviour:
   m_ObjectHideFlags: 1

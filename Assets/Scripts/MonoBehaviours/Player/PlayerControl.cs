@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerControl : MonoBehaviour 
 {
     public Vector3 startPosition;
@@ -10,6 +11,7 @@ public class PlayerControl : MonoBehaviour
 
     private float startTime;
     private float journeyLength = 0F;
+
 
 	private void Start()
 	{

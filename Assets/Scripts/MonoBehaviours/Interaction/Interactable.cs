@@ -9,7 +9,7 @@ public class Interactable : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            MoveToThisCell();
+            this.MoveToThisCell();
         }
     }
 
