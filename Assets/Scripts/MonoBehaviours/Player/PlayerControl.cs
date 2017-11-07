@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerControl : MonoBehaviour 
+public class PlayerControl : MonoBehaviour
 {
     public Vector3 startPosition;
     public Vector3 endPosition;
@@ -13,46 +13,52 @@ public class PlayerControl : MonoBehaviour
     private float journeyLength = 0F;
 
 
-	private void Start()
-	{
-		this.ResetStartPosition();
-	}
-
-    private void Update()
-	{
-		if (this.startPosition != this.endPosition)
-		{
-			if (this.endPosition == base.transform.position)
-			{
-				this.ResetStartPosition();
-			}
-			else
-			{
-				this.SetCurrentPosition();
-			}
-		}
+    private void Start()
+    {
+        this.ResetStartPosition();
     }
 
-	public void MoveTo(Vector3 position)
-	{
-		// Debug.Log(string.Format("Start position: {0} End position: {1}", base.transform.position, position));
+    private void Update()
+    {
+        if (this.startPosition != this.endPosition)
+        {
+            if (this.endPosition == base.transform.position)
+            {
+                this.ResetStartPosition();
+            }
+            else
+            {
+                this.SetCurrentPosition();
+            }
+        }
+    }
 
-		this.startTime = Time.time;
-		this.endPosition = position;
+    public void MoveTo(Vector3 position)
+    {
+        this.startTime = Time.time;
+        this.endPosition = position;
         this.journeyLength = Vector3.Distance(this.startPosition, this.endPosition);
-	}
+    }
 
-	public void SetCurrentPosition()
-	{
-		float distCovered = (Time.time - startTime) * speed;
-		float fracJourney = distCovered / journeyLength;
-		base.transform.position = Vector3.Lerp(this.startPosition, this.endPosition, fracJourney);
-	}
+    public IEnumerator MoveToAsync(Vector3 position)
+    {
+        this.MoveTo(position);
 
-	public void ResetStartPosition()
-	{
-        // Debug.Log(string.Format("Reset to position: {0}", base.transform.position));
+        while (this.endPosition != base.transform.position)
+        {
+            yield return null;
+        }
+    }
 
+    public void SetCurrentPosition()
+    {
+        float distCovered = (Time.time - startTime) * speed;
+        float fracJourney = distCovered / journeyLength;
+        base.transform.position = Vector3.Lerp(this.startPosition, this.endPosition, fracJourney);
+    }
+
+    public void ResetStartPosition()
+    {
         this.startPosition = this.endPosition = base.transform.position;
-	}
+    }
 }

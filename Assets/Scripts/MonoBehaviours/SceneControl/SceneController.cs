@@ -13,11 +13,23 @@ public class SceneController : MonoBehaviour
     private const float ALPHA_TRANSPARENT = 0F;
     private const float ALPHA_OPAQUE = 1F;
 
+
     private IEnumerator Start()
     {
         this.faderCanvasGroup.alpha = ALPHA_OPAQUE;
         yield return base.StartCoroutine(this.LoadSceneAndSetActive(this.startingSceneName));
         yield return base.StartCoroutine(this.Fade(ALPHA_TRANSPARENT));
+    }
+
+    public IEnumerator FadeAndSwitchScenes(string sceneName)
+    {
+        yield return StartCoroutine(Fade(1f));
+        Debug.Log("step1");
+        yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("step2");
+        yield return StartCoroutine(this.LoadSceneAndSetActive(sceneName));
+        Debug.Log("step3");
+        yield return StartCoroutine(Fade(0f));
     }
 
     private IEnumerator LoadSceneAndSetActive(string sceneName)

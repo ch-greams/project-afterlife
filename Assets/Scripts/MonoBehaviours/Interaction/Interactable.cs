@@ -1,21 +1,44 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
-    private const string PLAYER_NAME = "Player";
-
-    private void OnMouseOver()
+    private IEnumerator OnMouseOver()
     {
         if (Input.GetMouseButtonUp(0))
         {
-            this.MoveToThisCell();
+            yield return base.StartCoroutine(this.OnLeftClick());
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            yield return base.StartCoroutine(this.OnRightClick());
         }
     }
-
-    private void MoveToThisCell()
+    private IEnumerator OnMouseEnter()
     {
-        this.GetComponent<AnimateTiledTexture>().Play();
-        GameObject.Find(PLAYER_NAME).GetComponent<PlayerControl>().MoveTo(base.transform.position);
+        yield return base.StartCoroutine(this.OnHoverStart());
+    }
+    private IEnumerator OnMouseExit()
+    {
+        yield return base.StartCoroutine(this.OnHoverEnd());
+    }
+
+    protected virtual IEnumerator OnLeftClick()
+    {
+        yield return null;
+    }
+    protected virtual IEnumerator OnRightClick()
+    {
+        yield return null;
+    }
+    protected virtual IEnumerator OnHoverStart()
+    {
+        yield return null;
+    }
+    protected virtual IEnumerator OnHoverEnd()
+    {
+        yield return null;
     }
 }

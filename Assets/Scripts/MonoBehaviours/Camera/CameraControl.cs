@@ -35,7 +35,7 @@ public class CameraControl : MonoBehaviour
 
     private void Start()
     {
-        this.SetShadowCastingMode();
+        this.UpdateWallRender();
     }
 
     private void Update() 
@@ -60,7 +60,7 @@ public class CameraControl : MonoBehaviour
                 this.deltaAngle = Vector3.Distance(this.startRotation, this.endRotation);
 
                 this.SetCurrentDirection(true);
-                this.SetShadowCastingMode();
+                this.UpdateWallRender();
             }
             // Rotate right
             if (Input.GetKeyDown(KeyCode.E)) 
@@ -72,7 +72,7 @@ public class CameraControl : MonoBehaviour
                 this.deltaAngle = Vector3.Distance(this.startRotation, this.endRotation);
 
                 this.SetCurrentDirection(false);
-                this.SetShadowCastingMode();
+                this.UpdateWallRender();
             }
         }
 
@@ -95,7 +95,7 @@ public class CameraControl : MonoBehaviour
     }
 
 
-    private void SetShadowCastingMode()
+    private void UpdateWallRender()
     {
         foreach (Renderer wall in this.hiddenWalls)
         {
