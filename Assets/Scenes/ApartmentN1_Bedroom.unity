@@ -3419,6 +3419,7 @@ MonoBehaviour:
   doorRenderer: {fileID: 213138169}
   doorAnimator: {fileID: 1456211485}
   attachedCell: {fileID: 366993468}
+  playerControl: {fileID: 1748304919}
   sceneName: ApartmentN1_LivingRoom
   sceneController: {fileID: 0}
 --- !u!65 &1138247306

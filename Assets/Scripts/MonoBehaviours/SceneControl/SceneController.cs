@@ -10,6 +10,8 @@ public class SceneController : MonoBehaviour
     public float fadeDuration = 0.5f;
     public string startingSceneName = "ApartmentN1_Bedroom";
 
+    private bool isFading;
+
     private const float ALPHA_TRANSPARENT = 0F;
     private const float ALPHA_OPAQUE = 1F;
 
@@ -21,15 +23,20 @@ public class SceneController : MonoBehaviour
         yield return base.StartCoroutine(this.Fade(ALPHA_TRANSPARENT));
     }
 
-    public IEnumerator FadeAndSwitchScenes(string sceneName)
+    public void FadeAndLoadScene(string sceneName)
     {
-        yield return StartCoroutine(Fade(1f));
-        Debug.Log("step1");
+        if (!this.isFading)
+        {
+            base.StartCoroutine(this.FadeAndSwitchScenes(sceneName));
+        }
+    }
+
+    private IEnumerator FadeAndSwitchScenes(string sceneName)
+    {
+        yield return base.StartCoroutine(Fade(1f));
         yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-        Debug.Log("step2");
-        yield return StartCoroutine(this.LoadSceneAndSetActive(sceneName));
-        Debug.Log("step3");
-        yield return StartCoroutine(Fade(0f));
+        yield return base.StartCoroutine(this.LoadSceneAndSetActive(sceneName));
+        yield return base.StartCoroutine(Fade(0f));
     }
 
     private IEnumerator LoadSceneAndSetActive(string sceneName)
@@ -41,6 +48,7 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator Fade(float finalAlpha)
     {
+        this.isFading = true;
         this.faderCanvasGroup.blocksRaycasts = true;
 
         float fadeSpeed = Mathf.Abs(this.faderCanvasGroup.alpha - finalAlpha) / this.fadeDuration;
@@ -51,6 +59,7 @@ public class SceneController : MonoBehaviour
             yield return null;
         }
 
+        this.isFading = false;
         this.faderCanvasGroup.blocksRaycasts = false;
     }
 }

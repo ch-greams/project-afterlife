@@ -7,13 +7,16 @@ public class DoorInteractable : Interactable
     public Renderer doorRenderer;
     public Animator doorAnimator;
     public CellInteractable attachedCell;
+    public PlayerControl playerControl;
     public string sceneName;
     public SceneController sceneController;
 
     private Color defaultColor;
 
-	private readonly Color hoverColor = Color.cyan;
+	private readonly Color HOVER_COLOR = Color.cyan;
     private readonly int OPEN_DOOR_HASH = Animator.StringToHash("OpenDoor");
+    private readonly int HIGH_TAKE_HASH = Animator.StringToHash("HighTake");
+    private readonly WaitForSeconds DOOR_OPEN_TIMEOUT = new WaitForSeconds(1.5F);
 
 
     private void Start()
@@ -28,13 +31,15 @@ public class DoorInteractable : Interactable
         yield return base.StartCoroutine(this.attachedCell.MoveToThisCell());
 
         // Open Door
+        this.playerControl.Interact(HIGH_TAKE_HASH, this.transform.position);
         this.doorAnimator.SetTrigger(OPEN_DOOR_HASH);
+        yield return DOOR_OPEN_TIMEOUT;
 
         // Switch scene
         if (!string.IsNullOrEmpty(this.sceneName))
         {
             Debug.Log("switching scene");
-            base.StartCoroutine(this.sceneController.FadeAndSwitchScenes(this.sceneName));
+            this.sceneController.FadeAndLoadScene(this.sceneName);
         }
         else
         {
@@ -45,7 +50,7 @@ public class DoorInteractable : Interactable
     protected override IEnumerator OnHoverStart()
     {
         yield return null;
-        this.doorRenderer.material.color = this.hoverColor;
+        this.doorRenderer.material.color = this.HOVER_COLOR;
     }
 
     protected override IEnumerator OnHoverEnd()

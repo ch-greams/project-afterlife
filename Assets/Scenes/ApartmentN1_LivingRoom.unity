@@ -663,6 +663,7 @@ MonoBehaviour:
   doorRenderer: {fileID: 1157035749}
   doorAnimator: {fileID: 1157035750}
   attachedCell: {fileID: 1898230567}
+  playerControl: {fileID: 1040200069}
   sceneName: 
   sceneController: {fileID: 0}
 --- !u!1 &122164410
@@ -4028,6 +4029,7 @@ MonoBehaviour:
   doorRenderer: {fileID: 247326059}
   doorAnimator: {fileID: 247326060}
   attachedCell: {fileID: 1844381957}
+  playerControl: {fileID: 1040200069}
   sceneName: 
   sceneController: {fileID: 0}
 --- !u!1 &663526952
@@ -10906,5 +10908,6 @@ MonoBehaviour:
   doorRenderer: {fileID: 19642885}
   doorAnimator: {fileID: 19642886}
   attachedCell: {fileID: 202700293}
-  sceneName: 
+  playerControl: {fileID: 1040200069}
+  sceneName: ApartmentN1_Bedroom
   sceneController: {fileID: 0}
