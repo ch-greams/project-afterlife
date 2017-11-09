@@ -7,45 +7,50 @@ public class RoomGenerator : MonoBehaviour
 {
 #if UNITY_EDITOR
 
-	public Point gridSize;
-	public float cellSize = 1;
-	public GameObject cellPrefab;
-    public List<Cell> cells = new List<Cell>();
+    public Point gridSize;
+    public float tileSize = 1;
+    public GameObject tilePrefab;
+    public List<Tile> tiles = new List<Tile>();
 
 
     public void CreateGrid()
-	{
-		this.transform.position = new Vector3();
-		DestroyGrid();
+    {
+        this.transform.position = new Vector3();
+        DestroyGrid();
 
-		Debug.Log(string.Format("Generating Grid with size {0}", gridSize));
+        Debug.Log(string.Format("Generating Grid with size {0}", gridSize));
 
-		for (int x = 0; x < gridSize.x; x++)
-		{
-			for (int y = 0; y < gridSize.y; y++)
-			{
-				Point point = new Point(x, y);
-				GameObject cell = Instantiate(cellPrefab, new Vector3(x * cellSize, 0, y * cellSize), Quaternion.identity);
+        for (int x = 0; x < gridSize.x; x++)
+        {
+            for (int y = 0; y < gridSize.y; y++)
+            {
+                Point point = new Point(x, y);
+                GameObject tileObj = Instantiate(tilePrefab, point.CalcWorldCoord(0, tileSize), Quaternion.identity);
+                Tile tile = new Tile(point, true, tileObj, new Dictionary<Point, bool>());
 
-				cell.transform.SetParent(this.transform);
-				cell.name = point.ToString();
+                tileObj.GetComponent<TileInteractable>().tile = tile;
 
-				cells.Add(new Cell(point, cell));
-			}
-		}
-	}
+                tileObj.transform.SetParent(this.transform);
+                tileObj.name = point.ToString();
 
-	public void CleanUpGrid() {
-		cells.RemoveAll(c => c.obj == null);
-	}
+                tiles.Add(tile);
+            }
+        }
+    }
 
-	private void DestroyGrid() {
-		foreach (Cell cell in cells)
-		{
-			Destroy(cell.obj);
-		}
-		cells = new List<Cell>();
-	}
+    public void CleanUpGrid()
+    {
+        tiles.RemoveAll(c => c.obj == null);
+    }
+
+    private void DestroyGrid()
+    {
+        foreach (Tile tile in tiles)
+        {
+            Destroy(tile.obj);
+        }
+        tiles = new List<Tile>();
+    }
 
 #endif
 }

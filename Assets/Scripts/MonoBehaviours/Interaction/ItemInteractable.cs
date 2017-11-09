@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemInteractable : Interactable
 {
     public Renderer itemRenderer;
-    public CellInteractable attachedCell;
+    public TileInteractable attachedTile;
 
     private Color defaultColor;
 

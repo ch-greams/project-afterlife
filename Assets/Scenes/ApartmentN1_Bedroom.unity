@@ -152,6 +152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &29926728
 MonoBehaviour:
@@ -276,6 +282,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &107343623
 MonoBehaviour:
@@ -461,6 +473,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &121767749
 MonoBehaviour:
@@ -581,6 +599,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &167460745
 MonoBehaviour:
@@ -819,6 +843,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &271197066
 MonoBehaviour:
@@ -989,6 +1019,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &366993469
 MonoBehaviour:
@@ -1109,6 +1145,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &370431056
 MonoBehaviour:
@@ -1229,6 +1271,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &372605977
 MonoBehaviour:
@@ -1349,6 +1397,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &401489905
 MonoBehaviour:
@@ -1527,6 +1581,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &453547002
 MonoBehaviour:
@@ -1697,6 +1757,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &504644079
 MonoBehaviour:
@@ -1822,6 +1888,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &614159863
 MonoBehaviour:
@@ -1928,153 +2000,9 @@ MonoBehaviour:
   gridSize:
     x: 6
     y: 6
-  cellSize: 1
-  cellPrefab: {fileID: 1565656233528524, guid: c96bc5ffbc1870e48ad0e43323c3c8a2, type: 2}
-  cells:
-  - point:
-      x: 0
-      y: 0
-    obj: {fileID: 880088296}
-  - point:
-      x: 0
-      y: 1
-    obj: {fileID: 29926725}
-  - point:
-      x: 0
-      y: 2
-    obj: {fileID: 989004072}
-  - point:
-      x: 0
-      y: 3
-    obj: {fileID: 372605974}
-  - point:
-      x: 0
-      y: 4
-    obj: {fileID: 1057046845}
-  - point:
-      x: 0
-      y: 5
-    obj: {fileID: 2123932432}
-  - point:
-      x: 1
-      y: 0
-    obj: {fileID: 985847045}
-  - point:
-      x: 1
-      y: 1
-    obj: {fileID: 107343620}
-  - point:
-      x: 1
-      y: 2
-    obj: {fileID: 1446178123}
-  - point:
-      x: 1
-      y: 3
-    obj: {fileID: 1608740786}
-  - point:
-      x: 1
-      y: 4
-    obj: {fileID: 504644076}
-  - point:
-      x: 1
-      y: 5
-    obj: {fileID: 167460742}
-  - point:
-      x: 2
-      y: 0
-    obj: {fileID: 1045881284}
-  - point:
-      x: 2
-      y: 1
-    obj: {fileID: 271197063}
-  - point:
-      x: 2
-      y: 2
-    obj: {fileID: 121767746}
-  - point:
-      x: 2
-      y: 3
-    obj: {fileID: 868260683}
-  - point:
-      x: 2
-      y: 4
-    obj: {fileID: 801120836}
-  - point:
-      x: 2
-      y: 5
-    obj: {fileID: 883194726}
-  - point:
-      x: 3
-      y: 0
-    obj: {fileID: 370431053}
-  - point:
-      x: 3
-      y: 1
-    obj: {fileID: 1751025735}
-  - point:
-      x: 3
-      y: 2
-    obj: {fileID: 1669271574}
-  - point:
-      x: 3
-      y: 3
-    obj: {fileID: 1122770886}
-  - point:
-      x: 3
-      y: 4
-    obj: {fileID: 614159860}
-  - point:
-      x: 3
-      y: 5
-    obj: {fileID: 1515863552}
-  - point:
-      x: 4
-      y: 0
-    obj: {fileID: 1512007080}
-  - point:
-      x: 4
-      y: 1
-    obj: {fileID: 401489902}
-  - point:
-      x: 4
-      y: 2
-    obj: {fileID: 2092982240}
-  - point:
-      x: 4
-      y: 3
-    obj: {fileID: 1466623486}
-  - point:
-      x: 4
-      y: 4
-    obj: {fileID: 1029577823}
-  - point:
-      x: 4
-      y: 5
-    obj: {fileID: 1293212204}
-  - point:
-      x: 5
-      y: 0
-    obj: {fileID: 1980473666}
-  - point:
-      x: 5
-      y: 1
-    obj: {fileID: 366993466}
-  - point:
-      x: 5
-      y: 2
-    obj: {fileID: 1243043236}
-  - point:
-      x: 5
-      y: 3
-    obj: {fileID: 1177530734}
-  - point:
-      x: 5
-      y: 4
-    obj: {fileID: 1968360631}
-  - point:
-      x: 5
-      y: 5
-    obj: {fileID: 453546999}
+  tileSize: 1
+  tilePrefab: {fileID: 0}
+  tiles: []
 --- !u!4 &663526954
 Transform:
   m_ObjectHideFlags: 0
@@ -2214,6 +2142,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &801120839
 MonoBehaviour:
@@ -2334,6 +2268,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &868260686
 MonoBehaviour:
@@ -2454,6 +2394,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &880088299
 MonoBehaviour:
@@ -2574,6 +2520,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &883194729
 MonoBehaviour:
@@ -2694,6 +2646,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &985847048
 MonoBehaviour:
@@ -2814,6 +2772,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &989004075
 MonoBehaviour:
@@ -2934,6 +2898,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1029577826
 MonoBehaviour:
@@ -3054,6 +3024,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1045881287
 MonoBehaviour:
@@ -3174,6 +3150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1057046848
 MonoBehaviour:
@@ -3299,6 +3281,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1122770889
 MonoBehaviour:
@@ -3418,7 +3406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorRenderer: {fileID: 213138169}
   doorAnimator: {fileID: 1456211485}
-  attachedCell: {fileID: 366993468}
+  attachedTile: {fileID: 366993468}
   playerControl: {fileID: 1748304919}
   sceneName: ApartmentN1_LivingRoom
   sceneController: {fileID: 0}
@@ -3478,6 +3466,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1177530737
 MonoBehaviour:
@@ -3596,7 +3590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemRenderer: {fileID: 1087004379}
-  attachedCell: {fileID: 0}
+  attachedTile: {fileID: 0}
 --- !u!65 &1183849706
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3719,6 +3713,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1243043239
 MonoBehaviour:
@@ -3839,6 +3839,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1293212207
 MonoBehaviour:
@@ -4027,6 +4033,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1446178126
 MonoBehaviour:
@@ -4152,6 +4164,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1466623489
 MonoBehaviour:
@@ -4272,6 +4290,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1512007083
 MonoBehaviour:
@@ -4392,6 +4416,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1515863555
 MonoBehaviour:
@@ -4577,6 +4607,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1608740789
 MonoBehaviour:
@@ -4751,6 +4787,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1669271577
 MonoBehaviour:
@@ -4877,6 +4919,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1751025738
 MonoBehaviour:
@@ -5060,6 +5108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1968360634
 MonoBehaviour:
@@ -5180,6 +5234,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &1980473669
 MonoBehaviour:
@@ -5305,6 +5365,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &2092982243
 MonoBehaviour:
@@ -5425,6 +5491,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tile:
+    passable: 0
+    point:
+      x: 0
+      y: 0
+    obj: {fileID: 0}
   playerControl: {fileID: 1748304919}
 --- !u!114 &2123932435
 MonoBehaviour:

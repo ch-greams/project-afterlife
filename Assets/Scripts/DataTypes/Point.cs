@@ -11,8 +11,6 @@ public struct Point : IComparable<Point>
 {
     public int x, y;
 
-    // CONSTRUCTORS
-
     /// <summary>
     /// Create point based on position in a grid
     /// </summary>
@@ -25,14 +23,12 @@ public struct Point : IComparable<Point>
     /// <summary>
     /// Create point based on Vector3 coordinates
     /// </summary>
-    public Point(Vector3 worldCoord)
+    public Point(Vector3 worldCoord, float tileSize)
     {
         Vector3 initPos = new Vector3(0, 0, 0);
-        float squareSizeX = 9.0f;
-        float squareSizeZ = 9.0f;
 
-        this.x = Mathf.RoundToInt((worldCoord.x - initPos.x) / squareSizeX - 0.5f);
-        this.y = Mathf.RoundToInt((worldCoord.z - initPos.z) / squareSizeZ - 0.5f);
+        this.x = Mathf.RoundToInt((worldCoord.x - initPos.x) / tileSize - 0.5f);
+        this.y = Mathf.RoundToInt((worldCoord.z - initPos.z) / tileSize - 0.5f);
     }
 
     public Point(string point)
@@ -93,24 +89,34 @@ public struct Point : IComparable<Point>
         return (sumOther > sumThis) ? -1 : ((sumOther == sumThis) ? 0 : 1);
     }
 
-    // PUBLIC METHODS
-
     /// <summary>
     /// Calculate Vector3 coordinates for current point
     /// </summary>
-    public Vector3 CalcWorldCoord(float h)
+    public Vector3 CalcWorldCoord(float h, float tileSize)
     {
         Vector3 initPos = new Vector3(0, 0, 0);
-        float squareSizeX = 9.0f;
-        float squareSizeZ = 9.0f;
 
-        float x = initPos.x + this.x * squareSizeX + squareSizeX / 2;
-        float z = initPos.z + this.y * squareSizeZ + squareSizeZ / 2;
+        float x = initPos.x + this.x * tileSize + tileSize / 2;
+        float z = initPos.z + this.y * tileSize + tileSize / 2;
 
         return new Vector3(x, h, z);
     }
-}
 
+    public double DistanceTo(Point point)
+    {
+        return (Math.Abs(point.x - this.x) == Math.Abs(point.y - this.y)) ? 1.5 : 1;
+    }
+
+    public double EstimateTo(Point point)
+    {
+        float dx = Math.Abs(point.x - this.x);
+        float dy = Math.Abs(point.y - this.y);
+
+        return (dx >= dy)
+            ? (dx - dy) + dy * 1.5F
+            : (dy - dx) + dx * 1.5F;
+    }
+}
 
 // check this later
 public class PointConverter : TypeConverter

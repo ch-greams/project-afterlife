@@ -6,7 +6,7 @@ public class DoorInteractable : Interactable
 {
     public Renderer doorRenderer;
     public Animator doorAnimator;
-    public CellInteractable attachedCell;
+    public TileInteractable attachedTile;
     public PlayerControl playerControl;
     public string sceneName;
     public SceneController sceneController;
@@ -28,7 +28,7 @@ public class DoorInteractable : Interactable
     protected override IEnumerator OnLeftClick()
     {
         // Go To The Door
-        yield return base.StartCoroutine(this.attachedCell.MoveToThisCell());
+        yield return base.StartCoroutine(this.attachedTile.MoveToThisTile());
 
         // Open Door
         this.playerControl.Interact(HIGH_TAKE_HASH, this.transform.position);

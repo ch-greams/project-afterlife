@@ -2,8 +2,9 @@
 using UnityEngine;
 
 
-public class CellInteractable : Interactable
+public class TileInteractable : Interactable
 {
+	public Tile tile;
 	public PlayerControl playerControl;
 	private AnimateTiledTexture textureAnimator;
 
@@ -15,10 +16,10 @@ public class CellInteractable : Interactable
 
     protected override IEnumerator OnLeftClick()
 	{
-		yield return this.MoveToThisCell();
+		yield return this.MoveToThisTile();
 	}
 
-    public IEnumerator MoveToThisCell()
+    public IEnumerator MoveToThisTile()
     {
         this.textureAnimator.Play();
         yield return this.playerControl.MoveToAsync(base.transform.position);
