@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -25,30 +26,33 @@ public class RoomGenerator : MonoBehaviour
             for (int y = 0; y < gridSize.y; y++)
             {
                 Point point = new Point(x, y);
-                GameObject tileObj = Instantiate(tilePrefab, point.CalcWorldCoord(0, tileSize), Quaternion.identity);
-                Tile tile = new Tile(point, true, tileObj, new Dictionary<Point, bool>());
+                GameObject obj = Instantiate(tilePrefab, point.CalcWorldCoord(0, tileSize), Quaternion.identity);
+                obj.transform.SetParent(this.transform);
+                obj.name = point.ToString();
 
-                tileObj.GetComponent<TileInteractable>().tile = tile;
+                Tile tile = new Tile(point, true, obj);
 
-                tileObj.transform.SetParent(this.transform);
-                tileObj.name = point.ToString();
+                obj.GetComponent<TileInteractable>().tile = tile;
 
                 tiles.Add(tile);
             }
         }
+
+        Dictionary<Point, Tile> dictionary = tiles.ToDictionary(tile => tile.point);
+        tiles.ForEach(tile => tile.FindNeighbours(dictionary));
     }
 
     public void CleanUpGrid()
     {
-        tiles.RemoveAll(c => c.obj == null);
+        tiles.RemoveAll(tile => tile.obj == null);
+
+        Dictionary<Point, Tile> dictionary = tiles.ToDictionary(tile => tile.point);
+        tiles.ForEach(tile => tile.FindNeighbours(dictionary));
     }
 
     private void DestroyGrid()
     {
-        foreach (Tile tile in tiles)
-        {
-            Destroy(tile.obj);
-        }
+        tiles.ForEach(tile => Destroy(tile.obj));
         tiles = new List<Tile>();
     }
 

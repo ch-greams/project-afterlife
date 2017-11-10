@@ -14,27 +14,35 @@ public class Tile
     public IEnumerable<Tile> allNeighbours { get; set; }
     public IEnumerable<Tile> neighbours { get { return allNeighbours.Where(tile => tile.passable); } }
 
-    public Dictionary<Point, bool> shifts;
 
-    public Tile(Point point, bool passable, GameObject obj, Dictionary<Point, bool> shifts)
+    public Tile(Point point, bool passable, GameObject obj)
     {
         this.point = point;
         this.passable = passable;
         this.obj = obj;
-
-        this.shifts = new Dictionary<Point, bool>(shifts);
     }
 
     /// <summary>
     /// Generates AllNeighbours list
     /// </summary>
-    public void FindNeighbours(Dictionary<Point, Tile> board)
+    public void FindNeighbours(Dictionary<Point, Tile> grid)
     {
+        Dictionary<Point, bool> shifts = new Dictionary<Point, bool>()
+        {
+            { new Point(0, 1),  true }, { new Point(1, 1),   true }, { new Point(1, 0),  true }, { new Point(1, -1), true },
+            { new Point(0, -1), true }, { new Point(-1, -1), true }, { new Point(-1, 0), true }, { new Point(-1, 1), true }
+        };
+
         List<Tile> neighbours = new List<Tile>();
 
-        foreach (Point shift in this.shifts.Where(kvp => kvp.Value).Select(kvp => kvp.Key))
+        foreach (KeyValuePair<Point, bool> shift in shifts)
         {
-            neighbours.Add(board[this.point + shift]);
+            if (shift.Value) {
+                Point nPoint = this.point + shift.Key;
+                if (grid.ContainsKey(nPoint)) {
+                    neighbours.Add(grid[nPoint]);
+                }
+            }
         }
 
         this.allNeighbours = neighbours;
