@@ -791,6 +791,11 @@ Prefab:
       propertyPath: leftWalls.Array.data[0]
       value: 
       objectReference: {fileID: 560814757}
+    - target: {fileID: 114212636034288312, guid: 1cad21be512a1694880f80a805db524f,
+        type: 2}
+      propertyPath: currentTile
+      value: 
+      objectReference: {fileID: 336910266}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1cad21be512a1694880f80a805db524f, type: 2}
   m_IsPrefabParent: 0
@@ -3198,7 +3203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorRenderer: {fileID: 213138169}
   doorAnimator: {fileID: 1456211485}
-  attachedTile: {fileID: 0}
+  attachedTile: {fileID: 728441501}
   playerControl: {fileID: 1748304919}
   sceneName: ApartmentN1_LivingRoom
   sceneController: {fileID: 0}

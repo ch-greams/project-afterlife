@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -11,6 +12,8 @@ public class PlayerControl : MonoBehaviour
 
     public GameObject playerObject;
     public float animationSpeed = 5.0F;
+
+    public TileInteractable currentTile;
 
     private Animator playerAnimator;
     private float startTime;
@@ -40,27 +43,28 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    public void MoveTo(Vector3 position)
+    public IEnumerator MoveToTileAsync(Tile targetTile)
     {
-        this.playerObject.transform.LookAt(position);
-
-        this.startTime = Time.time;
-        this.endPosition = position;
-        this.journeyLength = Vector3.Distance(this.startPosition, this.endPosition);
-    }
-
-    public IEnumerator MoveToAsync(Vector3 position)
-    {
-        this.playerAnimator.SetFloat(SPEED_PARAM_HASH, this.animationSpeed);
-
-        this.MoveTo(position);
-
-        while (this.endPosition != base.transform.position)
+        foreach (Tile tile in targetTile.FindPathFrom(this.currentTile.tile, true).Reverse())
         {
-            yield return null;
-        }
+            this.playerAnimator.SetFloat(SPEED_PARAM_HASH, this.animationSpeed);
 
-        this.playerAnimator.SetFloat(SPEED_PARAM_HASH, 0F);
+            this.startTime = Time.time;
+            this.endPosition = tile.obj.transform.position;
+
+            this.playerObject.transform.LookAt(this.endPosition);
+            this.journeyLength = Vector3.Distance(this.startPosition, this.endPosition);
+
+            while (this.endPosition != base.transform.position)
+            {
+                yield return null;
+            }
+
+            this.startPosition = this.endPosition;
+            this.currentTile = tile.obj.GetComponent<TileInteractable>();
+
+            this.playerAnimator.SetFloat(SPEED_PARAM_HASH, 0F);
+        }
     }
 
     public void Interact(int animationHash, Vector3 targetLocation)
