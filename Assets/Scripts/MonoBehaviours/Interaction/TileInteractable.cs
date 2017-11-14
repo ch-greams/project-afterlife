@@ -6,7 +6,7 @@ using UnityEngine;
 public class TileInteractable : Interactable
 {
     public Tile tile;
-    public PlayerControl playerControl;
+    public PlayerController playerControl;
     private AnimateTiledTexture textureAnimator;
 
 

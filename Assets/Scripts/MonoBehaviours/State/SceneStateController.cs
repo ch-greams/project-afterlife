@@ -8,7 +8,7 @@ public class SceneStateController : MonoBehaviour
     public SceneType type;
     public GlobalStateController globalState;
     public SceneController sceneController;
-    public PlayerControl playerControl;
+    public PlayerController playerControl;
 
     public List<TileInteractable> tileInteractables = new List<TileInteractable>();
 

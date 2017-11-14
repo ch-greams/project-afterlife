@@ -2402,7 +2402,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!81 &81335089167839856
 AudioListener:
   m_ObjectHideFlags: 1
@@ -2445,12 +2444,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3339e202592b1424cb99445f81f26cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPosition: {x: 0, y: 0, z: 0}
-  endPosition: {x: 0, y: 0, z: 0}
   speed: 5
-  playerObject: {fileID: 1988705519423378}
-  playerAnimator: {fileID: 95072808348966504}
   animationSpeed: 4
+  playerTransform: {fileID: 4439659814697112}
+  playerAnimator: {fileID: 95072808348966504}
+  currentTile: {fileID: 0}
 --- !u!114 &114672285671714754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2488,6 +2486,7 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2503,6 +2502,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5

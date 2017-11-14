@@ -11,7 +11,7 @@ public class DoorInteractable : Interactable
     public Animator doorAnimator;
     public TileInteractable attachedTile;
     public Point exitPoint;
-    public PlayerControl playerControl;
+    public PlayerController playerControl;
 
     public SceneStateController sceneState;
 

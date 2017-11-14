@@ -9,7 +9,7 @@ public class ContainerInteractable : Interactable
     public ContainerType type;
     public Renderer itemRenderer;
     public List<TileInteractable> attachedTiles = new List<TileInteractable>();
-    public PlayerControl playerControl;
+    public PlayerController playerControl;
 
     public SceneStateController sceneState;
 
