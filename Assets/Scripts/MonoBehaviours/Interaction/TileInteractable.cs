@@ -26,6 +26,6 @@ public class TileInteractable : Interactable
     public IEnumerator MoveToThisTile()
     {
         this.textureAnimator.Play();
-        yield return this.playerControl.MoveToTileAsync(this.tile);
+        yield return this.playerControl.MoveToTile(this.tile);
     }
 }

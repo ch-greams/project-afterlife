@@ -17,17 +17,15 @@ public class PlayerController : MonoBehaviour
     private readonly int SPEED_PARAM_HASH = Animator.StringToHash("Speed");
 
 
-    public IEnumerator MoveToTileAsync(Tile targetTile)
+    public IEnumerator MoveToTile(Tile targetTile)
     {
         foreach (Tile tile in targetTile.FindPathFrom(this.currentTile.tile, true).Reverse())
         {
             this.playerAnimator.SetFloat(SPEED_PARAM_HASH, this.animationSpeed);
 
             float startTime = Time.time;
-
             Vector3 startPosition = base.transform.position;
             Vector3 endPosition = tile.obj.transform.position;
-
             float journeyLength = Vector3.Distance(startPosition, endPosition);
 
             this.playerTransform.LookAt(endPosition);
@@ -42,7 +40,6 @@ public class PlayerController : MonoBehaviour
             }
 
             this.currentTile = tile.obj.GetComponent<TileInteractable>();
-
             this.playerAnimator.SetFloat(SPEED_PARAM_HASH, 0F);
         }
     }
