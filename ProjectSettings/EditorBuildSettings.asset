@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Persistent.unity
     guid: ed9ade5aa3540584db592fe4926f7bc2
   - enabled: 1
-    path: Assets/Scenes/ApartmentN1_Bedroom.unity
+    path: Assets/Scenes/AptN1_Bedroom.unity
     guid: 87a997e46abc5054987e391b91fe3cc4
   - enabled: 1
-    path: Assets/Scenes/ApartmentN1_LivingRoom.unity
+    path: Assets/Scenes/AptN1_LivingRoom.unity
     guid: aa1cba4bc267f3c4ab134f26db8bd183

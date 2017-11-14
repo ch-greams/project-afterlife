@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c979978ec6f904da1c61c5a14865d5, type: 3}
   m_Name: DoorKey
   m_EditorClassIdentifier: 
-  id: APT_N1_BEDROOM_DOOR_KEY
+  id: 0
   label: Door Key
+  icon: {fileID: 21300000, guid: 7a88b392b9834354ab5c2d7476fcdda3, type: 3}
