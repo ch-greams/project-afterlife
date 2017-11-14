@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public Vector3 startPosition;
-    public Vector3 endPosition;
+    public Vector3 startPosition;       // TODO: Remove or at least minimize use and make private
+    public Vector3 endPosition;         // TODO: Remove or at least minimize use and make private
     public float speed = 5.0F;
 
     public GameObject playerObject;
@@ -28,6 +28,7 @@ public class PlayerControl : MonoBehaviour
         this.ResetStartPosition();
     }
 
+    // TODO: Remove/Replace
     private void Update()
     {
         if (this.startPosition != this.endPosition)

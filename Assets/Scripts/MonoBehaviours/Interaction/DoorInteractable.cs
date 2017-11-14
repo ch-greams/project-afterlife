@@ -1,45 +1,101 @@
 ﻿using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 
 public class DoorInteractable : Interactable
 {
+    public DoorType type;
+    public SceneType toScene;
     public Renderer doorRenderer;
     public Animator doorAnimator;
     public TileInteractable attachedTile;
+    public Point exitPoint;
     public PlayerControl playerControl;
-    public string sceneName;
-    public SceneController sceneController;
 
-    private Color defaultColor;
+    public SceneStateController sceneState;
 
-	private readonly Color HOVER_COLOR = Color.cyan;
+
+    public Color defaultColor;
+    public Color hoverColor = Color.cyan;
+
     private readonly int OPEN_DOOR_HASH = Animator.StringToHash("OpenDoor");
+    private readonly int ATTEMPT_TAKE_HASH = Animator.StringToHash("AttemptTake");
     private readonly int HIGH_TAKE_HASH = Animator.StringToHash("HighTake");
     private readonly WaitForSeconds DOOR_OPEN_TIMEOUT = new WaitForSeconds(1.5F);
 
 
-    private void Start()
-    {
-        this.defaultColor = this.doorRenderer.material.color;
-        this.sceneController = FindObjectOfType<SceneController>();
-    }
-
     protected override IEnumerator OnLeftClick()
     {
-        // Go To The Door
-        yield return base.StartCoroutine(this.attachedTile.MoveToThisTile());
+        switch (this.GetReaction())
+        {
+            case DoorReaction.GO_TO_DOOR:
+                yield return GoToAttachedTile();
+                break;
+            case DoorReaction.TRY_OPEN_DOOR:
+                yield return GoToAttachedTile();
+                TryOpenDoor();
+                break;
+            case DoorReaction.OPEN_DOOR:
+                yield return GoToAttachedTile();
+                yield return OpenDoor();
+                break;
+            default:
+                Debug.Log("Unexpected DoorReaction");
+                break;
+        }
+    }
 
-        // Open Door
+
+    private DoorReaction GetReaction()
+    {
+        GlobalStateController globalState = this.sceneState.globalState;
+
+        switch (this.type)
+        {
+            case DoorType.AptN1_Bedroom_ToLivingRoom:
+            case DoorType.AptN1_LivingRoom_ToBedroom:
+                if (globalState.playerInventory.Exists(item => item.id == ItemId.AptN1_Bedroom_DoorKey)) {
+                    globalState.positionInScene[this.toScene] = this.exitPoint;
+                    return DoorReaction.OPEN_DOOR;
+                }
+                else {
+                    Debug.Log("Can't open door. You need to find 'Door Key'");
+                    return DoorReaction.TRY_OPEN_DOOR;
+                }
+            case DoorType.AptN1_LivingRoom_ToBathroom:
+            case DoorType.AptN1_LivingRoom_ToHallway:
+                return globalState.doors[this.type]
+                    ? DoorReaction.OPEN_DOOR
+                    : DoorReaction.TRY_OPEN_DOOR;
+            default:
+                Debug.Log("Unexpected DoorType");
+                return DoorReaction.GO_TO_DOOR;
+        }
+    }
+
+
+    private IEnumerator GoToAttachedTile()
+    {
+        yield return base.StartCoroutine(this.attachedTile.MoveToThisTile());
+    }
+
+    private void TryOpenDoor()
+    {
+        this.playerControl.Interact(ATTEMPT_TAKE_HASH, this.transform.position);
+    }
+
+    private IEnumerator OpenDoor()
+    {
         this.playerControl.Interact(HIGH_TAKE_HASH, this.transform.position);
         this.doorAnimator.SetTrigger(OPEN_DOOR_HASH);
         yield return DOOR_OPEN_TIMEOUT;
 
         // Switch scene
-        if (!string.IsNullOrEmpty(this.sceneName))
+        if (this.toScene != SceneType.Undefined)
         {
-            Debug.Log("switching scene");
-            this.sceneController.FadeAndLoadScene(this.sceneName);
+            Debug.LogFormat("switching to {0} scene", this.toScene);
+            this.sceneState.sceneController.FadeAndLoadScene(this.toScene.ToString());
         }
         else
         {
@@ -50,7 +106,7 @@ public class DoorInteractable : Interactable
     protected override IEnumerator OnHoverStart()
     {
         yield return null;
-        this.doorRenderer.material.color = this.HOVER_COLOR;
+        this.doorRenderer.material.color = this.hoverColor;
     }
 
     protected override IEnumerator OnHoverEnd()
@@ -58,4 +114,19 @@ public class DoorInteractable : Interactable
         yield return new WaitForSeconds(0.1F);
         this.doorRenderer.material.color = this.defaultColor;
     }
+}
+
+public enum DoorType
+{
+    AptN1_Bedroom_ToLivingRoom,
+    AptN1_LivingRoom_ToBedroom,
+    AptN1_LivingRoom_ToBathroom,
+    AptN1_LivingRoom_ToHallway,
+}
+
+public enum DoorReaction
+{
+    GO_TO_DOOR,
+    TRY_OPEN_DOOR,
+    OPEN_DOOR,
 }

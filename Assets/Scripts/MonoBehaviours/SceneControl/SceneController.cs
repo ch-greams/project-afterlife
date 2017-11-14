@@ -8,7 +8,7 @@ public class SceneController : MonoBehaviour
 {
     public CanvasGroup faderCanvasGroup;
     public float fadeDuration = 0.5f;
-    public string startingSceneName = "ApartmentN1_Bedroom";
+    public SceneType startingScene = SceneType.AptN1_Bedroom;
 
     private bool isFading;
 
@@ -19,7 +19,7 @@ public class SceneController : MonoBehaviour
     private IEnumerator Start()
     {
         this.faderCanvasGroup.alpha = ALPHA_OPAQUE;
-        yield return base.StartCoroutine(this.LoadSceneAndSetActive(this.startingSceneName));
+        yield return base.StartCoroutine(this.LoadSceneAndSetActive(this.startingScene.ToString()));
         yield return base.StartCoroutine(this.Fade(ALPHA_TRANSPARENT));
     }
 
