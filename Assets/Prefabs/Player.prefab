@@ -667,9 +667,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4963596554894220}
   - component: {fileID: 20917948262767162}
-  - component: {fileID: 92412970220320922}
   - component: {fileID: 124649471019458278}
   - component: {fileID: 81335089167839856}
+  - component: {fileID: 114340254038760004}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -2409,13 +2409,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1546486683573978}
   m_Enabled: 1
---- !u!92 &92412970220320922
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1546486683573978}
-  m_Enabled: 1
 --- !u!95 &95072808348966504
 Animator:
   serializedVersion: 3
@@ -2449,6 +2442,21 @@ MonoBehaviour:
   playerTransform: {fileID: 4439659814697112}
   playerAnimator: {fileID: 95072808348966504}
   currentTile: {fileID: 0}
+--- !u!114 &114340254038760004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546486683573978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -768656878, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!114 &114672285671714754
 MonoBehaviour:
   m_ObjectHideFlags: 1

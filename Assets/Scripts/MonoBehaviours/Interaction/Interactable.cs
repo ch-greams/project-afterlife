@@ -1,28 +1,28 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 
-public abstract class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    private IEnumerator OnMouseOver()
+    public void OnPointerClick(PointerEventData eventData)
     {
         if (Input.GetMouseButtonUp(0))
         {
-            yield return base.StartCoroutine(this.OnLeftClick());
+            base.StartCoroutine(this.OnLeftClick());
         }
-
-        if (Input.GetMouseButtonUp(1))
+        else if (Input.GetMouseButtonUp(1))
         {
-            yield return base.StartCoroutine(this.OnRightClick());
+            base.StartCoroutine(this.OnRightClick());
         }
     }
-    private IEnumerator OnMouseEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        yield return base.StartCoroutine(this.OnHoverStart());
+        base.StartCoroutine(this.OnHoverStart());
     }
-    private IEnumerator OnMouseExit()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        yield return base.StartCoroutine(this.OnHoverEnd());
+        base.StartCoroutine(this.OnHoverEnd());
     }
 
     protected virtual IEnumerator OnLeftClick()
