@@ -85,13 +85,23 @@ public class ContainerInteractable : Interactable
         this.playerControl.Interact(MED_TAKE_HASH, this.transform.position);
         yield return CONTAINER_OPEN_TIMEOUT;
 
-        // TODO: Move item to inventory
+        this.AddItemsToInventory();
+    }
+
+    // TODO: Rework this
+    private void AddItemsToInventory()
+    {
         GlobalStateController globalState = this.sceneState.globalState;
+
         globalState.playerInventory.AddRange(globalState.containers[this.type]);
+
+        // TODO: Create serializable InventorySlot class to keep invormation about slot state
+        globalState.playerInventorySlots[0].gameObject.SetActive(true);
+        globalState.playerInventorySlots[0].sprite = globalState.containers[this.type][0].icon;
+
         globalState.containers[this.type].ForEach(item => Debug.Log("Added to inventory: " + item.label));
         globalState.containers[this.type] = new List<Item>();
     }
-
 
     protected override IEnumerator OnHoverStart()
     {

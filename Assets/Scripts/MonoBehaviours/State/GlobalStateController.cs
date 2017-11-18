@@ -2,11 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class GlobalStateController : MonoBehaviour
 {
     public List<Item> playerInventory = new List<Item>();
+
+    public List<Image> playerInventorySlots = new List<Image>();
+
 
     public Dictionary<DoorType, bool> doors = new Dictionary<DoorType, bool>()
     {
