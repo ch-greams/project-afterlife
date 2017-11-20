@@ -3,42 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Sirenix.OdinInspector;
 
 
-public class GlobalStateController : MonoBehaviour
+public class GlobalStateController : SerializedMonoBehaviour
 {
     public List<Item> playerInventory = new List<Item>();
 
     public List<Image> playerInventorySlots = new List<Image>();
 
 
-    public Dictionary<DoorType, bool> doors = new Dictionary<DoorType, bool>()
-    {
-        { DoorType.AptN1_Bedroom_ToLivingRoom, false },
-        { DoorType.AptN1_LivingRoom_ToBathroom, false },
-        { DoorType.AptN1_LivingRoom_ToBedroom, false },
-        { DoorType.AptN1_LivingRoom_ToHallway, false },
-    };
+    public Dictionary<DoorType, bool> doors = new Dictionary<DoorType, bool>();
 
-    public Dictionary<SceneType, Point> positionInScene = new Dictionary<SceneType, Point>()
-    {
-        { SceneType.AptN1_Bedroom, new Point(1, 4) },
-        { SceneType.AptN1_LivingRoom, new Point(6, 5) },
-    };
-
-    public List<Item> bedroomTable = new List<Item>();
+    public Dictionary<SceneType, Point> positionInScene = new Dictionary<SceneType, Point>();
 
     public Dictionary<ContainerType, List<Item>> containers = new Dictionary<ContainerType, List<Item>>();
 
 
-    private void Awake()
-    {
-        this.containers = new Dictionary<ContainerType, List<Item>>()
-        {
-            { ContainerType.AptN1_Bedroom_Table, this.bedroomTable },
-            { ContainerType.AptN1_Bedroom_Bed, new List<Item>() },
-        };
-    }
 }
 
 [Flags]

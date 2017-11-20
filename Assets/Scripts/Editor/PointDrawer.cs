@@ -1,37 +1,32 @@
+using Sirenix.OdinInspector.Editor;
+using Sirenix.Utilities;
 using UnityEditor;
 using UnityEngine;
 
 
-[CustomPropertyDrawer(typeof(Point))]
-public class PointDrawer : PropertyDrawer
+[OdinDrawer]
+public class PointDrawer : OdinValueDrawer<Point>
 {
-    // Draw the property inside the given rect
-    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    protected override void DrawPropertyLayout(IPropertyValueEntry<Point> entry, GUIContent label)
     {
-        // Using BeginProperty / EndProperty on the parent property means that
-        // prefab override logic works on the entire property.
-        EditorGUI.BeginProperty(position, label, property);
+        Point value = entry.SmartValue;
 
-        // Draw label
-        position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
+        var rect = EditorGUILayout.GetControlRect();
 
-        // Don't make child fields be indented
-        int indent = EditorGUI.indentLevel = 0;
+        // In Odin, labels are optional and can be null, so we have to account for that.
+        if (label != null)
+        {
+            rect = EditorGUI.PrefixLabel(rect, label);
+        }
 
-        // Calculate rects
-        Rect xRectLabel = new Rect(position.x -1, position.y, 12, position.height);
-        Rect xRect = new Rect(position.x + 12, position.y, 64, position.height);
-        Rect yRectLabel = new Rect(position.x + 78, position.y, 12, position.height);
-        Rect yRect = new Rect(position.x + 91, position.y, 64, position.height);
+        var prev = EditorGUIUtility.labelWidth;
+        EditorGUIUtility.labelWidth = 20;
 
-        EditorGUI.LabelField(xRectLabel, "X");
-        EditorGUI.PropertyField(xRect, property.FindPropertyRelative("x"), GUIContent.none);
-        EditorGUI.LabelField(yRectLabel, "Y");
-        EditorGUI.PropertyField(yRect, property.FindPropertyRelative("y"), GUIContent.none);
+        value.x = EditorGUI.IntSlider(rect.AlignLeft(rect.width * 0.5f), "X", value.x, 0, 50);
+        value.y = EditorGUI.IntSlider(rect.AlignRight(rect.width * 0.5f), "Y", value.y, 0, 50);
 
-        // Set indent back to what it was
-        EditorGUI.indentLevel = indent;
+        EditorGUIUtility.labelWidth = prev;
 
-        EditorGUI.EndProperty();
+        entry.SmartValue = value;
     }
 }
