@@ -15,6 +15,12 @@ public class Tile
     public IEnumerable<Tile> neighbours { get { return allNeighbours.Where(tile => tile.passable); } }
 
 
+    public Tile()
+    {
+        this.point = new Point();
+        this.passable = false;
+    }
+    
     public Tile(Point point, bool passable, GameObject obj)
     {
         this.point = point;

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 
@@ -14,6 +15,8 @@ public class RoomGenerator : MonoBehaviour
     public List<Tile> tiles = new List<Tile>();
 
 
+    [Button("Generate Grid")]
+    [ButtonGroup("Grid Controls")]
     public void CreateGrid()
     {
         this.transform.position = new Vector3();
@@ -42,6 +45,8 @@ public class RoomGenerator : MonoBehaviour
         tiles.ForEach(tile => tile.FindNeighbours(dictionary));
     }
 
+    [Button("Clean up Grid")]
+    [ButtonGroup("Grid Controls")]
     public void CleanUpGrid()
     {
         tiles.RemoveAll(tile => tile.obj == null);

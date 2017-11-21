@@ -11,7 +11,7 @@ public class PointDrawer : OdinValueDrawer<Point>
     {
         Point value = entry.SmartValue;
 
-        var rect = EditorGUILayout.GetControlRect();
+        Rect rect = EditorGUILayout.GetControlRect();
 
         // In Odin, labels are optional and can be null, so we have to account for that.
         if (label != null)
@@ -19,7 +19,7 @@ public class PointDrawer : OdinValueDrawer<Point>
             rect = EditorGUI.PrefixLabel(rect, label);
         }
 
-        var prev = EditorGUIUtility.labelWidth;
+        float prev = EditorGUIUtility.labelWidth;
         EditorGUIUtility.labelWidth = 20;
 
         value.x = EditorGUI.IntSlider(rect.AlignLeft(rect.width * 0.5f), "X", value.x, 0, 50);
