@@ -32,3 +32,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Temporary ignore for demos
+**/[Dd]emos/
+**/[Dd]emos.meta

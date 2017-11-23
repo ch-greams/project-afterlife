@@ -864,7 +864,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 1
   m_Range: 5
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1007,7 +1007,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 1
   m_Range: 5
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -8114,7 +8114,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8
+  m_Intensity: 2
   m_Range: 20
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -8731,7 +8731,7 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 1
   m_Range: 5
   m_SpotAngle: 30
   m_CookieSize: 10
