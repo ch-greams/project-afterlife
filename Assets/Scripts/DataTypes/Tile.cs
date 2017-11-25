@@ -1,31 +1,36 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 
 
 [Serializable]
-public class Tile
+public class Tile : SerializedScriptableObject
 {
     public bool passable;
     public Point point;
     public GameObject obj;
 
+    [OdinSerialize]
     public IEnumerable<Tile> allNeighbours { get; set; }
     public IEnumerable<Tile> neighbours { get { return allNeighbours.Where(tile => tile.passable); } }
 
 
-    public Tile()
+    public static Tile CreateInstance(Point point, bool passable, GameObject obj)
     {
-        this.point = new Point();
-        this.passable = false;
+        Tile tile = SerializedScriptableObject.CreateInstance<Tile>();
+        tile.Init(point, passable, obj);
+        return tile;
     }
-    
-    public Tile(Point point, bool passable, GameObject obj)
+
+    public void Init(Point point, bool passable, GameObject obj)
     {
         this.point = point;
         this.passable = passable;
         this.obj = obj;
+        base.name = obj.name;
     }
 
     /// <summary>

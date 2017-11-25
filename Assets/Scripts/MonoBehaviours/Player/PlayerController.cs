@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 
@@ -12,14 +13,15 @@ public class PlayerController : MonoBehaviour
     public Transform playerTransform;
     public Animator playerAnimator;
 
-    public TileInteractable currentTile;
+    [InlineEditor(Expanded = true)]
+    public Tile currentTile;
 
     private readonly int SPEED_PARAM_HASH = Animator.StringToHash("Speed");
 
 
     public IEnumerator MoveToTile(Tile targetTile)
     {
-        foreach (Tile tile in targetTile.FindPathFrom(this.currentTile.tile, true).Reverse())
+        foreach (Tile tile in targetTile.FindPathFrom(this.currentTile, true).Reverse())
         {
             this.playerAnimator.SetFloat(SPEED_PARAM_HASH, this.animationSpeed);
 
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
                 yield return null;
             }
 
-            this.currentTile = tile.obj.GetComponent<TileInteractable>();
+            this.currentTile = tile;
             this.playerAnimator.SetFloat(SPEED_PARAM_HASH, 0F);
         }
     }

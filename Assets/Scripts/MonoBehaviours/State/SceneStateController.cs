@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 
@@ -9,8 +10,8 @@ public class SceneStateController : MonoBehaviour
     public GlobalStateController globalState;
     public SceneController sceneController;
     public PlayerController playerControl;
-
-    public List<TileInteractable> tileInteractables = new List<TileInteractable>();
+    [InlineEditor]
+    public List<Tile> tiles = new List<Tile>();
 
 
     private void Awake()
@@ -18,27 +19,17 @@ public class SceneStateController : MonoBehaviour
         this.globalState = FindObjectOfType<GlobalStateController>();
         this.sceneController = FindObjectOfType<SceneController>();
 
-        // TODO: temporary solution, mb replace with map?
-        this.SetNeighboursForTiles();
-
         // Move Player to startPoint
         this.MovePlayerToStartPoint();
     }
 
     private void MovePlayerToStartPoint()
     {
-        TileInteractable tile = this.tileInteractables.Find(ti =>
+        Tile tile = this.tiles.Find(t =>
         {
-            return ti.tile.point == this.globalState.positionInScene[this.type];
+            return t.point == this.globalState.positionInScene[this.type];
         });
         this.playerControl.currentTile = tile;
-        this.playerControl.transform.position = tile.transform.position;
-    }
-
-    private void SetNeighboursForTiles()
-    {
-        List<Tile> tiles = tileInteractables.Select(ti => ti.tile).ToList();
-        Dictionary<Point, Tile> dictionary = tiles.ToDictionary(tile => tile.point);
-        tiles.ForEach(tile => tile.FindNeighbours(dictionary));
+        this.playerControl.transform.position = tile.obj.transform.position;
     }
 }

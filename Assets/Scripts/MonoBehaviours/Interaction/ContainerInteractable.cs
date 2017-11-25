@@ -8,7 +8,7 @@ public class ContainerInteractable : Interactable
 {
     public ContainerType type;
     public Renderer itemRenderer;
-    public List<TileInteractable> attachedTiles = new List<TileInteractable>();
+    public List<Tile> attachedTiles = new List<Tile>();
     public PlayerController playerControl;
 
     public SceneStateController sceneState;
@@ -67,11 +67,13 @@ public class ContainerInteractable : Interactable
         {
             this.attachedTiles.Sort((ti1, ti2) =>
             {
-                double est1 = ti1.tile.point.EstimateTo(this.playerControl.currentTile.tile.point);
-                double est2 = ti2.tile.point.EstimateTo(this.playerControl.currentTile.tile.point);
+                double est1 = ti1.point.EstimateTo(this.playerControl.currentTile.point);
+                double est2 = ti2.point.EstimateTo(this.playerControl.currentTile.point);
                 return est1.CompareTo(est2);
             });
-            yield return base.StartCoroutine(this.attachedTiles[0].MoveToThisTile());
+
+            Tile closestTile = this.attachedTiles.First();
+            yield return base.StartCoroutine(closestTile.obj.GetComponent<TileInteractable>().MoveToThisTile());
         }
     }
 

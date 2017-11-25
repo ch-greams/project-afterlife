@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 
@@ -9,7 +10,8 @@ public class DoorInteractable : Interactable
     public SceneType toScene;
     public Renderer doorRenderer;
     public Animator doorAnimator;
-    public TileInteractable attachedTile;
+    [InlineEditor]
+    public Tile attachedTile;
     public Point exitPoint;
     public PlayerController playerControl;
 
@@ -77,7 +79,7 @@ public class DoorInteractable : Interactable
 
     private IEnumerator GoToAttachedTile()
     {
-        yield return base.StartCoroutine(this.attachedTile.MoveToThisTile());
+        yield return base.StartCoroutine(this.attachedTile.obj.GetComponent<TileInteractable>().MoveToThisTile());
     }
 
     private void TryOpenDoor()
