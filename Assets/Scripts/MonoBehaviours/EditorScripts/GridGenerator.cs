@@ -74,7 +74,7 @@ public class GridGenerator : MonoBehaviour
 
     private void DestroyGrid()
     {
-        this.tiles.ForEach(tile => Destroy(tile.obj));
+        this.tiles.ForEach(tile => DestroyImmediate(tile.obj));
         this.tiles = new List<Tile>();
     }
 

@@ -123,6 +123,12 @@ public enum DoorType
     AptN1_LivingRoom_ToBedroom,
     AptN1_LivingRoom_ToBathroom,
     AptN1_LivingRoom_ToHallway,
+    Hallway_AptN0,
+    Hallway_AptN1,
+    Hallway_AptN2,
+    Hallway_AptN3,
+    Hallway_AptN4,
+    Hallway_AptN5,    
 }
 
 public enum DoorReaction

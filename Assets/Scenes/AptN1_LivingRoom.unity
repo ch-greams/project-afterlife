@@ -6257,17 +6257,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
-  toScene: 0
+  toScene: 3
   doorRenderer: {fileID: 247326059}
   doorAnimator: {fileID: 247326060}
   attachedTile: {fileID: 284937995}
   exitPoint:
     x: 0
-    y: 0
+    y: 31
   playerControl: {fileID: 1040200069}
   sceneCtrl: {fileID: 1793904435}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0, b: 0, a: 1}
+  hoverColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!114 &676719495
 MonoBehaviour:
   m_ObjectHideFlags: 0

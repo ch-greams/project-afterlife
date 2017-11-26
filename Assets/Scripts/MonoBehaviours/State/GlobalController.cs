@@ -50,4 +50,5 @@ public enum SceneType
     Undefined,
     AptN1_Bedroom,
     AptN1_LivingRoom,
+    Hallway,
 }
