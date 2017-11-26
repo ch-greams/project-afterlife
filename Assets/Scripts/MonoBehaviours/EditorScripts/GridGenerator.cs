@@ -19,7 +19,7 @@ public class GridGenerator : MonoBehaviour
     public GameObject tilePrefab;
 
     [BoxGroup("State Management")]
-    public SceneStateController stateCtrl;
+    public SceneController stateCtrl;
 
     [BoxGroup("Grid Management")]
     public List<Tile> tiles = new List<Tile>();

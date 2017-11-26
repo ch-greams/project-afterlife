@@ -431,7 +431,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2572,29 +2572,14 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1303165733}
-  - component: {fileID: 1303165732}
   - component: {fileID: 1303165734}
   m_Layer: 0
-  m_Name: SceneController
+  m_Name: GlobalController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1303165732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1303165731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a98aba262ff50d4cb79134e01091a13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  faderCanvasGroup: {fileID: 553015763}
-  fadeDuration: 0.5
-  startingScene: 1
 --- !u!4 &1303165733
 Transform:
   m_ObjectHideFlags: 0
@@ -2628,6 +2613,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
+  startingScene: 1
+  fadeDuration: 0.5
   globalState: {fileID: 11400000, guid: aa13c8b3ee1928c47bb12361015f462b, type: 2}
   playerInventorySlots:
   - {fileID: 2050161338}
@@ -2646,6 +2633,7 @@ MonoBehaviour:
   - {fileID: 1715442811}
   - {fileID: 2085575299}
   - {fileID: 121558461}
+  faderCanvasGroup: {fileID: 553015763}
 --- !u!1 &1313684203
 GameObject:
   m_ObjectHideFlags: 0

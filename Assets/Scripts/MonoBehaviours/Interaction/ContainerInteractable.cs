@@ -11,7 +11,7 @@ public class ContainerInteractable : Interactable
     public List<Tile> attachedTiles = new List<Tile>();
     public PlayerController playerControl;
 
-    public SceneStateController sceneCtrl;
+    public SceneController sceneCtrl;
 
     public Color defaultColor;
 	public Color hoverColor = Color.cyan;

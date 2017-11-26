@@ -15,7 +15,7 @@ public class DoorInteractable : Interactable
     public Point exitPoint;
     public PlayerController playerControl;
 
-    public SceneStateController sceneCtrl;
+    public SceneController sceneCtrl;
 
 
     public Color defaultColor;
@@ -97,7 +97,7 @@ public class DoorInteractable : Interactable
         if (this.toScene != SceneType.Undefined)
         {
             Debug.LogFormat("switching to {0} scene", this.toScene);
-            this.sceneCtrl.sceneController.FadeAndLoadScene(this.toScene.ToString());
+            SceneManager.FadeAndLoadScene(this.toScene.ToString());
         }
         else
         {

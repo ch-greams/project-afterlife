@@ -13767,7 +13767,7 @@ GameObject:
   - component: {fileID: 1793904434}
   - component: {fileID: 1793904435}
   m_Layer: 0
-  m_Name: Interactables
+  m_Name: SceneController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13805,7 +13805,6 @@ MonoBehaviour:
   globalCtrl: {fileID: 0}
   globalState: {fileID: 0}
   sceneState: {fileID: 0}
-  sceneController: {fileID: 0}
   playerControl: {fileID: 1040200069}
   tiles:
   - {fileID: 234377827}

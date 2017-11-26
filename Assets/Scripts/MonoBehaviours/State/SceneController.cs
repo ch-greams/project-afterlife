@@ -4,13 +4,12 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 
-public class SceneStateController : MonoBehaviour
+public class SceneController : MonoBehaviour
 {
     public SceneType type;
-    public GlobalStateController globalCtrl;
+    public GlobalController globalCtrl;
     public GlobalState globalState;
     public SceneState sceneState;
-    public SceneController sceneController;
     public PlayerController playerControl;
     [InlineEditor]
     public List<Tile> tiles = new List<Tile>();
@@ -18,12 +17,10 @@ public class SceneStateController : MonoBehaviour
 
     private void Awake()
     {
-        this.globalCtrl = FindObjectOfType<GlobalStateController>();
+        this.globalCtrl = FindObjectOfType<GlobalController>();
         this.globalState = this.globalCtrl.globalState;
         this.sceneState = this.globalState.sceneStates[this.type];
-        this.sceneController = FindObjectOfType<SceneController>();
 
-        // Move Player to startPoint
         this.MovePlayerToStartPoint();
     }
 
