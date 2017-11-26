@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,12 +40,11 @@ public class GlobalController : SerializedMonoBehaviour
     private T CreatePlayModeInstance<T>(T assetState) where T : ScriptableObject
     {
         T instance = ScriptableObject.Instantiate<T>(assetState);
-        instance.name = String.Format("[PLAY_MODE] {0}", assetState.name);
+        instance.name = string.Format("[PLAY_MODE] {0}", assetState.name);
         return instance;
     }
 }
 
-[Flags]
 public enum SceneType
 {
     Undefined,
