@@ -1479,7 +1479,7 @@ MonoBehaviour:
     x: 0
     y: 0
   playerControl: {fileID: 1040200069}
-  sceneState: {fileID: 1793904435}
+  sceneCtrl: {fileID: 1793904435}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &122164410
@@ -6265,7 +6265,7 @@ MonoBehaviour:
     x: 0
     y: 0
   playerControl: {fileID: 1040200069}
-  sceneState: {fileID: 1793904435}
+  sceneCtrl: {fileID: 1793904435}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &676719495
@@ -9857,7 +9857,7 @@ MonoBehaviour:
     y: 10
   tileSize: 1
   tilePrefab: {fileID: 1565656233528524, guid: c96bc5ffbc1870e48ad0e43323c3c8a2, type: 2}
-  stateController: {fileID: 1793904435}
+  stateCtrl: {fileID: 1793904435}
   tiles:
   - {fileID: 234377827}
   - {fileID: 989584061}
@@ -13802,7 +13802,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  globalCtrl: {fileID: 0}
   globalState: {fileID: 0}
+  sceneState: {fileID: 0}
   sceneController: {fileID: 0}
   playerControl: {fileID: 1040200069}
   tiles:
@@ -15339,7 +15341,7 @@ MonoBehaviour:
     x: 5
     y: 1
   playerControl: {fileID: 1040200069}
-  sceneState: {fileID: 1793904435}
+  sceneCtrl: {fileID: 1793904435}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!114 &2110980223

@@ -11,7 +11,7 @@ public class ContainerInteractable : Interactable
     public List<Tile> attachedTiles = new List<Tile>();
     public PlayerController playerControl;
 
-    public SceneStateController sceneState;
+    public SceneStateController sceneCtrl;
 
     public Color defaultColor;
 	public Color hoverColor = Color.cyan;
@@ -47,7 +47,7 @@ public class ContainerInteractable : Interactable
         switch (this.type)
         {
             case ContainerType.AptN1_Bedroom_Table:
-                if (this.sceneState.globalState.containers[this.type].Any()) {
+                if (this.sceneCtrl.sceneState.containers[this.type].Any()) {
                     return ContainerReaction.OPEN_CONTAINER;
                 }
                 else {
@@ -93,16 +93,17 @@ public class ContainerInteractable : Interactable
     // TODO: Rework this
     private void AddItemsToInventory()
     {
-        GlobalStateController globalState = this.sceneState.globalState;
+        GlobalState globalState = this.sceneCtrl.globalState;
+        SceneState sceneState = this.sceneCtrl.sceneState;
 
-        globalState.playerInventory.AddRange(globalState.containers[this.type]);
+        globalState.playerInventory.AddRange(sceneState.containers[this.type]);
 
         // TODO: Create serializable InventorySlot class to keep invormation about slot state
-        globalState.playerInventorySlots[0].gameObject.SetActive(true);
-        globalState.playerInventorySlots[0].sprite = globalState.containers[this.type][0].icon;
+        this.sceneCtrl.globalCtrl.playerInventorySlots[0].gameObject.SetActive(true);
+        this.sceneCtrl.globalCtrl.playerInventorySlots[0].sprite = sceneState.containers[this.type][0].icon;
 
-        globalState.containers[this.type].ForEach(item => Debug.Log("Added to inventory: " + item.label));
-        globalState.containers[this.type] = new List<Item>();
+        sceneState.containers[this.type].ForEach(item => Debug.Log("Added to inventory: " + item.label));
+        sceneState.containers[this.type] = new List<Item>();
     }
 
     protected override IEnumerator OnHoverStart()

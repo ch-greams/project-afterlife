@@ -7,7 +7,9 @@ using UnityEngine;
 public class SceneStateController : MonoBehaviour
 {
     public SceneType type;
-    public GlobalStateController globalState;
+    public GlobalStateController globalCtrl;
+    public GlobalState globalState;
+    public SceneState sceneState;
     public SceneController sceneController;
     public PlayerController playerControl;
     [InlineEditor]
@@ -16,7 +18,9 @@ public class SceneStateController : MonoBehaviour
 
     private void Awake()
     {
-        this.globalState = FindObjectOfType<GlobalStateController>();
+        this.globalCtrl = FindObjectOfType<GlobalStateController>();
+        this.globalState = this.globalCtrl.globalState;
+        this.sceneState = this.globalState.sceneStates[this.type];
         this.sceneController = FindObjectOfType<SceneController>();
 
         // Move Player to startPoint
@@ -25,10 +29,7 @@ public class SceneStateController : MonoBehaviour
 
     private void MovePlayerToStartPoint()
     {
-        Tile tile = this.tiles.Find(t =>
-        {
-            return t.point == this.globalState.positionInScene[this.type];
-        });
+        Tile tile = this.tiles.Find(t => t.point == this.sceneState.position);
         this.playerControl.currentTile = tile;
         this.playerControl.transform.position = tile.obj.transform.position;
     }

@@ -19,7 +19,7 @@ public class GridGenerator : MonoBehaviour
     public GameObject tilePrefab;
 
     [BoxGroup("State Management")]
-    public SceneStateController stateController;
+    public SceneStateController stateCtrl;
 
     [BoxGroup("Grid Management")]
     public List<Tile> tiles = new List<Tile>();
@@ -31,29 +31,27 @@ public class GridGenerator : MonoBehaviour
     public void CreateGrid()
     {
         this.transform.position = new Vector3();
-        DestroyGrid();
+        this.DestroyGrid();
 
-        Debug.Log(string.Format("Generating Grid with size {0}", gridSize));
+        Debug.Log(string.Format("Generating Grid with size {0}", this.gridSize));
 
-        for (int x = 0; x < gridSize.x; x++)
+        for (int x = 0; x < this.gridSize.x; x++)
         {
-            for (int y = 0; y < gridSize.y; y++)
+            for (int y = 0; y < this.gridSize.y; y++)
             {
                 Point point = new Point(x, y);
-                GameObject obj = Instantiate(tilePrefab, point.CalcWorldCoord(0, tileSize), Quaternion.identity);
+                GameObject obj = Instantiate(this.tilePrefab, point.CalcWorldCoord(0, tileSize), Quaternion.identity);
                 obj.transform.SetParent(this.transform);
                 obj.name = point.ToString();
 
                 Tile tile = Tile.CreateInstance(point, true, obj);
-
                 obj.GetComponent<TileInteractable>().tile = tile;
 
-                tiles.Add(tile);
+                this.tiles.Add(tile);
             }
         }
 
-        Dictionary<Point, Tile> dictionary = tiles.ToDictionary(tile => tile.point);
-        tiles.ForEach(tile => tile.FindNeighbours(dictionary));
+        GridGenerator.SetNeighbours(this.tiles);
     }
 
 
@@ -62,10 +60,8 @@ public class GridGenerator : MonoBehaviour
     [Button("Clean up Grid", ButtonSizes.Medium)]
     public void CleanUpGrid()
     {
-        tiles.RemoveAll(tile => tile.obj == null);
-
-        Dictionary<Point, Tile> dictionary = tiles.ToDictionary(tile => tile.point);
-        tiles.ForEach(tile => tile.FindNeighbours(dictionary));
+        this.tiles.RemoveAll(tile => tile.obj == null);
+        GridGenerator.SetNeighbours(this.tiles);
     }
 
 
@@ -73,14 +69,19 @@ public class GridGenerator : MonoBehaviour
     [Button("Copy Grid to State", ButtonSizes.Medium)]
     public void CopyGridToState()
     {
-        this.stateController.tiles = this.tiles;
+        this.stateCtrl.tiles = this.tiles;
     }
-
 
     private void DestroyGrid()
     {
-        tiles.ForEach(tile => Destroy(tile.obj));
-        tiles = new List<Tile>();
+        this.tiles.ForEach(tile => Destroy(tile.obj));
+        this.tiles = new List<Tile>();
+    }
+
+    private static void SetNeighbours(List<Tile> tiles)
+    {
+        Dictionary<Point, Tile> dictionary = tiles.ToDictionary(tile => tile.point);
+        tiles.ForEach(tile => tile.FindNeighbours(dictionary));
     }
 
 #endif

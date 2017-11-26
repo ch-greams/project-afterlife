@@ -15,7 +15,7 @@ public class DoorInteractable : Interactable
     public Point exitPoint;
     public PlayerController playerControl;
 
-    public SceneStateController sceneState;
+    public SceneStateController sceneCtrl;
 
 
     public Color defaultColor;
@@ -51,14 +51,14 @@ public class DoorInteractable : Interactable
 
     private DoorReaction GetReaction()
     {
-        GlobalStateController globalState = this.sceneState.globalState;
+        GlobalState globalState = this.sceneCtrl.globalState;
 
         switch (this.type)
         {
             case DoorType.AptN1_Bedroom_ToLivingRoom:
             case DoorType.AptN1_LivingRoom_ToBedroom:
                 if (globalState.playerInventory.Exists(item => item.id == ItemId.AptN1_Bedroom_DoorKey)) {
-                    globalState.positionInScene[this.toScene] = this.exitPoint;
+                    globalState.sceneStates[this.toScene].position = this.exitPoint;
                     return DoorReaction.OPEN_DOOR;
                 }
                 else {
@@ -67,7 +67,7 @@ public class DoorInteractable : Interactable
                 }
             case DoorType.AptN1_LivingRoom_ToBathroom:
             case DoorType.AptN1_LivingRoom_ToHallway:
-                return globalState.doors[this.type]
+                return this.sceneCtrl.sceneState.doors[this.type]
                     ? DoorReaction.OPEN_DOOR
                     : DoorReaction.TRY_OPEN_DOOR;
             default:
@@ -97,7 +97,7 @@ public class DoorInteractable : Interactable
         if (this.toScene != SceneType.Undefined)
         {
             Debug.LogFormat("switching to {0} scene", this.toScene);
-            this.sceneState.sceneController.FadeAndLoadScene(this.toScene.ToString());
+            this.sceneCtrl.sceneController.FadeAndLoadScene(this.toScene.ToString());
         }
         else
         {

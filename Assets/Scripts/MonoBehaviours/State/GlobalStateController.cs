@@ -6,17 +6,15 @@ using Sirenix.OdinInspector;
 
 public class GlobalStateController : SerializedMonoBehaviour
 {
-    public List<Item> playerInventory = new List<Item>();
+    [InlineEditor(Expanded = true)]
+    public GlobalState globalState;
 
     public List<Image> playerInventorySlots = new List<Image>();
 
-
-    public Dictionary<DoorType, bool> doors = new Dictionary<DoorType, bool>();
-
-    public Dictionary<SceneType, Point> positionInScene = new Dictionary<SceneType, Point>();
-
-    public Dictionary<ContainerType, List<Item>> containers = new Dictionary<ContainerType, List<Item>>();
-
+    public void Awake()
+    {
+        this.globalState = SerializedScriptableObject.Instantiate(this.globalState);
+    }
 }
 
 [Flags]
