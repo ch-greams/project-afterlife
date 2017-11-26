@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -14,9 +13,4 @@ public class GlobalState : SerializedScriptableObject
 
     [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.Foldout)]
     public Dictionary<SceneType, SceneState> sceneStates = new Dictionary<SceneType, SceneState>();
-
-    public void Awake()
-    {
-        this.sceneStates = this.sceneStates.ToDictionary(kvp => kvp.Key, kvp => ScriptableObject.Instantiate(kvp.Value));
-    }
 }

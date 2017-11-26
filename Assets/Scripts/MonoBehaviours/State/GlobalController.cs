@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,12 +28,21 @@ public class GlobalController : SerializedMonoBehaviour
 
     private void Awake()
     {
-        this.globalState = SerializedScriptableObject.Instantiate(this.globalState);
+        this.globalState = CreatePlayModeInstance(this.globalState);
+        this.globalState.sceneStates = this.globalState.sceneStates
+            .ToDictionary(kvp => kvp.Key, kvp => CreatePlayModeInstance(kvp.Value));
     }
 
     private IEnumerator Start()
     {
         yield return SceneManager.Init(this, this.faderCanvasGroup, this.startingScene.ToString());
+    }
+
+    private T CreatePlayModeInstance<T>(T assetState) where T : ScriptableObject
+    {
+        T instance = ScriptableObject.Instantiate<T>(assetState);
+        instance.name = String.Format("[PLAY_MODE] {0}", assetState.name);
+        return instance;
     }
 }
 
