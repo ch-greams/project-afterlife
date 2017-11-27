@@ -56,19 +56,34 @@ public class DoorInteractable : Interactable
         {
             case DoorType.AptN1_Bedroom_ToLivingRoom:
             case DoorType.AptN1_LivingRoom_ToBedroom:
-                if (globalState.playerInventory.Exists(item => item.id == ItemId.AptN1_Bedroom_DoorKey)) {
+                if (globalState.playerInventory.Exists(item => item.id == ItemId.AptN1_Bedroom_DoorKey))
+                {
                     globalState.sceneStates[this.toScene].position = this.exitPoint;
                     return DoorReaction.OPEN_DOOR;
                 }
-                else {
+                else
+                {
                     Debug.Log("Can't open door. You need to find 'Door Key'");
                     return DoorReaction.TRY_OPEN_DOOR;
                 }
             case DoorType.AptN1_LivingRoom_ToBathroom:
             case DoorType.AptN1_LivingRoom_ToHallway:
-                return this.sceneCtrl.sceneState.doors[this.type]
-                    ? DoorReaction.OPEN_DOOR
-                    : DoorReaction.TRY_OPEN_DOOR;
+            case DoorType.Hallway_AptN0:
+            case DoorType.Hallway_AptN1:
+            case DoorType.Hallway_AptN2:
+            case DoorType.Hallway_AptN3:
+            case DoorType.Hallway_AptN4:
+            case DoorType.Hallway_AptN5:
+            case DoorType.Hallway_Hallway:
+                if (this.sceneCtrl.sceneState.doors[this.type])
+                {
+                    globalState.sceneStates[this.toScene].position = this.exitPoint;
+                    return DoorReaction.OPEN_DOOR;
+                }
+                else
+                {
+                    return DoorReaction.TRY_OPEN_DOOR;
+                }
             default:
                 Debug.Log("Unexpected DoorType");
                 return DoorReaction.GO_TO_DOOR;
@@ -89,8 +104,12 @@ public class DoorInteractable : Interactable
     private IEnumerator OpenDoor()
     {
         this.playerControl.Interact(HIGH_TAKE_HASH, this.transform.position);
-        this.doorAnimator.SetTrigger(OPEN_DOOR_HASH);
-        yield return DOOR_OPEN_TIMEOUT;
+
+        if (this.doorAnimator != null)
+        {
+            this.doorAnimator.SetTrigger(OPEN_DOOR_HASH);
+            yield return DOOR_OPEN_TIMEOUT;
+        }
 
         // Switch scene
         if (this.toScene != SceneType.Undefined)
@@ -107,13 +126,29 @@ public class DoorInteractable : Interactable
     protected override IEnumerator OnHoverStart()
     {
         yield return null;
-        this.doorRenderer.material.color = this.hoverColor;
+
+        if (this.type == DoorType.Hallway_Hallway)
+        {
+            this.doorRenderer.material.SetColor("_TintColor", this.hoverColor);
+        }
+        else
+        {
+            this.doorRenderer.material.color = this.hoverColor;
+        }
     }
 
     protected override IEnumerator OnHoverEnd()
     {
         yield return new WaitForSeconds(0.1F);
-        this.doorRenderer.material.color = this.defaultColor;
+
+        if (this.type == DoorType.Hallway_Hallway)
+        {
+            this.doorRenderer.material.SetColor("_TintColor", this.defaultColor);
+        }
+        else
+        {
+            this.doorRenderer.material.color = this.defaultColor;
+        }
     }
 }
 
@@ -128,7 +163,8 @@ public enum DoorType
     Hallway_AptN2,
     Hallway_AptN3,
     Hallway_AptN4,
-    Hallway_AptN5,    
+    Hallway_AptN5,
+    Hallway_Hallway,
 }
 
 public enum DoorReaction
