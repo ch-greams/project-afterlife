@@ -8,36 +8,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ace09a2af4bc8514e81433e0d4a5c7f7, type: 3}
-  m_Name: GlobalState
+  m_Script: {fileID: 11500000, guid: acb333a08819da04a8415e13b6cc48f2, type: 3}
+  m_Name: AptN3_LivingRoom
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 6cc05282b483c8345b72759b0059f472, type: 2}
-    - {fileID: 11400000, guid: 1ee39dabfa0800d4998417853ec2042e, type: 2}
-    - {fileID: 11400000, guid: bff82c469a30d0946a96032932e16633, type: 2}
-    - {fileID: 11400000, guid: 412085bd9372831489ca4db3934ab18d, type: 2}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: sceneStates
+    - Name: doors
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[SceneType, Assembly-CSharp],[SceneState,
-        Assembly-CSharp]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[DoorType, Assembly-CSharp],[System.Boolean,
+        mscorlib]], mscorlib
     - Name: 
       Entry: 7
-      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[SceneType,
+      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[DoorType,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -45,8 +41,8 @@ MonoBehaviour:
       Entry: 3
       Data: 1
     - Name: 
-      Entry: 10
-      Data: 0
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -57,8 +53,8 @@ MonoBehaviour:
       Entry: 3
       Data: 2
     - Name: 
-      Entry: 10
-      Data: 1
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -69,20 +65,8 @@ MonoBehaviour:
       Entry: 3
       Data: 3
     - Name: 
-      Entry: 10
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 10
-      Data: 3
+      Entry: 5
+      Data: true
     - Name: 
       Entry: 8
       Data: 
@@ -92,5 +76,26 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  currentScene: 1
-  playerInventory: []
+    - Name: containers
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[ContainerType, Assembly-CSharp],[System.Collections.Generic.List`1[[Item,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: 
+      Entry: 7
+      Data: 3|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[ContainerType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  position:
+    x: 0
+    y: 3

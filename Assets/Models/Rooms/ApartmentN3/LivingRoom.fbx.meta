@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: d384178c72a9d524faa85d0135cc9461
+timeCreated: 1511825440
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Floor
+    100002: //RootNode
+    100004: Roof
+    100006: WallBack
+    100008: WallFront1
+    100010: WallFront2
+    100012: WallLeft1
+    100014: WallLeft2
+    100016: WallRight
+    400000: Floor
+    400002: //RootNode
+    400004: Roof
+    400006: WallBack
+    400008: WallFront1
+    400010: WallFront2
+    400012: WallLeft1
+    400014: WallLeft2
+    400016: WallRight
+    2300000: Floor
+    2300002: Roof
+    2300004: WallBack
+    2300006: WallFront1
+    2300008: WallFront2
+    2300010: WallLeft1
+    2300012: WallLeft2
+    2300014: WallRight
+    3300000: Floor
+    3300002: Roof
+    3300004: WallBack
+    3300006: WallFront1
+    3300008: WallFront2
+    3300010: WallLeft1
+    3300012: WallLeft2
+    3300014: WallRight
+    4300000: Floor
+    4300002: WallRight
+    4300004: WallBack
+    4300006: WallLeft1
+    4300008: WallLeft2
+    4300010: WallFront1
+    4300012: WallFront2
+    4300014: Roof
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong1
+    second: {fileID: 2100000, guid: 5faa7475a0dea2f4f9898fc1181fe25d, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
