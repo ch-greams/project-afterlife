@@ -2017,6 +2017,71 @@ Transform:
   m_Father: {fileID: 1165248026}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &210702771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 210702772}
+  - component: {fileID: 210702774}
+  - component: {fileID: 210702773}
+  m_Layer: 0
+  m_Name: DoorToBedroom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &210702772
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 210702771}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.5, y: 1.1, z: 1.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1793904434}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &210702773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 210702771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d351614b8cccb16439f211867b01dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 15
+  toScene: 8
+  doorRenderer: {fileID: 655305329}
+  doorAnimator: {fileID: 655305330}
+  attachedTile: {fileID: 999446898}
+  exitPoint:
+    x: 2
+    y: 0
+  playerControl: {fileID: 1040200069}
+  sceneCtrl: {fileID: 1793904435}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 0, g: 1, b: 1, a: 1}
+--- !u!65 &210702774
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 210702771}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 2.2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &218554775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5275,6 +5340,16 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: add50d60aae9d97498ee0c2dcf8e39ff, type: 3}
   m_PrefabInternal: {fileID: 655305327}
+--- !u!23 &655305329 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 2300000, guid: add50d60aae9d97498ee0c2dcf8e39ff,
+    type: 3}
+  m_PrefabInternal: {fileID: 655305327}
+--- !u!95 &655305330 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: add50d60aae9d97498ee0c2dcf8e39ff,
+    type: 3}
+  m_PrefabInternal: {fileID: 655305327}
 --- !u!1 &659917290
 GameObject:
   m_ObjectHideFlags: 0
@@ -5328,7 +5403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d351614b8cccb16439f211867b01dbed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 17
   toScene: 3
   doorRenderer: {fileID: 247326059}
   doorAnimator: {fileID: 247326060}
@@ -11466,6 +11541,71 @@ MonoBehaviour:
     x: 3
     y: 8
   obj: {fileID: 354202124}
+--- !u!1 &1499505526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1499505527}
+  - component: {fileID: 1499505529}
+  - component: {fileID: 1499505528}
+  m_Layer: 0
+  m_Name: DoorToBathroom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1499505527
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499505526}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -3.5, y: 1.1, z: -4.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1793904434}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1499505528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499505526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d351614b8cccb16439f211867b01dbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 16
+  toScene: 7
+  doorRenderer: {fileID: 1597070069}
+  doorAnimator: {fileID: 1597070070}
+  attachedTile: {fileID: 296983589}
+  exitPoint:
+    x: 2
+    y: 1
+  playerControl: {fileID: 1040200069}
+  sceneCtrl: {fileID: 1793904435}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 0, g: 1, b: 1, a: 1}
+--- !u!65 &1499505529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499505526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 2.2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1515218875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11895,6 +12035,16 @@ Prefab:
 --- !u!4 &1597070068 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: add50d60aae9d97498ee0c2dcf8e39ff, type: 3}
+  m_PrefabInternal: {fileID: 1597070067}
+--- !u!23 &1597070069 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 2300000, guid: add50d60aae9d97498ee0c2dcf8e39ff,
+    type: 3}
+  m_PrefabInternal: {fileID: 1597070067}
+--- !u!95 &1597070070 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: add50d60aae9d97498ee0c2dcf8e39ff,
+    type: 3}
   m_PrefabInternal: {fileID: 1597070067}
 --- !u!1 &1612452689
 GameObject:
@@ -13129,6 +13279,8 @@ Transform:
   m_Children:
   - {fileID: 1165248026}
   - {fileID: 659917291}
+  - {fileID: 1499505527}
+  - {fileID: 210702772}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

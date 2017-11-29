@@ -75,6 +75,18 @@ public class DoorInteractable : Interactable
             case DoorType.Hallway_AptN4:
             case DoorType.Hallway_AptN5:
             case DoorType.Hallway_Hallway:
+            case DoorType.AptN0_LivingRoom_ToHallway:
+            case DoorType.AptN1_Bathroom_ToLivingRoom:
+            case DoorType.AptN3_Bathroom_ToLivingRoom:
+            case DoorType.AptN3_Bedroom_ToLivingRoom:
+            case DoorType.AptN3_LivingRoom_ToBedroom:
+            case DoorType.AptN3_LivingRoom_ToBathroom:
+            case DoorType.AptN3_LivingRoom_ToHallway:
+            case DoorType.AptN5_Bathroom_ToLivingRoom:
+            case DoorType.AptN5_Bedroom_ToLivingRoom:
+            case DoorType.AptN5_LivingRoom_ToBedroom:
+            case DoorType.AptN5_LivingRoom_ToBathroom:
+            case DoorType.AptN5_LivingRoom_ToHallway:
                 if (this.sceneCtrl.sceneState.doors[this.type])
                 {
                     globalState.sceneStates[this.toScene].position = this.exitPoint;
@@ -165,6 +177,18 @@ public enum DoorType
     Hallway_AptN4,
     Hallway_AptN5,
     Hallway_Hallway,
+    AptN0_LivingRoom_ToHallway,
+    AptN1_Bathroom_ToLivingRoom,
+    AptN3_Bathroom_ToLivingRoom,
+    AptN3_Bedroom_ToLivingRoom,
+    AptN3_LivingRoom_ToBedroom,
+    AptN3_LivingRoom_ToBathroom,
+    AptN3_LivingRoom_ToHallway,
+    AptN5_Bathroom_ToLivingRoom,
+    AptN5_Bedroom_ToLivingRoom,
+    AptN5_LivingRoom_ToBedroom,
+    AptN5_LivingRoom_ToBathroom,
+    AptN5_LivingRoom_ToHallway,
 }
 
 public enum DoorReaction

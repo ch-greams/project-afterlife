@@ -9294,17 +9294,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 4
-  toScene: 0
+  toScene: 5
   doorRenderer: {fileID: 632709457}
   doorAnimator: {fileID: 632709458}
   attachedTile: {fileID: 1085889015}
   exitPoint:
-    x: 0
-    y: 0
+    x: 10
+    y: 3
   playerControl: {fileID: 1040200069}
   sceneCtrl: {fileID: 1793904435}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0, b: 0, a: 1}
+  hoverColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1 &502430562
 GameObject:
   m_ObjectHideFlags: 0
@@ -33933,17 +33933,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 9
-  toScene: 0
+  toScene: 11
   doorRenderer: {fileID: 1122136857}
   doorAnimator: {fileID: 1122136858}
   attachedTile: {fileID: 1697452180}
   exitPoint:
     x: 0
-    y: 0
+    y: 3
   playerControl: {fileID: 1040200069}
   sceneCtrl: {fileID: 1793904435}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0, b: 0, a: 1}
+  hoverColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!114 &1952420295
 MonoBehaviour:
   m_ObjectHideFlags: 0

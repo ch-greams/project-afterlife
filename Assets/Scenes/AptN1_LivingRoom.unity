@@ -1471,17 +1471,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  toScene: 0
+  toScene: 6
   doorRenderer: {fileID: 1157035749}
   doorAnimator: {fileID: 1157035750}
   attachedTile: {fileID: 327316963}
   exitPoint:
-    x: 0
+    x: 2
     y: 0
   playerControl: {fileID: 1040200069}
   sceneCtrl: {fileID: 1793904435}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0, b: 0, a: 1}
+  hoverColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1 &122164410
 GameObject:
   m_ObjectHideFlags: 0

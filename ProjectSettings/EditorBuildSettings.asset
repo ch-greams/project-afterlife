@@ -20,3 +20,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AptN3_LivingRoom.unity
     guid: e5eaa2ca328a29247bd80f5fa79e0a0a
+  - enabled: 1
+    path: Assets/Scenes/AptN0_LivingRoom.unity
+    guid: 6a717ea1338d6564c8a113d82f698866
+  - enabled: 1
+    path: Assets/Scenes/AptN1_Bathroom.unity
+    guid: 4afbf08517b973744a8f9dcdef2d851a
+  - enabled: 1
+    path: Assets/Scenes/AptN3_Bathroom.unity
+    guid: e91c42deb1329334ea301eb410aa1f1f
+  - enabled: 1
+    path: Assets/Scenes/AptN3_Bedroom.unity
+    guid: 6d5d45f5426650e4280595171a44ca46
+  - enabled: 1
+    path: Assets/Scenes/AptN5_Bathroom.unity
+    guid: 374738b92786bdb4cb64dc896fd544a9
+  - enabled: 1
+    path: Assets/Scenes/AptN5_Bedroom.unity
+    guid: 1347a959206ba644ba09cd18d23c3a49
+  - enabled: 1
+    path: Assets/Scenes/AptN5_LivingRoom.unity
+    guid: 09ef0c6dcfaed29469495f3031704ae3

@@ -52,4 +52,11 @@ public enum SceneType
     AptN1_LivingRoom,
     Hallway,
     AptN3_LivingRoom,
+    AptN0_LivingRoom,
+    AptN1_Bathroom,
+    AptN3_Bathroom,
+    AptN3_Bedroom,
+    AptN5_Bathroom,
+    AptN5_Bedroom,
+    AptN5_LivingRoom,
 }

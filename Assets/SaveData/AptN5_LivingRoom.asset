@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acb333a08819da04a8415e13b6cc48f2, type: 3}
-  m_Name: Hallway
+  m_Name: AptN5_LivingRoom
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -33,13 +33,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 7
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
     - Name: 
       Entry: 3
-      Data: 4
+      Data: 20
     - Name: 
       Entry: 5
       Data: true
@@ -51,7 +51,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 3
-      Data: 5
+      Data: 21
     - Name: 
       Entry: 5
       Data: true
@@ -63,55 +63,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 3
-      Data: 6
-    - Name: 
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 7
-    - Name: 
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 8
-    - Name: 
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 9
-    - Name: 
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 10
+      Data: 22
     - Name: 
       Entry: 5
       Data: true
@@ -146,4 +98,4 @@ MonoBehaviour:
       Data: 
   position:
     x: 0
-    y: 31
+    y: 3
