@@ -22,9 +22,6 @@ public class GlobalController : SerializedMonoBehaviour
     public Inventory inventory;
 
     [BoxGroup("User Interface")]
-    public List<Image> playerInventorySlots = new List<Image>();
-
-    [BoxGroup("User Interface")]
     public CanvasGroup faderCanvasGroup;
 
     private void Awake()

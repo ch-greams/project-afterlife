@@ -11,10 +11,10 @@ public class ContainerInteractable : Interactable
     public List<Tile> attachedTiles = new List<Tile>();
     public PlayerController playerControl;
 
-    public SceneController sceneCtrl;
+    public Container container;
 
     public Color defaultColor;
-	public Color hoverColor = Color.cyan;
+    public Color hoverColor = Color.cyan;
 
     private readonly int ATTEMPT_TAKE_HASH = Animator.StringToHash("AttemptTake");
     private readonly int MED_TAKE_HASH = Animator.StringToHash("MedTake");
@@ -28,7 +28,8 @@ public class ContainerInteractable : Interactable
             case ContainerReaction.GO_TO_CONTAINER:
                 yield return GoToClosestAttachedTile();
                 break;
-            case ContainerReaction.TRY_OPEN_CONTAINER:
+            case ContainerReaction.TRY_OPEN_EMPTY_CONTAINER:
+                Debug.Log(string.Format("{0} is empty", this.type));
                 yield return GoToClosestAttachedTile();
                 TryOpenContainer();
                 break;
@@ -47,16 +48,12 @@ public class ContainerInteractable : Interactable
         switch (this.type)
         {
             case ContainerType.AptN1_Bedroom_Table:
-                if (this.sceneCtrl.sceneState.containers[this.type].Any()) {
-                    return ContainerReaction.OPEN_CONTAINER;
-                }
-                else {
-                    Debug.Log("AptN1_Bedroom_Table is empty");
-                    return ContainerReaction.TRY_OPEN_CONTAINER;
-                }
             case ContainerType.AptN1_Bedroom_Bed:
+                return this.container.IsNotEmpty()
+                    ? ContainerReaction.OPEN_CONTAINER
+                    : ContainerReaction.TRY_OPEN_EMPTY_CONTAINER;
             default:
-                Debug.Log("Unexpected ContainerType");
+                Debug.Log(string.Format("Unexpected ContainerType: {0}", this.type));
                 return ContainerReaction.GO_TO_CONTAINER;
         }
     }
@@ -87,18 +84,7 @@ public class ContainerInteractable : Interactable
         this.playerControl.Interact(MED_TAKE_HASH, this.transform.position);
         yield return CONTAINER_OPEN_TIMEOUT;
 
-        this.AddItemsToInventory();
-    }
-
-    // TODO: Rework this
-    private void AddItemsToInventory()
-    {
-        SceneState sceneState = this.sceneCtrl.sceneState;
-
-        this.sceneCtrl.globalCtrl.inventory.AddItems(sceneState.containers[this.type]);
-
-        sceneState.containers[this.type].ForEach(item => Debug.Log("Added to inventory: " + item.label));
-        sceneState.containers[this.type] = new List<Item>();
+        this.container.AddItemsToInventory();
     }
 
     protected override IEnumerator OnHoverStart()
@@ -115,15 +101,9 @@ public class ContainerInteractable : Interactable
 }
 
 
-public enum ContainerType
-{
-    AptN1_Bedroom_Table,
-    AptN1_Bedroom_Bed,
-}
-
 public enum ContainerReaction
 {
     GO_TO_CONTAINER,
-    TRY_OPEN_CONTAINER,
+    TRY_OPEN_EMPTY_CONTAINER,
     OPEN_CONTAINER,
 }

@@ -123,5 +123,7 @@ public class InventorySlot
         // Update UI
         this.slotImage.sprite = this.item.icon;
         this.slotImage.gameObject.SetActive(true);
+
+        Debug.Log("Added to inventory: " + item.label);
     }
 }
