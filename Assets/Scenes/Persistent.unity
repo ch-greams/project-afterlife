@@ -320,7 +320,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 168356878}
   m_OnClick:
     m_PersistentCalls:
@@ -595,7 +595,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 391972903}
   m_OnClick:
     m_PersistentCalls:
@@ -969,7 +969,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 585620515}
   m_OnClick:
     m_PersistentCalls:
@@ -1160,7 +1160,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 620311271}
   m_OnClick:
     m_PersistentCalls:
@@ -1271,7 +1271,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 638037402}
   m_OnClick:
     m_PersistentCalls:
@@ -1808,7 +1808,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 934533114}
   m_OnClick:
     m_PersistentCalls:
@@ -1919,7 +1919,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 984385442}
   m_OnClick:
     m_PersistentCalls:
@@ -2209,7 +2209,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1162699838}
   m_OnClick:
     m_PersistentCalls:
@@ -2524,7 +2524,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1284915697}
   m_OnClick:
     m_PersistentCalls:
@@ -2607,16 +2607,364 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 800252084}
+    - {fileID: 639525959}
+    - {fileID: 2050161338}
+    - {fileID: 984442801}
+    - {fileID: 34835195}
+    - {fileID: 1886352425}
+    - {fileID: 1168764887}
+    - {fileID: 1496526238}
+    - {fileID: 1145304854}
+    - {fileID: 437059710}
+    - {fileID: 1543532417}
+    - {fileID: 585620514}
+    - {fileID: 342775191}
+    - {fileID: 984385441}
+    - {fileID: 1466316162}
+    - {fileID: 1284915696}
+    - {fileID: 676203974}
+    - {fileID: 1162699837}
+    - {fileID: 1707008228}
+    - {fileID: 638037401}
+    - {fileID: 1776087906}
+    - {fileID: 620311270}
+    - {fileID: 1170245851}
+    - {fileID: 1827009531}
+    - {fileID: 758448422}
+    - {fileID: 168356877}
+    - {fileID: 1213262579}
+    - {fileID: 934533113}
+    - {fileID: 1715442811}
+    - {fileID: 1313684205}
+    - {fileID: 2085575299}
+    - {fileID: 391972902}
+    - {fileID: 121558461}
+    - {fileID: 1348403391}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: inventory
+      Entry: 7
+      Data: 0|Inventory, Assembly-CSharp
+    - Name: inventory
+      Entry: 10
+      Data: 0
+    - Name: inventoryToggle
+      Entry: 10
+      Data: 1
+    - Name: inventorySlots
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[InventorySlot, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 16
+    - Name: 
+      Entry: 7
+      Data: 2|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 2
+    - Name: slotButton
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 4
+    - Name: slotButton
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 6
+    - Name: slotButton
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 8
+    - Name: slotButton
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 10
+    - Name: slotButton
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 12
+    - Name: slotButton
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 14
+    - Name: slotButton
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 16
+    - Name: slotButton
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 18
+    - Name: slotButton
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 20
+    - Name: slotButton
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 22
+    - Name: slotButton
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 24
+    - Name: slotButton
+      Entry: 10
+      Data: 25
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 26
+    - Name: slotButton
+      Entry: 10
+      Data: 27
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 28
+    - Name: slotButton
+      Entry: 10
+      Data: 29
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 30
+    - Name: slotButton
+      Entry: 10
+      Data: 31
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 17|InventorySlot, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: item
+      Entry: 6
+      Data: 
+    - Name: slotImage
+      Entry: 10
+      Data: 32
+    - Name: slotButton
+      Entry: 10
+      Data: 33
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   startingScene: 1
   fadeDuration: 0.5
   globalState: {fileID: 11400000, guid: aa13c8b3ee1928c47bb12361015f462b, type: 2}
   playerInventorySlots:
+  - {fileID: 0}
   - {fileID: 2050161338}
   - {fileID: 34835195}
   - {fileID: 1168764887}
@@ -2705,7 +3053,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1313684206}
   m_OnClick:
     m_PersistentCalls:
@@ -2816,7 +3164,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1348403392}
   m_OnClick:
     m_PersistentCalls:
@@ -3447,7 +3795,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1827009532}
   m_OnClick:
     m_PersistentCalls:

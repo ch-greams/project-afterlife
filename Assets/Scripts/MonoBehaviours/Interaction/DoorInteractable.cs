@@ -51,12 +51,13 @@ public class DoorInteractable : Interactable
     private DoorReaction GetReaction()
     {
         GlobalState globalState = this.sceneCtrl.globalState;
+        GlobalController globalCtrl = this.sceneCtrl.globalCtrl;
 
         switch (this.type)
         {
             case DoorType.AptN1_Bedroom_ToLivingRoom:
             case DoorType.AptN1_LivingRoom_ToBedroom:
-                if (globalState.playerInventory.Exists(item => item.id == ItemId.AptN1_Bedroom_DoorKey))
+                if (globalCtrl.inventory.HasItem(ItemId.AptN1_Bedroom_DoorKey))
                 {
                     globalState.sceneStates[this.toScene].position = this.exitPoint;
                     return DoorReaction.OPEN_DOOR;

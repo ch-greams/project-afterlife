@@ -93,14 +93,9 @@ public class ContainerInteractable : Interactable
     // TODO: Rework this
     private void AddItemsToInventory()
     {
-        GlobalState globalState = this.sceneCtrl.globalState;
         SceneState sceneState = this.sceneCtrl.sceneState;
 
-        globalState.playerInventory.AddRange(sceneState.containers[this.type]);
-
-        // TODO: Create serializable InventorySlot class to keep invormation about slot state
-        this.sceneCtrl.globalCtrl.playerInventorySlots[0].gameObject.SetActive(true);
-        this.sceneCtrl.globalCtrl.playerInventorySlots[0].sprite = sceneState.containers[this.type][0].icon;
+        this.sceneCtrl.globalCtrl.inventory.AddItems(sceneState.containers[this.type]);
 
         sceneState.containers[this.type].ForEach(item => Debug.Log("Added to inventory: " + item.label));
         sceneState.containers[this.type] = new List<Item>();

@@ -19,6 +19,8 @@ public class GlobalController : SerializedMonoBehaviour
     public GlobalState globalState;
 
 
+    public Inventory inventory;
+
     [BoxGroup("User Interface")]
     public List<Image> playerInventorySlots = new List<Image>();
 
@@ -30,6 +32,8 @@ public class GlobalController : SerializedMonoBehaviour
         this.globalState = CreatePlayModeInstance(this.globalState);
         this.globalState.sceneStates = this.globalState.sceneStates
             .ToDictionary(kvp => kvp.Key, kvp => CreatePlayModeInstance(kvp.Value));
+
+        this.inventory.LoadFromState(this.globalState);
     }
 
     private IEnumerator Start()

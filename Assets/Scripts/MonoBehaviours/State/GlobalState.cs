@@ -8,7 +8,7 @@ public class GlobalState : SerializedScriptableObject
 {
     public SceneType currentScene;
 
-    public List<Item> playerInventory = new List<Item>();
+    public List<Item> inventory = new List<Item>();
 
     [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.Foldout)]
     public Dictionary<SceneType, SceneState> sceneStates = new Dictionary<SceneType, SceneState>();
