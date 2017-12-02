@@ -22,8 +22,14 @@ public class Inventory
     {
         this.globalState = globalState;
 
-        // TODO: Replace with solution that will keep in mind index of the slot
-        this.AddItems(this.globalState.inventory);
+        for (int i = 0; i < this.globalState.inventory.Count; i++)
+        {
+            Item item = this.globalState.inventory[i];
+
+            if (item != null) {
+                this.inventorySlots[i].AddItem(item);
+            }
+        }
     }
 
     public void AddItems(List<Item> items)
@@ -42,7 +48,7 @@ public class Inventory
         }
         else
         {
-            Debug.Log("No free slots in inventory left");
+            Debug.LogError("No free slots in inventory left");
         }
     }
 
