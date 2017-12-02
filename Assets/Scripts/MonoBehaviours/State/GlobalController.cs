@@ -21,6 +21,8 @@ public class GlobalController : SerializedMonoBehaviour
 
     public Inventory inventory;
 
+    public DialogManager dialogManager;
+
     [BoxGroup("User Interface")]
     public CanvasGroup faderCanvasGroup;
 
@@ -28,9 +30,10 @@ public class GlobalController : SerializedMonoBehaviour
     {
         this.globalState = CreatePlayModeInstance(this.globalState);
         this.globalState.sceneStates = this.globalState.sceneStates
-            .ToDictionary(kvp => kvp.Key, kvp => CreatePlayModeInstance(kvp.Value));
+            .ToDictionary(kvp => kvp.Key, kvp => GlobalController.CreatePlayModeInstance(kvp.Value));
 
-        this.inventory.LoadFromState(this.globalState);
+        this.inventory.LoadFromState(this);
+        this.dialogManager.SetUp();
     }
 
     private IEnumerator Start()
@@ -38,7 +41,7 @@ public class GlobalController : SerializedMonoBehaviour
         yield return SceneManager.Init(this, this.faderCanvasGroup, this.startingScene.ToString());
     }
 
-    private T CreatePlayModeInstance<T>(T assetState) where T : ScriptableObject
+    public static T CreatePlayModeInstance<T>(T assetState) where T : ScriptableObject
     {
         T instance = ScriptableObject.Instantiate<T>(assetState);
         instance.name = string.Format("[PLAY_MODE] {0}", assetState.name);

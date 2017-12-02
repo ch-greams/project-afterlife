@@ -14,19 +14,22 @@ public class Inventory
     public List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
     private GlobalState globalState;
+    private GlobalController globalCtrl;
 
 
     public Inventory() { }
 
-    public void LoadFromState(GlobalState globalState)
+    public void LoadFromState(GlobalController globalCtrl)
     {
-        this.globalState = globalState;
+        this.globalState = globalCtrl.globalState;
+        this.globalCtrl = globalCtrl;
 
         for (int i = 0; i < this.globalState.inventory.Count; i++)
         {
             Item item = this.globalState.inventory[i];
 
-            if (item != null) {
+            if (item != null)
+            {
                 this.inventorySlots[i].AddItem(item);
             }
         }
@@ -45,6 +48,7 @@ public class Inventory
         {
             this.globalState.inventory.Add(item);
             firstFreeSlot.AddItem(item);
+            this.globalCtrl.dialogManager.StartDialog(DialogId.AptN1_Bedroom_GetKey);
         }
         else
         {
@@ -123,7 +127,5 @@ public class InventorySlot
         // Update UI
         this.slotImage.sprite = this.item.icon;
         this.slotImage.gameObject.SetActive(true);
-
-        Debug.Log("Added to inventory: " + item.label);
     }
 }

@@ -2,9 +2,9 @@
 
 
 [CreateAssetMenu]
-public class Item : ScriptableObject, ISpeaker
+public class Character : ScriptableObject, ISpeaker
 {
-    public ItemId id;
+    public CharacterId id;
     public string label;
     public Sprite icon;
 
@@ -12,7 +12,8 @@ public class Item : ScriptableObject, ISpeaker
     public Sprite speakerIcon { get { return this.icon; } }
 }
 
-public enum ItemId
+public enum CharacterId
 {
-    AptN1_Bedroom_DoorKey,
+    Hero,
+    Guide,
 }

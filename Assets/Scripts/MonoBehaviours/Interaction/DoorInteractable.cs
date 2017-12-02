@@ -64,7 +64,6 @@ public class DoorInteractable : Interactable
                 }
                 else
                 {
-                    Debug.Log("Can't open door. You need to find 'Door Key'");
                     return DoorReaction.TRY_OPEN_DOOR;
                 }
             case DoorType.AptN1_LivingRoom_ToBathroom:
@@ -112,6 +111,7 @@ public class DoorInteractable : Interactable
     private void TryOpenDoor()
     {
         this.playerControl.Interact(ATTEMPT_TAKE_HASH, this.transform.position);
+        this.sceneCtrl.globalCtrl.dialogManager.StartDialog(DialogId.AptN1_Bedroom_NeedKey);
     }
 
     private IEnumerator OpenDoor()
