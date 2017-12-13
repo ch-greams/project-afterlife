@@ -1,34 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
+using UnityEngine;
+
 
 public class Container
 {
-    [Required]
-    public SceneController sceneCtrl;
-
     public ContainerType type;
+    public GameObject obj;
+    public Renderer renderer;
+    public Animator animator;
+
 
     public Container() { }
 
-    public void AddItemsToInventory()
-    {
-        this.sceneCtrl.globalCtrl.inventory.AddItems(this.GetItems());
-    }
-
-    public List<Item> GetItems()
-    {
-        SceneState sceneState = this.sceneCtrl.sceneState;
-
-        List<Item> items = sceneState.containers[type];
-        sceneState.containers[type] = new List<Item>();
-        return items;
-    }
-
-    public bool IsNotEmpty()
-    {
-        return this.sceneCtrl.sceneState.containers[type].Any();
-    }
 }
 
 

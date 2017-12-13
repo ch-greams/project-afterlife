@@ -6,6 +6,12 @@ using UnityEngine.EventSystems;
 
 public abstract class Interactable : SerializedMonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public SceneController sceneCtrl;
+    
+    private void Awake()
+    {
+        base.StartCoroutine(this.OnInit());
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         if (Input.GetMouseButtonUp(0))
@@ -26,6 +32,10 @@ public abstract class Interactable : SerializedMonoBehaviour, IPointerClickHandl
         base.StartCoroutine(this.OnHoverEnd());
     }
 
+    protected virtual IEnumerator OnInit()
+    {
+        yield return null;
+    }
     protected virtual IEnumerator OnLeftClick()
     {
         yield return null;

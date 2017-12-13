@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnitySceneManager = UnityEngine.SceneManagement.SceneManager;
+using UnityScene = UnityEngine.SceneManagement.Scene;
 
 
 public static class SceneManager
@@ -33,7 +35,7 @@ public static class SceneManager
         if (unloadCurrent)
         {
             yield return SceneManager.globalCtrl.StartCoroutine(SceneManager.Fade(ALPHA_OPAQUE));
-            yield return UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+            yield return UnitySceneManager.UnloadSceneAsync(UnitySceneManager.GetActiveScene().buildIndex);
         }
 
         yield return SceneManager.globalCtrl.StartCoroutine(SceneManager.LoadSceneAndSetActive(sceneName));
@@ -42,9 +44,9 @@ public static class SceneManager
 
     private static IEnumerator LoadSceneAndSetActive(string sceneName)
     {
-        yield return UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-        Scene loadedScene = UnityEngine.SceneManagement.SceneManager.GetSceneAt(UnityEngine.SceneManagement.SceneManager.sceneCount - 1);
-        UnityEngine.SceneManagement.SceneManager.SetActiveScene(loadedScene);
+        yield return UnitySceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        UnityScene loadedScene = UnitySceneManager.GetSceneAt(UnitySceneManager.sceneCount - 1);
+        UnitySceneManager.SetActiveScene(loadedScene);
     }
 
     private static IEnumerator Fade(float finalAlpha)

@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
 using Sirenix.OdinInspector;
-using UnityEngine;
 
 
-public class SceneController : MonoBehaviour
+public class SceneController : SerializedMonoBehaviour
 {
-    public SceneType type;
     public GlobalController globalCtrl;
     public GlobalState globalState;
     public SceneState sceneState;
-    public PlayerController playerControl;
+    public PlayerController playerCtrl;
+    public Scene scene;
     [InlineEditor]
     public List<Tile> tiles = new List<Tile>();
 
@@ -18,7 +17,7 @@ public class SceneController : MonoBehaviour
     {
         this.globalCtrl = FindObjectOfType<GlobalController>();
         this.globalState = this.globalCtrl.globalState;
-        this.sceneState = this.globalState.sceneStates[this.type];
+        this.sceneState = this.globalState.sceneStates[this.scene.type];
 
         this.MovePlayerToStartPoint();
     }
@@ -26,7 +25,7 @@ public class SceneController : MonoBehaviour
     private void MovePlayerToStartPoint()
     {
         Tile tile = this.tiles.Find(t => t.point == this.sceneState.position);
-        this.playerControl.currentTile = tile;
-        this.playerControl.transform.position = tile.obj.transform.position;
+        this.playerCtrl.currentTile = tile;
+        this.playerCtrl.transform.position = tile.obj.transform.position;
     }
 }

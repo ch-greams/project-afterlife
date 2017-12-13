@@ -376,6 +376,10 @@ Animator:
   m_PrefabParentObject: {fileID: 9500000, guid: add50d60aae9d97498ee0c2dcf8e39ff,
     type: 3}
   m_PrefabInternal: {fileID: 247326057}
+--- !u!1 &247326061 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: add50d60aae9d97498ee0c2dcf8e39ff, type: 3}
+  m_PrefabInternal: {fileID: 247326057}
 --- !u!1001 &248706400
 Prefab:
   m_ObjectHideFlags: 0
@@ -661,6 +665,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  sceneCtrl: {fileID: 0}
   tile: {fileID: 747408704}
   playerControl: {fileID: 1040200069}
 --- !u!114 &516871826
@@ -771,6 +785,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  sceneCtrl: {fileID: 0}
   tile: {fileID: 431471030}
   playerControl: {fileID: 1040200069}
 --- !u!114 &634801866
@@ -916,18 +940,431 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d351614b8cccb16439f211867b01dbed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1793904435}
+    - {fileID: 247326061}
+    - {fileID: 247326059}
+    - {fileID: 247326060}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: door
+      Entry: 7
+      Data: 0|Door, Assembly-CSharp
+    - Name: sceneCtrl
+      Entry: 10
+      Data: 0
+    - Name: type
+      Entry: 3
+      Data: 13
+    - Name: obj
+      Entry: 10
+      Data: 1
+    - Name: renderer
+      Entry: 10
+      Data: 2
+    - Name: animator
+      Entry: 10
+      Data: 3
+    - Name: toScene
+      Entry: 3
+      Data: 0
+    - Name: exitPoint
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
+      Data: 0
+    - Name: y
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: leftClickActions
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 2|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Open Door
+    - Name: conditions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 4|DoorCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 6|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|LookAtReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|AnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: customAnimator
+      Entry: 6
+      Data: 
+    - Name: animationName
+      Entry: 1
+      Data: HighTake
+    - Name: timeoutAfterInSeconds
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|AnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: customAnimator
+      Entry: 6
+      Data: 
+    - Name: animationName
+      Entry: 1
+      Data: OpenDoor
+    - Name: timeoutAfterInSeconds
+      Entry: 4
+      Data: 1.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|SceneReaction, Assembly-CSharp
+    - Name: scene
+      Entry: 3
+      Data: 4
+    - Name: startPoint
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
+      Data: 2
+    - Name: y
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 12|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Open
+    - Name: conditions
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 14|DoorCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 16|ColorReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: customRenderers
+      Entry: 6
+      Data: 
+    - Name: propertyName
+      Entry: 1
+      Data: _Color
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 17|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Closed
+    - Name: conditions
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 19|DoorCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 21|ColorReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: customRenderers
+      Entry: 6
+      Data: 
+    - Name: propertyName
+      Entry: 1
+      Data: _Color
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 23|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Reset Color
+    - Name: conditions
+      Entry: 7
+      Data: 24|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 26|ColorReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: customRenderers
+      Entry: 6
+      Data: 
+    - Name: propertyName
+      Entry: 1
+      Data: _Color
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1793904435}
   type: 13
   toScene: 4
-  doorRenderer: {fileID: 247326059}
-  doorAnimator: {fileID: 247326060}
-  attachedTile: {fileID: 1288410031}
   exitPoint:
     x: 2
     y: 0
-  playerControl: {fileID: 1040200069}
-  sceneCtrl: {fileID: 1793904435}
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 0, g: 1, b: 1, a: 1}
+  doorAnimator: {fileID: 247326060}
+  attachedTile: {fileID: 1288410031}
+  attachedTiles:
+  - {fileID: 1288410031}
 --- !u!114 &747408704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1094,6 +1531,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  sceneCtrl: {fileID: 0}
   tile: {fileID: 300094066}
   playerControl: {fileID: 1040200069}
 --- !u!114 &1171737295
@@ -1274,6 +1721,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  sceneCtrl: {fileID: 0}
   tile: {fileID: 1288410031}
   playerControl: {fileID: 1040200069}
 --- !u!114 &1189708842
@@ -1454,6 +1911,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  sceneCtrl: {fileID: 0}
   tile: {fileID: 27635458}
   playerControl: {fileID: 1040200069}
 --- !u!114 &1335179176
@@ -1577,6 +2044,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  sceneCtrl: {fileID: 0}
   tile: {fileID: 1754656002}
   playerControl: {fileID: 1040200069}
 --- !u!114 &1373511901
@@ -1700,6 +2177,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  sceneCtrl: {fileID: 0}
   tile: {fileID: 2138676538}
   playerControl: {fileID: 1040200069}
 --- !u!114 &1423873052
@@ -1888,6 +2375,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  sceneCtrl: {fileID: 0}
   tile: {fileID: 2145929025}
   playerControl: {fileID: 1040200069}
 --- !u!114 &1714929346
@@ -2066,11 +2563,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f10688df80d62846a4877120a112263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 7
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1793904435}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: scene
+      Entry: 7
+      Data: 0|Scene, Assembly-CSharp
+    - Name: sceneCtrl
+      Entry: 10
+      Data: 0
+    - Name: type
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
   globalCtrl: {fileID: 0}
   globalState: {fileID: 0}
   sceneState: {fileID: 0}
-  playerControl: {fileID: 1040200069}
+  playerCtrl: {fileID: 1040200069}
   tiles:
   - {fileID: 747408704}
   - {fileID: 300094066}
@@ -2126,6 +2644,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  sceneCtrl: {fileID: 0}
   tile: {fileID: 8862003}
   playerControl: {fileID: 1040200069}
 --- !u!114 &1816962027
@@ -2249,6 +2777,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  sceneCtrl: {fileID: 0}
   tile: {fileID: 1184872238}
   playerControl: {fileID: 1040200069}
 --- !u!114 &1877803637

@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
         this.playerTransform.LookAt(targetLocation);
         float delta = -1 * this.playerTransform.rotation.eulerAngles.x;
         this.playerTransform.Rotate(delta, 0, 0);
+        
         this.playerAnimator.SetTrigger(animationHash);
     }
 }

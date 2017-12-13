@@ -14,7 +14,6 @@ public class Inventory
     public List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
     private GlobalState globalState;
-    private GlobalController globalCtrl;
 
 
     public Inventory() { }
@@ -22,7 +21,6 @@ public class Inventory
     public void LoadFromState(GlobalController globalCtrl)
     {
         this.globalState = globalCtrl.globalState;
-        this.globalCtrl = globalCtrl;
 
         for (int i = 0; i < this.globalState.inventory.Count; i++)
         {
@@ -48,12 +46,18 @@ public class Inventory
         {
             this.globalState.inventory.Add(item);
             firstFreeSlot.AddItem(item);
-            this.globalCtrl.dialogManager.StartDialog(DialogId.AptN1_Bedroom_GetKey);
         }
         else
         {
             Debug.LogError("No free slots in inventory left");
         }
+    }
+
+    public void RemoveItem(Item item)
+    {
+        InventorySlot slotWithItem = this.inventorySlots.Find(slot => slot.item == item);
+        slotWithItem.RemoveItem(item);
+        this.globalState.inventory.Remove(item);
     }
 
     public bool HasItem(ItemId itemId)
@@ -127,5 +131,13 @@ public class InventorySlot
         // Update UI
         this.slotImage.sprite = this.item.icon;
         this.slotImage.gameObject.SetActive(true);
+    }
+
+    public void RemoveItem(Item item)
+    {
+        this.item = null;
+        // Update UI
+        this.slotImage.sprite = null;
+        this.slotImage.gameObject.SetActive(false);
     }
 }
