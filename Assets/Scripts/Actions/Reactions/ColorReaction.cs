@@ -10,7 +10,7 @@ public class ColorReaction : IReaction
     [ShowIf("type", ColorReactionType.CUSTOM_RENDERERS)]
     public List<Renderer> customRenderers = new List<Renderer>();
     public string propertyName = "_Color";
-    [ColorPalette("Default Palette")]
+    [ColorPalette]
     public Color color;
 
     private Renderer defaultRenderer;
@@ -28,6 +28,9 @@ public class ColorReaction : IReaction
                 break;
             case "DoorInteractable":
                 this.defaultRenderer = (interactable as DoorInteractable).door.renderer;
+                break;
+            case "TileInteractable":
+                this.defaultRenderer = (interactable as TileInteractable).tile.obj.GetComponent<Renderer>();
                 break;
             default:
                 break;
