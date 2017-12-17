@@ -237,7 +237,6 @@ GameObject:
   - component: {fileID: 163410845}
   - component: {fileID: 163410844}
   - component: {fileID: 163410843}
-  - component: {fileID: 163410842}
   - component: {fileID: 163410841}
   m_Layer: 0
   m_Name: (002, 001)
@@ -278,32 +277,111 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  sceneCtrl: {fileID: 0}
+    SerializationNodes:
+    - Name: leftClickActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Move
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 5|TextureAnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: framesPerSecond
+      Entry: 3
+      Data: 50
+    - Name: rows
+      Entry: 3
+      Data: 4
+    - Name: columns
+      Entry: 3
+      Data: 4
+    - Name: propertyName
+      Entry: 1
+      Data: _MainTex
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1793904435}
   tile: {fileID: 910794398}
-  playerControl: {fileID: 1040200069}
---- !u!114 &163410842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 163410839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a80eedd4a50e5428563e9fcf5814c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _columns: 4
-  _rows: 4
-  _scale: {x: 1, y: 1}
-  _offset: {x: 0, y: 0}
-  _buffer: {x: 0, y: 0}
-  _framesPerSecond: 50
-  _playOnce: 1
-  _disableUponCompletion: 0
-  _enableEvents: 0
-  _playOnEnable: 0
-  _newMaterialInstance: 1
 --- !u!23 &163410843
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -612,6 +690,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1cad21be512a1694880f80a805db524f, type: 2}
   m_IsPrefabParent: 0
+--- !u!95 &248706401 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95072808348966504, guid: 1cad21be512a1694880f80a805db524f,
+    type: 2}
+  m_PrefabInternal: {fileID: 248706400}
+--- !u!4 &248706402 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4439659814697112, guid: 1cad21be512a1694880f80a805db524f,
+    type: 2}
+  m_PrefabInternal: {fileID: 248706400}
+--- !u!4 &248706403 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4726148827285812, guid: 1cad21be512a1694880f80a805db524f,
+    type: 2}
+  m_PrefabInternal: {fileID: 248706400}
 --- !u!114 &357863651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,7 +842,6 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 1793904435}
     - {fileID: 247326061}
     - {fileID: 247326059}
     - {fileID: 247326060}
@@ -761,21 +853,18 @@ MonoBehaviour:
     - Name: door
       Entry: 7
       Data: 0|Door, Assembly-CSharp
-    - Name: sceneCtrl
-      Entry: 10
-      Data: 0
     - Name: type
       Entry: 3
       Data: 18
     - Name: obj
       Entry: 10
-      Data: 1
+      Data: 0
     - Name: renderer
       Entry: 10
-      Data: 2
+      Data: 1
     - Name: animator
       Entry: 10
-      Data: 3
+      Data: 2
     - Name: toScene
       Entry: 3
       Data: 0
@@ -1161,13 +1250,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  type: 18
-  toScene: 11
-  exitPoint:
-    x: 2
-    y: 0
-  doorAnimator: {fileID: 247326060}
-  attachedTile: {fileID: 910794398}
   attachedTiles:
   - {fileID: 910794398}
 --- !u!114 &675391152
@@ -1230,7 +1312,6 @@ GameObject:
   - component: {fileID: 724805219}
   - component: {fileID: 724805218}
   - component: {fileID: 724805217}
-  - component: {fileID: 724805216}
   - component: {fileID: 724805215}
   m_Layer: 0
   m_Name: (000, 000)
@@ -1271,32 +1352,111 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  sceneCtrl: {fileID: 0}
+    SerializationNodes:
+    - Name: leftClickActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Move
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 5|TextureAnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: framesPerSecond
+      Entry: 3
+      Data: 50
+    - Name: rows
+      Entry: 3
+      Data: 4
+    - Name: columns
+      Entry: 3
+      Data: 4
+    - Name: propertyName
+      Entry: 1
+      Data: _MainTex
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1793904435}
   tile: {fileID: 675391152}
-  playerControl: {fileID: 1040200069}
---- !u!114 &724805216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 724805213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a80eedd4a50e5428563e9fcf5814c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _columns: 4
-  _rows: 4
-  _scale: {x: 1, y: 1}
-  _offset: {x: 0, y: 0}
-  _buffer: {x: 0, y: 0}
-  _framesPerSecond: 50
-  _playOnce: 1
-  _disableUponCompletion: 0
-  _enableEvents: 0
-  _playOnEnable: 0
-  _newMaterialInstance: 1
 --- !u!23 &724805217
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1363,7 +1523,6 @@ GameObject:
   - component: {fileID: 744985052}
   - component: {fileID: 744985051}
   - component: {fileID: 744985050}
-  - component: {fileID: 744985049}
   - component: {fileID: 744985048}
   m_Layer: 0
   m_Name: (000, 001)
@@ -1404,32 +1563,111 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  sceneCtrl: {fileID: 0}
+    SerializationNodes:
+    - Name: leftClickActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Move
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 5|TextureAnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: framesPerSecond
+      Entry: 3
+      Data: 50
+    - Name: rows
+      Entry: 3
+      Data: 4
+    - Name: columns
+      Entry: 3
+      Data: 4
+    - Name: propertyName
+      Entry: 1
+      Data: _MainTex
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1793904435}
   tile: {fileID: 1906977162}
-  playerControl: {fileID: 1040200069}
---- !u!114 &744985049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 744985046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a80eedd4a50e5428563e9fcf5814c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _columns: 4
-  _rows: 4
-  _scale: {x: 1, y: 1}
-  _offset: {x: 0, y: 0}
-  _buffer: {x: 0, y: 0}
-  _framesPerSecond: 50
-  _playOnce: 1
-  _disableUponCompletion: 0
-  _enableEvents: 0
-  _playOnEnable: 0
-  _newMaterialInstance: 1
 --- !u!23 &744985050
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1496,7 +1734,6 @@ GameObject:
   - component: {fileID: 815910377}
   - component: {fileID: 815910376}
   - component: {fileID: 815910375}
-  - component: {fileID: 815910374}
   - component: {fileID: 815910373}
   m_Layer: 0
   m_Name: (003, 000)
@@ -1537,32 +1774,111 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  sceneCtrl: {fileID: 0}
+    SerializationNodes:
+    - Name: leftClickActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Move
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 5|TextureAnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: framesPerSecond
+      Entry: 3
+      Data: 50
+    - Name: rows
+      Entry: 3
+      Data: 4
+    - Name: columns
+      Entry: 3
+      Data: 4
+    - Name: propertyName
+      Entry: 1
+      Data: _MainTex
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1793904435}
   tile: {fileID: 865735960}
-  playerControl: {fileID: 1040200069}
---- !u!114 &815910374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 815910371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a80eedd4a50e5428563e9fcf5814c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _columns: 4
-  _rows: 4
-  _scale: {x: 1, y: 1}
-  _offset: {x: 0, y: 0}
-  _buffer: {x: 0, y: 0}
-  _framesPerSecond: 50
-  _playOnce: 1
-  _disableUponCompletion: 0
-  _enableEvents: 0
-  _playOnEnable: 0
-  _newMaterialInstance: 1
 --- !u!23 &815910375
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1743,7 +2059,6 @@ GameObject:
   - component: {fileID: 987384434}
   - component: {fileID: 987384433}
   - component: {fileID: 987384432}
-  - component: {fileID: 987384431}
   - component: {fileID: 987384430}
   m_Layer: 0
   m_Name: (004, 000)
@@ -1784,32 +2099,111 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  sceneCtrl: {fileID: 0}
+    SerializationNodes:
+    - Name: leftClickActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Move
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 5|TextureAnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: framesPerSecond
+      Entry: 3
+      Data: 50
+    - Name: rows
+      Entry: 3
+      Data: 4
+    - Name: columns
+      Entry: 3
+      Data: 4
+    - Name: propertyName
+      Entry: 1
+      Data: _MainTex
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1793904435}
   tile: {fileID: 357863651}
-  playerControl: {fileID: 1040200069}
---- !u!114 &987384431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 987384428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a80eedd4a50e5428563e9fcf5814c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _columns: 4
-  _rows: 4
-  _scale: {x: 1, y: 1}
-  _offset: {x: 0, y: 0}
-  _buffer: {x: 0, y: 0}
-  _framesPerSecond: 50
-  _playOnce: 1
-  _disableUponCompletion: 0
-  _enableEvents: 0
-  _playOnEnable: 0
-  _newMaterialInstance: 1
 --- !u!23 &987384432
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1876,7 +2270,6 @@ GameObject:
   - component: {fileID: 998589330}
   - component: {fileID: 998589329}
   - component: {fileID: 998589328}
-  - component: {fileID: 998589327}
   - component: {fileID: 998589326}
   m_Layer: 0
   m_Name: (003, 001)
@@ -1917,32 +2310,111 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  sceneCtrl: {fileID: 0}
+    SerializationNodes:
+    - Name: leftClickActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Move
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 5|TextureAnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: framesPerSecond
+      Entry: 3
+      Data: 50
+    - Name: rows
+      Entry: 3
+      Data: 4
+    - Name: columns
+      Entry: 3
+      Data: 4
+    - Name: propertyName
+      Entry: 1
+      Data: _MainTex
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1793904435}
   tile: {fileID: 95247038}
-  playerControl: {fileID: 1040200069}
---- !u!114 &998589327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 998589324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a80eedd4a50e5428563e9fcf5814c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _columns: 4
-  _rows: 4
-  _scale: {x: 1, y: 1}
-  _offset: {x: 0, y: 0}
-  _buffer: {x: 0, y: 0}
-  _framesPerSecond: 50
-  _playOnce: 1
-  _disableUponCompletion: 0
-  _enableEvents: 0
-  _playOnEnable: 0
-  _newMaterialInstance: 1
 --- !u!23 &998589328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1998,12 +2470,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 998589324}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1040200069 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114212636034288312, guid: 1cad21be512a1694880f80a805db524f,
-    type: 2}
-  m_PrefabInternal: {fileID: 248706400}
-  m_Script: {fileID: 11500000, guid: 3339e202592b1424cb99445f81f26cf6, type: 3}
 --- !u!1 &1165248025
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,7 +2613,6 @@ GameObject:
   - component: {fileID: 1319395940}
   - component: {fileID: 1319395939}
   - component: {fileID: 1319395938}
-  - component: {fileID: 1319395937}
   - component: {fileID: 1319395936}
   m_Layer: 0
   m_Name: (001, 000)
@@ -2188,32 +2653,111 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  sceneCtrl: {fileID: 0}
+    SerializationNodes:
+    - Name: leftClickActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Move
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 5|TextureAnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: framesPerSecond
+      Entry: 3
+      Data: 50
+    - Name: rows
+      Entry: 3
+      Data: 4
+    - Name: columns
+      Entry: 3
+      Data: 4
+    - Name: propertyName
+      Entry: 1
+      Data: _MainTex
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1793904435}
   tile: {fileID: 200141575}
-  playerControl: {fileID: 1040200069}
---- !u!114 &1319395937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1319395934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a80eedd4a50e5428563e9fcf5814c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _columns: 4
-  _rows: 4
-  _scale: {x: 1, y: 1}
-  _offset: {x: 0, y: 0}
-  _buffer: {x: 0, y: 0}
-  _framesPerSecond: 50
-  _playOnce: 1
-  _disableUponCompletion: 0
-  _enableEvents: 0
-  _playOnEnable: 0
-  _newMaterialInstance: 1
 --- !u!23 &1319395938
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2345,7 +2889,6 @@ GameObject:
   - component: {fileID: 1633473004}
   - component: {fileID: 1633473003}
   - component: {fileID: 1633473002}
-  - component: {fileID: 1633473001}
   - component: {fileID: 1633473000}
   m_Layer: 0
   m_Name: (002, 000)
@@ -2386,32 +2929,111 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  sceneCtrl: {fileID: 0}
+    SerializationNodes:
+    - Name: leftClickActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Move
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 5|TextureAnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: framesPerSecond
+      Entry: 3
+      Data: 50
+    - Name: rows
+      Entry: 3
+      Data: 4
+    - Name: columns
+      Entry: 3
+      Data: 4
+    - Name: propertyName
+      Entry: 1
+      Data: _MainTex
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1793904435}
   tile: {fileID: 120312636}
-  playerControl: {fileID: 1040200069}
---- !u!114 &1633473001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1633472998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a80eedd4a50e5428563e9fcf5814c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _columns: 4
-  _rows: 4
-  _scale: {x: 1, y: 1}
-  _offset: {x: 0, y: 0}
-  _buffer: {x: 0, y: 0}
-  _framesPerSecond: 50
-  _playOnce: 1
-  _disableUponCompletion: 0
-  _enableEvents: 0
-  _playOnEnable: 0
-  _newMaterialInstance: 1
 --- !u!23 &1633473002
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2535,7 +3157,6 @@ GameObject:
   - component: {fileID: 1787459074}
   - component: {fileID: 1787459073}
   - component: {fileID: 1787459072}
-  - component: {fileID: 1787459071}
   - component: {fileID: 1787459070}
   m_Layer: 0
   m_Name: (004, 001)
@@ -2563,32 +3184,111 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  sceneCtrl: {fileID: 0}
+    SerializationNodes:
+    - Name: leftClickActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Move
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 5|TextureAnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: framesPerSecond
+      Entry: 3
+      Data: 50
+    - Name: rows
+      Entry: 3
+      Data: 4
+    - Name: columns
+      Entry: 3
+      Data: 4
+    - Name: propertyName
+      Entry: 1
+      Data: _MainTex
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1793904435}
   tile: {fileID: 2014292782}
-  playerControl: {fileID: 1040200069}
---- !u!114 &1787459071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1787459069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a80eedd4a50e5428563e9fcf5814c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _columns: 4
-  _rows: 4
-  _scale: {x: 1, y: 1}
-  _offset: {x: 0, y: 0}
-  _buffer: {x: 0, y: 0}
-  _framesPerSecond: 50
-  _playOnce: 1
-  _disableUponCompletion: 0
-  _enableEvents: 0
-  _playOnEnable: 0
-  _newMaterialInstance: 1
 --- !u!23 &1787459072
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2703,18 +3403,43 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 248706403}
+    - {fileID: 248706402}
+    - {fileID: 248706401}
+    - {fileID: 910794398}
     - {fileID: 1793904435}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: scene
+    - Name: player
       Entry: 7
-      Data: 0|Scene, Assembly-CSharp
-    - Name: sceneCtrl
+      Data: 0|Player, Assembly-CSharp
+    - Name: speed
+      Entry: 4
+      Data: 10
+    - Name: playerTransform
       Entry: 10
       Data: 0
+    - Name: characterTransform
+      Entry: 10
+      Data: 1
+    - Name: characterAnimator
+      Entry: 10
+      Data: 2
+    - Name: tile
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: scene
+      Entry: 7
+      Data: 1|Scene, Assembly-CSharp
+    - Name: sceneCtrl
+      Entry: 10
+      Data: 4
     - Name: type
       Entry: 3
       Data: 9
@@ -2724,7 +3449,6 @@ MonoBehaviour:
   globalCtrl: {fileID: 0}
   globalState: {fileID: 0}
   sceneState: {fileID: 0}
-  playerCtrl: {fileID: 1040200069}
   tiles:
   - {fileID: 675391152}
   - {fileID: 1906977162}
@@ -2747,7 +3471,6 @@ GameObject:
   - component: {fileID: 1884579688}
   - component: {fileID: 1884579687}
   - component: {fileID: 1884579686}
-  - component: {fileID: 1884579685}
   - component: {fileID: 1884579684}
   m_Layer: 0
   m_Name: (001, 001)
@@ -2788,32 +3511,111 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  sceneCtrl: {fileID: 0}
+    SerializationNodes:
+    - Name: leftClickActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Move
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 5|TextureAnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: framesPerSecond
+      Entry: 3
+      Data: 50
+    - Name: rows
+      Entry: 3
+      Data: 4
+    - Name: columns
+      Entry: 3
+      Data: 4
+    - Name: propertyName
+      Entry: 1
+      Data: _MainTex
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1793904435}
   tile: {fileID: 1748763085}
-  playerControl: {fileID: 1040200069}
---- !u!114 &1884579685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1884579682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a80eedd4a50e5428563e9fcf5814c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _columns: 4
-  _rows: 4
-  _scale: {x: 1, y: 1}
-  _offset: {x: 0, y: 0}
-  _buffer: {x: 0, y: 0}
-  _framesPerSecond: 50
-  _playOnce: 1
-  _disableUponCompletion: 0
-  _enableEvents: 0
-  _playOnEnable: 0
-  _newMaterialInstance: 1
 --- !u!23 &1884579686
 MeshRenderer:
   m_ObjectHideFlags: 0

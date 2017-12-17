@@ -6,22 +6,9 @@ using UnityEngine;
 
 public class DoorInteractable : Interactable
 {
-    [BoxGroup("REMOVE THOSE FIELDS")]
-    public DoorType type;
-    [BoxGroup("REMOVE THOSE FIELDS")]
-    public SceneType toScene;
-    [BoxGroup("REMOVE THOSE FIELDS")]
-    public Point exitPoint;
-    [BoxGroup("REMOVE THOSE FIELDS")]
-    public Animator doorAnimator;
-    [BoxGroup("REMOVE THOSE FIELDS")]
-    public Tile attachedTile;
-
-
+    [Required]
     public Door door;
 
-
-    // [ValidateInput("IsNotEmpty")]
     public List<Tile> attachedTiles = new List<Tile>();
 
     [ListDrawerSettings(ListElementLabelName = "name", DraggableItems = false)]

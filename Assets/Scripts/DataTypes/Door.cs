@@ -6,9 +6,6 @@ using UnityEngine;
 
 public class Door
 {
-    [Required]
-    public SceneController sceneCtrl;
-
     public DoorType type;
     public GameObject obj;
     public Renderer renderer;

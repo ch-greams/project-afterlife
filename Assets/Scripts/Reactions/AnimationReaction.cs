@@ -27,14 +27,14 @@ public class AnimationReaction : IReaction
                 ContainerInteractable ci = interactable as ContainerInteractable;
                 this.defaultAnimator =
                     this.type == AnimationReactionType.DEFAULT_PLAYER_ANIMATOR
-                        ? ci.sceneCtrl.playerCtrl.playerAnimator
+                        ? ci.sceneCtrl.player.characterAnimator
                         : ci.container.animator;
                 break;
             case "DoorInteractable":
                 DoorInteractable di = interactable as DoorInteractable;
                 this.defaultAnimator =
                     this.type == AnimationReactionType.DEFAULT_PLAYER_ANIMATOR
-                        ? di.sceneCtrl.playerCtrl.playerAnimator
+                        ? di.sceneCtrl.player.characterAnimator
                         : di.door.animator;
                 break;
             default:

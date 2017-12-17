@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Sirenix.OdinInspector;
 
 
 public class ContainerInteractable : Interactable
 {
-    [ValidateInput("IsNotEmpty")]
-    public List<Tile> attachedTiles = new List<Tile>();
     [Required]
     public Container container;
+
+    public List<Tile> attachedTiles = new List<Tile>();
 
     [ListDrawerSettings(ListElementLabelName = "name", DraggableItems = false)]
     public List<Action> leftClickActions = new List<Action>();
@@ -56,11 +55,5 @@ public class ContainerInteractable : Interactable
         {
             yield return action.React();
         }
-    }
-
-
-    private bool IsNotEmpty(List<Tile> list)
-    {
-        return list.Any();
     }
 }

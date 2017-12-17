@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33735479891081270}
   - component: {fileID: 64438131507122362}
   - component: {fileID: 23229803746930510}
-  - component: {fileID: 114485983425488160}
   - component: {fileID: 114637914680144972}
   m_Layer: 0
   m_Name: Tile
@@ -53,6 +52,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -68,6 +68,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -97,28 +98,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114485983425488160
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1565656233528524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3a80eedd4a50e5428563e9fcf5814c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _columns: 4
-  _rows: 4
-  _scale: {x: 1, y: 1}
-  _offset: {x: 0, y: 0}
-  _buffer: {x: 0, y: 0}
-  _framesPerSecond: 50
-  _playOnce: 1
-  _disableUponCompletion: 0
-  _enableEvents: 0
-  _playOnEnable: 0
-  _newMaterialInstance: 1
 --- !u!114 &114637914680144972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,4 +109,116 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerControl: {fileID: 0}
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: leftClickActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Move
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 5|TextureAnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: framesPerSecond
+      Entry: 3
+      Data: 50
+    - Name: rows
+      Entry: 3
+      Data: 4
+    - Name: columns
+      Entry: 3
+      Data: 4
+    - Name: propertyName
+      Entry: 1
+      Data: _MainTex
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 8|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 0}
+  tile: {fileID: 0}

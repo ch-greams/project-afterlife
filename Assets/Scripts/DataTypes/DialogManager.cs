@@ -23,7 +23,7 @@ public class DialogManager
 
     public void SetUp()
     {
-        this.dialogButton.onClick.AddListener(OnDialogPanelClick);
+        this.dialogButton.onClick.AddListener(this.OnDialogPanelClick);
 
         this.dialogs = this.dialogs
             .ToDictionary(kvp => kvp.Key, kvp => GlobalController.CreatePlayModeInstance(kvp.Value));

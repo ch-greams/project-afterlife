@@ -16,12 +16,12 @@ public class LookAtReaction : IReaction
         {
             case "ContainerInteractable":
                 ContainerInteractable ci = interactable as ContainerInteractable;
-                this.defaultActor = ci.sceneCtrl.playerCtrl.playerTransform;
+                this.defaultActor = ci.sceneCtrl.player.characterTransform;
                 this.defaultTarget = ci.container.obj.transform;
                 break;
             case "DoorInteractable":
                 DoorInteractable di = interactable as DoorInteractable;
-                this.defaultActor = di.sceneCtrl.playerCtrl.playerTransform;
+                this.defaultActor = di.sceneCtrl.player.characterTransform;
                 this.defaultTarget = di.door.obj.transform;
                 break;
             default:

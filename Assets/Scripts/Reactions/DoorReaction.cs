@@ -1,10 +1,15 @@
 ﻿using System.Collections;
+using Sirenix.OdinInspector;
 
 
 public class DoorReaction : IReaction
 {
-    public DoorReactionType type = DoorReactionType.OPEN_DOOR;
-    private DoorType doorType;
+    public DoorReactionType type = DoorReactionType.OPEN_DEFAULT_DOOR;
+    [ShowIf("type", DoorReactionType.OPEN_CUSTOM_DOOR)]
+    public SceneType customSceneType;
+    [ShowIf("type", DoorReactionType.OPEN_CUSTOM_DOOR)]
+    public DoorType customDoorType;
+    private DoorType defaultDoorType;
     private SceneController sceneCtrl;
 
 
@@ -15,7 +20,7 @@ public class DoorReaction : IReaction
         switch (interactable.GetType().Name)
         {
             case "DoorInteractable":
-                this.doorType = (interactable as DoorInteractable).door.type;
+                this.defaultDoorType = (interactable as DoorInteractable).door.type;
                 break;
             default:
                 break;
@@ -25,8 +30,11 @@ public class DoorReaction : IReaction
     {
         switch (this.type)
         {
-            case DoorReactionType.OPEN_DOOR:
-                this.sceneCtrl.sceneState.doors[this.doorType] = true;
+            case DoorReactionType.OPEN_DEFAULT_DOOR:
+                this.sceneCtrl.sceneState.doors[this.defaultDoorType] = true;
+                break;
+            case DoorReactionType.OPEN_CUSTOM_DOOR:
+                this.sceneCtrl.globalState.sceneStates[this.customSceneType].doors[this.customDoorType] = true;
                 break;
             default:
                 yield return null;
@@ -37,5 +45,6 @@ public class DoorReaction : IReaction
 
 public enum DoorReactionType
 {
-    OPEN_DOOR,
+    OPEN_DEFAULT_DOOR,
+    OPEN_CUSTOM_DOOR,
 }

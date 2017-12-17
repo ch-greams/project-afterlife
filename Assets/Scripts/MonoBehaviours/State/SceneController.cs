@@ -7,7 +7,7 @@ public class SceneController : SerializedMonoBehaviour
     public GlobalController globalCtrl;
     public GlobalState globalState;
     public SceneState sceneState;
-    public PlayerController playerCtrl;
+    public Player player;
     public Scene scene;
     [InlineEditor]
     public List<Tile> tiles = new List<Tile>();
@@ -25,7 +25,7 @@ public class SceneController : SerializedMonoBehaviour
     private void MovePlayerToStartPoint()
     {
         Tile tile = this.tiles.Find(t => t.point == this.sceneState.position);
-        this.playerCtrl.currentTile = tile;
-        this.playerCtrl.transform.position = tile.obj.transform.position;
+        this.player.tile = tile;
+        this.player.playerTransform.position = tile.obj.transform.position;
     }
 }
