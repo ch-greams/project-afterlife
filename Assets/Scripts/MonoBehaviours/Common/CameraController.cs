@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 
-public class CameraControl : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     public bool rotateEnabled = true;
     public float rotateSpeed = 400F;
