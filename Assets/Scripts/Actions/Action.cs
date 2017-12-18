@@ -6,8 +6,11 @@ using Sirenix.OdinInspector;
 public class Action
 {
     public string name;
-    [ListDrawerSettings(DraggableItems = false)]
+
+    [ListDrawerSettings(Expanded = false, DraggableItems = false)]
     public List<ICondition> conditions = new List<ICondition>();
+
+    [ListDrawerSettings(Expanded = false)]
     public List<IReaction> reactions = new List<IReaction>();
 
 
