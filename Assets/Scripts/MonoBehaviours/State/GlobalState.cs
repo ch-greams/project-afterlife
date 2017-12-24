@@ -12,4 +12,7 @@ public class GlobalState : SerializedScriptableObject
 
     [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.Foldout)]
     public Dictionary<SceneType, SceneState> sceneStates = new Dictionary<SceneType, SceneState>();
+    [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.Foldout)]
+    public Dictionary<ObjectiveId, Objective> objectives = new Dictionary<ObjectiveId, Objective>();
+
 }
