@@ -21,17 +21,23 @@ public class GlobalController : SerializedMonoBehaviour
 
     public DialogManager dialogManager;
 
+    public ObjectiveManager objectiveManager;
+
     [BoxGroup("User Interface")]
     public CanvasGroup faderCanvasGroup;
+
 
     private void Awake()
     {
         this.globalState = CreatePlayModeInstance(this.globalState);
         this.globalState.sceneStates = this.globalState.sceneStates
             .ToDictionary(kvp => kvp.Key, kvp => GlobalController.CreatePlayModeInstance(kvp.Value));
+        this.globalState.objectives = this.globalState.objectives
+            .ToDictionary(kvp => kvp.Key, kvp => GlobalController.CreatePlayModeInstance(kvp.Value));
 
         this.inventory.LoadFromState(this);
-        this.dialogManager.SetUp();
+        this.dialogManager.Init();
+        this.objectiveManager.Init(this.globalState);
     }
 
     private IEnumerator Start()

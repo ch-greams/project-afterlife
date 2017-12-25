@@ -26,7 +26,6 @@ public class Dialog : SerializedScriptableObject
 public enum DialogId
 {
     AptN1_Bedroom_GetKey,
-    AptN1_Bedroom_StartSpeech,
     AptN1_Bedroom_NeedKey,
     AptN1_Bedroom_EmptyContainer,
 }

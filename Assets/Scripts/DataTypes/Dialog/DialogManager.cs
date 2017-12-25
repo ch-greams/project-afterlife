@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,14 +20,9 @@ public class DialogManager
     private Dialog dialog;
 
 
-    public void SetUp()
+    public void Init()
     {
         this.dialogButton.onClick.AddListener(this.OnDialogPanelClick);
-
-        this.dialogs = this.dialogs
-            .ToDictionary(kvp => kvp.Key, kvp => GlobalController.CreatePlayModeInstance(kvp.Value));
-
-        // this.StartDialog(DialogId.AptN1_Bedroom_StartSpeech);
     }
 
     [Button]

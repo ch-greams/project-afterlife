@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -8,6 +9,34 @@ public class AnimationReaction : IReaction
     public AnimationReactionType type = AnimationReactionType.DEFAULT_ANIMATOR;
     [ShowIf("type", AnimationReactionType.CUSTOM_ANIMATOR)]
     public Animator customAnimator;
+
+    private List<string> animations
+    {
+        get
+        {
+            switch (this.type)
+            {
+                case AnimationReactionType.DEFAULT_ANIMATOR:
+                    return new List<string>()
+                    {
+                        "OpenDoor"
+                    };
+                case AnimationReactionType.DEFAULT_PLAYER_ANIMATOR:
+                    return new List<string>()
+                    {
+                        "AttemptTake",
+                        "HighTake",
+                        "MedTake",
+                        "LowTake",
+                    };
+                case AnimationReactionType.CUSTOM_ANIMATOR:
+                default:
+                    return new List<string>();
+            }
+        }
+    }
+
+    [ValueDropdown("animations")]
     public string animationName;
     public float timeoutAfterInSeconds;
 

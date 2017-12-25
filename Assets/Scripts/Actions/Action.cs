@@ -7,9 +7,16 @@ public class Action
 {
     public string name;
 
+    [GUIColor(0.85F, 1F, 1F, 1F)]
     [ListDrawerSettings(Expanded = false, DraggableItems = false)]
     public List<ICondition> conditions = new List<ICondition>();
 
+    // TODO: Use for List<ICondition> OR List<ICondition>
+    // [ListDrawerSettings(Expanded = false, DraggableItems = false)]
+    // public List<List<ICondition>> conditionCollection = new List<List<ICondition>>();
+
+
+    [GUIColor(1F, 0.85F, 0.85F, 1F)]
     [ListDrawerSettings(Expanded = false)]
     public List<IReaction> reactions = new List<IReaction>();
 

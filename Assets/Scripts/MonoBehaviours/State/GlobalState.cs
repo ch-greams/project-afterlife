@@ -7,6 +7,7 @@ using UnityEngine;
 public class GlobalState : SerializedScriptableObject
 {
     public SceneType currentScene;
+    public ObjectiveId currentObjective;
 
     public List<Item> inventory = new List<Item>();
 

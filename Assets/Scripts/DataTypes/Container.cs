@@ -18,4 +18,5 @@ public enum ContainerType
 {
     AptN1_Bedroom_Table,
     AptN1_Bedroom_Bed,
+    AptN1_Bedroom_Nightstand,
 }

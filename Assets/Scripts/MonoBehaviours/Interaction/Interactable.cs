@@ -11,15 +11,15 @@ public abstract class Interactable : SerializedMonoBehaviour, IPointerClickHandl
     public SceneController sceneCtrl;
     
     [FoldoutGroup("Interactable Config", expanded: false)]
-    [ListDrawerSettings(ListElementLabelName = "name", Expanded = false, DraggableItems = false)]
+    [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
     public List<Action> leftClickActions = new List<Action>();
 
     [FoldoutGroup("Interactable Config", expanded: false)]
-    [ListDrawerSettings(ListElementLabelName = "name", Expanded = false, DraggableItems = false)]
+    [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
     public List<Action> hoverStartActions = new List<Action>();
 
     [FoldoutGroup("Interactable Config", expanded: false)]
-    [ListDrawerSettings(ListElementLabelName = "name", Expanded = false, DraggableItems = false)]
+    [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
     public List<Action> hoverEndActions = new List<Action>();
 
 

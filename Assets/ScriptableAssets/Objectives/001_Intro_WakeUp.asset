@@ -52,6 +52,9 @@ MonoBehaviour:
     - Name: optional
       Entry: 5
       Data: false
+    - Name: currentSubTaskId
+      Entry: 1
+      Data: 00_CheckTime
     - Name: subTasks
       Entry: 7
       Data: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[SubTask,

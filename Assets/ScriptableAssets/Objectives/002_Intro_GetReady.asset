@@ -52,6 +52,9 @@ MonoBehaviour:
     - Name: optional
       Entry: 5
       Data: false
+    - Name: currentSubTaskId
+      Entry: 1
+      Data: 00_TryCheckEmails
     - Name: subTasks
       Entry: 7
       Data: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[SubTask,
@@ -195,6 +198,9 @@ MonoBehaviour:
     - Name: optional
       Entry: 5
       Data: false
+    - Name: currentSubTaskId
+      Entry: 1
+      Data: 00_CheckFridge
     - Name: subTasks
       Entry: 7
       Data: 9|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[SubTask,
@@ -371,6 +377,9 @@ MonoBehaviour:
     - Name: optional
       Entry: 5
       Data: false
+    - Name: currentSubTaskId
+      Entry: 1
+      Data: 00_TakeAShower
     - Name: subTasks
       Entry: 7
       Data: 16|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[SubTask,
