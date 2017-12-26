@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 0
 --- !u!196 &4
@@ -3612,66 +3613,24 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: door
-      Entry: 7
-      Data: 0|Door, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 14
-    - Name: obj
-      Entry: 10
-      Data: 0
-    - Name: renderer
-      Entry: 10
-      Data: 1
-    - Name: animator
-      Entry: 10
-      Data: 2
-    - Name: toScene
-      Entry: 3
-      Data: 0
-    - Name: exitPoint
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 2|Action, Assembly-CSharp
+      Data: 1|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Open Door
     - Name: conditions
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 4|DoorCondition, Assembly-CSharp
-    - Name: type
-      Entry: 3
       Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -3680,19 +3639,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 4|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 7|LookAtReaction, Assembly-CSharp
+      Data: 5|LookAtReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -3701,7 +3660,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 8|AnimationReaction, Assembly-CSharp
+      Data: 6|AnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -3719,7 +3678,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|AnimationReaction, Assembly-CSharp
+      Data: 7|AnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -3737,7 +3696,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 10|SceneReaction, Assembly-CSharp
+      Data: 8|SceneReaction, Assembly-CSharp
     - Name: scene
       Entry: 3
       Data: 4
@@ -3773,31 +3732,22 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 12|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Open
     - Name: conditions
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 14|DoorCondition, Assembly-CSharp
-    - Name: type
-      Entry: 3
       Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -3806,13 +3756,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 12|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 16|ColorReaction, Assembly-CSharp
+      Data: 13|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -3834,81 +3784,6 @@ MonoBehaviour:
     - Name: 
       Entry: 4
       Data: 1
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 17|Action, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Closed
-    - Name: conditions
-      Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 19|DoorCondition, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: reactions
-      Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 21|ColorReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 0
-    - Name: customRenderers
-      Entry: 6
-      Data: 
-    - Name: propertyName
-      Entry: 1
-      Data: _Color
-    - Name: color
-      Entry: 7
-      Data: UnityEngine.Color, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 4
-      Data: 0
-    - Name: 
-      Entry: 4
-      Data: 0
     - Name: 
       Entry: 4
       Data: 1
@@ -3935,19 +3810,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 23|Action, Assembly-CSharp
+      Data: 15|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 24|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3959,13 +3834,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 26|ColorReaction, Assembly-CSharp
+      Data: 18|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -4007,6 +3882,36 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: door
+      Entry: 7
+      Data: 19|Door, Assembly-CSharp
+    - Name: obj
+      Entry: 10
+      Data: 0
+    - Name: renderer
+      Entry: 10
+      Data: 1
+    - Name: animator
+      Entry: 10
+      Data: 2
+    - Name: toScene
+      Entry: 3
+      Data: 0
+    - Name: exitPoint
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
+      Data: 0
+    - Name: y
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
       Data: 
     - Name: 
       Entry: 8

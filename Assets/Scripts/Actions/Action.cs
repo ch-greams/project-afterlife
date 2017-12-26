@@ -48,7 +48,7 @@ public class Action
     {
         List<ObjectiveCondition> ocs = (conditions != null)
             ? conditions
-                .Where(cond => cond.GetType().Name == "ObjectiveCondition")
+                .Where(cond => (cond != null) && (cond.GetType().Name == "ObjectiveCondition"))
                 .Select(cond => cond as ObjectiveCondition).ToList()
             : new List<ObjectiveCondition>();
 
