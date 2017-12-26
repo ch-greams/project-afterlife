@@ -68,7 +68,7 @@ public class Action
     {
         List<ObjectiveReaction> ors = (conditions != null)
             ? conditions
-                .Where(cond => cond.GetType().Name == "ObjectiveReaction")
+                .Where(cond => (cond != null) && (cond.GetType().Name == "ObjectiveReaction"))
                 .Select(cond => cond as ObjectiveReaction).ToList()
             : new List<ObjectiveReaction>();
 

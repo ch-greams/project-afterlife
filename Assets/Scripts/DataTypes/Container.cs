@@ -1,22 +1,16 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
 
 
 public class Container
 {
-    public ContainerType type;
+    [Required]
     public GameObject obj;
+    [Required]
     public Renderer renderer;
     public Animator animator;
 
 
     public Container() { }
 
-}
-
-
-public enum ContainerType
-{
-    AptN1_Bedroom_Table,
-    AptN1_Bedroom_Bed,
-    AptN1_Bedroom_Nightstand,
 }

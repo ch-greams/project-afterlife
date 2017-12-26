@@ -81,7 +81,7 @@ public class ObjectiveCondition : ICondition
                     (this.objectiveId == this.globalState.currentObjective) &&
                     // all required subTasks before should be complete
                     subTasks.Take(subTaskIndex).All(st => (st.optional || st.completed)) &&
-                    // no subTasks after should be complete
+                    // current subTask and every one after should not be complete
                     subTasks.Skip(subTaskIndex).All(st => !st.completed)
                 );
             default:
