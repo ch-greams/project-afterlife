@@ -58,12 +58,6 @@ public class ObjectiveCondition : ICondition
     {
         Objective objective = this.globalState.objectives[this.objectiveId];
 
-        // TODO: Move to specific types
-        if (this.objectiveId != this.globalState.currentObjective)
-        {
-            return false;
-        }
-
         switch (this.type)
         {
             case ObjectiveConditionType.OBJECTIVE_IS_COMPLETE:
@@ -75,9 +69,21 @@ public class ObjectiveCondition : ICondition
             case ObjectiveConditionType.TASK_IS_NOT_COMPLETE:
                 return !objective.tasks[this.taskId].completed;
             case ObjectiveConditionType.SUB_TASK_IS_COMPLETE:
-                return objective.tasks[this.taskId].subTasks.Find(st => st.id == this.subTaskId).completed;
+                return objective.tasks[this.taskId].subTasks.Find(st => (st.id == this.subTaskId)).completed;
             case ObjectiveConditionType.SUB_TASK_IS_NOT_COMPLETE:
-                return !objective.tasks[this.taskId].subTasks.Find(st => st.id == this.subTaskId).completed;
+                return !objective.tasks[this.taskId].subTasks.Find(st => (st.id == this.subTaskId)).completed;
+            case ObjectiveConditionType.SUB_TASK_CAN_BE_COMPLETED:
+                List<SubTask> subTasks = objective.tasks[this.taskId].subTasks;
+                int subTaskIndex = subTasks.FindIndex(st => (st.id == this.subTaskId));
+                return
+                (
+                    // should be current objective
+                    (this.objectiveId == this.globalState.currentObjective) &&
+                    // all required subTasks before should be complete
+                    subTasks.Take(subTaskIndex).All(st => (st.optional || st.completed)) &&
+                    // no subTasks after should be complete
+                    subTasks.Skip(subTaskIndex).All(st => !st.completed)
+                );
             default:
                 return false;
         }
@@ -92,4 +98,5 @@ public enum ObjectiveConditionType
     TASK_IS_NOT_COMPLETE,
     SUB_TASK_IS_COMPLETE,
     SUB_TASK_IS_NOT_COMPLETE,
+    SUB_TASK_CAN_BE_COMPLETED,
 }
