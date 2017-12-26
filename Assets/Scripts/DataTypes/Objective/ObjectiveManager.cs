@@ -34,7 +34,20 @@ public class ObjectiveManager
         this.UpdateObjective();
     }
 
-    public void UpdateObjective()
+    public void CompleteSubTask(ObjectiveId objectiveId, string taskId, string subTaskId)
+    {
+        Objective objective = this.globalState.objectives[objectiveId];
+        objective.Complete(taskId, subTaskId);
+
+        if (objective.completed)
+        {
+            this.globalState.currentObjective = objective.nextObjectives[0].id;
+        }
+
+        this.UpdateObjective();
+    }
+
+    private void UpdateObjective()
     {
         Objective objective = this.globalState.objectives[this.globalState.currentObjective];
 
@@ -57,7 +70,7 @@ public class ObjectiveManager
     {
         GameObject task = GameObject.Instantiate(this.taskPrefab);
         Text taskText = task.GetComponentInChildren<Text>();
-        taskText.text = taskData.defaultTitle;
+        taskText.text = taskData.GetCurrentTaskTitle();
 
         if (taskData.completed)
         {

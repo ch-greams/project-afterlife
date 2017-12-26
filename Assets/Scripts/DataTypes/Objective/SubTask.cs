@@ -6,19 +6,17 @@ using UnityEngine;
 [Serializable]
 public class SubTask
 {
+    public string id;
     [HideIf("hidden")]
     public string title;
     public bool completed;
     public bool optional;
     public bool hidden;
-    public bool finalSubTask;
-    [HideIf("finalSubTask")]
-    public string nextSubTaskId;
 
 
     public void Complete()
     {
         this.completed = true;
-        Debug.LogFormat("subTask '{0}' is complete", this.title);
+        Debug.LogFormat("subTask '{0}' is complete", this.id);
     }
 }

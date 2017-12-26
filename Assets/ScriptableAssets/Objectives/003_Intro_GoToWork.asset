@@ -54,30 +54,19 @@ MonoBehaviour:
       Data: false
     - Name: currentSubTaskId
       Entry: 1
-      Data: 00_GoOutside
+      Data: GoOutside
     - Name: subTasks
       Entry: 7
-      Data: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[SubTask,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 7
-      Data: 4|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
-        mscorlib]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 3|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 
-    - Name: 
+      Data: 4|SubTask, Assembly-CSharp
+    - Name: id
       Entry: 1
-      Data: 00_GoOutside
-    - Name: 
-      Entry: 7
-      Data: 5|SubTask, Assembly-CSharp
+      Data: GoOutside
     - Name: title
       Entry: 1
       Data: Go Outside
@@ -90,27 +79,15 @@ MonoBehaviour:
     - Name: hidden
       Entry: 5
       Data: false
-    - Name: finalSubTask
-      Entry: 5
-      Data: false
-    - Name: nextSubTaskId
-      Entry: 1
-      Data: 01_CallLandlord
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 
-    - Name: 
+      Data: 5|SubTask, Assembly-CSharp
+    - Name: id
       Entry: 1
-      Data: 01_CallLandlord
-    - Name: 
-      Entry: 7
-      Data: 6|SubTask, Assembly-CSharp
+      Data: CallLandlord
     - Name: title
       Entry: 1
       Data: Call Landlord
@@ -123,27 +100,15 @@ MonoBehaviour:
     - Name: hidden
       Entry: 5
       Data: false
-    - Name: finalSubTask
-      Entry: 5
-      Data: false
-    - Name: nextSubTaskId
-      Entry: 1
-      Data: 02_LookAround
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 
-    - Name: 
+      Data: 6|SubTask, Assembly-CSharp
+    - Name: id
       Entry: 1
-      Data: 02_LookAround
-    - Name: 
-      Entry: 7
-      Data: 7|SubTask, Assembly-CSharp
+      Data: LookAround
     - Name: title
       Entry: 1
       Data: Look Around
@@ -156,15 +121,6 @@ MonoBehaviour:
     - Name: hidden
       Entry: 5
       Data: false
-    - Name: finalSubTask
-      Entry: 5
-      Data: true
-    - Name: nextSubTaskId
-      Entry: 1
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 

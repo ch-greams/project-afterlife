@@ -2293,7 +2293,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: add50d60aae9d97498ee0c2dcf8e39ff, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: add50d60aae9d97498ee0c2dcf8e39ff, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2309,15 +2309,15 @@ Prefab:
       objectReference: {fileID: 9100000, guid: d664b0e1829562b4f9dae15ebc2b1a48, type: 2}
     - target: {fileID: 100002, guid: add50d60aae9d97498ee0c2dcf8e39ff, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: add50d60aae9d97498ee0c2dcf8e39ff, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: add50d60aae9d97498ee0c2dcf8e39ff, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: add50d60aae9d97498ee0c2dcf8e39ff, type: 3}
@@ -5626,6 +5626,7 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 11400000, guid: cfaeb9e4c3fcfec498021cfa91664385, type: 2}
     - {fileID: 728239443}
     - {fileID: 728239444}
     SerializedBytesString: 
@@ -5653,10 +5654,22 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 3|ContainerCondition, Assembly-CSharp
+      Data: 3|ObjectiveCondition, Assembly-CSharp
     - Name: type
       Entry: 3
+      Data: 5
+    - Name: objectiveId
+      Entry: 3
+      Data: 2
+    - Name: objective
+      Entry: 10
       Data: 0
+    - Name: taskId
+      Entry: 1
+      Data: CheckEmails
+    - Name: subTaskId
+      Entry: 1
+      Data: CheckEmails
     - Name: 
       Entry: 8
       Data: 
@@ -5671,7 +5684,7 @@ MonoBehaviour:
       Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 4
     - Name: 
       Entry: 7
       Data: 5|MoveToReaction, Assembly-CSharp
@@ -5707,22 +5720,22 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 8|ContainerReaction, Assembly-CSharp
+      Data: 8|ObjectiveReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
-    - Name: container
+    - Name: objectiveId
       Entry: 3
+      Data: 2
+    - Name: objective
+      Entry: 10
       Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 9|DialogReaction, Assembly-CSharp
-    - Name: dialogId
-      Entry: 3
-      Data: 0
+    - Name: taskId
+      Entry: 1
+      Data: CheckEmails
+    - Name: subTaskId
+      Entry: 1
+      Data: CheckEmails
     - Name: 
       Entry: 8
       Data: 
@@ -5737,25 +5750,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 10|Action, Assembly-CSharp
+      Data: 9|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Open
     - Name: conditions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 10|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 12|ContainerCondition, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 0
     - Name: 
       Entry: 13
       Data: 
@@ -5764,19 +5768,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 7
-      Data: 14|MoveToReaction, Assembly-CSharp
+      Data: 12|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|LookAtReaction, Assembly-CSharp
+      Data: 13|LookAtReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -5785,7 +5789,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 16|AnimationReaction, Assembly-CSharp
+      Data: 14|AnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -5798,15 +5802,6 @@ MonoBehaviour:
     - Name: timeoutAfterInSeconds
       Entry: 4
       Data: 0.5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 17|DialogReaction, Assembly-CSharp
-    - Name: dialogId
-      Entry: 3
-      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -5827,28 +5822,40 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 15|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 19|Action, Assembly-CSharp
+      Data: 16|Action, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Not Empty
+      Data: Can Use
     - Name: conditions
       Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 21|ContainerCondition, Assembly-CSharp
+      Data: 18|ObjectiveCondition, Assembly-CSharp
     - Name: type
       Entry: 3
+      Data: 5
+    - Name: objectiveId
+      Entry: 3
+      Data: 2
+    - Name: objective
+      Entry: 10
       Data: 0
+    - Name: taskId
+      Entry: 1
+      Data: CheckEmails
+    - Name: subTaskId
+      Entry: 1
+      Data: CheckEmails
     - Name: 
       Entry: 8
       Data: 
@@ -5860,13 +5867,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 23|ColorReaction, Assembly-CSharp
+      Data: 20|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -5908,25 +5915,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 24|Action, Assembly-CSharp
+      Data: 21|Action, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Empty
+      Data: Can't Use
     - Name: conditions
       Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 22|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 26|ContainerCondition, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 0
     - Name: 
       Entry: 13
       Data: 
@@ -5935,13 +5933,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 27|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 23|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 28|ColorReaction, Assembly-CSharp
+      Data: 24|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -5989,19 +5987,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 25|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 30|Action, Assembly-CSharp
+      Data: 26|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 31|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 27|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6013,13 +6011,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 32|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 28|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 33|ColorReaction, Assembly-CSharp
+      Data: 29|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -6067,16 +6065,16 @@ MonoBehaviour:
       Data: 
     - Name: container
       Entry: 7
-      Data: 34|Container, Assembly-CSharp
+      Data: 30|Container, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: obj
       Entry: 10
-      Data: 0
+      Data: 1
     - Name: renderer
       Entry: 10
-      Data: 1
+      Data: 2
     - Name: animator
       Entry: 6
       Data: 
@@ -6205,7 +6203,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f3c8774ccef62354581001d261275c00, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f3c8774ccef62354581001d261275c00, type: 3}
       propertyPath: m_Layer
@@ -6678,7 +6676,7 @@ Transform:
   m_GameObject: {fileID: 794384327}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.5, y: 0.5, z: 1.5}
-  m_LocalScale: {x: 1, y: 1.6, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1311566518}
   m_RootOrder: 4
@@ -6741,7 +6739,7 @@ MonoBehaviour:
       Data: CheckTime
     - Name: subTaskId
       Entry: 1
-      Data: 00_CheckTime
+      Data: CheckTime
     - Name: 
       Entry: 8
       Data: 
@@ -6807,7 +6805,7 @@ MonoBehaviour:
       Data: CheckTime
     - Name: subTaskId
       Entry: 1
-      Data: 00_CheckTime
+      Data: CheckTime
     - Name: 
       Entry: 8
       Data: 
@@ -6927,7 +6925,7 @@ MonoBehaviour:
       Data: CheckTime
     - Name: subTaskId
       Entry: 1
-      Data: 00_CheckTime
+      Data: CheckTime
     - Name: 
       Entry: 8
       Data: 
@@ -7166,7 +7164,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.5, z: 0.8}
+  m_Size: {x: 0.8, y: 0.8, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &803533916
 GameObject:
@@ -8184,6 +8182,61 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1025301875}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1039084753
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1426747716}
+    m_Modifications:
+    - target: {fileID: 400000, guid: aa57d9477c7a1b848b6fa86fe5e5e2f7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: aa57d9477c7a1b848b6fa86fe5e5e2f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: aa57d9477c7a1b848b6fa86fe5e5e2f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: aa57d9477c7a1b848b6fa86fe5e5e2f7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: aa57d9477c7a1b848b6fa86fe5e5e2f7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: aa57d9477c7a1b848b6fa86fe5e5e2f7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: aa57d9477c7a1b848b6fa86fe5e5e2f7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: aa57d9477c7a1b848b6fa86fe5e5e2f7, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: aa57d9477c7a1b848b6fa86fe5e5e2f7, type: 3}
+  m_IsPrefabParent: 0
+--- !u!4 &1039084754 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: aa57d9477c7a1b848b6fa86fe5e5e2f7, type: 3}
+  m_PrefabInternal: {fileID: 1039084753}
+--- !u!1 &1039084755 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: aa57d9477c7a1b848b6fa86fe5e5e2f7, type: 3}
+  m_PrefabInternal: {fileID: 1039084753}
+--- !u!23 &1039084756 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 2300000, guid: aa57d9477c7a1b848b6fa86fe5e5e2f7,
+    type: 3}
+  m_PrefabInternal: {fileID: 1039084753}
 --- !u!114 &1135421185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10364,7 +10417,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 459014d22b8087441967143526466324, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2300002, guid: 459014d22b8087441967143526466324, type: 3}
       propertyPath: m_CastShadows
@@ -12397,6 +12450,7 @@ Transform:
   - {fileID: 711864831}
   - {fileID: 1183849704}
   - {fileID: 794384328}
+  - {fileID: 1530131937}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13955,6 +14009,7 @@ Transform:
   - {fileID: 1851693538}
   - {fileID: 1639170573}
   - {fileID: 303904792}
+  - {fileID: 1039084754}
   - {fileID: 448631594}
   - {fileID: 81976857}
   - {fileID: 728239442}
@@ -15195,6 +15250,521 @@ MonoBehaviour:
     x: 3
     y: 0
   obj: {fileID: 1684281840}
+--- !u!1 &1530131936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1530131937}
+  - component: {fileID: 1530131939}
+  - component: {fileID: 1530131938}
+  m_Layer: 0
+  m_Name: Blinds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1530131937
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1530131936}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.951, y: 1.7, z: -0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1311566518}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1530131938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1530131936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda525c77f074b0489fd031aaba5a4bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: cfaeb9e4c3fcfec498021cfa91664385, type: 2}
+    - {fileID: 1039084755}
+    - {fileID: 1039084756}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: leftClickActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Use
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 3|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 5
+    - Name: objectiveId
+      Entry: 3
+      Data: 2
+    - Name: objective
+      Entry: 10
+      Data: 0
+    - Name: taskId
+      Entry: 1
+      Data: CheckEmails
+    - Name: subTaskId
+      Entry: 1
+      Data: CloseBlinds
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 5|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|LookAtReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|AnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: customAnimator
+      Entry: 6
+      Data: 
+    - Name: animationName
+      Entry: 1
+      Data: HighTake
+    - Name: timeoutAfterInSeconds
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|ObjectiveReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: objectiveId
+      Entry: 3
+      Data: 2
+    - Name: objective
+      Entry: 10
+      Data: 0
+    - Name: taskId
+      Entry: 1
+      Data: CheckEmails
+    - Name: subTaskId
+      Entry: 1
+      Data: CloseBlinds
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Try Use
+    - Name: conditions
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 12|MoveToReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|LookAtReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|AnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: customAnimator
+      Entry: 6
+      Data: 
+    - Name: animationName
+      Entry: 1
+      Data: AttemptTake
+    - Name: timeoutAfterInSeconds
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 16|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Can Use
+    - Name: conditions
+      Entry: 7
+      Data: 17|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 18|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 5
+    - Name: objectiveId
+      Entry: 3
+      Data: 2
+    - Name: objective
+      Entry: 10
+      Data: 0
+    - Name: taskId
+      Entry: 1
+      Data: CheckEmails
+    - Name: subTaskId
+      Entry: 1
+      Data: CloseBlinds
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 19|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 20|ColorReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: customRenderers
+      Entry: 6
+      Data: 
+    - Name: propertyName
+      Entry: 1
+      Data: _Color
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0.9916434
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 21|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Can't Use
+    - Name: conditions
+      Entry: 7
+      Data: 22|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 23|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 24|ColorReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: customRenderers
+      Entry: 6
+      Data: 
+    - Name: propertyName
+      Entry: 1
+      Data: _Color
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 25|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 26|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Reset Color
+    - Name: conditions
+      Entry: 7
+      Data: 27|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 28|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 29|ColorReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: customRenderers
+      Entry: 6
+      Data: 
+    - Name: propertyName
+      Entry: 1
+      Data: _Color
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: container
+      Entry: 7
+      Data: 30|Container, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: obj
+      Entry: 10
+      Data: 1
+    - Name: renderer
+      Entry: 10
+      Data: 2
+    - Name: animator
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1311566517}
+  attachedTiles:
+  - {fileID: 1803868095}
+--- !u!65 &1530131939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1530131936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 1.4, z: 2.7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1541970559
 MonoBehaviour:
   m_ObjectHideFlags: 0

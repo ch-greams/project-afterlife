@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 
 
@@ -7,11 +8,9 @@ public class ObjectiveReaction : IReaction
 {
     public ObjectiveReactionType type;
 
-    [ValidateInput("ValidateObjectiveId", "Objective ID doesn't match, please select correct Objective.")]
     public ObjectiveId objectiveId;
 
     // NOTE: Editor use only, don't use this variable in Init/IsValid methods
-    [ValidateInput("ValidateObjective", "Objective ID doesn't match, please select correct Objective.")]
     public Objective objective;
 
     private List<string> taskIds
@@ -32,7 +31,7 @@ public class ObjectiveReaction : IReaction
         get
         {
             return ((this.objective != null) && (this.taskId != null) && this.objective.tasks.ContainsKey(this.taskId))
-                ? new List<string>(this.objective.tasks[this.taskId].subTasks.Keys)
+                ? this.objective.tasks[this.taskId].subTasks.Select(st => st.id).ToList()
                 : new List<string>();
         }
     }
@@ -40,36 +39,19 @@ public class ObjectiveReaction : IReaction
     [ValueDropdown("subTaskIds")]
     public string subTaskId;
 
-    private GlobalController globalCtrl;
+    private ObjectiveManager objectiveManager;
 
 
     public void Init(Interactable interactable)
     {
-        this.globalCtrl = interactable.sceneCtrl.globalCtrl;
+        this.objectiveManager = interactable.sceneCtrl.globalCtrl.objectiveManager;
     }
 
     public IEnumerator React()
     {
-        Objective objective = this.globalCtrl.globalState.objectives[this.objectiveId];
-        objective.Complete(this.taskId, this.subTaskId);
-        if (objective.completed)
-        {
-            this.globalCtrl.globalState.currentObjective = objective.nextObjectives[0].id;
-        }
-        this.globalCtrl.objectiveManager.UpdateObjective();
+        this.objectiveManager.CompleteSubTask(this.objectiveId, this.taskId, this.subTaskId);
 
         yield return null;
-    }
-
-
-    private bool ValidateObjectiveId(ObjectiveId objectiveId)
-    {
-        return (this.objective != null) && (this.objective.id == objectiveId);
-    }
-
-    private bool ValidateObjective(Objective objective)
-    {
-        return (objective != null) && (objective.id == this.objectiveId);
     }
 }
 

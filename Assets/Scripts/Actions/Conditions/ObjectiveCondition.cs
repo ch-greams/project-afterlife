@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
 
@@ -6,14 +7,11 @@ public class ObjectiveCondition : ICondition
 {
     public ObjectiveConditionType type;
 
-    [ValidateInput("RequiredObjectiveId", "Objective ID is required.")]
-    [ValidateInput("ValidateObjectiveId", "Objective ID doesn't match, please select correct Objective.")]
     public ObjectiveId objectiveId;
 
     // NOTE: Editor use only, don't use this variable in Init/IsValid methods
     [HideIf("type", ObjectiveConditionType.OBJECTIVE_IS_COMPLETE, false)]
     [HideIf("type", ObjectiveConditionType.OBJECTIVE_IS_NOT_COMPLETE, false)]
-    [ValidateInput("ValidateObjective", "Objective ID doesn't match, please select correct Objective.")]
     public Objective objective;
 
     private List<string> taskIds
@@ -36,7 +34,7 @@ public class ObjectiveCondition : ICondition
         get
         {
             return ((this.objective != null) && (this.taskId != null) && this.objective.tasks.ContainsKey(this.taskId))
-                ? new List<string>(this.objective.tasks[this.taskId].subTasks.Keys)
+                ? this.objective.tasks[this.taskId].subTasks.Select(st => st.id).ToList()
                 : new List<string>();
         }
     }
@@ -60,6 +58,12 @@ public class ObjectiveCondition : ICondition
     {
         Objective objective = this.globalState.objectives[this.objectiveId];
 
+        // TODO: Move to specific types
+        if (this.objectiveId != this.globalState.currentObjective)
+        {
+            return false;
+        }
+
         switch (this.type)
         {
             case ObjectiveConditionType.OBJECTIVE_IS_COMPLETE:
@@ -71,34 +75,12 @@ public class ObjectiveCondition : ICondition
             case ObjectiveConditionType.TASK_IS_NOT_COMPLETE:
                 return !objective.tasks[this.taskId].completed;
             case ObjectiveConditionType.SUB_TASK_IS_COMPLETE:
-                return objective.tasks[this.taskId].subTasks[this.subTaskId].completed;
+                return objective.tasks[this.taskId].subTasks.Find(st => st.id == this.subTaskId).completed;
             case ObjectiveConditionType.SUB_TASK_IS_NOT_COMPLETE:
-                return !objective.tasks[this.taskId].subTasks[this.subTaskId].completed;
+                return !objective.tasks[this.taskId].subTasks.Find(st => st.id == this.subTaskId).completed;
             default:
                 return false;
         }
-    }
-
-    private bool RequiredObjectiveId(ObjectiveId objectiveId)
-    {
-        return (objectiveId != ObjectiveId.Undefined);
-    }
-
-    private bool ValidateObjectiveId(ObjectiveId objectiveId)
-    {
-        switch (this.type)
-        {
-            case ObjectiveConditionType.OBJECTIVE_IS_COMPLETE:
-            case ObjectiveConditionType.OBJECTIVE_IS_NOT_COMPLETE:
-                return true;
-            default:
-                return (this.objective != null) && (this.objective.id == objectiveId);
-        }
-    }
-
-    private bool ValidateObjective(Objective objective)
-    {
-        return (objective != null) && (objective.id == this.objectiveId);
     }
 }
 
