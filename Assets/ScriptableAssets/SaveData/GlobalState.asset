@@ -15,17 +15,6 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 6cc05282b483c8345b72759b0059f472, type: 2}
-    - {fileID: 11400000, guid: 1ee39dabfa0800d4998417853ec2042e, type: 2}
-    - {fileID: 11400000, guid: bff82c469a30d0946a96032932e16633, type: 2}
-    - {fileID: 11400000, guid: 412085bd9372831489ca4db3934ab18d, type: 2}
-    - {fileID: 11400000, guid: 1c9c2e477410fbd4fba1586ef077e53e, type: 2}
-    - {fileID: 11400000, guid: af1b24ef17075314fb140cbbfc6d4a25, type: 2}
-    - {fileID: 11400000, guid: 3b79f66088d211f43a959e421b78aad7, type: 2}
-    - {fileID: 11400000, guid: a9a46ec73b48fe044ad59fa86f1e73b7, type: 2}
-    - {fileID: 11400000, guid: 18932b7c8ceb2cf4cba8892b1d5b9e6f, type: 2}
-    - {fileID: 11400000, guid: 3f1e9da859317ab4b8bdc198413f8989, type: 2}
-    - {fileID: 11400000, guid: 0a9d3b46d3784dc4ead3f7e68ae18796, type: 2}
     - {fileID: 11400000, guid: 1544ca40248dffa4fa93a9d1d5054fde, type: 2}
     - {fileID: 11400000, guid: cfaeb9e4c3fcfec498021cfa91664385, type: 2}
     - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
@@ -34,20 +23,20 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: sceneStates
+    - Name: objectives
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[SceneType, Assembly-CSharp],[SceneState,
+      Data: 0|System.Collections.Generic.Dictionary`2[[ObjectiveId, Assembly-CSharp],[Objective,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 7
-      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[SceneType,
+      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[ObjectiveId,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 12
-      Data: 11
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -85,163 +74,14 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 10
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 10
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 6
-    - Name: 
-      Entry: 10
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 7
-    - Name: 
-      Entry: 10
-      Data: 6
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 8
-    - Name: 
-      Entry: 10
-      Data: 7
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 9
-    - Name: 
-      Entry: 10
-      Data: 8
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 10
-    - Name: 
-      Entry: 10
-      Data: 9
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 11
-    - Name: 
-      Entry: 10
-      Data: 10
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
-    - Name: objectives
-      Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[ObjectiveId, Assembly-CSharp],[Objective,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 7
-      Data: 3|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[ObjectiveId,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 11
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 10
-      Data: 12
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 10
-      Data: 13
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-  currentScene: 0
+  currentPosition:
+    x: 1
+    y: 4
+  currentScene: 1
   currentObjective: 1
   inventory: []

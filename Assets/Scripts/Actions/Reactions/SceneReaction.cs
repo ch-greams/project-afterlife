@@ -6,17 +6,17 @@ public class SceneReaction : IReaction
     public SceneType scene;
     public Point startPoint;
 
-    private SceneController sceneCtrl;
+    private GlobalController globalCtrl;
 
 
     public void Init(Interactable interactable)
     {
-        this.sceneCtrl = interactable.sceneCtrl;
+        this.globalCtrl = interactable.sceneCtrl.globalCtrl;
     }
     public IEnumerator React()
     {
         // Update start point in state
-        this.sceneCtrl.scene.UpdateStartPoint(this.scene, this.startPoint);
+        this.globalCtrl.UpdatePlayerPosition(this.scene, this.startPoint);
         // Switch scene
         SceneManager.FadeAndLoadScene(this.scene.ToString());
 

@@ -81,6 +81,8 @@ public class MoveToReaction : IReaction
                 yield return null;
             }
 
+            this.sceneCtrl.globalCtrl.UpdatePlayerPosition(tile.point);
+
             player.tile = tile;
             player.characterAnimator.SetFloat(this.speedParamHash, 0F);
         }

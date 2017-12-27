@@ -30,8 +30,6 @@ public class GlobalController : SerializedMonoBehaviour
     private void Awake()
     {
         this.globalState = CreatePlayModeInstance(this.globalState);
-        this.globalState.sceneStates = this.globalState.sceneStates
-            .ToDictionary(kvp => kvp.Key, kvp => GlobalController.CreatePlayModeInstance(kvp.Value));
         this.globalState.objectives = this.globalState.objectives
             .ToDictionary(kvp => kvp.Key, kvp => GlobalController.CreatePlayModeInstance(kvp.Value));
 
@@ -43,6 +41,17 @@ public class GlobalController : SerializedMonoBehaviour
     private IEnumerator Start()
     {
         yield return SceneManager.Init(this, this.faderCanvasGroup, this.startingScene.ToString());
+    }
+
+    public void UpdatePlayerPosition(SceneType scene, Point position)
+    {
+        this.globalState.currentPosition = position;
+        this.globalState.currentScene = scene;
+    }
+
+    public void UpdatePlayerPosition(Point position)
+    {
+        this.globalState.currentPosition = position;
     }
 
     public static T CreatePlayModeInstance<T>(T assetState) where T : ScriptableObject
