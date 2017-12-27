@@ -6,11 +6,11 @@ using Sirenix.OdinInspector;
 
 public class GlobalController : SerializedMonoBehaviour
 {
-    [BoxGroup("Configuration")]
-    public SceneType startingScene = SceneType.AptN1_Bedroom;
 
     [BoxGroup("Configuration")]
     public float fadeDuration = 0.5f;
+    [BoxGroup("Configuration")]
+    public CanvasGroup faderCanvasGroup;
 
 
     [InlineEditor(Expanded = true)]
@@ -21,10 +21,9 @@ public class GlobalController : SerializedMonoBehaviour
 
     public DialogManager dialogManager;
 
-    public ObjectiveManager objectiveManager;
+    public SaveManager saveManager;
 
-    [BoxGroup("User Interface")]
-    public CanvasGroup faderCanvasGroup;
+    public ObjectiveManager objectiveManager;
 
 
     private void Awake()
@@ -35,12 +34,20 @@ public class GlobalController : SerializedMonoBehaviour
 
         this.inventory.LoadFromState(this);
         this.dialogManager.Init();
+        this.saveManager.Init(this);
+
         this.objectiveManager.Init(this.globalState);
     }
 
     private IEnumerator Start()
     {
-        yield return SceneManager.Init(this, this.faderCanvasGroup, this.startingScene.ToString());
+        yield return SceneManager.Init(this, this.faderCanvasGroup, this.globalState.currentScene.ToString());
+    }
+
+    public void Load()
+    {
+        this.objectiveManager.Init(this.globalState);
+        SceneManager.FadeAndLoadScene(this.globalState.currentScene.ToString());
     }
 
     public void UpdatePlayerPosition(SceneType scene, Point position)

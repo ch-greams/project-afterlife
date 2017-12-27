@@ -5,7 +5,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 
-[Serializable, CreateAssetMenu]
+[CreateAssetMenu]
 public class Objective : SerializedScriptableObject
 {
     public ObjectiveId id;
@@ -27,6 +27,33 @@ public class Objective : SerializedScriptableObject
             this.completed = true;
             Debug.LogFormat("objective '{0} is complete", this.title);
         }
+    }
+
+
+    public void LoadFromSerializable(ObjectiveSerializable serializedObjective)
+    {
+        this.completed = serializedObjective.completed;
+        this.tasks = serializedObjective.tasks;
+    }
+}
+
+[Serializable]
+public class ObjectiveSerializable
+{
+    public ObjectiveId id;
+    public string title;
+    public bool completed;
+    public Dictionary<string, Task> tasks = new Dictionary<string, Task>();
+
+
+    public ObjectiveSerializable(Objective objective)
+    {
+        // NOTE: Not used for loading
+        this.id = objective.id;
+        this.title = objective.title;
+
+        this.completed = objective.completed;
+        this.tasks = new Dictionary<string, Task>(objective.tasks);
     }
 }
 
