@@ -67,8 +67,7 @@ public class SaveManager
             file.Close();
 
             this.globalState.LoadFromSerializable(serializableGlobalState);
-
-            this.globalCtrl.Load();
+            this.globalCtrl.LoadFromState();
         }
     }
 

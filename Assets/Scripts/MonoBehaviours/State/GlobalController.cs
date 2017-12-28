@@ -44,7 +44,7 @@ public class GlobalController : SerializedMonoBehaviour
         yield return SceneManager.Init(this, this.faderCanvasGroup, this.globalState.currentScene.ToString());
     }
 
-    public void Load()
+    public void LoadFromState()
     {
         this.objectiveManager.Init(this.globalState);
         SceneManager.FadeAndLoadScene(this.globalState.currentScene.ToString());
