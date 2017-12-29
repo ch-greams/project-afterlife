@@ -19,7 +19,11 @@ public class DoorData : IDataInteractable
 
     [FoldoutGroup("Default Parameters")]
     public Color _defaultColor;
-    public Color defaultColor { get { return this._defaultColor; } }
+    public Color defaultColor
+    {
+        get { return this._defaultColor; }
+        set { this._defaultColor = value; }
+    }
 
     [FoldoutGroup("Default Parameters")]
     public List<Tile> _neighbourTiles = new List<Tile>();

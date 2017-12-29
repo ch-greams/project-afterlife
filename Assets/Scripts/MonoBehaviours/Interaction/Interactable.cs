@@ -95,6 +95,6 @@ public interface IDataInteractable
     GameObject gameObject { get; }
     Renderer renderer { get; }
     Animator animator { get; }
-    Color defaultColor { get; }
+    Color defaultColor { get; set; }
     List<Tile> neighbourTiles { get; }
 }

@@ -35,15 +35,24 @@ public class MoveToReaction : IReaction
     {
         if (this.tiles.Any())
         {
-            this.sceneCtrl.player.isMoving = true;
+            Player player = this.sceneCtrl.player;
+
+            while (player.isMoving)
+            {
+                player.isTargetUpdating = true;
+                yield return null;
+            }
+
+            player.isTargetUpdating = false;
+            player.isMoving = true;
 
             // TODO: Check how often this triggered
             Tile tile = this.GetClosestTile();
 
             // this.textureAnimator.Play();
-            yield return this.MoveToTile(this.sceneCtrl.player, tile);
+            yield return this.MoveToTile(player, tile);
 
-            this.sceneCtrl.player.isMoving = false;
+            player.isMoving = false;
         }
     }
 
@@ -87,6 +96,11 @@ public class MoveToReaction : IReaction
 
             player.tile = tile;
             player.characterAnimator.SetFloat(this.speedParamHash, 0F);
+
+            if (player.isTargetUpdating)
+            {
+                break;
+            }
         }
     }
 }
