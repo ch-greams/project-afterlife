@@ -12,21 +12,8 @@ public class LookAtReaction : IReaction
 
     public void Init(Interactable interactable)
     {
-        switch (interactable.GetType().Name)
-        {
-            case "ContainerInteractable":
-                ContainerInteractable ci = interactable as ContainerInteractable;
-                this.defaultActor = ci.sceneCtrl.player.characterTransform;
-                this.defaultTarget = ci.container.obj.transform;
-                break;
-            case "DoorInteractable":
-                DoorInteractable di = interactable as DoorInteractable;
-                this.defaultActor = di.sceneCtrl.player.characterTransform;
-                this.defaultTarget = di.door.obj.transform;
-                break;
-            default:
-                break;
-        }
+        this.defaultActor = interactable.sceneCtrl.player.characterTransform;
+        this.defaultTarget = interactable.data.gameObject.transform;
     }
     public IEnumerator React()
     {

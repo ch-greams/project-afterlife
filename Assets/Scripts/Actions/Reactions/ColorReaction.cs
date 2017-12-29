@@ -20,21 +20,7 @@ public class ColorReaction : IReaction
     public void Init(Interactable interactable)
     {
         this.propertyId = Shader.PropertyToID(this.propertyName);
-
-        switch (interactable.GetType().Name)
-        {
-            case "ContainerInteractable":
-                this.defaultRenderer = (interactable as ContainerInteractable).container.renderer;
-                break;
-            case "DoorInteractable":
-                this.defaultRenderer = (interactable as DoorInteractable).door.renderer;
-                break;
-            case "TileInteractable":
-                this.defaultRenderer = (interactable as TileInteractable).tile.obj.GetComponent<Renderer>();
-                break;
-            default:
-                break;
-        }
+        this.defaultRenderer = interactable.data.renderer;
     }
     public IEnumerator React()
     {

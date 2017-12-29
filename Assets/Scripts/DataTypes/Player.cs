@@ -4,6 +4,7 @@
 public class Player
 {
     public float speed = 10.0F;
+    public bool isMoving = false;
     public Transform playerTransform;
     public Transform characterTransform;
     public Animator characterAnimator;

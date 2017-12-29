@@ -27,7 +27,7 @@ public class TextureAnimationReaction : IReaction
         this.timeoutBetweenFrames = new WaitForSeconds(1F / this.framesPerSecond);
 
         this.interactable = interactable;
-        this.renderer = (interactable as TileInteractable).tile.obj.GetComponent<Renderer>();
+        this.renderer = interactable.data.renderer;
 
         // Create new material instance & destroy and/or reassign new material instance
         this.renderer.sharedMaterial = new Material(this.renderer.sharedMaterial);

@@ -153,39 +153,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 13526631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 706667764}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -197,13 +234,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -224,7 +261,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -245,25 +282,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -275,19 +318,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -339,19 +382,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -363,19 +406,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -426,7 +469,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 706667764}
 --- !u!23 &13526635
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -522,39 +564,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 24941953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1568473954}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -566,13 +645,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -593,7 +672,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -614,25 +693,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -644,19 +729,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -708,19 +793,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -732,19 +817,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -795,7 +880,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 1568473954}
 --- !u!23 &24941957
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -891,39 +975,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 106779854}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 857931453}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -935,13 +1056,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -962,7 +1083,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -983,25 +1104,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -1013,19 +1140,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1077,19 +1204,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1101,19 +1228,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1164,7 +1291,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 857931453}
 --- !u!23 &106779858
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1680,39 +1806,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 400297102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 533390955}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -1724,13 +1887,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -1751,7 +1914,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -1772,25 +1935,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -1802,19 +1971,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1866,19 +2035,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -1890,19 +2059,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1953,7 +2122,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 533390955}
 --- !u!23 &400297106
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2098,39 +2266,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 418660213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1382608065}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -2142,13 +2347,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -2169,7 +2374,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -2190,25 +2395,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -2220,19 +2431,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -2284,19 +2495,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -2308,19 +2519,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -2371,7 +2582,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 1382608065}
 --- !u!23 &418660217
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2467,39 +2677,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 442643680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1433372807}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -2511,13 +2758,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -2538,7 +2785,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -2559,25 +2806,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -2589,19 +2842,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -2653,19 +2906,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -2677,19 +2930,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -2740,7 +2993,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 1433372807}
 --- !u!23 &442643684
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3073,39 +3325,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 600868397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1328692858}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -3117,13 +3406,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -3144,7 +3433,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -3165,25 +3454,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -3195,19 +3490,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -3259,19 +3554,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3283,19 +3578,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -3346,7 +3641,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 1328692858}
 --- !u!23 &600868401
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3442,39 +3736,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 615066534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1840253116}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -3486,13 +3817,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -3513,7 +3844,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -3534,25 +3865,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -3564,19 +3901,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -3628,19 +3965,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3652,19 +3989,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -3715,7 +4052,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 1840253116}
 --- !u!23 &615066538
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3890,7 +4226,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 659917290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d351614b8cccb16439f211867b01dbed, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
@@ -3900,26 +4236,90 @@ MonoBehaviour:
     - {fileID: 247326061}
     - {fileID: 247326059}
     - {fileID: 247326060}
+    - {fileID: 818980394}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|DoorData, Assembly-CSharp
+    - Name: _gameObject
+      Entry: 10
+      Data: 0
+    - Name: _renderer
+      Entry: 10
+      Data: 1
+    - Name: _animator
+      Entry: 10
+      Data: 2
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _neighbourTiles
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Tile, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: scene
+      Entry: 3
+      Data: 11
+    - Name: exitPosition
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
+      Data: 6
+    - Name: y
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 2|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 3|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Open Door
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 4|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -3931,19 +4331,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 5|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 4|MoveToReaction, Assembly-CSharp
+      Data: 6|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 5|LookAtReaction, Assembly-CSharp
+      Data: 7|LookAtReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -3952,7 +4352,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|AnimationReaction, Assembly-CSharp
+      Data: 8|AnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -3970,7 +4370,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 7|AnimationReaction, Assembly-CSharp
+      Data: 9|AnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -3988,7 +4388,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 8|SceneReaction, Assembly-CSharp
+      Data: 10|SceneReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -4027,19 +4427,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 10|Action, Assembly-CSharp
+      Data: 12|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Open
     - Name: conditions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 13|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -4051,13 +4451,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 13|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -4105,19 +4505,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 16|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 17|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 18|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -4129,13 +4529,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 20|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -4181,39 +4581,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: door
-      Entry: 7
-      Data: 19|Door, Assembly-CSharp
-    - Name: obj
-      Entry: 10
-      Data: 0
-    - Name: renderer
-      Entry: 10
-      Data: 1
-    - Name: animator
-      Entry: 10
-      Data: 2
-    - Name: toScene
-      Entry: 3
-      Data: 11
-    - Name: exitPoint
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 6
-    - Name: y
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
   sceneCtrl: {fileID: 1793904435}
-  attachedTiles:
-  - {fileID: 818980394}
 --- !u!114 &666920764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4323,39 +4691,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 701411471}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1690179868}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -4367,13 +4772,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -4394,7 +4799,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -4415,25 +4820,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -4445,19 +4856,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -4509,19 +4920,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -4533,19 +4944,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -4596,7 +5007,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 1690179868}
 --- !u!23 &701411475
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5111,39 +5521,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 906133062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 412425484}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -5155,13 +5602,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -5182,7 +5629,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -5203,25 +5650,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -5233,19 +5686,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5297,19 +5750,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -5321,19 +5774,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5384,7 +5837,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 412425484}
 --- !u!23 &906133066
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5467,39 +5919,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 916258536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 387618705}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -5511,13 +6000,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -5538,7 +6027,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -5559,25 +6048,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -5589,19 +6084,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5653,19 +6148,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -5677,19 +6172,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5740,7 +6235,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 387618705}
 --- !u!23 &916258539
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5849,39 +6343,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 973964713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 2133176893}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -5893,13 +6424,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -5920,7 +6451,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -5941,25 +6472,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -5971,19 +6508,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6035,19 +6572,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6059,19 +6596,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6122,7 +6659,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 2133176893}
 --- !u!23 &973964717
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6218,39 +6754,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 1055964643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1543030777}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -6262,13 +6835,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -6289,7 +6862,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -6310,25 +6883,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -6340,19 +6919,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6404,19 +6983,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6428,19 +7007,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6491,7 +7070,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 1543030777}
 --- !u!23 &1055964647
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6587,39 +7165,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 1073643527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 303240885}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -6631,13 +7246,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -6658,7 +7273,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -6679,25 +7294,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -6709,19 +7330,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6773,19 +7394,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -6797,19 +7418,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6860,7 +7481,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 303240885}
 --- !u!23 &1073643531
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6956,39 +7576,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 1108019116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 625690790}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -7000,13 +7657,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -7027,7 +7684,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -7048,25 +7705,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -7078,19 +7741,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7142,19 +7805,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7166,19 +7829,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7229,7 +7892,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 625690790}
 --- !u!23 &1108019120
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7542,39 +8204,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 1382512709}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 2139822499}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -7586,13 +8285,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -7613,7 +8312,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -7634,25 +8333,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -7664,19 +8369,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7728,19 +8433,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7752,19 +8457,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -7815,7 +8520,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 2139822499}
 --- !u!23 &1382512713
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8090,39 +8794,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 1523304002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 666920764}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -8134,13 +8875,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -8161,7 +8902,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -8182,25 +8923,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -8212,19 +8959,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -8276,19 +9023,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8300,19 +9047,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -8363,7 +9110,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 666920764}
 --- !u!23 &1523304006
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8573,39 +9319,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 1559988155}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1859100580}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -8617,13 +9400,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -8644,7 +9427,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -8665,25 +9448,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -8695,19 +9484,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -8759,19 +9548,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -8783,19 +9572,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -8846,7 +9635,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 1859100580}
 --- !u!23 &1559988159
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9080,39 +9868,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 1731767760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1542498192}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -9124,13 +9949,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -9151,7 +9976,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -9172,25 +9997,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -9202,19 +10033,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -9266,19 +10097,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -9290,19 +10121,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -9353,7 +10184,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 1542498192}
 --- !u!23 &1731767764
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9470,6 +10300,9 @@ MonoBehaviour:
     - Name: speed
       Entry: 4
       Data: 10
+    - Name: isMoving
+      Entry: 5
+      Data: false
     - Name: playerTransform
       Entry: 10
       Data: 0
@@ -9552,39 +10385,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 1798611345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 483681446}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -9596,13 +10466,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -9623,7 +10493,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -9644,25 +10514,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -9674,19 +10550,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -9738,19 +10614,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -9762,19 +10638,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -9825,7 +10701,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 483681446}
 --- !u!23 &1798611349
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10084,39 +10959,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 1907938391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1971955154}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -10128,13 +11040,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -10155,7 +11067,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -10176,25 +11088,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -10206,19 +11124,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -10270,19 +11188,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -10294,19 +11212,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -10357,7 +11275,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 1971955154}
 --- !u!23 &1907938395
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10503,39 +11420,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 1965453107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 500488699}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -10547,13 +11501,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -10574,7 +11528,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -10595,25 +11549,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -10625,19 +11585,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -10689,19 +11649,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -10713,19 +11673,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -10776,7 +11736,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 500488699}
 --- !u!23 &1965453111
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10941,39 +11900,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 2076018447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 818980394}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -10985,13 +11981,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -11012,7 +12008,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11033,25 +12029,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11063,19 +12065,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -11127,19 +12129,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -11151,19 +12153,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -11214,7 +12216,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 818980394}
 --- !u!23 &2076018451
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11310,39 +12311,76 @@ MonoBehaviour:
   m_GameObject: {fileID: 2114634269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4667b8c1a8f2da4f9ae505a7e88352f, type: 3}
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1876608005}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|TileData, Assembly-CSharp
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.039
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tile
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: leftClickActions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|Action, Assembly-CSharp
+      Data: 2|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Move
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 3|TileCondition, Assembly-CSharp
+      Data: 4|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11354,13 +12392,13 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 5|TextureAnimationReaction, Assembly-CSharp
+      Data: 7|TextureAnimationReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -11381,7 +12419,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|MoveToReaction, Assembly-CSharp
+      Data: 8|MoveToReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11402,25 +12440,31 @@ MonoBehaviour:
       Data: 
     - Name: hoverStartActions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|Action, Assembly-CSharp
+      Data: 10|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Highlight
     - Name: conditions
       Entry: 7
-      Data: 9|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 11|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 10|TileCondition, Assembly-CSharp
+      Data: 12|TileCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|PlayerCondition, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11432,19 +12476,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 14|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|ColorReaction, Assembly-CSharp
+      Data: 15|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 16|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -11496,19 +12540,19 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|Action, Assembly-CSharp
+      Data: 18|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -11520,19 +12564,19 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|ColorReaction, Assembly-CSharp
+      Data: 21|ColorReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
     - Name: customRenderers
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+      Data: 22|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
         mscorlib
     - Name: 
       Entry: 12
@@ -11583,7 +12627,6 @@ MonoBehaviour:
       Entry: 8
       Data: 
   sceneCtrl: {fileID: 1793904435}
-  tile: {fileID: 1876608005}
 --- !u!23 &2114634273
 MeshRenderer:
   m_ObjectHideFlags: 0

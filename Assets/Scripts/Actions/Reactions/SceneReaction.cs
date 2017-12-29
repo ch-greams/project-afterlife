@@ -19,12 +19,12 @@ public class SceneReaction : IReaction
     {
         this.globalCtrl = interactable.sceneCtrl.globalCtrl;
 
-        switch (interactable.GetType().Name)
+        switch (interactable.data.GetType().Name)
         {
-            case "DoorInteractable":
-                DoorInteractable di = interactable as DoorInteractable;
-                this.defaultScene = di.door.toScene;
-                this.defaultPosition = di.door.exitPoint;
+            case "DoorData":
+                DoorData dd = interactable.data as DoorData;
+                this.defaultScene = dd.scene;
+                this.defaultPosition = dd.exitPosition;
                 break;
             default:
                 break;

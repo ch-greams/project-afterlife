@@ -17,16 +17,14 @@ public class MoveToReaction : IReaction
         this.sceneCtrl = interactable.sceneCtrl;
         this.speedParamHash = Animator.StringToHash("Speed");
 
-        switch (interactable.GetType().Name)
+        switch (interactable.data.GetType().Name)
         {
-            case "ContainerInteractable":
-                this.tiles = (interactable as ContainerInteractable).attachedTiles;
+            case "ContainerData":
+            case "DoorData":
+                this.tiles = interactable.data.neighbourTiles;
                 break;
-            case "DoorInteractable":
-                this.tiles = (interactable as DoorInteractable).attachedTiles;
-                break;
-            case "TileInteractable":
-                this.tiles = new List<Tile>(){ (interactable as TileInteractable).tile };
+            case "TileData":
+                this.tiles = new List<Tile>(){ (interactable.data as TileData).tile };
                 break;
             default:
                 break;
@@ -37,11 +35,15 @@ public class MoveToReaction : IReaction
     {
         if (this.tiles.Any())
         {
+            this.sceneCtrl.player.isMoving = true;
+
             // TODO: Check how often this triggered
             Tile tile = this.GetClosestTile();
 
             // this.textureAnimator.Play();
             yield return this.MoveToTile(this.sceneCtrl.player, tile);
+
+            this.sceneCtrl.player.isMoving = false;
         }
     }
 

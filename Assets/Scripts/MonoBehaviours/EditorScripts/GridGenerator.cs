@@ -45,7 +45,7 @@ public class GridGenerator : MonoBehaviour
                 obj.name = point.ToString();
 
                 Tile tile = Tile.CreateInstance(point, true, obj);
-                obj.GetComponent<TileInteractable>().tile = tile;
+                (obj.GetComponent<Interactable>().data as TileData).tile = tile;
 
                 this.tiles.Add(tile);
             }

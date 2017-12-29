@@ -6,7 +6,7 @@ public class TileCondition : ICondition
 
     public void Init(Interactable interactable)
     {
-        this.passable = (interactable as TileInteractable).tile.passable;
+        this.passable = (interactable.data as TileData).tile.passable;
     }
 
     public bool IsValid()

@@ -50,25 +50,10 @@ public class AnimationReaction : IReaction
         this.animationId = Animator.StringToHash(this.animationName);
         this.timeoutAfter = new WaitForSeconds(this.timeoutAfterInSeconds);
 
-        switch (interactable.GetType().Name)
-        {
-            case "ContainerInteractable":
-                ContainerInteractable ci = interactable as ContainerInteractable;
-                this.defaultAnimator =
-                    this.type == AnimationReactionType.DEFAULT_PLAYER_ANIMATOR
-                        ? ci.sceneCtrl.player.characterAnimator
-                        : ci.container.animator;
-                break;
-            case "DoorInteractable":
-                DoorInteractable di = interactable as DoorInteractable;
-                this.defaultAnimator =
-                    this.type == AnimationReactionType.DEFAULT_PLAYER_ANIMATOR
-                        ? di.sceneCtrl.player.characterAnimator
-                        : di.door.animator;
-                break;
-            default:
-                break;
-        }
+        this.defaultAnimator =
+            this.type == AnimationReactionType.DEFAULT_PLAYER_ANIMATOR
+                ? interactable.sceneCtrl.player.characterAnimator
+                : interactable.data.animator;
 
         if (this.defaultAnimator == null)
         {

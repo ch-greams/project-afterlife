@@ -15,7 +15,7 @@ public class Tile : SerializedScriptableObject
 
     [OdinSerialize]
     public IEnumerable<Tile> allNeighbours { get; set; }
-    public IEnumerable<Tile> neighbours { get { return allNeighbours.Where(tile => tile.passable); } }
+    public IEnumerable<Tile> neighbours { get { return this.allNeighbours.Where(tile => tile.passable); } }
 
 
     public static Tile CreateInstance(Point point, bool passable, GameObject obj)

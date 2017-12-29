@@ -5,8 +5,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public abstract class Interactable : SerializedMonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public class Interactable : SerializedMonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public IDataInteractable data;
+
     [FoldoutGroup("Interactable Config", expanded: false)]
     public SceneController sceneCtrl;
     
@@ -47,7 +49,7 @@ public abstract class Interactable : SerializedMonoBehaviour, IPointerClickHandl
         base.StartCoroutine(this.OnHoverEnd());
     }
 
-    protected virtual IEnumerator OnInit()
+    private IEnumerator OnInit()
     {
         this.leftClickActions.ForEach(action => action.Init(this));
         this.hoverStartActions.ForEach(action => action.Init(this));
@@ -55,7 +57,7 @@ public abstract class Interactable : SerializedMonoBehaviour, IPointerClickHandl
 
         yield return null;
     }
-    protected virtual IEnumerator OnLeftClick()
+    private IEnumerator OnLeftClick()
     {
         Action action = this.leftClickActions.Find(a => a.IsValid());
 
@@ -64,11 +66,11 @@ public abstract class Interactable : SerializedMonoBehaviour, IPointerClickHandl
             yield return action.React();
         }
     }
-    protected virtual IEnumerator OnRightClick()
+    private IEnumerator OnRightClick()
     {
         yield return null;
     }
-    protected virtual IEnumerator OnHoverStart()
+    private IEnumerator OnHoverStart()
     {
         Action action = this.hoverStartActions.Find(a => a.IsValid());
 
@@ -77,7 +79,7 @@ public abstract class Interactable : SerializedMonoBehaviour, IPointerClickHandl
             yield return action.React();
         }
     }
-    protected virtual IEnumerator OnHoverEnd()
+    private IEnumerator OnHoverEnd()
     {
         Action action = this.hoverEndActions.Find(a => a.IsValid());
 
@@ -86,4 +88,13 @@ public abstract class Interactable : SerializedMonoBehaviour, IPointerClickHandl
             yield return action.React();
         }
     }
+}
+
+public interface IDataInteractable
+{
+    GameObject gameObject { get; }
+    Renderer renderer { get; }
+    Animator animator { get; }
+    Color defaultColor { get; }
+    List<Tile> neighbourTiles { get; }
 }
