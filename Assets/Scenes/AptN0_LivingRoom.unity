@@ -14367,6 +14367,9 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 8|SceneReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
     - Name: scene
       Entry: 3
       Data: 3

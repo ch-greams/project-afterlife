@@ -1524,6 +1524,9 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 8|SceneReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
     - Name: scene
       Entry: 3
       Data: 4
@@ -1727,13 +1730,13 @@ MonoBehaviour:
       Data: 2
     - Name: toScene
       Entry: 3
-      Data: 0
+      Data: 4
     - Name: exitPoint
       Entry: 7
       Data: Point, Assembly-CSharp
     - Name: x
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: y
       Entry: 3
       Data: 0

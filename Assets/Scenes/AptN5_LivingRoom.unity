@@ -4255,6 +4255,9 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 8|SceneReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
     - Name: scene
       Entry: 3
       Data: 10
@@ -4458,13 +4461,13 @@ MonoBehaviour:
       Data: 2
     - Name: toScene
       Entry: 3
-      Data: 0
+      Data: 10
     - Name: exitPoint
       Entry: 7
       Data: Point, Assembly-CSharp
     - Name: x
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: y
       Entry: 3
       Data: 0
@@ -12364,6 +12367,9 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 8|SceneReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
     - Name: scene
       Entry: 3
       Data: 9
@@ -12567,16 +12573,16 @@ MonoBehaviour:
       Data: 2
     - Name: toScene
       Entry: 3
-      Data: 0
+      Data: 9
     - Name: exitPoint
       Entry: 7
       Data: Point, Assembly-CSharp
     - Name: x
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: y
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -14129,6 +14135,9 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 8|SceneReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
     - Name: scene
       Entry: 3
       Data: 3
@@ -14332,16 +14341,16 @@ MonoBehaviour:
       Data: 2
     - Name: toScene
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: exitPoint
       Entry: 7
       Data: Point, Assembly-CSharp
     - Name: x
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: y
       Entry: 3
-      Data: 0
+      Data: 20
     - Name: 
       Entry: 8
       Data: 

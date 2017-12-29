@@ -58,5 +58,16 @@
         "lerp",
         "mathf",
         "mono"
+    ],
+    "todohighlight.include": [
+        "**/*.cs"
+    ],
+    "todohighlight.keywords": [
+        {
+            "text": "NOTE:",
+            "color": "#000000",
+            "backgroundColor": "cyan",
+            "overviewRulerColor": "grey"
+        }
     ]
 }
