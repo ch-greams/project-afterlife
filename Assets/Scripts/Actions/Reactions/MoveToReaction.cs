@@ -63,7 +63,7 @@ public class MoveToReaction : IReaction
     {
         foreach (Tile tile in targetTile.FindPathFrom(player.tile, true).Reverse())
         {
-            player.characterAnimator.SetFloat(this.speedParamHash, player.speed * 0.75F);
+            player.characterAnimator.SetFloat(this.speedParamHash, player.speed * 1F);
 
             float startTime = Time.time;
             Vector3 startPosition = player.playerTransform.position;

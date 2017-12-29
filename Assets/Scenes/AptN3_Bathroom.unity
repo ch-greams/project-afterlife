@@ -495,12 +495,12 @@ Prefab:
   m_IsPrefabParent: 0
 --- !u!95 &248706401 stripped
 Animator:
-  m_PrefabParentObject: {fileID: 95174006892998988, guid: 1cad21be512a1694880f80a805db524f,
+  m_PrefabParentObject: {fileID: 95259781090681068, guid: 1cad21be512a1694880f80a805db524f,
     type: 2}
   m_PrefabInternal: {fileID: 248706400}
 --- !u!4 &248706402 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 4664243273928080, guid: 1cad21be512a1694880f80a805db524f,
+  m_PrefabParentObject: {fileID: 4152343992694100, guid: 1cad21be512a1694880f80a805db524f,
     type: 2}
   m_PrefabInternal: {fileID: 248706400}
 --- !u!4 &248706403 stripped
