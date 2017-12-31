@@ -9,34 +9,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5a3c9bc5e278eb4abdc8d4a199386ef, type: 3}
-  m_Name: AptN1_Bedroom_EmptyContainer
+  m_Name: AfterFridgeCheck
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 11400000, guid: 562fb0b235a39be4ab790996a40504f6, type: 2}
+    - {fileID: 11400000, guid: 9039307ef42abef4bbccefb430c83501, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: dialog
+    - Name: dialogue
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[DialogFragment, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.List`1[[DialogueFragment, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|DialogFragment, Assembly-CSharp
+      Data: 1|DialogueFragment, Assembly-CSharp
     - Name: speaker
       Entry: 10
       Data: 0
     - Name: speech
       Entry: 1
-      Data: There's nothing here...
+      Data: Use a bloody stove...
     - Name: 
       Entry: 8
       Data: 
@@ -46,5 +46,3 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  dialogId: 3
-  currentFragment: 0

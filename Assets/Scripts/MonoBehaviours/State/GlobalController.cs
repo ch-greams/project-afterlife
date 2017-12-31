@@ -19,7 +19,7 @@ public class GlobalController : SerializedMonoBehaviour
 
     public Inventory inventory;
 
-    public DialogManager dialogManager;
+    public DialogueManager dialogueManager;
 
     public SaveManager saveManager;
 
@@ -33,10 +33,10 @@ public class GlobalController : SerializedMonoBehaviour
             .ToDictionary(kvp => kvp.Key, kvp => GlobalController.CreatePlayModeInstance(kvp.Value));
 
         this.inventory.LoadFromState(this);
-        this.dialogManager.Init();
+        this.dialogueManager.Init();
         this.saveManager.Init(this);
 
-        this.objectiveManager.Init(this.globalState);
+        this.objectiveManager.Init(this);
     }
 
     private IEnumerator Start()
@@ -46,7 +46,7 @@ public class GlobalController : SerializedMonoBehaviour
 
     public void LoadFromState()
     {
-        this.objectiveManager.Init(this.globalState);
+        this.objectiveManager.Init(this);
         SceneManager.FadeAndLoadScene(this.globalState.currentScene.ToString());
     }
 

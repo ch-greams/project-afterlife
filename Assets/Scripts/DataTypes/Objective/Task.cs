@@ -19,7 +19,7 @@ public class Task
 
     public void Complete(string subTaskId)
     {
-        string currentTaskTitle = this.GetCurrentTaskTitle();
+        string currentTaskTitle = this.GetCurrentVisibleSubTask().title;
         this.subTasks.Find(st => st.id == subTaskId).Complete();
 
         if (this.subTasks.Last().id == subTaskId)
@@ -29,11 +29,11 @@ public class Task
         }
     }
 
-    public string GetCurrentTaskTitle()
+    public SubTask GetCurrentVisibleSubTask()
     {
         return this.subTasks.Exists(st => !st.hidden && !st.completed)
-            ? this.subTasks.Find(st => !st.hidden && !st.completed).title
-            : this.subTasks.FindLast(st => !st.hidden).title;
+            ? this.subTasks.Find(st => !st.hidden && !st.completed)
+            : this.subTasks.FindLast(st => !st.hidden);
     }
 
     public SubTask GetCurrentSubTask()

@@ -781,9 +781,9 @@ RectTransform:
   - {fileID: 1966297254}
   - {fileID: 800252085}
   - {fileID: 639525958}
-  - {fileID: 335768177}
   - {fileID: 739093950}
   - {fileID: 865638375}
+  - {fileID: 335768177}
   - {fileID: 553015766}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1340,7 +1340,7 @@ GameObject:
   - component: {fileID: 335768179}
   - component: {fileID: 335768178}
   m_Layer: 5
-  m_Name: Dialog
+  m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,7 +1358,7 @@ RectTransform:
   m_Children:
   - {fileID: 1939066170}
   m_Father: {fileID: 203014886}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3384,7 +3384,7 @@ RectTransform:
   m_Children:
   - {fileID: 1927444297}
   m_Father: {fileID: 203014886}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -4033,7 +4033,7 @@ RectTransform:
   m_Children:
   - {fileID: 225225796}
   m_Father: {fileID: 203014886}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6123,9 +6123,6 @@ MonoBehaviour:
     - {fileID: 1433375251}
     - {fileID: 1829472388}
     - {fileID: 1704720589}
-    - {fileID: 11400000, guid: af70ec552b1559740bf042d6e2a95980, type: 2}
-    - {fileID: 11400000, guid: 13b7e6a7bf5e06a45b6f449d4d735ed4, type: 2}
-    - {fileID: 11400000, guid: 3ef3a0b57a11a214496f7d2b21591914, type: 2}
     - {fileID: 739093949}
     - {fileID: 1506616125}
     - {fileID: 728236924}
@@ -6486,13 +6483,13 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: dialogManager
+    - Name: dialogueManager
       Entry: 7
-      Data: 18|DialogManager, Assembly-CSharp
-    - Name: dialogPanel
+      Data: 18|DialogueManager, Assembly-CSharp
+    - Name: dialoguePanel
       Entry: 10
       Data: 34
-    - Name: dialogButton
+    - Name: dialogueButton
       Entry: 10
       Data: 35
     - Name: speakerIcon
@@ -6504,101 +6501,99 @@ MonoBehaviour:
     - Name: speech
       Entry: 10
       Data: 38
-    - Name: dialogs
-      Entry: 7
-      Data: 19|System.Collections.Generic.Dictionary`2[[DialogId, Assembly-CSharp],[Dialog,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 7
-      Data: 20|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[DialogId,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 10
-      Data: 39
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 10
-      Data: 40
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 41
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: saveManager
       Entry: 7
-      Data: 21|SaveManager, Assembly-CSharp
+      Data: 19|SaveManager, Assembly-CSharp
     - Name: saveMenu
       Entry: 10
-      Data: 42
+      Data: 39
     - Name: recordSlots
       Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[RecordSlot, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[RecordSlot, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 6
     - Name: 
       Entry: 7
-      Data: 23|RecordSlot, Assembly-CSharp
+      Data: 21|RecordSlot, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: save_0
     - Name: savePanel
       Entry: 10
-      Data: 43
+      Data: 40
     - Name: saveButton
       Entry: 10
-      Data: 44
+      Data: 41
     - Name: loadPanel
       Entry: 10
-      Data: 45
+      Data: 42
     - Name: title
       Entry: 10
-      Data: 46
+      Data: 43
     - Name: loadButton
       Entry: 10
-      Data: 47
+      Data: 44
     - Name: deleteButton
       Entry: 10
+      Data: 45
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 22|RecordSlot, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: save_1
+    - Name: savePanel
+      Entry: 10
+      Data: 46
+    - Name: saveButton
+      Entry: 10
+      Data: 47
+    - Name: loadPanel
+      Entry: 10
       Data: 48
+    - Name: title
+      Entry: 10
+      Data: 49
+    - Name: loadButton
+      Entry: 10
+      Data: 50
+    - Name: deleteButton
+      Entry: 10
+      Data: 51
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 23|RecordSlot, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: save_2
+    - Name: savePanel
+      Entry: 10
+      Data: 52
+    - Name: saveButton
+      Entry: 10
+      Data: 53
+    - Name: loadPanel
+      Entry: 10
+      Data: 54
+    - Name: title
+      Entry: 10
+      Data: 55
+    - Name: loadButton
+      Entry: 10
+      Data: 56
+    - Name: deleteButton
+      Entry: 10
+      Data: 57
     - Name: 
       Entry: 8
       Data: 
@@ -6607,25 +6602,25 @@ MonoBehaviour:
       Data: 24|RecordSlot, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: save_1
+      Data: save_3
     - Name: savePanel
       Entry: 10
-      Data: 49
+      Data: 58
     - Name: saveButton
       Entry: 10
-      Data: 50
+      Data: 59
     - Name: loadPanel
       Entry: 10
-      Data: 51
+      Data: 60
     - Name: title
       Entry: 10
-      Data: 52
+      Data: 61
     - Name: loadButton
       Entry: 10
-      Data: 53
+      Data: 62
     - Name: deleteButton
       Entry: 10
-      Data: 54
+      Data: 63
     - Name: 
       Entry: 8
       Data: 
@@ -6634,25 +6629,25 @@ MonoBehaviour:
       Data: 25|RecordSlot, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: save_2
+      Data: save_4
     - Name: savePanel
       Entry: 10
-      Data: 55
+      Data: 64
     - Name: saveButton
       Entry: 10
-      Data: 56
+      Data: 65
     - Name: loadPanel
       Entry: 10
-      Data: 57
+      Data: 66
     - Name: title
       Entry: 10
-      Data: 58
+      Data: 67
     - Name: loadButton
       Entry: 10
-      Data: 59
+      Data: 68
     - Name: deleteButton
       Entry: 10
-      Data: 60
+      Data: 69
     - Name: 
       Entry: 8
       Data: 
@@ -6661,79 +6656,25 @@ MonoBehaviour:
       Data: 26|RecordSlot, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: save_3
-    - Name: savePanel
-      Entry: 10
-      Data: 61
-    - Name: saveButton
-      Entry: 10
-      Data: 62
-    - Name: loadPanel
-      Entry: 10
-      Data: 63
-    - Name: title
-      Entry: 10
-      Data: 64
-    - Name: loadButton
-      Entry: 10
-      Data: 65
-    - Name: deleteButton
-      Entry: 10
-      Data: 66
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 27|RecordSlot, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: save_4
-    - Name: savePanel
-      Entry: 10
-      Data: 67
-    - Name: saveButton
-      Entry: 10
-      Data: 68
-    - Name: loadPanel
-      Entry: 10
-      Data: 69
-    - Name: title
-      Entry: 10
-      Data: 70
-    - Name: loadButton
-      Entry: 10
-      Data: 71
-    - Name: deleteButton
-      Entry: 10
-      Data: 72
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 28|RecordSlot, Assembly-CSharp
-    - Name: name
-      Entry: 1
       Data: save_5
     - Name: savePanel
       Entry: 10
-      Data: 73
+      Data: 70
     - Name: saveButton
       Entry: 10
-      Data: 74
+      Data: 71
     - Name: loadPanel
       Entry: 10
-      Data: 75
+      Data: 72
     - Name: title
       Entry: 10
-      Data: 76
+      Data: 73
     - Name: loadButton
       Entry: 10
-      Data: 77
+      Data: 74
     - Name: deleteButton
       Entry: 10
-      Data: 78
+      Data: 75
     - Name: 
       Entry: 8
       Data: 
@@ -6748,19 +6689,19 @@ MonoBehaviour:
       Data: 
     - Name: objectiveManager
       Entry: 7
-      Data: 29|ObjectiveManager, Assembly-CSharp
+      Data: 27|ObjectiveManager, Assembly-CSharp
     - Name: objectiveTitle
       Entry: 10
-      Data: 79
+      Data: 76
     - Name: taskList
       Entry: 10
-      Data: 80
+      Data: 77
     - Name: taskPrefab
       Entry: 10
-      Data: 81
+      Data: 78
     - Name: activeTaskFont
       Entry: 10
-      Data: 82
+      Data: 79
     - Name: activeTaskColor
       Entry: 7
       Data: UnityEngine.Color, UnityEngine.CoreModule
@@ -6781,7 +6722,7 @@ MonoBehaviour:
       Data: 
     - Name: completedTaskFont
       Entry: 10
-      Data: 83
+      Data: 80
     - Name: completedTaskColor
       Entry: 7
       Data: UnityEngine.Color, UnityEngine.CoreModule
@@ -6802,11 +6743,11 @@ MonoBehaviour:
       Data: 
     - Name: tasks
       Entry: 7
-      Data: 30|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.GameObject,
+      Data: 28|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.GameObject,
         UnityEngine.CoreModule]], mscorlib
     - Name: 
       Entry: 7
-      Data: 31|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 29|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -9492,7 +9433,7 @@ GameObject:
   - component: {fileID: 1939066171}
   - component: {fileID: 1939066173}
   m_Layer: 5
-  m_Name: DialogPanel
+  m_Name: DialoguePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -14,7 +14,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: bbc6c727f4adc4348b93badd209748b8, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -43,19 +44,13 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|Task, Assembly-CSharp
-    - Name: defaultTitle
-      Entry: 1
-      Data: Check Time
     - Name: completed
       Entry: 5
       Data: false
     - Name: optional
       Entry: 5
       Data: false
-    - Name: currentSubTaskId
-      Entry: 1
-      Data: CheckTime
-    - Name: subTasksOrdered
+    - Name: subTasks
       Entry: 7
       Data: 3|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
     - Name: 
@@ -70,6 +65,9 @@ MonoBehaviour:
     - Name: title
       Entry: 1
       Data: Check Time
+    - Name: comment
+      Entry: 10
+      Data: 0
     - Name: completed
       Entry: 5
       Data: false
@@ -79,51 +77,6 @@ MonoBehaviour:
     - Name: hidden
       Entry: 5
       Data: false
-    - Name: finalSubTask
-      Entry: 5
-      Data: false
-    - Name: nextSubTaskId
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: subTasks
-      Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 6|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: CheckTime
-    - Name: title
-      Entry: 1
-      Data: Check Time
-    - Name: completed
-      Entry: 5
-      Data: false
-    - Name: optional
-      Entry: 5
-      Data: false
-    - Name: hidden
-      Entry: 5
-      Data: false
-    - Name: finalSubTask
-      Entry: 5
-      Data: false
-    - Name: nextSubTaskId
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 

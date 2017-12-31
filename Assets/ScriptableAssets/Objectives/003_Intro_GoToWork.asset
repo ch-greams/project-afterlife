@@ -14,7 +14,10 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 5e553e43d1ad933439e1fab791875588, type: 2}
+    - {fileID: 11400000, guid: cf1f6141fee8f7a44b1fabe621eb73f6, type: 2}
+    - {fileID: 11400000, guid: a355665f1e05be741a9a22a9d5c40779, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -43,18 +46,12 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 2|Task, Assembly-CSharp
-    - Name: defaultTitle
-      Entry: 1
-      Data: Go Outside
     - Name: completed
       Entry: 5
       Data: false
     - Name: optional
       Entry: 5
       Data: false
-    - Name: currentSubTaskId
-      Entry: 1
-      Data: GoOutside
     - Name: subTasks
       Entry: 7
       Data: 3|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
@@ -70,6 +67,9 @@ MonoBehaviour:
     - Name: title
       Entry: 1
       Data: Go Outside
+    - Name: comment
+      Entry: 10
+      Data: 0
     - Name: completed
       Entry: 5
       Data: false
@@ -91,6 +91,9 @@ MonoBehaviour:
     - Name: title
       Entry: 1
       Data: Call Landlord
+    - Name: comment
+      Entry: 10
+      Data: 1
     - Name: completed
       Entry: 5
       Data: false
@@ -112,6 +115,9 @@ MonoBehaviour:
     - Name: title
       Entry: 1
       Data: Look Around
+    - Name: comment
+      Entry: 10
+      Data: 2
     - Name: completed
       Entry: 5
       Data: false

@@ -25,11 +25,13 @@ public class ObjectiveManager
     public Dictionary<string, GameObject> tasks = new Dictionary<string, GameObject>();
 
     private GlobalState globalState;
+    private DialogueManager dialogueManager;
     
 
-    public void Init(GlobalState globalState)
+    public void Init(GlobalController globalCtrl)
     {
-        this.globalState = globalState;
+        this.globalState = globalCtrl.globalState;
+        this.dialogueManager = globalCtrl.dialogueManager;
 
         this.UpdateObjective();
     }
@@ -68,9 +70,14 @@ public class ObjectiveManager
 
     private GameObject CreateTask(Task taskData)
     {
+        SubTask currentSubTask = taskData.GetCurrentVisibleSubTask();
+
         GameObject task = GameObject.Instantiate(this.taskPrefab);
         Text taskText = task.GetComponentInChildren<Text>();
-        taskText.text = taskData.GetCurrentTaskTitle();
+        taskText.text = currentSubTask.title;
+        Button taskButton = task.GetComponent<Button>();
+        taskButton.onClick.AddListener(() => this.dialogueManager.StartDialogue(currentSubTask.comment));
+        taskButton.interactable = !taskData.completed;
 
         if (taskData.completed)
         {
