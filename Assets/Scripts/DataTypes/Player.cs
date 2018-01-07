@@ -10,7 +10,15 @@ public class Player
     public Transform characterTransform;
     public Animator characterAnimator;
     public Tile tile;
+    public int visibleRange = 2;
 
 
     public Player() { }
+
+    public void UpdatePlayer(Tile tile, int currentVisibility)
+    {
+        this.tile = tile;
+        this.playerTransform.position = tile.obj.transform.position;
+        this.visibleRange = currentVisibility;
+    }
 }

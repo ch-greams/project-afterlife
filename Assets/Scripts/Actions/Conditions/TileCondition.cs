@@ -2,15 +2,34 @@
 
 public class TileCondition : ICondition
 {
-    private bool passable;
+    public TileConditionType type = TileConditionType.IS_ACTIVE;
+    private TileData tileData;
+
 
     public void Init(Interactable interactable)
     {
-        this.passable = (interactable.data as TileData).tile.passable;
+        this.tileData = interactable.data as TileData;
     }
 
     public bool IsValid()
     {
-        return this.passable;
+        switch (this.type)
+        {
+            case TileConditionType.IS_ACTIVE:
+                return (this.tileData.tile.state == TileState.Active);
+            case TileConditionType.IS_HIDDEN:
+                return (this.tileData.tile.state == TileState.Hidden);
+            case TileConditionType.IS_DISABLED:
+                return (this.tileData.tile.state == TileState.Disabled);
+            default:
+                return false;
+        }
     }
+}
+
+public enum TileConditionType
+{
+    IS_ACTIVE,
+    IS_HIDDEN,
+    IS_DISABLED,
 }

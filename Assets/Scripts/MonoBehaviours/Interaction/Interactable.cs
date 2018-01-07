@@ -14,6 +14,10 @@ public class Interactable : SerializedMonoBehaviour, IPointerClickHandler, IPoin
     
     [FoldoutGroup("Interactable Config", expanded: false)]
     [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
+    public List<Action> initializeActions = new List<Action>();
+
+    [FoldoutGroup("Interactable Config", expanded: false)]
+    [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
     public List<Action> leftClickActions = new List<Action>();
 
     [FoldoutGroup("Interactable Config", expanded: false)]
@@ -51,20 +55,16 @@ public class Interactable : SerializedMonoBehaviour, IPointerClickHandler, IPoin
 
     private IEnumerator OnInit()
     {
+        this.initializeActions.ForEach(action => action.Init(this));
         this.leftClickActions.ForEach(action => action.Init(this));
         this.hoverStartActions.ForEach(action => action.Init(this));
         this.hoverEndActions.ForEach(action => action.Init(this));
 
-        yield return null;
+        yield return this.TriggerValidAction(this.initializeActions);
     }
     private IEnumerator OnLeftClick()
     {
-        Action action = this.leftClickActions.Find(a => a.IsValid());
-
-        if (action != null)
-        {
-            yield return action.React();
-        }
+        yield return this.TriggerValidAction(this.leftClickActions);
     }
     private IEnumerator OnRightClick()
     {
@@ -72,16 +72,16 @@ public class Interactable : SerializedMonoBehaviour, IPointerClickHandler, IPoin
     }
     private IEnumerator OnHoverStart()
     {
-        Action action = this.hoverStartActions.Find(a => a.IsValid());
-
-        if (action != null)
-        {
-            yield return action.React();
-        }
+        yield return this.TriggerValidAction(this.hoverStartActions);
     }
     private IEnumerator OnHoverEnd()
     {
-        Action action = this.hoverEndActions.Find(a => a.IsValid());
+        yield return this.TriggerValidAction(this.hoverEndActions);
+    }
+
+    private IEnumerator TriggerValidAction(List<Action> actions)
+    {
+        Action action = actions.Find(a => a.IsValid());
 
         if (action != null)
         {

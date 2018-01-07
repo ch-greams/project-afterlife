@@ -1,30 +1,56 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
 
 public class SceneController : SerializedMonoBehaviour
 {
+    public SceneType id;
     public GlobalController globalCtrl;
     public GlobalState globalState;
     public Player player;
+
     [InlineEditor]
-    public List<Tile> tiles = new List<Tile>();
+    public SceneState sceneState;
+
+    [DictionaryDrawerSettings(IsReadOnly = true)]
+    public Dictionary<Point, Tile> tiles = new Dictionary<Point, Tile>();
 
 
     private void Awake()
     {
         this.globalCtrl = FindObjectOfType<GlobalController>();
         this.globalState = this.globalCtrl.globalState;
+        this.sceneState = this.globalState.sceneStates[this.id];
 
-        this.MovePlayerToStartPoint();
+        this.player.UpdatePlayer(this.tiles[this.globalState.currentPosition], this.globalState.currentVisibility);
+
+        this.UpdateTiles(this.player.tile);
     }
 
-    private void MovePlayerToStartPoint()
+    public void UpdateTiles(Tile tile)
     {
-        Tile tile = this.tiles.Find(t => t.point == this.globalState.currentPosition);
-        this.player.tile = tile;
-        this.player.playerTransform.position = tile.obj.transform.position;
+        List<Tile> visibleTiles = tile.GetTiles(this.player.visibleRange, TileState.Hidden);
+        List<Point> playerLayer = visibleTiles.Select(vt => vt.point).ToList();
+
+        Dictionary<Point, TileState> currentMap = this.sceneState.GetCurrentMap(playerLayer);
+
+        foreach (KeyValuePair<Point, Tile> kvp in this.tiles)
+        {
+            TileData tileData = kvp.Value.obj.GetComponent<Interactable>().data as TileData;
+            tileData.RefreshTileState(currentMap[kvp.Key], false);
+        }
     }
+
+#if UNITY_EDITOR
+
+    [Button(ButtonSizes.Medium)]
+    public void CopyDefaultTileStatesToMap()
+    {
+        this.sceneState.defaultMap = this.tiles.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.state);
+    }
+
+#endif
 }
 
 public enum SceneType

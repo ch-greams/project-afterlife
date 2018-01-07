@@ -31,6 +31,8 @@ public class GlobalController : SerializedMonoBehaviour
         this.globalState = CreatePlayModeInstance(this.globalState);
         this.globalState.objectives = this.globalState.objectives
             .ToDictionary(kvp => kvp.Key, kvp => GlobalController.CreatePlayModeInstance(kvp.Value));
+        this.globalState.sceneStates = this.globalState.sceneStates
+            .ToDictionary(kvp => kvp.Key, kvp => GlobalController.CreatePlayModeInstance(kvp.Value));
 
         this.inventory.LoadFromState(this);
         this.dialogueManager.Init();
@@ -60,6 +62,12 @@ public class GlobalController : SerializedMonoBehaviour
     {
         this.globalState.currentPosition = position;
     }
+
+    public void UpdatePlayerVisibility(int currentVisibility)
+    {
+        this.globalState.currentVisibility = currentVisibility;
+    }
+
 
     public static T CreatePlayModeInstance<T>(T assetState) where T : ScriptableObject
     {

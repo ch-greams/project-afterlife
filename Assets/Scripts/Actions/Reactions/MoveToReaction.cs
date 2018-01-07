@@ -50,7 +50,11 @@ public class MoveToReaction : IReaction
             Tile tile = this.GetClosestTile();
 
             // this.textureAnimator.Play();
-            yield return this.MoveToTile(player, tile);
+            Path<Tile> path = tile.FindPathFrom(player.tile, TileState.Active);
+            if (path != null)
+            {
+                yield return this.MoveToTile(player, path.Reverse());
+            }
 
             player.isMoving = false;
         }
@@ -62,18 +66,21 @@ public class MoveToReaction : IReaction
 
         this.tiles.Sort((ti1, ti2) =>
         {
-            double est1 = ti1.point.EstimateTo(curPoint);
-            double est2 = ti2.point.EstimateTo(curPoint);
+            int est1 = ti1.point.EstimateTo(curPoint);
+            int est2 = ti2.point.EstimateTo(curPoint);
             return est1.CompareTo(est2);
         });
 
         return this.tiles.First();
     }
 
-    private IEnumerator MoveToTile(Player player, Tile targetTile)
+    private IEnumerator MoveToTile(Player player, IEnumerable<Tile> path)
     {
-        foreach (Tile tile in targetTile.FindPathFrom(player.tile, true).Reverse())
+        foreach (Tile tile in path)
         {
+            this.sceneCtrl.UpdateTiles(tile);
+
+
             player.characterAnimator.SetFloat(this.speedParamHash, player.speed * 1F);
 
             float startTime = Time.time;

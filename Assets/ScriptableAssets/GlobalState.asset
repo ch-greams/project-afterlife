@@ -18,6 +18,17 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 1544ca40248dffa4fa93a9d1d5054fde, type: 2}
     - {fileID: 11400000, guid: cfaeb9e4c3fcfec498021cfa91664385, type: 2}
     - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
+    - {fileID: 11400000, guid: 99d0afac6688d444f9f4a850bb980ae4, type: 2}
+    - {fileID: 11400000, guid: c4535e22e3cd60445ba438dfb575e458, type: 2}
+    - {fileID: 11400000, guid: 90f502611efdd254095e74138351d7fa, type: 2}
+    - {fileID: 11400000, guid: a7b5fdd29ad36404183ef99ca8a7ad14, type: 2}
+    - {fileID: 11400000, guid: d5c6c65b16036da4b892bebd0b6f6867, type: 2}
+    - {fileID: 11400000, guid: f53afef7d26025443865806ea9f70183, type: 2}
+    - {fileID: 11400000, guid: 56394c26a92db3f4d9e6824164136e8c, type: 2}
+    - {fileID: 11400000, guid: f961f7ae7d2bced47945f45ca133b4fc, type: 2}
+    - {fileID: 11400000, guid: c4d1d1cd0e1e04849a82ccdfc5d9b6cb, type: 2}
+    - {fileID: 11400000, guid: 08e5881b88b9f2a4985fb703ac0e7c0b, type: 2}
+    - {fileID: 11400000, guid: c5e351fab04e1c74f9add9d9507902f6, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -79,9 +90,162 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: sceneStates
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[SceneType, Assembly-CSharp],[SceneState,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 7
+      Data: 3|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[SceneType,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 11
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 9
+    - Name: 
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 11
+    - Name: 
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   currentPosition:
     x: 1
     y: 4
+  currentVisibility: 0
   currentScene: 1
   currentObjective: 1
   inventory: []

@@ -44,7 +44,7 @@ public class GridGenerator : MonoBehaviour
                 obj.transform.SetParent(this.transform);
                 obj.name = point.ToString();
 
-                Tile tile = Tile.CreateInstance(point, true, obj);
+                Tile tile = Tile.CreateInstance(point, TileState.Active, obj);
                 (obj.GetComponent<Interactable>().data as TileData).tile = tile;
 
                 this.tiles.Add(tile);
@@ -69,7 +69,7 @@ public class GridGenerator : MonoBehaviour
     [Button("Copy Grid to State", ButtonSizes.Medium)]
     public void CopyGridToState()
     {
-        this.stateCtrl.tiles = this.tiles;
+        this.stateCtrl.tiles = this.tiles.ToDictionary(t => t.point);
     }
 
     private void DestroyGrid()
