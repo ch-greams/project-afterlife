@@ -284,6 +284,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1207,6 +1210,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1938,6 +1944,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -2418,6 +2427,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 715405597}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -2468,6 +2478,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -3077,6 +3090,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -3557,6 +3573,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1858383186}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -3607,6 +3624,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -4263,6 +4283,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -4743,6 +4766,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 185779353}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -4793,6 +4817,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -5377,6 +5404,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -5929,6 +5959,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 934425413}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -5979,6 +6010,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -6508,6 +6542,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -7152,6 +7189,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -8628,6 +8668,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -9359,8 +9402,8 @@ MonoBehaviour:
       Entry: 7
       Data: 14|VisibilityReaction, Assembly-CSharp
     - Name: visibility
-      Entry: 3
-      Data: 2
+      Entry: 4
+      Data: 2.5
     - Name: 
       Entry: 8
       Data: 
@@ -9774,6 +9817,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 217826939}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -9824,6 +9868,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -11098,6 +11145,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 898855735}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -11148,6 +11196,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -12461,6 +12512,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -12991,6 +13045,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -13520,6 +13577,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -14669,6 +14729,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -15325,6 +15388,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -15974,6 +16040,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -16511,6 +16580,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1216427784}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -16561,6 +16631,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -17093,7 +17166,7 @@ MonoBehaviour:
       Entry: 10
       Data: 3
     - Name: visibleRange
-      Entry: 3
+      Entry: 4
       Data: 0
     - Name: 
       Entry: 8
@@ -17874,6 +17947,26 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: highlightedTiles
+      Entry: 7
+      Data: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[Tile,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: 
+      Entry: 7
+      Data: 4|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   id: 1
   globalCtrl: {fileID: 0}
   globalState: {fileID: 0}
@@ -17895,6 +17988,7 @@ Transform:
   - {fileID: 794384328}
   - {fileID: 1530131937}
   - {fileID: 864157640}
+  - {fileID: 2133429916}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17995,6 +18089,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -18525,6 +18622,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1242969977}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -18575,6 +18673,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -19055,6 +19156,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 56929655}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -19105,6 +19207,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -19585,6 +19690,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 523029244}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -19635,6 +19741,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -20152,6 +20261,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1891928071}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -20202,6 +20312,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -20687,6 +20800,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 333418233}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -20737,6 +20851,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -21217,6 +21334,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 259153721}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -21267,6 +21385,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -22554,6 +22675,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -23034,6 +23158,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1646077763}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -23084,6 +23209,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -23613,6 +23741,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -24327,6 +24458,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -25200,6 +25334,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 190796479}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -25250,6 +25385,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -25784,6 +25922,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -26336,6 +26477,273 @@ MonoBehaviour:
     x: 5
     y: 2
   obj: {fileID: 1151230997}
+--- !u!1 &2133429915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2133429916}
+  - component: {fileID: 2133429917}
+  m_Layer: 0
+  m_Name: BedroomLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2133429916
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2133429915}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1311566518}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2133429917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2133429915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78619e76a75f3404dadf4fccef382223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 715405597}
+    - {fileID: 1858383186}
+    - {fileID: 185779353}
+    - {fileID: 934425413}
+    - {fileID: 217826939}
+    - {fileID: 898855735}
+    - {fileID: 1216427784}
+    - {fileID: 1242969977}
+    - {fileID: 56929655}
+    - {fileID: 523029244}
+    - {fileID: 1891928071}
+    - {fileID: 333418233}
+    - {fileID: 259153721}
+    - {fileID: 1646077763}
+    - {fileID: 190796479}
+    - {fileID: 1831687337}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|LightSourceData, Assembly-CSharp
+    - Name: _gameObject
+      Entry: 6
+      Data: 
+    - Name: _renderer
+      Entry: 6
+      Data: 
+    - Name: _animator
+      Entry: 6
+      Data: 
+    - Name: _defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _neighbourTiles
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Tile, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: id
+      Entry: 1
+      Data: BedroomLight
+    - Name: highlightedTiles
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[Tile, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 16
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 10
+      Data: 10
+    - Name: 
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: initializeActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 4|Action, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Update Highlighted Tiles
+    - Name: conditions
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|LightSourceCondition, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 8|LightSourceReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: leftClickActions
+      Entry: 7
+      Data: 9|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverStartActions
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hoverEndActions
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  sceneCtrl: {fileID: 1311566517}
 --- !u!1 &2133906521
 GameObject:
   m_ObjectHideFlags: 0
@@ -26384,6 +26792,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1831687337}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -26434,6 +26843,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 

@@ -30,9 +30,11 @@ public class TileData : IDataInteractable
     [FoldoutGroup("Default Parameters")]
     public List<Tile> neighbourTiles { get { return this.tile ? this.tile.allNeighbours.ToList() : null; } }
 
+    [BoxGroup("Tile Parameters")]
     [InlineEditor]
     public Tile tile;
 
+    [BoxGroup("Tile Parameters")]
     public Color disabledColor = new Color(1F, 1F, 1F, 0F);
 
 
@@ -57,25 +59,36 @@ public class TileData : IDataInteractable
 
 #if UNITY_EDITOR
 
-    [ButtonGroup("Tile Controls")]
+    [ButtonGroup("Editor Controls/Tile Controls")]
     [Button("Active", ButtonSizes.Medium)]
     public void MakeActiveInEditor()
     {
         this.RefreshTileState(TileState.Active, true);
     }
 
-    [ButtonGroup("Tile Controls")]
+    [ButtonGroup("Editor Controls/Tile Controls")]
     [Button("Hidden", ButtonSizes.Medium)]
     public void MakeHiddenInEditor()
     {
         this.RefreshTileState(TileState.Hidden, true);
     }
 
-    [ButtonGroup("Tile Controls")]
+    [ButtonGroup("Editor Controls/Tile Controls")]
     [Button("Disabled", ButtonSizes.Medium)]
     public void MakeDisabledInEditor()
     {
         this.RefreshTileState(TileState.Disabled, true);
+    }
+
+    [BoxGroup("Editor Controls")]
+    public Interactable interactable;
+
+    [BoxGroup("Editor Controls")]
+    [Button(ButtonSizes.Medium)]
+    public void CopyTilesToInteractableData()
+    {
+        LightSourceData lsd = this.interactable.data as LightSourceData;
+        lsd.highlightedTiles.Add(this.tile);
     }
 
 #endif

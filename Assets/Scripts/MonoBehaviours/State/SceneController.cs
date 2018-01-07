@@ -16,6 +16,9 @@ public class SceneController : SerializedMonoBehaviour
     [DictionaryDrawerSettings(IsReadOnly = true)]
     public Dictionary<Point, Tile> tiles = new Dictionary<Point, Tile>();
 
+    [DictionaryDrawerSettings(IsReadOnly = true, DisplayMode = DictionaryDisplayOptions.Foldout)]
+    public Dictionary<string, List<Tile>> highlightedTiles = new Dictionary<string, List<Tile>>();
+
 
     private void Awake()
     {
@@ -28,6 +31,7 @@ public class SceneController : SerializedMonoBehaviour
         this.UpdateTiles(this.player.tile);
     }
 
+    // NOTE: This probably should be optimized
     public void UpdateTiles(Tile tile)
     {
         List<Tile> visibleTiles = tile.GetTiles(this.player.visibleRange, TileState.Hidden);
@@ -39,6 +43,22 @@ public class SceneController : SerializedMonoBehaviour
         {
             TileData tileData = kvp.Value.obj.GetComponent<Interactable>().data as TileData;
             tileData.RefreshTileState(currentMap[kvp.Key], false);
+        }
+
+        foreach (string lightSourceId in this.highlightedTiles.Keys)
+        {
+            this.UpdateHighlightedTiles(lightSourceId);
+        }
+    }
+
+    public void UpdateHighlightedTiles(string lightSourceId)
+    {
+        foreach (Tile tile in this.highlightedTiles[lightSourceId])
+        {
+            TileData tileData = tile.obj.GetComponent<Interactable>().data as TileData;
+            TileState defaultTileState = this.sceneState.defaultMap[tile.point];
+            TileState tileState = (defaultTileState == TileState.Hidden) ? TileState.Active : defaultTileState;
+            tileData.RefreshTileState(tileState, false);
         }
     }
 

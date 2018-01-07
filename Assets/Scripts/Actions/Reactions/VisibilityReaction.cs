@@ -3,7 +3,7 @@
 
 public class VisibilityReaction : IReaction
 {
-    public int visibility = 2;
+    public float visibility = 2.5F;
 
     private SceneController sceneCtrl;
 
@@ -12,10 +12,12 @@ public class VisibilityReaction : IReaction
     {
         this.sceneCtrl = interactable.sceneCtrl;
     }
+    
     public IEnumerator React()
     {
         this.sceneCtrl.globalCtrl.UpdatePlayerVisibility(this.visibility);
         this.sceneCtrl.player.visibleRange = this.visibility;
+
         this.sceneCtrl.UpdateTiles(this.sceneCtrl.player.tile);
 
         yield return null;

@@ -66,8 +66,8 @@ public class MoveToReaction : IReaction
 
         this.tiles.Sort((ti1, ti2) =>
         {
-            int est1 = ti1.point.EstimateTo(curPoint);
-            int est2 = ti2.point.EstimateTo(curPoint);
+            float est1 = ti1.point.EstimateTo(curPoint);
+            float est2 = ti2.point.EstimateTo(curPoint);
             return est1.CompareTo(est2);
         });
 

@@ -10,12 +10,12 @@ public class Player
     public Transform characterTransform;
     public Animator characterAnimator;
     public Tile tile;
-    public int visibleRange = 2;
+    public float visibleRange = 2.5F;
 
 
     public Player() { }
 
-    public void UpdatePlayer(Tile tile, int currentVisibility)
+    public void UpdatePlayer(Tile tile, float currentVisibility)
     {
         this.tile = tile;
         this.playerTransform.position = tile.obj.transform.position;

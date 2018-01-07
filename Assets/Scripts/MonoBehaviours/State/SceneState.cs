@@ -8,6 +8,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class SceneState : SerializedScriptableObject
 {
+    [DictionaryDrawerSettings(KeyLabel = "LightSource ID", ValueLabel = "IsEnabled")]
     public Dictionary<string, bool> lightSources = new Dictionary<string, bool>();
 
     [DictionaryDrawerSettings(IsReadOnly = true)]

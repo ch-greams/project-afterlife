@@ -102,22 +102,19 @@ public struct Point : IComparable<Point>
         return new Vector3(x, h, z);
     }
 
-    public int DistanceTo(Point point)
+    public float DistanceTo(Point point)
     {
-        // return (Math.Abs(point.x - this.x) == Math.Abs(point.y - this.y)) ? 1.5 : 1;
-        // TODO: Fix this bullshit
-        return 1;
+        return (Math.Abs(point.x - this.x) == Math.Abs(point.y - this.y)) ? 1.5F : 1F;
     }
 
-    public int EstimateTo(Point point)
+    public float EstimateTo(Point point)
     {
-        int dx = Math.Abs(point.x - this.x);
-        int dy = Math.Abs(point.y - this.y);
+        float dx = Math.Abs(point.x - this.x);
+        float dy = Math.Abs(point.y - this.y);
 
-        // return (dx >= dy)
-        //     ? (dx - dy) + dy * 1.5F
-        //     : (dy - dx) + dx * 1.5F;
-        return (dx >= dy) ? dx : dy;
+        return (dx >= dy)
+            ? (dx - dy) + dy * 1.5F
+            : (dy - dx) + dx * 1.5F;
     }
 }
 

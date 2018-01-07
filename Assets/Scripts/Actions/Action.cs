@@ -24,6 +24,11 @@ public class Action
     public List<IReaction> reactions = new List<IReaction>();
 
 
+    public Action()
+    {
+        this.conditions = new List<ICondition>() { new ReachableCondition() };
+    }
+
     public void Init(Interactable interactable)
     {
         this.conditions.ForEach(condition => condition.Init(interactable));

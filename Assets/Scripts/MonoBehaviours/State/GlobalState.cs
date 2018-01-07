@@ -9,7 +9,7 @@ using UnityEngine;
 public class GlobalState : SerializedScriptableObject
 {
     public Point currentPosition;
-    public int currentVisibility;
+    public float currentVisibility;
     public SceneType currentScene;
     public ObjectiveId currentObjective;
 
@@ -45,7 +45,7 @@ public class GlobalState : SerializedScriptableObject
 public class GlobalStateSerializable
 {
     public Point currentPosition;
-    public int currentVisibility;
+    public float currentVisibility;
     public SceneType currentScene;
     public ObjectiveId currentObjective;
     public Dictionary<ObjectiveId, ObjectiveSerializable> objectives = new Dictionary<ObjectiveId, ObjectiveSerializable>();

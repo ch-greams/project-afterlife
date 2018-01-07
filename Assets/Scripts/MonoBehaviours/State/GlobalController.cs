@@ -63,7 +63,7 @@ public class GlobalController : SerializedMonoBehaviour
         this.globalState.currentPosition = position;
     }
 
-    public void UpdatePlayerVisibility(int currentVisibility)
+    public void UpdatePlayerVisibility(float currentVisibility)
     {
         this.globalState.currentVisibility = currentVisibility;
     }
