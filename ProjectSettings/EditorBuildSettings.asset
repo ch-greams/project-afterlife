@@ -41,3 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AptN5_LivingRoom.unity
     guid: 09ef0c6dcfaed29469495f3031704ae3
+  - enabled: 1
+    path: Assets/Scenes/Hallway_ElevatorEnd.unity
+    guid: 33246681cdcce7d4d990f34ca3cc6df6
+  - enabled: 1
+    path: Assets/Scenes/Forest_Field.unity
+    guid: dccbb36516347cb4a979e153093e6a20

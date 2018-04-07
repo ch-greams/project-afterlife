@@ -21,7 +21,26 @@ public class GridGenerator : MonoBehaviour
     [BoxGroup("State Management")]
     public SceneController stateCtrl;
 
-    [BoxGroup("Grid Management")]
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/General", 360)]
+    public Point size {
+        get {
+            return (
+                this.tiles.Any() ? this.tiles.Select(ts => ts.point).Max() + new Point(1, 1) : new Point()
+            );
+        }
+    }
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/General")]
+    public int total { get { return this.tiles.Count; } }
+
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int active { get { return this.tiles.Count(ts => ts.state == TileState.Active); } }
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int hidden { get { return this.tiles.Count(ts => ts.state == TileState.Hidden); } }
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int disabled { get { return this.tiles.Count(ts => ts.state == TileState.Disabled); } }
+
+
+    [HideInInspector]
     public List<Tile> tiles = new List<Tile>();
 
 
@@ -69,7 +88,8 @@ public class GridGenerator : MonoBehaviour
     [Button("Copy Grid to State", ButtonSizes.Medium)]
     public void CopyGridToState()
     {
-        this.stateCtrl.tiles = this.tiles.ToDictionary(t => t.point);
+        this.stateCtrl.tiles = this.tiles;
+        this.stateCtrl.sceneState.defaultMap = this.tiles.Select(t => new TileSimple(t)).ToList();
     }
 
     private void DestroyGrid()

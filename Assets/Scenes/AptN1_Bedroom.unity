@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 8
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -39,6 +39,7 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -54,11 +55,10 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 10
     m_Resolution: 2
     m_BakeResolution: 40
-    m_TextureWidth: 1024
-    m_TextureHeight: 1024
+    m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -177,10 +177,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 1
     y: 3
+  state: 0
   obj: {fileID: 1407948421}
 --- !u!4 &81976857 stripped
 Transform:
@@ -234,6 +234,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1137214056}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -285,8 +286,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -677,6 +678,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -707,9 +709,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &82440619
@@ -771,10 +773,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 0
     y: 3
+  state: 0
   obj: {fileID: 402018688}
 --- !u!1 &111383466
 GameObject:
@@ -964,10 +966,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 3
     y: 3
+  state: 1
   obj: {fileID: 549575513}
 --- !u!114 &190796479
 MonoBehaviour:
@@ -1033,16 +1035,11 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 3
     y: 2
+  state: 1
   obj: {fileID: 1892936835}
---- !u!23 &204254865 stripped
-MeshRenderer:
-  m_PrefabParentObject: {fileID: 2300004, guid: 459014d22b8087441967143526466324,
-    type: 3}
-  m_PrefabInternal: {fileID: 1190274512}
 --- !u!114 &217826939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,10 +1104,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 4
     y: 3
+  state: 1
   obj: {fileID: 803533916}
 --- !u!1 &248925452
 GameObject:
@@ -1160,6 +1157,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1662676600}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -1211,8 +1209,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -1603,6 +1601,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -1633,9 +1632,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &248925458
@@ -1709,10 +1708,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 3
     y: 1
+  state: 1
   obj: {fileID: 1514977789}
 --- !u!1001 &303904791
 Prefab:
@@ -1841,10 +1840,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 4
     y: 2
+  state: 1
   obj: {fileID: 1470379470}
 --- !u!1 &402018688
 GameObject:
@@ -1894,6 +1893,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 90484751}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -1945,8 +1945,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -2337,6 +2337,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -2367,9 +2368,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &402018694
@@ -2871,6 +2872,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -2901,9 +2903,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &439714076
@@ -3040,6 +3042,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1541970559}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -3091,8 +3094,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -3483,6 +3486,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -3513,9 +3517,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &459041944
@@ -4017,6 +4021,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -4047,9 +4052,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &480259711
@@ -4111,10 +4116,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 3
     y: 5
+  state: 1
   obj: {fileID: 599862938}
 --- !u!114 &523029244
 MonoBehaviour:
@@ -4180,10 +4185,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 1
     y: 2
+  state: 0
   obj: {fileID: 1418273370}
 --- !u!1 &536439781
 GameObject:
@@ -4233,6 +4238,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1803868095}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -4284,8 +4290,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -4676,6 +4682,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -4706,9 +4713,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &536439787
@@ -5210,6 +5217,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -5240,9 +5248,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &549575519
@@ -5296,16 +5304,11 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 5
     y: 5
+  state: 0
   obj: {fileID: 1610638458}
---- !u!23 &560814757 stripped
-MeshRenderer:
-  m_PrefabParentObject: {fileID: 2300008, guid: 459014d22b8087441967143526466324,
-    type: 3}
-  m_PrefabInternal: {fileID: 1190274512}
 --- !u!1 &599862938
 GameObject:
   m_ObjectHideFlags: 0
@@ -5354,6 +5357,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 520320344}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -5405,8 +5409,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -5797,6 +5801,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -5827,9 +5832,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &599862944
@@ -5882,22 +5887,22 @@ Prefab:
         type: 2}
       propertyPath: frontWalls.Array.data[0]
       value: 
-      objectReference: {fileID: 1986410493}
+      objectReference: {fileID: 1190274515}
     - target: {fileID: 114672285671714754, guid: 1cad21be512a1694880f80a805db524f,
         type: 2}
       propertyPath: rightWalls.Array.data[0]
       value: 
-      objectReference: {fileID: 1909244012}
+      objectReference: {fileID: 1190274513}
     - target: {fileID: 114672285671714754, guid: 1cad21be512a1694880f80a805db524f,
         type: 2}
       propertyPath: backWalls.Array.data[0]
       value: 
-      objectReference: {fileID: 204254865}
+      objectReference: {fileID: 1190274516}
     - target: {fileID: 114672285671714754, guid: 1cad21be512a1694880f80a805db524f,
         type: 2}
       propertyPath: leftWalls.Array.data[0]
       value: 
-      objectReference: {fileID: 560814757}
+      objectReference: {fileID: 1190274514}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1cad21be512a1694880f80a805db524f, type: 2}
   m_IsPrefabParent: 0
@@ -5911,6 +5916,25 @@ Transform:
   m_PrefabParentObject: {fileID: 4152343992694100, guid: 1cad21be512a1694880f80a805db524f,
     type: 2}
   m_PrefabInternal: {fileID: 618139640}
+--- !u!1 &618139643 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1440777410334956, guid: 1cad21be512a1694880f80a805db524f,
+    type: 2}
+  m_PrefabInternal: {fileID: 618139640}
+--- !u!64 &618139644
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 618139643}
+  m_Material: {fileID: 13400000, guid: 7580b3cc67fd8924e8557bcd79c9c032, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 86e8458b9b943d84aa458a2635ce56e1, type: 3}
 --- !u!1 &621365019
 GameObject:
   m_ObjectHideFlags: 0
@@ -6403,6 +6427,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -6433,9 +6458,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &621365025
@@ -6493,6 +6518,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1806782687}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -6544,8 +6570,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -6936,6 +6962,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -6966,9 +6993,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &668920654
@@ -7030,10 +7057,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 4
     y: 5
+  state: 1
   obj: {fileID: 1220128663}
 --- !u!114 &679313330
 MonoBehaviour:
@@ -7087,10 +7114,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 0
     y: 2
+  state: 0
   obj: {fileID: 710739577}
 --- !u!1 &710739577
 GameObject:
@@ -7140,6 +7167,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 679313330}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -7191,8 +7219,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -7583,6 +7611,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -7613,9 +7642,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &710739583
@@ -8506,10 +8535,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 2
     y: 3
+  state: 0
   obj: {fileID: 439714070}
 --- !u!1001 &728239441
 Prefab:
@@ -8618,6 +8647,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1301920398}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -8669,8 +8699,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -9061,6 +9091,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -9091,9 +9122,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &730823081
@@ -9155,10 +9186,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 0
     y: 4
+  state: 0
   obj: {fileID: 1289419309}
 --- !u!1 &794384327
 GameObject:
@@ -10261,6 +10292,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -10291,9 +10323,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &803533922
@@ -10461,7 +10493,7 @@ MonoBehaviour:
       Data: 4
     - Name: taskId
       Entry: 1
-      Data: TakeAShower
+      Data: GetDressed
     - Name: subTaskId
       Entry: 1
       Data: GetDressed
@@ -10533,7 +10565,7 @@ MonoBehaviour:
       Data: 4
     - Name: taskId
       Entry: 1
-      Data: TakeAShower
+      Data: GetDressed
     - Name: subTaskId
       Entry: 1
       Data: GetDressed
@@ -10659,7 +10691,7 @@ MonoBehaviour:
       Data: 4
     - Name: taskId
       Entry: 1
-      Data: TakeAShower
+      Data: GetDressed
     - Name: subTaskId
       Entry: 1
       Data: GetDressed
@@ -10966,10 +10998,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 1
     y: 1
+  state: 1
   obj: {fileID: 1025301875}
 --- !u!114 &929601469
 MonoBehaviour:
@@ -11023,10 +11055,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 5
     y: 3
+  state: 1
   obj: {fileID: 1174578824}
 --- !u!114 &934425413
 MonoBehaviour:
@@ -11092,10 +11124,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 2
     y: 4
+  state: 1
   obj: {fileID: 621365019}
 --- !u!1 &1025301875
 GameObject:
@@ -11589,6 +11621,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -11619,9 +11652,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1025301881
@@ -11738,10 +11771,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 1
     y: 5
+  state: 1
   obj: {fileID: 1173721377}
 --- !u!114 &1137214056
 MonoBehaviour:
@@ -11787,10 +11820,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 0
     y: 0
+  state: 1
   obj: {fileID: 82440613}
 --- !u!1 &1138247303
 GameObject:
@@ -12462,6 +12495,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 2085039148}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -12513,8 +12547,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -12905,6 +12939,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -12935,9 +12970,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1151231003
@@ -12995,6 +13030,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1135421185}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -13046,8 +13082,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -13438,6 +13474,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -13468,9 +13505,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1173721383
@@ -13528,6 +13565,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 929601469}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -13579,8 +13617,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -13971,6 +14009,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -14001,9 +14040,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1174578830
@@ -14065,10 +14104,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 2
     y: 5
+  state: 1
   obj: {fileID: 1255218486}
 --- !u!1 &1183849703
 GameObject:
@@ -14559,9 +14598,57 @@ Prefab:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300004, guid: 459014d22b8087441967143526466324, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300004, guid: 459014d22b8087441967143526466324, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300004, guid: 459014d22b8087441967143526466324, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300010, guid: 459014d22b8087441967143526466324, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300008, guid: 459014d22b8087441967143526466324, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300006, guid: 459014d22b8087441967143526466324, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 459014d22b8087441967143526466324, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 459014d22b8087441967143526466324, type: 3}
   m_IsPrefabParent: 0
+--- !u!23 &1190274513 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 2300010, guid: 459014d22b8087441967143526466324,
+    type: 3}
+  m_PrefabInternal: {fileID: 1190274512}
+--- !u!23 &1190274514 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 2300008, guid: 459014d22b8087441967143526466324,
+    type: 3}
+  m_PrefabInternal: {fileID: 1190274512}
+--- !u!23 &1190274515 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 2300006, guid: 459014d22b8087441967143526466324,
+    type: 3}
+  m_PrefabInternal: {fileID: 1190274512}
+--- !u!23 &1190274516 stripped
+MeshRenderer:
+  m_PrefabParentObject: {fileID: 2300004, guid: 459014d22b8087441967143526466324,
+    type: 3}
+  m_PrefabInternal: {fileID: 1190274512}
 --- !u!114 &1216427784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14626,10 +14713,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 1
     y: 4
+  state: 1
   obj: {fileID: 1311095518}
 --- !u!1 &1220128663
 GameObject:
@@ -14679,6 +14766,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 676215744}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -14730,8 +14818,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -15122,6 +15210,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -15152,9 +15241,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1220128669
@@ -15216,10 +15305,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 2
     y: 0
+  state: 0
   obj: {fileID: 1937671017}
 --- !u!114 &1242969977
 MonoBehaviour:
@@ -15285,10 +15374,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 4
     y: 1
+  state: 1
   obj: {fileID: 1390734778}
 --- !u!1 &1255218486
 GameObject:
@@ -15338,6 +15427,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1175014289}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -15389,8 +15479,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -15781,6 +15871,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -15811,9 +15902,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1255218492
@@ -15990,6 +16081,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 734033035}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -16041,8 +16133,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -16433,6 +16525,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -16463,9 +16556,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1289419315
@@ -16527,10 +16620,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 4
     y: 0
+  state: 0
   obj: {fileID: 730823075}
 --- !u!1 &1311095518
 GameObject:
@@ -17024,6 +17117,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -17054,9 +17148,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1311095524
@@ -17101,41 +17195,6 @@ MonoBehaviour:
     - {fileID: 618139642}
     - {fileID: 618139641}
     - {fileID: 1216427784}
-    - {fileID: 1137214056}
-    - {fileID: 1803868095}
-    - {fileID: 679313330}
-    - {fileID: 90484751}
-    - {fileID: 734033035}
-    - {fileID: 1388457733}
-    - {fileID: 1961573370}
-    - {fileID: 898855735}
-    - {fileID: 523029244}
-    - {fileID: 56929655}
-    - {fileID: 1135421185}
-    - {fileID: 1221235668}
-    - {fileID: 1858383186}
-    - {fileID: 1646077763}
-    - {fileID: 715405597}
-    - {fileID: 934425413}
-    - {fileID: 1175014289}
-    - {fileID: 1528982112}
-    - {fileID: 259153721}
-    - {fileID: 190796479}
-    - {fileID: 185779353}
-    - {fileID: 1891928071}
-    - {fileID: 520320344}
-    - {fileID: 1301920398}
-    - {fileID: 1242969977}
-    - {fileID: 333418233}
-    - {fileID: 217826939}
-    - {fileID: 1831687337}
-    - {fileID: 676215744}
-    - {fileID: 1541970559}
-    - {fileID: 1806782687}
-    - {fileID: 2085039148}
-    - {fileID: 929601469}
-    - {fileID: 1662676600}
-    - {fileID: 557243113}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -17146,7 +17205,7 @@ MonoBehaviour:
       Data: 0|Player, Assembly-CSharp
     - Name: speed
       Entry: 4
-      Data: 10
+      Data: 4
     - Name: isMoving
       Entry: 5
       Data: false
@@ -17171,789 +17230,13 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: tiles
-      Entry: 7
-      Data: 1|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[Tile,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 7
-      Data: 2|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[Point,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 36
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 6
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 7
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 8
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 9
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 10
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 11
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 12
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 13
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 14
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 15
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 16
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 17
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 18
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 19
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 20
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 21
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 22
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 23
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 24
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 25
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 26
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 27
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 28
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 29
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 30
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 31
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 32
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 5
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 33
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 5
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 34
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 5
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 35
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 5
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 36
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 5
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 37
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 5
-    - Name: y
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 10
-      Data: 38
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: highlightedTiles
       Entry: 7
-      Data: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[Tile,
+      Data: 1|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[Tile,
         Assembly-CSharp]], mscorlib]], mscorlib
-    - Name: 
+    - Name: comparer
       Entry: 7
-      Data: 4|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 2|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -17971,6 +17254,43 @@ MonoBehaviour:
   globalCtrl: {fileID: 0}
   globalState: {fileID: 0}
   sceneState: {fileID: 11400000, guid: 90f502611efdd254095e74138351d7fa, type: 2}
+  tiles:
+  - {fileID: 1137214056}
+  - {fileID: 1803868095}
+  - {fileID: 679313330}
+  - {fileID: 90484751}
+  - {fileID: 734033035}
+  - {fileID: 1388457733}
+  - {fileID: 1961573370}
+  - {fileID: 898855735}
+  - {fileID: 523029244}
+  - {fileID: 56929655}
+  - {fileID: 1216427784}
+  - {fileID: 1135421185}
+  - {fileID: 1221235668}
+  - {fileID: 1858383186}
+  - {fileID: 1646077763}
+  - {fileID: 715405597}
+  - {fileID: 934425413}
+  - {fileID: 1175014289}
+  - {fileID: 1528982112}
+  - {fileID: 259153721}
+  - {fileID: 190796479}
+  - {fileID: 185779353}
+  - {fileID: 1891928071}
+  - {fileID: 520320344}
+  - {fileID: 1301920398}
+  - {fileID: 1242969977}
+  - {fileID: 333418233}
+  - {fileID: 217826939}
+  - {fileID: 1831687337}
+  - {fileID: 676215744}
+  - {fileID: 1541970559}
+  - {fileID: 1806782687}
+  - {fileID: 2085039148}
+  - {fileID: 929601469}
+  - {fileID: 1662676600}
+  - {fileID: 557243113}
 --- !u!4 &1311566518
 Transform:
   m_ObjectHideFlags: 0
@@ -18040,6 +17360,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1388457733}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -18091,8 +17412,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -18483,6 +17804,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -18513,9 +17835,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1373411780
@@ -18569,10 +17891,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 0
     y: 5
+  state: 1
   obj: {fileID: 1373411774}
 --- !u!1 &1390734778
 GameObject:
@@ -19066,6 +18388,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -19096,9 +18419,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1390734784
@@ -19600,6 +18923,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -19630,9 +18954,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1407948427
@@ -20134,6 +19458,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -20164,9 +19489,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1418273376
@@ -20705,6 +20030,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -20735,9 +20061,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1438475631
@@ -21244,6 +20570,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -21274,9 +20601,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1470379476
@@ -21778,6 +21105,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -21808,9 +21136,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1514977795
@@ -21849,7 +21177,7 @@ Light:
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
-  m_CookieSize: 27.05
+  m_CookieSize: 270.05
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -21879,7 +21207,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1520551479}
   m_LocalRotation: {x: 0.22414392, y: 0.48296294, z: -0.12940955, w: 0.8365163}
-  m_LocalPosition: {x: -10, y: 5, z: -5}
+  m_LocalPosition: {x: -91.6, y: 68.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -21937,10 +21265,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 3
     y: 0
+  state: 0
   obj: {fileID: 1684281840}
 --- !u!1 &1530131936
 GameObject:
@@ -22572,10 +21900,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 5
     y: 0
+  state: 0
   obj: {fileID: 459041938}
 --- !u!1 &1577870148
 GameObject:
@@ -22625,6 +21953,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1961573370}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -22676,8 +22005,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -23068,6 +22397,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -23098,9 +22428,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1577870154
@@ -23602,6 +22932,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -23632,9 +22963,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1591390271
@@ -23692,6 +23023,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 557243113}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -23743,8 +23075,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -24135,6 +23467,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -24165,9 +23498,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1610638464
@@ -24299,10 +23632,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 2
     y: 2
+  state: 0
   obj: {fileID: 1591390265}
 --- !u!114 &1662676600
 MonoBehaviour:
@@ -24356,10 +23689,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 0
   point:
     x: 5
     y: 4
+  state: 0
   obj: {fileID: 248925452}
 --- !u!1 &1684281840
 GameObject:
@@ -24409,6 +23742,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1528982112}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -24460,8 +23794,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -24852,6 +24186,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -24882,9 +24217,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1684281846
@@ -24946,10 +24281,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 0
     y: 1
+  state: 1
   obj: {fileID: 536439781}
 --- !u!114 &1806782687
 MonoBehaviour:
@@ -25003,10 +24338,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 5
     y: 1
+  state: 1
   obj: {fileID: 668920648}
 --- !u!114 &1831687337
 MonoBehaviour:
@@ -25072,10 +24407,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 4
     y: 4
+  state: 1
   obj: {fileID: 2133906521}
 --- !u!1001 &1851693537
 Prefab:
@@ -25212,10 +24547,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 2
     y: 1
+  state: 1
   obj: {fileID: 480259705}
 --- !u!114 &1891928071
 MonoBehaviour:
@@ -25281,10 +24616,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 3
     y: 4
+  state: 1
   obj: {fileID: 1438475625}
 --- !u!1 &1892936835
 GameObject:
@@ -25778,6 +25113,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -25808,9 +25144,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1892936841
@@ -25820,11 +25156,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1892936835}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1909244012 stripped
-MeshRenderer:
-  m_PrefabParentObject: {fileID: 2300010, guid: 459014d22b8087441967143526466324,
-    type: 3}
-  m_PrefabInternal: {fileID: 1190274512}
 --- !u!1 &1937671017
 GameObject:
   m_ObjectHideFlags: 0
@@ -25873,6 +25204,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1221235668}
+    - {fileID: 2133429917}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -25924,8 +25256,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -26316,6 +25648,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -26346,9 +25679,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1937671023
@@ -26410,16 +25743,11 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 1
     y: 0
+  state: 1
   obj: {fileID: 1577870148}
---- !u!23 &1986410493 stripped
-MeshRenderer:
-  m_PrefabParentObject: {fileID: 2300006, guid: 459014d22b8087441967143526466324,
-    type: 3}
-  m_PrefabInternal: {fileID: 1190274512}
 --- !u!114 &2085039148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26472,10 +25800,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  state: 1
   point:
     x: 5
     y: 2
+  state: 1
   obj: {fileID: 1151230997}
 --- !u!1 &2133429915
 GameObject:
@@ -26521,21 +25849,41 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 1137214056}
+    - {fileID: 1662676600}
+    - {fileID: 90484751}
     - {fileID: 715405597}
+    - {fileID: 1541970559}
     - {fileID: 1858383186}
+    - {fileID: 1803868095}
     - {fileID: 185779353}
+    - {fileID: 520320344}
     - {fileID: 934425413}
+    - {fileID: 1806782687}
+    - {fileID: 679313330}
+    - {fileID: 1301920398}
     - {fileID: 217826939}
     - {fileID: 898855735}
+    - {fileID: 2085039148}
+    - {fileID: 1135421185}
+    - {fileID: 929601469}
+    - {fileID: 676215744}
+    - {fileID: 1175014289}
+    - {fileID: 734033035}
     - {fileID: 1216427784}
+    - {fileID: 1388457733}
     - {fileID: 1242969977}
     - {fileID: 56929655}
     - {fileID: 523029244}
     - {fileID: 1891928071}
     - {fileID: 333418233}
     - {fileID: 259153721}
+    - {fileID: 1961573370}
     - {fileID: 1646077763}
+    - {fileID: 557243113}
+    - {fileID: 1528982112}
     - {fileID: 190796479}
+    - {fileID: 1221235668}
     - {fileID: 1831687337}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -26592,7 +25940,7 @@ MonoBehaviour:
       Data: 2|System.Collections.Generic.List`1[[Tile, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 16
+      Data: 36
     - Name: 
       Entry: 10
       Data: 0
@@ -26642,6 +25990,66 @@ MonoBehaviour:
       Entry: 10
       Data: 15
     - Name: 
+      Entry: 10
+      Data: 16
+    - Name: 
+      Entry: 10
+      Data: 17
+    - Name: 
+      Entry: 10
+      Data: 18
+    - Name: 
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 10
+      Data: 23
+    - Name: 
+      Entry: 10
+      Data: 24
+    - Name: 
+      Entry: 10
+      Data: 25
+    - Name: 
+      Entry: 10
+      Data: 26
+    - Name: 
+      Entry: 10
+      Data: 27
+    - Name: 
+      Entry: 10
+      Data: 28
+    - Name: 
+      Entry: 10
+      Data: 29
+    - Name: 
+      Entry: 10
+      Data: 30
+    - Name: 
+      Entry: 10
+      Data: 31
+    - Name: 
+      Entry: 10
+      Data: 32
+    - Name: 
+      Entry: 10
+      Data: 33
+    - Name: 
+      Entry: 10
+      Data: 34
+    - Name: 
+      Entry: 10
+      Data: 35
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -26671,6 +26079,9 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 6|LightSourceCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -26689,6 +26100,9 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 8|LightSourceReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -27236,6 +26650,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
   m_StaticBatchInfo:
@@ -27266,9 +26681,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 0
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &2133906527

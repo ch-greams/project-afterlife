@@ -277,7 +277,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: TakeAShower
+      Data: GetDressed
     - Name: 
       Entry: 7
       Data: 13|Task, Assembly-CSharp

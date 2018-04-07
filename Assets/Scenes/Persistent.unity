@@ -2253,6 +2253,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -6745,7 +6746,7 @@ MonoBehaviour:
       Entry: 7
       Data: 28|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.GameObject,
         UnityEngine.CoreModule]], mscorlib
-    - Name: 
+    - Name: comparer
       Entry: 7
       Data: 29|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib

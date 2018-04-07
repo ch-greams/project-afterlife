@@ -9,8 +9,8 @@ using UnityEngine;
 [Serializable]
 public class Tile : SerializedScriptableObject
 {
-    public TileState state;
     public Point point;
+    public TileState state;
     public GameObject obj;
 
     [OdinSerialize]
@@ -138,6 +138,38 @@ public class Tile : SerializedScriptableObject
         }
 
         return null;
+    }
+}
+
+[Serializable]
+public class TileSimple {
+    public Point point;
+    public TileState state;
+
+
+    public TileSimple()
+    {
+        this.point = new Point();
+        this.state = TileState.Disabled;
+    }
+
+    public TileSimple(Tile tile)
+    {
+        this.point = tile.point;
+        this.state = tile.state;
+    }
+
+    public TileSimple(Point point, TileState state)
+    {
+        this.point = point;
+        this.state = state;
+    }
+
+
+    public TileSimple UpdateState(TileState state)
+    {
+        this.state = state;
+        return this;
     }
 }
 

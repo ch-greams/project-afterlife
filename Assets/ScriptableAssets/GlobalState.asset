@@ -29,6 +29,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: c4d1d1cd0e1e04849a82ccdfc5d9b6cb, type: 2}
     - {fileID: 11400000, guid: 08e5881b88b9f2a4985fb703ac0e7c0b, type: 2}
     - {fileID: 11400000, guid: c5e351fab04e1c74f9add9d9507902f6, type: 2}
+    - {fileID: 11400000, guid: 629e1fd3c31f39f44ba4966bbf159362, type: 2}
+    - {fileID: 11400000, guid: a550f616485d1204e8efeaa5cfb7599b, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -38,10 +40,16 @@ MonoBehaviour:
       Entry: 7
       Data: 0|System.Collections.Generic.Dictionary`2[[ObjectiveId, Assembly-CSharp],[Objective,
         Assembly-CSharp]], mscorlib
-    - Name: 
+    - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[ObjectiveId,
-        Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ObjectiveId, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -94,16 +102,22 @@ MonoBehaviour:
       Entry: 7
       Data: 2|System.Collections.Generic.Dictionary`2[[SceneType, Assembly-CSharp],[SceneState,
         Assembly-CSharp]], mscorlib
-    - Name: 
+    - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[SceneType,
-        Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[SceneType, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 12
-      Data: 11
+      Data: 13
     - Name: 
       Entry: 7
       Data: 
@@ -237,15 +251,39 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 12
+    - Name: 
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 3
+      Data: 13
+    - Name: 
+      Entry: 10
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
   currentPosition:
-    x: 1
-    y: 4
-  currentVisibility: 0
-  currentScene: 1
+    x: 11
+    y: 22
+  currentVisibility: 10
+  currentScene: 13
   currentObjective: 1
   inventory: []

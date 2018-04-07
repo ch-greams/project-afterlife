@@ -33,7 +33,11 @@ public class Objective : SerializedScriptableObject
     public void LoadFromSerializable(ObjectiveSerializable serializedObjective)
     {
         this.completed = serializedObjective.completed;
-        this.tasks = serializedObjective.tasks;
+
+        foreach (KeyValuePair<string, Task> kvp in this.tasks)
+        {
+            kvp.Value.LoadFromSerializable(serializedObjective.tasks[kvp.Key]);
+        }
     }
 }
 
@@ -43,7 +47,8 @@ public class ObjectiveSerializable
     public ObjectiveId id;
     public string title;
     public bool completed;
-    public Dictionary<string, Task> tasks = new Dictionary<string, Task>();
+
+    public Dictionary<string, TaskSerializable> tasks = new Dictionary<string, TaskSerializable>();
 
 
     public ObjectiveSerializable(Objective objective)
@@ -53,7 +58,7 @@ public class ObjectiveSerializable
         this.title = objective.title;
 
         this.completed = objective.completed;
-        this.tasks = new Dictionary<string, Task>(objective.tasks);
+        this.tasks = objective.tasks.ToDictionary(kvp => kvp.Key, kvp => new TaskSerializable(kvp.Value));
     }
 }
 

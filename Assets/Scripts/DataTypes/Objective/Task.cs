@@ -46,4 +46,36 @@ public class Task
         HashSet<string> ids = new HashSet<string>();
         return (subTasks == null) || subTasks.All(subTask => ids.Add(subTask.id));
     }
+
+
+    public void LoadFromSerializable(TaskSerializable serializedTask)
+    {
+        this.completed = serializedTask.completed;
+        this.optional = serializedTask.optional;
+
+        foreach (SubTask subTask in this.subTasks)
+        {
+            subTask.LoadFromSerializable(serializedTask.subTasks[subTask.id]);
+        }
+    }
+}
+
+[Serializable]
+public class TaskSerializable
+{
+    public bool completed;
+    public bool optional;
+    public Dictionary<string, SubTaskSerializable> subTasks = new Dictionary<string, SubTaskSerializable>();
+
+
+    public TaskSerializable(Task task)
+    {
+        this.completed = task.completed;
+        this.optional = task.optional;
+
+        this.subTasks = task.subTasks.ToDictionary(
+            subTask => subTask.id,
+            subTask => new SubTaskSerializable(subTask)
+        );
+    }
 }

@@ -11,19 +11,43 @@ public class SceneState : SerializedScriptableObject
     [DictionaryDrawerSettings(KeyLabel = "LightSource ID", ValueLabel = "IsEnabled")]
     public Dictionary<string, bool> lightSources = new Dictionary<string, bool>();
 
-    [DictionaryDrawerSettings(IsReadOnly = true)]
-    public Dictionary<Point, TileState> defaultMap = new Dictionary<Point, TileState>();
+    [ShowInInspector, BoxGroup("Map Stats"), LabelWidth(60), HorizontalGroup("Map Stats/General", 360)]
+    public Point size {
+        get {
+            return (
+                this.defaultMap.Any() ? this.defaultMap.Select(ts => ts.point).Max() + new Point(1, 1) : new Point()
+            );
+        }
+    }
+    [ShowInInspector, BoxGroup("Map Stats"), LabelWidth(60), HorizontalGroup("Map Stats/General")]
+    public int total { get { return this.defaultMap.Count; } }
+
+    [ShowInInspector, BoxGroup("Map Stats"), LabelWidth(60), HorizontalGroup("Map Stats/States")]
+    public int active { get { return this.defaultMap.Count(ts => ts.state == TileState.Active); } }
+    [ShowInInspector, BoxGroup("Map Stats"), LabelWidth(60), HorizontalGroup("Map Stats/States")]
+    public int hidden { get { return this.defaultMap.Count(ts => ts.state == TileState.Hidden); } }
+    [ShowInInspector, BoxGroup("Map Stats"), LabelWidth(60), HorizontalGroup("Map Stats/States")]
+    public int disabled { get { return this.defaultMap.Count(ts => ts.state == TileState.Disabled); } }
+
+
+    [HideInInspector]
+    public List<TileSimple> defaultMap = new List<TileSimple>();
 
 
     public SceneState() { }
 
-    public Dictionary<Point, TileState> GetCurrentMap(List<Point> playerLayer)
+    public List<TileSimple> GetCurrentMap(List<Point> playerLayer)
     {
-        return this.defaultMap.ToDictionary(kvp => kvp.Key, kvp => 
-            (kvp.Value == TileState.Hidden)
-                ? (playerLayer.Contains(kvp.Key) ? TileState.Active : TileState.Hidden)
-                : TileState.Disabled
-        );
+        return this.defaultMap
+            .Select(ts =>
+                new TileSimple(
+                    ts.point,
+                    (ts.state == TileState.Hidden)
+                        ? (playerLayer.Contains(ts.point) ? TileState.Active : TileState.Hidden)
+                        : TileState.Disabled
+                )
+            )
+            .ToList();
     }
 
     public void LoadFromSerializable(SceneStateSerializable serializedSceneState)
@@ -38,7 +62,8 @@ public class SceneState : SerializedScriptableObject
 public class SceneStateSerializable
 {
     public Dictionary<string, bool> lightSources = new Dictionary<string, bool>();
-    public Dictionary<Point, TileState> defaultMap = new Dictionary<Point, TileState>();
+    public List<TileSimple> defaultMap = new List<TileSimple>();
+
 
 
     public SceneStateSerializable(SceneState sceneState)

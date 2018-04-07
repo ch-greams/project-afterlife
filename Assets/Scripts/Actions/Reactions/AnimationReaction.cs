@@ -19,7 +19,8 @@ public class AnimationReaction : IReaction
                 case AnimationReactionType.DEFAULT_ANIMATOR:
                     return new List<string>()
                     {
-                        "OpenDoor"
+                        "OpenDoor",
+                        "OpenElevator",
                     };
                 case AnimationReactionType.DEFAULT_PLAYER_ANIMATOR:
                     return new List<string>()

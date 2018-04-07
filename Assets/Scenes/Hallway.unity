@@ -268,6 +268,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -912,6 +915,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1499,6 +1505,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -2029,6 +2038,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -2558,6 +2570,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -3158,6 +3173,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -3744,6 +3762,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -4898,6 +4919,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -5497,6 +5521,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -6027,6 +6054,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -6556,6 +6586,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -7272,6 +7305,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -7801,6 +7837,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -8332,6 +8371,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -8861,6 +8903,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -9440,6 +9485,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -10732,6 +10780,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -11433,6 +11484,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -12088,6 +12142,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -12745,6 +12802,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -13274,6 +13334,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -14251,6 +14314,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -14780,6 +14846,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -15367,6 +15436,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -16018,6 +16090,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -16744,6 +16819,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -17449,6 +17527,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -17978,6 +18059,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -18566,6 +18650,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -19153,6 +19240,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -19682,6 +19772,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -20532,6 +20625,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -21131,6 +21227,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -21660,6 +21759,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -22191,6 +22293,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -22720,6 +22825,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -23307,6 +23415,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -23907,6 +24018,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -24493,6 +24607,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -25035,6 +25152,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -25773,6 +25893,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -26359,6 +26482,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -26958,6 +27084,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -27971,6 +28100,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -28500,6 +28632,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -29087,6 +29222,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -29687,6 +29825,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -30217,6 +30358,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -30746,6 +30890,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -31415,6 +31562,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -32002,6 +32152,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -32532,6 +32685,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -33061,6 +33217,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -33661,6 +33820,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -34191,6 +34353,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -34720,6 +34885,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -35308,6 +35476,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -35837,6 +36008,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -36368,6 +36542,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -36898,6 +37075,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -37427,6 +37607,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -38021,6 +38204,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -38658,6 +38844,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -39187,6 +39376,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -39787,6 +39979,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -40316,6 +40511,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -40904,6 +41102,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -41433,6 +41634,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -42078,6 +42282,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -42607,6 +42814,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -43252,6 +43462,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -43781,6 +43994,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -44312,6 +44528,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -44841,6 +45060,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -45624,6 +45846,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -46153,6 +46378,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -46684,6 +46912,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -47214,6 +47445,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -47743,6 +47977,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -48331,6 +48568,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -48860,6 +49100,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -49460,6 +49703,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -49989,6 +50235,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -50520,6 +50769,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -51049,6 +51301,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -52742,6 +52997,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -53329,6 +53587,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -53858,6 +54119,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -54389,6 +54653,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -54918,6 +55185,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -55449,6 +55719,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -55978,6 +56251,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -56509,6 +56785,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -57038,6 +57317,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -57955,6 +58237,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -58485,6 +58770,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -59014,6 +59302,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -59602,6 +59893,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -60131,6 +60425,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -60731,6 +61028,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -61260,6 +61560,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -61848,6 +62151,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -62434,6 +62740,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -63022,6 +63331,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -63552,6 +63864,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -64081,6 +64396,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -64669,6 +64987,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -65198,6 +65519,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -65855,6 +66179,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -66511,6 +66838,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -67040,6 +67370,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -67692,6 +68025,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -68279,6 +68615,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -68865,6 +69204,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -69878,6 +70220,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -70407,6 +70752,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -71063,6 +71411,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -71834,6 +72185,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -72363,6 +72717,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -72894,6 +73251,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -73423,6 +73783,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -74022,6 +74385,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -74793,6 +75159,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -75379,6 +75748,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -75978,6 +76350,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -76736,6 +77111,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -77643,6 +78021,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -78172,6 +78553,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -78967,6 +79351,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -79554,6 +79941,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -80083,6 +80473,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -80911,6 +81304,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -81555,6 +81951,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -82084,6 +82483,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -82867,6 +83269,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -83397,6 +83802,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -83926,6 +84334,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -84709,6 +85120,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -85239,6 +85653,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -85768,6 +86185,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -86413,6 +86833,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -87014,6 +87437,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -87601,6 +88027,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -88131,6 +88560,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -88660,6 +89092,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -89335,6 +89770,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -89865,6 +90303,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -90394,6 +90835,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -91469,6 +91913,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -92113,6 +92560,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -92700,6 +93150,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -93229,6 +93682,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -93816,6 +94272,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -94701,6 +95160,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -95230,6 +95692,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -95761,6 +96226,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -96290,6 +96758,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -96821,6 +97292,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -97350,6 +97824,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -98253,8 +98730,8 @@ MonoBehaviour:
       Entry: 10
       Data: 3
     - Name: visibleRange
-      Entry: 3
-      Data: 2
+      Entry: 4
+      Data: 4
     - Name: 
       Entry: 8
       Data: 
@@ -102247,7 +102724,27 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  id: 0
+    - Name: highlightedTiles
+      Entry: 7
+      Data: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[Tile,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: 
+      Entry: 7
+      Data: 4|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  id: 3
   globalCtrl: {fileID: 0}
   globalState: {fileID: 0}
   sceneState: {fileID: 11400000, guid: c5e351fab04e1c74f9add9d9507902f6, type: 2}
@@ -102378,6 +102875,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -102909,6 +103409,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -103438,6 +103941,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -104025,6 +104531,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -104670,6 +105179,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -105269,6 +105781,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -105798,6 +106313,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -106728,6 +107246,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -107258,6 +107779,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -107787,6 +108311,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -108374,6 +108901,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -109158,6 +109688,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -110164,6 +110697,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -110694,6 +111230,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -111223,6 +111762,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -111811,6 +112353,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -112398,6 +112943,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -112927,6 +113475,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -113653,6 +114204,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -114194,16 +114748,16 @@ MonoBehaviour:
       Data: 
     - Name: scene
       Entry: 3
-      Data: 3
+      Data: 12
     - Name: exitPosition
       Entry: 7
       Data: Point, Assembly-CSharp
     - Name: x
       Entry: 3
-      Data: 1
+      Data: 4
     - Name: y
       Entry: 3
-      Data: 62
+      Data: 21
     - Name: 
       Entry: 8
       Data: 
@@ -114743,6 +115297,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -115331,6 +115888,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -115918,6 +116478,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -116447,6 +117010,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -117161,6 +117727,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -117690,6 +118259,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -118278,6 +118850,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -118865,6 +119440,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -119394,6 +119972,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -119925,6 +120506,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -120454,6 +121038,9 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: interactable
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8

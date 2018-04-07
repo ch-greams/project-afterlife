@@ -24,7 +24,7 @@ MonoBehaviour:
       Entry: 7
       Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Boolean,
         mscorlib]], mscorlib
-    - Name: 
+    - Name: comparer
       Entry: 7
       Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
@@ -40,1703 +40,324 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: defaultMap
-      Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[TileState,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 7
-      Data: 3|System.Collections.Generic.EqualityComparer`1+DefaultComparer[[Point,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 80
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 6
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 7
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 8
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 0
-    - Name: y
-      Entry: 3
-      Data: 9
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 6
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 7
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 8
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 1
-    - Name: y
-      Entry: 3
-      Data: 9
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 6
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 7
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 8
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 2
-    - Name: y
-      Entry: 3
-      Data: 9
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 6
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 7
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 8
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 3
-    - Name: y
-      Entry: 3
-      Data: 9
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 5
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 6
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 7
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 8
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 9
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 5
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 5
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 5
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 5
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 5
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 6
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 6
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 6
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 6
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 6
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 7
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 7
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 7
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 7
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 7
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 8
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 8
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 8
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 8
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 8
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 9
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 9
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 9
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 9
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 9
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 10
-    - Name: y
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 10
-    - Name: y
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 10
-    - Name: y
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 10
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 10
-    - Name: y
-      Entry: 3
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+  defaultMap:
+  - point:
+      x: 0
+      y: 0
+    state: 0
+  - point:
+      x: 0
+      y: 1
+    state: 0
+  - point:
+      x: 0
+      y: 2
+    state: 1
+  - point:
+      x: 0
+      y: 3
+    state: 1
+  - point:
+      x: 0
+      y: 4
+    state: 1
+  - point:
+      x: 0
+      y: 5
+    state: 1
+  - point:
+      x: 0
+      y: 6
+    state: 1
+  - point:
+      x: 0
+      y: 7
+    state: 0
+  - point:
+      x: 0
+      y: 8
+    state: 0
+  - point:
+      x: 0
+      y: 9
+    state: 0
+  - point:
+      x: 1
+      y: 0
+    state: 1
+  - point:
+      x: 1
+      y: 1
+    state: 1
+  - point:
+      x: 1
+      y: 2
+    state: 1
+  - point:
+      x: 1
+      y: 3
+    state: 1
+  - point:
+      x: 1
+      y: 4
+    state: 1
+  - point:
+      x: 1
+      y: 5
+    state: 1
+  - point:
+      x: 1
+      y: 6
+    state: 1
+  - point:
+      x: 1
+      y: 7
+    state: 1
+  - point:
+      x: 1
+      y: 8
+    state: 1
+  - point:
+      x: 1
+      y: 9
+    state: 0
+  - point:
+      x: 2
+      y: 0
+    state: 1
+  - point:
+      x: 2
+      y: 1
+    state: 1
+  - point:
+      x: 2
+      y: 2
+    state: 1
+  - point:
+      x: 2
+      y: 3
+    state: 1
+  - point:
+      x: 2
+      y: 4
+    state: 1
+  - point:
+      x: 2
+      y: 5
+    state: 0
+  - point:
+      x: 2
+      y: 6
+    state: 0
+  - point:
+      x: 2
+      y: 7
+    state: 1
+  - point:
+      x: 2
+      y: 8
+    state: 1
+  - point:
+      x: 2
+      y: 9
+    state: 0
+  - point:
+      x: 3
+      y: 0
+    state: 1
+  - point:
+      x: 3
+      y: 1
+    state: 1
+  - point:
+      x: 3
+      y: 2
+    state: 1
+  - point:
+      x: 3
+      y: 3
+    state: 1
+  - point:
+      x: 3
+      y: 4
+    state: 1
+  - point:
+      x: 3
+      y: 5
+    state: 0
+  - point:
+      x: 3
+      y: 6
+    state: 0
+  - point:
+      x: 3
+      y: 7
+    state: 1
+  - point:
+      x: 3
+      y: 8
+    state: 1
+  - point:
+      x: 3
+      y: 9
+    state: 0
+  - point:
+      x: 4
+      y: 0
+    state: 1
+  - point:
+      x: 4
+      y: 1
+    state: 1
+  - point:
+      x: 4
+      y: 2
+    state: 1
+  - point:
+      x: 4
+      y: 3
+    state: 1
+  - point:
+      x: 4
+      y: 4
+    state: 1
+  - point:
+      x: 4
+      y: 5
+    state: 1
+  - point:
+      x: 4
+      y: 6
+    state: 1
+  - point:
+      x: 4
+      y: 7
+    state: 1
+  - point:
+      x: 4
+      y: 8
+    state: 0
+  - point:
+      x: 4
+      y: 9
+    state: 0
+  - point:
+      x: 5
+      y: 0
+    state: 0
+  - point:
+      x: 5
+      y: 1
+    state: 1
+  - point:
+      x: 5
+      y: 2
+    state: 1
+  - point:
+      x: 5
+      y: 3
+    state: 1
+  - point:
+      x: 5
+      y: 4
+    state: 1
+  - point:
+      x: 6
+      y: 0
+    state: 0
+  - point:
+      x: 6
+      y: 1
+    state: 1
+  - point:
+      x: 6
+      y: 2
+    state: 0
+  - point:
+      x: 6
+      y: 3
+    state: 1
+  - point:
+      x: 6
+      y: 4
+    state: 1
+  - point:
+      x: 7
+      y: 0
+    state: 0
+  - point:
+      x: 7
+      y: 1
+    state: 1
+  - point:
+      x: 7
+      y: 2
+    state: 0
+  - point:
+      x: 7
+      y: 3
+    state: 1
+  - point:
+      x: 7
+      y: 4
+    state: 1
+  - point:
+      x: 8
+      y: 0
+    state: 0
+  - point:
+      x: 8
+      y: 1
+    state: 1
+  - point:
+      x: 8
+      y: 2
+    state: 0
+  - point:
+      x: 8
+      y: 3
+    state: 1
+  - point:
+      x: 8
+      y: 4
+    state: 1
+  - point:
+      x: 9
+      y: 0
+    state: 0
+  - point:
+      x: 9
+      y: 1
+    state: 1
+  - point:
+      x: 9
+      y: 2
+    state: 0
+  - point:
+      x: 9
+      y: 3
+    state: 1
+  - point:
+      x: 9
+      y: 4
+    state: 1
+  - point:
+      x: 10
+      y: 0
+    state: 0
+  - point:
+      x: 10
+      y: 1
+    state: 1
+  - point:
+      x: 10
+      y: 2
+    state: 1
+  - point:
+      x: 10
+      y: 3
+    state: 1
+  - point:
+      x: 10
+      y: 4
+    state: 1

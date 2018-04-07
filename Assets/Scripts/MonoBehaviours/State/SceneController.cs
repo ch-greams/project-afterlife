@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using UnityEngine;
 
 
 public class SceneController : SerializedMonoBehaviour
@@ -13,10 +14,28 @@ public class SceneController : SerializedMonoBehaviour
     [InlineEditor]
     public SceneState sceneState;
 
-    [DictionaryDrawerSettings(IsReadOnly = true)]
-    public Dictionary<Point, Tile> tiles = new Dictionary<Point, Tile>();
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/General", 360)]
+    public Point size {
+        get {
+            return (
+                this.tiles.Any() ? this.tiles.Select(ts => ts.point).Max() + new Point(1, 1) : new Point()
+            );
+        }
+    }
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/General")]
+    public int total { get { return this.tiles.Count; } }
 
-    [DictionaryDrawerSettings(IsReadOnly = true, DisplayMode = DictionaryDisplayOptions.Foldout)]
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int active { get { return this.tiles.Count(ts => ts.state == TileState.Active); } }
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int hidden { get { return this.tiles.Count(ts => ts.state == TileState.Hidden); } }
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int disabled { get { return this.tiles.Count(ts => ts.state == TileState.Disabled); } }
+
+    [HideInInspector]
+    public List<Tile> tiles = new List<Tile>();
+
+    [HideInInspector]
     public Dictionary<string, List<Tile>> highlightedTiles = new Dictionary<string, List<Tile>>();
 
 
@@ -26,7 +45,7 @@ public class SceneController : SerializedMonoBehaviour
         this.globalState = this.globalCtrl.globalState;
         this.sceneState = this.globalState.sceneStates[this.id];
 
-        this.player.UpdatePlayer(this.tiles[this.globalState.currentPosition], this.globalState.currentVisibility);
+        this.player.UpdatePlayer(this.tiles.Find(t => t.point == this.globalState.currentPosition), this.globalState.currentVisibility);
 
         this.UpdateTiles(this.player.tile);
     }
@@ -36,13 +55,12 @@ public class SceneController : SerializedMonoBehaviour
     {
         List<Tile> visibleTiles = tile.GetTiles(this.player.visibleRange, TileState.Hidden);
         List<Point> playerLayer = visibleTiles.Select(vt => vt.point).ToList();
+        List<TileSimple> currentMap = this.sceneState.GetCurrentMap(playerLayer);
 
-        Dictionary<Point, TileState> currentMap = this.sceneState.GetCurrentMap(playerLayer);
-
-        foreach (KeyValuePair<Point, Tile> kvp in this.tiles)
+        foreach (Tile t in this.tiles)
         {
-            TileData tileData = kvp.Value.obj.GetComponent<Interactable>().data as TileData;
-            tileData.RefreshTileState(currentMap[kvp.Key], false);
+            TileData tileData = t.obj.GetComponent<Interactable>().data as TileData;
+            tileData.RefreshTileState(currentMap.Find(ts => ts.point == t.point).state, false);
         }
 
         foreach (string lightSourceId in this.highlightedTiles.Keys)
@@ -56,21 +74,11 @@ public class SceneController : SerializedMonoBehaviour
         foreach (Tile tile in this.highlightedTiles[lightSourceId])
         {
             TileData tileData = tile.obj.GetComponent<Interactable>().data as TileData;
-            TileState defaultTileState = this.sceneState.defaultMap[tile.point];
+            TileState defaultTileState = this.sceneState.defaultMap.Find(ts => ts.point == tile.point).state;
             TileState tileState = (defaultTileState == TileState.Hidden) ? TileState.Active : defaultTileState;
             tileData.RefreshTileState(tileState, false);
         }
     }
-
-#if UNITY_EDITOR
-
-    [Button(ButtonSizes.Medium)]
-    public void CopyDefaultTileStatesToMap()
-    {
-        this.sceneState.defaultMap = this.tiles.ToDictionary(kvp => kvp.Key, kvp => kvp.Value.state);
-    }
-
-#endif
 }
 
 public enum SceneType
@@ -87,4 +95,6 @@ public enum SceneType
     AptN5_Bathroom,
     AptN5_Bedroom,
     AptN5_LivingRoom,
+    Hallway_ElevatorEnd,
+    Forest_Field,
 }

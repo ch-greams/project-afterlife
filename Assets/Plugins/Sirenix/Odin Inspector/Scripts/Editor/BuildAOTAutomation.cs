@@ -7,7 +7,13 @@ namespace Sirenix.Serialization.Internal
     using UnityEditor.Build;
     using System.IO;
 
-    public class PreBuildAOTAutomation : IPreprocessBuild
+#if UNITY_2018_1_OR_NEWER
+
+    using UnityEditor.Build.Reporting;
+
+#endif
+
+    public class PreBuildAOTAutomation : IPreprocessBuildWithReport
     {
         public int callbackOrder
         {
@@ -27,9 +33,18 @@ namespace Sirenix.Serialization.Internal
                 AOTGenerationConfig.Instance.GenerateDLL();
             }
         }
+
+#if UNITY_2018_1_OR_NEWER
+
+        public void OnPreprocessBuild(BuildReport report)
+        {
+            this.OnPreprocessBuild(report.summary.platform, report.summary.outputPath);
+        }
+
+#endif
     }
 
-    public class PostBuildAOTAutomation : IPostprocessBuild
+    public class PostBuildAOTAutomation : IPostprocessBuildWithReport
     {
         public int callbackOrder
         {
@@ -51,6 +66,15 @@ namespace Sirenix.Serialization.Internal
                 AssetDatabase.Refresh();
             }
         }
+
+#if UNITY_2018_1_OR_NEWER
+
+        public void OnPostprocessBuild(BuildReport report)
+        {
+            this.OnPostprocessBuild(report.summary.platform, report.summary.outputPath);
+        }
+
+#endif
     }
 }
 
