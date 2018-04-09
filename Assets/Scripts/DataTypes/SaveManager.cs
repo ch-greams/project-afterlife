@@ -11,7 +11,7 @@ public class SaveManager
     [InlineButton("ToggleSaveMenulInEditor", "Toggle")]
     public GameObject saveMenu;
 
-    [ListDrawerSettings(ListElementLabelName = "name", DraggableItems = false)]
+    [ListDrawerSettings(ListElementLabelName = "name", DraggableItems = false, Expanded = false)]
     public List<RecordSlot> recordSlots = new List<RecordSlot>();
 
 

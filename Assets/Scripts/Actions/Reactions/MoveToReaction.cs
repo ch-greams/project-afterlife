@@ -56,6 +56,11 @@ public class MoveToReaction : IReaction
                 yield return this.MoveToTile(player, path.Reverse());
             }
 
+            if (!this.sceneCtrl.sceneState.visibleByDefault)
+            {
+                this.sceneCtrl.UpdateTiles(tile, false);
+            }
+
             player.isMoving = false;
         }
     }
@@ -78,9 +83,6 @@ public class MoveToReaction : IReaction
     {
         foreach (Tile tile in path)
         {
-            this.sceneCtrl.UpdateTiles(tile);
-
-
             player.characterAnimator.SetFloat(this.speedParamHash, player.speed * 1F);
 
             float startTime = Time.time;

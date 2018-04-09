@@ -16,6 +16,8 @@ public class Tile : SerializedScriptableObject
     [OdinSerialize]
     public IEnumerable<Tile> allNeighbours { get; set; }
 
+    public IEnumerable<Tile> activeNeighbours { get { return this.allNeighbours.Where(t => (t.state == TileState.Active)); } }
+
 
     public static Tile CreateInstance(Point point, TileState state, GameObject obj)
     {
@@ -48,7 +50,8 @@ public class Tile : SerializedScriptableObject
         foreach (Point shift in shifts)
         {
             Point nPoint = this.point + shift;
-            if (grid.ContainsKey(nPoint)) {
+            if (grid.ContainsKey(nPoint))
+            {
                 neighbours.Add(grid[nPoint]);
             }
         }
@@ -56,52 +59,50 @@ public class Tile : SerializedScriptableObject
         this.allNeighbours = neighbours;
     }
 
-    public List<Tile> GetTiles(float range, TileState tileState)
+    public List<Point> GetTiles(float range, TileState tileState)
     {
-        if (range == 0)
+        List<Point> result = new List<Point>();
+
+        if (range > 0)
         {
-            return new List<Tile>();
-        }
+            HashSet<Tile> closedSet = new HashSet<Tile>();
+            Queue<Tile> openSet = new Queue<Tile>();
 
-        HashSet<Tile> closedSet = new HashSet<Tile>();
-        Queue<Tile> openSet = new Queue<Tile>();
-        List<Tile> result = new List<Tile>();
+            this.UpdateOpenSet(tileState, closedSet, ref openSet);
 
-        IEnumerable<Tile> neighbours = tileState == TileState.Active
-            ? this.allNeighbours.Where(tile => (tile.state == TileState.Active))
-            : this.allNeighbours;
+            closedSet.Add(this);
 
-        foreach (Tile neighbour in neighbours)
-        {
-            openSet.Enqueue(neighbour);
-        }
-
-        closedSet.Add(this);
-
-        while (openSet.Count > 0)
-        {
-            Tile tileToCheck = openSet.Dequeue();
-            Path<Tile> path = tileToCheck.FindPathFrom(this, tileState);
-
-            closedSet.Add(tileToCheck);
-            if (path.totalCost <= range)
+            while (openSet.Count > 0)
             {
-                result.Add(tileToCheck);
+                Tile tileToCheck = openSet.Dequeue();
+                Path<Tile> path = tileToCheck.FindPathFrom(this, tileState);
 
-                IEnumerable<Tile> neighbourstoCheck = tileState == TileState.Active
-                    ? tileToCheck.allNeighbours.Where(tile => (tile.state == TileState.Active))
-                    : tileToCheck.allNeighbours;
-
-                foreach (Tile tile in neighbourstoCheck)
+                closedSet.Add(tileToCheck);
+                if (path.totalCost <= range)
                 {
-                    if (!closedSet.Contains(tile) && !openSet.Contains(tile))
-                    {
-                        openSet.Enqueue(tile);
-                    }
+                    result.Add(tileToCheck.point);
+
+                    tileToCheck.UpdateOpenSet(tileState, closedSet, ref openSet);
                 }
             }
         }
+
         return result;
+    }
+
+    private void UpdateOpenSet(TileState tileState, HashSet<Tile> closedSet, ref Queue<Tile> openSet)
+    {
+        IEnumerable<Tile> neighboursToCheck = (
+            (tileState == TileState.Active) ? this.activeNeighbours : this.allNeighbours
+        );
+
+        foreach (Tile neighbour in neighboursToCheck)
+        {
+            if (!closedSet.Contains(neighbour) && !openSet.Contains(neighbour))
+            {
+                openSet.Enqueue(neighbour);
+            }
+        }
     }
 
     public Path<Tile> FindPathFrom(Tile startTile, TileState tileState)
@@ -125,9 +126,9 @@ public class Tile : SerializedScriptableObject
 
             closed.Add(path.lastStep);
 
-            IEnumerable<Tile> neighbours = tileState == TileState.Active
-                ? path.lastStep.allNeighbours.Where(tile => (tile.state == TileState.Active))
-                : path.lastStep.allNeighbours;
+            IEnumerable<Tile> neighbours = (
+                (tileState == TileState.Active) ? path.lastStep.activeNeighbours : path.lastStep.allNeighbours
+            );
 
             foreach (Tile tile in neighbours)
             {
@@ -142,34 +143,16 @@ public class Tile : SerializedScriptableObject
 }
 
 [Serializable]
-public class TileSimple {
+public class TileSimple
+{
     public Point point;
     public TileState state;
 
-
-    public TileSimple()
-    {
-        this.point = new Point();
-        this.state = TileState.Disabled;
-    }
 
     public TileSimple(Tile tile)
     {
         this.point = tile.point;
         this.state = tile.state;
-    }
-
-    public TileSimple(Point point, TileState state)
-    {
-        this.point = point;
-        this.state = state;
-    }
-
-
-    public TileSimple UpdateState(TileState state)
-    {
-        this.state = state;
-        return this;
     }
 }
 

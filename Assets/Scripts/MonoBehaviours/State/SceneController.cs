@@ -47,20 +47,22 @@ public class SceneController : SerializedMonoBehaviour
 
         this.player.UpdatePlayer(this.tiles.Find(t => t.point == this.globalState.currentPosition), this.globalState.currentVisibility);
 
-        this.UpdateTiles(this.player.tile);
+        this.UpdateTiles(this.player.tile, this.sceneState.visibleByDefault);
     }
 
-    // NOTE: This probably should be optimized
-    public void UpdateTiles(Tile tile)
+    // NOTE: ~100Mb (60%/40% in first 2 steps) of garbage from full 20 visibility
+    public void UpdateTiles(Tile tile, bool visibleByDefault)
     {
-        List<Tile> visibleTiles = tile.GetTiles(this.player.visibleRange, TileState.Hidden);
-        List<Point> playerLayer = visibleTiles.Select(vt => vt.point).ToList();
-        List<TileSimple> currentMap = this.sceneState.GetCurrentMap(playerLayer);
+        Dictionary<Point, TileState> currentMap = (
+            visibleByDefault
+                ? this.sceneState.GetCurrentMap()
+                : this.sceneState.GetCurrentMap(tile.GetTiles(this.player.visibleRange, TileState.Hidden))
+        );
 
         foreach (Tile t in this.tiles)
         {
             TileData tileData = t.obj.GetComponent<Interactable>().data as TileData;
-            tileData.RefreshTileState(currentMap.Find(ts => ts.point == t.point).state, false);
+            tileData.RefreshTileState(currentMap[t.point], false);
         }
 
         foreach (string lightSourceId in this.highlightedTiles.Keys)

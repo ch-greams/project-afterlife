@@ -26,7 +26,7 @@ public class LightSourceReaction : IReaction
             case LightSourceReactionType.DISABLE:
                 this.sceneCtrl.sceneState.lightSources[this.data.id] = false;
                 this.sceneCtrl.highlightedTiles.Remove(this.data.id);
-                this.sceneCtrl.UpdateTiles(this.sceneCtrl.player.tile);
+                this.sceneCtrl.UpdateTiles(this.sceneCtrl.player.tile, false);
                 break;
             default:
                 yield return null;

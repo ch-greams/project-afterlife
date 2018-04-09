@@ -16,6 +16,9 @@ public class GridGenerator : MonoBehaviour
     public float tileSize = 1;
 
     [BoxGroup("Configuration")]
+    public TileState tileState = TileState.Hidden;
+
+    [BoxGroup("Configuration")]
     public GameObject tilePrefab;
 
     [BoxGroup("State Management")]
@@ -63,8 +66,10 @@ public class GridGenerator : MonoBehaviour
                 obj.transform.SetParent(this.transform);
                 obj.name = point.ToString();
 
-                Tile tile = Tile.CreateInstance(point, TileState.Active, obj);
-                (obj.GetComponent<Interactable>().data as TileData).tile = tile;
+                Tile tile = Tile.CreateInstance(point, this.tileState, obj);
+                Interactable tileInteractable = obj.GetComponent<Interactable>();
+                tileInteractable.sceneCtrl = this.stateCtrl;
+                (tileInteractable.data as TileData).tile = tile;
 
                 this.tiles.Add(tile);
             }

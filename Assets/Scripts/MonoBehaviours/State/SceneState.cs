@@ -8,6 +8,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class SceneState : SerializedScriptableObject
 {
+    public bool visibleByDefault = false;
+    [HideIf("visibleByDefault")]
     [DictionaryDrawerSettings(KeyLabel = "LightSource ID", ValueLabel = "IsEnabled")]
     public Dictionary<string, bool> lightSources = new Dictionary<string, bool>();
 
@@ -36,18 +38,19 @@ public class SceneState : SerializedScriptableObject
 
     public SceneState() { }
 
-    public List<TileSimple> GetCurrentMap(List<Point> playerLayer)
+    public Dictionary<Point, TileState> GetCurrentMap()
     {
-        return this.defaultMap
-            .Select(ts =>
-                new TileSimple(
-                    ts.point,
-                    (ts.state == TileState.Hidden)
-                        ? (playerLayer.Contains(ts.point) ? TileState.Active : TileState.Hidden)
-                        : TileState.Disabled
-                )
-            )
-            .ToList();
+        return this.defaultMap.ToDictionary(ts => ts.point, ts => ts.state);
+    }
+
+
+    public Dictionary<Point, TileState> GetCurrentMap(List<Point> playerLayer)
+    {
+        return this.defaultMap.ToDictionary(ts => ts.point, ts =>
+            (ts.state == TileState.Hidden)
+                ? (playerLayer.Contains(ts.point) ? TileState.Active : TileState.Hidden)
+                : TileState.Disabled
+        );
     }
 
     public void LoadFromSerializable(SceneStateSerializable serializedSceneState)

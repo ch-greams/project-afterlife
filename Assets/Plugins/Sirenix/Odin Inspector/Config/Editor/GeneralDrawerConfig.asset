@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: GeneralDrawerConfig
   m_EditorClassIdentifier: 
   showMonoScriptInEditor: 1
-  expandFoldoutByDefault: 1
+  expandFoldoutByDefault: 0
   hideFoldoutWhileEmpty: 1
   openListsByDefault: 1
   showItemCount: 1
@@ -23,3 +23,6 @@ MonoBehaviour:
   quaternionDrawMode: 0
   showPrefabModificationsDisabledMessage: 1
   maxRecursiveDrawDepth: 10
+  showIndexLabels: 0
+  squareUnityObjectFieldHeight: 50
+  squareUnityObjectAlignment: 2

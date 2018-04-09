@@ -10,7 +10,7 @@ public class Inventory
     [InlineButton("ToggleInventory", "Click")]
     public Toggle inventoryToggle;
 
-    [ListDrawerSettings(NumberOfItemsPerPage = 4, ShowIndexLabels = true, DraggableItems = false)]
+    [ListDrawerSettings(NumberOfItemsPerPage = 4, ShowIndexLabels = true, DraggableItems = false, Expanded = false)]
     public List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
     private GlobalState globalState;

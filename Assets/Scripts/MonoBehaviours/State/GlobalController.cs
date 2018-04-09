@@ -17,12 +17,16 @@ public class GlobalController : SerializedMonoBehaviour
     public GlobalState globalState;
 
 
+    [FoldoutGroup("Interface Management", expanded: false)]
     public Inventory inventory;
 
+    [FoldoutGroup("Interface Management")]
     public DialogueManager dialogueManager;
 
+    [FoldoutGroup("Interface Management")]
     public SaveManager saveManager;
 
+    [FoldoutGroup("Interface Management")]
     public ObjectiveManager objectiveManager;
 
 

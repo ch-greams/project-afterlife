@@ -3,12 +3,10 @@ using System.Linq;
 
 class PriorityQueue<P, V>
 {
+    public bool isEmpty { get { return !this.list.Any(); } }
+
     private readonly SortedDictionary<P, Queue<V>> list = new SortedDictionary<P, Queue<V>>();
 
-    public bool isEmpty
-    {
-        get { return !list.Any(); }
-    }
 
     public void Enqueue(P priority, V value)
     {
