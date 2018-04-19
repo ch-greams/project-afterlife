@@ -40,6 +40,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  visibleByDefault: 0
   defaultMap:
   - point:
       x: 0
@@ -54,6 +55,66 @@ MonoBehaviour:
       y: 2
     state: 1
   - point:
+      x: 0
+      y: 3
+    state: 1
+  - point:
+      x: 0
+      y: 4
+    state: 1
+  - point:
+      x: 0
+      y: 5
+    state: 1
+  - point:
+      x: 0
+      y: 6
+    state: 1
+  - point:
+      x: 0
+      y: 7
+    state: 1
+  - point:
+      x: 0
+      y: 8
+    state: 1
+  - point:
+      x: 0
+      y: 9
+    state: 1
+  - point:
+      x: 0
+      y: 10
+    state: 1
+  - point:
+      x: 0
+      y: 11
+    state: 1
+  - point:
+      x: 0
+      y: 12
+    state: 1
+  - point:
+      x: 0
+      y: 13
+    state: 1
+  - point:
+      x: 0
+      y: 14
+    state: 1
+  - point:
+      x: 0
+      y: 15
+    state: 1
+  - point:
+      x: 0
+      y: 16
+    state: 1
+  - point:
+      x: 0
+      y: 17
+    state: 1
+  - point:
       x: 1
       y: 0
     state: 1
@@ -66,6 +127,66 @@ MonoBehaviour:
       y: 2
     state: 1
   - point:
+      x: 1
+      y: 3
+    state: 1
+  - point:
+      x: 1
+      y: 4
+    state: 1
+  - point:
+      x: 1
+      y: 5
+    state: 1
+  - point:
+      x: 1
+      y: 6
+    state: 1
+  - point:
+      x: 1
+      y: 7
+    state: 1
+  - point:
+      x: 1
+      y: 8
+    state: 1
+  - point:
+      x: 1
+      y: 9
+    state: 1
+  - point:
+      x: 1
+      y: 10
+    state: 1
+  - point:
+      x: 1
+      y: 11
+    state: 1
+  - point:
+      x: 1
+      y: 12
+    state: 1
+  - point:
+      x: 1
+      y: 13
+    state: 1
+  - point:
+      x: 1
+      y: 14
+    state: 1
+  - point:
+      x: 1
+      y: 15
+    state: 1
+  - point:
+      x: 1
+      y: 16
+    state: 1
+  - point:
+      x: 1
+      y: 17
+    state: 1
+  - point:
       x: 2
       y: 0
     state: 1
@@ -76,6 +197,66 @@ MonoBehaviour:
   - point:
       x: 2
       y: 2
+    state: 1
+  - point:
+      x: 2
+      y: 3
+    state: 1
+  - point:
+      x: 2
+      y: 4
+    state: 1
+  - point:
+      x: 2
+      y: 5
+    state: 1
+  - point:
+      x: 2
+      y: 6
+    state: 1
+  - point:
+      x: 2
+      y: 7
+    state: 1
+  - point:
+      x: 2
+      y: 8
+    state: 1
+  - point:
+      x: 2
+      y: 9
+    state: 1
+  - point:
+      x: 2
+      y: 10
+    state: 1
+  - point:
+      x: 2
+      y: 11
+    state: 1
+  - point:
+      x: 2
+      y: 12
+    state: 1
+  - point:
+      x: 2
+      y: 13
+    state: 1
+  - point:
+      x: 2
+      y: 14
+    state: 1
+  - point:
+      x: 2
+      y: 15
+    state: 1
+  - point:
+      x: 2
+      y: 16
+    state: 1
+  - point:
+      x: 2
+      y: 17
     state: 1
   - point:
       x: 3
@@ -150,26 +331,6 @@ MonoBehaviour:
       y: 17
     state: 1
   - point:
-      x: 3
-      y: 18
-    state: 1
-  - point:
-      x: 3
-      y: 19
-    state: 1
-  - point:
-      x: 3
-      y: 20
-    state: 1
-  - point:
-      x: 3
-      y: 21
-    state: 1
-  - point:
-      x: 3
-      y: 22
-    state: 1
-  - point:
       x: 4
       y: 0
     state: 1
@@ -240,26 +401,6 @@ MonoBehaviour:
   - point:
       x: 4
       y: 17
-    state: 1
-  - point:
-      x: 4
-      y: 18
-    state: 1
-  - point:
-      x: 4
-      y: 19
-    state: 1
-  - point:
-      x: 4
-      y: 20
-    state: 1
-  - point:
-      x: 4
-      y: 21
-    state: 1
-  - point:
-      x: 4
-      y: 22
     state: 1
   - point:
       x: 5
@@ -334,26 +475,6 @@ MonoBehaviour:
       y: 17
     state: 1
   - point:
-      x: 5
-      y: 18
-    state: 1
-  - point:
-      x: 5
-      y: 19
-    state: 1
-  - point:
-      x: 5
-      y: 20
-    state: 1
-  - point:
-      x: 5
-      y: 21
-    state: 1
-  - point:
-      x: 5
-      y: 22
-    state: 1
-  - point:
       x: 6
       y: 0
     state: 1
@@ -364,6 +485,66 @@ MonoBehaviour:
   - point:
       x: 6
       y: 2
+    state: 1
+  - point:
+      x: 6
+      y: 3
+    state: 1
+  - point:
+      x: 6
+      y: 4
+    state: 1
+  - point:
+      x: 6
+      y: 5
+    state: 1
+  - point:
+      x: 6
+      y: 6
+    state: 1
+  - point:
+      x: 6
+      y: 7
+    state: 1
+  - point:
+      x: 6
+      y: 8
+    state: 1
+  - point:
+      x: 6
+      y: 9
+    state: 1
+  - point:
+      x: 6
+      y: 10
+    state: 1
+  - point:
+      x: 6
+      y: 11
+    state: 1
+  - point:
+      x: 6
+      y: 12
+    state: 1
+  - point:
+      x: 6
+      y: 13
+    state: 1
+  - point:
+      x: 6
+      y: 14
+    state: 1
+  - point:
+      x: 6
+      y: 15
+    state: 1
+  - point:
+      x: 6
+      y: 16
+    state: 1
+  - point:
+      x: 6
+      y: 17
     state: 1
   - point:
       x: 7
@@ -378,6 +559,66 @@ MonoBehaviour:
       y: 2
     state: 1
   - point:
+      x: 7
+      y: 3
+    state: 1
+  - point:
+      x: 7
+      y: 4
+    state: 1
+  - point:
+      x: 7
+      y: 5
+    state: 1
+  - point:
+      x: 7
+      y: 6
+    state: 1
+  - point:
+      x: 7
+      y: 7
+    state: 1
+  - point:
+      x: 7
+      y: 8
+    state: 1
+  - point:
+      x: 7
+      y: 9
+    state: 1
+  - point:
+      x: 7
+      y: 10
+    state: 1
+  - point:
+      x: 7
+      y: 11
+    state: 1
+  - point:
+      x: 7
+      y: 12
+    state: 1
+  - point:
+      x: 7
+      y: 13
+    state: 1
+  - point:
+      x: 7
+      y: 14
+    state: 1
+  - point:
+      x: 7
+      y: 15
+    state: 1
+  - point:
+      x: 7
+      y: 16
+    state: 1
+  - point:
+      x: 7
+      y: 17
+    state: 1
+  - point:
       x: 8
       y: 0
     state: 1
@@ -388,4 +629,64 @@ MonoBehaviour:
   - point:
       x: 8
       y: 2
+    state: 1
+  - point:
+      x: 8
+      y: 3
+    state: 1
+  - point:
+      x: 8
+      y: 4
+    state: 1
+  - point:
+      x: 8
+      y: 5
+    state: 1
+  - point:
+      x: 8
+      y: 6
+    state: 1
+  - point:
+      x: 8
+      y: 7
+    state: 1
+  - point:
+      x: 8
+      y: 8
+    state: 1
+  - point:
+      x: 8
+      y: 9
+    state: 1
+  - point:
+      x: 8
+      y: 10
+    state: 1
+  - point:
+      x: 8
+      y: 11
+    state: 1
+  - point:
+      x: 8
+      y: 12
+    state: 1
+  - point:
+      x: 8
+      y: 13
+    state: 1
+  - point:
+      x: 8
+      y: 14
+    state: 1
+  - point:
+      x: 8
+      y: 15
+    state: 1
+  - point:
+      x: 8
+      y: 16
+    state: 1
+  - point:
+      x: 8
+      y: 17
     state: 1

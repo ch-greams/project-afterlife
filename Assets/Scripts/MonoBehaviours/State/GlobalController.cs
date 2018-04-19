@@ -17,7 +17,7 @@ public class GlobalController : SerializedMonoBehaviour
     public GlobalState globalState;
 
 
-    [FoldoutGroup("Interface Management", expanded: false)]
+    [FoldoutGroup("Interface Management")]
     public Inventory inventory;
 
     [FoldoutGroup("Interface Management")]
