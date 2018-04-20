@@ -58,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 512d97db12e952b4cb977c806ddb79ba, type: 2}
+  - {fileID: 2100000, guid: 53d0f65f847ab3446a3d29988ab1d924, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -319,13 +319,77 @@ MonoBehaviour:
       Data: 15|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 3
     - Name: 
       Entry: 7
       Data: 16|RendererReaction, Assembly-CSharp
     - Name: enable
       Entry: 5
       Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 17|ColorReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: customRenderers
+      Entry: 7
+      Data: 18|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: propertyName
+      Entry: 1
+      Data: _Color
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0.9916434
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.470588237
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 19|TextureAnimationReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: framesPerSecond
+      Entry: 3
+      Data: 40
+    - Name: rows
+      Entry: 3
+      Data: 4
+    - Name: columns
+      Entry: 3
+      Data: 4
+    - Name: propertyName
+      Entry: 1
+      Data: _MainTex
     - Name: 
       Entry: 8
       Data: 
@@ -346,25 +410,25 @@ MonoBehaviour:
       Data: 
     - Name: hoverEndActions
       Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
+      Data: 20|System.Collections.Generic.List`1[[Action, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 18|Action, Assembly-CSharp
+      Data: 21|Action, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset Color
     - Name: conditions
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
+      Data: 22|System.Collections.Generic.List`1[[ICondition, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 20|TileCondition, Assembly-CSharp
+      Data: 23|TileCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -379,16 +443,59 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
+      Data: 24|System.Collections.Generic.List`1[[IReaction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 22|RendererReaction, Assembly-CSharp
+      Data: 25|RendererReaction, Assembly-CSharp
     - Name: enable
       Entry: 5
       Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 26|ColorReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: customRenderers
+      Entry: 7
+      Data: 27|System.Collections.Generic.List`1[[UnityEngine.Renderer, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: propertyName
+      Entry: 1
+      Data: _Color
+    - Name: color
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.0784313753
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 

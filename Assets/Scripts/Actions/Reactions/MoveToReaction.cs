@@ -87,7 +87,7 @@ public class MoveToReaction : IReaction
 
             float startTime = Time.time;
             Vector3 startPosition = player.playerTransform.position;
-            Vector3 endPosition = tile.obj.transform.position;
+            Vector3 endPosition = new Vector3(tile.obj.transform.position.x, 0, tile.obj.transform.position.z);
             float journeyLength = Vector3.Distance(startPosition, endPosition);
 
             player.characterTransform.LookAt(endPosition);
