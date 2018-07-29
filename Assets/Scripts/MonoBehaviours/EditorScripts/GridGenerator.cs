@@ -52,7 +52,7 @@ public class GridGenerator : MonoBehaviour
     [Button("Generate Grid", ButtonSizes.Medium)]
     public void CreateGrid()
     {
-        this.transform.position = new Vector3();
+        this.transform.position = new Vector3(0, 0.01F, 0);
         this.DestroyGrid();
 
         Debug.Log(string.Format("Generating Grid with size {0}", this.gridSize));

@@ -30,6 +30,9 @@ public class GlobalController : SerializedMonoBehaviour
     public ObjectiveManager objectiveManager;
 
 
+    public SceneController sceneCtrl;
+
+
     private void Awake()
     {
         this.globalState = CreatePlayModeInstance(this.globalState);

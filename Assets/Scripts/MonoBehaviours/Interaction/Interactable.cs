@@ -35,7 +35,7 @@ public class Interactable : SerializedMonoBehaviour, IPointerClickHandler, IPoin
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) || Input.GetButtonDown("Button B"))
         {
             base.StartCoroutine(this.OnLeftClick());
         }
