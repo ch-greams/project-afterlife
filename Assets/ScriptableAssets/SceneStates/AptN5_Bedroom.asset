@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -40,100 +40,149 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  visibleByDefault: 0
   defaultMap:
   - point:
       x: 0
       y: 0
     state: 0
+    isVisible: 0
+    isBlocked: 1
   - point:
       x: 0
       y: 1
     state: 0
+    isVisible: 0
+    isBlocked: 1
   - point:
       x: 0
       y: 2
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 0
       y: 3
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 1
       y: 0
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 1
       y: 1
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 1
       y: 2
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 1
       y: 3
     state: 0
+    isVisible: 0
+    isBlocked: 1
   - point:
       x: 2
       y: 0
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 2
       y: 1
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 2
       y: 2
     state: 0
+    isVisible: 0
+    isBlocked: 1
   - point:
       x: 2
       y: 3
     state: 0
+    isVisible: 0
+    isBlocked: 1
   - point:
       x: 3
       y: 0
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 3
       y: 1
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 3
       y: 2
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 3
       y: 3
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 4
       y: 0
     state: 0
+    isVisible: 0
+    isBlocked: 1
   - point:
       x: 4
       y: 1
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 4
       y: 2
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 4
       y: 3
     state: 0
+    isVisible: 0
+    isBlocked: 1
   - point:
       x: 5
       y: 0
     state: 0
+    isVisible: 0
+    isBlocked: 1
   - point:
       x: 5
       y: 1
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 5
       y: 2
     state: 1
+    isVisible: 0
+    isBlocked: 0
   - point:
       x: 5
       y: 3
     state: 0
+    isVisible: 0
+    isBlocked: 1

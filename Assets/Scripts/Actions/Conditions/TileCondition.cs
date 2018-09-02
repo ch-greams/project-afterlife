@@ -13,14 +13,16 @@ public class TileCondition : ICondition
 
     public bool IsValid()
     {
+        Tile tile = this.tileData.tile;
+
         switch (this.type)
         {
             case TileConditionType.IS_ACTIVE:
-                return (this.tileData.tile.state == TileState.Active);
+                return (tile.isVisible && !tile.isBlocked);
             case TileConditionType.IS_HIDDEN:
-                return (this.tileData.tile.state == TileState.Hidden);
+                return !tile.isVisible;
             case TileConditionType.IS_DISABLED:
-                return (this.tileData.tile.state == TileState.Disabled);
+                return tile.isBlocked;
             default:
                 return false;
         }

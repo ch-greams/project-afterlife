@@ -50,7 +50,7 @@ public class MoveToReaction : IReaction
             Tile tile = this.GetClosestTile();
 
             // this.textureAnimator.Play();
-            Path<Tile> path = tile.FindPathFrom(player.tile, TileState.Active);
+            Path<Tile> path = tile.FindPathFrom(player.tile, true);
             if (path != null)
             {
                 yield return this.MoveToTile(player, path.Reverse());

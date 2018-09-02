@@ -39,8 +39,10 @@ public static class SceneManager
         }
 
         yield return SceneManager.globalCtrl.StartCoroutine(SceneManager.LoadSceneAndSetActive(sceneName));
-        
+
+        // TODO: Move to SceneController?
         SceneManager.globalCtrl.sceneCtrl = GameObject.FindObjectOfType<SceneController>();
+        SceneManager.globalCtrl.enemyManager = GameObject.FindObjectOfType<EnemyManager>();
 
         yield return SceneManager.globalCtrl.StartCoroutine(SceneManager.Fade(ALPHA_TRANSPARENT));
     }

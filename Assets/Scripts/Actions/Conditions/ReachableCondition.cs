@@ -15,7 +15,7 @@ public class ReachableCondition : ICondition
     public bool IsValid()
     {
         return this.data.neighbourTiles.Exists(
-            tile => (tile.FindPathFrom(this.sceneCtrl.player.tile, TileState.Active) != null)
+            tile => (tile.FindPathFrom(this.sceneCtrl.player.tile, true) != null)
         );
     }
 }

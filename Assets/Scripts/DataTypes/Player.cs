@@ -8,6 +8,7 @@ public class Player
     public bool isTargetUpdating = false;
     public Transform playerTransform;
     public Transform characterTransform;
+    public GameObject flashlightRay;
     public Animator characterAnimator;
     public Tile tile;
     public float visibleRange = 2.5F;

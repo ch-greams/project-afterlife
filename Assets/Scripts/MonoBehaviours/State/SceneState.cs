@@ -25,11 +25,12 @@ public class SceneState : SerializedScriptableObject
     public int total { get { return this.defaultMap.Count; } }
 
     [ShowInInspector, BoxGroup("Map Stats"), LabelWidth(60), HorizontalGroup("Map Stats/States")]
-    public int active { get { return this.defaultMap.Count(ts => ts.state == TileState.Active); } }
+    public int _blocked { get { return this.defaultMap.Count(ts => ts.isBlocked); } }
     [ShowInInspector, BoxGroup("Map Stats"), LabelWidth(60), HorizontalGroup("Map Stats/States")]
-    public int hidden { get { return this.defaultMap.Count(ts => ts.state == TileState.Hidden); } }
+    public int _visible { get { return this.defaultMap.Count(ts => ts.isVisible); } }
     [ShowInInspector, BoxGroup("Map Stats"), LabelWidth(60), HorizontalGroup("Map Stats/States")]
-    public int disabled { get { return this.defaultMap.Count(ts => ts.state == TileState.Disabled); } }
+    public int _default { get { return this.defaultMap.Count(ts => !ts.isBlocked && !ts.isVisible); } }
+
 
 
     [HideInInspector]
@@ -38,18 +39,16 @@ public class SceneState : SerializedScriptableObject
 
     public SceneState() { }
 
-    public Dictionary<Point, TileState> GetCurrentMap()
+
+    public Dictionary<Point, TileSimple> GetCurrentMap()
     {
-        return this.defaultMap.ToDictionary(ts => ts.point, ts => ts.state);
+        return this.defaultMap.ToDictionary(ts => ts.point, ts => ts);
     }
 
-
-    public Dictionary<Point, TileState> GetCurrentMap(List<Point> playerLayer)
+    public Dictionary<Point, TileSimple> GetCurrentMap(List<Point> playerLayer)
     {
         return this.defaultMap.ToDictionary(ts => ts.point, ts =>
-            (ts.state == TileState.Hidden)
-                ? (playerLayer.Contains(ts.point) ? TileState.Active : TileState.Hidden)
-                : TileState.Disabled
+            new TileSimple(ts.point, playerLayer.Contains(ts.point), ts.isBlocked)
         );
     }
 

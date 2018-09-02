@@ -15,10 +15,10 @@ public class GlobalState : SerializedScriptableObject
 
     public List<Item> inventory = new List<Item>();
 
-    [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.Foldout)]
+    [DictionaryDrawerSettings]
     public Dictionary<ObjectiveId, Objective> objectives = new Dictionary<ObjectiveId, Objective>();
 
-    [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.Foldout)]
+    [DictionaryDrawerSettings]
     public Dictionary<SceneType, SceneState> sceneStates = new Dictionary<SceneType, SceneState>();
 
 

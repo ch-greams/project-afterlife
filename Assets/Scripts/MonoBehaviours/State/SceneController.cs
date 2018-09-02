@@ -22,15 +22,16 @@ public class SceneController : SerializedMonoBehaviour
             );
         }
     }
+
     [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/General")]
     public int total { get { return this.tiles.Count; } }
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int _blocked { get { return this.tiles.Count(ts => ts.isBlocked); } }
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int _visible { get { return this.tiles.Count(ts => ts.isVisible); } }
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int _default { get { return this.tiles.Count(ts => !ts.isBlocked && !ts.isVisible); } }
 
-    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int active { get { return this.tiles.Count(ts => ts.state == TileState.Active); } }
-    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int hidden { get { return this.tiles.Count(ts => ts.state == TileState.Hidden); } }
-    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int disabled { get { return this.tiles.Count(ts => ts.state == TileState.Disabled); } }
 
     [HideInInspector]
     public List<Tile> tiles = new List<Tile>();
@@ -51,18 +52,25 @@ public class SceneController : SerializedMonoBehaviour
     }
 
     // NOTE: ~100Mb (60%/40% in first 2 steps) of garbage from full 20 visibility
-    public void UpdateTiles(Tile tile, bool visibleByDefault)
-    {
-        Dictionary<Point, TileState> currentMap = (
+    public void UpdateTiles(Tile playerTile, bool visibleByDefault)
+    {   
+        // TODO: Rework this
+        // - No need for (whole map)/(HighlightedTiles) update if visibleByDefault
+        // - ...
+
+        List<Point> playerTiles = playerTile.GetTiles(this.player.visibleRange, false);
+
+        Dictionary<Point, TileSimple> currentMap = (
             visibleByDefault
                 ? this.sceneState.GetCurrentMap()
-                : this.sceneState.GetCurrentMap(tile.GetTiles(this.player.visibleRange, TileState.Hidden))
+                : this.sceneState.GetCurrentMap(playerTiles)
         );
 
         foreach (Tile t in this.tiles)
         {
             TileData tileData = t.obj.GetComponent<Interactable>().data as TileData;
-            tileData.RefreshTileState(currentMap[t.point], false);
+            TileSimple tileSimple = currentMap[t.point];
+            tileData.RefreshTileState(tileSimple.isVisible, tileSimple.isBlocked, false);
         }
 
         foreach (string lightSourceId in this.highlightedTiles.Keys)
@@ -75,10 +83,13 @@ public class SceneController : SerializedMonoBehaviour
     {
         foreach (Tile tile in this.highlightedTiles[lightSourceId])
         {
+            // TileData tileData = tile.obj.GetComponent<Interactable>().data as TileData;
+            // TileState defaultTileState = this.sceneState.defaultMap.Find(ts => ts.point == tile.point).state;
+            // TileState tileState = (defaultTileState == TileState.Hidden) ? TileState.Active : defaultTileState;
+            // tileData.RefreshTileState(tileState, false);
+
             TileData tileData = tile.obj.GetComponent<Interactable>().data as TileData;
-            TileState defaultTileState = this.sceneState.defaultMap.Find(ts => ts.point == tile.point).state;
-            TileState tileState = (defaultTileState == TileState.Hidden) ? TileState.Active : defaultTileState;
-            tileData.RefreshTileState(tileState, false);
+            tileData.RefreshTileState(true, tile.isBlocked, false);
         }
     }
 }

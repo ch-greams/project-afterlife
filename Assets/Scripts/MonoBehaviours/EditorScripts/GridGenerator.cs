@@ -16,7 +16,9 @@ public class GridGenerator : MonoBehaviour
     public float tileSize = 1;
 
     [BoxGroup("Configuration")]
-    public TileState tileState = TileState.Hidden;
+    public bool isVisible = false;
+    [BoxGroup("Configuration")]
+    public bool isBlocked = false;
 
     [BoxGroup("Configuration")]
     public GameObject tilePrefab;
@@ -32,15 +34,16 @@ public class GridGenerator : MonoBehaviour
             );
         }
     }
+
     [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/General")]
     public int total { get { return this.tiles.Count; } }
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int _blocked { get { return this.tiles.Count(ts => ts.isBlocked); } }
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int _visible { get { return this.tiles.Count(ts => ts.isVisible); } }
+    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int _default { get { return this.tiles.Count(ts => !ts.isBlocked && !ts.isVisible); } }
 
-    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int active { get { return this.tiles.Count(ts => ts.state == TileState.Active); } }
-    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int hidden { get { return this.tiles.Count(ts => ts.state == TileState.Hidden); } }
-    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int disabled { get { return this.tiles.Count(ts => ts.state == TileState.Disabled); } }
 
 
     [HideInInspector]
@@ -66,7 +69,7 @@ public class GridGenerator : MonoBehaviour
                 obj.transform.SetParent(this.transform);
                 obj.name = point.ToString();
 
-                Tile tile = Tile.CreateInstance(point, this.tileState, obj);
+                Tile tile = Tile.CreateInstance(point, this.isVisible, this.isBlocked, obj);
                 Interactable tileInteractable = obj.GetComponent<Interactable>();
                 tileInteractable.sceneCtrl = this.stateCtrl;
                 (tileInteractable.data as TileData).tile = tile;

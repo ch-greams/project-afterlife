@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -475,9 +475,9 @@ MonoBehaviour:
       Entry: 8
       Data: 
   currentPosition:
-    x: 10
-    y: 10
-  currentVisibility: 5
+    x: 6
+    y: 5
+  currentVisibility: 4
   currentScene: 28
   currentObjective: 1
   inventory: []

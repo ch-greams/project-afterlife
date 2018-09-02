@@ -29,8 +29,12 @@ public class GlobalController : SerializedMonoBehaviour
     [FoldoutGroup("Interface Management")]
     public ObjectiveManager objectiveManager;
 
-
+    // TODO: Update this shit
     public SceneController sceneCtrl;
+    public EnemyManager enemyManager;
+    public bool directionSwitch = false;
+    public bool directionVerticalSignSwitch = false;
+    public bool directionHorizontalSignSwitch = false;
 
 
     private void Awake()

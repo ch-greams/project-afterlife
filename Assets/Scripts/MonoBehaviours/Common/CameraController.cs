@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
     [ValueDropdown("GetLayers")]
     public int layer;
 
+    public SceneController sceneCtrl;
+
     private List<Renderer> hiddenWalls = new List<Renderer>();
 
     private Vector3 startRotation;
@@ -21,9 +23,9 @@ public class CameraController : MonoBehaviour
     private float startTime;
     private float deltaAngle;
 
-    private Direction currentDirection = Direction.Front;
+    public Direction currentDirection = Direction.Front;
 
-    private enum Direction { Front, Right, Back, Left }
+    public enum Direction { Front, Right, Back, Left }
 
 
     private void Awake() 
@@ -114,6 +116,33 @@ public class CameraController : MonoBehaviour
         return fin == cur;
     }
 
+    private void SetDirectionSwitches()
+    {
+        switch (this.currentDirection)
+        {
+            case Direction.Front:
+                this.sceneCtrl.globalCtrl.directionSwitch = false;
+                this.sceneCtrl.globalCtrl.directionVerticalSignSwitch = false;
+                this.sceneCtrl.globalCtrl.directionHorizontalSignSwitch = false;
+                break;
+            case Direction.Right:
+                this.sceneCtrl.globalCtrl.directionSwitch = true;
+                this.sceneCtrl.globalCtrl.directionVerticalSignSwitch = false;
+                this.sceneCtrl.globalCtrl.directionHorizontalSignSwitch = true;
+                break;
+            case Direction.Back:
+                this.sceneCtrl.globalCtrl.directionSwitch = false;
+                this.sceneCtrl.globalCtrl.directionVerticalSignSwitch = true;
+                this.sceneCtrl.globalCtrl.directionHorizontalSignSwitch = true;
+                break;
+            case Direction.Left:
+                this.sceneCtrl.globalCtrl.directionSwitch = true;
+                this.sceneCtrl.globalCtrl.directionVerticalSignSwitch = true;
+                this.sceneCtrl.globalCtrl.directionHorizontalSignSwitch = false;
+                break;
+        }
+    }
+
     private void SetCurrentDirection(bool isRight)
     {
         switch (this.currentDirection)
@@ -131,6 +160,8 @@ public class CameraController : MonoBehaviour
                 this.currentDirection = isRight ? Direction.Front : Direction.Back;
                 break;
         }
+
+        this.SetDirectionSwitches();
     }
 
 #if UNITY_EDITOR
