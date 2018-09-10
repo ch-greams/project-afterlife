@@ -19,8 +19,6 @@ public class Tile : SerializedScriptableObject
     [OdinSerialize]
     public IEnumerable<Tile> allNeighbours { get; set; }
 
-    public IEnumerable<Tile> _activeNeighbours { get { return this.allNeighbours.Where(t => (!t.isBlocked && t.isVisible)); } }
-    public IEnumerable<Tile> _walkableNeighbours { get { return this.allNeighbours.Where(t => (!t.isBlocked)); } }
 
     public Tile Init(Point point, bool isVisible, bool isBlocked, GameObject obj)
     {
@@ -64,7 +62,7 @@ public class Tile : SerializedScriptableObject
     }
 
 
-    public List<Point> GetTiles(float range, bool isActive)
+    public List<Point> GetTiles(float range, Func<Tile, bool> neighbourFilter)
     {
         List<Point> result = new List<Point>();
 
@@ -73,21 +71,21 @@ public class Tile : SerializedScriptableObject
             HashSet<Tile> closedSet = new HashSet<Tile>();
             Queue<Tile> openSet = new Queue<Tile>();
 
-            this.UpdateOpenSet(isActive, closedSet, ref openSet);
+            this.UpdateOpenSet(neighbourFilter, closedSet, ref openSet);
 
             closedSet.Add(this);
 
             while (openSet.Count > 0)
             {
                 Tile tileToCheck = openSet.Dequeue();
-                Path<Tile> path = tileToCheck.FindPathFrom(this, isActive);
+                Path<Tile> path = tileToCheck.FindPathFrom(this, neighbourFilter);
 
                 closedSet.Add(tileToCheck);
                 if (path.totalCost <= range)
                 {
                     result.Add(tileToCheck.point);
 
-                    tileToCheck.UpdateOpenSet(isActive, closedSet, ref openSet);
+                    tileToCheck.UpdateOpenSet(neighbourFilter, closedSet, ref openSet);
                 }
             }
         }
@@ -96,13 +94,13 @@ public class Tile : SerializedScriptableObject
     }
 
 
-    public Path<Tile> FindPathFrom(Tile startTile, bool isActive)
+    public Path<Tile> FindPathFrom(Tile startTile, Func<Tile, bool> neighbourFilter)
     {
         HashSet<Tile> closed = new HashSet<Tile>();
         PriorityQueue<double, Path<Tile>> queue = new PriorityQueue<double, Path<Tile>>();
         queue.Enqueue(0, new Path<Tile>(startTile));
 
-        while (!queue.isEmpty)
+        while (queue.isNotEmpty)
         {
             Path<Tile> path = queue.Dequeue();
 
@@ -117,7 +115,7 @@ public class Tile : SerializedScriptableObject
 
             closed.Add(path.lastStep);
 
-            IEnumerable<Tile> neighbours = isActive ? path.lastStep._activeNeighbours : path.lastStep.allNeighbours;
+            IEnumerable<Tile> neighbours = path.lastStep.allNeighbours.Where(neighbourFilter);
 
             foreach (Tile tile in neighbours)
             {
@@ -130,28 +128,41 @@ public class Tile : SerializedScriptableObject
         return null;
     }
 
-
-    public Tile GetTileByDirection(TileDirection direction)
+    public Path<Tile> FindPathFrom(Tile startTile, Func<Tile, bool> neighbourFilter, float range)
     {
+        Path<Tile> path = this.FindPathFrom(startTile, neighbourFilter);
+
+        while ((path != null) && (path.totalCost > range))
+        {
+            path = path.previousSteps;
+        }
+
+        return path;
+    }
+
+    public Tile GetTileByDirection(TileDirection direction, Func<Tile, bool> filter)
+    {
+        IEnumerable<Tile> neighbours = this.allNeighbours.Where(filter);
+
         switch (direction)
         {
             case TileDirection.Up:
-                return this._activeNeighbours.FirstOrDefault(tile => (this.point + new Point(1, 0)) == tile.point);
+                return neighbours.FirstOrDefault(tile => (this.point + new Point(1, 0)) == tile.point);
             case TileDirection.Right:
-                return this._activeNeighbours.FirstOrDefault(tile => (this.point + new Point(0, 1)) == tile.point);
+                return neighbours.FirstOrDefault(tile => (this.point + new Point(0, 1)) == tile.point);
             case TileDirection.Down:
-                return this._activeNeighbours.FirstOrDefault(tile => (this.point + new Point(-1, 0)) == tile.point);
+                return neighbours.FirstOrDefault(tile => (this.point + new Point(-1, 0)) == tile.point);
             case TileDirection.Left:
-                return this._activeNeighbours.FirstOrDefault(tile => (this.point + new Point(0, -1)) == tile.point);
+                return neighbours.FirstOrDefault(tile => (this.point + new Point(0, -1)) == tile.point);
 
             case TileDirection.UpLeft:
-                return this._activeNeighbours.FirstOrDefault(tile => (this.point + new Point(1, -1)) == tile.point);
+                return neighbours.FirstOrDefault(tile => (this.point + new Point(1, -1)) == tile.point);
             case TileDirection.UpRight:
-                return this._activeNeighbours.FirstOrDefault(tile => (this.point + new Point(1, 1)) == tile.point);
+                return neighbours.FirstOrDefault(tile => (this.point + new Point(1, 1)) == tile.point);
             case TileDirection.DownRight:
-                return this._activeNeighbours.FirstOrDefault(tile => (this.point + new Point(-1, 1)) == tile.point);
+                return neighbours.FirstOrDefault(tile => (this.point + new Point(-1, 1)) == tile.point);
             case TileDirection.DownLeft:
-                return this._activeNeighbours.FirstOrDefault(tile => (this.point + new Point(-1, -1)) == tile.point);
+                return neighbours.FirstOrDefault(tile => (this.point + new Point(-1, -1)) == tile.point);
 
             case TileDirection.Undefined:
             default:
@@ -159,35 +170,45 @@ public class Tile : SerializedScriptableObject
         }
     }
 
-    // TODO: Change return type to Path<Tile> ?
-    public List<Tile> GetTilesByDirection(Point directionPoint, float range)
+    public Path<Tile> GetTilesByDirection(Point directionPoint, float range)
     {
-        const int weaponRange = 5; // range
-
         Point deltaPoint = directionPoint - this.point;
-        // Debug.Log("deltaPoint = " + deltaPoint);
 
-        Tile currentTile = this._walkableNeighbours.FirstOrDefault(tile => tile.point == directionPoint);
-        List<Tile> rayPath = new List<Tile>(){ currentTile };
+        Tile currentTile = this.allNeighbours.FirstOrDefault(tile => tile.point == directionPoint);
+        Path<Tile> rayPath = new Path<Tile>(currentTile);
 
-        for (int step = 0; step < (weaponRange - 1); step++)
+        for (int step = 0; step < (range - 1); step++)
         {
-            currentTile = currentTile._walkableNeighbours
+            // TODO: Remove when you're confident in this part
+            Tile _currentTile = currentTile;
+
+            currentTile = currentTile.allNeighbours
                 .FirstOrDefault(tile => tile.point == (currentTile.point + deltaPoint));
 
-            // TODO: Check for null
-
-            rayPath.Add(currentTile);
+            if (currentTile == null)
+            {
+                Debug.Log("[ currentTile == null]: _currentTile.point = " + _currentTile.point + " | deltaPoint = " + deltaPoint);
+                break;
+            }
+            
+            rayPath.AddStep(currentTile, new Point().DistanceTo(deltaPoint));
         }
 
         return rayPath;
     }
 
-    private void UpdateOpenSet(bool isActive, HashSet<Tile> closedSet, ref Queue<Tile> openSet)
+    public void RefreshTileState(bool isVisible, bool isBlocked, bool inEditor = false)
     {
-        IEnumerable<Tile> neighboursToCheck = isActive ? this._activeNeighbours : this.allNeighbours;
+        this.isVisible = isVisible;
+        this.isBlocked = isBlocked;
 
-        foreach (Tile neighbour in neighboursToCheck)
+        TileData tileData = this.obj.GetComponent<Interactable>().data as TileData;
+        tileData.RefreshTileMaterial(this, inEditor);
+    }
+
+    private void UpdateOpenSet(Func<Tile, bool> neighbourFilter, HashSet<Tile> closedSet, ref Queue<Tile> openSet)
+    {
+        foreach (Tile neighbour in this.allNeighbours.Where(neighbourFilter))
         {
             if (!closedSet.Contains(neighbour) && !openSet.Contains(neighbour))
             {
@@ -221,13 +242,6 @@ public class TileSimple
         this.isBlocked = isBlocked;
     }
 }
-
-// public enum TileState
-// {
-//     Disabled,
-//     Hidden,
-//     Active,
-// }
 
 public enum TileDirection
 {

@@ -4,16 +4,13 @@ using UnityEditor;
 using UnityEngine;
 
 
-[OdinDrawer]
 public class PointDrawer : OdinValueDrawer<Point>
 {
-    protected override void DrawPropertyLayout(IPropertyValueEntry<Point> entry, GUIContent label)
+    protected override void DrawPropertyLayout(GUIContent label)
     {
-        Point value = entry.SmartValue;
-
+        Point value = this.ValueEntry.SmartValue;
         Rect rect = EditorGUILayout.GetControlRect();
 
-        // In Odin, labels are optional and can be null, so we have to account for that.
         if (label != null)
         {
             rect = EditorGUI.PrefixLabel(rect, label);
@@ -26,7 +23,6 @@ public class PointDrawer : OdinValueDrawer<Point>
         value.y = EditorGUI.IntSlider(rect.AlignRight(rect.width * 0.5f), "Y", value.y, 0, 100);
 
         EditorGUIUtility.labelWidth = prev;
-
-        entry.SmartValue = value;
+        this.ValueEntry.SmartValue = value;
     }
 }

@@ -38,14 +38,10 @@ public class TileData : IDataInteractable
     public Color disabledColor = new Color(1F, 1F, 1F, 0F);
 
 
-    public void RefreshTileState(bool isVisible, bool isBlocked, bool inEditor)
+    public void RefreshTileMaterial(Tile tile, bool inEditor)
     {                
         Material material = inEditor ? this.renderer.sharedMaterial : this.renderer.material;
-
-        this.tile.isVisible = isVisible;
-        this.tile.isBlocked = isBlocked;
-
-        Color nextColor = (!isBlocked && isVisible) ? this.defaultColor : this.disabledColor;
+        Color nextColor = (!tile.isBlocked && tile.isVisible) ? this.defaultColor : this.disabledColor;
         material.SetColor(Shader.PropertyToID("_Color"), nextColor);
     }
 
@@ -56,21 +52,21 @@ public class TileData : IDataInteractable
     [Button("Active", ButtonSizes.Medium)]
     public void MakeActiveInEditor()
     {
-        this.RefreshTileState(true, false, true);
+        this.tile.RefreshTileState(true, false, true);
     }
 
     [ButtonGroup("Editor Controls/Tile Controls")]
     [Button("Hidden", ButtonSizes.Medium)]
     public void MakeHiddenInEditor()
     {
-        this.RefreshTileState(false, false, true);
+        this.tile.RefreshTileState(false, false, true);
     }
 
     [ButtonGroup("Editor Controls/Tile Controls")]
     [Button("Disabled", ButtonSizes.Medium)]
     public void MakeDisabledInEditor()
     {
-        this.RefreshTileState(false, true, true);
+        this.tile.RefreshTileState(false, true, true);
     }
 
     [BoxGroup("Editor Controls")]

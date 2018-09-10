@@ -43,34 +43,48 @@ public class SceneController : SerializedMonoBehaviour
     private void Awake()
     {
         this.globalCtrl = FindObjectOfType<GlobalController>();
+        this.globalCtrl.sceneCtrl = this;
+        
         this.globalState = this.globalCtrl.globalState;
         this.sceneState = this.globalState.sceneStates[this.id];
 
-        this.player.UpdatePlayer(this.tiles.Find(t => t.point == this.globalState.currentPosition), this.globalState.currentVisibility);
-
-        this.UpdateTiles(this.player.tile, this.sceneState.visibleByDefault);
+        Tile playerTile = this.tiles.Find(t => t.point == this.globalState.currentPosition);
+        this.player.InitPlayer(this.globalCtrl, playerTile, this.globalState.currentVisibility);
     }
 
-    // NOTE: ~100Mb (60%/40% in first 2 steps) of garbage from full 20 visibility
-    public void UpdateTiles(Tile playerTile, bool visibleByDefault)
+    private void Start()
+    {
+        this.InitTiles(this.player.tile, this.sceneState.visibleByDefault);
+    }
+
+    private void InitTiles(Tile playerTile, bool visibleByDefault)
     {   
-        // TODO: Rework this
-        // - No need for (whole map)/(HighlightedTiles) update if visibleByDefault
-        // - ...
-
-        List<Point> playerTiles = playerTile.GetTiles(this.player.visibleRange, false);
-
-        Dictionary<Point, TileSimple> currentMap = (
-            visibleByDefault
-                ? this.sceneState.GetCurrentMap()
-                : this.sceneState.GetCurrentMap(playerTiles)
-        );
-
-        foreach (Tile t in this.tiles)
+        if (visibleByDefault)
         {
-            TileData tileData = t.obj.GetComponent<Interactable>().data as TileData;
-            TileSimple tileSimple = currentMap[t.point];
-            tileData.RefreshTileState(tileSimple.isVisible, tileSimple.isBlocked, false);
+            Dictionary<Point, TileSimple> currentMap = this.sceneState.GetCurrentMap();
+
+            foreach (Tile tile in this.tiles)
+            {
+                TileSimple tileSimple = currentMap[tile.point];
+                tile.RefreshTileState(tileSimple.isVisible, tileSimple.isBlocked);
+            }
+        }
+        else
+        {
+            this.UpdateTiles(playerTile);
+        }
+    }
+
+    // NOTE: Framedrop from ~100Mb of garbage on full 20 visibility
+    public void UpdateTiles(Tile playerTile)
+    {   
+        List<Point> playerTiles = playerTile.GetTiles(this.player.visibleRange, (t) => (true));
+        Dictionary<Point, TileSimple> currentMap = this.sceneState.GetCurrentMap(playerTiles);
+
+        foreach (Tile tile in this.tiles)
+        {
+            TileSimple tileSimple = currentMap[tile.point];
+            tile.RefreshTileState(tileSimple.isVisible, tileSimple.isBlocked);
         }
 
         foreach (string lightSourceId in this.highlightedTiles.Keys)
@@ -83,13 +97,7 @@ public class SceneController : SerializedMonoBehaviour
     {
         foreach (Tile tile in this.highlightedTiles[lightSourceId])
         {
-            // TileData tileData = tile.obj.GetComponent<Interactable>().data as TileData;
-            // TileState defaultTileState = this.sceneState.defaultMap.Find(ts => ts.point == tile.point).state;
-            // TileState tileState = (defaultTileState == TileState.Hidden) ? TileState.Active : defaultTileState;
-            // tileData.RefreshTileState(tileState, false);
-
-            TileData tileData = tile.obj.GetComponent<Interactable>().data as TileData;
-            tileData.RefreshTileState(true, tile.isBlocked, false);
+            tile.RefreshTileState(true, tile.isBlocked);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 
 public class ReachableCondition : ICondition
 {
@@ -14,8 +15,8 @@ public class ReachableCondition : ICondition
 
     public bool IsValid()
     {
-        return this.data.neighbourTiles.Exists(
-            tile => (tile.FindPathFrom(this.sceneCtrl.player.tile, true) != null)
-        );
+        Func<Tile, bool> neighbourFilter = (t) => (!t.isBlocked && t.isVisible);
+        Predicate<Tile> reachableCheck = (t) => (t.FindPathFrom(this.sceneCtrl.player.tile, neighbourFilter) != null);
+        return this.data.neighbourTiles.Exists(reachableCheck);
     }
 }

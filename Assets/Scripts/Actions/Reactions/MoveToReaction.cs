@@ -31,6 +31,7 @@ public class MoveToReaction : IReaction
         }
     }
 
+    // TODO: Check if movement logic is necessary later
     public IEnumerator React()
     {
         if (this.tiles.Any())
@@ -46,11 +47,10 @@ public class MoveToReaction : IReaction
             player.isTargetUpdating = false;
             player.isMoving = true;
 
-            // TODO: Check how often this triggered
             Tile tile = this.GetClosestTile();
 
             // this.textureAnimator.Play();
-            Path<Tile> path = tile.FindPathFrom(player.tile, true);
+            Path<Tile> path = tile.FindPathFrom(player.tile, (t) => (!t.isBlocked && t.isVisible));
             if (path != null)
             {
                 yield return this.MoveToTile(player, path.Reverse());
@@ -58,7 +58,7 @@ public class MoveToReaction : IReaction
 
             if (!this.sceneCtrl.sceneState.visibleByDefault)
             {
-                this.sceneCtrl.UpdateTiles(tile, false);
+                this.sceneCtrl.UpdateTiles(tile);
             }
 
             player.isMoving = false;
@@ -103,7 +103,11 @@ public class MoveToReaction : IReaction
 
             this.sceneCtrl.globalCtrl.UpdatePlayerPosition(tile.point);
 
+            // NOTE: Currently isBlocked is unnnecessary in this case
+            // player.tile.isBlocked = false;
             player.tile = tile;
+            // player.tile.isBlocked = true;
+
             player.characterAnimator.SetFloat(this.speedParamHash, 0F);
 
             if (player.isTargetUpdating)

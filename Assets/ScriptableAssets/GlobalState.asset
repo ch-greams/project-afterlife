@@ -475,8 +475,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
   currentPosition:
-    x: 6
-    y: 5
+    x: 8
+    y: 2
   currentVisibility: 4
   currentScene: 28
   currentObjective: 1

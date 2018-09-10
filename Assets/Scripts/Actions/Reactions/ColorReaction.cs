@@ -27,9 +27,7 @@ public class ColorReaction : IReaction
     public void Init(Interactable interactable)
     {
         this.propertyId = Shader.PropertyToID(this.propertyName);
-
         this.interactableData = interactable.data;
-
         this.defaultRenderer = this.interactableData.renderer;
     }
     public IEnumerator React()

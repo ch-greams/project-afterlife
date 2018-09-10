@@ -7,6 +7,8 @@ using UnityScene = UnityEngine.SceneManagement.Scene;
 
 public static class SceneManager
 {
+    public static bool sceneLoadingInProgress { get { return SceneManager.isFading; } }
+
     private static GlobalController globalCtrl;
     private static bool isFading;
 
@@ -30,20 +32,15 @@ public static class SceneManager
         }
     }
 
-    private static IEnumerator FadeAndSwitchScenes(string sceneName, bool unloadCurrent)
+    private static IEnumerator FadeAndSwitchScenes(string sceneName, bool unloadCurrentScene)
     {
-        if (unloadCurrent)
+        if (unloadCurrentScene)
         {
             yield return SceneManager.globalCtrl.StartCoroutine(SceneManager.Fade(ALPHA_OPAQUE));
             yield return UnitySceneManager.UnloadSceneAsync(UnitySceneManager.GetActiveScene().buildIndex);
         }
 
         yield return SceneManager.globalCtrl.StartCoroutine(SceneManager.LoadSceneAndSetActive(sceneName));
-
-        // TODO: Move to SceneController?
-        SceneManager.globalCtrl.sceneCtrl = GameObject.FindObjectOfType<SceneController>();
-        SceneManager.globalCtrl.enemyManager = GameObject.FindObjectOfType<EnemyManager>();
-
         yield return SceneManager.globalCtrl.StartCoroutine(SceneManager.Fade(ALPHA_TRANSPARENT));
     }
 

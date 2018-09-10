@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class Enemy
 {
     public string name;
     public float speed = 6.0F;
+    public float visibleRange = 3.0F;
+    public bool isLockedOnPlayer = false;
 
     public Transform characterTransform;
     public Tile tile;
@@ -14,44 +17,48 @@ public class Enemy
 
     public Enemy() { }
 
-    public Enemy(string name, Transform characterTransform, Tile tile)
+    public Enemy(string name, float visibleRange, Transform characterTransform, Tile tile)
     {
         this.name = name;
+        this.visibleRange = visibleRange;
+
         this.characterTransform = characterTransform;
         this.tile = tile;
+
+        this.characterTransform.gameObject.name = this.name;
+        this.tile.isBlocked = true;
     }
 
     public IEnumerator MoveToPlayer(Player player)
     {
-        Path<Tile> path = player.tile.FindPathFrom(this.tile, false);
-        Tile nextTile = path.Reverse().ElementAt(1);
-
-        Debug.Log("nextTile - " + nextTile);
-
-        yield return this.MoveToTile(nextTile);
+        Path<Tile> path = player.tile.FindPathFrom(this.tile, (t) => (!t.isBlocked), this.visibleRange);
+        yield return this.MoveOnPath(path.Reverse());
     }
 
 
-    public IEnumerator MoveToTile(Tile tile)
+    private IEnumerator MoveOnPath(IEnumerable<Tile> path)
     {
-        float startTime = Time.time;
-        Vector3 startPosition = this.characterTransform.position;
-        Vector3 endPosition = new Vector3(tile.obj.transform.position.x, 0, tile.obj.transform.position.z);
-        float journeyLength = Vector3.Distance(startPosition, endPosition);
-
-        this.characterTransform.LookAt(endPosition);
-
-        while (endPosition != this.characterTransform.position)
+        foreach (Tile tile in path)
         {
-            float distCovered = (Time.time - startTime) * this.speed;
-            float fracJourney = distCovered / journeyLength;
-            this.characterTransform.position = Vector3.Lerp(startPosition, endPosition, fracJourney);
+            float startTime = Time.time;
+            Vector3 startPosition = this.characterTransform.position;
+            Vector3 endPosition = new Vector3(tile.obj.transform.position.x, 0, tile.obj.transform.position.z);
+            float journeyLength = Vector3.Distance(startPosition, endPosition);
 
-            yield return null;
+            this.characterTransform.LookAt(endPosition);
+
+            while (endPosition != this.characterTransform.position)
+            {
+                float distCovered = (Time.time - startTime) * this.speed;
+                float fracJourney = distCovered / journeyLength;
+                this.characterTransform.position = Vector3.Lerp(startPosition, endPosition, fracJourney);
+
+                yield return null;
+            }
+
+            this.tile.RefreshTileState(this.tile.isVisible, false);
+            this.tile = tile;
+            this.tile.RefreshTileState(this.tile.isVisible, true);
         }
-
-        this.tile.isBlocked = false;
-        this.tile = tile;
-        this.tile.isBlocked = true;
     }
 }

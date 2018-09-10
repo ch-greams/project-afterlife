@@ -369,6 +369,67 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 77955214}
   m_CullTransparentMesh: 0
+--- !u!1 &106798513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106798515}
+  - component: {fileID: 106798514}
+  m_Layer: 0
+  m_Name: EnemyGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &106798514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106798513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4bbba865e1de840868024e67a2a4e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  shadowPrefab: {fileID: 1831439497551332, guid: 938142f99093f51408b617d566029294,
+    type: 2}
+  enemyPositions:
+  - x: 6
+    y: 11
+  - x: 11
+    y: 12
+  - x: 15
+    y: 6
+  - x: 9
+    y: 4
+  visibleRange: 3
+--- !u!4 &106798515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106798513}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &121558459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,18 +1723,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 359262642}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 617699923}
-        m_MethodName: Walk
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &360083045
@@ -3020,7 +3070,6 @@ GameObject:
   m_Component:
   - component: {fileID: 617699922}
   - component: {fileID: 617699924}
-  - component: {fileID: 617699923}
   m_Layer: 5
   m_Name: ActionButtons
   m_TagString: Untagged
@@ -3051,24 +3100,6 @@ RectTransform:
   m_AnchoredPosition: {x: -200, y: 200}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &617699923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 617699921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b35563ed7f98674fbd13bb24b5ec935, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkButton: {fileID: 359262644}
-  flashlightButton: {fileID: 1903405720}
-  confirmButton: {fileID: 1582146055}
-  walkLabel: {fileID: 1945479048}
-  flashlightLabel: {fileID: 769850529}
-  currentAction: 0
-  globalCtrl: {fileID: 1303165734}
 --- !u!222 &617699924
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6747,6 +6778,11 @@ MonoBehaviour:
     - {fileID: 1386020220025524, guid: bc68fa5219bb2e54f874154a759fe635, type: 2}
     - {fileID: 12800000, guid: 17ed9bde5e0510a47a212874792019f0, type: 3}
     - {fileID: 12800000, guid: dc77e2b7fc58ec6438faef90fd5d4303, type: 3}
+    - {fileID: 359262644}
+    - {fileID: 1903405720}
+    - {fileID: 1582146055}
+    - {fileID: 1945479048}
+    - {fileID: 769850529}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -7346,14 +7382,56 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: playerActionManager
+      Entry: 7
+      Data: 30|PlayerActionManager, Assembly-CSharp
+    - Name: walkButton
+      Entry: 10
+      Data: 81
+    - Name: flashlightButton
+      Entry: 10
+      Data: 82
+    - Name: confirmButton
+      Entry: 10
+      Data: 83
+    - Name: walkLabel
+      Entry: 10
+      Data: 84
+    - Name: flashlightLabel
+      Entry: 10
+      Data: 85
+    - Name: currentAction
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: enemyManager
+      Entry: 7
+      Data: 31|EnemyManager, Assembly-CSharp
+    - Name: enemies
+      Entry: 7
+      Data: 32|System.Collections.Generic.List`1[[Enemy, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   fadeDuration: 0.5
   faderCanvasGroup: {fileID: 553015763}
   globalState: {fileID: 11400000, guid: aa13c8b3ee1928c47bb12361015f462b, type: 2}
   sceneCtrl: {fileID: 0}
-  enemyManager: {fileID: 0}
   directionSwitch: 0
   directionVerticalSignSwitch: 0
   directionHorizontalSignSwitch: 0
+  turnCount: 0
 --- !u!1 &1305276252
 GameObject:
   m_ObjectHideFlags: 0
@@ -8540,18 +8618,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1582146053}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 617699923}
-        m_MethodName: ConfirmAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1627696901
@@ -10197,18 +10264,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1903405718}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 617699923}
-        m_MethodName: UseFlashlight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1927444296

@@ -29,9 +29,15 @@ public class GlobalController : SerializedMonoBehaviour
     [FoldoutGroup("Interface Management")]
     public ObjectiveManager objectiveManager;
 
+    [FoldoutGroup("Interface Management")]
+    public PlayerActionManager playerActionManager;
+
+    [FoldoutGroup("State Management")]
+    public EnemyManager enemyManager;
+
+
     // TODO: Update this shit
     public SceneController sceneCtrl;
-    public EnemyManager enemyManager;
     public bool directionSwitch = false;
     public bool directionVerticalSignSwitch = false;
     public bool directionHorizontalSignSwitch = false;
@@ -45,16 +51,41 @@ public class GlobalController : SerializedMonoBehaviour
         this.globalState.sceneStates = this.globalState.sceneStates
             .ToDictionary(kvp => kvp.Key, kvp => GlobalController.CreatePlayModeInstance(kvp.Value));
 
+        // Interface Management
         this.inventory.LoadFromState(this);
         this.dialogueManager.Init();
         this.saveManager.Init(this);
-
         this.objectiveManager.Init(this);
+        this.playerActionManager.Init(this);
+        // State Management
+        this.enemyManager.Init(this);
     }
 
     private IEnumerator Start()
     {
         yield return SceneManager.Init(this, this.faderCanvasGroup, this.globalState.currentScene.ToString());
+    }
+
+    private void Update()
+    {
+        if (!SceneManager.sceneLoadingInProgress)
+        {
+            StartCoroutine(this.playerActionManager.InputListener());
+        }
+    }
+
+    public int turnCount = 0;
+
+    public void NextTurn()
+    {
+        turnCount++;
+        base.StartCoroutine(this.NextTurnActions());
+    }
+
+    private IEnumerator NextTurnActions()
+    {
+        yield return this.playerActionManager.OnTurnChange();
+        yield return this.enemyManager.OnTurnChange();
     }
 
     public void LoadFromState()

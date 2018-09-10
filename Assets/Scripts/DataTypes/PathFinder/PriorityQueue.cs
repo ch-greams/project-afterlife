@@ -3,7 +3,7 @@ using System.Linq;
 
 class PriorityQueue<P, V>
 {
-    public bool isEmpty { get { return !this.list.Any(); } }
+    public bool isNotEmpty { get { return this.list.Any(); } }
 
     private readonly SortedDictionary<P, Queue<V>> list = new SortedDictionary<P, Queue<V>>();
 
