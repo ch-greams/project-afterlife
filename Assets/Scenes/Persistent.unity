@@ -416,7 +416,7 @@ MonoBehaviour:
     y: 6
   - x: 9
     y: 4
-  visibleRange: 3
+  visibleRange: 2.5
 --- !u!4 &106798515
 Transform:
   m_ObjectHideFlags: 0

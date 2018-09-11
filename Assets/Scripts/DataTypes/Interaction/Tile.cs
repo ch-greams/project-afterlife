@@ -13,6 +13,8 @@ public class Tile : SerializedScriptableObject
 
     public bool isVisible = false;
     public bool isBlocked = false;
+    public bool isActive = false;
+    public bool isSelected = false;
 
     public GameObject obj;
 
@@ -179,19 +181,15 @@ public class Tile : SerializedScriptableObject
 
         for (int step = 0; step < (range - 1); step++)
         {
-            // TODO: Remove when you're confident in this part
-            Tile _currentTile = currentTile;
-
             currentTile = currentTile.allNeighbours
                 .FirstOrDefault(tile => tile.point == (currentTile.point + deltaPoint));
 
             if (currentTile == null)
             {
-                Debug.Log("[ currentTile == null]: _currentTile.point = " + _currentTile.point + " | deltaPoint = " + deltaPoint);
                 break;
             }
             
-            rayPath.AddStep(currentTile, new Point().DistanceTo(deltaPoint));
+            rayPath = rayPath.AddStep(currentTile, new Point().DistanceTo(deltaPoint));
         }
 
         return rayPath;
@@ -205,6 +203,19 @@ public class Tile : SerializedScriptableObject
         TileData tileData = this.obj.GetComponent<Interactable>().data as TileData;
         tileData.RefreshTileMaterial(this, inEditor);
     }
+
+    public void RefreshTileState(bool isVisible, bool isBlocked, bool isActive, bool isSelected, bool inEditor = false)
+    {
+        this.isVisible = isVisible;
+        this.isBlocked = isBlocked;
+
+        this.isActive = isActive;
+        this.isSelected = isSelected;
+
+        TileData tileData = this.obj.GetComponent<Interactable>().data as TileData;
+        tileData.RefreshTileMaterial(this, inEditor);
+    }
+
 
     private void UpdateOpenSet(Func<Tile, bool> neighbourFilter, HashSet<Tile> closedSet, ref Queue<Tile> openSet)
     {

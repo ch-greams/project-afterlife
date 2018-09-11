@@ -41,8 +41,28 @@ public class TileData : IDataInteractable
     public void RefreshTileMaterial(Tile tile, bool inEditor)
     {                
         Material material = inEditor ? this.renderer.sharedMaterial : this.renderer.material;
-        Color nextColor = (!tile.isBlocked && tile.isVisible) ? this.defaultColor : this.disabledColor;
-        material.SetColor(Shader.PropertyToID("_Color"), nextColor);
+        int shaderPropID = Shader.PropertyToID("_Color");
+        
+        if (tile.isSelected)
+        {
+            // TILE_COLOR_SELECTED
+            material.SetColor(shaderPropID, new Color(0F, 1F, 1F, 0.5F));
+        }
+        else if (!tile.isBlocked && tile.isActive)
+        {
+            // TILE_COLOR_ACTIVE
+            material.SetColor(shaderPropID, new Color(1F, 1F, 1F, 0.25F));
+        }
+        else if (!tile.isBlocked && tile.isVisible)
+        {
+            // TILE_COLOR_VISIBLE
+            material.SetColor(shaderPropID, new Color(0.75F, 0.75F, 0.75F, 0.25F));
+        }
+        else
+        {
+            // TILE_COLOR_DISABLED as default
+            material.SetColor(shaderPropID, new Color(0F, 0F, 0F, 0.25F));
+        }
     }
 
 

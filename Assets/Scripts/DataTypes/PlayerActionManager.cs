@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -146,22 +147,25 @@ public class PlayerActionManager
         }
     }
 
+    // TODO: Add animation
     private IEnumerator SelectNextTile(Tile nextTile)
     {
         if (nextTile)
         {
             if (this.selectedTile)
             {
-                Renderer _tileRenderer = this.selectedTile.obj.GetComponent<Interactable>().data.renderer;
-                _tileRenderer.material.SetColor("_Color", new Color(0, 0, 0, 0.39F));
-                // this.selectedTile.obj.GetComponent<Interactable>().OnPointerExit(null);
+                this.selectedTile.RefreshTileState(
+                    this.selectedTile.isVisible, this.selectedTile.isBlocked,
+                    this.selectedTile.isActive, false
+                );
             }
 
             this.selectedTile = nextTile;
 
-            Renderer tileRenderer = this.selectedTile.obj.GetComponent<Interactable>().data.renderer;
-            tileRenderer.material.SetColor("_Color", Color.cyan);
-            // this.selectedTile.obj.GetComponent<Interactable>().OnPointerEnter(null);
+            this.selectedTile.RefreshTileState(
+                this.selectedTile.isVisible, this.selectedTile.isBlocked,
+                this.selectedTile.isActive, true
+            );
 
             this.axisButtonInUse = true;
             yield return this.SELECT_TILE_TIMEOUT;
@@ -175,10 +179,13 @@ public class PlayerActionManager
 
         if (direction != TileDirection.Undefined)
         {
+            Tile playerTile = this.globalCtrl.sceneCtrl.player.tile;
+            Func<Tile, bool> filter = (t) => (!t.isBlocked && t.isVisible && t.isActive);
+
             Tile nextTile = (
                 this.selectedTile
-                    ? this.selectedTile.GetTileByDirection(direction, (t) => (!t.isBlocked && t.isVisible))
-                    : this.globalCtrl.sceneCtrl.player.tile.GetTileByDirection(direction, (t) => (!t.isBlocked && t.isVisible))
+                    ? this.selectedTile.GetTileByDirection(direction, filter)
+                    : playerTile.GetTileByDirection(direction, filter)
             );
 
             yield return this.SelectNextTile(nextTile);
@@ -192,7 +199,12 @@ public class PlayerActionManager
         if (direction != TileDirection.Undefined)
         {
             Tile playerTile = this.globalCtrl.sceneCtrl.player.tile;
-            Tile nextTile = playerTile.GetTileByDirection(direction, (t) => (t.isVisible));
+
+            Tile nextTile = (
+                this.selectedTile
+                    ? this.selectedTile.GetTileByDirection(direction, (t) => (t.isVisible && t.isActive))
+                    : playerTile.GetTileByDirection(direction, (t) => (t.isVisible && t.isActive))
+            );
 
             yield return this.SelectNextTile(nextTile);
         }
@@ -206,7 +218,7 @@ public class PlayerActionManager
         }
     }
 
-
+    // TODO: Make this prettier
     private IEnumerator UseFlashlightAction()
     {
         // Debug.Log("Flashlight use confirmed");
@@ -229,6 +241,8 @@ public class PlayerActionManager
 
     public void ConfirmAction()
     {
+        this.globalCtrl.StartCoroutine(this.ButtonHighlight(this.confirmButton));
+
         this.globalCtrl.NextTurn();
     }
 
@@ -256,25 +270,70 @@ public class PlayerActionManager
         this.SelectActionType(PlayerActionType.Undefined);
     }
 
+    private IEnumerator ButtonHighlight(Button button)
+    {
+        ColorBlock colorBlock = button.colors;
+
+        colorBlock.normalColor = new Color(0.5F, 1.0F, 0.5F, 1.0F);
+        button.colors = colorBlock;
+
+        yield return new WaitForSeconds(0.25F);
+
+        colorBlock.normalColor = new Color(1.0F, 1.0F, 1.0F, 1.0F);
+        button.colors = colorBlock;
+    }
+
+    private void ButtonSelectHighlight(Button button, bool selected)
+    {
+        ColorBlock colorBlock = button.colors;
+
+        colorBlock.normalColor = (
+            selected ? new Color(0.5F, 1.0F, 0.5F, 1.0F) : new Color(1.0F, 1.0F, 1.0F, 1.0F)
+        );
+        button.colors = colorBlock;
+    }
+
     private void SelectActionType(PlayerActionType playerActionType)
     {
         // Debug.Log("Selected Action - " + playerActionType.ToString());
         this.currentAction = playerActionType;
+        Player player = this.globalCtrl.sceneCtrl.player;
+
+        // TODO: Shouldn't be used like this
+        player.HighlightVisible(true);
 
         switch (playerActionType)
         {
             case PlayerActionType.Walk:
                 this.walkLabel.SetActive(true);
                 this.flashlightLabel.SetActive(false);
+
+                this.ButtonSelectHighlight(this.walkButton, true);
+                this.ButtonSelectHighlight(this.flashlightButton, false);
+
+                player.HighlightActive(true, true);
+
                 break;
             case PlayerActionType.Flashlight:
                 this.walkLabel.SetActive(false);
                 this.flashlightLabel.SetActive(true);
+
+                this.ButtonSelectHighlight(this.walkButton, false);
+                this.ButtonSelectHighlight(this.flashlightButton, true);
+                
+                player.HighlightActive(false, true);
+                player.HighlightActive(true, false);
+
                 break;
             case PlayerActionType.Undefined:
             default:
                 this.walkLabel.SetActive(false);
                 this.flashlightLabel.SetActive(false);
+
+                this.ButtonSelectHighlight(this.walkButton, false);
+                this.ButtonSelectHighlight(this.flashlightButton, false);
+                
+                player.HighlightActive(false, true);
                 break;
         }
     }

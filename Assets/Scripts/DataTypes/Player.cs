@@ -36,13 +36,12 @@ public class Player
 
     public IEnumerator MoveToTile(Tile tile)
     {
-        Path<Tile> path = tile.FindPathFrom(this.tile, (t) => (!t.isBlocked && t.isVisible));
+        List<Point> _playerPoints = this.GetVisiblePoints();
+
+        Path<Tile> path = tile.FindPathFrom(this.tile, (t) => (!t.isBlocked && t.isVisible && t.isActive));
         yield return this.MoveOnPath(path.Reverse());
 
-        if (!this.globalCtrl.sceneCtrl.sceneState.visibleByDefault)
-        {
-            this.globalCtrl.sceneCtrl.UpdateTiles(this.tile);
-        }
+        this.HighlightVisible(false, _playerPoints);
     }
 
     private IEnumerator MoveOnPath(IEnumerable<Tile> path)
@@ -75,6 +74,65 @@ public class Player
             // this.tile.isBlocked = true;
 
             this.characterAnimator.SetFloat(this.speedParamHash, 0F);
+        }
+    }
+
+
+    private List<Point> GetVisiblePoints()
+    {
+        return this.tile.GetTiles(this.visibleRange, (t) => (true));
+    }
+
+    public void HighlightVisible(bool enable, List<Point> _playerPoints = null)
+    {
+        SceneController sceneCtrl = this.globalCtrl.sceneCtrl;
+
+        List<Point> playerPoints = (
+            _playerPoints == null
+                ? this.tile.GetTiles(this.visibleRange, (t) => (true))
+                : _playerPoints
+        );
+        List<Tile> playerTiles = sceneCtrl.tiles.FindAll((t) => playerPoints.Contains(t.point));
+
+        foreach (Tile tile in playerTiles)
+        {
+            if (enable)
+            {
+                tile.RefreshTileState(enable, tile.isBlocked);
+            }
+            else
+            {
+                tile.RefreshTileState(enable, tile.isBlocked, enable, false);
+            }
+        }
+
+        foreach (string lightSourceId in sceneCtrl.highlightedTiles.Keys)
+        {
+            sceneCtrl.UpdateHighlightedTiles(lightSourceId);
+        }
+    }
+
+    public void HighlightActive(bool enable, bool useFullRange, List<Point> _playerPoints = null)
+    {
+        SceneController sceneCtrl = this.globalCtrl.sceneCtrl;
+        float range = useFullRange ? this.visibleRange : 1.5F;
+
+        List<Point> playerPoints = (
+            _playerPoints == null
+                ? this.tile.GetTiles(range, (t) => (true))
+                : _playerPoints
+        );
+        List<Tile> playerTiles = sceneCtrl.tiles.FindAll((t) => playerPoints.Contains(t.point));
+
+        foreach (Tile tile in playerTiles)
+        {
+            bool isSelected = enable ? tile.isSelected : enable;
+            tile.RefreshTileState(tile.isVisible, tile.isBlocked, enable, isSelected);
+        }
+
+        foreach (string lightSourceId in sceneCtrl.highlightedTiles.Keys)
+        {
+            sceneCtrl.UpdateHighlightedTiles(lightSourceId);
         }
     }
 }
