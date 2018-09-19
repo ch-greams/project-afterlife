@@ -63,40 +63,37 @@ public class Tile : SerializedScriptableObject
         this.allNeighbours = neighbours;
     }
 
-
     public HashSet<Point> GetTiles(float range, Func<Tile, bool> neighbourFilter)
     {
         HashSet<Point> result = new HashSet<Point>();
 
-        if (range > 0)
+        HashSet<(Tile tile, double cost)> tilesToCheck = new HashSet<(Tile tile, double cost)>();
+        tilesToCheck.Add((tile: this, cost: 0));
+
+        while (tilesToCheck.Any())
         {
-            HashSet<Point> closedSet = new HashSet<Point>();
-            Queue<Tile> openSet = new Queue<Tile>();
+            (Tile tile, double cost) currentTile = tilesToCheck.First();
+            tilesToCheck.Remove(currentTile);
 
-            // var tuple = (tileToCheck: 1, source: 2);
+            IEnumerable<Tile> neighbourTiles = currentTile.tile.allNeighbours
+                .Where(neighbourFilter)
+                .Where((tile) => ((tile.point.DistanceTo(currentTile.tile.point) + currentTile.cost) <= range))
+                .Where((tile) => !result.Any((point) => (tile.point == point)));
 
-            this.UpdateOpenSet(neighbourFilter, closedSet, ref openSet);
+            IEnumerable<(Tile tile, double cost)> neighbourTuples = neighbourTiles
+                .Select(tile => (
+                    tile: tile,
+                    cost: currentTile.cost + tile.point.DistanceTo(currentTile.tile.point)
+                ));
 
-            closedSet.Add(this.point);
+            tilesToCheck.UnionWith(neighbourTuples);
+            tilesToCheck = new HashSet<(Tile tile, double cost)>(tilesToCheck.OrderBy(t => t.cost));
 
-            while (openSet.Count > 0)
-            {
-                Tile tileToCheck = openSet.Dequeue();
-                Path<Tile> path = tileToCheck.FindPathFrom(this, neighbourFilter);
-
-                closedSet.Add(tileToCheck.point);
-                if (path.totalCost <= range)
-                {
-                    result.Add(tileToCheck.point);
-
-                    tileToCheck.UpdateOpenSet(neighbourFilter, closedSet, ref openSet);
-                }
-            }
+            result.UnionWith(neighbourTiles.Select((tile) => tile.point));
         }
 
         return result;
     }
-
 
     public Path<Tile> FindPathFrom(Tile startTile, Func<Tile, bool> neighbourFilter)
     {
@@ -216,18 +213,6 @@ public class Tile : SerializedScriptableObject
 
         TileData tileData = this.obj.GetComponent<Interactable>().data as TileData;
         tileData.RefreshTileMaterial(this, inEditor);
-    }
-
-
-    private void UpdateOpenSet(Func<Tile, bool> neighbourFilter, HashSet<Point> closedSet, ref Queue<Tile> openSet)
-    {
-        foreach (Tile neighbour in this.allNeighbours.Where(neighbourFilter))
-        {
-            if (!closedSet.Contains(neighbour.point) && !openSet.Contains(neighbour))
-            {
-                openSet.Enqueue(neighbour);
-            }
-        }
     }
 }
 

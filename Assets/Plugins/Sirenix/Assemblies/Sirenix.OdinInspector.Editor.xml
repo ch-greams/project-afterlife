@@ -932,6 +932,11 @@
             Not yet documented.
             </summary>
         </member>
+        <member name="M:Sirenix.OdinInspector.Editor.Drawers.FilePathAttributeDrawer.Initialize">
+            <summary>
+            Initializes the drawer.
+            </summary>
+        </member>
         <member name="M:Sirenix.OdinInspector.Editor.Drawers.FilePathAttributeDrawer.DrawPropertyLayout(UnityEngine.GUIContent)">
             <summary>
             Not yet documented.
@@ -940,6 +945,11 @@
         <member name="T:Sirenix.OdinInspector.Editor.Drawers.FolderPathAttributeDrawer">
             <summary>
             Not yet documented.
+            </summary>
+        </member>
+        <member name="M:Sirenix.OdinInspector.Editor.Drawers.FolderPathAttributeDrawer.Initialize">
+            <summary>
+            Initializes the drawer.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.Editor.Drawers.FolderPathAttributeDrawer.DrawPropertyLayout(UnityEngine.GUIContent)">
@@ -3238,6 +3248,11 @@
             Opens a context menu for any given property on right click. The context menu is populated by all relevant drawers that implements <see cref="T:Sirenix.OdinInspector.Editor.IDefinesGenericMenuItems"/>.
             </summary>
             <seealso cref="T:Sirenix.OdinInspector.Editor.IDefinesGenericMenuItems"/>
+        </member>
+        <member name="M:Sirenix.OdinInspector.Editor.Drawers.PropertyContextMenuDrawer`1.Initialize">
+            <summary>
+            Initializes the drawer.
+            </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.Editor.Drawers.PropertyContextMenuDrawer`1.DrawPropertyLayout(UnityEngine.GUIContent)">
             <summary>
@@ -10817,6 +10832,20 @@
             Only updates the string buffer in Layout events.
             </summary>
             <param name="instance">The instance, for evt. member references.</param>
+            <returns>The current string.</returns>
+        </member>
+        <member name="M:Sirenix.OdinInspector.Editor.StringMemberHelper.ForceGetString(Sirenix.OdinInspector.Editor.IPropertyValueEntry)">
+            <summary>
+            Gets the string from the StringMemberHelper.
+            </summary>
+            <param name="entry">The property entry, to get the instance reference from.</param>
+            <returns>The current string.</returns>
+        </member>
+        <member name="M:Sirenix.OdinInspector.Editor.StringMemberHelper.ForceGetString(Sirenix.OdinInspector.Editor.InspectorProperty)">
+            <summary>
+            Gets the string from the StringMemberHelper.
+            </summary>
+            <param name="property">The property, to get the instance reference from.</param>
             <returns>The current string.</returns>
         </member>
         <member name="M:Sirenix.OdinInspector.Editor.StringMemberHelper.ForceGetString(System.Object)">
