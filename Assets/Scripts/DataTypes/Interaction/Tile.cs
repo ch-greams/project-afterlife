@@ -66,8 +66,12 @@ public class Tile : SerializedScriptableObject
     public HashSet<Point> GetTiles(float range, Func<Tile, bool> neighbourFilter)
     {
         HashSet<Point> result = new HashSet<Point>();
-
-        HashSet<(Tile tile, double cost)> tilesToCheck = new HashSet<(Tile tile, double cost)>();
+        Comparer<(Tile tile, double cost)> costComparer = Comparer<(Tile tile, double cost)>
+            .Create((t1, t2) => {
+                int costCompared = t1.cost.CompareTo(t2.cost);
+                return (costCompared != 0) ? costCompared : t1.tile.point.CompareTo(t2.tile.point);
+            });
+        SortedSet<(Tile tile, double cost)> tilesToCheck = new SortedSet<(Tile tile, double cost)>(costComparer);
         tilesToCheck.Add((tile: this, cost: 0));
 
         while (tilesToCheck.Any())
@@ -80,15 +84,13 @@ public class Tile : SerializedScriptableObject
                 .Where((tile) => ((tile.point.DistanceTo(currentTile.tile.point) + currentTile.cost) <= range))
                 .Where((tile) => !result.Any((point) => (tile.point == point)));
 
-            IEnumerable<(Tile tile, double cost)> neighbourTuples = neighbourTiles
+            IEnumerable<(Tile tile, double cost)> neighbourTilesWithCost = neighbourTiles
                 .Select(tile => (
                     tile: tile,
                     cost: currentTile.cost + tile.point.DistanceTo(currentTile.tile.point)
                 ));
 
-            tilesToCheck.UnionWith(neighbourTuples);
-            tilesToCheck = new HashSet<(Tile tile, double cost)>(tilesToCheck.OrderBy(t => t.cost));
-
+            tilesToCheck.UnionWith(neighbourTilesWithCost);
             result.UnionWith(neighbourTiles.Select((tile) => tile.point));
         }
 

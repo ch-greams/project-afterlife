@@ -83,10 +83,7 @@ public struct Point : IComparable<Point>
 
     public int CompareTo(Point other)
     {
-        int sumOther = other.x + other.y;
-        int sumThis = this.x + this.y;
-
-        return (sumOther > sumThis) ? -1 : ((sumOther == sumThis) ? 0 : 1);
+        return (this.x == other.x) ? (this.y - other.y) : (this.x - other.x);
     }
 
     // TODO: Either rework or remnove
@@ -110,9 +107,7 @@ public struct Point : IComparable<Point>
         float dx = Math.Abs(point.x - this.x);
         float dy = Math.Abs(point.y - this.y);
 
-        return (dx >= dy)
-            ? (dx - dy) + dy * 1.5F
-            : (dy - dx) + dx * 1.5F;
+        return (dx >= dy) ? ((dx - dy) + dy * 1.5F) : ((dy - dx) + dx * 1.5F);
     }
 }
 
