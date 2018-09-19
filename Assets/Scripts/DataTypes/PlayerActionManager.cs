@@ -60,7 +60,7 @@ public class PlayerActionManager
         if (Input.GetButtonDown("Button Y"))
         {
             Debug.Log("Button Y");
-            // SwordButton
+            // TorchButton
         }
 
         if (!axisButtonInUse)
@@ -232,7 +232,11 @@ public class PlayerActionManager
         Path<Tile> rayPath = player.tile.GetTilesByDirection(this.selectedTile.point, player.flashlightRange);
         foreach (Tile tile in rayPath)
         {
-            enemyManager.TryKillEnemyOnPoint(tile.point);
+            if (enemyManager.TryDestroyEnemyOnPoint(tile.point))
+            {
+                // TODO: Move to appropriate place
+                this.globalCtrl.collectableManager.TrySpawnItem(tile.point, "Healthpack");
+            }
         }
 
         yield return this.FLASHLIGHT_TIMEOUT;

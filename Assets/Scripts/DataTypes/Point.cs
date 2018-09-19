@@ -89,9 +89,7 @@ public struct Point : IComparable<Point>
         return (sumOther > sumThis) ? -1 : ((sumOther == sumThis) ? 0 : 1);
     }
 
-    /// <summary>
-    /// Calculate Vector3 coordinates for current point
-    /// </summary>
+    // TODO: Either rework or remnove
     public Vector3 CalcWorldCoord(float h, float tileSize)
     {
         Vector3 initPos = new Vector3(0, 0, 0);

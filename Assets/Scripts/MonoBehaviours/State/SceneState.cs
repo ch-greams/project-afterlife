@@ -45,7 +45,7 @@ public class SceneState : SerializedScriptableObject
         return this.defaultMap.ToDictionary(ts => ts.point, ts => ts);
     }
 
-    public Dictionary<Point, TileSimple> GetCurrentMap(List<Point> playerLayer)
+    public Dictionary<Point, TileSimple> GetCurrentMap(HashSet<Point> playerLayer)
     {
         return this.defaultMap.ToDictionary(ts => ts.point, ts =>
             new TileSimple(ts.point, playerLayer.Contains(ts.point), ts.isBlocked)

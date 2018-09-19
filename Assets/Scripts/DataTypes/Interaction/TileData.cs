@@ -46,22 +46,22 @@ public class TileData : IDataInteractable
         if (tile.isSelected)
         {
             // TILE_COLOR_SELECTED
-            material.SetColor(shaderPropID, new Color(0F, 1F, 1F, 0.5F));
+            material.SetColor(shaderPropID, new Color(0F, 1F, 1F, 0.25F));
         }
         else if (!tile.isBlocked && tile.isActive)
         {
             // TILE_COLOR_ACTIVE
-            material.SetColor(shaderPropID, new Color(1F, 1F, 1F, 0.25F));
+            material.SetColor(shaderPropID, new Color(1F, 1F, 1F, 0.125F));
         }
         else if (!tile.isBlocked && tile.isVisible)
         {
             // TILE_COLOR_VISIBLE
-            material.SetColor(shaderPropID, new Color(0.75F, 0.75F, 0.75F, 0.25F));
+            material.SetColor(shaderPropID, new Color(0.75F, 0.75F, 0.75F, 0.125F));
         }
         else
         {
             // TILE_COLOR_DISABLED as default
-            material.SetColor(shaderPropID, new Color(0F, 0F, 0F, 0.25F));
+            material.SetColor(shaderPropID, new Color(0F, 0F, 0F, 0.125F));
         }
     }
 

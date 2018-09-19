@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 106798515}
   - component: {fileID: 106798514}
   m_Layer: 0
-  m_Name: EnemyGenerator
+  m_Name: PlaygroundGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -407,16 +407,22 @@ MonoBehaviour:
     SerializationNodes: []
   shadowPrefab: {fileID: 1831439497551332, guid: 938142f99093f51408b617d566029294,
     type: 2}
+  movementSpeed: 3
   enemyPositions:
-  - x: 6
-    y: 11
   - x: 11
-    y: 12
-  - x: 15
-    y: 6
+    y: 9
+  collectableItemPrefab: {fileID: 1306313449982572, guid: bbc936afdb3aaa847a31b08e3f20165f,
+    type: 2}
+  collectableItemPositions:
+  - x: 11
+    y: 9
   - x: 9
-    y: 4
-  visibleRange: 2.5
+    y: 11
+  - x: 7
+    y: 9
+  - x: 9
+    y: 7
+  globalCtrl: {fileID: 1303165734}
 --- !u!4 &106798515
 Transform:
   m_ObjectHideFlags: 0
@@ -1201,7 +1207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &253581706
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6783,6 +6789,8 @@ MonoBehaviour:
     - {fileID: 1582146055}
     - {fileID: 1945479048}
     - {fileID: 769850529}
+    - {fileID: 1831439497551332, guid: 938142f99093f51408b617d566029294, type: 2}
+    - {fileID: 1306313449982572, guid: bbc936afdb3aaa847a31b08e3f20165f, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -7412,6 +7420,228 @@ MonoBehaviour:
     - Name: enemies
       Entry: 7
       Data: 32|System.Collections.Generic.List`1[[Enemy, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: enemySpawnPoints
+      Entry: 7
+      Data: 33|System.Collections.Generic.List`1[[EnemySpawnPoint, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 34|EnemySpawnPoint, Assembly-CSharp
+    - Name: point
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
+      Data: 11
+    - Name: y
+      Entry: 3
+      Data: 13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: name
+      Entry: 1
+      Data: Enemy
+    - Name: prefab
+      Entry: 10
+      Data: 86
+    - Name: movementSpeed
+      Entry: 4
+      Data: 2.5
+    - Name: animationSpeed
+      Entry: 4
+      Data: 2
+    - Name: attackPower
+      Entry: 4
+      Data: 1
+    - Name: isLockedOnPlayer
+      Entry: 5
+      Data: true
+    - Name: repeatSpawn
+      Entry: 5
+      Data: true
+    - Name: repeatSpawnDelay
+      Entry: 3
+      Data: 3
+    - Name: repeatSpawnTurnsLeft
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 35|EnemySpawnPoint, Assembly-CSharp
+    - Name: point
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
+      Data: 15
+    - Name: y
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: name
+      Entry: 1
+      Data: Enemy
+    - Name: prefab
+      Entry: 10
+      Data: 86
+    - Name: movementSpeed
+      Entry: 4
+      Data: 2.5
+    - Name: animationSpeed
+      Entry: 4
+      Data: 2
+    - Name: attackPower
+      Entry: 4
+      Data: 1
+    - Name: isLockedOnPlayer
+      Entry: 5
+      Data: true
+    - Name: repeatSpawn
+      Entry: 5
+      Data: true
+    - Name: repeatSpawnDelay
+      Entry: 3
+      Data: 3
+    - Name: repeatSpawnTurnsLeft
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 36|EnemySpawnPoint, Assembly-CSharp
+    - Name: point
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
+      Data: 4
+    - Name: y
+      Entry: 3
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: name
+      Entry: 1
+      Data: Enemy
+    - Name: prefab
+      Entry: 10
+      Data: 86
+    - Name: movementSpeed
+      Entry: 4
+      Data: 2.5
+    - Name: animationSpeed
+      Entry: 4
+      Data: 2
+    - Name: attackPower
+      Entry: 4
+      Data: 1
+    - Name: isLockedOnPlayer
+      Entry: 5
+      Data: true
+    - Name: repeatSpawn
+      Entry: 5
+      Data: true
+    - Name: repeatSpawnDelay
+      Entry: 3
+      Data: 3
+    - Name: repeatSpawnTurnsLeft
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 37|EnemySpawnPoint, Assembly-CSharp
+    - Name: point
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
+      Data: 8
+    - Name: y
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: name
+      Entry: 1
+      Data: Enemy
+    - Name: prefab
+      Entry: 10
+      Data: 86
+    - Name: movementSpeed
+      Entry: 4
+      Data: 2.5
+    - Name: animationSpeed
+      Entry: 4
+      Data: 2
+    - Name: attackPower
+      Entry: 4
+      Data: 1
+    - Name: isLockedOnPlayer
+      Entry: 5
+      Data: true
+    - Name: repeatSpawn
+      Entry: 5
+      Data: true
+    - Name: repeatSpawnDelay
+      Entry: 3
+      Data: 3
+    - Name: repeatSpawnTurnsLeft
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: collectableManager
+      Entry: 7
+      Data: 38|CollectableManager, Assembly-CSharp
+    - Name: collectableItemPrefab
+      Entry: 10
+      Data: 87
+    - Name: collectableItems
+      Entry: 7
+      Data: 39|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 40|System.Collections.Generic.ObjectEqualityComparer`1[[Point, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 12
       Data: 0

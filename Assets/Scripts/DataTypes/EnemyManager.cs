@@ -8,6 +8,8 @@ public class EnemyManager
 {
     [ListDrawerSettings(Expanded = false, DraggableItems = false)]
     public List<Enemy> enemies = new List<Enemy>();
+    [ListDrawerSettings(Expanded = false, DraggableItems = false)]
+    public List<EnemySpawnPoint> enemySpawnPoints = new List<EnemySpawnPoint>();
 
 
     private GlobalController globalCtrl;
@@ -16,11 +18,28 @@ public class EnemyManager
     public void Init(GlobalController globalCtrl)
     {
         this.globalCtrl = globalCtrl;
+
+        // TODO: Load from sceneState
     }
 
     public IEnumerator OnTurnChange()
     {
         yield return this.MoveEnemies();
+
+        this.SpawnEnemies();
+    }
+
+    private void SpawnEnemies()
+    {
+        foreach (EnemySpawnPoint esp in this.enemySpawnPoints)
+        {
+            Enemy enemy = esp.TrySpawnEnemy(this.globalCtrl);
+            
+            if (enemy != null)
+            {
+                this.enemies.Add(enemy);
+            }
+        }
     }
 
     private IEnumerator MoveEnemies()
@@ -31,7 +50,7 @@ public class EnemyManager
         
         foreach (Enemy enemy in enemiesLockedOnPlayer)
         {
-            yield return enemy.MoveToPlayer(this.globalCtrl.sceneCtrl.player);
+            yield return enemy.MoveToPlayer(this.globalCtrl.sceneCtrl.player, this);
         }   
     }
 
@@ -41,20 +60,18 @@ public class EnemyManager
         return enemy.tile.FindPathFrom(playerTile, (t) => (t.isVisible)) != null;
     }
 
-    public void TryKillEnemyOnPoint(Point point)
+    public bool TryDestroyEnemyOnPoint(Point point)
     {
         Enemy enemy = this.enemies.Find((e) => e.tile.point == point);
 
         if (enemy != null)
         {
-            this.KillEnemy(enemy);
-        }
-    }
+            enemy.Destroy();
+            this.enemies.Remove(enemy);
 
-    private void KillEnemy(Enemy enemy)
-    {
-        GameObject.DestroyImmediate(enemy.characterTransform.gameObject);
-        enemy.tile.RefreshTileState(enemy.tile.isVisible, false);
-        this.enemies.Remove(enemy);
+            return true;
+        }
+
+        return false;
     }
 }

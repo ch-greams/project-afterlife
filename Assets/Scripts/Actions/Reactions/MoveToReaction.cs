@@ -53,7 +53,7 @@ public class MoveToReaction : IReaction
             Path<Tile> path = tile.FindPathFrom(player.tile, (t) => (!t.isBlocked && t.isVisible));
             if (path != null)
             {
-                yield return this.MoveToTile(player, path.Reverse());
+                yield return this.MoveOnPath(player, path.Reverse());
             }
 
             if (!this.sceneCtrl.sceneState.visibleByDefault)
@@ -79,11 +79,11 @@ public class MoveToReaction : IReaction
         return this.tiles.First();
     }
 
-    private IEnumerator MoveToTile(Player player, IEnumerable<Tile> path)
+    private IEnumerator MoveOnPath(Player player, IEnumerable<Tile> path)
     {
         foreach (Tile tile in path)
         {
-            player.characterAnimator.SetFloat(this.speedParamHash, player.speed * 1F);
+            player.characterAnimator.SetFloat(this.speedParamHash, player.animationSpeed * 1F);
 
             float startTime = Time.time;
             Vector3 startPosition = player.playerTransform.position;
@@ -94,7 +94,7 @@ public class MoveToReaction : IReaction
 
             while (endPosition != player.playerTransform.position)
             {
-                float distCovered = (Time.time - startTime) * player.speed;
+                float distCovered = (Time.time - startTime) * player.animationSpeed;
                 float fracJourney = distCovered / journeyLength;
                 player.playerTransform.position = Vector3.Lerp(startPosition, endPosition, fracJourney);
 

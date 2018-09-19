@@ -39,7 +39,7 @@ public class CameraController : MonoBehaviour
         {
             this.RotateCamera();
         }
-
+        
         this.HideObstructingWalls();
     }
 

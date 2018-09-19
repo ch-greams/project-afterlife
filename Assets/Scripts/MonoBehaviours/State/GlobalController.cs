@@ -35,6 +35,8 @@ public class GlobalController : SerializedMonoBehaviour
     [FoldoutGroup("State Management")]
     public EnemyManager enemyManager;
 
+    [FoldoutGroup("State Management")]
+    public CollectableManager collectableManager;
 
     // TODO: Update this shit
     public SceneController sceneCtrl;
@@ -59,6 +61,7 @@ public class GlobalController : SerializedMonoBehaviour
         this.playerActionManager.Init(this);
         // State Management
         this.enemyManager.Init(this);
+        this.collectableManager.Init(this);
     }
 
     private IEnumerator Start()
@@ -85,6 +88,8 @@ public class GlobalController : SerializedMonoBehaviour
     private IEnumerator NextTurnActions()
     {
         yield return this.playerActionManager.OnTurnChange();
+        this.collectableManager.OnTurnChange();
+
         yield return this.enemyManager.OnTurnChange();
     }
 

@@ -64,25 +64,27 @@ public class Tile : SerializedScriptableObject
     }
 
 
-    public List<Point> GetTiles(float range, Func<Tile, bool> neighbourFilter)
+    public HashSet<Point> GetTiles(float range, Func<Tile, bool> neighbourFilter)
     {
-        List<Point> result = new List<Point>();
+        HashSet<Point> result = new HashSet<Point>();
 
         if (range > 0)
         {
-            HashSet<Tile> closedSet = new HashSet<Tile>();
+            HashSet<Point> closedSet = new HashSet<Point>();
             Queue<Tile> openSet = new Queue<Tile>();
+
+            // var tuple = (tileToCheck: 1, source: 2);
 
             this.UpdateOpenSet(neighbourFilter, closedSet, ref openSet);
 
-            closedSet.Add(this);
+            closedSet.Add(this.point);
 
             while (openSet.Count > 0)
             {
                 Tile tileToCheck = openSet.Dequeue();
                 Path<Tile> path = tileToCheck.FindPathFrom(this, neighbourFilter);
 
-                closedSet.Add(tileToCheck);
+                closedSet.Add(tileToCheck.point);
                 if (path.totalCost <= range)
                 {
                     result.Add(tileToCheck.point);
@@ -217,11 +219,11 @@ public class Tile : SerializedScriptableObject
     }
 
 
-    private void UpdateOpenSet(Func<Tile, bool> neighbourFilter, HashSet<Tile> closedSet, ref Queue<Tile> openSet)
+    private void UpdateOpenSet(Func<Tile, bool> neighbourFilter, HashSet<Point> closedSet, ref Queue<Tile> openSet)
     {
         foreach (Tile neighbour in this.allNeighbours.Where(neighbourFilter))
         {
-            if (!closedSet.Contains(neighbour) && !openSet.Contains(neighbour))
+            if (!closedSet.Contains(neighbour.point) && !openSet.Contains(neighbour))
             {
                 openSet.Enqueue(neighbour);
             }

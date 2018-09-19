@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Player
 {
-    public float speed = 10.0F;
+    public float animationSpeed = 4.0F;
     public bool isMoving = false;
     public bool isTargetUpdating = false;
     public Transform playerTransform;
@@ -23,11 +23,11 @@ public class Player
 
     public Player() { }
 
-    public void InitPlayer(GlobalController globalCtrl, Tile tile, float currentVisibility)
+    public void InitPlayer(GlobalController globalCtrl, Tile tile, float visibleRange)
     {
         this.tile = tile;
         this.playerTransform.position = tile.obj.transform.position;
-        this.visibleRange = currentVisibility;
+        this.visibleRange = visibleRange;
 
         this.globalCtrl = globalCtrl;
         this.speedParamHash = Animator.StringToHash("Speed");
@@ -36,7 +36,7 @@ public class Player
 
     public IEnumerator MoveToTile(Tile tile)
     {
-        List<Point> _playerPoints = this.GetVisiblePoints();
+        HashSet<Point> _playerPoints = this.GetVisiblePoints();
 
         Path<Tile> path = tile.FindPathFrom(this.tile, (t) => (!t.isBlocked && t.isVisible && t.isActive));
         yield return this.MoveOnPath(path.Reverse());
@@ -48,7 +48,7 @@ public class Player
     {
         foreach (Tile tile in path)
         {
-            this.characterAnimator.SetFloat(this.speedParamHash, this.speed * 1F);
+            this.characterAnimator.SetFloat(this.speedParamHash, this.animationSpeed * 1F);
 
             float startTime = Time.time;
             Vector3 startPosition = this.playerTransform.position;
@@ -59,7 +59,7 @@ public class Player
 
             while (endPosition != this.playerTransform.position)
             {
-                float distCovered = (Time.time - startTime) * this.speed;
+                float distCovered = (Time.time - startTime) * this.animationSpeed;
                 float fracJourney = distCovered / journeyLength;
                 this.playerTransform.position = Vector3.Lerp(startPosition, endPosition, fracJourney);
 
@@ -78,16 +78,33 @@ public class Player
     }
 
 
-    private List<Point> GetVisiblePoints()
+    private HashSet<Point> GetVisiblePoints()
     {
         return this.tile.GetTiles(this.visibleRange, (t) => (true));
     }
 
-    public void HighlightVisible(bool enable, List<Point> _playerPoints = null)
+    // TODO: Add limit for max visibleRange
+    public void ChangeVisibleRange(float visibleRange)
+    {
+        if (visibleRange >= 1.5F)
+        {
+            this.HighlightVisible(false);
+            this.visibleRange = visibleRange;
+            this.HighlightVisible(true);
+
+            this.globalCtrl.UpdatePlayerVisibility(this.visibleRange);
+        }
+        else
+        {
+            Debug.Log("YOU DIED");
+        }
+    }
+
+    public void HighlightVisible(bool enable, HashSet<Point> _playerPoints = null)
     {
         SceneController sceneCtrl = this.globalCtrl.sceneCtrl;
 
-        List<Point> playerPoints = (
+        HashSet<Point> playerPoints = (
             _playerPoints == null
                 ? this.tile.GetTiles(this.visibleRange, (t) => (true))
                 : _playerPoints
@@ -112,12 +129,12 @@ public class Player
         }
     }
 
-    public void HighlightActive(bool enable, bool useFullRange, List<Point> _playerPoints = null)
+    public void HighlightActive(bool enable, bool useFullRange, HashSet<Point> _playerPoints = null)
     {
         SceneController sceneCtrl = this.globalCtrl.sceneCtrl;
         float range = useFullRange ? this.visibleRange : 1.5F;
 
-        List<Point> playerPoints = (
+        HashSet<Point> playerPoints = (
             _playerPoints == null
                 ? this.tile.GetTiles(range, (t) => (true))
                 : _playerPoints
