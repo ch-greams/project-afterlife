@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -52,12 +53,10 @@ MonoBehaviour:
     SerializationNodes:
     - Name: objectives
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[ObjectiveId, Assembly-CSharp],[Objective,
-        Assembly-CSharp]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[ObjectiveId, Assembly-CSharp],[Objective, Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ObjectiveId, Assembly-CSharp]],
-        mscorlib
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ObjectiveId, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -114,12 +113,10 @@ MonoBehaviour:
       Data: 
     - Name: sceneStates
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[SceneType, Assembly-CSharp],[SceneState,
-        Assembly-CSharp]], mscorlib
+      Data: 2|System.Collections.Generic.Dictionary`2[[SceneType, Assembly-CSharp],[SceneState, Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[SceneType, Assembly-CSharp]],
-        mscorlib
+      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[SceneType, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -477,7 +474,7 @@ MonoBehaviour:
   currentPosition:
     x: 9
     y: 9
-  currentVisibility: 8.5
+  currentVisibility: 4.5
   currentScene: 28
   currentObjective: 1
   inventory: []

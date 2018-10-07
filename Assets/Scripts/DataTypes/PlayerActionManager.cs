@@ -1,18 +1,43 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class PlayerActionManager
 {
+    [BoxGroup("[B] Walk Button")]
     public Button walkButton;
-    public Button flashlightButton;
-    public Button confirmButton;
+    [BoxGroup("[B] Walk Button")]
+    public Sprite walkButtonActive;
+    [BoxGroup("[B] Walk Button")]
+    public Sprite walkButtonInactive;
 
-    public GameObject walkLabel;
-    public GameObject flashlightLabel;
+    [BoxGroup("[X] Flashlight Button")]
+    public Button flashlightButton;
+    [BoxGroup("[X] Flashlight Button")]
+    public Sprite flashlightButtonActive;
+    [BoxGroup("[X] Flashlight Button")]
+    public Sprite flashlightButtonInactive;
+
+    [BoxGroup("[A] Torch Button")]
+    public Button torchButton;
+    [BoxGroup("[A] Torch Button")]
+    public Sprite torchButtonActive;
+    [BoxGroup("[A] Torch Button")]
+    public Sprite torchButtonInactive;
+
+    [BoxGroup("[Y] Granade Button")]
+    public Button granadeButton;
+    [BoxGroup("[Y] Granade Button")]
+    public Sprite granadeButtonActive;
+    [BoxGroup("[Y] Granade Button")]
+    public Sprite granadeButtonInactive;
+
+
+    public Button confirmButton;
 
     public PlayerActionType currentAction;
 
@@ -32,8 +57,6 @@ public class PlayerActionManager
 
         this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
         this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
-
-        this.confirmButton.onClick.AddListener(this.ConfirmAction);
     }
 
 
@@ -41,8 +64,8 @@ public class PlayerActionManager
     {
         if (Input.GetButtonDown("Button A"))
         {
-            // Debug.Log("Button A");
-            this.confirmButton.onClick.Invoke();
+            Debug.Log("Button A");
+            // TorchButton
         }
 
         if (Input.GetButtonDown("Button B"))
@@ -60,7 +83,7 @@ public class PlayerActionManager
         if (Input.GetButtonDown("Button Y"))
         {
             Debug.Log("Button Y");
-            // TorchButton
+            // GranadeButton
         }
 
         if (!axisButtonInUse)
@@ -73,7 +96,9 @@ public class PlayerActionManager
                 case PlayerActionType.Flashlight:
                     yield return this.OnAxisButtonUse_ForDirection();
                     break;
-                case PlayerActionType.Sword:
+                case PlayerActionType.Torch:
+                case PlayerActionType.Granade:
+                case PlayerActionType.Undefined:
                 default:
                     break;
             }
@@ -245,8 +270,6 @@ public class PlayerActionManager
 
     public void ConfirmAction()
     {
-        this.globalCtrl.StartCoroutine(this.ButtonHighlight(this.confirmButton));
-
         this.globalCtrl.NextTurn();
     }
 
@@ -265,6 +288,8 @@ public class PlayerActionManager
             case PlayerActionType.Flashlight:
                 yield return this.UseFlashlightAction();
                 break;
+            case PlayerActionType.Torch:
+            case PlayerActionType.Granade:
             case PlayerActionType.Undefined:
             default:
                 yield return null;
@@ -274,56 +299,54 @@ public class PlayerActionManager
         this.SelectActionType(PlayerActionType.Undefined);
     }
 
-    private IEnumerator ButtonHighlight(Button button)
+    private void DisableActionButton(PlayerActionType playerActionType)
     {
-        ColorBlock colorBlock = button.colors;
-
-        colorBlock.normalColor = new Color(0.5F, 1.0F, 0.5F, 1.0F);
-        button.colors = colorBlock;
-
-        yield return new WaitForSeconds(0.25F);
-
-        colorBlock.normalColor = new Color(1.0F, 1.0F, 1.0F, 1.0F);
-        button.colors = colorBlock;
-    }
-
-    private void ButtonSelectHighlight(Button button, bool selected)
-    {
-        ColorBlock colorBlock = button.colors;
-
-        colorBlock.normalColor = (
-            selected ? new Color(0.5F, 1.0F, 0.5F, 1.0F) : new Color(1.0F, 1.0F, 1.0F, 1.0F)
-        );
-        button.colors = colorBlock;
+        switch (playerActionType)
+        {
+            case PlayerActionType.Walk:
+                this.walkButton.image.sprite = this.walkButtonInactive;
+                this.walkButton.onClick.RemoveAllListeners();
+                this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
+                break;
+            case PlayerActionType.Flashlight:
+                this.flashlightButton.image.sprite = this.flashlightButtonInactive;
+                this.flashlightButton.onClick.RemoveAllListeners();
+                this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
+                break;
+            case PlayerActionType.Undefined:
+            default:
+                break;
+        }
     }
 
     private void SelectActionType(PlayerActionType playerActionType)
     {
         // Debug.Log("Selected Action - " + playerActionType.ToString());
+        PlayerActionType prevAction = this.currentAction;
         this.currentAction = playerActionType;
         Player player = this.globalCtrl.sceneCtrl.player;
 
         // TODO: Shouldn't be used like this
         player.HighlightVisible(true);
 
+        if (prevAction != this.currentAction) {
+            this.DisableActionButton(prevAction);
+        }
+
         switch (playerActionType)
         {
             case PlayerActionType.Walk:
-                this.walkLabel.SetActive(true);
-                this.flashlightLabel.SetActive(false);
-
-                this.ButtonSelectHighlight(this.walkButton, true);
-                this.ButtonSelectHighlight(this.flashlightButton, false);
+                this.walkButton.image.sprite = this.walkButtonActive;
+                this.walkButton.onClick.RemoveAllListeners();
+                this.walkButton.onClick.AddListener(this.ConfirmAction);
 
                 player.HighlightActive(true, true);
 
                 break;
             case PlayerActionType.Flashlight:
-                this.walkLabel.SetActive(false);
-                this.flashlightLabel.SetActive(true);
-
-                this.ButtonSelectHighlight(this.walkButton, false);
-                this.ButtonSelectHighlight(this.flashlightButton, true);
+                this.flashlightButton.image.sprite = this.flashlightButtonActive;
+                this.flashlightButton.onClick.RemoveAllListeners();
+                this.flashlightButton.onClick.AddListener(this.ConfirmAction);
                 
                 player.HighlightActive(false, true);
                 player.HighlightActive(true, false);
@@ -331,12 +354,6 @@ public class PlayerActionManager
                 break;
             case PlayerActionType.Undefined:
             default:
-                this.walkLabel.SetActive(false);
-                this.flashlightLabel.SetActive(false);
-
-                this.ButtonSelectHighlight(this.walkButton, false);
-                this.ButtonSelectHighlight(this.flashlightButton, false);
-                
                 player.HighlightActive(false, true);
                 break;
         }
@@ -348,6 +365,6 @@ public enum PlayerActionType
     Undefined,
     Walk,
     Flashlight,
-    Sword,
-    // Bomb,
+    Torch,
+    Granade,
 }
