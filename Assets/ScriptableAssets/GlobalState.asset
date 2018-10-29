@@ -53,10 +53,12 @@ MonoBehaviour:
     SerializationNodes:
     - Name: objectives
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[ObjectiveId, Assembly-CSharp],[Objective, Assembly-CSharp]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[ObjectiveId, Assembly-CSharp],[Objective,
+        Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ObjectiveId, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ObjectiveId, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -113,10 +115,12 @@ MonoBehaviour:
       Data: 
     - Name: sceneStates
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[SceneType, Assembly-CSharp],[SceneState, Assembly-CSharp]], mscorlib
+      Data: 2|System.Collections.Generic.Dictionary`2[[SceneType, Assembly-CSharp],[SceneState,
+        Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[SceneType, Assembly-CSharp]], mscorlib
+      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[SceneType, Assembly-CSharp]],
+        mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -467,6 +471,24 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: endOfTurnActionState
+      Entry: 7
+      Data: 4|EndOfTurnActionState, Assembly-CSharp
+    - Name: enemyKillConditionState
+      Entry: 7
+      Data: 5|EnemyKillConditionState, Assembly-CSharp
+    - Name: enemiesKilled
+      Entry: 3
+      Data: 0
+    - Name: turnsTillResetLeft
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
       Data: 
     - Name: 
       Entry: 8

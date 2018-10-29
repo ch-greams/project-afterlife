@@ -33,7 +33,11 @@ public class Player
         this.speedParamHash = Animator.StringToHash("Speed");
     }
 
-
+    /// <summary>
+    /// Move player to selected tile and update visible tiles
+    /// </summary>
+    /// <param name="tile">Tile to move player to</param>
+    /// <returns>IEnumerator for Coroutine</returns>
     public IEnumerator MoveToTile(Tile tile)
     {
         HashSet<Point> _playerPoints = this.GetVisiblePoints();
@@ -44,6 +48,11 @@ public class Player
         this.HighlightVisible(false, _playerPoints);
     }
 
+    /// <summary>
+    /// Move player on provided path of tiles
+    /// </summary>
+    /// <param name="path">Path for player to walk on</param>
+    /// <returns>IEnumerator for Coroutine</returns>
     private IEnumerator MoveOnPath(IEnumerable<Tile> path)
     {
         foreach (Tile tile in path)
@@ -150,6 +159,25 @@ public class Player
         foreach (string lightSourceId in sceneCtrl.highlightedTiles.Keys)
         {
             sceneCtrl.UpdateHighlightedTiles(lightSourceId);
+        }
+    }
+
+    /// <summary>
+    /// Calculates list of tiles affected by flashlightRay and kills enemies that exists there
+    /// </summary>
+    /// <param name="selectedPoint">Direction in which flashlightRay will be cast</param>
+    public void UseFlashlight(Point selectedPoint)
+    {
+        Path<Tile> rayPath = this.tile.GetTilesByDirection(selectedPoint, this.flashlightRange);
+        foreach (Tile tile in rayPath)
+        {
+            if (this.globalCtrl.enemyManager.TryDestroyEnemyOnPoint(tile.point))
+            {
+                // TODO: Move to appropriate place
+                this.globalCtrl.globalState.endOfTurnActionState.enemyKillConditionState.IncreaseEnemiesKilled(1);
+                // TODO: Move to appropriate place
+                this.globalCtrl.collectableManager.TrySpawnItem(tile.point, "Healthpack");
+            }
         }
     }
 }

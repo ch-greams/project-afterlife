@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using Sirenix.OdinInspector;
-
+using System.Collections.Generic;
 
 public class GlobalController : SerializedMonoBehaviour
 {
@@ -38,6 +38,10 @@ public class GlobalController : SerializedMonoBehaviour
     [FoldoutGroup("State Management")]
     public CollectableManager collectableManager;
 
+    [FoldoutGroup("State Management")]
+    public EventTriggerManager eventTriggerManager;
+
+
     // TODO: Update this shit
     public SceneController sceneCtrl;
     public bool directionSwitch = false;
@@ -62,6 +66,7 @@ public class GlobalController : SerializedMonoBehaviour
         // State Management
         this.enemyManager.Init(this);
         this.collectableManager.Init(this);
+        this.eventTriggerManager.Init(this);
     }
 
     private IEnumerator Start()
@@ -77,20 +82,35 @@ public class GlobalController : SerializedMonoBehaviour
         }
     }
 
+    // TODO: Move it somewhere more appropriate
     public int turnCount = 0;
 
     public void NextTurn()
     {
-        turnCount++;
+        this.turnCount++;
         base.StartCoroutine(this.NextTurnActions());
     }
 
     private IEnumerator NextTurnActions()
     {
-        yield return this.playerActionManager.OnTurnChange();
-        this.collectableManager.OnTurnChange();
+        List<IWithEndOfTurnAction> managersWithNextTurnAction = new List<IWithEndOfTurnAction>()
+        {
+            this.playerActionManager,
+            this.collectableManager,
+            this.enemyManager
+        };
 
-        yield return this.enemyManager.OnTurnChange();
+        foreach (IWithEndOfTurnAction manager in managersWithNextTurnAction)
+        {
+            yield return manager.OnTurnChange();
+        }
+
+        foreach (EndOfTurnAction endOfTurnAction in this.eventTriggerManager.endOfTurnActions)
+        {
+            if (endOfTurnAction.IsValid()) {
+                yield return endOfTurnAction.React();
+            }
+        }
     }
 
     public void LoadFromState()

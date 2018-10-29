@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 
-public class CollectableManager
+public class CollectableManager : IWithEndOfTurnAction
 {
     public GameObject collectableItemPrefab;
 
     public Dictionary<Point, CollectableItem> collectableItems = new Dictionary<Point, CollectableItem>();
+
+    public List<EndOfTurnAction> endOfTurnActions { get; set; }
+
 
     private GlobalController globalCtrl;
 
@@ -21,9 +23,11 @@ public class CollectableManager
     }
 
 
-    public void OnTurnChange()
+    public IEnumerator OnTurnChange()
     {
         this.TryCollectItem(this.globalCtrl.sceneCtrl.player.tile.point);
+
+        yield return null;
     }
 
     public void TryCollectItem(Point point)

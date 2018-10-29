@@ -1,16 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
-using UnityEngine;
 
 
-public class EnemyManager
+public class EnemyManager : IWithEndOfTurnAction
 {
     [ListDrawerSettings(Expanded = false, DraggableItems = false)]
     public List<Enemy> enemies = new List<Enemy>();
     [ListDrawerSettings(Expanded = false, DraggableItems = false)]
     public List<EnemySpawnPoint> enemySpawnPoints = new List<EnemySpawnPoint>();
 
+    public List<EndOfTurnAction> endOfTurnActions { get; set; }
 
     private GlobalController globalCtrl;
 

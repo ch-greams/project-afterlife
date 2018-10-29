@@ -21,6 +21,8 @@ public class GlobalState : SerializedScriptableObject
     [DictionaryDrawerSettings]
     public Dictionary<SceneType, SceneState> sceneStates = new Dictionary<SceneType, SceneState>();
 
+    public EndOfTurnActionState endOfTurnActionState;
+
 
     public void LoadFromSerializable(GlobalStateSerializable serializedGlobalState)
     {

@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PlayerActionManager
+public class PlayerActionManager : IWithEndOfTurnAction
 {
     [BoxGroup("[B] Walk Button")]
     public Button walkButton;
@@ -37,10 +37,9 @@ public class PlayerActionManager
     public Sprite granadeButtonInactive;
 
 
-    public Button confirmButton;
-
     public PlayerActionType currentAction;
 
+    public List<EndOfTurnAction> endOfTurnActions { get; set; }
 
     private GlobalController globalCtrl;
     private Tile selectedTile;
@@ -243,26 +242,16 @@ public class PlayerActionManager
         }
     }
 
+
     // TODO: Make this prettier
     private IEnumerator UseFlashlightAction()
     {
-        // Debug.Log("Flashlight use confirmed");
-
         Player player = this.globalCtrl.sceneCtrl.player;
-        EnemyManager enemyManager = this.globalCtrl.enemyManager;
 
         player.characterTransform.LookAt(this.selectedTile.obj.transform.position);
         player.flashlightRay.SetActive(true);
 
-        Path<Tile> rayPath = player.tile.GetTilesByDirection(this.selectedTile.point, player.flashlightRange);
-        foreach (Tile tile in rayPath)
-        {
-            if (enemyManager.TryDestroyEnemyOnPoint(tile.point))
-            {
-                // TODO: Move to appropriate place
-                this.globalCtrl.collectableManager.TrySpawnItem(tile.point, "Healthpack");
-            }
-        }
+        player.UseFlashlight(this.selectedTile.point);
 
         yield return this.FLASHLIGHT_TIMEOUT;
         player.flashlightRay.SetActive(false);

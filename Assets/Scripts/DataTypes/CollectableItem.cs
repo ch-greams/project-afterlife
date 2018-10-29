@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CollectableItem
 {
+    // TODO: Add necessary values to the state
     public CollectableItemType type;
     public string name;
     public GameObject obj;

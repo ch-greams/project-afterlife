@@ -14,19 +14,19 @@ public class Interactable : SerializedMonoBehaviour, IPointerClickHandler, IPoin
     
     [FoldoutGroup("Interactable Config", expanded: false)]
     [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
-    public List<Action> initializeActions = new List<Action>();
+    public List<InteractableAction> initializeActions = new List<InteractableAction>();
 
     [FoldoutGroup("Interactable Config", expanded: false)]
     [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
-    public List<Action> leftClickActions = new List<Action>();
+    public List<InteractableAction> leftClickActions = new List<InteractableAction>();
 
     [FoldoutGroup("Interactable Config", expanded: false)]
     [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
-    public List<Action> hoverStartActions = new List<Action>();
+    public List<InteractableAction> hoverStartActions = new List<InteractableAction>();
 
     [FoldoutGroup("Interactable Config", expanded: false)]
     [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
-    public List<Action> hoverEndActions = new List<Action>();
+    public List<InteractableAction> hoverEndActions = new List<InteractableAction>();
 
 
     private void Awake()
@@ -79,9 +79,9 @@ public class Interactable : SerializedMonoBehaviour, IPointerClickHandler, IPoin
         yield return this.TriggerValidAction(this.hoverEndActions);
     }
 
-    private IEnumerator TriggerValidAction(List<Action> actions)
+    private IEnumerator TriggerValidAction(List<InteractableAction> actions)
     {
-        Action action = actions.Find(a => a.IsValid());
+        InteractableAction action = actions.Find(a => a.IsValid());
 
         if (action != null)
         {
