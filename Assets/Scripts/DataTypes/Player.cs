@@ -180,4 +180,9 @@ public class Player
             }
         }
     }
+
+    public void TryCollectItem()
+    {
+        this.globalCtrl.collectableManager.TryCollectItem(this.tile.point);
+    }
 }

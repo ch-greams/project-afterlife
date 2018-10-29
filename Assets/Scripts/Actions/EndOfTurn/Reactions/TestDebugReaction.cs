@@ -8,9 +8,9 @@ public class TestDebugReaction : IEndOfTurnReaction
     private EnemyKillConditionState enemyKillConditionState;
 
 
-    public void Init(EndOfTurnActionState endOfTurnActionState)
+    public void Init(GlobalController globalCtrl)
     {
-        this.enemyKillConditionState = endOfTurnActionState.enemyKillConditionState;
+        this.enemyKillConditionState = globalCtrl.globalState.endOfTurnActionState.enemyKillConditionState;
     }
 
     public IEnumerator React()

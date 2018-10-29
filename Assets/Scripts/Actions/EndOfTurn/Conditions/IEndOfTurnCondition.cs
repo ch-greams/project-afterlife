@@ -2,6 +2,6 @@
 
 public interface IEndOfTurnCondition
 {
-    void Init(EndOfTurnActionState endOfTurnActionState);
+    void Init(GlobalController globalCtrl);
     bool IsValid();
 }

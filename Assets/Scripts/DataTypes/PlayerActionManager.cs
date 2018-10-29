@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PlayerActionManager : IWithEndOfTurnAction
+public class PlayerActionManager : IManagerWithEndOfTurnActions
 {
     [BoxGroup("[B] Walk Button")]
     public Button walkButton;
@@ -39,7 +39,8 @@ public class PlayerActionManager : IWithEndOfTurnAction
 
     public PlayerActionType currentAction;
 
-    public List<EndOfTurnAction> endOfTurnActions { get; set; }
+    public List<EndOfTurnAction> endOfTurnActions { get { return this._endOfTurnActions; } }
+    public List<EndOfTurnAction> _endOfTurnActions = new List<EndOfTurnAction>();
 
     private GlobalController globalCtrl;
     private Tile selectedTile;
@@ -56,6 +57,11 @@ public class PlayerActionManager : IWithEndOfTurnAction
 
         this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
         this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
+
+        foreach (EndOfTurnAction endOfTurnAction in this.endOfTurnActions)
+        {
+            endOfTurnAction.Init(this.globalCtrl);   
+        }
     }
 
 
@@ -262,12 +268,7 @@ public class PlayerActionManager : IWithEndOfTurnAction
         this.globalCtrl.NextTurn();
     }
 
-    public IEnumerator OnTurnChange()
-    {
-        yield return this.TriggerSelectedAction();
-    }
-
-    private IEnumerator TriggerSelectedAction()
+    public IEnumerator TriggerSelectedAction()
     {
         switch (this.currentAction)
         {

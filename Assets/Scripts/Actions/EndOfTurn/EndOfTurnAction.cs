@@ -18,10 +18,10 @@ public class EndOfTurnAction
 
     public EndOfTurnAction() { }
 
-    public void Init(EndOfTurnActionState endOfTurnActionState)
+    public void Init(GlobalController globalCtrl)
     {
-        this.conditions.ForEach(condition => condition.Init(endOfTurnActionState));
-        this.reactions.ForEach(reaction => reaction.Init(endOfTurnActionState));
+        this.conditions.ForEach(condition => condition.Init(globalCtrl));
+        this.reactions.ForEach(reaction => reaction.Init(globalCtrl));
     }
 
     public bool IsValid()
@@ -34,6 +34,16 @@ public class EndOfTurnAction
         foreach (IEndOfTurnReaction reaction in this.reactions)
         {
             yield return reaction.React();
+        }
+    }
+
+    public static IEnumerator ReactOnValidActions(IManagerWithEndOfTurnActions manager)
+    {
+        foreach (EndOfTurnAction endOfTurnAction in manager.endOfTurnActions)
+        {
+            if (endOfTurnAction.IsValid()) {
+                yield return endOfTurnAction.React();
+            }
         }
     }
 }

@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 
-public class CollectableManager : IWithEndOfTurnAction
+public class CollectableManager : IManagerWithEndOfTurnActions
 {
     public GameObject collectableItemPrefab;
 
     public Dictionary<Point, CollectableItem> collectableItems = new Dictionary<Point, CollectableItem>();
 
-    public List<EndOfTurnAction> endOfTurnActions { get; set; }
+    public List<EndOfTurnAction> endOfTurnActions { get { return this._endOfTurnActions; } }
+    public List<EndOfTurnAction> _endOfTurnActions = new List<EndOfTurnAction>();
 
 
     private GlobalController globalCtrl;
@@ -19,16 +19,14 @@ public class CollectableManager : IWithEndOfTurnAction
     {
         this.globalCtrl = globalCtrl;
 
+        foreach (EndOfTurnAction endOfTurnAction in this.endOfTurnActions)
+        {
+            endOfTurnAction.Init(this.globalCtrl);   
+        }
+
         // TODO: Load from sceneState
     }
 
-
-    public IEnumerator OnTurnChange()
-    {
-        this.TryCollectItem(this.globalCtrl.sceneCtrl.player.tile.point);
-
-        yield return null;
-    }
 
     public void TryCollectItem(Point point)
     {

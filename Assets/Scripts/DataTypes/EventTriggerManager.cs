@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 
 // NOTE: Proc(?) trigger manager
-public class EventTriggerManager : IWithEndOfTurnAction
+public class EventTriggerManager : IManagerWithEndOfTurnActions
 {
     public List<EndOfTurnAction> endOfTurnActions { get { return this._endOfTurnActions; } }
     public List<EndOfTurnAction> _endOfTurnActions = new List<EndOfTurnAction>();
@@ -17,12 +16,7 @@ public class EventTriggerManager : IWithEndOfTurnAction
 
         foreach (EndOfTurnAction endOfTurnAction in this.endOfTurnActions)
         {
-            endOfTurnAction.Init(this.globalCtrl.globalState.endOfTurnActionState);   
+            endOfTurnAction.Init(this.globalCtrl);   
         }
-    }
-
-    public IEnumerator OnTurnChange()
-    {
-        yield return null;
     }
 }

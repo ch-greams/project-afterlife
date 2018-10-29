@@ -3,6 +3,6 @@
 
 public interface IEndOfTurnReaction
 {
-    void Init(EndOfTurnActionState endOfTurnActionState);
+    void Init(GlobalController globalCtrl);
     IEnumerator React();
 }

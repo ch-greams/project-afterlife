@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
 
-public class EnemyManager : IWithEndOfTurnAction
+public class EnemyManager : IManagerWithEndOfTurnActions
 {
     [ListDrawerSettings(Expanded = false, DraggableItems = false)]
     public List<Enemy> enemies = new List<Enemy>();
     [ListDrawerSettings(Expanded = false, DraggableItems = false)]
     public List<EnemySpawnPoint> enemySpawnPoints = new List<EnemySpawnPoint>();
 
-    public List<EndOfTurnAction> endOfTurnActions { get; set; }
+    public List<EndOfTurnAction> endOfTurnActions { get { return this._endOfTurnActions; } }
+    public List<EndOfTurnAction> _endOfTurnActions = new List<EndOfTurnAction>();
 
     private GlobalController globalCtrl;
 
@@ -19,17 +20,16 @@ public class EnemyManager : IWithEndOfTurnAction
     {
         this.globalCtrl = globalCtrl;
 
+        foreach (EndOfTurnAction endOfTurnAction in this.endOfTurnActions)
+        {
+            endOfTurnAction.Init(this.globalCtrl);   
+        }
+
         // TODO: Load from sceneState
     }
 
-    public IEnumerator OnTurnChange()
-    {
-        yield return this.MoveEnemies();
 
-        this.SpawnEnemies();
-    }
-
-    private void SpawnEnemies()
+    public void SpawnEnemies()
     {
         foreach (EnemySpawnPoint esp in this.enemySpawnPoints)
         {
@@ -42,7 +42,7 @@ public class EnemyManager : IWithEndOfTurnAction
         }
     }
 
-    private IEnumerator MoveEnemies()
+    public IEnumerator MoveEnemies()
     {
         this.enemies.FindAll(this.EnemyInSight).ForEach((enemy) => { enemy.isLockedOnPlayer = true; });
 

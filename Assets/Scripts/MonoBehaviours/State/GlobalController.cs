@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using Sirenix.OdinInspector;
-using System.Collections.Generic;
+
 
 public class GlobalController : SerializedMonoBehaviour
 {
@@ -93,24 +93,17 @@ public class GlobalController : SerializedMonoBehaviour
 
     private IEnumerator NextTurnActions()
     {
-        List<IWithEndOfTurnAction> managersWithNextTurnAction = new List<IWithEndOfTurnAction>()
-        {
-            this.playerActionManager,
-            this.collectableManager,
-            this.enemyManager
-        };
+        Debug.Log("Lock Player Controls");
 
-        foreach (IWithEndOfTurnAction manager in managersWithNextTurnAction)
-        {
-            yield return manager.OnTurnChange();
-        }
+        yield return EndOfTurnAction.ReactOnValidActions(this.playerActionManager);
 
-        foreach (EndOfTurnAction endOfTurnAction in this.eventTriggerManager.endOfTurnActions)
-        {
-            if (endOfTurnAction.IsValid()) {
-                yield return endOfTurnAction.React();
-            }
-        }
+        yield return EndOfTurnAction.ReactOnValidActions(this.collectableManager);
+
+        yield return EndOfTurnAction.ReactOnValidActions(this.enemyManager);
+
+        yield return EndOfTurnAction.ReactOnValidActions(this.eventTriggerManager);
+
+        Debug.Log("Unlock Player Controls");
     }
 
     public void LoadFromState()
