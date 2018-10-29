@@ -8,32 +8,44 @@ using UnityEngine.UI;
 
 public class PlayerActionManager : IManagerWithEndOfTurnActions
 {
-    [BoxGroup("[B] Walk Button")]
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[B] Walk Button")]
     public Button walkButton;
-    [BoxGroup("[B] Walk Button")]
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[B] Walk Button")]
     public Sprite walkButtonActive;
-    [BoxGroup("[B] Walk Button")]
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[B] Walk Button")]
     public Sprite walkButtonInactive;
 
-    [BoxGroup("[X] Flashlight Button")]
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[X] Flashlight Button")]
     public Button flashlightButton;
-    [BoxGroup("[X] Flashlight Button")]
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[X] Flashlight Button")]
     public Sprite flashlightButtonActive;
-    [BoxGroup("[X] Flashlight Button")]
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[X] Flashlight Button")]
     public Sprite flashlightButtonInactive;
 
-    [BoxGroup("[A] Torch Button")]
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[A] Torch Button")]
     public Button torchButton;
-    [BoxGroup("[A] Torch Button")]
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[A] Torch Button")]
     public Sprite torchButtonActive;
-    [BoxGroup("[A] Torch Button")]
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[A] Torch Button")]
     public Sprite torchButtonInactive;
 
-    [BoxGroup("[Y] Granade Button")]
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[Y] Granade Button")]
     public Button granadeButton;
-    [BoxGroup("[Y] Granade Button")]
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[Y] Granade Button")]
     public Sprite granadeButtonActive;
-    [BoxGroup("[Y] Granade Button")]
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[Y] Granade Button")]
     public Sprite granadeButtonInactive;
 
 

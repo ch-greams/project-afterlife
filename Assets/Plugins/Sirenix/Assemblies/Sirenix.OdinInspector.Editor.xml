@@ -3574,6 +3574,41 @@
             Populates the generic menu for the property.
             </summary>
         </member>
+        <member name="T:Sirenix.OdinInspector.Editor.Examples.AttributeExampleInfo">
+            <summary>
+            Descripes an attribute example.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.Editor.Examples.AttributeExampleInfo.ExampleType">
+            <summary>
+            The type of the example object.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.Editor.Examples.AttributeExampleInfo.Name">
+            <summary>
+            The name of the example.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.Editor.Examples.AttributeExampleInfo.Description">
+            <summary>
+            The description of the example.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.Editor.Examples.AttributeExampleInfo.Code">
+            <summary>
+            Raw code of the example.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.Editor.Examples.AttributeExampleInfo.PreviewObject">
+            <summary>
+            Preview object of the example.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.Editor.Examples.AttributeExampleInfo.Order">
+            <summary>
+            Sorting value of the example. Examples with lower order values should come before examples with higher order values.
+            </summary>
+        </member>
         <member name="T:Sirenix.OdinInspector.Editor.AttributeListExtensions">
             <summary>
             Extension method for List&lt;Attribute&gt;
@@ -9394,6 +9429,11 @@
             Represents a property in the inspector, and provides the hub for all functionality related to that property.
             </summary>
         </member>
+        <member name="P:Sirenix.OdinInspector.Editor.InspectorProperty.SerializationRoot">
+            <summary>
+            Gets the property which is the ultimate root of this property's serialization.
+            </summary>
+        </member>
         <member name="P:Sirenix.OdinInspector.Editor.InspectorProperty.Name">
             <summary>
             The name of the property.
@@ -9815,7 +9855,7 @@
         </member>
         <member name="M:Sirenix.OdinInspector.Editor.PropertyTree.ApplyChanges">
             <summary>
-            Applies all changes made with properties to the inspected target tree values.
+            Applies all changes made with properties to the inspected target tree values, and marks all changed Unity objects dirty.
             </summary>
             <returns>true if any values were changed, otherwise false</returns>
         </member>
