@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
 
-public class EnemyManager : IManagerWithEndOfTurnActions
+public class EnemyManager
 {
     [ListDrawerSettings(Expanded = false, DraggableItems = false)]
     public List<Enemy> enemies = new List<Enemy>();
     [ListDrawerSettings(Expanded = false, DraggableItems = false)]
     public List<EnemySpawnPoint> enemySpawnPoints = new List<EnemySpawnPoint>();
-
-    public List<EndOfTurnAction> endOfTurnActions { get { return this._endOfTurnActions; } }
-    public List<EndOfTurnAction> _endOfTurnActions = new List<EndOfTurnAction>();
 
     private GlobalController globalCtrl;
 
@@ -19,11 +16,6 @@ public class EnemyManager : IManagerWithEndOfTurnActions
     public void Init(GlobalController globalCtrl)
     {
         this.globalCtrl = globalCtrl;
-
-        foreach (EndOfTurnAction endOfTurnAction in this.endOfTurnActions)
-        {
-            endOfTurnAction.Init(this.globalCtrl);   
-        }
 
         // TODO: Load from sceneState
     }

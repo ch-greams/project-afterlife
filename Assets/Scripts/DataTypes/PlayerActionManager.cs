@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PlayerActionManager : IManagerWithEndOfTurnActions
+public class PlayerActionManager
 {
     [FoldoutGroup("Button Configuration")]
     [BoxGroup("Button Configuration/[B] Walk Button")]
@@ -17,6 +16,16 @@ public class PlayerActionManager : IManagerWithEndOfTurnActions
     [FoldoutGroup("Button Configuration")]
     [BoxGroup("Button Configuration/[B] Walk Button")]
     public Sprite walkButtonInactive;
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[B] Walk Button")]
+    public Image walkButtonProc;
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[B] Walk Button")]
+    public Sprite walkButtonProcActive;
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[B] Walk Button")]
+    public Sprite walkButtonProcInactive;
+
 
     [FoldoutGroup("Button Configuration")]
     [BoxGroup("Button Configuration/[X] Flashlight Button")]
@@ -51,9 +60,6 @@ public class PlayerActionManager : IManagerWithEndOfTurnActions
 
     public PlayerActionType currentAction;
 
-    public List<EndOfTurnAction> endOfTurnActions { get { return this._endOfTurnActions; } }
-    public List<EndOfTurnAction> _endOfTurnActions = new List<EndOfTurnAction>();
-
     private GlobalController globalCtrl;
     private Tile selectedTile;
     private bool axisButtonInUse = false;
@@ -69,11 +75,6 @@ public class PlayerActionManager : IManagerWithEndOfTurnActions
 
         this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
         this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
-
-        foreach (EndOfTurnAction endOfTurnAction in this.endOfTurnActions)
-        {
-            endOfTurnAction.Init(this.globalCtrl);   
-        }
     }
 
 

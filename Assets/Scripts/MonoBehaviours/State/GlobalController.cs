@@ -38,11 +38,9 @@ public class GlobalController : SerializedMonoBehaviour
     [FoldoutGroup("State Management")]
     public CollectableManager collectableManager;
 
-    [FoldoutGroup("State Management")]
-    public EventTriggerManager eventTriggerManager;
-
 
     // TODO: Update this shit
+    public EndOfTurnActionManager endOfTurnActionManager;
     public SceneController sceneCtrl;
     public bool directionSwitch = false;
     public bool directionVerticalSignSwitch = false;
@@ -66,7 +64,8 @@ public class GlobalController : SerializedMonoBehaviour
         // State Management
         this.enemyManager.Init(this);
         this.collectableManager.Init(this);
-        this.eventTriggerManager.Init(this);
+        // Other
+        this.endOfTurnActionManager.Init(this);
     }
 
     private IEnumerator Start()
@@ -88,22 +87,7 @@ public class GlobalController : SerializedMonoBehaviour
     public void NextTurn()
     {
         this.turnCount++;
-        base.StartCoroutine(this.NextTurnActions());
-    }
-
-    private IEnumerator NextTurnActions()
-    {
-        Debug.Log("Lock Player Controls");
-
-        yield return EndOfTurnAction.ReactOnValidActions(this.playerActionManager);
-
-        yield return EndOfTurnAction.ReactOnValidActions(this.collectableManager);
-
-        yield return EndOfTurnAction.ReactOnValidActions(this.enemyManager);
-
-        yield return EndOfTurnAction.ReactOnValidActions(this.eventTriggerManager);
-
-        Debug.Log("Unlock Player Controls");
+        base.StartCoroutine(this.endOfTurnActionManager.ReactOnValidActions());
     }
 
     public void LoadFromState()

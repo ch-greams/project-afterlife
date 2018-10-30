@@ -2,14 +2,11 @@
 using UnityEngine;
 
 
-public class CollectableManager : IManagerWithEndOfTurnActions
+public class CollectableManager
 {
     public GameObject collectableItemPrefab;
 
     public Dictionary<Point, CollectableItem> collectableItems = new Dictionary<Point, CollectableItem>();
-
-    public List<EndOfTurnAction> endOfTurnActions { get { return this._endOfTurnActions; } }
-    public List<EndOfTurnAction> _endOfTurnActions = new List<EndOfTurnAction>();
 
 
     private GlobalController globalCtrl;
@@ -18,11 +15,6 @@ public class CollectableManager : IManagerWithEndOfTurnActions
     public void Init(GlobalController globalCtrl)
     {
         this.globalCtrl = globalCtrl;
-
-        foreach (EndOfTurnAction endOfTurnAction in this.endOfTurnActions)
-        {
-            endOfTurnAction.Init(this.globalCtrl);   
-        }
 
         // TODO: Load from sceneState
     }

@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
 
-public class EndOfTurnAction
+public class EndOfTurnAction : IComparable<EndOfTurnAction>
 {
     public string name;
+    public int index;
 
     [GUIColor(0.85F, 1F, 1F, 1F)]
     [ListDrawerSettings(Expanded = false, DraggableItems = false)]
@@ -37,13 +39,8 @@ public class EndOfTurnAction
         }
     }
 
-    public static IEnumerator ReactOnValidActions(IManagerWithEndOfTurnActions manager)
+    public int CompareTo(EndOfTurnAction other)
     {
-        foreach (EndOfTurnAction endOfTurnAction in manager.endOfTurnActions)
-        {
-            if (endOfTurnAction.IsValid()) {
-                yield return endOfTurnAction.React();
-            }
-        }
+        return this.index - other.index;
     }
 }

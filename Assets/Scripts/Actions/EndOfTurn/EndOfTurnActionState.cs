@@ -4,10 +4,21 @@ public class EndOfTurnActionState
 {
     public EnemyKillConditionState enemyKillConditionState;
 
+    public bool isDoubleKillProcActive = false;
+
 
     public EndOfTurnActionState()
     {
         this.enemyKillConditionState = new EnemyKillConditionState();
+
+        this.isDoubleKillProcActive = false;
+    }
+
+
+    public bool SetIsDoubleKillProcActive(bool active)
+    {
+        this.isDoubleKillProcActive = active;
+        return this.isDoubleKillProcActive;
     }
 }
 
