@@ -123,6 +123,37 @@ public class PlayerActionManager
         }
     }
 
+    public void ConfirmAction()
+    {
+        this.globalCtrl.NextTurn();
+    }
+
+    public IEnumerator TriggerSelectedAction()
+    {
+        switch (this.currentAction)
+        {
+            case PlayerActionType.Walk:
+                yield return this.WalkAction();
+                break;
+            case PlayerActionType.Flashlight:
+                yield return this.UseFlashlightAction();
+                break;
+            case PlayerActionType.Torch:
+            case PlayerActionType.Granade:
+            case PlayerActionType.Undefined:
+            default:
+                yield return null;
+                break;
+        }
+    
+        this.SelectActionType(PlayerActionType.Undefined);
+    }
+
+    public void SwitchWalkProcEffect(bool active)
+    {
+        this.walkButtonProc.gameObject.SetActive(active);
+    }
+
 
     private TileDirection GetDirectionFromAxis(string horizontalButton, string verticalButton)
     {
@@ -261,7 +292,6 @@ public class PlayerActionManager
         }
     }
 
-
     // TODO: Make this prettier
     private IEnumerator UseFlashlightAction()
     {
@@ -276,38 +306,13 @@ public class PlayerActionManager
         player.flashlightRay.SetActive(false);
     }
 
-    public void ConfirmAction()
-    {
-        this.globalCtrl.NextTurn();
-    }
-
-    public IEnumerator TriggerSelectedAction()
-    {
-        switch (this.currentAction)
-        {
-            case PlayerActionType.Walk:
-                yield return this.WalkAction();
-                break;
-            case PlayerActionType.Flashlight:
-                yield return this.UseFlashlightAction();
-                break;
-            case PlayerActionType.Torch:
-            case PlayerActionType.Granade:
-            case PlayerActionType.Undefined:
-            default:
-                yield return null;
-                break;
-        }
-    
-        this.SelectActionType(PlayerActionType.Undefined);
-    }
-
     private void DisableActionButton(PlayerActionType playerActionType)
     {
         switch (playerActionType)
         {
             case PlayerActionType.Walk:
                 this.walkButton.image.sprite = this.walkButtonInactive;
+                this.walkButtonProc.sprite = this.walkButtonProcInactive;
                 this.walkButton.onClick.RemoveAllListeners();
                 this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
                 break;
@@ -340,6 +345,7 @@ public class PlayerActionManager
         {
             case PlayerActionType.Walk:
                 this.walkButton.image.sprite = this.walkButtonActive;
+                this.walkButtonProc.sprite = this.walkButtonProcActive;
                 this.walkButton.onClick.RemoveAllListeners();
                 this.walkButton.onClick.AddListener(this.ConfirmAction);
 

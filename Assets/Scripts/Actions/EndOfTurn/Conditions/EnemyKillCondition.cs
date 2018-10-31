@@ -4,7 +4,6 @@ public class EnemyKillCondition : IEndOfTurnCondition
 {
     public EnemyKillConditionType type = EnemyKillConditionType.Undefined;
 
-    public const int TURNS_TILL_RESET = 2;
     public const int KILL_AMOUNT_FOR_PROC = 2;
 
     private EnemyKillConditionState enemyKillConditionState;

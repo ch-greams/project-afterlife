@@ -4,23 +4,28 @@
 public class DoubleKillProcReaction : IEndOfTurnReaction
 {
     public DoubleKillProcReactionType type = DoubleKillProcReactionType.Undefined;
-    private EndOfTurnActionState endOfTurnActionState;
+    private GlobalController globalCtrl;
 
 
     public void Init(GlobalController globalCtrl)
     {
-        this.endOfTurnActionState = globalCtrl.globalState.endOfTurnActionState;
+        this.globalCtrl = globalCtrl;
     }
 
     public IEnumerator React()
     {
+        EndOfTurnActionState endOfTurnActionState = this.globalCtrl.globalState.endOfTurnActionState;
+        PlayerActionManager playerActionManager = this.globalCtrl.playerActionManager;
+
         switch (this.type)
         {
             case DoubleKillProcReactionType.Active:
-                this.endOfTurnActionState.SetIsDoubleKillProcActive(true);
+                endOfTurnActionState.SetIsDoubleKillProcActive(true);
+                playerActionManager.SwitchWalkProcEffect(true);
                 break;
             case DoubleKillProcReactionType.Inactive:
-                this.endOfTurnActionState.SetIsDoubleKillProcActive(false);
+                endOfTurnActionState.SetIsDoubleKillProcActive(false);
+                playerActionManager.SwitchWalkProcEffect(false);
                 break;
             case DoubleKillProcReactionType.Undefined:
             default:

@@ -5,7 +5,7 @@ public class EnemyKillStateReaction : IEndOfTurnReaction
 {
     public EnemyKillStateReactionType type = EnemyKillStateReactionType.Undefined;
 
-    public const int TURNS_TILL_RESET = 2;
+    public const int TURNS_TILL_RESET = 1;
 
     private EnemyKillConditionState enemyKillConditionState;
 

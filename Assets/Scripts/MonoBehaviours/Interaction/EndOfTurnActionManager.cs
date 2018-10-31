@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class EndOfTurnActionManager : SerializedMonoBehaviour
 {
-    [ListDrawerSettings(ShowIndexLabels = true, ListElementLabelName = "name", OnTitleBarGUI = "DrawRefreshButton", NumberOfItemsPerPage = 5)]
+    [ListDrawerSettings(
+        Expanded = false, NumberOfItemsPerPage = 5, OnTitleBarGUI = "DrawRefreshButton",
+        OnBeginListElementGUI = "BeginDrawListElement", OnEndListElementGUI = "EndDrawListElement"
+    )]
     public List<EndOfTurnAction> endOfTurnActions = new List<EndOfTurnAction>();
 
 
@@ -21,7 +24,7 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
 
     public IEnumerator ReactOnValidActions()
     {
-        Debug.Log("Lock Player Controls");
+        // Debug.Log("Lock Player Controls");
 
         foreach (EndOfTurnAction endOfTurnAction in this.endOfTurnActions)
         {
@@ -30,7 +33,7 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
             }
         }
 
-        Debug.Log("Unlock Player Controls");
+        // Debug.Log("Unlock Player Controls");
     }
 
 
@@ -45,5 +48,21 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
                 endOfTurnActions[i].index = i;
             }
         }
+    }
+
+    private void BeginDrawListElement(int index)
+    {
+        EndOfTurnAction action = this.endOfTurnActions[index];
+        string title = (
+            index == action.index
+                ? string.Format("{0} - {1}", index, action.name)
+                : string.Format("{0} -> {1} - {2}", index, action.index, action.name)
+        );
+        SirenixEditorGUI.BeginBox(title);
+    }
+
+    private void EndDrawListElement(int index)
+    {
+        SirenixEditorGUI.EndBox();
     }
 }
