@@ -77,7 +77,7 @@ public class GlobalController : SerializedMonoBehaviour
     {
         if (!SceneManager.sceneLoadingInProgress)
         {
-            base.StartCoroutine(this.playerActionManager.InputListener());
+            this.playerActionManager.InputListener();
         }
     }
 

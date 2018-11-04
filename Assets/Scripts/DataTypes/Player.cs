@@ -12,10 +12,14 @@ public class Player
     public Transform playerTransform;
     public Transform characterTransform;
     public GameObject flashlightRay;
+    public GameObject tileSelector;
     public Animator characterAnimator;
     public Tile tile;
     public float visibleRange = 2.5F;
     public float flashlightRange = 5.0F;
+
+    // TODO: Clean up this
+    public Dictionary<Vector3, Tile> activeTiles = new Dictionary<Vector3, Tile>();
 
     private GlobalController globalCtrl;
     private int speedParamHash;
@@ -149,6 +153,8 @@ public class Player
                 : _playerPoints
         );
         List<Tile> playerTiles = sceneCtrl.tiles.FindAll((t) => playerPoints.Contains(t.point));
+
+        this.activeTiles = playerTiles.ToDictionary(tile => tile.obj.transform.position);
 
         foreach (Tile tile in playerTiles)
         {

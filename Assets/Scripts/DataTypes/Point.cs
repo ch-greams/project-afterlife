@@ -23,12 +23,10 @@ public struct Point : IComparable<Point>
     /// <summary>
     /// Create point based on Vector3 coordinates
     /// </summary>
-    public Point(Vector3 worldCoord, float tileSize)
+    public Point(Vector3 pointCoordinates, Vector3 zeroPointCoordinates)
     {
-        Vector3 initPos = new Vector3(0, 0, 0);
-
-        this.x = Mathf.RoundToInt((worldCoord.x - initPos.x) / tileSize - 0.5f);
-        this.y = Mathf.RoundToInt((worldCoord.z - initPos.z) / tileSize - 0.5f);
+        this.x = Mathf.FloorToInt(pointCoordinates.x - zeroPointCoordinates.x);
+        this.y = Mathf.FloorToInt(pointCoordinates.z - zeroPointCoordinates.z);
     }
 
     public Point(string point)

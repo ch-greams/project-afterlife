@@ -1,5 +1,6 @@
-﻿using System;
+﻿using System.Linq;
 using System.Collections;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -57,12 +58,13 @@ public class PlayerActionManager
     [BoxGroup("Button Configuration/[Y] Granade Button")]
     public Sprite granadeButtonInactive;
 
-
     public PlayerActionType currentAction;
+
+    public float moveSpeed = 5;
+
 
     private GlobalController globalCtrl;
     private Tile selectedTile;
-    private bool axisButtonInUse = false;
     private WaitForSeconds FLASHLIGHT_TIMEOUT;
     private WaitForSeconds SELECT_TILE_TIMEOUT;
 
@@ -78,7 +80,7 @@ public class PlayerActionManager
     }
 
 
-    public IEnumerator InputListener()
+    public void InputListener()
     {
         if (Input.GetButtonDown("Button A"))
         {
@@ -104,22 +106,17 @@ public class PlayerActionManager
             // GranadeButton
         }
 
-        if (!axisButtonInUse)
+        switch (this.currentAction)
         {
-            switch (this.currentAction)
-            {
-                case PlayerActionType.Walk:
-                    yield return this.OnAxisButtonUse_ForWalk();
-                    break;
-                case PlayerActionType.Flashlight:
-                    yield return this.OnAxisButtonUse_ForDirection();
-                    break;
-                case PlayerActionType.Torch:
-                case PlayerActionType.Granade:
-                case PlayerActionType.Undefined:
-                default:
-                    break;
-            }
+            case PlayerActionType.Walk:
+            case PlayerActionType.Flashlight:
+                this.TryMoveTileSelector("Left Stick Horizontal", "Left Stick Vertical");
+                break;
+            case PlayerActionType.Torch:
+            case PlayerActionType.Granade:
+            case PlayerActionType.Undefined:
+            default:
+                break;
         }
     }
 
@@ -155,10 +152,26 @@ public class PlayerActionManager
     }
 
 
-    private TileDirection GetDirectionFromAxis(string horizontalButton, string verticalButton)
+    private void MoveTileSelector(Vector3 translation)
     {
-        const float BUFFER = 0.2F;
-        
+        Player player = this.globalCtrl.sceneCtrl.player;
+        Vector3 target = player.tileSelector.transform.position + translation;
+
+        player.tileSelector.transform.Translate(translation, Space.World);
+
+        if ((player.activeTiles != null) && (player.activeTiles.Count > 0))
+        {
+            List<Vector3> positions = player.activeTiles.Keys.ToList();
+            positions.Sort((pos1, pos2) => Vector3.Distance(target, pos1).CompareTo(Vector3.Distance(target, pos2)));
+
+            Tile closestTile = player.activeTiles[positions.First()];
+
+            this.SelectNextTile(closestTile);
+        }
+    }
+
+    private void TryMoveTileSelector(string horizontalButton, string verticalButton)
+    {
         float axisHorizontal = (
             this.globalCtrl.directionSwitch ? Input.GetAxis(verticalButton) : Input.GetAxis(horizontalButton)
         );     
@@ -173,56 +186,17 @@ public class PlayerActionManager
             axisVertical *= -1;
         }
 
+        Vector3 direction = new Vector3(axisVertical, 0, axisHorizontal);
+        Vector3 translation = direction * this.moveSpeed * Time.deltaTime;
 
-        if (axisHorizontal > BUFFER)
+        if (translation != Vector3.zero)
         {
-            if (axisVertical > BUFFER)
-            {
-                return TileDirection.UpRight;
-            }
-            else if (axisVertical < (-1 * BUFFER))
-            {
-                return TileDirection.DownRight;
-            }
-            else
-            {
-                return TileDirection.Right;
-            }
-        }
-        else if (axisHorizontal < (-1 * BUFFER))
-        {
-            if (axisVertical > BUFFER)
-            {
-                return TileDirection.UpLeft;
-            }
-            else if (axisVertical < (-1 * BUFFER))
-            {
-                return TileDirection.DownLeft;
-            }
-            else
-            {
-                return TileDirection.Left;
-            }
-        }
-        else
-        {
-            if (axisVertical > BUFFER)
-            {
-                return TileDirection.Up;
-            }
-            else if (axisVertical < (-1 * BUFFER))
-            {
-                return TileDirection.Down;
-            }
-            else
-            {
-                return TileDirection.Undefined;
-            }
+            this.MoveTileSelector(translation);
         }
     }
 
     // TODO: Add animation
-    private IEnumerator SelectNextTile(Tile nextTile)
+    private void SelectNextTile(Tile nextTile)
     {
         if (nextTile)
         {
@@ -240,49 +214,9 @@ public class PlayerActionManager
                 this.selectedTile.isVisible, this.selectedTile.isBlocked,
                 this.selectedTile.isActive, true
             );
-
-            this.axisButtonInUse = true;
-            yield return this.SELECT_TILE_TIMEOUT;
-            this.axisButtonInUse = false;
         }
     }
 
-    private IEnumerator OnAxisButtonUse_ForWalk()
-    {
-        TileDirection direction = this.GetDirectionFromAxis("Left Stick Horizontal", "Left Stick Vertical");
-
-        if (direction != TileDirection.Undefined)
-        {
-            Tile playerTile = this.globalCtrl.sceneCtrl.player.tile;
-            Func<Tile, bool> filter = (t) => (!t.isBlocked && t.isVisible && t.isActive);
-
-            Tile nextTile = (
-                this.selectedTile
-                    ? this.selectedTile.GetTileByDirection(direction, filter)
-                    : playerTile.GetTileByDirection(direction, filter)
-            );
-
-            yield return this.SelectNextTile(nextTile);
-        }
-    }
-
-    private IEnumerator OnAxisButtonUse_ForDirection()
-    {
-        TileDirection direction = this.GetDirectionFromAxis("Left Stick Horizontal", "Left Stick Vertical");
-
-        if (direction != TileDirection.Undefined)
-        {
-            Tile playerTile = this.globalCtrl.sceneCtrl.player.tile;
-
-            Tile nextTile = (
-                this.selectedTile
-                    ? this.selectedTile.GetTileByDirection(direction, (t) => (t.isVisible && t.isActive))
-                    : playerTile.GetTileByDirection(direction, (t) => (t.isVisible && t.isActive))
-            );
-
-            yield return this.SelectNextTile(nextTile);
-        }
-    }
 
     private IEnumerator WalkAction()
     {
