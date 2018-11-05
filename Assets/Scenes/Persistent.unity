@@ -7944,7 +7944,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 5
     - Name: 
       Entry: 7
       Data: 34|EnemySpawnPoint, Assembly-CSharp
@@ -8138,6 +8138,54 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 38|EnemySpawnPoint, Assembly-CSharp
+    - Name: point
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
+      Data: 9
+    - Name: y
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: name
+      Entry: 1
+      Data: Enemy
+    - Name: prefab
+      Entry: 10
+      Data: 97
+    - Name: movementSpeed
+      Entry: 4
+      Data: 2.5
+    - Name: animationSpeed
+      Entry: 4
+      Data: 2
+    - Name: attackPower
+      Entry: 4
+      Data: 1
+    - Name: isLockedOnPlayer
+      Entry: 5
+      Data: true
+    - Name: itemDropRate
+      Entry: 4
+      Data: 0.3
+    - Name: repeatSpawn
+      Entry: 5
+      Data: true
+    - Name: repeatSpawnDelay
+      Entry: 3
+      Data: 3
+    - Name: repeatSpawnTurnsLeft
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -8148,17 +8196,17 @@ MonoBehaviour:
       Data: 
     - Name: collectableManager
       Entry: 7
-      Data: 38|CollectableManager, Assembly-CSharp
+      Data: 39|CollectableManager, Assembly-CSharp
     - Name: collectableItemPrefab
       Entry: 10
       Data: 98
     - Name: collectableItems
       Entry: 7
-      Data: 39|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
+      Data: 40|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 40|System.Collections.Generic.ObjectEqualityComparer`1[[Point, Assembly-CSharp]],
+      Data: 41|System.Collections.Generic.ObjectEqualityComparer`1[[Point, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 8
