@@ -7956,10 +7956,10 @@ MonoBehaviour:
       Data: true
     - Name: repeatSpawnDelay
       Entry: 3
-      Data: 3
+      Data: 2
     - Name: repeatSpawnTurnsLeft
       Entry: 3
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 8
       Data: 

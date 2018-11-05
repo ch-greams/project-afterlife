@@ -1,4 +1,5 @@
 ﻿using Sirenix.OdinInspector;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -30,14 +31,16 @@ public class EnemySpawnPoint
     public EnemySpawnPoint() { }
 
 
-    public Enemy TrySpawnEnemy(GlobalController globalCtrl)
+    public Enemy TrySpawnEnemy(List<Tile> tiles)
     {
-        return (this.repeatSpawn && this.CheckTurnForSpawn()) ? this.SpawnEnemy(globalCtrl) : null;
+        bool isSpawnTime = this.repeatSpawn && this.CheckTurnForSpawn();
+        Tile tile = isSpawnTime ? tiles.Find(t => t.point == this.point) : null;
+
+        return ((tile != null && !tile.isBlocked && !tile.isBlockedByPlayer) ? this.SpawnEnemy(tile) : null);
     }
 
-    public Enemy SpawnEnemy(GlobalController globalCtrl)
+    private Enemy SpawnEnemy(Tile tile)
     {
-        Tile tile = globalCtrl.sceneCtrl.tiles.Find(t => t.point == this.point);
         GameObject obj = GameObject.Instantiate(this.prefab, tile.obj.transform.position, Quaternion.identity);
         string enemyName = string.Format("{0} {1}", this.name, point);
 

@@ -53,7 +53,7 @@ public class Enemy
 
     private bool TryAttackPlayer(Player player, EnemyManager enemyManager)
     {
-        if (this.tile.point == player.tile.point)
+        if (this.tile.isBlockedByPlayer)
         {
             // Attack player
             player.ChangeVisibleRange(player.visibleRange - this.attackPower);

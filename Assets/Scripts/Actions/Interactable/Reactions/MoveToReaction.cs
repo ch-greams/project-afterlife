@@ -103,10 +103,9 @@ public class MoveToReaction : IInteractableReaction
 
             this.sceneCtrl.globalCtrl.UpdatePlayerPosition(tile.point);
 
-            // NOTE: Currently isBlocked is unnnecessary in this case
-            // player.tile.isBlocked = false;
+            player.tile.isBlockedByPlayer = false;
             player.tile = tile;
-            // player.tile.isBlocked = true;
+            player.tile.isBlockedByPlayer = true;
 
             player.characterAnimator.SetFloat(this.speedParamHash, 0F);
 

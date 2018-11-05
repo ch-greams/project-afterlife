@@ -25,7 +25,7 @@ public class EnemyManager
     {
         foreach (EnemySpawnPoint esp in this.enemySpawnPoints)
         {
-            Enemy enemy = esp.TrySpawnEnemy(this.globalCtrl);
+            Enemy enemy = esp.TrySpawnEnemy(this.globalCtrl.sceneCtrl.tiles);
             
             if (enemy != null)
             {

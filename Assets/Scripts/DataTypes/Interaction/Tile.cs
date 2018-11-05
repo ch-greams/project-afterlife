@@ -13,6 +13,7 @@ public class Tile : SerializedScriptableObject
 
     public bool isVisible = false;
     public bool isBlocked = false;
+    public bool isBlockedByPlayer = false;
     public bool isActive = false;
     public bool isSelected = false;
 

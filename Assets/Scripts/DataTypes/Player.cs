@@ -81,10 +81,9 @@ public class Player
 
             this.globalCtrl.UpdatePlayerPosition(tile.point);
 
-            // NOTE: Currently isBlocked is unnnecessary in this case
-            // this.tile.isBlocked = false;
+            this.tile.isBlockedByPlayer = false;
             this.tile = tile;
-            // this.tile.isBlocked = true;
+            this.tile.isBlockedByPlayer = true;
 
             this.characterAnimator.SetFloat(this.speedParamHash, 0F);
         }
