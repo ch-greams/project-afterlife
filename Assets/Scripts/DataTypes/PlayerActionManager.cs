@@ -61,19 +61,17 @@ public class PlayerActionManager
     public PlayerActionType currentAction;
 
     public float moveSpeed = 5;
-
+    public float maxDistanceForSelector = 7;
 
     private GlobalController globalCtrl;
     private Tile selectedTile;
     private WaitForSeconds FLASHLIGHT_TIMEOUT;
-    private WaitForSeconds SELECT_TILE_TIMEOUT;
 
 
     public void Init(GlobalController globalCtrl)
     {
         this.globalCtrl = globalCtrl;
         this.FLASHLIGHT_TIMEOUT = new WaitForSeconds(0.25F);
-        this.SELECT_TILE_TIMEOUT = new WaitForSeconds(0.15F);
 
         this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
         this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
@@ -106,6 +104,12 @@ public class PlayerActionManager
             // GranadeButton
         }
 
+        if (Input.GetButtonDown("Left Stick Button"))
+        {
+            // Debug.Log("Left Stick Button");
+            this.ResetTileSelector(true);
+        } 
+
         switch (this.currentAction)
         {
             case PlayerActionType.Walk:
@@ -122,6 +126,8 @@ public class PlayerActionManager
 
     public void ConfirmAction()
     {
+        this.ResetTileSelector(false);
+
         this.globalCtrl.NextTurn();
     }
 
@@ -152,13 +158,22 @@ public class PlayerActionManager
     }
 
 
-    private void MoveTileSelector(Vector3 translation)
+    private void ResetTileSelector(bool selectPlayerTile)
     {
         Player player = this.globalCtrl.sceneCtrl.player;
-        Vector3 target = player.tileSelector.transform.position + translation;
+        Transform tileSelector = player.tileSelector.transform;
+        Vector3 playerPosition = player.characterTransform.position;
+        tileSelector.position = new Vector3(playerPosition.x, tileSelector.position.y, playerPosition.z);
 
-        player.tileSelector.transform.Translate(translation, Space.World);
+        if (selectPlayerTile)
+        {
+            this.SelectNextTile(player.tile);
+        }
+    }
 
+
+    private void TrySelectTile(Player player, Vector3 target)
+    {
         if ((player.activeTiles != null) && (player.activeTiles.Count > 0))
         {
             List<Vector3> positions = player.activeTiles.Keys.ToList();
@@ -191,11 +206,19 @@ public class PlayerActionManager
 
         if (translation != Vector3.zero)
         {
-            this.MoveTileSelector(translation);
+            Player player = this.globalCtrl.sceneCtrl.player;
+            Vector3 playerPosition = player.characterTransform.position;
+            Vector3 target = player.tileSelector.transform.position + translation;
+
+            if (Vector3.Distance(playerPosition, target) < this.maxDistanceForSelector)
+            {
+                player.tileSelector.transform.Translate(translation, Space.World);
+
+                this.TrySelectTile(player, target);
+            }
         }
     }
 
-    // TODO: Add animation
     private void SelectNextTile(Tile nextTile)
     {
         if (nextTile)
@@ -255,6 +278,8 @@ public class PlayerActionManager
                 this.flashlightButton.onClick.RemoveAllListeners();
                 this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
                 break;
+            case PlayerActionType.Torch:
+            case PlayerActionType.Granade:
             case PlayerActionType.Undefined:
             default:
                 break;
@@ -271,34 +296,37 @@ public class PlayerActionManager
         // TODO: Shouldn't be used like this
         player.HighlightVisible(true);
 
-        if (prevAction != this.currentAction) {
-            this.DisableActionButton(prevAction);
-        }
-
-        switch (playerActionType)
+        if (prevAction != this.currentAction)
         {
-            case PlayerActionType.Walk:
-                this.walkButton.image.sprite = this.walkButtonActive;
-                this.walkButtonProc.sprite = this.walkButtonProcActive;
-                this.walkButton.onClick.RemoveAllListeners();
-                this.walkButton.onClick.AddListener(this.ConfirmAction);
+            this.DisableActionButton(prevAction);
 
-                player.HighlightActive(true, true);
+            switch (playerActionType)
+            {
+                case PlayerActionType.Walk:
+                    this.walkButton.image.sprite = this.walkButtonActive;
+                    this.walkButtonProc.sprite = this.walkButtonProcActive;
+                    this.walkButton.onClick.RemoveAllListeners();
+                    this.walkButton.onClick.AddListener(this.ConfirmAction);
 
-                break;
-            case PlayerActionType.Flashlight:
-                this.flashlightButton.image.sprite = this.flashlightButtonActive;
-                this.flashlightButton.onClick.RemoveAllListeners();
-                this.flashlightButton.onClick.AddListener(this.ConfirmAction);
-                
-                player.HighlightActive(false, true);
-                player.HighlightActive(true, false);
+                    player.HighlightActive(true, true);
 
-                break;
-            case PlayerActionType.Undefined:
-            default:
-                player.HighlightActive(false, true);
-                break;
+                    break;
+                case PlayerActionType.Flashlight:
+                    this.flashlightButton.image.sprite = this.flashlightButtonActive;
+                    this.flashlightButton.onClick.RemoveAllListeners();
+                    this.flashlightButton.onClick.AddListener(this.ConfirmAction);
+                    
+                    player.HighlightActive(false, true);
+                    player.HighlightActive(true, false);
+
+                    break;
+                case PlayerActionType.Torch:
+                case PlayerActionType.Granade:
+                case PlayerActionType.Undefined:
+                default:
+                    player.HighlightActive(false, true);
+                    break;
+            }
         }
     }
 }

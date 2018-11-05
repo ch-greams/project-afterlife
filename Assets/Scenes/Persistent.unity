@@ -7755,6 +7755,9 @@ MonoBehaviour:
     - Name: moveSpeed
       Entry: 4
       Data: 7
+    - Name: maxDistanceForSelector
+      Entry: 4
+      Data: 10
     - Name: 
       Entry: 8
       Data: 

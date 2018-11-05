@@ -75,7 +75,7 @@ public class CameraController : MonoBehaviour
         if (this.Compare(cameraPivot.transform.localEulerAngles, this.endRotation)) 
         {
             // Rotate left
-            if (Input.GetKeyDown(KeyCode.Q) || Input.GetAxis("Right Trigger") == 1) 
+            if (Input.GetButtonDown("Right Bumper Button")) 
             {
                 this.startTime = Time.time;
                 this.startRotation = cameraPivot.transform.localEulerAngles;
@@ -86,7 +86,7 @@ public class CameraController : MonoBehaviour
                 this.SetCurrentDirection(true);
             }
             // Rotate right
-            if (Input.GetKeyDown(KeyCode.E) || Input.GetAxis("Left Trigger") == 1) 
+            if (Input.GetButtonDown("Left Bumper Button")) 
             {
                 this.startTime = Time.time;
                 this.startRotation = cameraPivot.transform.localEulerAngles;
