@@ -13,12 +13,15 @@ public class EnemySpawnPoint
     public GameObject prefab;
     [FoldoutGroup("Enemy Settings")]
     public float movementSpeed = 3.0F;
+    // TODO: Use or remove it
     [FoldoutGroup("Enemy Settings")]
     public float animationSpeed = 2.0F;
     [FoldoutGroup("Enemy Settings")]
     public float attackPower = 1.0F;
     [FoldoutGroup("Enemy Settings")]
     public bool isLockedOnPlayer = false;
+    [FoldoutGroup("Enemy Settings")]
+    public float itemDropRate = 0.30F;
 
     [FoldoutGroup("SpawnPoint Settings")]
     public bool repeatSpawn = true;

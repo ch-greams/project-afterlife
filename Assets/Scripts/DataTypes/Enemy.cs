@@ -11,6 +11,7 @@ public class Enemy
     public float movementSpeed = 3.0F;
     public float attackPower = 1.0F;
     public bool isLockedOnPlayer = false;
+    public float itemDropRate = 0.30F;
 
     public Transform characterTransform;
     public Tile tile;
@@ -59,9 +60,7 @@ public class Enemy
             player.ChangeVisibleRange(player.visibleRange - this.attackPower);
 
             // Destroy enemy
-            enemyManager.TryDestroyEnemyOnPoint(this.tile.point);
-
-            return true;
+            return enemyManager.TryDestroyEnemyOnPoint(this.tile.point, false);
         }
 
         return false;

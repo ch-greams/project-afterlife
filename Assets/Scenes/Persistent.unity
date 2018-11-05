@@ -7978,6 +7978,9 @@ MonoBehaviour:
     - Name: isLockedOnPlayer
       Entry: 5
       Data: true
+    - Name: itemDropRate
+      Entry: 4
+      Data: 0.3
     - Name: repeatSpawn
       Entry: 5
       Data: true
@@ -8023,6 +8026,9 @@ MonoBehaviour:
     - Name: isLockedOnPlayer
       Entry: 5
       Data: true
+    - Name: itemDropRate
+      Entry: 4
+      Data: 0.3
     - Name: repeatSpawn
       Entry: 5
       Data: true
@@ -8068,6 +8074,9 @@ MonoBehaviour:
     - Name: isLockedOnPlayer
       Entry: 5
       Data: true
+    - Name: itemDropRate
+      Entry: 4
+      Data: 0.3
     - Name: repeatSpawn
       Entry: 5
       Data: true
@@ -8113,6 +8122,9 @@ MonoBehaviour:
     - Name: isLockedOnPlayer
       Entry: 5
       Data: true
+    - Name: itemDropRate
+      Entry: 4
+      Data: 0.3
     - Name: repeatSpawn
       Entry: 5
       Data: true

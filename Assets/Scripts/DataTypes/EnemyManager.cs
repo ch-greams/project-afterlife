@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using UnityEngine;
 
 
 public class EnemyManager
@@ -52,7 +53,24 @@ public class EnemyManager
         return enemy.tile.FindPathFrom(playerTile, (t) => (t.isVisible)) != null;
     }
 
-    public bool TryDestroyEnemyOnPoint(Point point)
+    public bool TryDestroyEnemyOnPoint(Point point, bool byPlayer)
+    {
+        (bool isEnemyDestroyed, float itemDropRate) = this.TryDestroyEnemyOnPoint(point);
+
+        if (isEnemyDestroyed && byPlayer)
+        {
+            this.globalCtrl.globalState.endOfTurnActionState.enemyKillConditionState.IncreaseEnemiesKilled(1);
+
+            if (itemDropRate > Random.Range(0F, 1F))
+            {
+                this.globalCtrl.collectableManager.TrySpawnItem(point, "Healthpack");
+            }
+        }
+
+        return isEnemyDestroyed;
+    }
+
+    private (bool isEnemyDestroyed, float itemDropRate) TryDestroyEnemyOnPoint(Point point)
     {
         Enemy enemy = this.enemies.Find((e) => e.tile.point == point);
 
@@ -61,9 +79,9 @@ public class EnemyManager
             enemy.Destroy();
             this.enemies.Remove(enemy);
 
-            return true;
+            return (true, enemy.itemDropRate);
         }
 
-        return false;
+        return (false, 0F);
     }
 }

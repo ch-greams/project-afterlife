@@ -176,13 +176,7 @@ public class Player
         Path<Tile> rayPath = this.tile.GetTilesByDirection(selectedPoint, this.flashlightRange);
         foreach (Tile tile in rayPath)
         {
-            if (this.globalCtrl.enemyManager.TryDestroyEnemyOnPoint(tile.point))
-            {
-                // TODO: Move to appropriate place
-                this.globalCtrl.globalState.endOfTurnActionState.enemyKillConditionState.IncreaseEnemiesKilled(1);
-                // TODO: Move to appropriate place
-                this.globalCtrl.collectableManager.TrySpawnItem(tile.point, "Healthpack");
-            }
+            this.globalCtrl.enemyManager.TryDestroyEnemyOnPoint(tile.point, true);
         }
     }
 
