@@ -902,8 +902,9 @@ RectTransform:
   - {fileID: 865638375}
   - {fileID: 335768177}
   - {fileID: 617699922}
-  - {fileID: 553015766}
   - {fileID: 1405953026}
+  - {fileID: 711672768}
+  - {fileID: 553015766}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2607,6 +2608,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &474521936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 474521937}
+  - component: {fileID: 474521939}
+  - component: {fileID: 474521938}
+  m_Layer: 5
+  m_Name: LabelText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &474521937
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474521936}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 711672768}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 50, y: 300}
+  m_SizeDelta: {x: 800, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &474521938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474521936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0.09019608}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 58
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 71
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: darkness gathers...
+--- !u!222 &474521939
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474521936}
+  m_CullTransparentMesh: 0
 --- !u!1 &534493064
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,7 +2849,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 203014886}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3776,6 +3856,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676203972}
+  m_CullTransparentMesh: 0
+--- !u!1 &711672767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 711672768}
+  - component: {fileID: 711672770}
+  - component: {fileID: 711672769}
+  m_Layer: 5
+  m_Name: EnemyTurnFadeImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &711672768
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711672767}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 474521937}
+  m_Father: {fileID: 203014886}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &711672769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711672767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7490196}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &711672770
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711672767}
   m_CullTransparentMesh: 0
 --- !u!1 &728236922
 GameObject:
@@ -7100,6 +7255,7 @@ MonoBehaviour:
     - {fileID: 1209695952}
     - {fileID: 21300000, guid: 46ae609cd104cd346b790a38c996d4c4, type: 3}
     - {fileID: 21300000, guid: d69e18d34c1842d44919e88655dc9562, type: 3}
+    - {fileID: 711672767}
     - {fileID: 1831439497551332, guid: 938142f99093f51408b617d566029294, type: 3}
     - {fileID: 1306313449982572, guid: bbc936afdb3aaa847a31b08e3f20165f, type: 3}
     SerializedBytesString: 
@@ -7749,6 +7905,12 @@ MonoBehaviour:
     - Name: granadeButtonInactive
       Entry: 10
       Data: 95
+    - Name: enemyTurnFadeImage
+      Entry: 10
+      Data: 96
+    - Name: arePlayerControlsLocked
+      Entry: 5
+      Data: false
     - Name: currentAction
       Entry: 3
       Data: 0
@@ -7803,7 +7965,7 @@ MonoBehaviour:
       Data: Enemy
     - Name: prefab
       Entry: 10
-      Data: 96
+      Data: 97
     - Name: movementSpeed
       Entry: 4
       Data: 2.5
@@ -7848,7 +8010,7 @@ MonoBehaviour:
       Data: Enemy
     - Name: prefab
       Entry: 10
-      Data: 96
+      Data: 97
     - Name: movementSpeed
       Entry: 4
       Data: 2.5
@@ -7893,7 +8055,7 @@ MonoBehaviour:
       Data: Enemy
     - Name: prefab
       Entry: 10
-      Data: 96
+      Data: 97
     - Name: movementSpeed
       Entry: 4
       Data: 2.5
@@ -7938,7 +8100,7 @@ MonoBehaviour:
       Data: Enemy
     - Name: prefab
       Entry: 10
-      Data: 96
+      Data: 97
     - Name: movementSpeed
       Entry: 4
       Data: 2.5
@@ -7977,7 +8139,7 @@ MonoBehaviour:
       Data: 38|CollectableManager, Assembly-CSharp
     - Name: collectableItemPrefab
       Entry: 10
-      Data: 97
+      Data: 98
     - Name: collectableItems
       Entry: 7
       Data: 39|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
@@ -8570,7 +8732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1405953026
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8583,7 +8745,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 203014886}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9396,13 +9558,13 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 8
+      Data: 9
     - Name: 
       Entry: 7
       Data: 1|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Player Action
+      Data: Lock Player Controls
     - Name: index
       Entry: 3
       Data: 0
@@ -9428,7 +9590,10 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 4|PlayerActionReaction, Assembly-CSharp
+      Data: 4|LockPlayerControlsReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -9446,7 +9611,7 @@ MonoBehaviour:
       Data: 5|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: 'Items: Try Collect'
+      Data: Player Action
     - Name: index
       Entry: 3
       Data: 1
@@ -9472,7 +9637,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 8|CollectItemReaction, Assembly-CSharp
+      Data: 8|PlayerActionReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -9490,7 +9655,7 @@ MonoBehaviour:
       Data: 9|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: 'Enemies: Move & Spawn'
+      Data: 'Items: Try Collect'
     - Name: index
       Entry: 3
       Data: 2
@@ -9500,10 +9665,54 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 11|DoubleKillStateCondition, Assembly-CSharp
+      Data: 12|CollectItemReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|EndOfTurnAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: 'Enemies: Move & Spawn'
+    - Name: index
+      Entry: 3
+      Data: 3
+    - Name: conditions
+      Entry: 7
+      Data: 14|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 15|DoubleKillStateCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -9518,26 +9727,26 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 16|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 13|EnemyMovementReaction, Assembly-CSharp
+      Data: 17|EnemyMovementReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 14|EnemySpawnReaction, Assembly-CSharp
+      Data: 18|EnemySpawnReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 15|TestDebugReaction, Assembly-CSharp
+      Data: 19|TestDebugReaction, Assembly-CSharp
     - Name: logText
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -9555,88 +9764,88 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 16|EndOfTurnAction, Assembly-CSharp
+      Data: 20|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Disable DoubleKillProc
-    - Name: index
-      Entry: 3
-      Data: 3
-    - Name: conditions
-      Entry: 7
-      Data: 17|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 18|DoubleKillStateCondition, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: reactions
-      Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 20|DoubleKillProcReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 21|TestDebugReaction, Assembly-CSharp
-    - Name: logText
-      Entry: 1
-      Data: Disable DoubleKillProc
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 22|EndOfTurnAction, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Update EnemyKillState
     - Name: index
       Entry: 3
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 21|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 24|DoubleKillStateCondition, Assembly-CSharp
+      Data: 22|DoubleKillStateCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 23|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 24|DoubleKillProcReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 25|TestDebugReaction, Assembly-CSharp
+    - Name: logText
+      Entry: 1
+      Data: Disable DoubleKillProc
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 26|EndOfTurnAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Update EnemyKillState
+    - Name: index
+      Entry: 3
+      Data: 5
+    - Name: conditions
+      Entry: 7
+      Data: 27|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 28|DoubleKillStateCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -9651,14 +9860,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 29|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 26|EnemyKillStateReaction, Assembly-CSharp
+      Data: 30|EnemyKillStateReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -9667,7 +9876,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 27|TestDebugReaction, Assembly-CSharp
+      Data: 31|TestDebugReaction, Assembly-CSharp
     - Name: logText
       Entry: 1
       Data: Update EnemyKillState
@@ -9685,23 +9894,23 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 28|EndOfTurnAction, Assembly-CSharp
+      Data: 32|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Get Proc
     - Name: index
       Entry: 3
-      Data: 5
+      Data: 6
     - Name: conditions
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 33|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 30|EnemyKillCondition, Assembly-CSharp
+      Data: 34|EnemyKillCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -9710,7 +9919,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 31|DoubleKillStateCondition, Assembly-CSharp
+      Data: 35|DoubleKillStateCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -9725,14 +9934,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 32|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 36|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 33|DoubleKillProcReaction, Assembly-CSharp
+      Data: 37|DoubleKillProcReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -9741,7 +9950,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 34|TestDebugReaction, Assembly-CSharp
+      Data: 38|TestDebugReaction, Assembly-CSharp
     - Name: logText
       Entry: 1
       Data: Proc Triggered
@@ -9759,23 +9968,23 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 35|EndOfTurnAction, Assembly-CSharp
+      Data: 39|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Reset EnemyKillState
     - Name: index
       Entry: 3
-      Data: 6
+      Data: 7
     - Name: conditions
       Entry: 7
-      Data: 36|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 40|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 37|EnemyKillCondition, Assembly-CSharp
+      Data: 41|EnemyKillCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -9790,14 +9999,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 38|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 42|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 39|EnemyKillStateReaction, Assembly-CSharp
+      Data: 43|EnemyKillStateReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -9806,7 +10015,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 40|TestDebugReaction, Assembly-CSharp
+      Data: 44|TestDebugReaction, Assembly-CSharp
     - Name: logText
       Entry: 1
       Data: Reset EnemyKillState
@@ -9824,16 +10033,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 41|EndOfTurnAction, Assembly-CSharp
+      Data: 45|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
     - Name: index
       Entry: 3
-      Data: 7
+      Data: 8
     - Name: conditions
       Entry: 7
-      Data: 42|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 46|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -9846,17 +10055,26 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 43|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 47|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 44|TestDebugReaction, Assembly-CSharp
+      Data: 48|TestDebugReaction, Assembly-CSharp
     - Name: logText
       Entry: 1
       Data: Unlock Player Controls
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 49|LockPlayerControlsReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
     - Name: 
       Entry: 8
       Data: 

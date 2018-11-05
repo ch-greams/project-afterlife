@@ -58,6 +58,9 @@ public class PlayerActionManager
     [BoxGroup("Button Configuration/[Y] Granade Button")]
     public Sprite granadeButtonInactive;
 
+    public GameObject enemyTurnFadeImage;
+    public bool arePlayerControlsLocked = false;
+
     public PlayerActionType currentAction;
 
     public float moveSpeed = 5;
@@ -80,47 +83,50 @@ public class PlayerActionManager
 
     public void InputListener()
     {
-        if (Input.GetButtonDown("Button A"))
+        if (!this.arePlayerControlsLocked)
         {
-            Debug.Log("Button A");
-            // TorchButton
-        }
+            if (Input.GetButtonDown("Button A"))
+            {
+                Debug.Log("Button A");
+                // TorchButton
+            }
 
-        if (Input.GetButtonDown("Button B"))
-        {
-            // Debug.Log("Button B");
-            this.walkButton.onClick.Invoke();
-        }
+            if (Input.GetButtonDown("Button B"))
+            {
+                // Debug.Log("Button B");
+                this.walkButton.onClick.Invoke();
+            }
 
-        if (Input.GetButtonDown("Button X"))
-        {
-            // Debug.Log("Button X");
-            this.flashlightButton.onClick.Invoke();
-        }
+            if (Input.GetButtonDown("Button X"))
+            {
+                // Debug.Log("Button X");
+                this.flashlightButton.onClick.Invoke();
+            }
 
-        if (Input.GetButtonDown("Button Y"))
-        {
-            Debug.Log("Button Y");
-            // GranadeButton
-        }
+            if (Input.GetButtonDown("Button Y"))
+            {
+                Debug.Log("Button Y");
+                // GranadeButton
+            }
 
-        if (Input.GetButtonDown("Left Stick Button"))
-        {
-            // Debug.Log("Left Stick Button");
-            this.ResetTileSelector(true);
-        } 
+            if (Input.GetButtonDown("Left Stick Button"))
+            {
+                // Debug.Log("Left Stick Button");
+                this.ResetTileSelector(true);
+            } 
 
-        switch (this.currentAction)
-        {
-            case PlayerActionType.Walk:
-            case PlayerActionType.Flashlight:
-                this.TryMoveTileSelector("Left Stick Horizontal", "Left Stick Vertical");
-                break;
-            case PlayerActionType.Torch:
-            case PlayerActionType.Granade:
-            case PlayerActionType.Undefined:
-            default:
-                break;
+            switch (this.currentAction)
+            {
+                case PlayerActionType.Walk:
+                case PlayerActionType.Flashlight:
+                    this.TryMoveTileSelector("Left Stick Horizontal", "Left Stick Vertical");
+                    break;
+                case PlayerActionType.Torch:
+                case PlayerActionType.Granade:
+                case PlayerActionType.Undefined:
+                default:
+                    break;
+            }
         }
     }
 

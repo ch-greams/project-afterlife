@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\EnemyMovementReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\EnemySpawnReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\IEndOfTurnReaction.cs" />
+    <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\LockPlayerControlsReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\PlayerActionReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\TestDebugReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\Interactable\Conditions\IInteractableCondition.cs" />
