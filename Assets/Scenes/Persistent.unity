@@ -903,6 +903,7 @@ RectTransform:
   - {fileID: 335768177}
   - {fileID: 617699922}
   - {fileID: 1405953026}
+  - {fileID: 1483697434}
   - {fileID: 711672768}
   - {fileID: 553015766}
   m_Father: {fileID: 0}
@@ -2666,7 +2667,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5bc4e6f5b663a8341ab0eadf651998bc, type: 3}
     m_FontSize: 58
     m_FontStyle: 0
     m_BestFit: 0
@@ -2849,7 +2850,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 203014886}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3888,7 +3889,7 @@ RectTransform:
   m_Children:
   - {fileID: 474521937}
   m_Father: {fileID: 203014886}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5448,6 +5449,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &965501826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965501827}
+  - component: {fileID: 965501829}
+  - component: {fileID: 965501828}
+  m_Layer: 5
+  m_Name: LabelText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &965501827
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965501826}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1483697434}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 800, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &965501828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965501826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.69803923, g: 0.16470589, b: 0, a: 0.39215687}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 28b4b1b955d708c45969821b75eca3bd, type: 3}
+    m_FontSize: 128
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 157
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: YOU DIED
+--- !u!222 &965501829
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965501826}
+  m_CullTransparentMesh: 0
 --- !u!1 &984385439
 GameObject:
   m_ObjectHideFlags: 0
@@ -7256,6 +7336,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 46ae609cd104cd346b790a38c996d4c4, type: 3}
     - {fileID: 21300000, guid: d69e18d34c1842d44919e88655dc9562, type: 3}
     - {fileID: 711672767}
+    - {fileID: 1405953027}
     - {fileID: 1831439497551332, guid: 938142f99093f51408b617d566029294, type: 3}
     - {fileID: 1306313449982572, guid: bbc936afdb3aaa847a31b08e3f20165f, type: 3}
     SerializedBytesString: 
@@ -7923,12 +8004,24 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: scoreManager
+      Entry: 7
+      Data: 31|ScoreManager, Assembly-CSharp
+    - Name: scoreText
+      Entry: 10
+      Data: 97
+    - Name: scoreValue
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: enemyManager
       Entry: 7
-      Data: 31|EnemyManager, Assembly-CSharp
+      Data: 32|EnemyManager, Assembly-CSharp
     - Name: enemies
       Entry: 7
-      Data: 32|System.Collections.Generic.List`1[[Enemy, Assembly-CSharp]], mscorlib
+      Data: 33|System.Collections.Generic.List`1[[Enemy, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -7940,14 +8033,14 @@ MonoBehaviour:
       Data: 
     - Name: enemySpawnPoints
       Entry: 7
-      Data: 33|System.Collections.Generic.List`1[[EnemySpawnPoint, Assembly-CSharp]],
+      Data: 34|System.Collections.Generic.List`1[[EnemySpawnPoint, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 5
     - Name: 
       Entry: 7
-      Data: 34|EnemySpawnPoint, Assembly-CSharp
+      Data: 35|EnemySpawnPoint, Assembly-CSharp
     - Name: point
       Entry: 7
       Data: Point, Assembly-CSharp
@@ -7965,55 +8058,7 @@ MonoBehaviour:
       Data: Enemy
     - Name: prefab
       Entry: 10
-      Data: 97
-    - Name: movementSpeed
-      Entry: 4
-      Data: 2.5
-    - Name: animationSpeed
-      Entry: 4
-      Data: 2
-    - Name: attackPower
-      Entry: 4
-      Data: 1
-    - Name: isLockedOnPlayer
-      Entry: 5
-      Data: true
-    - Name: itemDropRate
-      Entry: 4
-      Data: 0.3
-    - Name: repeatSpawn
-      Entry: 5
-      Data: true
-    - Name: repeatSpawnDelay
-      Entry: 3
-      Data: 3
-    - Name: repeatSpawnTurnsLeft
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 35|EnemySpawnPoint, Assembly-CSharp
-    - Name: point
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 15
-    - Name: y
-      Entry: 3
-      Data: 6
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: name
-      Entry: 1
-      Data: Enemy
-    - Name: prefab
-      Entry: 10
-      Data: 97
+      Data: 98
     - Name: movementSpeed
       Entry: 4
       Data: 2.5
@@ -8049,6 +8094,54 @@ MonoBehaviour:
       Data: Point, Assembly-CSharp
     - Name: x
       Entry: 3
+      Data: 15
+    - Name: y
+      Entry: 3
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: name
+      Entry: 1
+      Data: Enemy
+    - Name: prefab
+      Entry: 10
+      Data: 98
+    - Name: movementSpeed
+      Entry: 4
+      Data: 2.5
+    - Name: animationSpeed
+      Entry: 4
+      Data: 2
+    - Name: attackPower
+      Entry: 4
+      Data: 1
+    - Name: isLockedOnPlayer
+      Entry: 5
+      Data: true
+    - Name: itemDropRate
+      Entry: 4
+      Data: 0.3
+    - Name: repeatSpawn
+      Entry: 5
+      Data: true
+    - Name: repeatSpawnDelay
+      Entry: 3
+      Data: 3
+    - Name: repeatSpawnTurnsLeft
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 37|EnemySpawnPoint, Assembly-CSharp
+    - Name: point
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
       Data: 4
     - Name: y
       Entry: 3
@@ -8061,7 +8154,7 @@ MonoBehaviour:
       Data: Enemy
     - Name: prefab
       Entry: 10
-      Data: 97
+      Data: 98
     - Name: movementSpeed
       Entry: 4
       Data: 2.5
@@ -8091,7 +8184,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 37|EnemySpawnPoint, Assembly-CSharp
+      Data: 38|EnemySpawnPoint, Assembly-CSharp
     - Name: point
       Entry: 7
       Data: Point, Assembly-CSharp
@@ -8109,7 +8202,7 @@ MonoBehaviour:
       Data: Enemy
     - Name: prefab
       Entry: 10
-      Data: 97
+      Data: 98
     - Name: movementSpeed
       Entry: 4
       Data: 2.5
@@ -8139,7 +8232,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 38|EnemySpawnPoint, Assembly-CSharp
+      Data: 39|EnemySpawnPoint, Assembly-CSharp
     - Name: point
       Entry: 7
       Data: Point, Assembly-CSharp
@@ -8157,7 +8250,7 @@ MonoBehaviour:
       Data: Enemy
     - Name: prefab
       Entry: 10
-      Data: 97
+      Data: 98
     - Name: movementSpeed
       Entry: 4
       Data: 2.5
@@ -8196,17 +8289,17 @@ MonoBehaviour:
       Data: 
     - Name: collectableManager
       Entry: 7
-      Data: 39|CollectableManager, Assembly-CSharp
+      Data: 40|CollectableManager, Assembly-CSharp
     - Name: collectableItemPrefab
       Entry: 10
-      Data: 98
+      Data: 99
     - Name: collectableItems
       Entry: 7
-      Data: 40|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
+      Data: 41|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 41|System.Collections.Generic.ObjectEqualityComparer`1[[Point, Assembly-CSharp]],
+      Data: 42|System.Collections.Generic.ObjectEqualityComparer`1[[Point, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 8
@@ -8226,6 +8319,8 @@ MonoBehaviour:
   fadeDuration: 0.5
   faderCanvasGroup: {fileID: 553015763}
   globalState: {fileID: 11400000, guid: aa13c8b3ee1928c47bb12361015f462b, type: 2}
+  gameOverFade: {fileID: 1483697433}
+  isGameOver: 0
   endOfTurnActionManager: {fileID: 1607163986}
   sceneCtrl: {fileID: 0}
   directionSwitch: 0
@@ -8792,7 +8887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1405953026
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8825,7 +8920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.5943396, b: 0.44452628, a: 1}
+  m_Color: {r: 0, g: 0.5943396, b: 0.44452628, a: 0.19607843}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8835,7 +8930,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2cdd665c966cec94ba26670afa16f569, type: 3}
     m_FontSize: 64
-    m_FontStyle: 0
+    m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 64
@@ -8845,7 +8940,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: 0001'
+  m_Text: 'Score: 0000'
 --- !u!222 &1405953028
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9152,6 +9247,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466316160}
+  m_CullTransparentMesh: 0
+--- !u!1 &1483697433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1483697434}
+  - component: {fileID: 1483697436}
+  - component: {fileID: 1483697435}
+  m_Layer: 5
+  m_Name: GameOverFadeImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1483697434
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483697433}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 965501827}
+  m_Father: {fileID: 203014886}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1483697435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483697433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7490196}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1483697436
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483697433}
   m_CullTransparentMesh: 0
 --- !u!1 &1496526236
 GameObject:
@@ -9618,7 +9788,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 9
+      Data: 10
     - Name: 
       Entry: 7
       Data: 1|EndOfTurnAction, Assembly-CSharp
@@ -9694,10 +9864,22 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 8|PlayerActionReaction, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|ScoreReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: value
+      Entry: 3
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -9712,7 +9894,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|EndOfTurnAction, Assembly-CSharp
+      Data: 10|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Items: Try Collect'
@@ -9721,7 +9903,7 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 10|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 11|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -9734,14 +9916,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 12|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 12|CollectItemReaction, Assembly-CSharp
+      Data: 13|CollectItemReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -9756,7 +9938,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 13|EndOfTurnAction, Assembly-CSharp
+      Data: 14|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -9765,14 +9947,14 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 15|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 15|DoubleKillStateCondition, Assembly-CSharp
+      Data: 16|DoubleKillStateCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -9787,29 +9969,20 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 17|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 17|EnemyMovementReaction, Assembly-CSharp
+      Data: 18|EnemyMovementReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 18|EnemySpawnReaction, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 19|TestDebugReaction, Assembly-CSharp
-    - Name: logText
-      Entry: 1
-      Data: 'Enemies: Move & Spawn'
+      Data: 19|EnemySpawnReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -9827,7 +10000,7 @@ MonoBehaviour:
       Data: 20|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Disable DoubleKillProc
+      Data: Try Game Over
     - Name: index
       Entry: 3
       Data: 4
@@ -9840,7 +10013,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 7
-      Data: 22|DoubleKillStateCondition, Assembly-CSharp
+      Data: 22|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -9862,7 +10035,7 @@ MonoBehaviour:
       Data: 2
     - Name: 
       Entry: 7
-      Data: 24|DoubleKillProcReaction, Assembly-CSharp
+      Data: 24|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -9871,10 +10044,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 25|TestDebugReaction, Assembly-CSharp
-    - Name: logText
-      Entry: 1
-      Data: Disable DoubleKillProc
+      Data: 25|GameOverReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -9892,7 +10062,7 @@ MonoBehaviour:
       Data: 26|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Update EnemyKillState
+      Data: Disable DoubleKillProc
     - Name: index
       Entry: 3
       Data: 5
@@ -9902,10 +10072,19 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 28|DoubleKillStateCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 29|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -9920,14 +10099,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 30|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 30|EnemyKillStateReaction, Assembly-CSharp
+      Data: 31|DoubleKillProcReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -9936,10 +10115,10 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 31|TestDebugReaction, Assembly-CSharp
+      Data: 32|TestDebugReaction, Assembly-CSharp
     - Name: logText
       Entry: 1
-      Data: Update EnemyKillState
+      Data: Disable DoubleKillProc
     - Name: 
       Entry: 8
       Data: 
@@ -9954,29 +10133,20 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 32|EndOfTurnAction, Assembly-CSharp
+      Data: 33|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Try Get Proc
+      Data: Update EnemyKillState
     - Name: index
       Entry: 3
       Data: 6
     - Name: conditions
       Entry: 7
-      Data: 33|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 34|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
-    - Name: 
-      Entry: 7
-      Data: 34|EnemyKillCondition, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 7
       Data: 35|DoubleKillStateCondition, Assembly-CSharp
@@ -9987,6 +10157,15 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 36|GameOverCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -9994,26 +10173,17 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 36|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 37|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
-    - Name: 
-      Entry: 7
-      Data: 37|DoubleKillProcReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
       Data: 1
     - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
       Entry: 7
-      Data: 38|TestDebugReaction, Assembly-CSharp
-    - Name: logText
-      Entry: 1
-      Data: Proc Triggered
+      Data: 38|EnemyKillStateReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -10031,7 +10201,7 @@ MonoBehaviour:
       Data: 39|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Reset EnemyKillState
+      Data: Try Get Proc
     - Name: index
       Entry: 3
       Data: 7
@@ -10041,12 +10211,30 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 3
     - Name: 
       Entry: 7
       Data: 41|EnemyKillCondition, Assembly-CSharp
     - Name: type
       Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 42|DoubleKillStateCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 43|GameOverCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
       Data: 2
     - Name: 
       Entry: 8
@@ -10059,14 +10247,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 42|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 44|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
-      Data: 43|EnemyKillStateReaction, Assembly-CSharp
+      Data: 45|DoubleKillProcReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -10075,10 +10263,22 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 44|TestDebugReaction, Assembly-CSharp
+      Data: 46|TestDebugReaction, Assembly-CSharp
     - Name: logText
       Entry: 1
-      Data: Reset EnemyKillState
+      Data: Proc Triggered
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 47|ScoreReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: value
+      Entry: 3
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -10093,20 +10293,38 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 45|EndOfTurnAction, Assembly-CSharp
+      Data: 48|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Unlock Player Controls
+      Data: Reset EnemyKillState
     - Name: index
       Entry: 3
       Data: 8
     - Name: conditions
       Entry: 7
-      Data: 46|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 49|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 50|EnemyKillCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 51|GameOverCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -10115,23 +10333,70 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 47|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 52|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 48|TestDebugReaction, Assembly-CSharp
-    - Name: logText
-      Entry: 1
-      Data: Unlock Player Controls
+      Data: 53|EnemyKillStateReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 49|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 54|EndOfTurnAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Unlock Player Controls
+    - Name: index
+      Entry: 3
+      Data: 9
+    - Name: conditions
+      Entry: 7
+      Data: 55|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 56|GameOverCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 57|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 58|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2

@@ -108,7 +108,7 @@ public class Player
         }
         else
         {
-            Debug.Log("YOU DIED");
+            this.globalCtrl.isGameOver = true;
         }
     }
 

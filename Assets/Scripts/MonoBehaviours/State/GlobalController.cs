@@ -32,12 +32,22 @@ public class GlobalController : SerializedMonoBehaviour
     [FoldoutGroup("Interface Management")]
     public PlayerActionManager playerActionManager;
 
+    // TODO: Do something smart about it
+    [FoldoutGroup("Interface Management")]
+    public ScoreManager scoreManager;
+
+
     [FoldoutGroup("State Management")]
     public EnemyManager enemyManager;
 
     [FoldoutGroup("State Management")]
     public CollectableManager collectableManager;
 
+    // TODO: Update "Game Over" shit
+    [BoxGroup("Game Over")]
+    public GameObject gameOverFade;
+    [BoxGroup("Game Over")]
+    public bool isGameOver = false;
 
     // TODO: Update this shit
     public EndOfTurnActionManager endOfTurnActionManager;

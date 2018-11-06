@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Conditions\DoubleKillStateCondition.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Conditions\EnemyKillCondition.cs" />
+    <Compile Include="Assets\Scripts\Actions\EndOfTurn\Conditions\GameOverCondition.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Conditions\IEndOfTurnCondition.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\EndOfTurnAction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\EndOfTurnActionState.cs" />
@@ -70,9 +71,11 @@
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\EnemyKillStateReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\EnemyMovementReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\EnemySpawnReaction.cs" />
+    <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\GameOverReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\IEndOfTurnReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\LockPlayerControlsReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\PlayerActionReaction.cs" />
+    <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\ScoreReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\TestDebugReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\Interactable\Conditions\IInteractableCondition.cs" />
     <Compile Include="Assets\Scripts\Actions\Interactable\Conditions\InventoryCondition.cs" />
@@ -120,6 +123,7 @@
     <Compile Include="Assets\Scripts\DataTypes\Point.cs" />
     <Compile Include="Assets\Scripts\DataTypes\SaveManager.cs" />
     <Compile Include="Assets\Scripts\DataTypes\SceneManager.cs" />
+    <Compile Include="Assets\Scripts\DataTypes\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviours\Common\CameraController.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviours\EditorScripts\GridGenerator.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviours\EditorScripts\PlaygroundGenerator.cs" />

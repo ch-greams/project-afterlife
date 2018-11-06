@@ -59,7 +59,9 @@ public class EnemyManager
 
         if (isEnemyDestroyed && byPlayer)
         {
+            // TODO: Do something about this
             this.globalCtrl.globalState.endOfTurnActionState.enemyKillConditionState.IncreaseEnemiesKilled(1);
+            this.globalCtrl.scoreManager.IncrementScore(10);
 
             if (itemDropRate > Random.Range(0F, 1F))
             {
