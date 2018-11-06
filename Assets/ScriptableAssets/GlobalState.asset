@@ -486,10 +486,13 @@ MonoBehaviour:
       Data: 0
     - Name: turnsTillResetLeft
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
+    - Name: isDoubleKillProcActive
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 

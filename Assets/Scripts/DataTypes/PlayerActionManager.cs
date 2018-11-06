@@ -161,6 +161,17 @@ public class PlayerActionManager
     public void SwitchWalkProcEffect(bool active)
     {
         this.walkButtonProc.gameObject.SetActive(active);
+        
+        this.flashlightButton.interactable = !active;
+
+        if (active)
+        {
+            this.flashlightButton.onClick.RemoveAllListeners();
+        }
+        else
+        {
+            this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
+        }
     }
 
 
