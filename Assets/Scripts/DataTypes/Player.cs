@@ -131,12 +131,12 @@ public class Player
         }
     }
 
-    public void HighlightActive(bool enable, bool useFullRange)
+    public void HighlightActive(bool enable, bool useFullRange, System.Func<Tile, bool> neighbourFilter)
     {
         SceneController sceneCtrl = this.globalCtrl.sceneCtrl;
         float range = useFullRange ? this.visibleRange : 1.5F;
 
-        HashSet<Point> playerPoints = this.tile.GetTiles(range, (t) => (true));
+        HashSet<Point> playerPoints = this.tile.GetTiles(range, neighbourFilter);
         List<Tile> playerTiles = sceneCtrl.tiles.FindAll((t) => playerPoints.Contains(t.point));
 
         this.activeTiles = playerTiles.ToDictionary(tile => tile.obj.transform.position);

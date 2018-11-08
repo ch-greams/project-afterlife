@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -175,7 +174,7 @@ public class PlayerActionManager
                     this.walkButton.onClick.RemoveAllListeners();
                     this.walkButton.onClick.AddListener(this.ConfirmAction);
 
-                    player.HighlightActive(true, true);
+                    player.HighlightActive(true, true, (t) => (!t.isBlocked));
 
                     break;
                 case PlayerActionType.Flashlight:
@@ -183,15 +182,15 @@ public class PlayerActionManager
                     this.flashlightButton.onClick.RemoveAllListeners();
                     this.flashlightButton.onClick.AddListener(this.ConfirmAction);
                     
-                    player.HighlightActive(false, true);
-                    player.HighlightActive(true, false);
+                    player.HighlightActive(false, true, (t) => (true));
+                    player.HighlightActive(true, false, (t) => (true));
 
                     break;
                 case PlayerActionType.Torch:
                 case PlayerActionType.Granade:
                 case PlayerActionType.Undefined:
                 default:
-                    player.HighlightActive(false, true);
+                    player.HighlightActive(false, true, (t) => (true));
                     break;
             }
         }

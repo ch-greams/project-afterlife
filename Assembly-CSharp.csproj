@@ -66,8 +66,7 @@
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\EndOfTurnAction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\EndOfTurnActionState.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\CollectItemReaction.cs" />
-    <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\EnemyMovementReaction.cs" />
-    <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\EnemySpawnReaction.cs" />
+    <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\EnemyManagerReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\GameOverReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\IEndOfTurnReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\LockPlayerControlsReaction.cs" />
