@@ -7,58 +7,106 @@ using Sirenix.Utilities.Editor;
 public class EndOfTurnActionManager : SerializedMonoBehaviour
 {
     [ListDrawerSettings(
-        Expanded = false, NumberOfItemsPerPage = 5, OnTitleBarGUI = "DrawRefreshButton",
-        OnBeginListElementGUI = "BeginDrawListElement", OnEndListElementGUI = "EndDrawListElement"
+        Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawWalkActionListRefreshButton",
+        OnBeginListElementGUI = "BeginDrawWalkActionListElement", OnEndListElementGUI = "EndDrawListElement"
     )]
-    public List<EndOfTurnAction> endOfTurnActions = new List<EndOfTurnAction>();
+    public List<EndOfTurnAction> walkActions = new List<EndOfTurnAction>();
+
+    [ListDrawerSettings(
+        Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawFlashlightActionListRefreshButton",
+        OnBeginListElementGUI = "BeginDrawFlashlightActionListElement", OnEndListElementGUI = "EndDrawListElement"
+    )]
+    public List<EndOfTurnAction> flashlightActions = new List<EndOfTurnAction>();
+
+    private GlobalController globalCtrl;
 
 
     public void Init(GlobalController globalCtrl)
     {
-        foreach (EndOfTurnAction endOfTurnAction in this.endOfTurnActions)
+        this.globalCtrl = globalCtrl;
+
+        foreach (EndOfTurnAction action in this.walkActions)
         {
-            endOfTurnAction.Init(globalCtrl);   
+            action.Init(this.globalCtrl);   
+        }
+
+        foreach (EndOfTurnAction action in this.flashlightActions)
+        {
+            action.Init(this.globalCtrl);   
         }
     }
 
 
     public IEnumerator ReactOnValidActions()
     {
-        // Debug.Log("Lock Player Controls");
+        PlayerActionType actionType = this.globalCtrl.playerActionManager.currentAction;
 
-        foreach (EndOfTurnAction endOfTurnAction in this.endOfTurnActions)
+        foreach (EndOfTurnAction action in this.GetActionsByType(actionType))
         {
-            if (endOfTurnAction.IsValid()) {
-                yield return endOfTurnAction.React();
+            if (action.IsValid()) {
+                yield return action.React();
             }
         }
+    }
 
-        // Debug.Log("Unlock Player Controls");
+    private List<EndOfTurnAction> GetActionsByType(PlayerActionType playerActionType)
+    {
+        switch (playerActionType)
+        {
+            case PlayerActionType.Walk:
+                return this.walkActions;
+            case PlayerActionType.Flashlight:
+                return this.flashlightActions;
+            case PlayerActionType.Granade:   
+            case PlayerActionType.Torch:   
+            case PlayerActionType.Undefined:   
+            default:
+                return new List<EndOfTurnAction>();
+        }
     }
 
 
-    private void DrawRefreshButton()
+    private void DrawActionListRefreshButton(List<EndOfTurnAction> actions)
     {
         if (SirenixEditorGUI.ToolbarButton(EditorIcons.Refresh))
         {
-            endOfTurnActions.Sort();
+            actions.Sort();
 
-            for (int i = 0; i < endOfTurnActions.Count; i++)
+            for (int i = 0; i < actions.Count; i++)
             {
-                endOfTurnActions[i].index = i;
+                actions[i].index = i;
             }
         }
     }
 
-    private void BeginDrawListElement(int index)
+    private void DrawWalkActionListRefreshButton()
     {
-        EndOfTurnAction action = this.endOfTurnActions[index];
+        this.DrawActionListRefreshButton(this.walkActions);
+    }
+    
+    private void DrawFlashlightActionListRefreshButton()
+    {
+        this.DrawActionListRefreshButton(this.flashlightActions);
+    }
+
+    private void BeginDrawActionListElement(EndOfTurnAction action, int index)
+    {
         string title = (
             index == action.index
                 ? string.Format("{0} - {1}", index, action.name)
                 : string.Format("{0} -> {1} - {2}", index, action.index, action.name)
         );
         SirenixEditorGUI.BeginBox(title);
+    }
+
+    private void BeginDrawWalkActionListElement(int index)
+    {
+        this.BeginDrawActionListElement(this.walkActions[index], index);
+    }
+
+    private void BeginDrawFlashlightActionListElement(int index)
+    {
+        this.BeginDrawActionListElement(this.flashlightActions[index], index);
     }
 
     private void EndDrawListElement(int index)

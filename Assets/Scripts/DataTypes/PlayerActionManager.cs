@@ -59,22 +59,22 @@ public class PlayerActionManager
     public Sprite granadeButtonInactive;
 
     public GameObject enemyTurnFadeImage;
+
+
     public bool arePlayerControlsLocked = false;
-
-    public PlayerActionType currentAction;
-
     public float moveSpeed = 5;
     public float maxDistanceForSelector = 7;
 
+
+    public PlayerActionType currentAction { get; private set; }
+    public Tile selectedTile { get; private set; }
+
     private GlobalController globalCtrl;
-    private Tile selectedTile;
-    private WaitForSeconds FLASHLIGHT_TIMEOUT;
 
 
     public void Init(GlobalController globalCtrl)
     {
         this.globalCtrl = globalCtrl;
-        this.FLASHLIGHT_TIMEOUT = new WaitForSeconds(0.25F);
 
         this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
         this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
@@ -132,30 +132,12 @@ public class PlayerActionManager
 
     public void ConfirmAction()
     {
-        this.ResetTileSelector(false);
-
-        this.globalCtrl.NextTurn();
-    }
-
-    public IEnumerator TriggerSelectedAction()
-    {
-        switch (this.currentAction)
+        if (this.selectedTile)
         {
-            case PlayerActionType.Walk:
-                yield return this.WalkAction();
-                break;
-            case PlayerActionType.Flashlight:
-                yield return this.UseFlashlightAction();
-                break;
-            case PlayerActionType.Torch:
-            case PlayerActionType.Granade:
-            case PlayerActionType.Undefined:
-            default:
-                yield return null;
-                break;
+            this.ResetTileSelector(false);
+
+            this.globalCtrl.NextTurn();
         }
-    
-        this.SelectActionType(PlayerActionType.Undefined);
     }
 
     public void SwitchWalkProcEffect(bool active)
@@ -175,6 +157,70 @@ public class PlayerActionManager
     }
 
 
+    public void SelectActionType(PlayerActionType playerActionType)
+    {
+        PlayerActionType prevAction = this.currentAction;
+        this.currentAction = playerActionType;
+        Player player = this.globalCtrl.sceneCtrl.player;
+
+        if (prevAction != this.currentAction)
+        {
+            this.DisableActionButton(prevAction);
+
+            switch (playerActionType)
+            {
+                case PlayerActionType.Walk:
+                    this.walkButton.image.sprite = this.walkButtonActive;
+                    this.walkButtonProc.sprite = this.walkButtonProcActive;
+                    this.walkButton.onClick.RemoveAllListeners();
+                    this.walkButton.onClick.AddListener(this.ConfirmAction);
+
+                    player.HighlightActive(true, true);
+
+                    break;
+                case PlayerActionType.Flashlight:
+                    this.flashlightButton.image.sprite = this.flashlightButtonActive;
+                    this.flashlightButton.onClick.RemoveAllListeners();
+                    this.flashlightButton.onClick.AddListener(this.ConfirmAction);
+                    
+                    player.HighlightActive(false, true);
+                    player.HighlightActive(true, false);
+
+                    break;
+                case PlayerActionType.Torch:
+                case PlayerActionType.Granade:
+                case PlayerActionType.Undefined:
+                default:
+                    player.HighlightActive(false, true);
+                    break;
+            }
+        }
+    }
+
+    private void DisableActionButton(PlayerActionType playerActionType)
+    {
+        switch (playerActionType)
+        {
+            case PlayerActionType.Walk:
+                this.walkButton.image.sprite = this.walkButtonInactive;
+                this.walkButtonProc.sprite = this.walkButtonProcInactive;
+                this.walkButton.onClick.RemoveAllListeners();
+                this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
+                break;
+            case PlayerActionType.Flashlight:
+                this.flashlightButton.image.sprite = this.flashlightButtonInactive;
+                this.flashlightButton.onClick.RemoveAllListeners();
+                this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
+                break;
+            case PlayerActionType.Torch:
+            case PlayerActionType.Granade:
+            case PlayerActionType.Undefined:
+            default:
+                break;
+        }
+    }
+
+
     private void ResetTileSelector(bool selectPlayerTile)
     {
         Player player = this.globalCtrl.sceneCtrl.player;
@@ -184,10 +230,30 @@ public class PlayerActionManager
 
         if (selectPlayerTile)
         {
-            this.SelectNextTile(player.tile);
+            this.SelectTile(player.tile);
         }
     }
 
+    private void SelectTile(Tile tile)
+    {
+        if (tile)
+        {
+            if (this.selectedTile)
+            {
+                this.selectedTile.RefreshTileState(
+                    this.selectedTile.isVisible, this.selectedTile.isBlocked,
+                    this.selectedTile.isActive, false
+                );
+            }
+
+            this.selectedTile = tile;
+
+            this.selectedTile.RefreshTileState(
+                this.selectedTile.isVisible, this.selectedTile.isBlocked,
+                this.selectedTile.isActive, true
+            );
+        }
+    }
 
     private void TrySelectTile(Player player, Vector3 target)
     {
@@ -198,7 +264,7 @@ public class PlayerActionManager
 
             Tile closestTile = player.activeTiles[positions.First()];
 
-            this.SelectNextTile(closestTile);
+            this.SelectTile(closestTile);
         }
     }
 
@@ -232,117 +298,6 @@ public class PlayerActionManager
                 player.tileSelector.transform.Translate(translation, Space.World);
 
                 this.TrySelectTile(player, target);
-            }
-        }
-    }
-
-    private void SelectNextTile(Tile nextTile)
-    {
-        if (nextTile)
-        {
-            if (this.selectedTile)
-            {
-                this.selectedTile.RefreshTileState(
-                    this.selectedTile.isVisible, this.selectedTile.isBlocked,
-                    this.selectedTile.isActive, false
-                );
-            }
-
-            this.selectedTile = nextTile;
-
-            this.selectedTile.RefreshTileState(
-                this.selectedTile.isVisible, this.selectedTile.isBlocked,
-                this.selectedTile.isActive, true
-            );
-        }
-    }
-
-
-    private IEnumerator WalkAction()
-    {
-        if (this.selectedTile)
-        {
-            yield return this.globalCtrl.sceneCtrl.player.MoveToTile(this.selectedTile);
-        }
-    }
-
-    // TODO: Make this prettier
-    private IEnumerator UseFlashlightAction()
-    {
-        Player player = this.globalCtrl.sceneCtrl.player;
-
-        player.characterTransform.LookAt(this.selectedTile.obj.transform.position);
-        player.flashlightRay.SetActive(true);
-
-        player.UseFlashlight(this.selectedTile.point);
-
-        yield return this.FLASHLIGHT_TIMEOUT;
-        player.flashlightRay.SetActive(false);
-    }
-
-    private void DisableActionButton(PlayerActionType playerActionType)
-    {
-        switch (playerActionType)
-        {
-            case PlayerActionType.Walk:
-                this.walkButton.image.sprite = this.walkButtonInactive;
-                this.walkButtonProc.sprite = this.walkButtonProcInactive;
-                this.walkButton.onClick.RemoveAllListeners();
-                this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
-                break;
-            case PlayerActionType.Flashlight:
-                this.flashlightButton.image.sprite = this.flashlightButtonInactive;
-                this.flashlightButton.onClick.RemoveAllListeners();
-                this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
-                break;
-            case PlayerActionType.Torch:
-            case PlayerActionType.Granade:
-            case PlayerActionType.Undefined:
-            default:
-                break;
-        }
-    }
-
-    private void SelectActionType(PlayerActionType playerActionType)
-    {
-        // Debug.Log("Selected Action - " + playerActionType.ToString());
-        PlayerActionType prevAction = this.currentAction;
-        this.currentAction = playerActionType;
-        Player player = this.globalCtrl.sceneCtrl.player;
-
-        // TODO: Shouldn't be used like this
-        player.HighlightVisible(true);
-
-        if (prevAction != this.currentAction)
-        {
-            this.DisableActionButton(prevAction);
-
-            switch (playerActionType)
-            {
-                case PlayerActionType.Walk:
-                    this.walkButton.image.sprite = this.walkButtonActive;
-                    this.walkButtonProc.sprite = this.walkButtonProcActive;
-                    this.walkButton.onClick.RemoveAllListeners();
-                    this.walkButton.onClick.AddListener(this.ConfirmAction);
-
-                    player.HighlightActive(true, true);
-
-                    break;
-                case PlayerActionType.Flashlight:
-                    this.flashlightButton.image.sprite = this.flashlightButtonActive;
-                    this.flashlightButton.onClick.RemoveAllListeners();
-                    this.flashlightButton.onClick.AddListener(this.ConfirmAction);
-                    
-                    player.HighlightActive(false, true);
-                    player.HighlightActive(true, false);
-
-                    break;
-                case PlayerActionType.Torch:
-                case PlayerActionType.Granade:
-                case PlayerActionType.Undefined:
-                default:
-                    player.HighlightActive(false, true);
-                    break;
             }
         }
     }

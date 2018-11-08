@@ -19,9 +19,12 @@ public class LockPlayerControlsReaction : IEndOfTurnReaction
         {
             case LockPlayerControlsReactionType.LockPlayerControls:
                 this.playerActionManager.arePlayerControlsLocked = true;
+                break;
+            case LockPlayerControlsReactionType.LockPlayerControlsWithFade:
+                this.playerActionManager.arePlayerControlsLocked = true;
                 this.playerActionManager.enemyTurnFadeImage.SetActive(true);
                 break;
-            case LockPlayerControlsReactionType.UnlockPlayerControls:
+            case LockPlayerControlsReactionType.UnlockPlayerControlsWithFade:
                 this.playerActionManager.arePlayerControlsLocked = false;
                 this.playerActionManager.enemyTurnFadeImage.SetActive(false);
                 break;
@@ -36,6 +39,7 @@ public class LockPlayerControlsReaction : IEndOfTurnReaction
 public enum LockPlayerControlsReactionType
 {
     Undefined,
+    LockPlayerControlsWithFade,
+    UnlockPlayerControlsWithFade,
     LockPlayerControls,
-    UnlockPlayerControls,
 }

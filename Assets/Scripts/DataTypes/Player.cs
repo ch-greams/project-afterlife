@@ -44,12 +44,11 @@ public class Player
     /// <returns>IEnumerator for Coroutine</returns>
     public IEnumerator MoveToTile(Tile tile)
     {
-        HashSet<Point> _playerPoints = this.GetVisiblePoints();
-
         Path<Tile> path = tile.FindPathFrom(this.tile, (t) => (!t.isBlocked && t.isVisible && t.isActive));
-        yield return this.MoveOnPath(path.Reverse());
 
-        this.HighlightVisible(false, _playerPoints);
+        this.UpdateHighlightOnVisible(false);
+
+        yield return this.MoveOnPath(path.Reverse());
     }
 
     /// <summary>
@@ -90,19 +89,14 @@ public class Player
     }
 
 
-    private HashSet<Point> GetVisiblePoints()
-    {
-        return this.tile.GetTiles(this.visibleRange, (t) => (true));
-    }
-
     // TODO: Add limit for max visibleRange
     public void ChangeVisibleRange(float visibleRange)
     {
         if (visibleRange >= 1.5F)
         {
-            this.HighlightVisible(false);
+            this.UpdateHighlightOnVisible(false);
             this.visibleRange = visibleRange;
-            this.HighlightVisible(true);
+            this.UpdateHighlightOnVisible(true);
 
             this.globalCtrl.UpdatePlayerVisibility(this.visibleRange);
         }
@@ -112,15 +106,11 @@ public class Player
         }
     }
 
-    public void HighlightVisible(bool enable, HashSet<Point> _playerPoints = null)
+    public void UpdateHighlightOnVisible(bool enable)
     {
         SceneController sceneCtrl = this.globalCtrl.sceneCtrl;
 
-        HashSet<Point> playerPoints = (
-            _playerPoints == null
-                ? this.tile.GetTiles(this.visibleRange, (t) => (true))
-                : _playerPoints
-        );
+        HashSet<Point> playerPoints = this.tile.GetTiles(this.visibleRange, (t) => (true));
         List<Tile> playerTiles = sceneCtrl.tiles.FindAll((t) => playerPoints.Contains(t.point));
 
         foreach (Tile tile in playerTiles)
@@ -141,16 +131,12 @@ public class Player
         }
     }
 
-    public void HighlightActive(bool enable, bool useFullRange, HashSet<Point> _playerPoints = null)
+    public void HighlightActive(bool enable, bool useFullRange)
     {
         SceneController sceneCtrl = this.globalCtrl.sceneCtrl;
         float range = useFullRange ? this.visibleRange : 1.5F;
 
-        HashSet<Point> playerPoints = (
-            _playerPoints == null
-                ? this.tile.GetTiles(range, (t) => (true))
-                : _playerPoints
-        );
+        HashSet<Point> playerPoints = this.tile.GetTiles(range, (t) => (true));
         List<Tile> playerTiles = sceneCtrl.tiles.FindAll((t) => playerPoints.Contains(t.point));
 
         this.activeTiles = playerTiles.ToDictionary(tile => tile.obj.transform.position);
