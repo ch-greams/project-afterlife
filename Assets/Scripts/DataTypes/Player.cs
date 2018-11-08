@@ -16,6 +16,7 @@ public class Player
     public Animator characterAnimator;
     public Tile tile;
     public float visibleRange = 2.5F;
+    public float maxVisibleRange = 4.5F;
     public float flashlightRange = 5.0F;
 
     // TODO: Clean up this
@@ -95,7 +96,7 @@ public class Player
         if (visibleRange >= 1.5F)
         {
             this.UpdateHighlightOnVisible(false);
-            this.visibleRange = visibleRange;
+            this.visibleRange = (visibleRange > this.maxVisibleRange) ? this.maxVisibleRange : visibleRange;
             this.UpdateHighlightOnVisible(true);
 
             this.globalCtrl.UpdatePlayerVisibility(this.visibleRange);
