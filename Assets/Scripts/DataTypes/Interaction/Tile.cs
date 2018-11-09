@@ -64,7 +64,7 @@ public class Tile : SerializedScriptableObject
         this.allNeighbours = neighbours;
     }
 
-    public HashSet<Point> GetTiles(float range, Func<Tile, bool> neighbourFilter)
+    public HashSet<Point> GetPointsInRange(float range, Func<Tile, bool> neighbourFilter)
     {
         HashSet<Point> result = new HashSet<Point>();
         Comparer<(Tile tile, double cost)> costComparer = Comparer<(Tile tile, double cost)>
@@ -93,6 +93,40 @@ public class Tile : SerializedScriptableObject
 
             tilesToCheck.UnionWith(neighbourTilesWithCost);
             result.UnionWith(neighbourTiles.Select((tile) => tile.point));
+        }
+
+        return result;
+    }
+
+    public HashSet<Tile> GetTilesInRange(float range, Func<Tile, bool> neighbourFilter)
+    {
+        HashSet<Tile> result = new HashSet<Tile>();
+        Comparer<(Tile tile, double cost)> costComparer = Comparer<(Tile tile, double cost)>
+            .Create((t1, t2) => {
+                int costCompared = t1.cost.CompareTo(t2.cost);
+                return (costCompared != 0) ? costCompared : t1.tile.point.CompareTo(t2.tile.point);
+            });
+        SortedSet<(Tile tile, double cost)> tilesToCheck = new SortedSet<(Tile tile, double cost)>(costComparer);
+        tilesToCheck.Add((tile: this, cost: 0));
+
+        while (tilesToCheck.Any())
+        {
+            (Tile tile, double cost) currentTile = tilesToCheck.First();
+            tilesToCheck.Remove(currentTile);
+
+            IEnumerable<Tile> neighbourTiles = currentTile.tile.allNeighbours
+                .Where(neighbourFilter)
+                .Where((tile) => ((tile.point.DistanceTo(currentTile.tile.point) + currentTile.cost) <= range))
+                .Where((tile) => !result.Any((t) => (tile.point == t.point)));
+
+            IEnumerable<(Tile tile, double cost)> neighbourTilesWithCost = neighbourTiles
+                .Select(tile => (
+                    tile: tile,
+                    cost: currentTile.cost + tile.point.DistanceTo(currentTile.tile.point)
+                ));
+
+            tilesToCheck.UnionWith(neighbourTilesWithCost);
+            result.UnionWith(neighbourTiles);
         }
 
         return result;
@@ -142,36 +176,6 @@ public class Tile : SerializedScriptableObject
         }
 
         return path;
-    }
-
-    public Tile GetTileByDirection(TileDirection direction, Func<Tile, bool> filter)
-    {
-        IEnumerable<Tile> neighbours = this.allNeighbours.Where(filter);
-
-        switch (direction)
-        {
-            case TileDirection.Up:
-                return neighbours.FirstOrDefault(tile => (this.point + new Point(1, 0)) == tile.point);
-            case TileDirection.Right:
-                return neighbours.FirstOrDefault(tile => (this.point + new Point(0, 1)) == tile.point);
-            case TileDirection.Down:
-                return neighbours.FirstOrDefault(tile => (this.point + new Point(-1, 0)) == tile.point);
-            case TileDirection.Left:
-                return neighbours.FirstOrDefault(tile => (this.point + new Point(0, -1)) == tile.point);
-
-            case TileDirection.UpLeft:
-                return neighbours.FirstOrDefault(tile => (this.point + new Point(1, -1)) == tile.point);
-            case TileDirection.UpRight:
-                return neighbours.FirstOrDefault(tile => (this.point + new Point(1, 1)) == tile.point);
-            case TileDirection.DownRight:
-                return neighbours.FirstOrDefault(tile => (this.point + new Point(-1, 1)) == tile.point);
-            case TileDirection.DownLeft:
-                return neighbours.FirstOrDefault(tile => (this.point + new Point(-1, -1)) == tile.point);
-
-            case TileDirection.Undefined:
-            default:
-                return this;
-        }
     }
 
     public Path<Tile> GetTilesByDirection(Point directionPoint, float range)
@@ -242,17 +246,4 @@ public class TileSimple
         this.isVisible = isVisible;
         this.isBlocked = isBlocked;
     }
-}
-
-public enum TileDirection
-{
-    Undefined,
-    Up,
-    Right,
-    Down,
-    Left,
-    UpLeft,
-    UpRight,
-    DownRight,
-    DownLeft,
 }

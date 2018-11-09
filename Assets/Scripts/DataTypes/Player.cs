@@ -31,6 +31,8 @@ public class Player
     public void InitPlayer(GlobalController globalCtrl, Tile tile, float visibleRange)
     {
         this.tile = tile;
+        this.tile.isBlockedByPlayer = true;
+
         this.playerTransform.position = tile.obj.transform.position;
         this.visibleRange = visibleRange;
 
@@ -110,7 +112,7 @@ public class Player
     {
         SceneController sceneCtrl = this.globalCtrl.sceneCtrl;
 
-        HashSet<Point> playerPoints = this.tile.GetTiles(this.visibleRange, (t) => (true));
+        HashSet<Point> playerPoints = this.tile.GetPointsInRange(this.visibleRange, (t) => (true));
         List<Tile> playerTiles = sceneCtrl.tiles.FindAll((t) => playerPoints.Contains(t.point));
 
         foreach (Tile tile in playerTiles)
@@ -136,7 +138,7 @@ public class Player
         SceneController sceneCtrl = this.globalCtrl.sceneCtrl;
         float range = useFullRange ? this.visibleRange : 1.5F;
 
-        HashSet<Point> playerPoints = this.tile.GetTiles(range, neighbourFilter);
+        HashSet<Point> playerPoints = this.tile.GetPointsInRange(range, neighbourFilter);
         List<Tile> playerTiles = sceneCtrl.tiles.FindAll((t) => playerPoints.Contains(t.point));
 
         this.activeTiles = playerTiles.ToDictionary(tile => tile.obj.transform.position);
@@ -154,13 +156,13 @@ public class Player
     }
 
     /// <summary>
-    /// Calculates list of tiles affected by flashlightRay and kills enemies that exists there
+    /// Kills enemies that exists in provided tile collection
     /// </summary>
-    /// <param name="selectedPoint">Direction in which flashlightRay will be cast</param>
-    public void UseFlashlight(Point selectedPoint)
+    /// <param name="selectedTiles">Tile collection to kill enemies in</param>
+
+    public void KillEnemiesOnTiles(IEnumerable<Tile> selectedTiles)
     {
-        Path<Tile> rayPath = this.tile.GetTilesByDirection(selectedPoint, this.flashlightRange);
-        foreach (Tile tile in rayPath)
+        foreach (Tile tile in selectedTiles)
         {
             this.globalCtrl.enemyManager.TryDestroyEnemyOnPoint(tile.point, true);
         }

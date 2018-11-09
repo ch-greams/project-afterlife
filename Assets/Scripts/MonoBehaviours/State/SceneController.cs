@@ -78,7 +78,7 @@ public class SceneController : SerializedMonoBehaviour
     // NOTE: Framedrop from ~100Mb of garbage on full 20 visibility
     public void UpdateTiles(Tile playerTile)
     {
-        HashSet<Point> playerTiles = playerTile.GetTiles(this.player.visibleRange, (t) => (true));
+        HashSet<Point> playerTiles = playerTile.GetPointsInRange(this.player.visibleRange, (t) => (true));
         Dictionary<Point, TileSimple> currentMap = this.sceneState.GetCurrentMap(playerTiles);
 
         foreach (Tile tile in this.tiles)

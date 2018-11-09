@@ -1,12 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 
-public class PlayerFlashlightReaction : IEndOfTurnReaction
+public class PlayerGranadeAction : IEndOfTurnReaction
 {
-    [Range(0, 2)]
-    public float animationTimeout = 0.25F;
     private GlobalController globalCtrl;
 
 
@@ -23,17 +20,14 @@ public class PlayerFlashlightReaction : IEndOfTurnReaction
         if (playerActionManager.selectedTile)
         {
             player.characterTransform.LookAt(playerActionManager.selectedTile.obj.transform.position);
-            player.flashlightRay.SetActive(true);
 
             player.KillEnemiesOnTiles(playerActionManager.selectedTiles);
-
-            yield return new WaitForSeconds(this.animationTimeout);
-
-            player.flashlightRay.SetActive(false);
         }
     
         playerActionManager.UpdateSelectedTiles(new HashSet<Tile>());
 
         playerActionManager.SelectActionType(PlayerActionType.Undefined);
+
+        yield return null;
     }
 }

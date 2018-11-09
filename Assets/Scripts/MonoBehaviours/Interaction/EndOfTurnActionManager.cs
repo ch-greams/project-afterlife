@@ -18,6 +18,13 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
     )]
     public List<EndOfTurnAction> flashlightActions = new List<EndOfTurnAction>();
 
+    [ListDrawerSettings(
+        Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawGranadeActionListRefreshButton",
+        OnBeginListElementGUI = "BeginDrawGranadeActionListElement", OnEndListElementGUI = "EndDrawListElement"
+    )]
+    public List<EndOfTurnAction> granadeActions = new List<EndOfTurnAction>();
+
+
     private GlobalController globalCtrl;
 
 
@@ -31,6 +38,11 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
         }
 
         foreach (EndOfTurnAction action in this.flashlightActions)
+        {
+            action.Init(this.globalCtrl);   
+        }
+
+        foreach (EndOfTurnAction action in this.granadeActions)
         {
             action.Init(this.globalCtrl);   
         }
@@ -57,7 +69,8 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
                 return this.walkActions;
             case PlayerActionType.Flashlight:
                 return this.flashlightActions;
-            case PlayerActionType.Granade:   
+            case PlayerActionType.Granade:
+                return this.granadeActions;
             case PlayerActionType.Torch:   
             case PlayerActionType.Undefined:   
             default:
@@ -89,6 +102,11 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
         this.DrawActionListRefreshButton(this.flashlightActions);
     }
 
+    private void DrawGranadeActionListRefreshButton()
+    {
+        this.DrawActionListRefreshButton(this.granadeActions);
+    }
+
     private void BeginDrawActionListElement(EndOfTurnAction action, int index)
     {
         string title = (
@@ -107,6 +125,11 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
     private void BeginDrawFlashlightActionListElement(int index)
     {
         this.BeginDrawActionListElement(this.flashlightActions[index], index);
+    }
+
+    private void BeginDrawGranadeActionListElement(int index)
+    {
+        this.BeginDrawActionListElement(this.granadeActions[index], index);
     }
 
     private void EndDrawListElement(int index)

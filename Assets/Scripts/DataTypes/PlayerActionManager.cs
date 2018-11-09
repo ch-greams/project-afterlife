@@ -67,6 +67,7 @@ public class PlayerActionManager
 
     public PlayerActionType currentAction { get; private set; }
     public Tile selectedTile { get; private set; }
+    public HashSet<Tile> selectedTiles { get; private set; }
 
     private GlobalController globalCtrl;
 
@@ -77,6 +78,7 @@ public class PlayerActionManager
 
         this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
         this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
+        this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
     }
 
 
@@ -104,8 +106,8 @@ public class PlayerActionManager
 
             if (Input.GetButtonDown("Button Y"))
             {
-                Debug.Log("Button Y");
-                // GranadeButton
+                // Debug.Log("Button Y");
+                this.granadeButton.onClick.Invoke();
             }
 
             if (Input.GetButtonDown("Left Stick Button"))
@@ -118,10 +120,10 @@ public class PlayerActionManager
             {
                 case PlayerActionType.Walk:
                 case PlayerActionType.Flashlight:
+                case PlayerActionType.Granade:
                     this.TryMoveTileSelector("Left Stick Horizontal", "Left Stick Vertical");
                     break;
                 case PlayerActionType.Torch:
-                case PlayerActionType.Granade:
                 case PlayerActionType.Undefined:
                 default:
                     break;
@@ -144,14 +146,17 @@ public class PlayerActionManager
         this.walkButtonProc.gameObject.SetActive(active);
         
         this.flashlightButton.interactable = !active;
+        this.granadeButton.interactable = !active;
 
         if (active)
         {
             this.flashlightButton.onClick.RemoveAllListeners();
+            this.granadeButton.onClick.RemoveAllListeners();
         }
         else
         {
             this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
+            this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
         }
     }
 
@@ -175,19 +180,23 @@ public class PlayerActionManager
                     this.walkButton.onClick.AddListener(this.ConfirmAction);
 
                     player.HighlightActive(true, true, (t) => (!t.isBlocked));
-
                     break;
                 case PlayerActionType.Flashlight:
                     this.flashlightButton.image.sprite = this.flashlightButtonActive;
                     this.flashlightButton.onClick.RemoveAllListeners();
                     this.flashlightButton.onClick.AddListener(this.ConfirmAction);
-                    
+
                     player.HighlightActive(false, true, (t) => (true));
                     player.HighlightActive(true, false, (t) => (true));
-
+                    break;
+                case PlayerActionType.Granade:
+                    this.granadeButton.image.sprite = this.granadeButtonActive;
+                    this.granadeButton.onClick.RemoveAllListeners();
+                    this.granadeButton.onClick.AddListener(this.ConfirmAction);
+                    
+                    player.HighlightActive(true, true, (t) => (true));
                     break;
                 case PlayerActionType.Torch:
-                case PlayerActionType.Granade:
                 case PlayerActionType.Undefined:
                 default:
                     player.HighlightActive(false, true, (t) => (true));
@@ -211,8 +220,12 @@ public class PlayerActionManager
                 this.flashlightButton.onClick.RemoveAllListeners();
                 this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
                 break;
-            case PlayerActionType.Torch:
             case PlayerActionType.Granade:
+                this.granadeButton.image.sprite = this.granadeButtonInactive;
+                this.granadeButton.onClick.RemoveAllListeners();
+                this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
+                break;
+            case PlayerActionType.Torch:
             case PlayerActionType.Undefined:
             default:
                 break;
@@ -254,8 +267,60 @@ public class PlayerActionManager
         }
     }
 
-    private void TrySelectTile(Player player, Vector3 target)
+    private HashSet<Tile> GetTilesPerActionType(Tile selectedTile)
     {
+        Player player = this.globalCtrl.sceneCtrl.player;
+        HashSet<Tile> selectedTiles = new HashSet<Tile>();
+        selectedTiles.Add(selectedTile);
+
+        switch (this.currentAction)
+        {
+            case PlayerActionType.Flashlight:
+                selectedTiles.UnionWith(
+                    player.tile.GetTilesByDirection(selectedTile.point, player.flashlightRange)
+                );
+                break;
+            case PlayerActionType.Granade:
+                selectedTiles.UnionWith(
+                    selectedTile.GetTilesInRange(1, (t) => (true))
+                );
+                break;
+            case PlayerActionType.Walk:
+            case PlayerActionType.Torch:
+            case PlayerActionType.Undefined:
+            default:
+                break;
+        }
+
+        return selectedTiles;
+    }
+
+    // TODO: Make private later
+    public void UpdateSelectedTiles(HashSet<Tile> tiles)
+    {
+        if (tiles != null)
+        {
+            if (this.selectedTiles != null)
+            {
+                foreach (Tile tile in this.selectedTiles)
+                {
+                    tile.RefreshTileState(tile.isVisible, tile.isBlocked, tile.isActive, false);
+                }
+            }
+
+            this.selectedTiles = tiles;
+
+            foreach (Tile tile in this.selectedTiles)
+            {
+                tile.RefreshTileState(tile.isVisible, tile.isBlocked, tile.isActive, true);
+            }
+        }
+    }
+
+    private void TrySelectTile(Vector3 target)
+    {
+        Player player = this.globalCtrl.sceneCtrl.player;
+
         if ((player.activeTiles != null) && (player.activeTiles.Count > 0))
         {
             List<Vector3> positions = player.activeTiles.Keys.ToList();
@@ -264,6 +329,8 @@ public class PlayerActionManager
             Tile closestTile = player.activeTiles[positions.First()];
 
             this.SelectTile(closestTile);
+
+            this.UpdateSelectedTiles(this.GetTilesPerActionType(closestTile));
         }
     }
 
@@ -296,7 +363,7 @@ public class PlayerActionManager
             {
                 player.tileSelector.transform.Translate(translation, Space.World);
 
-                this.TrySelectTile(player, target);
+                this.TrySelectTile(target);
             }
         }
     }

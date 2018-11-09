@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\LockPlayerControlsReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\MultiKillProcReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\PlayerFlashlightReaction.cs" />
+    <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\PlayerGranadeAction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\PlayerWalkReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\ScoreReaction.cs" />
     <Compile Include="Assets\Scripts\Actions\EndOfTurn\Reactions\TestDebugReaction.cs" />
