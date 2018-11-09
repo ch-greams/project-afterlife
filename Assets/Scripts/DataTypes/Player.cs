@@ -90,7 +90,6 @@ public class Player
     }
 
 
-    // TODO: Add limit for max visibleRange
     public void ChangeVisibleRange(float visibleRange)
     {
         if (visibleRange >= 1.5F)
