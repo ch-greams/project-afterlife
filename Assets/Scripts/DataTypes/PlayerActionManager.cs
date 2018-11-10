@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 
 public class PlayerActionManager
@@ -70,35 +71,45 @@ public class PlayerActionManager
     public HashSet<Tile> selectedTiles { get; private set; }
 
     private GlobalController globalCtrl;
+    // TODO: Make something more sophisticated for controller switch
+    private bool isXboxJoystick;
 
 
     public void Init(GlobalController globalCtrl)
     {
         this.globalCtrl = globalCtrl;
+        this.isXboxJoystick = this.IsXboxJoystick();
 
         this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
         this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
         this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
     }
 
+    private bool IsXboxJoystick()
+    {
+        return Array.Exists(
+            Input.GetJoystickNames(),
+            (joystick) => (joystick != null) && joystick.ToLower().Contains("xbox")
+        );
+    }
 
     public void InputListener()
     {
         if (!this.arePlayerControlsLocked)
         {
-            if (Input.GetButtonDown("Button A"))
+            if (Input.GetButtonDown(this.isXboxJoystick ? "Button A" : "Button B"))
             {
                 Debug.Log("Button A");
                 // TorchButton
             }
 
-            if (Input.GetButtonDown("Button B"))
+            if (Input.GetButtonDown(this.isXboxJoystick ? "Button B" : "Button X"))
             {
                 // Debug.Log("Button B");
                 this.walkButton.onClick.Invoke();
             }
 
-            if (Input.GetButtonDown("Button X"))
+            if (Input.GetButtonDown(this.isXboxJoystick ? "Button X" : "Button A"))
             {
                 // Debug.Log("Button X");
                 this.flashlightButton.onClick.Invoke();
