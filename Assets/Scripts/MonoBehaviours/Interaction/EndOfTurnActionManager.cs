@@ -24,6 +24,12 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
     )]
     public List<EndOfTurnAction> granadeActions = new List<EndOfTurnAction>();
 
+    [ListDrawerSettings(
+        Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawTorchActionListRefreshButton",
+        OnBeginListElementGUI = "BeginDrawTorchActionListElement", OnEndListElementGUI = "EndDrawListElement"
+    )]
+    public List<EndOfTurnAction> torchActions = new List<EndOfTurnAction>();
+
 
     private GlobalController globalCtrl;
 
@@ -43,6 +49,11 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
         }
 
         foreach (EndOfTurnAction action in this.granadeActions)
+        {
+            action.Init(this.globalCtrl);   
+        }
+
+        foreach (EndOfTurnAction action in this.torchActions)
         {
             action.Init(this.globalCtrl);   
         }
@@ -71,8 +82,9 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
                 return this.flashlightActions;
             case PlayerActionType.Granade:
                 return this.granadeActions;
-            case PlayerActionType.Torch:   
-            case PlayerActionType.Undefined:   
+            case PlayerActionType.Torch:
+                return this.torchActions;
+            case PlayerActionType.Undefined:
             default:
                 return new List<EndOfTurnAction>();
         }
@@ -107,6 +119,11 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
         this.DrawActionListRefreshButton(this.granadeActions);
     }
 
+    private void DrawTorchActionListRefreshButton()
+    {
+        this.DrawActionListRefreshButton(this.torchActions);
+    }
+
     private void BeginDrawActionListElement(EndOfTurnAction action, int index)
     {
         string title = (
@@ -130,6 +147,11 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
     private void BeginDrawGranadeActionListElement(int index)
     {
         this.BeginDrawActionListElement(this.granadeActions[index], index);
+    }
+
+    private void BeginDrawTorchActionListElement(int index)
+    {
+        this.BeginDrawActionListElement(this.torchActions[index], index);
     }
 
     private void EndDrawListElement(int index)

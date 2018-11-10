@@ -83,6 +83,7 @@ public class PlayerActionManager
         this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
         this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
         this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
+        this.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
     }
 
     private bool IsXboxJoystick()
@@ -99,8 +100,8 @@ public class PlayerActionManager
         {
             if (Input.GetButtonDown(this.isXboxJoystick ? "Button A" : "Button B"))
             {
-                Debug.Log("Button A");
-                // TorchButton
+                // Debug.Log("Button A");
+                this.torchButton.onClick.Invoke();
             }
 
             if (Input.GetButtonDown(this.isXboxJoystick ? "Button B" : "Button X"))
@@ -132,9 +133,9 @@ public class PlayerActionManager
                 case PlayerActionType.Walk:
                 case PlayerActionType.Flashlight:
                 case PlayerActionType.Granade:
+                case PlayerActionType.Torch:
                     this.TryMoveTileSelector("Left Stick Horizontal", "Left Stick Vertical");
                     break;
-                case PlayerActionType.Torch:
                 case PlayerActionType.Undefined:
                 default:
                     break;
@@ -158,16 +159,19 @@ public class PlayerActionManager
         
         this.flashlightButton.interactable = !active;
         this.granadeButton.interactable = !active;
+        this.torchButton.interactable = !active;
 
         if (active)
         {
             this.flashlightButton.onClick.RemoveAllListeners();
             this.granadeButton.onClick.RemoveAllListeners();
+            this.torchButton.onClick.RemoveAllListeners();
         }
         else
         {
             this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
             this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
+            this.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
         }
     }
 
@@ -208,6 +212,13 @@ public class PlayerActionManager
                     player.HighlightActive(true, true, (t) => (true));
                     break;
                 case PlayerActionType.Torch:
+                    this.torchButton.image.sprite = this.torchButtonActive;
+                    this.torchButton.onClick.RemoveAllListeners();
+                    this.torchButton.onClick.AddListener(this.ConfirmAction);
+
+                    player.HighlightActive(false, true, (t) => (true));
+                    player.HighlightActive(true, false, (t) => (true));
+                    break;
                 case PlayerActionType.Undefined:
                 default:
                     player.HighlightActive(false, true, (t) => (true));
@@ -237,6 +248,10 @@ public class PlayerActionManager
                 this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
                 break;
             case PlayerActionType.Torch:
+                this.torchButton.image.sprite = this.torchButtonInactive;
+                this.torchButton.onClick.RemoveAllListeners();
+                this.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
+                break;
             case PlayerActionType.Undefined:
             default:
                 break;
@@ -296,8 +311,12 @@ public class PlayerActionManager
                     selectedTile.GetTilesInRange(1, (t) => (true))
                 );
                 break;
-            case PlayerActionType.Walk:
             case PlayerActionType.Torch:
+                selectedTiles.UnionWith(
+                    player.tile.GetCleaveTilesByDirection(selectedTile.point)
+                );
+                break;
+            case PlayerActionType.Walk:
             case PlayerActionType.Undefined:
             default:
                 break;

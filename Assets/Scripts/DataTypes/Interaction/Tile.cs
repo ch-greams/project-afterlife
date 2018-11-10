@@ -201,6 +201,42 @@ public class Tile : SerializedScriptableObject
         return rayPath;
     }
 
+    public IEnumerable<Tile> GetCleaveTilesByDirection(Point directionPoint)
+    {
+        Point deltaPoint = directionPoint - this.point;
+        List<Point> points = new List<Point>();
+
+        if (deltaPoint.x != 0 && deltaPoint.y != 0)
+        {
+            points = new List<Point>()
+            {
+                directionPoint,
+                new Point(deltaPoint.x, 0) + this.point,
+                new Point(0, deltaPoint.y) + this.point,
+            };
+        }
+        else if (deltaPoint.x != 0)
+        {
+            points = new List<Point>()
+            {
+                directionPoint,
+                new Point(deltaPoint.x, -1) + this.point,
+                new Point(deltaPoint.x, 1) + this.point,
+            };
+        }
+        else if (deltaPoint.y != 0)
+        {
+            points = new List<Point>()
+            {
+                directionPoint,
+                new Point(-1, deltaPoint.y) + this.point,
+                new Point(1, deltaPoint.y) + this.point,
+            };
+        }
+
+        return this.allNeighbours.Where((tile) => points.Contains(tile.point));
+    }
+
     public void RefreshTileState(bool isVisible, bool isBlocked, bool inEditor = false)
     {
         this.isVisible = isVisible;
