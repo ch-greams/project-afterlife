@@ -57,6 +57,9 @@ public class PlayerActionManager
     [FoldoutGroup("Button Configuration")]
     [BoxGroup("Button Configuration/[Y] Granade Button")]
     public Sprite granadeButtonInactive;
+    [FoldoutGroup("Button Configuration")]
+    [BoxGroup("Button Configuration/[Y] Granade Button")]
+    public Text granadeButtonCooldownLabel;
 
     public GameObject enemyTurnFadeImage;
 
@@ -71,7 +74,6 @@ public class PlayerActionManager
     public HashSet<Tile> selectedTiles { get; private set; }
 
     private GlobalController globalCtrl;
-    // TODO: Make something more sophisticated for controller switch
     private bool isXboxJoystick;
 
 
@@ -86,6 +88,8 @@ public class PlayerActionManager
         this.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
     }
 
+    // TODO: Make something more sophisticated for controller switch
+    // TODO: Probably replace with xInput or new Unity alternative later
     private bool IsXboxJoystick()
     {
         return Array.Exists(
@@ -100,31 +104,26 @@ public class PlayerActionManager
         {
             if (Input.GetButtonDown(this.isXboxJoystick ? "Button A" : "Button B"))
             {
-                // Debug.Log("Button A");
                 this.torchButton.onClick.Invoke();
             }
 
             if (Input.GetButtonDown(this.isXboxJoystick ? "Button B" : "Button X"))
             {
-                // Debug.Log("Button B");
                 this.walkButton.onClick.Invoke();
             }
 
             if (Input.GetButtonDown(this.isXboxJoystick ? "Button X" : "Button A"))
             {
-                // Debug.Log("Button X");
                 this.flashlightButton.onClick.Invoke();
             }
 
             if (Input.GetButtonDown("Button Y"))
             {
-                // Debug.Log("Button Y");
                 this.granadeButton.onClick.Invoke();
             }
 
             if (Input.GetButtonDown("Left Stick Button"))
             {
-                // Debug.Log("Left Stick Button");
                 this.ResetTileSelector(true);
             } 
 
@@ -153,28 +152,55 @@ public class PlayerActionManager
         }
     }
 
-    public void SwitchWalkProcEffect(bool active)
+    public void SwitchWalkProcEffect(bool isProcActive)
     {
-        this.walkButtonProc.gameObject.SetActive(active);
+        this.walkButtonProc.gameObject.SetActive(isProcActive);
         
-        this.flashlightButton.interactable = !active;
-        this.granadeButton.interactable = !active;
-        this.torchButton.interactable = !active;
+        this.flashlightButton.interactable = !isProcActive;
+        this.torchButton.interactable = !isProcActive;
 
-        if (active)
+        if (isProcActive)
         {
             this.flashlightButton.onClick.RemoveAllListeners();
-            this.granadeButton.onClick.RemoveAllListeners();
             this.torchButton.onClick.RemoveAllListeners();
         }
         else
         {
             this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
-            this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
             this.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
+        }
+
+        if (isProcActive)
+        {
+            this.granadeButton.interactable = false;
+            this.granadeButton.onClick.RemoveAllListeners();
+        }
+        else if (this.globalCtrl.globalState.endOfTurnActionState.turnsTillGranadeChargeLeft < 1)
+        {
+            this.granadeButton.interactable = true;
+            this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
         }
     }
 
+
+    public void GranadeChargeEffect(int turnsTillChargeLeft)
+    {
+        if (turnsTillChargeLeft > 0)
+        {
+            this.granadeButton.interactable = false;
+            this.granadeButton.onClick.RemoveAllListeners();
+
+            this.granadeButtonCooldownLabel.text = turnsTillChargeLeft.ToString();
+            this.granadeButtonCooldownLabel.gameObject.SetActive(true);
+        }
+        else
+        {
+            this.granadeButton.interactable = true;
+            this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
+
+            this.granadeButtonCooldownLabel.gameObject.SetActive(false);
+        }
+    }
 
     public void SelectActionType(PlayerActionType playerActionType)
     {
@@ -296,8 +322,7 @@ public class PlayerActionManager
     private HashSet<Tile> GetTilesPerActionType(Tile selectedTile)
     {
         Player player = this.globalCtrl.sceneCtrl.player;
-        HashSet<Tile> selectedTiles = new HashSet<Tile>();
-        selectedTiles.Add(selectedTile);
+        HashSet<Tile> selectedTiles = new HashSet<Tile>(){ selectedTile };
 
         switch (this.currentAction)
         {

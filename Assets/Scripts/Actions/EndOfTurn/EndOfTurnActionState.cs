@@ -6,6 +6,8 @@ public class EndOfTurnActionState
 
     public bool isDoubleKillProcActive = false;
 
+    public int turnsTillGranadeChargeLeft = 0;
+
 
     public EndOfTurnActionState()
     {
