@@ -19,18 +19,21 @@ public class GranadeChargeReaction : IEndOfTurnReaction
 
     public IEnumerator React()
     {
-        EndOfTurnActionState endOfTurnActionState = this.globalCtrl.globalState.endOfTurnActionState;
+        GlobalState globalState = this.globalCtrl.globalState;
         PlayerActionManager playerActionManager = this.globalCtrl.playerActionManager;
 
         switch (this.type)
         {
             case GranadeChargeReactionType.PutOnCooldown:
-                endOfTurnActionState.turnsTillGranadeChargeLeft = this.abilityCooldown;
-                playerActionManager.GranadeChargeEffect(endOfTurnActionState.turnsTillGranadeChargeLeft);
+                globalState.SetVariableInState("turnsTillGranadeChargeLeft", this.abilityCooldown);
+                playerActionManager.GranadeChargeEffect(globalState.GetVariableFromState<int>("turnsTillGranadeChargeLeft"));
                 break;
             case GranadeChargeReactionType.ReduceCooldown:
-                endOfTurnActionState.turnsTillGranadeChargeLeft--;
-                playerActionManager.GranadeChargeEffect(endOfTurnActionState.turnsTillGranadeChargeLeft);
+                globalState.SetVariableInState(
+                    "turnsTillGranadeChargeLeft",
+                    (globalState.GetVariableFromState<int>("turnsTillGranadeChargeLeft") - 1)
+                );
+                playerActionManager.GranadeChargeEffect(globalState.GetVariableFromState<int>("turnsTillGranadeChargeLeft"));
                 break;
             case GranadeChargeReactionType.Undefined:
             default:

@@ -5,12 +5,12 @@ using UnityEngine;
 public class TestDebugReaction : IEndOfTurnReaction
 {
     public string logText = "Triggered";
-    private EnemyKillConditionState enemyKillConditionState;
+    private GlobalController globalCtrl;
 
 
     public void Init(GlobalController globalCtrl)
     {
-        this.enemyKillConditionState = globalCtrl.globalState.endOfTurnActionState.enemyKillConditionState;
+        this.globalCtrl = globalCtrl;
     }
 
     public IEnumerator React()

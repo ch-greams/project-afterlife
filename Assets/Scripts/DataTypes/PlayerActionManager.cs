@@ -175,7 +175,7 @@ public class PlayerActionManager
             this.granadeButton.interactable = false;
             this.granadeButton.onClick.RemoveAllListeners();
         }
-        else if (this.globalCtrl.globalState.endOfTurnActionState.turnsTillGranadeChargeLeft < 1)
+        else if (this.globalCtrl.globalState.GetVariableFromState<int>("turnsTillGranadeChargeLeft") < 1)
         {
             this.granadeButton.interactable = true;
             this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));

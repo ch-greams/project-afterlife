@@ -20,32 +20,33 @@ public class MultiKillProcReaction : IEndOfTurnReaction
         GlobalState globalState = this.globalCtrl.globalState;
         PlayerActionManager playerActionManager = this.globalCtrl.playerActionManager;
 
-        EndOfTurnActionState endOfTurnActionState = globalState.endOfTurnActionState;
-        EnemyKillConditionState enemyKillConditionState = globalState.endOfTurnActionState.enemyKillConditionState;
-
-
-        if (endOfTurnActionState.isDoubleKillProcActive)
+        if (globalState.GetVariableFromState<bool>("isDoubleKillProcActive"))
         {
-            endOfTurnActionState.SetIsDoubleKillProcActive(false);
+            globalState.SetVariableInState("isDoubleKillProcActive", false);
             playerActionManager.SwitchWalkProcEffect(false);
         }
         else
         {
-            enemyKillConditionState.DecreaseTurnsTillResetLeft(1);
+            globalState.SetVariableInState(
+                "turnsTillResetLeft",
+                globalState.GetVariableFromState<int>("turnsTillResetLeft") - 1
+            );
 
-            if (enemyKillConditionState.enemiesKilled >= this.amountForProc)
+            if (globalState.GetVariableFromState<int>("enemiesKilled") >= this.amountForProc)
             {
-                endOfTurnActionState.SetIsDoubleKillProcActive(true);
+                globalState.SetVariableInState("isDoubleKillProcActive", true);
                 playerActionManager.SwitchWalkProcEffect(true);
 
                 this.globalCtrl.scoreManager.IncrementScore(this.scoreValue);
             }
         }
 
-        if ((enemyKillConditionState.turnsTillResetLeft <= 0) || (enemyKillConditionState.enemiesKilled == 0))
-        {
-            enemyKillConditionState.SetEnemiesKilled(0);
-            enemyKillConditionState.SetTurnsTillResetLeft(this.turnsTillReset);
+        if (
+            (globalState.GetVariableFromState<int>("turnsTillResetLeft") <= 0) ||
+            (globalState.GetVariableFromState<int>("enemiesKilled") == 0)
+        ) {
+            globalState.SetVariableInState("enemiesKilled", 0);
+            globalState.SetVariableInState("turnsTillResetLeft", this.turnsTillReset);
         }
 
         yield return null;

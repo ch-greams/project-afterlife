@@ -21,8 +21,29 @@ public class GlobalState : SerializedScriptableObject
     [DictionaryDrawerSettings]
     public Dictionary<SceneType, SceneState> sceneStates = new Dictionary<SceneType, SceneState>();
 
-    public EndOfTurnActionState endOfTurnActionState;
+    public Dictionary<string, object> eotState = new Dictionary<string, object>();
 
+
+    public T GetVariableFromState<T>(string key)
+    {
+        return (
+            this.eotState != null && this.eotState.ContainsKey(key)
+                ? (T)this.eotState[key]
+                : default(T)
+        );
+    }
+
+    public void SetVariableInState(string key, object value)
+    {
+        if (this.eotState != null)
+        {
+            this.eotState[key] = value;
+        }
+        else
+        {
+            this.eotState = new Dictionary<string, object>(){ { key, value } };
+        }
+    }
 
     public void LoadFromSerializable(GlobalStateSerializable serializedGlobalState)
     {

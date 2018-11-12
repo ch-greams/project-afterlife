@@ -4,12 +4,12 @@ public class DoubleKillStateCondition : IEndOfTurnCondition
 {
     public DoubleKillStateConditionType type = DoubleKillStateConditionType.Undefined;
 
-    private EndOfTurnActionState endOfTurnActionState;
+    private GlobalState globalState;
 
 
     public void Init(GlobalController globalCtrl)
     {
-        this.endOfTurnActionState = globalCtrl.globalState.endOfTurnActionState;
+        this.globalState = globalCtrl.globalState;
     }
 
     public bool IsValid()
@@ -17,9 +17,9 @@ public class DoubleKillStateCondition : IEndOfTurnCondition
         switch (this.type)
         {
             case DoubleKillStateConditionType.Active:
-                return this.endOfTurnActionState.isDoubleKillProcActive;
+                return this.globalState.GetVariableFromState<bool>("isDoubleKillProcActive");
             case DoubleKillStateConditionType.Inactive:
-                return !this.endOfTurnActionState.isDoubleKillProcActive;
+                return !this.globalState.GetVariableFromState<bool>("isDoubleKillProcActive");
             case DoubleKillStateConditionType.Undefined:
             default:
                 return false;
