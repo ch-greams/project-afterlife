@@ -212,6 +212,11 @@ public class PlayerActionManager
         {
             this.DisableActionButton(prevAction);
 
+            this.SelectTile(null);
+            this.UpdateSelectedTiles(new HashSet<Tile>());
+
+            this.ResetTileSelector(false);
+
             switch (playerActionType)
             {
                 case PlayerActionType.Walk:
@@ -300,18 +305,18 @@ public class PlayerActionManager
 
     private void SelectTile(Tile tile)
     {
-        if (tile != null)
+        if (this.selectedTile)
         {
-            if (this.selectedTile)
-            {
-                this.selectedTile.RefreshTileState(
-                    this.selectedTile.isVisible, this.selectedTile.isBlocked,
-                    this.selectedTile.isActive, false
-                );
-            }
+            this.selectedTile.RefreshTileState(
+                this.selectedTile.isVisible, this.selectedTile.isBlocked,
+                this.selectedTile.isActive, false
+            );
+        }
 
-            this.selectedTile = tile;
+        this.selectedTile = tile;
 
+        if (this.selectedTile != null)
+        {
             this.selectedTile.RefreshTileState(
                 this.selectedTile.isVisible, this.selectedTile.isBlocked,
                 this.selectedTile.isActive, true
@@ -353,18 +358,18 @@ public class PlayerActionManager
     // TODO: Make private later
     public void UpdateSelectedTiles(HashSet<Tile> tiles)
     {
-        if (tiles != null)
+        if (this.selectedTiles != null)
         {
-            if (this.selectedTiles != null)
+            foreach (Tile tile in this.selectedTiles)
             {
-                foreach (Tile tile in this.selectedTiles)
-                {
-                    tile.RefreshTileState(tile.isVisible, tile.isBlocked, tile.isActive, false);
-                }
+                tile.RefreshTileState(tile.isVisible, tile.isBlocked, tile.isActive, false);
             }
+        }
 
-            this.selectedTiles = tiles;
+        this.selectedTiles = tiles;
 
+        if (this.selectedTiles != null)
+        {
             foreach (Tile tile in this.selectedTiles)
             {
                 tile.RefreshTileState(tile.isVisible, tile.isBlocked, tile.isActive, true);
