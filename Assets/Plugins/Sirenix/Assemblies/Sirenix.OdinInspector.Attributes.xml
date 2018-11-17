@@ -1624,6 +1624,16 @@
             If true, no row indices drawn.
             </summary>
         </member>
+        <member name="F:Sirenix.OdinInspector.TableMatrixAttribute.RespectIndentLevel">
+            <summary>
+            Whether the drawn table should respect the current GUI indent level.
+            </summary>
+        </member>
+        <member name="F:Sirenix.OdinInspector.TableMatrixAttribute.Transpose">
+            <summary>
+            If true, tables are drawn with rows/columns reversed (C# initialization order).
+            </summary>
+        </member>
         <member name="F:Sirenix.OdinInspector.TypeFilterAttribute.MemberName">
             <summary>
             Name of any field, property or method member that implements IList. E.g. arrays or Lists.

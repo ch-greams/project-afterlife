@@ -2663,7 +2663,7 @@
         </member>
         <member name="T:Sirenix.OdinInspector.Editor.Drawers.TwoDimensionalArrayDrawer`2">
             <summary>
-            Base class for two-dimentional array drawers.
+            Base class for two-dimensional array drawers.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.Editor.Drawers.TwoDimensionalArrayDrawer`2.CanDrawTypeFilter(System.Type)">
@@ -9587,7 +9587,7 @@
         </member>
         <member name="M:Sirenix.OdinInspector.Editor.InspectorProperty.Draw(UnityEngine.GUIContent)">
             <summary>
-            Draws this property in the inspector with a given label.
+            Draws this property in the inspector with a given default label. This default label may be overridden by attributes on the drawn property.
             </summary>
         </member>
         <member name="M:Sirenix.OdinInspector.Editor.InspectorProperty.PushDraw">

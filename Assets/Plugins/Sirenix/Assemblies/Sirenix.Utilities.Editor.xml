@@ -2340,6 +2340,11 @@
             The Table Rect.
             </summary>
         </member>
+        <member name="F:Sirenix.Utilities.Editor.GUITable.RespectIndentLevel">
+            <summary>
+            Whether to respect the current GUI indent level.
+            </summary>
+        </member>
         <member name="P:Sirenix.Utilities.Editor.GUITable.Item(System.Int32,System.Int32)">
             <summary>
             Gets or sets a <see cref="T:Sirenix.Utilities.Editor.GUITableCell"/> from the <see cref="T:Sirenix.Utilities.Editor.GUITable"/>.
