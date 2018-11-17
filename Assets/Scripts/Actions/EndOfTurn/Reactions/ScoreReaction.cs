@@ -6,12 +6,12 @@ public class ScoreReaction : IEndOfTurnReaction
     public ScoreReactionType type = ScoreReactionType.Undefined;
     public int value = 0;
 
-    private ScoreManager scoreManager;
+    private StatsManager statsManager;
 
 
     public void Init(GlobalController globalCtrl)
     {
-        this.scoreManager = globalCtrl.scoreManager;
+        this.statsManager = globalCtrl.statsManager;
     }
 
     public IEnumerator React()
@@ -19,7 +19,7 @@ public class ScoreReaction : IEndOfTurnReaction
         switch (this.type)
         {
             case ScoreReactionType.IncrementScoreValue:
-                this.scoreManager.IncrementScore(this.value);
+                this.statsManager.IncrementScore(this.value);
                 break;
             case ScoreReactionType.Undefined:
             default:

@@ -475,24 +475,83 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: endOfTurnActionState
+    - Name: eotState
       Entry: 7
-      Data: 4|EndOfTurnActionState, Assembly-CSharp
-    - Name: enemyKillConditionState
+      Data: 4|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+        mscorlib]], mscorlib
+    - Name: comparer
       Entry: 7
-      Data: 5|EnemyKillConditionState, Assembly-CSharp
-    - Name: enemiesKilled
-      Entry: 3
-      Data: 0
-    - Name: turnsTillResetLeft
-      Entry: 3
-      Data: 1
+      Data: 5|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
     - Name: 
       Entry: 8
       Data: 
-    - Name: isDoubleKillProcActive
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: isDoubleKillProcActive
+    - Name: 
+      Entry: 7
+      Data: 6|System.Boolean, mscorlib
+    - Name: 
       Entry: 5
       Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: turnsTillGranadeChargeLeft
+    - Name: 
+      Entry: 7
+      Data: 7|System.Int32, mscorlib
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: turnsTillResetLeft
+    - Name: 
+      Entry: 9
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: enemiesKilled
+    - Name: 
+      Entry: 9
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
     - Name: 
       Entry: 8
       Data: 

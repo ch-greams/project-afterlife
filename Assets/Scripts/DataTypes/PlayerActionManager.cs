@@ -300,7 +300,7 @@ public class PlayerActionManager
 
     private void SelectTile(Tile tile)
     {
-        if (tile)
+        if (tile != null)
         {
             if (this.selectedTile)
             {

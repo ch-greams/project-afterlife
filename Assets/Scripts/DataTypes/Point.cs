@@ -84,15 +84,18 @@ public struct Point : IComparable<Point>
         return (this.x == other.x) ? (this.y - other.y) : (this.x - other.x);
     }
 
-    // TODO: Either rework or remnove
-    public Vector3 CalcWorldCoord(float h, float tileSize)
+    public Vector3 CalcWorldCoord(float height)
     {
-        Vector3 initPos = new Vector3(0, 0, 0);
+        return new Vector3(( this.x + 0.5F ), height, ( this.y + 0.5F ));
+    }
 
-        float x = initPos.x + this.x * tileSize + tileSize / 2;
-        float z = initPos.z + this.y * tileSize + tileSize / 2;
-
-        return new Vector3(x, h, z);
+    public Vector3 CalcWorldCoord(float height, Vector3 zeroPointCoordinates)
+    {
+        return new Vector3(
+            (zeroPointCoordinates.x + this.x + 0.5F),
+            height,
+            (zeroPointCoordinates.z + this.y + 0.5F)
+        );
     }
 
     public float DistanceTo(Point point)

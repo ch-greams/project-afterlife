@@ -37,7 +37,7 @@ public class MultiKillProcReaction : IEndOfTurnReaction
                 globalState.SetVariableInState("isDoubleKillProcActive", true);
                 playerActionManager.SwitchWalkProcEffect(true);
 
-                this.globalCtrl.scoreManager.IncrementScore(this.scoreValue);
+                this.globalCtrl.statsManager.IncrementScore(this.scoreValue);
             }
         }
 

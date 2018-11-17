@@ -192,6 +192,52 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 1
+--- !u!1 &27384629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 27384630}
+  - component: {fileID: 27384631}
+  m_Layer: 5
+  m_Name: StatsPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &27384630
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27384629}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1405953026}
+  - {fileID: 1784520780}
+  m_Father: {fileID: 203014886}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &27384631
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27384629}
+  m_CullTransparentMesh: 0
 --- !u!1 &34835193
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +1027,7 @@ RectTransform:
   - {fileID: 865638375}
   - {fileID: 335768177}
   - {fileID: 617699922}
-  - {fileID: 1405953026}
+  - {fileID: 27384630}
   - {fileID: 1483697434}
   - {fileID: 711672768}
   - {fileID: 553015766}
@@ -7418,7 +7464,7 @@ MonoBehaviour:
     - {fileID: 14498661}
     - {fileID: 711672767}
     - {fileID: 1405953027}
-    - {fileID: 1831439497551332, guid: 938142f99093f51408b617d566029294, type: 3}
+    - {fileID: 1784520782}
     - {fileID: 1306313449982572, guid: bbc936afdb3aaa847a31b08e3f20165f, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -8085,15 +8131,15 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: scoreManager
+    - Name: statsManager
       Entry: 7
-      Data: 31|ScoreManager, Assembly-CSharp
+      Data: 31|StatsManager, Assembly-CSharp
     - Name: scoreText
       Entry: 10
       Data: 98
-    - Name: scoreValue
-      Entry: 3
-      Data: 0
+    - Name: turnCountText
+      Entry: 10
+      Data: 99
     - Name: 
       Entry: 8
       Data: 
@@ -8118,247 +8164,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 5
-    - Name: 
-      Entry: 7
-      Data: 35|EnemySpawnPoint, Assembly-CSharp
-    - Name: point
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 11
-    - Name: y
-      Entry: 3
-      Data: 13
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: name
-      Entry: 1
-      Data: Enemy
-    - Name: prefab
-      Entry: 10
-      Data: 99
-    - Name: movementSpeed
-      Entry: 4
-      Data: 2.5
-    - Name: animationSpeed
-      Entry: 4
-      Data: 2
-    - Name: attackPower
-      Entry: 4
-      Data: 1
-    - Name: isLockedOnPlayer
-      Entry: 5
-      Data: true
-    - Name: itemDropRate
-      Entry: 4
-      Data: 0.3
-    - Name: repeatSpawn
-      Entry: 5
-      Data: true
-    - Name: repeatSpawnDelay
-      Entry: 3
-      Data: 3
-    - Name: repeatSpawnTurnsLeft
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 36|EnemySpawnPoint, Assembly-CSharp
-    - Name: point
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 15
-    - Name: y
-      Entry: 3
-      Data: 6
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: name
-      Entry: 1
-      Data: Enemy
-    - Name: prefab
-      Entry: 10
-      Data: 99
-    - Name: movementSpeed
-      Entry: 4
-      Data: 2.5
-    - Name: animationSpeed
-      Entry: 4
-      Data: 2
-    - Name: attackPower
-      Entry: 4
-      Data: 1
-    - Name: isLockedOnPlayer
-      Entry: 5
-      Data: true
-    - Name: itemDropRate
-      Entry: 4
-      Data: 0.3
-    - Name: repeatSpawn
-      Entry: 5
-      Data: true
-    - Name: repeatSpawnDelay
-      Entry: 3
-      Data: 3
-    - Name: repeatSpawnTurnsLeft
-      Entry: 3
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 37|EnemySpawnPoint, Assembly-CSharp
-    - Name: point
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 4
-    - Name: y
-      Entry: 3
-      Data: 11
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: name
-      Entry: 1
-      Data: Enemy
-    - Name: prefab
-      Entry: 10
-      Data: 99
-    - Name: movementSpeed
-      Entry: 4
-      Data: 2.5
-    - Name: animationSpeed
-      Entry: 4
-      Data: 2
-    - Name: attackPower
-      Entry: 4
-      Data: 1
-    - Name: isLockedOnPlayer
-      Entry: 5
-      Data: true
-    - Name: itemDropRate
-      Entry: 4
-      Data: 0.3
-    - Name: repeatSpawn
-      Entry: 5
-      Data: true
-    - Name: repeatSpawnDelay
-      Entry: 3
-      Data: 3
-    - Name: repeatSpawnTurnsLeft
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 38|EnemySpawnPoint, Assembly-CSharp
-    - Name: point
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 8
-    - Name: y
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: name
-      Entry: 1
-      Data: Enemy
-    - Name: prefab
-      Entry: 10
-      Data: 99
-    - Name: movementSpeed
-      Entry: 4
-      Data: 2.5
-    - Name: animationSpeed
-      Entry: 4
-      Data: 2
-    - Name: attackPower
-      Entry: 4
-      Data: 1
-    - Name: isLockedOnPlayer
-      Entry: 5
-      Data: true
-    - Name: itemDropRate
-      Entry: 4
-      Data: 0.3
-    - Name: repeatSpawn
-      Entry: 5
-      Data: true
-    - Name: repeatSpawnDelay
-      Entry: 3
-      Data: 2
-    - Name: repeatSpawnTurnsLeft
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 39|EnemySpawnPoint, Assembly-CSharp
-    - Name: point
-      Entry: 7
-      Data: Point, Assembly-CSharp
-    - Name: x
-      Entry: 3
-      Data: 9
-    - Name: y
-      Entry: 3
-      Data: 10
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: name
-      Entry: 1
-      Data: Enemy
-    - Name: prefab
-      Entry: 10
-      Data: 99
-    - Name: movementSpeed
-      Entry: 4
-      Data: 2.5
-    - Name: animationSpeed
-      Entry: 4
-      Data: 2
-    - Name: attackPower
-      Entry: 4
-      Data: 1
-    - Name: isLockedOnPlayer
-      Entry: 5
-      Data: true
-    - Name: itemDropRate
-      Entry: 4
-      Data: 0.3
-    - Name: repeatSpawn
-      Entry: 5
-      Data: true
-    - Name: repeatSpawnDelay
-      Entry: 3
-      Data: 3
-    - Name: repeatSpawnTurnsLeft
-      Entry: 3
-      Data: 6
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 0
     - Name: 
       Entry: 13
       Data: 
@@ -8370,17 +8176,17 @@ MonoBehaviour:
       Data: 
     - Name: collectableManager
       Entry: 7
-      Data: 40|CollectableManager, Assembly-CSharp
+      Data: 35|CollectableManager, Assembly-CSharp
     - Name: collectableItemPrefab
       Entry: 10
       Data: 100
     - Name: collectableItems
       Entry: 7
-      Data: 41|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
+      Data: 36|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 42|System.Collections.Generic.ObjectEqualityComparer`1[[Point, Assembly-CSharp]],
+      Data: 37|System.Collections.Generic.ObjectEqualityComparer`1[[Point, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 8
@@ -8407,7 +8213,6 @@ MonoBehaviour:
   directionSwitch: 0
   directionVerticalSignSwitch: 0
   directionHorizontalSignSwitch: 0
-  turnCount: 0
 --- !u!1 &1305276252
 GameObject:
   m_ObjectHideFlags: 0
@@ -8976,12 +8781,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405953025}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 203014886}
-  m_RootOrder: 7
+  m_Father: {fileID: 27384630}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -12290,6 +12095,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781886593}
   m_CullTransparentMesh: 0
+--- !u!1 &1784520779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1784520780}
+  - component: {fileID: 1784520781}
+  - component: {fileID: 1784520782}
+  m_Layer: 5
+  m_Name: TurnCountText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1784520780
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784520779}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 27384630}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: -220}
+  m_SizeDelta: {x: 400, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1784520781
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784520779}
+  m_CullTransparentMesh: 0
+--- !u!114 &1784520782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784520779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.5943396, b: 0.44452628, a: 0.19607843}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2cdd665c966cec94ba26670afa16f569, type: 3}
+    m_FontSize: 64
+    m_FontStyle: 2
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 64
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Turn: 0000'
 --- !u!1 &1827009529
 GameObject:
   m_ObjectHideFlags: 0
@@ -13396,7 +13280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1966297254
 RectTransform:
   m_ObjectHideFlags: 0

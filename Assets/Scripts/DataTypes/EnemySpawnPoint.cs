@@ -1,19 +1,19 @@
 ﻿using Sirenix.OdinInspector;
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 
 
-public class EnemySpawnPoint
-{    
+public class EnemySpawnPoint : SerializedMonoBehaviour
+{
+    [FoldoutGroup("Enemy Main Settings", true)]
+    public new string name = "Enemy";
     [FoldoutGroup("Enemy Main Settings", true)]
     public Point point;
-    [FoldoutGroup("Enemy Main Settings", true)]
-    public string name = "Enemy";
+    
     [FoldoutGroup("Enemy Settings")]
     public GameObject prefab;
     [FoldoutGroup("Enemy Settings")]
     public float movementSpeed = 3.0F;
-    // TODO: Use or remove it
     [FoldoutGroup("Enemy Settings")]
     public float animationSpeed = 2.0F;
     [FoldoutGroup("Enemy Settings")]
@@ -29,6 +29,8 @@ public class EnemySpawnPoint
     public int repeatSpawnDelay = 3;
     [FoldoutGroup("SpawnPoint Settings")]
     public int repeatSpawnTurnsLeft = 3;
+    [FoldoutGroup("SpawnPoint Settings")]
+    public int repeatSpawnCapacity = 3;
 
 
     public EnemySpawnPoint() { }
@@ -39,7 +41,10 @@ public class EnemySpawnPoint
         bool isSpawnTime = this.repeatSpawn && this.CheckTurnForSpawn();
         Tile tile = isSpawnTime ? tiles.Find(t => t.point == this.point) : null;
 
-        return ((tile != null && !tile.isBlocked && !tile.isBlockedByPlayer) ? this.SpawnEnemy(tile) : null);
+        bool isTileAvailable = ( (tile != null) && !tile.isBlocked && !tile.isBlockedByPlayer );
+        bool isSpawnPointHasCharge = ( this.repeatSpawnCapacity > 0 );
+
+        return ( (isTileAvailable && isSpawnPointHasCharge) ? this.SpawnEnemy(tile) : null );
     }
 
     private Enemy SpawnEnemy(Tile tile)
@@ -47,7 +52,9 @@ public class EnemySpawnPoint
         GameObject obj = GameObject.Instantiate(this.prefab, tile.obj.transform.position, Quaternion.identity);
         string enemyName = string.Format("{0} {1}", this.name, point);
 
-        return new Enemy(enemyName, this.movementSpeed, this.attackPower, this.isLockedOnPlayer, obj.transform, tile);
+        this.repeatSpawnCapacity--;
+
+        return new Enemy(enemyName, this.animationSpeed, this.movementSpeed, this.attackPower, this.isLockedOnPlayer, obj.transform, tile);
     }
 
     private bool CheckTurnForSpawn()
@@ -62,5 +69,16 @@ public class EnemySpawnPoint
             this.repeatSpawnTurnsLeft = this.repeatSpawnDelay;
             return true;
         }
+    }
+
+    [FoldoutGroup("Enemy Main Settings", true)]
+    [Button(ButtonSizes.Medium)]
+    public void RefreshCurrentPoint()
+    {
+        Point point = new Point(this.transform.position, new Vector3(-10, 0, -10));
+
+        this.point = point;
+        this.transform.position = point.CalcWorldCoord(0.5F, new Vector3(-10, 0, -10));
+        this.transform.name = string.Format("spawn_{0} {1}", this.name, this.point);
     }
 }

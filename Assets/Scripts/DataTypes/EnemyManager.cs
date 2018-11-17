@@ -64,7 +64,7 @@ public class EnemyManager
                 "enemiesKilled",
                 (this.globalCtrl.globalState.GetVariableFromState<int>("enemiesKilled") + 1)
             );
-            this.globalCtrl.scoreManager.IncrementScore(10);
+            this.globalCtrl.statsManager.IncrementScore(10);
 
             if (itemDropRate > Random.Range(0F, 1F))
             {

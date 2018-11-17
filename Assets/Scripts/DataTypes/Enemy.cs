@@ -31,9 +31,17 @@ public class Enemy
         this.tile.RefreshTileState(this.tile.isVisible, true);
     }
 
-    public Enemy(string name, float movementSpeed, float attackPower, bool isLockedOnPlayer, Transform characterTransform, Tile tile)
-    {
+    public Enemy(
+        string name,
+        float animationSpeed,
+        float movementSpeed,
+        float attackPower,
+        bool isLockedOnPlayer,
+        Transform characterTransform,
+        Tile tile
+    ) {
         this.name = name;
+        this.animationSpeed = animationSpeed;
 
         this.movementSpeed = movementSpeed;
         this.attackPower = attackPower;
@@ -49,7 +57,11 @@ public class Enemy
     public IEnumerator MoveToPlayer(Player player, EnemyManager enemyManager)
     {
         Path<Tile> path = player.tile.FindPathFrom(this.tile, (t) => (!t.isBlocked), this.movementSpeed);
-        yield return this.MoveOnPath(path.Reverse(), player, enemyManager);
+        
+        if (path != null)
+        {
+            yield return this.MoveOnPath(path.Reverse(), player, enemyManager);
+        }
     }
 
     private bool TryAttackPlayer(Player player, EnemyManager enemyManager)

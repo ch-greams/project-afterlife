@@ -13,9 +13,6 @@ public class GridGenerator : MonoBehaviour
     public Point gridSize;
 
     [BoxGroup("Configuration")]
-    public float tileSize = 1;
-
-    [BoxGroup("Configuration")]
     public bool isVisible = false;
     [BoxGroup("Configuration")]
     public bool isBlocked = false;
@@ -65,7 +62,7 @@ public class GridGenerator : MonoBehaviour
             for (int y = 0; y < this.gridSize.y; y++)
             {
                 Point point = new Point(x, y);
-                GameObject obj = Instantiate(this.tilePrefab, point.CalcWorldCoord(0, tileSize), Quaternion.identity);
+                GameObject obj = Instantiate(this.tilePrefab, point.CalcWorldCoord(0), Quaternion.identity);
                 obj.transform.SetParent(this.transform);
                 obj.name = point.ToString();
 

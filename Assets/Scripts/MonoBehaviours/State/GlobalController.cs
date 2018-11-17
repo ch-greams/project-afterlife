@@ -34,7 +34,7 @@ public class GlobalController : SerializedMonoBehaviour
 
     // TODO: Do something smart about it
     [FoldoutGroup("Interface Management")]
-    public ScoreManager scoreManager;
+    public StatsManager statsManager;
 
 
     [FoldoutGroup("State Management")]
@@ -91,12 +91,9 @@ public class GlobalController : SerializedMonoBehaviour
         }
     }
 
-    // TODO: Move it somewhere more appropriate
-    public int turnCount = 0;
-
     public void NextTurn()
     {
-        this.turnCount++;
+        this.statsManager.IncrementTurnCount();
         base.StartCoroutine(this.endOfTurnActionManager.ReactOnValidActions());
     }
 

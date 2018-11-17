@@ -11,6 +11,9 @@ public class SceneController : SerializedMonoBehaviour
     public GlobalState globalState;
     public Player player;
 
+    [BoxGroup("Enemy Spawn Points")]
+    public List<EnemySpawnPoint> enemySpawnPoints = new List<EnemySpawnPoint>();
+
     [InlineEditor]
     public SceneState sceneState;
 
@@ -42,9 +45,11 @@ public class SceneController : SerializedMonoBehaviour
 
     private void Awake()
     {
-        this.globalCtrl = FindObjectOfType<GlobalController>();
+        this.globalCtrl = GameObject.FindObjectOfType<GlobalController>();
         this.globalCtrl.sceneCtrl = this;
         
+        this.globalCtrl.enemyManager.enemySpawnPoints = this.enemySpawnPoints;
+
         this.globalState = this.globalCtrl.globalState;
         this.sceneState = this.globalState.sceneStates[this.id];
 
@@ -99,6 +104,13 @@ public class SceneController : SerializedMonoBehaviour
         {
             tile.RefreshTileState(true, tile.isBlocked);
         }
+    }
+
+    [BoxGroup("Enemy Spawn Points")]
+    [Button(ButtonSizes.Medium)]
+    public void CollectEnemySpawnPoints()
+    {
+        this.enemySpawnPoints = GameObject.FindObjectsOfType<EnemySpawnPoint>().ToList();
     }
 }
 
