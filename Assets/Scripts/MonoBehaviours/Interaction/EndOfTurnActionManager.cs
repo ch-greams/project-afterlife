@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+#if UNITY_EDITOR
 using Sirenix.Utilities.Editor;
+#endif
 
 
 public class EndOfTurnActionManager : SerializedMonoBehaviour
@@ -90,6 +92,7 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
 
     private void DrawActionListRefreshButton(List<EndOfTurnAction> actions)
     {
@@ -158,4 +161,6 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
     {
         SirenixEditorGUI.EndBox();
     }
+
+#endif
 }
