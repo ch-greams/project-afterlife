@@ -75,10 +75,10 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
     [Button(ButtonSizes.Medium)]
     public void RefreshCurrentPoint()
     {
-        Point point = new Point(this.transform.position, new Vector3(-10, 0, -10));
+        Point point = new Point(this.transform.position);
 
         this.point = point;
-        this.transform.position = point.CalcWorldCoord(0.5F, new Vector3(-10, 0, -10));
+        this.transform.position = point.CalcWorldCoord(0.5F);
         this.transform.name = string.Format("spawn_{0} {1}", this.name, this.point);
     }
 }

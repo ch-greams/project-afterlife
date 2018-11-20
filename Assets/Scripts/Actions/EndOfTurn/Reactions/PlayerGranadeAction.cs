@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 
 public class PlayerGranadeAction : IEndOfTurnReaction
 {
+    public GameObject effectPrefab;
+    public float effectTimeout = 0;
     private GlobalController globalCtrl;
 
 
@@ -19,15 +22,22 @@ public class PlayerGranadeAction : IEndOfTurnReaction
 
         if (playerActionManager.selectedTile)
         {
-            player.characterTransform.LookAt(playerActionManager.selectedTile.obj.transform.position);
+            yield return this.GranadeEffect(player, playerActionManager.selectedTile.point);
 
             player.KillEnemiesOnTiles(playerActionManager.selectedTiles);
-        }
-    
+        }    
+
         playerActionManager.UpdateSelectedTiles(new HashSet<Tile>());
-
         playerActionManager.SelectActionType(PlayerActionType.Undefined);
+    }
 
-        yield return null;
+    private IEnumerator GranadeEffect(Player player, Point point)
+    {
+        Vector3 targetPosition = point.CalcWorldCoord(0.1F);
+
+        player.characterTransform.LookAt(targetPosition);
+        GameObject.Instantiate(this.effectPrefab, targetPosition, Quaternion.identity);
+
+        yield return new WaitForSeconds(this.effectTimeout);
     }
 }

@@ -9662,7 +9662,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 1456238708415488753, guid: ce258cd8af924fb45bb019964b556b48, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -10503,6 +10504,12 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 75|PlayerGranadeAction, Assembly-CSharp
+    - Name: effectPrefab
+      Entry: 10
+      Data: 0
+    - Name: effectTimeout
+      Entry: 4
+      Data: 0.1
     - Name: 
       Entry: 8
       Data: 
@@ -10873,6 +10880,12 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 108|PlayerGranadeAction, Assembly-CSharp
+    - Name: effectPrefab
+      Entry: 6
+      Data: 
+    - Name: effectTimeout
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 

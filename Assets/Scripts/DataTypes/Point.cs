@@ -23,10 +23,10 @@ public struct Point : IComparable<Point>
     /// <summary>
     /// Create point based on Vector3 coordinates
     /// </summary>
-    public Point(Vector3 pointCoordinates, Vector3 zeroPointCoordinates)
+    public Point(Vector3 pointCoordinates)
     {
-        this.x = Mathf.FloorToInt(pointCoordinates.x - zeroPointCoordinates.x);
-        this.y = Mathf.FloorToInt(pointCoordinates.z - zeroPointCoordinates.z);
+        this.x = Mathf.FloorToInt(pointCoordinates.x);
+        this.y = Mathf.FloorToInt(pointCoordinates.z);
     }
 
     public Point(string point)
@@ -87,15 +87,6 @@ public struct Point : IComparable<Point>
     public Vector3 CalcWorldCoord(float height)
     {
         return new Vector3(( this.x + 0.5F ), height, ( this.y + 0.5F ));
-    }
-
-    public Vector3 CalcWorldCoord(float height, Vector3 zeroPointCoordinates)
-    {
-        return new Vector3(
-            (zeroPointCoordinates.x + this.x + 0.5F),
-            height,
-            (zeroPointCoordinates.z + this.y + 0.5F)
-        );
     }
 
     public float DistanceTo(Point point)
