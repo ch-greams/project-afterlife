@@ -46,7 +46,7 @@ public class PlaygroundGenerator : SerializedMonoBehaviour
             Tile tile = tiles.Find(t => t.point == point);
             GameObject obj = GameObject.Instantiate(this.shadowPrefab, tile.obj.transform.position, Quaternion.identity);
 
-            Enemy enemy = new Enemy("Enemy " + point, this.movementSpeed, obj.transform, tile);
+            Enemy enemy = new Enemy("Enemy " + point, this.movementSpeed, obj, tile);
             this.enemyManager.enemies.Add(enemy);
         }
     }

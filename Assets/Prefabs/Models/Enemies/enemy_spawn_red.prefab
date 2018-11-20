@@ -104,6 +104,8 @@ MonoBehaviour:
     x: 10
     y: 10
   prefab: {fileID: 5760984327023505404, guid: 25e7fb7f69009b2409abb399b653c409, type: 3}
+  deathEffectPrefab: {fileID: 1047898169087284, guid: cad0d6db795eed4488569bdd1aff8b85,
+    type: 3}
   movementSpeed: 2.5
   animationSpeed: 2
   attackPower: 2

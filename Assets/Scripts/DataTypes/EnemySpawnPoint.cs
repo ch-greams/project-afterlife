@@ -13,6 +13,8 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
     [FoldoutGroup("Enemy Settings")]
     public GameObject prefab;
     [FoldoutGroup("Enemy Settings")]
+    public GameObject deathEffectPrefab;
+    [FoldoutGroup("Enemy Settings")]
     public float movementSpeed = 3.0F;
     [FoldoutGroup("Enemy Settings")]
     public float animationSpeed = 2.0F;
@@ -49,26 +51,27 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
 
     private Enemy SpawnEnemy(Tile tile)
     {
-        GameObject obj = GameObject.Instantiate(this.prefab, tile.obj.transform.position, Quaternion.identity);
-        string enemyName = string.Format("{0} {1}", this.name, point);
-
         this.repeatSpawnCapacity--;
 
-        return new Enemy(enemyName, this.animationSpeed, this.movementSpeed, this.attackPower, this.isLockedOnPlayer, obj.transform, tile);
+        return new Enemy(
+            name: string.Format("{0} {1}", this.name, point),
+            animationSpeed: this.animationSpeed,
+            movementSpeed: this.movementSpeed,
+            attackPower: this.attackPower,
+            isLockedOnPlayer: this.isLockedOnPlayer,
+            characterObject: GameObject.Instantiate(this.prefab, tile.obj.transform.position, Quaternion.identity),
+            deathEffectPrefab: this.deathEffectPrefab,
+            tile: tile
+        );
     }
 
     private bool CheckTurnForSpawn()
     {
-        if (this.repeatSpawnTurnsLeft > 0)
-        {
-            this.repeatSpawnTurnsLeft = this.repeatSpawnTurnsLeft - 1;
-            return false;
-        }
-        else
-        {
-            this.repeatSpawnTurnsLeft = this.repeatSpawnDelay;
-            return true;
-        }
+        bool isSpawnTime = !(this.repeatSpawnTurnsLeft > 0);
+
+        this.repeatSpawnTurnsLeft = isSpawnTime ? this.repeatSpawnDelay : (this.repeatSpawnTurnsLeft - 1);
+
+        return isSpawnTime;
     }
 
     [FoldoutGroup("Enemy Main Settings", true)]

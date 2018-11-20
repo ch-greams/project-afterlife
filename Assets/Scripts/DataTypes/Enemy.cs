@@ -13,19 +13,20 @@ public class Enemy
     public bool isLockedOnPlayer = false;
     public float itemDropRate = 0.30F;
 
-    public Transform characterTransform;
+    public GameObject characterObject;
+    public GameObject deathEffectPrefab;
     public Tile tile;
 
 
     public Enemy() { }
 
-    public Enemy(string name, float movementSpeed, Transform characterTransform, Tile tile)
+    public Enemy(string name, float movementSpeed, GameObject characterObject, Tile tile)
     {
         this.name = name;
         this.movementSpeed = movementSpeed;
 
-        this.characterTransform = characterTransform;
-        this.characterTransform.gameObject.name = this.name;
+        this.characterObject = characterObject;
+        this.characterObject.name = this.name;
 
         this.tile = tile;
         this.tile.RefreshTileState(this.tile.isVisible, true);
@@ -37,7 +38,8 @@ public class Enemy
         float movementSpeed,
         float attackPower,
         bool isLockedOnPlayer,
-        Transform characterTransform,
+        GameObject characterObject,
+        GameObject deathEffectPrefab,
         Tile tile
     ) {
         this.name = name;
@@ -47,8 +49,10 @@ public class Enemy
         this.attackPower = attackPower;
         this.isLockedOnPlayer = isLockedOnPlayer;
 
-        this.characterTransform = characterTransform;
-        this.characterTransform.gameObject.name = this.name;
+        this.characterObject = characterObject;
+        this.characterObject.name = this.name;
+
+        this.deathEffectPrefab = deathEffectPrefab;
 
         this.tile = tile;
         this.tile.RefreshTileState(this.tile.isVisible, true);
@@ -80,7 +84,10 @@ public class Enemy
 
     public void Destroy()
     {
-        GameObject.DestroyImmediate(this.characterTransform.gameObject);
+        Vector3 effectPosition = this.characterObject.transform.position + new Vector3(0, 0.5F, 0);
+        GameObject.Instantiate(this.deathEffectPrefab, effectPosition, Quaternion.identity);
+
+        GameObject.DestroyImmediate(this.characterObject);
         this.tile.RefreshTileState(this.tile.isVisible, false);
     }
 
@@ -98,17 +105,18 @@ public class Enemy
     private IEnumerator MoveToTile(Tile tile)
     {
         float startTime = Time.time;
-        Vector3 startPosition = this.characterTransform.position;
+        Transform characterTransform = this.characterObject.transform;
+        Vector3 startPosition = characterTransform.position;
         Vector3 endPosition = new Vector3(tile.obj.transform.position.x, 0, tile.obj.transform.position.z);
         float journeyLength = Vector3.Distance(startPosition, endPosition);
 
-        this.characterTransform.LookAt(endPosition);
+        characterTransform.LookAt(endPosition);
 
-        while (endPosition != this.characterTransform.position)
+        while (endPosition != characterTransform.position)
         {
             float distCovered = (Time.time - startTime) * this.animationSpeed;
             float fracJourney = distCovered / journeyLength;
-            this.characterTransform.position = Vector3.Lerp(startPosition, endPosition, fracJourney);
+            characterTransform.position = Vector3.Lerp(startPosition, endPosition, fracJourney);
 
             yield return null;
         }
