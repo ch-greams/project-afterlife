@@ -11,6 +11,7 @@ public class Player
     public bool isTargetUpdating = false;
     public Transform playerTransform;
     public Transform characterTransform;
+    public Light playerSpotlight;
     public GameObject flashlightRay;
     public GameObject tileSelector;
     public Animator characterAnimator;
@@ -54,44 +55,6 @@ public class Player
         yield return this.MoveOnPath(path.Reverse());
     }
 
-    /// <summary>
-    /// Move player on provided path of tiles
-    /// </summary>
-    /// <param name="path">Path for player to walk on</param>
-    /// <returns>IEnumerator for Coroutine</returns>
-    private IEnumerator MoveOnPath(IEnumerable<Tile> path)
-    {
-        foreach (Tile tile in path)
-        {
-            this.characterAnimator.SetFloat(this.speedParamHash, this.animationSpeed * 1F);
-
-            float startTime = Time.time;
-            Vector3 startPosition = this.playerTransform.position;
-            Vector3 endPosition = new Vector3(tile.obj.transform.position.x, 0, tile.obj.transform.position.z);
-            float journeyLength = Vector3.Distance(startPosition, endPosition);
-
-            this.characterTransform.LookAt(endPosition);
-
-            while (endPosition != this.playerTransform.position)
-            {
-                float distCovered = (Time.time - startTime) * this.animationSpeed;
-                float fracJourney = distCovered / journeyLength;
-                this.playerTransform.position = Vector3.Lerp(startPosition, endPosition, fracJourney);
-
-                yield return null;
-            }
-
-            this.globalCtrl.UpdatePlayerPosition(tile.point);
-
-            this.tile.isBlockedByPlayer = false;
-            this.tile = tile;
-            this.tile.isBlockedByPlayer = true;
-
-            this.characterAnimator.SetFloat(this.speedParamHash, 0F);
-        }
-    }
-
-
     public void ChangeVisibleRange(float visibleRange)
     {
         if (visibleRange >= 1.5F)
@@ -99,6 +62,11 @@ public class Player
             this.UpdateHighlightOnVisible(false);
             this.visibleRange = (visibleRange > this.maxVisibleRange) ? this.maxVisibleRange : visibleRange;
             this.UpdateHighlightOnVisible(true);
+
+            this.playerSpotlight.spotAngle = this.GetSpotlightAngle(
+                this.visibleRange,
+                this.playerSpotlight.transform.position.y
+            );
 
             this.globalCtrl.UpdatePlayerVisibility(this.visibleRange);
         }
@@ -171,5 +139,52 @@ public class Player
     public void TryCollectItem()
     {
         this.globalCtrl.collectableManager.TryCollectItem(this.tile.point);
+    }
+
+
+    /// <summary>
+    /// Move player on provided path of tiles
+    /// </summary>
+    /// <param name="path">Path for player to walk on</param>
+    /// <returns>IEnumerator for Coroutine</returns>
+    private IEnumerator MoveOnPath(IEnumerable<Tile> path)
+    {
+        foreach (Tile tile in path)
+        {
+            this.characterAnimator.SetFloat(this.speedParamHash, this.animationSpeed * 1F);
+
+            float startTime = Time.time;
+            Vector3 startPosition = this.playerTransform.position;
+            Vector3 endPosition = new Vector3(tile.obj.transform.position.x, 0, tile.obj.transform.position.z);
+            float journeyLength = Vector3.Distance(startPosition, endPosition);
+
+            this.characterTransform.LookAt(endPosition);
+
+            while (endPosition != this.playerTransform.position)
+            {
+                float distCovered = (Time.time - startTime) * this.animationSpeed;
+                float fracJourney = distCovered / journeyLength;
+                this.playerTransform.position = Vector3.Lerp(startPosition, endPosition, fracJourney);
+
+                yield return null;
+            }
+
+            this.globalCtrl.UpdatePlayerPosition(tile.point);
+
+            this.tile.isBlockedByPlayer = false;
+            this.tile = tile;
+            this.tile.isBlockedByPlayer = true;
+
+            this.characterAnimator.SetFloat(this.speedParamHash, 0F);
+        }
+    }
+
+    private float GetSpotlightAngle(float visibleRange, float spotlightHight)
+    {
+        float angleInRadians = Mathf.Atan((visibleRange + 0.5F) / spotlightHight);
+
+        float angleInDegrees = (180 / Mathf.PI) * angleInRadians;
+
+        return angleInDegrees * 2;
     }
 }
