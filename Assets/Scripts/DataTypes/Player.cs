@@ -179,9 +179,9 @@ public class Player
         }
     }
 
-    private float GetSpotlightAngle(float visibleRange, float spotlightHight)
+    private float GetSpotlightAngle(float visibleRange, float spotlightHeight)
     {
-        float angleInRadians = Mathf.Atan((visibleRange + 0.5F) / spotlightHight);
+        float angleInRadians = Mathf.Atan((visibleRange + 0.5F) / spotlightHeight);
 
         float angleInDegrees = (180 / Mathf.PI) * angleInRadians;
 
