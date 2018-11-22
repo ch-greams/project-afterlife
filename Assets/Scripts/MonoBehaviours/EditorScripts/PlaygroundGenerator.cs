@@ -17,9 +17,6 @@ public class PlaygroundGenerator : SerializedMonoBehaviour
 
 
     [FoldoutGroup("Collectable Item Generator")]
-    public GameObject collectableItemPrefab;
-
-    [FoldoutGroup("Collectable Item Generator")]
     [ListDrawerSettings(Expanded = false, DraggableItems = false)]
     public List<Point> collectableItemPositions = new List<Point>();
 

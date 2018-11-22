@@ -1101,7 +1101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4726148827285812}
   m_Layer: 8
-  m_Name: Player
+  m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1203,7 +1203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4516359109356232}
   m_Layer: 8
-  m_Name: CameraPivot
+  m_Name: camera_pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2432,7 +2432,7 @@ GameObject:
   - component: {fileID: 4749885553983886}
   - component: {fileID: 108518165867071486}
   m_Layer: 0
-  m_Name: Player_Light
+  m_Name: player_spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2564,7 +2564,7 @@ GameObject:
   - component: {fileID: 1253737858250908260}
   - component: {fileID: 3718039032131006166}
   m_Layer: 0
-  m_Name: TileSelector
+  m_Name: tile_selector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

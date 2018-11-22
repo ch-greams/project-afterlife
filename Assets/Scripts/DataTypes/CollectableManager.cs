@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollectableManager
 {
     public GameObject collectableItemPrefab;
+    public GameObject collectionEffectPrefab;
 
     public Dictionary<Point, CollectableItem> collectableItems = new Dictionary<Point, CollectableItem>();
 
@@ -26,6 +27,12 @@ public class CollectableManager
         {
             this.collectableItems[point].Destroy();
             this.collectableItems.Remove(point);
+
+            GameObject.Instantiate(
+                original: this.collectionEffectPrefab,
+                position: point.CalcWorldCoord(0.5F),
+                rotation: this.collectableItemPrefab.transform.rotation
+            );
 
             Player player = this.globalCtrl.sceneCtrl.player;
             player.ChangeVisibleRange(player.visibleRange + 1);

@@ -554,8 +554,6 @@ MonoBehaviour:
     y: 9
   - x: 12
     y: 9
-  collectableItemPrefab: {fileID: 1306313449982572, guid: bbc936afdb3aaa847a31b08e3f20165f,
-    type: 3}
   collectableItemPositions:
   - x: 11
     y: 9
@@ -7465,7 +7463,8 @@ MonoBehaviour:
     - {fileID: 711672767}
     - {fileID: 1405953027}
     - {fileID: 1784520782}
-    - {fileID: 1306313449982572, guid: bbc936afdb3aaa847a31b08e3f20165f, type: 3}
+    - {fileID: 154084, guid: ea460298bf221684caba050027fd1370, type: 3}
+    - {fileID: 152564, guid: c65f01f5682ed7c4fa8a9f4b7627328c, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -8180,6 +8179,9 @@ MonoBehaviour:
     - Name: collectableItemPrefab
       Entry: 10
       Data: 100
+    - Name: collectionEffectPrefab
+      Entry: 10
+      Data: 101
     - Name: collectableItems
       Entry: 7
       Data: 36|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
