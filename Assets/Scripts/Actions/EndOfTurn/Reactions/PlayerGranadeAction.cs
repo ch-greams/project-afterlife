@@ -36,7 +36,7 @@ public class PlayerGranadeAction : IEndOfTurnReaction
         Vector3 targetPosition = point.CalcWorldCoord(0.1F);
 
         player.characterTransform.LookAt(targetPosition);
-        GameObject.Instantiate(this.effectPrefab, targetPosition, Quaternion.identity);
+        GameObject.Instantiate(this.effectPrefab, targetPosition, this.effectPrefab.transform.rotation);
 
         yield return new WaitForSeconds(this.effectTimeout);
     }
