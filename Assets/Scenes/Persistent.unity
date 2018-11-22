@@ -9666,6 +9666,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 194666, guid: bb6d9c7496ad3c742b00f2eeb87bc2db, type: 3}
+    - {fileID: 124808, guid: f7e6aad6182c3a84a9881673d67b470c, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -10882,6 +10883,12 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 108|PlayerTorchReaction, Assembly-CSharp
+    - Name: effectPrefab
+      Entry: 10
+      Data: 1
+    - Name: effectTimeout
+      Entry: 4
+      Data: 0.1
     - Name: 
       Entry: 8
       Data: 
