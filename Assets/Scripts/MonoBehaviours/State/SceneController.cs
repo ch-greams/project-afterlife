@@ -36,6 +36,16 @@ public class SceneController : SerializedMonoBehaviour
     public int _default { get { return this.tiles.Count(ts => !ts.isBlocked && !ts.isVisible); } }
 
 
+    [FoldoutGroup("Tile Settings")]
+    public Color selectedTileColor;
+    [FoldoutGroup("Tile Settings")]
+    public Color activeTileColor;
+    [FoldoutGroup("Tile Settings")]
+    public Color visibleTileColor;
+    [FoldoutGroup("Tile Settings")]
+    public Color disabledTileColor;
+
+
     [HideInInspector]
     public List<Tile> tiles = new List<Tile>();
 

@@ -21,7 +21,7 @@ public class GridGenerator : MonoBehaviour
     public GameObject tilePrefab;
 
     [BoxGroup("State Management")]
-    public SceneController stateCtrl;
+    public SceneController sceneCtrl;
 
     [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/General", 360)]
     public Point size {
@@ -66,9 +66,9 @@ public class GridGenerator : MonoBehaviour
                 obj.transform.SetParent(this.transform);
                 obj.name = point.ToString();
 
-                Tile tile = Tile.CreateInstance(point, this.isVisible, this.isBlocked, obj);
+                Tile tile = Tile.CreateInstance(point, this.isVisible, this.isBlocked, obj, this.sceneCtrl);
                 Interactable tileInteractable = obj.GetComponent<Interactable>();
-                tileInteractable.sceneCtrl = this.stateCtrl;
+                tileInteractable.sceneCtrl = this.sceneCtrl;
                 (tileInteractable.data as TileData).tile = tile;
 
                 this.tiles.Add(tile);
@@ -93,8 +93,8 @@ public class GridGenerator : MonoBehaviour
     [Button("Copy Grid to State", ButtonSizes.Medium)]
     public void CopyGridToState()
     {
-        this.stateCtrl.tiles = this.tiles;
-        this.stateCtrl.sceneState.defaultMap = this.tiles.Select(t => new TileSimple(t)).ToList();
+        this.sceneCtrl.tiles = this.tiles;
+        this.sceneCtrl.sceneState.defaultMap = this.tiles.Select(t => new TileSimple(t)).ToList();
     }
 
     private void DestroyGrid()

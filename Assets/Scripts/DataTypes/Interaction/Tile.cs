@@ -21,22 +21,25 @@ public class Tile : SerializedScriptableObject
 
     [OdinSerialize]
     public IEnumerable<Tile> allNeighbours { get; set; }
+    public SceneController sceneCtrl;
 
 
-    public Tile Init(Point point, bool isVisible, bool isBlocked, GameObject obj)
+    public Tile Init(Point point, bool isVisible, bool isBlocked, GameObject obj, SceneController sceneCtrl)
     {
         this.point = point;
         this.isVisible = isVisible;
         this.isBlocked = isBlocked;
         this.obj = obj;
+        this.sceneCtrl = sceneCtrl;
+
         base.name = obj.name;
 
         return this;
     }
 
-    public static Tile CreateInstance(Point point, bool isVisible, bool isBlocked, GameObject obj)
+    public static Tile CreateInstance(Point point, bool isVisible, bool isBlocked, GameObject obj, SceneController sceneCtrl)
     {
-        return SerializedScriptableObject.CreateInstance<Tile>().Init(point, isVisible, isBlocked, obj);
+        return SerializedScriptableObject.CreateInstance<Tile>().Init(point, isVisible, isBlocked, obj, sceneCtrl);
     }
 
     /// <summary>
