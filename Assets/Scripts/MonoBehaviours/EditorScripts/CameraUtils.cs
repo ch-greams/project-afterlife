@@ -10,8 +10,6 @@ public class CameraUtils : MonoBehaviour
     public string folder = "";
     [BoxGroup("Screenshot")]
     public string fileName = "";
-    [BoxGroup("Screenshot")]
-    public int superSize = 4;
 
 
     [BoxGroup("Screenshot")]
@@ -22,6 +20,6 @@ public class CameraUtils : MonoBehaviour
 
         Debug.Log(string.Format("Saving screenshot to {0}", fullpath));
 
-        ScreenCapture.CaptureScreenshot(fullpath, this.superSize);
+        ScreenCapture.CaptureScreenshot(fullpath);
     }
 }
