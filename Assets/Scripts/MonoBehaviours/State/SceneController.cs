@@ -7,17 +7,19 @@ using UnityEngine;
 public class SceneController : SerializedMonoBehaviour
 {
     public SceneType id;
+    public bool isOpenWorldScene = false;
     public GlobalController globalCtrl;
     public GlobalState globalState;
-    public Player player;
-
-    [BoxGroup("Enemy Spawn Points")]
-    public List<EnemySpawnPoint> enemySpawnPoints = new List<EnemySpawnPoint>();
-
     [InlineEditor]
     public SceneState sceneState;
 
-    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/General", 360)]
+    [InlineEditor]
+    public Player player;
+
+    [BoxGroup("Enemy Spawn Points", order: 3), HideIf("isOpenWorldScene")]
+    public List<EnemySpawnPoint> enemySpawnPoints = new List<EnemySpawnPoint>();
+
+    [ShowInInspector, HideIf("isOpenWorldScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/General", 360)]
     public Point size {
         get {
             return (
@@ -26,23 +28,23 @@ public class SceneController : SerializedMonoBehaviour
         }
     }
 
-    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/General")]
+    [ShowInInspector, HideIf("isOpenWorldScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/General")]
     public int total { get { return this.tiles.Count; } }
-    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    [ShowInInspector, HideIf("isOpenWorldScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/States")]
     public int _blocked { get { return this.tiles.Count(ts => ts.isBlocked); } }
-    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    [ShowInInspector, HideIf("isOpenWorldScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/States")]
     public int _visible { get { return this.tiles.Count(ts => ts.isVisible); } }
-    [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    [ShowInInspector, HideIf("isOpenWorldScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/States")]
     public int _default { get { return this.tiles.Count(ts => !ts.isBlocked && !ts.isVisible); } }
 
 
-    [FoldoutGroup("Tile Settings")]
+    [BoxGroup("Tile Settings", order: 2), HideIf("isOpenWorldScene")]
     public Color selectedTileColor;
-    [FoldoutGroup("Tile Settings")]
+    [BoxGroup("Tile Settings", order: 2), HideIf("isOpenWorldScene")]
     public Color activeTileColor;
-    [FoldoutGroup("Tile Settings")]
+    [BoxGroup("Tile Settings", order: 2), HideIf("isOpenWorldScene")]
     public Color visibleTileColor;
-    [FoldoutGroup("Tile Settings")]
+    [BoxGroup("Tile Settings", order: 2), HideIf("isOpenWorldScene")]
     public Color disabledTileColor;
 
 
@@ -63,32 +65,29 @@ public class SceneController : SerializedMonoBehaviour
         this.globalState = this.globalCtrl.globalState;
         this.sceneState = this.globalState.sceneStates[this.id];
 
-        Tile playerTile = this.tiles.Find(t => t.point == this.globalState.currentPosition);
-        this.player.InitPlayer(this.globalCtrl, playerTile, this.globalState.currentVisibility);
+        if (this.isOpenWorldScene)
+        {
+            // TODO: Replace Vector3.zero with something else
+            this.player.InitPlayer(this.globalCtrl, Vector3.zero);
+        }
+        else
+        {
+            this.player.InitPlayer(
+                globalCtrl: this.globalCtrl,
+                tile: this.tiles.Find(t => t.point == this.globalState.currentPosition),
+                visibleRange: this.globalState.currentVisibility
+            );
+        }
     }
 
     private void Start()
     {
-        this.InitTiles(this.player.tile, this.sceneState.visibleByDefault);
-    }
-
-    private void InitTiles(Tile playerTile, bool visibleByDefault)
-    {   
-        if (visibleByDefault)
+        if (!this.sceneState.visibleByDefault)
         {
-            Dictionary<Point, TileSimple> currentMap = this.sceneState.GetCurrentMap();
-
-            foreach (Tile tile in this.tiles)
-            {
-                TileSimple tileSimple = currentMap[tile.point];
-                tile.RefreshTileState(tileSimple.isVisible, tileSimple.isBlocked);
-            }
-        }
-        else
-        {
-            this.UpdateTiles(playerTile);
+            this.UpdateTiles(this.player.tile);
         }
     }
+
 
     // NOTE: Framedrop from ~100Mb of garbage on full 20 visibility
     public void UpdateTiles(Tile playerTile)
@@ -116,8 +115,7 @@ public class SceneController : SerializedMonoBehaviour
         }
     }
 
-    [BoxGroup("Enemy Spawn Points")]
-    [Button(ButtonSizes.Medium)]
+    [Button(ButtonSizes.Medium), BoxGroup("Enemy Spawn Points", order: 3), HideIf("isOpenWorldScene")]
     public void CollectEnemySpawnPoints()
     {
         this.enemySpawnPoints = GameObject.FindObjectsOfType<EnemySpawnPoint>().ToList();

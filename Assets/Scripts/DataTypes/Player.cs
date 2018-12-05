@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.AI;
 
 
-public class Player
+public class Player : SerializedMonoBehaviour
 {
     public float animationSpeed = 4.0F;
     public bool isMoving = false;
@@ -15,6 +17,7 @@ public class Player
     public GameObject flashlightRay;
     public GameObject tileSelector;
     public Animator characterAnimator;
+    public NavMeshAgent navMeshAgent;
     public Tile tile;
     public float visibleRange = 2.5F;
     public float maxVisibleRange = 4.5F;
@@ -28,6 +31,14 @@ public class Player
 
 
     public Player() { }
+
+    public void InitPlayer(GlobalController globalCtrl, Vector3 playerPosition)
+    {
+        this.playerTransform.position = playerPosition;
+
+        this.globalCtrl = globalCtrl;
+        this.speedParamHash = Animator.StringToHash("Speed");
+    }
 
     public void InitPlayer(GlobalController globalCtrl, Tile tile, float visibleRange)
     {
@@ -186,5 +197,44 @@ public class Player
         float angleInDegrees = (180 / Mathf.PI) * angleInRadians;
 
         return angleInDegrees * 2;
+    }
+
+    private void MovePlayer(string horizontalButton, string verticalButton)
+    {
+        float axisHorizontal = (
+            this.globalCtrl.directionSwitch ? Input.GetAxis(verticalButton) : Input.GetAxis(horizontalButton)
+        );     
+        float axisVertical = (
+            this.globalCtrl.directionSwitch ? Input.GetAxis(horizontalButton) : Input.GetAxis(verticalButton)
+        );
+
+        if (this.globalCtrl.directionHorizontalSignSwitch) {
+            axisHorizontal *= -1;
+        }
+        if (this.globalCtrl.directionVerticalSignSwitch) {
+            axisVertical *= -1;
+        }
+
+        Vector3 direction = new Vector3(axisVertical, 0, axisHorizontal);
+
+        if (direction != Vector3.zero)
+        {
+            this.characterAnimator.SetFloat(this.speedParamHash, this.animationSpeed * 1F);
+            this.navMeshAgent.Move(direction * this.animationSpeed * Time.deltaTime);
+
+            this.characterTransform.LookAt(this.characterTransform.position + direction);
+        }
+        else
+        {
+            this.characterAnimator.SetFloat(this.speedParamHash, 0F);
+        }
+    }
+
+    private void Update()
+    {
+        if (this.globalCtrl.sceneCtrl.isOpenWorldScene && this.navMeshAgent != null)
+        {
+            this.MovePlayer("Left Stick Horizontal", "Left Stick Vertical");
+        }
     }
 }

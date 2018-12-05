@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 518313049688069228}
   - component: {fileID: 28388569077278869}
   m_Layer: 11
-  m_Name: enemy_spawn_red
-  m_TagString: Untagged
+  m_Name: pf_enemy_spawn_red
+  m_TagString: EnemySpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
