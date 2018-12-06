@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
     {
         if (this.rotateEnabled)
         {
-            this.RotateCamera();
+            this.RotateCamera("Right Bumper Button", "Left Bumper Button");
         }
         
         this.HideObstructingWalls();
@@ -70,12 +70,12 @@ public class CameraController : MonoBehaviour
     }
 
 
-    private void RotateCamera() 
+    private void RotateCamera(string rightBumperButton, string leftBumperButton) 
     {
         if (this.Compare(cameraPivot.transform.localEulerAngles, this.endRotation)) 
         {
             // Rotate left
-            if (Input.GetButtonDown("Right Bumper Button")) 
+            if (Input.GetButtonDown(rightBumperButton)) 
             {
                 this.startTime = Time.time;
                 this.startRotation = cameraPivot.transform.localEulerAngles;
@@ -86,7 +86,7 @@ public class CameraController : MonoBehaviour
                 this.SetCurrentDirection(true);
             }
             // Rotate right
-            if (Input.GetButtonDown("Left Bumper Button")) 
+            if (Input.GetButtonDown(leftBumperButton)) 
             {
                 this.startTime = Time.time;
                 this.startRotation = cameraPivot.transform.localEulerAngles;

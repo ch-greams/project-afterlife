@@ -1,18 +1,22 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
 
 public class SceneReaction : IInteractableReaction
 {
     public SceneReactionType type;
-    [ShowIf("type", SceneReactionType.DEFAULT)]
-    public SceneType scene;
+
+    [ShowIf("type", SceneReactionType.DEFAULT), ValueDropdown("sceneNames")]
+    public string sceneName;
+
     [ShowIf("type", SceneReactionType.DEFAULT)]
     public Point startPoint;
 
     private GlobalController globalCtrl;
-    private SceneType defaultScene;
+    private string defaultScene;
     private Point defaultPosition;
+    private List<string> sceneNames { get { return GlobalController.sceneNames; } }
 
 
     public void Init(Interactable interactable)
@@ -23,7 +27,7 @@ public class SceneReaction : IInteractableReaction
         {
             case "DoorData":
                 DoorData dd = interactable.data as DoorData;
-                this.defaultScene = dd.scene;
+                this.defaultScene = dd.sceneName;
                 this.defaultPosition = dd.exitPosition;
                 break;
             default:
@@ -36,11 +40,11 @@ public class SceneReaction : IInteractableReaction
         {
             case SceneReactionType.DOOR_TRIGGER:
                 this.globalCtrl.UpdatePlayerPosition(this.defaultScene, this.defaultPosition);
-                SceneManager.FadeAndLoadScene(this.defaultScene.ToString());
+                SceneManager.FadeAndLoadScene(this.defaultScene);
                 break;
             case SceneReactionType.DEFAULT:
-                this.globalCtrl.UpdatePlayerPosition(this.scene, this.startPoint);
-                SceneManager.FadeAndLoadScene(this.scene.ToString());
+                this.globalCtrl.UpdatePlayerPosition(this.sceneName, this.startPoint);
+                SceneManager.FadeAndLoadScene(this.sceneName);
                 break;
             default:
                 yield return null;

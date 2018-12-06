@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class SceneController : SerializedMonoBehaviour
 {
-    public SceneType id;
+    [ValueDropdown("sceneNames")]
+    public string id;
+    
     public bool isOpenWorldScene = false;
     public GlobalController globalCtrl;
     public GlobalState globalState;
@@ -53,6 +55,10 @@ public class SceneController : SerializedMonoBehaviour
 
     [HideInInspector]
     public Dictionary<string, List<Tile>> highlightedTiles = new Dictionary<string, List<Tile>>();
+
+    
+    private List<string> sceneNames { get { return GlobalController.sceneNames; } }
+
 
 
     private void Awake()
@@ -120,37 +126,4 @@ public class SceneController : SerializedMonoBehaviour
     {
         this.enemySpawnPoints = GameObject.FindObjectsOfType<EnemySpawnPoint>().ToList();
     }
-}
-
-public enum SceneType
-{
-    Undefined,
-    AptN1_Bedroom,
-    AptN1_LivingRoom,
-    Hallway,
-    AptN3_LivingRoom,
-    AptN0_LivingRoom,
-    AptN1_Bathroom,
-    AptN3_Bathroom,
-    AptN3_Bedroom,
-    AptN5_Bathroom,
-    AptN5_Bedroom,
-    AptN5_LivingRoom,
-    Hallway_ElevatorEnd,
-    Forest_Field,
-    Hallway_Labyrinth,
-    Temple_Lair,
-    Temple_Entrance,
-    Temple_EntranceTunnel_Left,
-    Temple_EntranceTunnel_Right,
-    Temple_HallTunnel_Left,
-    Temple_HallTunnel_Right,
-    Forest_Entrance,
-    Forest_Altar,
-    Forest_CampOnTheCliff,
-    Forest_TempleEntrance,
-    Forest_Graveyard,
-    Forest_DeepInTheForest,
-    Forest_DeeperInTheForest,
-    Playground,
 }

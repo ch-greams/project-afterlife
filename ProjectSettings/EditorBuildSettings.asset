@@ -9,50 +9,26 @@ EditorBuildSettings:
     path: Assets/Scenes/persistent.unity
     guid: ed9ade5aa3540584db592fe4926f7bc2
   - enabled: 1
-    path: Assets/Scenes/AptN1_Bedroom.unity
+    path: Assets/Scenes/apartment_bedroom.unity
     guid: 87a997e46abc5054987e391b91fe3cc4
   - enabled: 1
-    path: Assets/Scenes/AptN1_LivingRoom.unity
+    path: Assets/Scenes/apartment_living_room.unity
     guid: aa1cba4bc267f3c4ab134f26db8bd183
+  - enabled: 1
+    path: Assets/Scenes/apartment_bathroom.unity
+    guid: 4afbf08517b973744a8f9dcdef2d851a
   - enabled: 1
     path: Assets/Scenes/Hallway.unity
     guid: 114883ce25447e14b9e32be3b709c430
   - enabled: 1
-    path: Assets/Scenes/_dep_AptN3_LivingRoom.unity
-    guid: e5eaa2ca328a29247bd80f5fa79e0a0a
-  - enabled: 1
-    path: Assets/Scenes/_dep_AptN0_LivingRoom.unity
-    guid: 6a717ea1338d6564c8a113d82f698866
-  - enabled: 1
-    path: Assets/Scenes/AptN1_Bathroom.unity
-    guid: 4afbf08517b973744a8f9dcdef2d851a
-  - enabled: 1
-    path: Assets/Scenes/_dep_AptN3_Bathroom.unity
-    guid: e91c42deb1329334ea301eb410aa1f1f
-  - enabled: 1
-    path: Assets/Scenes/_dep_AptN3_Bedroom.unity
-    guid: 6d5d45f5426650e4280595171a44ca46
-  - enabled: 1
-    path: Assets/Scenes/_dep_AptN5_Bathroom.unity
-    guid: 374738b92786bdb4cb64dc896fd544a9
-  - enabled: 1
-    path: Assets/Scenes/_dep_AptN5_Bedroom.unity
-    guid: 1347a959206ba644ba09cd18d23c3a49
-  - enabled: 1
-    path: Assets/Scenes/_dep_AptN5_LivingRoom.unity
-    guid: 09ef0c6dcfaed29469495f3031704ae3
-  - enabled: 1
     path: Assets/Scenes/Hallway_ElevatorEnd.unity
     guid: 33246681cdcce7d4d990f34ca3cc6df6
-  - enabled: 1
-    path: Assets/Scenes/forest_field.unity
-    guid: dccbb36516347cb4a979e153093e6a20
   - enabled: 1
     path: Assets/Scenes/Hallway_Labyrinth.unity
     guid: 732c5b944c932dc45bb8ffb707b764dc
   - enabled: 1
-    path: Assets/Scenes/Temple_Lair.unity
-    guid: 8311601bf6d82a2488199140f287ab82
+    path: Assets/Scenes/forest_field.unity
+    guid: dccbb36516347cb4a979e153093e6a20
   - enabled: 1
     path: Assets/Scenes/Forest_Altar.unity
     guid: 9ba66892dc09a2e4b85f0d61bd44c2a8
@@ -89,6 +65,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Temple_HallTunnel_Right.unity
     guid: 59e7acdc0f09cc84c988ba9e751ece6c
+  - enabled: 1
+    path: Assets/Scenes/Temple_Lair.unity
+    guid: 8311601bf6d82a2488199140f287ab82
   - enabled: 1
     path: Assets/Scenes/playground.unity
     guid: 1ce07630957df304f83f6d71f3834955

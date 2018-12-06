@@ -1,7 +1,11 @@
 ﻿using System.Linq;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnitySceneManager = UnityEngine.SceneManagement.SceneManager;
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
+using System.IO;
 
 
 public class GlobalController : SerializedMonoBehaviour
@@ -57,6 +61,28 @@ public class GlobalController : SerializedMonoBehaviour
     public bool directionHorizontalSignSwitch = false;
 
 
+    [ShowInInspector]
+    public static List<string> sceneNames
+    {
+        get
+        {
+            List<string> result = new List<string>();
+
+            for (int sceneIndex = 0; sceneIndex < UnitySceneManager.sceneCountInBuildSettings; sceneIndex++)
+            {
+                result.Add(
+                    Path.GetFileNameWithoutExtension(
+                        SceneUtility.GetScenePathByBuildIndex(sceneIndex)
+                    )
+                );
+            }
+
+            return result;
+        }
+    }
+
+
+
     private void Awake()
     {
         this.globalState = CreatePlayModeInstance(this.globalState);
@@ -80,7 +106,7 @@ public class GlobalController : SerializedMonoBehaviour
 
     private IEnumerator Start()
     {
-        yield return SceneManager.Init(this, this.faderCanvasGroup, this.globalState.currentScene.ToString());
+        yield return SceneManager.Init(this, this.faderCanvasGroup, this.globalState.currentScene);
     }
 
     private void Update()
@@ -100,10 +126,10 @@ public class GlobalController : SerializedMonoBehaviour
     public void LoadFromState()
     {
         this.objectiveManager.Init(this);
-        SceneManager.FadeAndLoadScene(this.globalState.currentScene.ToString());
+        SceneManager.FadeAndLoadScene(this.globalState.currentScene);
     }
 
-    public void UpdatePlayerPosition(SceneType scene, Point position)
+    public void UpdatePlayerPosition(string scene, Point position)
     {
         this.globalState.currentPosition = position;
         this.globalState.currentScene = scene;

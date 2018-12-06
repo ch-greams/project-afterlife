@@ -10,7 +10,8 @@ public class GlobalState : SerializedScriptableObject
 {
     public Point currentPosition;
     public float currentVisibility;
-    public SceneType currentScene;
+    [ValueDropdown("sceneNames")]
+    public string currentScene;
     public ObjectiveId currentObjective;
 
     public List<Item> inventory = new List<Item>();
@@ -19,9 +20,13 @@ public class GlobalState : SerializedScriptableObject
     public Dictionary<ObjectiveId, Objective> objectives = new Dictionary<ObjectiveId, Objective>();
 
     [DictionaryDrawerSettings]
-    public Dictionary<SceneType, SceneState> sceneStates = new Dictionary<SceneType, SceneState>();
+    public Dictionary<string, SceneState> sceneStates = new Dictionary<string, SceneState>();
+
 
     public Dictionary<string, object> eotState = new Dictionary<string, object>();
+
+
+    private List<string> sceneNames { get { return GlobalController.sceneNames; } }
 
 
     public T GetVariableFromState<T>(string key)
@@ -57,7 +62,7 @@ public class GlobalState : SerializedScriptableObject
             kvp.Value.LoadFromSerializable(serializedGlobalState.objectives[kvp.Key]);
         }
 
-        foreach (KeyValuePair<SceneType, SceneState> kvp in this.sceneStates)
+        foreach (KeyValuePair<string, SceneState> kvp in this.sceneStates)
         {
             kvp.Value.LoadFromSerializable(serializedGlobalState.sceneStates[kvp.Key]);
         }
@@ -69,10 +74,10 @@ public class GlobalStateSerializable
 {
     public Point currentPosition;
     public float currentVisibility;
-    public SceneType currentScene;
+    public string currentScene;
     public ObjectiveId currentObjective;
     public Dictionary<ObjectiveId, ObjectiveSerializable> objectives = new Dictionary<ObjectiveId, ObjectiveSerializable>();
-    public Dictionary<SceneType, SceneStateSerializable> sceneStates = new Dictionary<SceneType, SceneStateSerializable>();
+    public Dictionary<string, SceneStateSerializable> sceneStates = new Dictionary<string, SceneStateSerializable>();
 
 
     public GlobalStateSerializable(GlobalState globalState)

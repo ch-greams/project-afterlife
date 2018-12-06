@@ -30,8 +30,11 @@ public class DoorData : IDataInteractable
     public List<Tile> neighbourTiles { get { return this._neighbourTiles; } }
 
 
-    [BoxGroup("Door Parameters")]
-    public SceneType scene;
+    [BoxGroup("Door Parameters"), ValueDropdown("sceneNames")]
+    public string sceneName;
+    
     [BoxGroup("Door Parameters")]
     public Point exitPosition;
+
+    private List<string> sceneNames { get { return GlobalController.sceneNames; } }
 }
