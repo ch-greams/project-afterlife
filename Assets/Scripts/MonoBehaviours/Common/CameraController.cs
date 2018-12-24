@@ -57,7 +57,7 @@ public class CameraController : MonoBehaviour
         {
             if (!wallsToHide.Contains(hiddenWall))
             {
-                hiddenWall.shadowCastingMode = ShadowCastingMode.On;
+                hiddenWall.shadowCastingMode = ShadowCastingMode.TwoSided;
                 this.hiddenWalls.Remove(hiddenWall);
             }
         }

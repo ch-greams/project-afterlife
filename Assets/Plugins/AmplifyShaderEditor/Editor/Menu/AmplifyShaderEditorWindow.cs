@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using System;
-using System.Threading;
-using System.Globalization;
 using System.Collections.Generic;
 
 namespace AmplifyShaderEditor

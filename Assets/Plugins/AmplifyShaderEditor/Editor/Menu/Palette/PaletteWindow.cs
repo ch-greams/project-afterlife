@@ -1,7 +1,6 @@
 // Amplify Shader Editor - Visual Shader Editing Tool
 // Copyright (c) Amplify Creations, Lda <info@amplify.pt>
 
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace AmplifyShaderEditor

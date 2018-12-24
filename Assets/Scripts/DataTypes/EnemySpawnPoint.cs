@@ -59,7 +59,7 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
             movementSpeed: this.movementSpeed,
             attackPower: this.attackPower,
             isLockedOnPlayer: this.isLockedOnPlayer,
-            characterObject: GameObject.Instantiate(this.prefab, tile.obj.transform.position, Quaternion.identity),
+            characterObject: GameObject.Instantiate(this.prefab, tile.gameObject.transform.position, Quaternion.identity),
             deathEffectPrefab: this.deathEffectPrefab,
             tile: tile
         );

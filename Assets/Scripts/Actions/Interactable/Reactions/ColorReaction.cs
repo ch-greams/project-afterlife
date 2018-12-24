@@ -30,6 +30,7 @@ public class ColorReaction : IInteractableReaction
         this.interactableData = interactable.data;
         this.defaultRenderer = this.interactableData.renderer;
     }
+
     public IEnumerator React()
     {
         switch (this.type)

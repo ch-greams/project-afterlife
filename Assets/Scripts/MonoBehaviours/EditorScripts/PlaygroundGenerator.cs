@@ -41,7 +41,7 @@ public class PlaygroundGenerator : SerializedMonoBehaviour
         foreach (Point point in this.enemyPositions)
         {
             Tile tile = tiles.Find(t => t.point == point);
-            GameObject obj = GameObject.Instantiate(this.shadowPrefab, tile.obj.transform.position, Quaternion.identity);
+            GameObject obj = GameObject.Instantiate(this.shadowPrefab, tile.gameObject.transform.position, Quaternion.identity);
 
             Enemy enemy = new Enemy("Enemy " + point, this.movementSpeed, obj, tile);
             this.enemyManager.enemies.Add(enemy);

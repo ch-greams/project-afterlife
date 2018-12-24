@@ -107,7 +107,7 @@ public class Enemy
         float startTime = Time.time;
         Transform characterTransform = this.characterObject.transform;
         Vector3 startPosition = characterTransform.position;
-        Vector3 endPosition = new Vector3(tile.obj.transform.position.x, 0, tile.obj.transform.position.z);
+        Vector3 endPosition = new Vector3(tile.gameObject.transform.position.x, 0, tile.gameObject.transform.position.z);
         float journeyLength = Vector3.Distance(startPosition, endPosition);
 
         characterTransform.LookAt(endPosition);

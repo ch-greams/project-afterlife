@@ -2,7 +2,6 @@
 // Copyright (c) Amplify Creations, Lda <info@amplify.pt>
 
 using UnityEngine;
-using UnityEditor;
 using System;
 using System.Collections.Generic;
 

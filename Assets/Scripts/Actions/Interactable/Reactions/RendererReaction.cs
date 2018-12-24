@@ -13,6 +13,7 @@ public class RendererReaction : IInteractableReaction
     {
         this.defaultRenderer = interactable.data.renderer;
     }
+
     public IEnumerator React()
     {
         this.defaultRenderer.enabled = this.enable;

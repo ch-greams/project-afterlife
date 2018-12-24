@@ -53,12 +53,6 @@
         "temp/":true,
         "Temp/":true
     },
-    "cSpell.words": [
-        "behaviour",
-        "lerp",
-        "mathf",
-        "mono"
-    ],
     "todohighlight.include": [
         "**/*.cs"
     ],

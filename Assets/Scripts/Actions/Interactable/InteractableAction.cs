@@ -19,10 +19,7 @@ public class InteractableAction
     public List<IInteractableReaction> reactions = new List<IInteractableReaction>();
 
 
-    public InteractableAction()
-    {
-        this.conditions = new List<IInteractableCondition>() { new ReachableCondition() };
-    }
+    public InteractableAction() { }
 
     public void Init(Interactable interactable)
     {

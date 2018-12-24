@@ -45,7 +45,7 @@ public class Player : SerializedMonoBehaviour
         this.tile = tile;
         this.tile.isBlockedByPlayer = true;
 
-        this.playerTransform.position = tile.obj.transform.position;
+        this.playerTransform.position = tile.gameObject.transform.position;
         this.visibleRange = visibleRange;
 
         this.globalCtrl = globalCtrl;
@@ -120,7 +120,7 @@ public class Player : SerializedMonoBehaviour
         HashSet<Point> playerPoints = this.tile.GetPointsInRange(range, neighbourFilter);
         List<Tile> playerTiles = sceneCtrl.tiles.FindAll((t) => playerPoints.Contains(t.point));
 
-        this.activeTiles = playerTiles.ToDictionary(tile => tile.obj.transform.position);
+        this.activeTiles = playerTiles.ToDictionary(tile => tile.gameObject.transform.position);
 
         foreach (Tile tile in playerTiles)
         {
@@ -166,7 +166,7 @@ public class Player : SerializedMonoBehaviour
 
             float startTime = Time.time;
             Vector3 startPosition = this.playerTransform.position;
-            Vector3 endPosition = new Vector3(tile.obj.transform.position.x, 0, tile.obj.transform.position.z);
+            Vector3 endPosition = new Vector3(tile.gameObject.transform.position.x, 0, tile.gameObject.transform.position.z);
             float journeyLength = Vector3.Distance(startPosition, endPosition);
 
             this.characterTransform.LookAt(endPosition);

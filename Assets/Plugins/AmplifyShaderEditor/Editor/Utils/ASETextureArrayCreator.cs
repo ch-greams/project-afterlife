@@ -6,8 +6,6 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 using UnityEditorInternal;
-using System;
-using System.IO;
 
 namespace AmplifyShaderEditor
 {

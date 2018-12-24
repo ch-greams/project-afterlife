@@ -4,7 +4,6 @@
 //https://www.shadertoy.com/view/XsX3zB
 using System;
 using UnityEngine;
-using UnityEditor;
 
 
 namespace AmplifyShaderEditor

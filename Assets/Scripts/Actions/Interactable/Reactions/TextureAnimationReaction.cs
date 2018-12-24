@@ -16,8 +16,7 @@ public class TextureAnimationReaction : IInteractableReaction
     private int propertyId;
     private Vector2 textureSize;
     private WaitForSeconds timeoutBetweenFrames;
-
-    private Interactable interactable;
+    private SceneController sceneCtrl;
 
 
     public void Init(Interactable interactable)
@@ -26,19 +25,20 @@ public class TextureAnimationReaction : IInteractableReaction
         this.textureSize = new Vector2((1F / this.columns), (1F / this.rows));
         this.timeoutBetweenFrames = new WaitForSeconds(1F / this.framesPerSecond);
 
-        this.interactable = interactable;
+        this.sceneCtrl = interactable.sceneCtrl;
         this.renderer = interactable.data.renderer;
 
         // Create new material instance & destroy and/or reassign new material instance
         this.renderer.sharedMaterial = new Material(this.renderer.sharedMaterial);
     }
 
+
     public IEnumerator React()
     {
         switch (this.type)
         {
             case TextureAnimationReactionType.ASYNC_ANIMATION:
-                this.interactable.StartCoroutine(this.Animate());
+                this.sceneCtrl.StartCoroutine(this.Animate());
                 break;
             case TextureAnimationReactionType.SYNC_ANIMATION:
                 yield return this.Animate();

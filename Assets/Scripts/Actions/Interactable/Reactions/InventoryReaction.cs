@@ -14,6 +14,7 @@ public class InventoryReaction : IInteractableReaction
     {
         this.globalCtrl = interactable.sceneCtrl.globalCtrl;
     }
+
     public IEnumerator React()
     {
         switch (this.type)

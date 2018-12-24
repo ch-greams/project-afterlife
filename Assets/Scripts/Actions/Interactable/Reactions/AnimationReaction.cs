@@ -61,6 +61,7 @@ public class AnimationReaction : IInteractableReaction
             Debug.LogWarningFormat("defaultAnimator for {0} isn't set", interactable.GetType().Name);
         }
     }
+
     public IEnumerator React()
     {
         switch (this.type)

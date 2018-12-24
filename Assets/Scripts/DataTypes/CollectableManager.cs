@@ -50,7 +50,7 @@ public class CollectableManager
     public void SpawnItem(Point point, string name)
     {
         Tile tile = this.globalCtrl.sceneCtrl.tiles.Find(t => t.point == point);
-        Vector3 tilePosition = tile.obj.transform.position;
+        Vector3 tilePosition = tile.gameObject.transform.position;
         Vector3 itemPosition = new Vector3(tilePosition.x, 0.25F, tilePosition.z);
 
         GameObject obj = GameObject.Instantiate(this.collectableItemPrefab, itemPosition, Quaternion.identity);

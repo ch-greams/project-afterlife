@@ -7,7 +7,7 @@ using UnityEngine;
 
 
 [Serializable]
-public class Tile : SerializedScriptableObject
+public class Tile : SerializedMonoBehaviour
 {
     public Point point;
 
@@ -17,29 +17,19 @@ public class Tile : SerializedScriptableObject
     public bool isActive = false;
     public bool isSelected = false;
 
-    public GameObject obj;
-
     [OdinSerialize]
     public IEnumerable<Tile> allNeighbours { get; set; }
     public SceneController sceneCtrl;
 
 
-    public Tile Init(Point point, bool isVisible, bool isBlocked, GameObject obj, SceneController sceneCtrl)
+    public Tile Init(Point point, bool isVisible, bool isBlocked, SceneController sceneCtrl)
     {
         this.point = point;
         this.isVisible = isVisible;
         this.isBlocked = isBlocked;
-        this.obj = obj;
         this.sceneCtrl = sceneCtrl;
 
-        base.name = obj.name;
-
         return this;
-    }
-
-    public static Tile CreateInstance(Point point, bool isVisible, bool isBlocked, GameObject obj, SceneController sceneCtrl)
-    {
-        return SerializedScriptableObject.CreateInstance<Tile>().Init(point, isVisible, isBlocked, obj, sceneCtrl);
     }
 
     /// <summary>
@@ -245,8 +235,7 @@ public class Tile : SerializedScriptableObject
         this.isVisible = isVisible;
         this.isBlocked = isBlocked;
 
-        TileData tileData = this.obj.GetComponent<Interactable>().data as TileData;
-        tileData.RefreshTileMaterial(this, inEditor);
+        this.RefreshTileMaterial(inEditor);
     }
 
     public void RefreshTileState(bool isVisible, bool isBlocked, bool isActive, bool isSelected, bool inEditor = false)
@@ -257,9 +246,39 @@ public class Tile : SerializedScriptableObject
         this.isActive = isActive;
         this.isSelected = isSelected;
 
-        TileData tileData = this.obj.GetComponent<Interactable>().data as TileData;
-        tileData.RefreshTileMaterial(this, inEditor);
+        this.RefreshTileMaterial(inEditor);
     }
+
+    private void RefreshTileMaterial(bool inEditor)
+    {
+        Renderer renderer = base.gameObject.GetComponent<Renderer>();
+        Material material = inEditor ? renderer.sharedMaterial : renderer.material;
+        int shaderPropID = Shader.PropertyToID("_Color");
+        
+        SceneController sceneCtrl = this.sceneCtrl;
+
+        if (this.isSelected)
+        {
+            // TILE_COLOR_SELECTED
+            material.SetColor(shaderPropID, sceneCtrl.selectedTileColor);
+        }
+        else if (!this.isBlocked && this.isActive)
+        {
+            // TILE_COLOR_ACTIVE
+            material.SetColor(shaderPropID, sceneCtrl.activeTileColor);
+        }
+        else if (!this.isBlocked && this.isVisible)
+        {
+            // TILE_COLOR_VISIBLE
+            material.SetColor(shaderPropID, sceneCtrl.visibleTileColor);
+        }
+        else
+        {
+            // TILE_COLOR_DISABLED as default
+            material.SetColor(shaderPropID, sceneCtrl.disabledTileColor);
+        }
+    }
+
 }
 
 [Serializable]

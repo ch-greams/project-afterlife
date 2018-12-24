@@ -22,7 +22,7 @@ public class PlayerFlashlightReaction : IEndOfTurnReaction
 
         if (playerActionManager.selectedTile)
         {
-            player.characterTransform.LookAt(playerActionManager.selectedTile.obj.transform.position);
+            player.characterTransform.LookAt(playerActionManager.selectedTile.gameObject.transform.position);
             player.flashlightRay.SetActive(true);
 
             player.KillEnemiesOnTiles(playerActionManager.selectedTiles);

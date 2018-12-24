@@ -69,6 +69,7 @@ public class PlayerActionManager
     public float maxDistanceForSelector = 7;
 
 
+    public Interactable currentInteractable { get; private set; }
     public PlayerActionType currentAction { get; private set; }
     public Tile selectedTile { get; private set; }
     public HashSet<Tile> selectedTiles { get; private set; }
@@ -256,6 +257,11 @@ public class PlayerActionManager
                     break;
             }
         }
+    }
+
+    public void TrySelectInteractable(Interactable interactable)
+    {
+        this.currentInteractable = interactable != null ? interactable : null;
     }
 
     private void DisableActionButton(PlayerActionType playerActionType)

@@ -21,6 +21,10 @@ public class SceneController : SerializedMonoBehaviour
     [BoxGroup("Enemy Spawn Points", order: 3), HideIf("isOpenWorldScene")]
     public List<EnemySpawnPoint> enemySpawnPoints = new List<EnemySpawnPoint>();
 
+    [BoxGroup("Interactables", order: 4)]
+    public List<Interactable> interactables = new List<Interactable>();
+
+
     [ShowInInspector, HideIf("isOpenWorldScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/General", 360)]
     public Point size {
         get {
@@ -125,5 +129,11 @@ public class SceneController : SerializedMonoBehaviour
     public void CollectEnemySpawnPoints()
     {
         this.enemySpawnPoints = GameObject.FindObjectsOfType<EnemySpawnPoint>().ToList();
+    }
+
+    [Button(ButtonSizes.Medium), BoxGroup("Interactables", order: 4)]
+    public void CollectInteractables()
+    {
+        this.interactables = GameObject.FindObjectsOfType<Interactable>().ToList();
     }
 }

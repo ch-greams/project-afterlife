@@ -15,6 +15,7 @@ public class LookAtReaction : IInteractableReaction
         this.defaultActor = interactable.sceneCtrl.player.characterTransform;
         this.defaultTarget = interactable.data.gameObject.transform;
     }
+
     public IEnumerator React()
     {
         switch (this.type)

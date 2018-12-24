@@ -59,6 +59,35 @@ ModelImporter:
     100106: compuper_table:table1
     100108: compuper_table:trashcan
     100110: computer_table
+    100112: bed1:bed
+    100114: bed1:pillow
+    100116: nightstand:lamp
+    100118: nightstand:nightstand
+    100120: nightstand_group
+    100122: shelf1:books_01
+    100124: shelf1:books_02
+    100126: shelf1:pine_tree
+    100128: shelf1:shelf
+    100130: shelf_group
+    100132: shelf2:books_01
+    100134: shelf2:books_02
+    100136: shelf2:pine_tree
+    100138: shelf2:shelf
+    100140: compuper_table1:bottle:bottle
+    100142: compuper_table1:chair
+    100144: compuper_table1:computer:display
+    100146: compuper_table1:computer:keyboard
+    100148: compuper_table1:computer:mouse
+    100150: compuper_table1:notepad
+    100152: compuper_table1:table1
+    100154: compuper_table1:trashcan
+    100156: nightstand2:book
+    100158: nightstand2:lamp
+    100160: nightstand2:nightstand
+    100162: nightstand2:phone
+    100164: poster
+    100166: wall_art1:wall_art
+    100168: wall_art4
     400000: //RootNode
     400002: bed:bed
     400004: bed:blanket
@@ -115,7 +144,37 @@ ModelImporter:
     400106: compuper_table:table1
     400108: compuper_table:trashcan
     400110: computer_table
+    400112: bed1:bed
+    400114: bed1:pillow
+    400116: nightstand:lamp
+    400118: nightstand:nightstand
+    400120: nightstand_group
+    400122: shelf1:books_01
+    400124: shelf1:books_02
+    400126: shelf1:pine_tree
+    400128: shelf1:shelf
+    400130: shelf_group
+    400132: shelf2:books_01
+    400134: shelf2:books_02
+    400136: shelf2:pine_tree
+    400138: shelf2:shelf
+    400140: compuper_table1:bottle:bottle
+    400142: compuper_table1:chair
+    400144: compuper_table1:computer:display
+    400146: compuper_table1:computer:keyboard
+    400148: compuper_table1:computer:mouse
+    400150: compuper_table1:notepad
+    400152: compuper_table1:table1
+    400154: compuper_table1:trashcan
+    400156: nightstand2:book
+    400158: nightstand2:lamp
+    400160: nightstand2:nightstand
+    400162: nightstand2:phone
+    400164: poster
+    400166: wall_art1:wall_art
+    400168: wall_art4
     2100000: phong1
+    2100002: phong2
     2300000: bed:bed
     2300002: bed:blanket
     2300004: bed:mattress
@@ -165,6 +224,33 @@ ModelImporter:
     2300092: compuper_table:notepad
     2300094: compuper_table:table1
     2300096: compuper_table:trashcan
+    2300098: bed1:bed
+    2300100: bed1:pillow
+    2300102: nightstand:lamp
+    2300104: nightstand:nightstand
+    2300106: shelf1:books_01
+    2300108: shelf1:books_02
+    2300110: shelf1:pine_tree
+    2300112: shelf1:shelf
+    2300114: shelf2:books_01
+    2300116: shelf2:books_02
+    2300118: shelf2:pine_tree
+    2300120: shelf2:shelf
+    2300122: compuper_table1:bottle:bottle
+    2300124: compuper_table1:chair
+    2300126: compuper_table1:computer:display
+    2300128: compuper_table1:computer:keyboard
+    2300130: compuper_table1:computer:mouse
+    2300132: compuper_table1:notepad
+    2300134: compuper_table1:table1
+    2300136: compuper_table1:trashcan
+    2300138: nightstand2:book
+    2300140: nightstand2:lamp
+    2300142: nightstand2:nightstand
+    2300144: nightstand2:phone
+    2300146: poster
+    2300148: wall_art1:wall_art
+    2300150: wall_art4
     3300000: bed:bed
     3300002: bed:blanket
     3300004: bed:mattress
@@ -214,6 +300,33 @@ ModelImporter:
     3300092: compuper_table:notepad
     3300094: compuper_table:table1
     3300096: compuper_table:trashcan
+    3300098: bed1:bed
+    3300100: bed1:pillow
+    3300102: nightstand:lamp
+    3300104: nightstand:nightstand
+    3300106: shelf1:books_01
+    3300108: shelf1:books_02
+    3300110: shelf1:pine_tree
+    3300112: shelf1:shelf
+    3300114: shelf2:books_01
+    3300116: shelf2:books_02
+    3300118: shelf2:pine_tree
+    3300120: shelf2:shelf
+    3300122: compuper_table1:bottle:bottle
+    3300124: compuper_table1:chair
+    3300126: compuper_table1:computer:display
+    3300128: compuper_table1:computer:keyboard
+    3300130: compuper_table1:computer:mouse
+    3300132: compuper_table1:notepad
+    3300134: compuper_table1:table1
+    3300136: compuper_table1:trashcan
+    3300138: nightstand2:book
+    3300140: nightstand2:lamp
+    3300142: nightstand2:nightstand
+    3300144: nightstand2:phone
+    3300146: poster
+    3300148: wall_art1:wall_art
+    3300150: wall_art4
     4300000: floor
     4300002: wall_left
     4300004: wall_right
@@ -263,6 +376,33 @@ ModelImporter:
     4300092: compuper_table:bottle:bottle
     4300094: compuper_table:computer:mouse
     4300096: compuper_table:notepad
+    4300098: bed1:bed
+    4300100: bed1:pillow
+    4300102: nightstand:nightstand
+    4300104: nightstand:lamp
+    4300106: shelf1:books_02
+    4300108: shelf1:books_01
+    4300110: shelf1:pine_tree
+    4300112: shelf1:shelf
+    4300114: shelf2:shelf
+    4300116: shelf2:pine_tree
+    4300118: shelf2:books_01
+    4300120: shelf2:books_02
+    4300122: compuper_table1:table1
+    4300124: compuper_table1:chair
+    4300126: compuper_table1:trashcan
+    4300128: compuper_table1:computer:keyboard
+    4300130: compuper_table1:computer:display
+    4300132: compuper_table1:bottle:bottle
+    4300134: compuper_table1:computer:mouse
+    4300136: compuper_table1:notepad
+    4300138: nightstand2:nightstand
+    4300140: nightstand2:lamp
+    4300142: nightstand2:book
+    4300144: nightstand2:phone
+    4300146: poster
+    4300148: wall_art1:wall_art
+    4300150: wall_art4
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}

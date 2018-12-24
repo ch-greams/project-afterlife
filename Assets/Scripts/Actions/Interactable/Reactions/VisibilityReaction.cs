@@ -12,7 +12,7 @@ public class VisibilityReaction : IInteractableReaction
     {
         this.sceneCtrl = interactable.sceneCtrl;
     }
-    
+
     public IEnumerator React()
     {
         this.sceneCtrl.globalCtrl.UpdatePlayerVisibility(this.visibility);

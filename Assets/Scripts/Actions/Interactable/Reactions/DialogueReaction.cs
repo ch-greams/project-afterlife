@@ -13,6 +13,7 @@ public class DialogueReaction : IInteractableReaction
     {
         this.dialogueManager = interactable.sceneCtrl.globalCtrl.dialogueManager;
     }
+
     public IEnumerator React()
     {
         this.dialogueManager.StartDialogue(this.dialogue);

@@ -27,7 +27,7 @@ public class GridGenerator : MonoBehaviour
     public Point size {
         get {
             return (
-                this.tiles.Any() ? this.tiles.Select(ts => ts.point).Max() + new Point(1, 1) : new Point()
+                this.tiles.Any() ? this.tiles.Where(tile => tile).Select(tile => tile.point).Max() + new Point(1, 1) : new Point()
             );
         }
     }
@@ -35,11 +35,11 @@ public class GridGenerator : MonoBehaviour
     [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/General")]
     public int total { get { return this.tiles.Count; } }
     [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int _blocked { get { return this.tiles.Count(ts => ts.isBlocked); } }
+    public int _blocked { get { return this.tiles.Count(tile => tile && tile.isBlocked); } }
     [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int _visible { get { return this.tiles.Count(ts => ts.isVisible); } }
+    public int _visible { get { return this.tiles.Count(tile => tile && tile.isVisible); } }
     [ShowInInspector, BoxGroup("Grid Management"), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int _default { get { return this.tiles.Count(ts => !ts.isBlocked && !ts.isVisible); } }
+    public int _default { get { return this.tiles.Count(tile => tile && !tile.isBlocked && !tile.isVisible); } }
 
 
 
@@ -62,16 +62,13 @@ public class GridGenerator : MonoBehaviour
             for (int y = 0; y < this.gridSize.y; y++)
             {
                 Point point = new Point(x, y);
-                GameObject obj = Instantiate(this.tilePrefab, point.CalcWorldCoord(0), Quaternion.identity);
-                obj.transform.SetParent(this.transform);
-                obj.name = point.ToString();
+                GameObject gameObject = GameObject.Instantiate(this.tilePrefab, point.CalcWorldCoord(0), this.tilePrefab.transform.rotation);
+                gameObject.transform.SetParent(this.transform);
+                gameObject.name = point.ToString();
 
-                Tile tile = Tile.CreateInstance(point, this.isVisible, this.isBlocked, obj, this.sceneCtrl);
-                Interactable tileInteractable = obj.GetComponent<Interactable>();
-                tileInteractable.sceneCtrl = this.sceneCtrl;
-                (tileInteractable.data as TileData).tile = tile;
-
-                this.tiles.Add(tile);
+                this.tiles.Add(
+                    gameObject.GetComponent<Tile>().Init(point, this.isVisible, this.isBlocked, this.sceneCtrl)
+                );
             }
         }
 
@@ -84,7 +81,7 @@ public class GridGenerator : MonoBehaviour
     [Button("Clean up Grid", ButtonSizes.Medium)]
     public void CleanUpGrid()
     {
-        this.tiles.RemoveAll(tile => tile.obj == null);
+        this.tiles.RemoveAll(tile => !tile);
         GridGenerator.SetNeighbours(this.tiles);
     }
 
@@ -99,7 +96,7 @@ public class GridGenerator : MonoBehaviour
 
     private void DestroyGrid()
     {
-        this.tiles.ForEach(tile => DestroyImmediate(tile.obj));
+        this.tiles.ForEach(tile => DestroyImmediate(tile.gameObject));
         this.tiles = new List<Tile>();
     }
 

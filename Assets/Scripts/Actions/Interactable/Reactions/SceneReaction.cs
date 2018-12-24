@@ -34,6 +34,7 @@ public class SceneReaction : IInteractableReaction
                 break;
         }
     }
+
     public IEnumerator React()
     {
         switch (this.type)

@@ -26,8 +26,8 @@ public class DoorData : IDataInteractable
     }
 
     [FoldoutGroup("Default Parameters")]
-    public List<Tile> _neighbourTiles = new List<Tile>();
-    public List<Tile> neighbourTiles { get { return this._neighbourTiles; } }
+    public List<Point> _reachablePoints = new List<Point>();
+    public List<Point> reachablePoints { get { return this._reachablePoints; } }
 
 
     [BoxGroup("Door Parameters"), ValueDropdown("sceneNames")]
