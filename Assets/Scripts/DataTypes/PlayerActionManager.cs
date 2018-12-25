@@ -8,58 +8,63 @@ using System;
 
 public class PlayerActionManager
 {
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[B] Walk Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
     public Button walkButton;
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[B] Walk Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
     public Sprite walkButtonActive;
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[B] Walk Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
     public Sprite walkButtonInactive;
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[B] Walk Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
     public Image walkButtonProc;
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[B] Walk Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
     public Sprite walkButtonProcActive;
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[B] Walk Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
     public Sprite walkButtonProcInactive;
 
 
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[X] Flashlight Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[X] Flashlight Button")]
     public Button flashlightButton;
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[X] Flashlight Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[X] Flashlight Button")]
     public Sprite flashlightButtonActive;
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[X] Flashlight Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[X] Flashlight Button")]
     public Sprite flashlightButtonInactive;
 
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[A] Torch Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[A] Torch Button")]
     public Button torchButton;
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[A] Torch Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[A] Torch Button")]
     public Sprite torchButtonActive;
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[A] Torch Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[A] Torch Button")]
     public Sprite torchButtonInactive;
 
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[Y] Granade Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[Y] Granade Button")]
     public Button granadeButton;
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[Y] Granade Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[Y] Granade Button")]
     public Sprite granadeButtonActive;
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[Y] Granade Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[Y] Granade Button")]
     public Sprite granadeButtonInactive;
-    [FoldoutGroup("Button Configuration")]
-    [BoxGroup("Button Configuration/[Y] Granade Button")]
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[Y] Granade Button")]
     public Text granadeButtonCooldownLabel;
+
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] Interaction Button")]
+    public Button interactionButton;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] Interaction Button")]
+    public RectTransform interactionButtonProgress;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] Interaction Button"), ReadOnly]
+    public float interactionButtonProgressCounter = 0;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] Interaction Button")]
+    public float interactionButtonProgressMax = 100;
+
+
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button")]
+    public Button skipTurnButton;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button")]
+    public RectTransform skipTurnButtonProgress;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button"), ReadOnly]
+    public float skipTurnButtonProgressCounter = 0;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button")]
+    public float skipTurnButtonProgressMax = 100;
+
+    public List<PlayerActionType> instantActions = new List<PlayerActionType>();
 
     public GameObject enemyTurnFadeImage;
 
@@ -87,6 +92,8 @@ public class PlayerActionManager
         this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
         this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
         this.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
+        this.interactionButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Interaction));
+        this.skipTurnButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.SkipTurn));
     }
 
     // TODO: Make something more sophisticated for controller switch
@@ -99,8 +106,11 @@ public class PlayerActionManager
         );
     }
 
+
     public void InputListener()
     {
+        this.skipTurnButton.gameObject.SetActive(!this.arePlayerControlsLocked);
+
         if (!this.arePlayerControlsLocked)
         {
             if (Input.GetButtonDown(this.isXboxJoystick ? "Button A" : "Button B"))
@@ -123,6 +133,78 @@ public class PlayerActionManager
                 this.granadeButton.onClick.Invoke();
             }
 
+            // Right Trigger
+
+            float rightTriggerValue = Input.GetAxis("Right Trigger");
+
+            if (rightTriggerValue > 0)
+            {
+                this.interactionButtonProgressCounter += rightTriggerValue;
+
+                this.UpdateProgressBar(
+                    progressBar: this.interactionButtonProgress,
+                    progress: this.interactionButtonProgressCounter / this.interactionButtonProgressMax,
+                    progressBarWidth: 200
+                );
+
+                if (this.interactionButtonProgressCounter >= this.interactionButtonProgressMax)
+                {
+                    this.interactionButton.onClick.Invoke();
+
+                    this.interactionButtonProgressCounter = 0;
+                    this.UpdateProgressBar(
+                        progressBar: this.interactionButtonProgress,
+                        progress: 0,
+                        progressBarWidth: 200
+                    );
+                }
+            }
+            else
+            {
+                this.interactionButtonProgressCounter = 0;
+                this.UpdateProgressBar(
+                    progressBar: this.interactionButtonProgress,
+                    progress: 0,
+                    progressBarWidth: 200
+                );
+            }
+
+            // Left Trigger
+
+            float leftTriggerValue = Input.GetAxis("Left Trigger");
+
+            if (leftTriggerValue > 0)
+            {
+                this.skipTurnButtonProgressCounter += leftTriggerValue;
+
+                this.UpdateProgressBar(
+                    progressBar: this.skipTurnButtonProgress,
+                    progress: this.skipTurnButtonProgressCounter / this.skipTurnButtonProgressMax,
+                    progressBarWidth: 300
+                );
+
+                if (this.skipTurnButtonProgressCounter >= this.skipTurnButtonProgressMax)
+                {
+                    this.skipTurnButton.onClick.Invoke();
+
+                    this.skipTurnButtonProgressCounter = 0;
+                    this.UpdateProgressBar(
+                        progressBar: this.skipTurnButtonProgress,
+                        progress: 0,
+                        progressBarWidth: 300
+                    );
+                }
+            }
+            else
+            {
+                this.skipTurnButtonProgressCounter = 0;
+                this.UpdateProgressBar(
+                    progressBar: this.skipTurnButtonProgress,
+                    progress: 0,
+                    progressBarWidth: 300
+                );
+            }
+
             if (Input.GetButtonDown("Left Stick Button"))
             {
                 this.ResetTileSelector(true);
@@ -136,11 +218,24 @@ public class PlayerActionManager
                 case PlayerActionType.Torch:
                     this.TryMoveTileSelector("Left Stick Horizontal", "Left Stick Vertical");
                     break;
+                case PlayerActionType.Interaction:
+                case PlayerActionType.SkipTurn:
                 case PlayerActionType.Undefined:
                 default:
                     break;
             }
         }
+    }
+
+    private void UpdateProgressBar(RectTransform progressBar, float progress, float progressBarWidth)
+    {
+        progress = progress > 1 ? 1 : progress;
+
+        float sizeDeltaX = (progressBarWidth * progress) - progressBarWidth;
+        progressBar.sizeDelta = new Vector2(sizeDeltaX, progressBar.sizeDelta.y);
+
+        float anchoredPositionX = ((progressBarWidth * progress) / 2) - (progressBarWidth / 2);
+        progressBar.anchoredPosition = new Vector2(anchoredPositionX, progressBar.anchoredPosition.y);
     }
 
     public void ConfirmAction()
@@ -209,7 +304,7 @@ public class PlayerActionManager
         this.currentAction = playerActionType;
         Player player = this.globalCtrl.sceneCtrl.player;
 
-        if (prevAction != this.currentAction)
+        if (this.instantActions.Contains(this.currentAction) || prevAction != this.currentAction)
         {
             this.DisableActionButton(prevAction);
 
@@ -251,6 +346,10 @@ public class PlayerActionManager
                     player.HighlightActive(false, true, (t) => (true));
                     player.HighlightActive(true, false, (t) => (true));
                     break;
+                case PlayerActionType.Interaction:
+                case PlayerActionType.SkipTurn:
+                    this.globalCtrl.NextTurn();
+                    break;
                 case PlayerActionType.Undefined:
                 default:
                     player.HighlightActive(false, true, (t) => (true));
@@ -262,6 +361,8 @@ public class PlayerActionManager
     public void TrySelectInteractable(Interactable interactable)
     {
         this.currentInteractable = interactable != null ? interactable : null;
+
+        this.interactionButton.gameObject.SetActive(interactable != null);
     }
 
     private void DisableActionButton(PlayerActionType playerActionType)
@@ -289,6 +390,8 @@ public class PlayerActionManager
                 this.torchButton.onClick.RemoveAllListeners();
                 this.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
                 break;
+            case PlayerActionType.Interaction:
+            case PlayerActionType.SkipTurn:
             case PlayerActionType.Undefined:
             default:
                 break;
@@ -353,6 +456,8 @@ public class PlayerActionManager
                 );
                 break;
             case PlayerActionType.Walk:
+            case PlayerActionType.Interaction:
+            case PlayerActionType.SkipTurn:
             case PlayerActionType.Undefined:
             default:
                 break;
@@ -442,4 +547,6 @@ public enum PlayerActionType
     Flashlight,
     Torch,
     Granade,
+    Interaction,
+    SkipTurn,
 }

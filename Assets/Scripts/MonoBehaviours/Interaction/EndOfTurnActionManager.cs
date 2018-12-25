@@ -32,6 +32,12 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
     )]
     public List<EndOfTurnAction> torchActions = new List<EndOfTurnAction>();
 
+    [ListDrawerSettings(
+        Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawSkipTurnActionListRefreshButton",
+        OnBeginListElementGUI = "BeginDrawSkipTurnActionListElement", OnEndListElementGUI = "EndDrawListElement"
+    )]
+    public List<EndOfTurnAction> skipTurnActions = new List<EndOfTurnAction>();
+
 
     private GlobalController globalCtrl;
 
@@ -56,6 +62,11 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
         }
 
         foreach (EndOfTurnAction action in this.torchActions)
+        {
+            action.Init(this.globalCtrl);   
+        }
+
+        foreach (EndOfTurnAction action in this.skipTurnActions)
         {
             action.Init(this.globalCtrl);   
         }
@@ -86,6 +97,9 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
                 return this.granadeActions;
             case PlayerActionType.Torch:
                 return this.torchActions;
+            case PlayerActionType.Interaction:
+            case PlayerActionType.SkipTurn:
+                return this.skipTurnActions;
             case PlayerActionType.Undefined:
             default:
                 return new List<EndOfTurnAction>();
@@ -127,6 +141,11 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
         this.DrawActionListRefreshButton(this.torchActions);
     }
 
+    private void DrawSkipTurnActionListRefreshButton()
+    {
+        this.DrawActionListRefreshButton(this.skipTurnActions);
+    }
+
     private void BeginDrawActionListElement(EndOfTurnAction action, int index)
     {
         string title = (
@@ -155,6 +174,11 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
     private void BeginDrawTorchActionListElement(int index)
     {
         this.BeginDrawActionListElement(this.torchActions[index], index);
+    }
+
+    private void BeginDrawSkipTurnActionListElement(int index)
+    {
+        this.BeginDrawActionListElement(this.skipTurnActions[index], index);
     }
 
     private void EndDrawListElement(int index)

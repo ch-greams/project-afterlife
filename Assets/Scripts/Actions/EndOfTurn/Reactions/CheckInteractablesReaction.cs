@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using UnityEngine;
 
 
 public class CheckInteractablesReaction : IEndOfTurnReaction
@@ -18,11 +17,6 @@ public class CheckInteractablesReaction : IEndOfTurnReaction
 
         Interactable currentInteractable = sceneCtrl.interactables
             .Find(interactable => interactable.data.reachablePoints.Contains(sceneCtrl.player.tile.point));
-
-        if (currentInteractable)
-        {
-            Debug.Log("Interactable can be triggered");
-        }
 
         this.globalCtrl.playerActionManager.TrySelectInteractable(currentInteractable);
 
