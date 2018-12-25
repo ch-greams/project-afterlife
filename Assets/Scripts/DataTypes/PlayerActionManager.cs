@@ -135,9 +135,10 @@ public class PlayerActionManager
 
             // Right Trigger
 
+            bool isInteractableSelected = this.currentInteractable != null;
             float rightTriggerValue = Input.GetAxis("Right Trigger");
 
-            if (rightTriggerValue > 0)
+            if (isInteractableSelected && rightTriggerValue > 0)
             {
                 this.interactionButtonProgressCounter += rightTriggerValue;
 

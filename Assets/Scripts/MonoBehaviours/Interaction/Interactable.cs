@@ -24,9 +24,15 @@ public class Interactable : SerializedMonoBehaviour
     {
         base.StartCoroutine(this.OnInit());
     }
-    public void OnClick()
+
+    public void OnClickSync()
     {
         base.StartCoroutine(this.TriggerValidAction(this.clickActions));
+    }
+
+    public IEnumerator OnClickAsync()
+    {
+        yield return this.TriggerValidAction(this.clickActions);
     }
 
     private IEnumerator OnInit()

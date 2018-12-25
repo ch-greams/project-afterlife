@@ -5,34 +5,38 @@ using UnityEngine;
 
 public class EnemySpawnPoint : SerializedMonoBehaviour
 {
-    [FoldoutGroup("Enemy Main Settings", true)]
+    [FoldoutGroup("Enemy Settings", true)]
     public new string name = "Enemy";
-    [FoldoutGroup("Enemy Main Settings", true)]
+    [FoldoutGroup("Enemy Settings", true)]
     public Point point;
     
-    [FoldoutGroup("Enemy Settings")]
+    [FoldoutGroup("Enemy Settings/Parameters")]
     public GameObject prefab;
-    [FoldoutGroup("Enemy Settings")]
+    [FoldoutGroup("Enemy Settings/Parameters")]
     public GameObject deathEffectPrefab;
-    [FoldoutGroup("Enemy Settings")]
+    [FoldoutGroup("Enemy Settings/Parameters")]
     public float movementSpeed = 3.0F;
-    [FoldoutGroup("Enemy Settings")]
+    [FoldoutGroup("Enemy Settings/Parameters")]
     public float animationSpeed = 2.0F;
-    [FoldoutGroup("Enemy Settings")]
+    [FoldoutGroup("Enemy Settings/Parameters")]
     public float attackPower = 1.0F;
-    [FoldoutGroup("Enemy Settings")]
+    [FoldoutGroup("Enemy Settings/Parameters")]
     public bool isLockedOnPlayer = false;
-    [FoldoutGroup("Enemy Settings")]
+    [FoldoutGroup("Enemy Settings/Parameters")]
     public float itemDropRate = 0.30F;
 
     [FoldoutGroup("SpawnPoint Settings")]
-    public bool repeatSpawn = true;
+    public bool isSpawnPointActive = true;
     [FoldoutGroup("SpawnPoint Settings")]
-    public int repeatSpawnDelay = 3;
+    public GameObject spawnPointObject;
     [FoldoutGroup("SpawnPoint Settings")]
-    public int repeatSpawnTurnsLeft = 3;
+    public int spawnPointDelay = 3;
     [FoldoutGroup("SpawnPoint Settings")]
-    public int repeatSpawnCapacity = 3;
+    public bool isSpawnPointCapacityInfinite = false;
+    [FoldoutGroup("SpawnPoint Settings"), HideIf("isSpawnPointCapacityInfinite")]
+    public int spawnPointCapacity = 3;
+    [FoldoutGroup("SpawnPoint Settings")]
+    public int turnsLeftTillNextSpawn = 3;
 
 
     public EnemySpawnPoint() { }
@@ -40,18 +44,43 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
 
     public Enemy TrySpawnEnemy(List<Tile> tiles)
     {
-        bool isSpawnTime = this.repeatSpawn && this.CheckTurnForSpawn();
-        Tile tile = isSpawnTime ? tiles.Find(t => t.point == this.point) : null;
+        if (this.isSpawnPointActive)
+        {
+            Tile tile = this.CheckTurnForSpawn() ? tiles.Find(t => t.point == this.point) : null;
 
-        bool isTileAvailable = ( (tile != null) && !tile.isBlocked && !tile.isBlockedByPlayer );
-        bool isSpawnPointHasCharge = ( this.repeatSpawnCapacity > 0 );
+            bool isTileAvailable = ( (tile != null) && !tile.isBlocked && !tile.isBlockedByPlayer );
+            bool isSpawnPointHasCharge = this.isSpawnPointCapacityInfinite || ( this.spawnPointCapacity > 0 );
 
-        return ( (isTileAvailable && isSpawnPointHasCharge) ? this.SpawnEnemy(tile) : null );
+            this.ToggleSpawnPoint(isSpawnPointHasCharge);
+
+            return ( (isTileAvailable && isSpawnPointHasCharge) ? this.SpawnEnemy(tile) : null );
+        }
+
+        return null;
+    }
+
+    [FoldoutGroup("SpawnPoint Settings"), Button(ButtonSizes.Medium)]
+    public void ToggleSpawnPoint()
+    {
+        this.ToggleSpawnPoint(!this.isSpawnPointActive);
+    }
+
+    public void ToggleSpawnPoint(bool enable)
+    {
+        this.isSpawnPointActive = enable;
+
+        if (this.spawnPointObject)
+        {
+            this.spawnPointObject.SetActive(this.isSpawnPointActive);
+        }
     }
 
     private Enemy SpawnEnemy(Tile tile)
     {
-        this.repeatSpawnCapacity--;
+        if (!this.isSpawnPointCapacityInfinite)
+        {
+            this.spawnPointCapacity--;
+        }
 
         return new Enemy(
             name: string.Format("{0} {1}", this.name, point),
@@ -59,6 +88,7 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
             movementSpeed: this.movementSpeed,
             attackPower: this.attackPower,
             isLockedOnPlayer: this.isLockedOnPlayer,
+            itemDropRate: this.itemDropRate,
             characterObject: GameObject.Instantiate(this.prefab, tile.gameObject.transform.position, Quaternion.identity),
             deathEffectPrefab: this.deathEffectPrefab,
             tile: tile
@@ -67,14 +97,14 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
 
     private bool CheckTurnForSpawn()
     {
-        bool isSpawnTime = !(this.repeatSpawnTurnsLeft > 0);
+        bool isSpawnTime = !(this.turnsLeftTillNextSpawn > 0);
 
-        this.repeatSpawnTurnsLeft = isSpawnTime ? this.repeatSpawnDelay : (this.repeatSpawnTurnsLeft - 1);
+        this.turnsLeftTillNextSpawn = isSpawnTime ? this.spawnPointDelay : (this.turnsLeftTillNextSpawn - 1);
 
         return isSpawnTime;
     }
 
-    [FoldoutGroup("Enemy Main Settings", true)]
+    [FoldoutGroup("Enemy Settings", true)]
     [Button(ButtonSizes.Medium)]
     public void RefreshCurrentPoint()
     {

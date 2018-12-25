@@ -33,6 +33,12 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
     public List<EndOfTurnAction> torchActions = new List<EndOfTurnAction>();
 
     [ListDrawerSettings(
+        Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawInteractionActionListRefreshButton",
+        OnBeginListElementGUI = "BeginDrawInteractionActionListElement", OnEndListElementGUI = "EndDrawListElement"
+    )]
+    public List<EndOfTurnAction> interactionActions = new List<EndOfTurnAction>();
+
+    [ListDrawerSettings(
         Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawSkipTurnActionListRefreshButton",
         OnBeginListElementGUI = "BeginDrawSkipTurnActionListElement", OnEndListElementGUI = "EndDrawListElement"
     )]
@@ -62,6 +68,11 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
         }
 
         foreach (EndOfTurnAction action in this.torchActions)
+        {
+            action.Init(this.globalCtrl);   
+        }
+
+        foreach (EndOfTurnAction action in this.interactionActions)
         {
             action.Init(this.globalCtrl);   
         }
@@ -98,6 +109,7 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
             case PlayerActionType.Torch:
                 return this.torchActions;
             case PlayerActionType.Interaction:
+                return this.interactionActions;
             case PlayerActionType.SkipTurn:
                 return this.skipTurnActions;
             case PlayerActionType.Undefined:
@@ -141,6 +153,11 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
         this.DrawActionListRefreshButton(this.torchActions);
     }
 
+    private void DrawInteractionActionListRefreshButton()
+    {
+        this.DrawActionListRefreshButton(this.interactionActions);
+    }
+
     private void DrawSkipTurnActionListRefreshButton()
     {
         this.DrawActionListRefreshButton(this.skipTurnActions);
@@ -174,6 +191,11 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
     private void BeginDrawTorchActionListElement(int index)
     {
         this.BeginDrawActionListElement(this.torchActions[index], index);
+    }
+
+    private void BeginDrawInteractionActionListElement(int index)
+    {
+        this.BeginDrawActionListElement(this.interactionActions[index], index);
     }
 
     private void BeginDrawSkipTurnActionListElement(int index)

@@ -38,6 +38,7 @@ public class Enemy
         float movementSpeed,
         float attackPower,
         bool isLockedOnPlayer,
+        float itemDropRate,
         GameObject characterObject,
         GameObject deathEffectPrefab,
         Tile tile
@@ -48,6 +49,7 @@ public class Enemy
         this.movementSpeed = movementSpeed;
         this.attackPower = attackPower;
         this.isLockedOnPlayer = isLockedOnPlayer;
+        this.itemDropRate = itemDropRate;
 
         this.characterObject = characterObject;
         this.characterObject.name = this.name;
