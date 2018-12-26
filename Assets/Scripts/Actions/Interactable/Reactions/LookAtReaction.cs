@@ -13,7 +13,7 @@ public class LookAtReaction : IInteractableReaction
     public void Init(Interactable interactable)
     {
         this.defaultActor = interactable.sceneCtrl.player.characterTransform;
-        this.defaultTarget = interactable.data.gameObject.transform;
+        this.defaultTarget = interactable.data.interactableObject.transform;
     }
 
     public IEnumerator React()

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnemySpawnPoint : SerializedMonoBehaviour
 {
+    public bool showGizmo = true;
+
     [FoldoutGroup("Enemy Settings", true)]
     public new string name = "Enemy";
     [FoldoutGroup("Enemy Settings", true)]
@@ -37,6 +39,15 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
     public int spawnPointCapacity = 3;
     [FoldoutGroup("SpawnPoint Settings")]
     public int turnsLeftTillNextSpawn = 3;
+
+
+    private void OnDrawGizmos()
+    {
+        if (this.showGizmo)
+        {
+            Gizmos.DrawIcon(transform.position, "md-pin");
+        }
+    }
 
 
     public EnemySpawnPoint() { }

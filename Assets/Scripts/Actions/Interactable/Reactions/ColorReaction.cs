@@ -18,7 +18,7 @@ public class ColorReaction : IInteractableReaction
     [ColorPalette]
     public Color color;
 
-    private IDataInteractable interactableData;
+    private InteractableData interactableData;
 
     private Renderer defaultRenderer;
     private int propertyId;

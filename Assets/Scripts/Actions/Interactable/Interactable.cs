@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class Interactable : SerializedMonoBehaviour
 {
-    public IDataInteractable data;
+    public bool showGizmo = true;
+
+    public InteractableData data;
 
     [FoldoutGroup("Interactable Config", expanded: false)]
     public SceneController sceneCtrl;
@@ -19,6 +21,14 @@ public class Interactable : SerializedMonoBehaviour
     [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
     public List<InteractableAction> clickActions = new List<InteractableAction>();
 
+
+    private void OnDrawGizmos()
+    {
+        if (this.showGizmo)
+        {
+            Gizmos.DrawIcon(transform.position, "md-hand");
+        }
+    }
 
     private void Awake()
     {
@@ -52,13 +62,4 @@ public class Interactable : SerializedMonoBehaviour
             yield return action.React();
         }
     }
-}
-
-public interface IDataInteractable
-{
-    GameObject gameObject { get; }
-    Renderer renderer { get; }
-    Animator animator { get; }
-    Color defaultColor { get; set; }
-    List<Point> reachablePoints { get; }
 }
