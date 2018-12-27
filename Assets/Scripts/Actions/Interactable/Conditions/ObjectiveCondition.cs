@@ -7,11 +7,7 @@ public class ObjectiveCondition : IInteractableCondition
 {
     public ObjectiveConditionType type;
 
-    public ObjectiveId objectiveId;
-
-    // NOTE: Editor use only, don't use this variable in Init/IsValid methods
-    [HideIf("type", ObjectiveConditionType.OBJECTIVE_IS_COMPLETE, false)]
-    [HideIf("type", ObjectiveConditionType.OBJECTIVE_IS_NOT_COMPLETE, false)]
+    // NOTE: Use only as a reference for constant values in there
     public Objective objective;
 
     private List<string> taskIds
@@ -56,7 +52,7 @@ public class ObjectiveCondition : IInteractableCondition
 
     public bool IsValid()
     {
-        Objective objective = this.globalState.objectives[this.objectiveId];
+        Objective objective = this.globalState.objectives[this.objective.id];
 
         switch (this.type)
         {
@@ -78,7 +74,7 @@ public class ObjectiveCondition : IInteractableCondition
                 return
                 (
                     // should be current objective
-                    (this.objectiveId == this.globalState.currentObjective) &&
+                    (this.objective.id == this.globalState.currentObjective) &&
                     // all required subTasks before should be complete
                     subTasks.Take(subTaskIndex).All(st => (st.optional || st.completed)) &&
                     // current subTask and every one after should not be complete

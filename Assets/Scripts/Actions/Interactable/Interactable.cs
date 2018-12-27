@@ -37,12 +37,12 @@ public class Interactable : SerializedMonoBehaviour
 
     public void OnClickSync()
     {
-        base.StartCoroutine(this.TriggerValidAction(this.clickActions));
+        base.StartCoroutine(this.TriggerValidActions(this.clickActions));
     }
 
     public IEnumerator OnClickAsync()
     {
-        yield return this.TriggerValidAction(this.clickActions);
+        yield return this.TriggerValidActions(this.clickActions);
     }
 
     private IEnumerator OnInit()
@@ -50,16 +50,17 @@ public class Interactable : SerializedMonoBehaviour
         this.initializeActions.ForEach(action => action.Init(this));
         this.clickActions.ForEach(action => action.Init(this));
 
-        yield return this.TriggerValidAction(this.initializeActions);
+        yield return this.TriggerValidActions(this.initializeActions);
     }
 
-    private IEnumerator TriggerValidAction(List<InteractableAction> actions)
+    private IEnumerator TriggerValidActions(List<InteractableAction> actions)
     {
-        InteractableAction action = actions.Find(a => a.IsValid());
-
-        if (action != null)
+        foreach (InteractableAction action in actions)
         {
-            yield return action.React();
+            if (action.IsValid())
+            {
+                yield return action.React();
+            }
         }
     }
 }

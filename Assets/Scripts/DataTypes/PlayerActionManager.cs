@@ -111,7 +111,11 @@ public class PlayerActionManager
     {
         this.skipTurnButton.gameObject.SetActive(!this.arePlayerControlsLocked);
 
-        if (!this.arePlayerControlsLocked)
+        if (this.arePlayerControlsLocked)
+        {
+            this.interactionButton.gameObject.SetActive(false);
+        }
+        else
         {
             if (Input.GetButtonDown(this.isXboxJoystick ? "Button A" : "Button B"))
             {

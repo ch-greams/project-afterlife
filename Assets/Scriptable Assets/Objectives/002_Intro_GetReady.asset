@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -362,5 +363,4 @@ MonoBehaviour:
   id: 2
   title: Get Ready
   completed: 0
-  nextObjectives:
-  - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
+  nextObjective: {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}

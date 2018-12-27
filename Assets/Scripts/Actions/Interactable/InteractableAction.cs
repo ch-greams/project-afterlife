@@ -60,7 +60,7 @@ public class InteractableAction
                 case ObjectiveConditionType.OBJECTIVE_IS_NOT_COMPLETE:
                     return true;
                 default:
-                    return (oc.objective != null) && (oc.objective.id == oc.objectiveId);
+                    return (oc.objective != null);
             }
         });
     }
@@ -78,6 +78,6 @@ public class InteractableAction
                 .Select(cond => cond as ObjectiveReaction).ToList()
             : new List<ObjectiveReaction>();
 
-        return ors.All(or => (or.objective != null) && (or.objective.id == or.objectiveId));
+        return ors.All(or => (or.objective != null));
     }
 }

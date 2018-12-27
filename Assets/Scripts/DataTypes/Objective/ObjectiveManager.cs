@@ -41,9 +41,9 @@ public class ObjectiveManager
         Objective objective = this.globalState.objectives[objectiveId];
         objective.Complete(taskId, subTaskId);
 
-        if (objective.completed)
+        if (objective.completed && (objective.nextObjective != null))
         {
-            this.globalState.currentObjective = objective.nextObjectives[0].id;
+            this.globalState.currentObjective = objective.nextObjective.id;
         }
 
         this.UpdateObjective();

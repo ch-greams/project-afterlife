@@ -11,7 +11,7 @@ public class Objective : SerializedScriptableObject
     public ObjectiveId id;
     public string title;
     public bool completed;
-    public List<Objective> nextObjectives = new List<Objective>();
+    public Objective nextObjective;
 
     [GUIColor(0.7F, 0.7F, 0.7F, 1F)]
     [DictionaryDrawerSettings(KeyLabel = "Task", DisplayMode = DictionaryDisplayOptions.Foldout)]
@@ -68,4 +68,6 @@ public enum ObjectiveId
     Intro_WakeUp,
     Intro_GetReady,
     Intro_GoToWork,
+    Playground_Apartment_01,
+    Playground_Apartment_02,
 }

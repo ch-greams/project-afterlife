@@ -6,11 +6,7 @@ using Sirenix.OdinInspector;
 
 public class ObjectiveReaction : IInteractableReaction
 {
-    public ObjectiveReactionType type;
-
-    public ObjectiveId objectiveId;
-
-    // NOTE: Editor use only, don't use this variable in Init/IsValid methods
+    // NOTE: Use only as a reference for constant values in there
     public Objective objective;
 
     private List<string> taskIds
@@ -49,13 +45,8 @@ public class ObjectiveReaction : IInteractableReaction
 
     public IEnumerator React()
     {
-        this.objectiveManager.CompleteSubTask(this.objectiveId, this.taskId, this.subTaskId);
+        this.objectiveManager.CompleteSubTask(this.objective.id, this.taskId, this.subTaskId);
 
         yield return null;
     }
-}
-
-public enum ObjectiveReactionType
-{
-    COMPLETE_SUB_TASK,
 }
