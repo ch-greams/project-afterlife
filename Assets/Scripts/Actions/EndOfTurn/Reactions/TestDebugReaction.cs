@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class TestDebugReaction : IEndOfTurnReaction
+public class TestDebugReaction : IEndOfTurnReaction, IInteractableReaction
 {
     public string logText = "Triggered";
     private GlobalController globalCtrl;
@@ -11,6 +11,11 @@ public class TestDebugReaction : IEndOfTurnReaction
     public void Init(GlobalController globalCtrl)
     {
         this.globalCtrl = globalCtrl;
+    }
+
+    public void Init(Interactable interactable)
+    {
+        this.globalCtrl = interactable.sceneCtrl.globalCtrl;
     }
 
     public IEnumerator React()

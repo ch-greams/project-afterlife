@@ -1039,6 +1039,7 @@ MonoBehaviour:
   sceneState: {fileID: 11400000, guid: 90f502611efdd254095e74138351d7fa, type: 2}
   player: {fileID: 2030485170}
   enemySpawnPoints: []
+  interactables: []
   selectedTileColor: {r: 0, g: 0, b: 0, a: 0}
   activeTileColor: {r: 0, g: 0, b: 0, a: 0}
   visibleTileColor: {r: 0, g: 0, b: 0, a: 0}

@@ -1,6 +1,8 @@
-﻿using Sirenix.OdinInspector;
+﻿using System.Collections;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 
 public class DialogueManager
@@ -15,11 +17,28 @@ public class DialogueManager
 
     private Dialogue dialogue;
     private int currentFragment = 0;
+    private bool isDialogueInProgress = false;
 
 
     public void Init()
     {
         this.dialogueButton.onClick.AddListener(this.DisplayNextDialogueFragment);
+    }
+
+    public void InputListener()
+    {
+        if (this.isDialogueInProgress)
+        {
+            bool IsXboxJoystick = Array.Exists(
+                Input.GetJoystickNames(),
+                (joystick) => (joystick != null) && joystick.ToLower().Contains("xbox")
+            );
+
+            if (Input.GetButtonDown(IsXboxJoystick ? "Button A" : "Button B"))
+            {
+                this.DisplayNextDialogueFragment();
+            }
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -29,6 +48,21 @@ public class DialogueManager
 
         this.ToggleDialoguePanel(true);
         this.DisplayNextDialogueFragment();
+    }
+
+    public IEnumerator StartDialogueAsync(Dialogue dialogue)
+    {
+        this.dialogue = dialogue;
+        this.currentFragment = 0;
+        this.isDialogueInProgress = true;
+
+        this.ToggleDialoguePanel(true);
+        this.DisplayNextDialogueFragment();
+
+        while (this.isDialogueInProgress)
+        {
+            yield return null;
+        }
     }
 
     private void DisplayNextDialogueFragment()
@@ -42,6 +76,7 @@ public class DialogueManager
         else
         {
             this.ToggleDialoguePanel(false);
+            this.isDialogueInProgress = false;
         }
     }
 

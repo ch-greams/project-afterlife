@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a1b515263c267045831b245d0dc2e14, type: 3}
-  m_Name: 010_Playground_Apartment_01
+  m_Name: 012_Playground_Apartment_03
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -34,13 +34,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 
     - Name: 
       Entry: 1
-      Data: First Portal
+      Data: SaySomething
     - Name: 
       Entry: 7
       Data: 2|Task, Assembly-CSharp
@@ -61,64 +61,10 @@ MonoBehaviour:
       Data: 4|SubTask, Assembly-CSharp
     - Name: id
       Entry: 1
-      Data: FirstPortal
+      Data: SaySomething
     - Name: title
       Entry: 1
-      Data: First Portal
-    - Name: completed
-      Entry: 5
-      Data: false
-    - Name: optional
-      Entry: 5
-      Data: false
-    - Name: hidden
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 1
-      Data: Second Portal
-    - Name: 
-      Entry: 7
-      Data: 5|Task, Assembly-CSharp
-    - Name: completed
-      Entry: 5
-      Data: false
-    - Name: optional
-      Entry: 5
-      Data: false
-    - Name: subTasks
-      Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 7|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: SecondPortal
-    - Name: title
-      Entry: 1
-      Data: Second Portal
+      Data: Say Something
     - Name: completed
       Entry: 5
       Data: false
@@ -149,8 +95,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  id: 4
-  title: Activate Items
+  id: 6
+  title: Talk To Shadow
   completed: 0
-  comment: {fileID: 11400000, guid: fce081f5d240bef43aad54b0214fce54, type: 2}
-  nextObjective: {fileID: 11400000, guid: 27713008971afc04fac29dee843ffcda, type: 2}
+  comment: {fileID: 11400000, guid: 7b6b28fe162ef7c4cb2e7f7a8e496268, type: 2}
+  nextObjective: {fileID: 0}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEditor;
 
 
 [CreateAssetMenu]
@@ -16,7 +17,7 @@ public class GlobalState : SerializedScriptableObject
 
     public List<Item> inventory = new List<Item>();
 
-    [DictionaryDrawerSettings]
+    [DictionaryDrawerSettings, BoxGroup("Objectives")]
     public Dictionary<ObjectiveId, Objective> objectives = new Dictionary<ObjectiveId, Objective>();
 
     [DictionaryDrawerSettings]
@@ -65,6 +66,23 @@ public class GlobalState : SerializedScriptableObject
         foreach (KeyValuePair<string, SceneState> kvp in this.sceneStates)
         {
             kvp.Value.LoadFromSerializable(serializedGlobalState.sceneStates[kvp.Key]);
+        }
+    }
+
+
+    [Button(ButtonSizes.Medium), BoxGroup("Objectives")]
+    private void CollectObjectives()
+    {
+        this.objectives = new Dictionary<ObjectiveId, Objective>();
+
+        string[] assets = AssetDatabase.FindAssets("t:Objective");
+
+        foreach (string guid in assets)
+        {
+            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
+            Objective objective = AssetDatabase.LoadAssetAtPath<Objective>(assetPath);
+
+            this.objectives.Add(objective.id, objective);
         }
     }
 }

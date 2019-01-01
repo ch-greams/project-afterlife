@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,15 +27,39 @@ public class ObjectiveManager
     public Dictionary<string, GameObject> tasks = new Dictionary<string, GameObject>();
 
     private GlobalState globalState;
-    private DialogueManager dialogueManager;
-    
+    private GlobalController globalCtrl;
+
 
     public void Init(GlobalController globalCtrl)
     {
-        this.globalState = globalCtrl.globalState;
-        this.dialogueManager = globalCtrl.dialogueManager;
+        this.globalCtrl = globalCtrl;
+        this.globalState = this.globalCtrl.globalState;
 
         this.UpdateObjective();
+    }
+
+    public IEnumerator InputListener()
+    {
+        PlayerActionManager playerActionManager = this.globalCtrl.playerActionManager;
+
+        if (!playerActionManager.arePlayerControlsLocked)
+        {
+            bool IsXboxJoystick = Array.Exists(
+                Input.GetJoystickNames(),
+                (joystick) => (joystick != null) && joystick.ToLower().Contains("xbox")
+            );
+
+            if (IsXboxJoystick ? (Input.GetAxis("DPAD Horizontal Xbox") == -1) : (Input.GetAxis("DPAD Horizontal PS4") == -1))
+            {
+                playerActionManager.arePlayerControlsLocked = true;
+
+                Objective objective = this.globalState.objectives[this.globalState.currentObjective];
+
+                yield return this.globalCtrl.dialogueManager.StartDialogueAsync(objective.comment);
+
+                playerActionManager.arePlayerControlsLocked = false;
+            }
+        }
     }
 
     public void CompleteSubTask(ObjectiveId objectiveId, string taskId, string subTaskId)
@@ -75,9 +101,6 @@ public class ObjectiveManager
         GameObject task = GameObject.Instantiate(this.taskPrefab);
         Text taskText = task.GetComponentInChildren<Text>();
         taskText.text = currentSubTask.title;
-        Button taskButton = task.GetComponent<Button>();
-        taskButton.onClick.AddListener(() => this.dialogueManager.StartDialogue(currentSubTask.comment));
-        taskButton.interactable = !taskData.completed;
 
         if (taskData.completed)
         {

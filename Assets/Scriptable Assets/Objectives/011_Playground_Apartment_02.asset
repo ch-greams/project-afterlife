@@ -40,7 +40,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: SaySomething
+      Data: FindLastItem
     - Name: 
       Entry: 7
       Data: 2|Task, Assembly-CSharp
@@ -61,13 +61,10 @@ MonoBehaviour:
       Data: 4|SubTask, Assembly-CSharp
     - Name: id
       Entry: 1
-      Data: SaySomething
+      Data: FindLastItem
     - Name: title
       Entry: 1
-      Data: Say Something
-    - Name: comment
-      Entry: 6
-      Data: 
+      Data: Find Last Item
     - Name: completed
       Entry: 5
       Data: false
@@ -99,6 +96,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   id: 5
-  title: Talk To The Shadow
+  title: Close Portals
   completed: 0
-  nextObjective: {fileID: 0}
+  comment: {fileID: 11400000, guid: c0442145ea17fa841b0258d9417cb120, type: 2}
+  nextObjective: {fileID: 11400000, guid: a25592d374703764c86e10b56e63d656, type: 2}

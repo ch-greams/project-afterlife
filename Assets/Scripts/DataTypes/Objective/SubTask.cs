@@ -9,8 +9,6 @@ public class SubTask
     public string id;
     [HideIf("hidden")]
     public string title;
-    [HideIf("hidden")]
-    public Dialogue comment;
     public bool completed;
     public bool optional;
     public bool hidden;

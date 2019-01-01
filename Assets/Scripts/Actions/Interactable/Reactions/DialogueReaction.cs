@@ -16,8 +16,6 @@ public class DialogueReaction : IInteractableReaction
 
     public IEnumerator React()
     {
-        this.dialogueManager.StartDialogue(this.dialogue);
-
-        yield return null;
+        yield return this.dialogueManager.StartDialogueAsync(this.dialogue);
     }
 }

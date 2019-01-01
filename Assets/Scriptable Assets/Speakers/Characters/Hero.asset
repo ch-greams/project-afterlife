@@ -3,14 +3,14 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0e3100fd145dac46a07f64295bf7421, type: 3}
   m_Name: Hero
   m_EditorClassIdentifier: 
-  id: 0
   label: Hero
-  icon: {fileID: 21300000, guid: 56f2f8e76ff76764d8d1978410dd98c3, type: 3}
+  icon: {fileID: 21300000, guid: 43c08e08d791b9d43bd5f70008d102b6, type: 3}

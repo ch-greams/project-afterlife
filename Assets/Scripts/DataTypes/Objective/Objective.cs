@@ -11,6 +11,7 @@ public class Objective : SerializedScriptableObject
     public ObjectiveId id;
     public string title;
     public bool completed;
+    public Dialogue comment;
     public Objective nextObjective;
 
     [GUIColor(0.7F, 0.7F, 0.7F, 1F)]
@@ -70,4 +71,5 @@ public enum ObjectiveId
     Intro_GoToWork,
     Playground_Apartment_01,
     Playground_Apartment_02,
+    Playground_Apartment_03,
 }

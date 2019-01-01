@@ -711,7 +711,7 @@ PrefabInstance:
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: spawnPointDelay
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
@@ -743,10 +743,15 @@ PrefabInstance:
       propertyPath: spawnPointCapacity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: isSpawnPointActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7972385217893668767, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8597d5cf86fa5124ca9ed04e0413ce84, type: 3}
@@ -1102,7 +1107,7 @@ GameObject:
   - component: {fileID: 76603184}
   - component: {fileID: 76603183}
   m_Layer: 0
-  m_Name: item_that_destroyes_spawn_points
+  m_Name: green_shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1124,11 +1129,10 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 247856713}
-    - {fileID: 45437632}
-    - {fileID: 11400000, guid: 27713008971afc04fac29dee843ffcda, type: 2}
-    - {fileID: 2120387478}
-    - {fileID: 1087967421}
+    - {fileID: 6772187916564050283}
+    - {fileID: 11400000, guid: d091525ba1379be4aaaa8427ca5016b9, type: 2}
+    - {fileID: 11400000, guid: a25592d374703764c86e10b56e63d656, type: 2}
+    - {fileID: 1035420775}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -1172,13 +1176,37 @@ MonoBehaviour:
       Data: 1|System.Collections.Generic.List`1[[Point, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 4
     - Name: 
       Entry: 7
       Data: Point, Assembly-CSharp
     - Name: x
       Entry: 3
-      Data: 7
+      Data: 3
+    - Name: y
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
+      Data: 4
+    - Name: y
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
+      Data: 4
     - Name: y
       Entry: 3
       Data: 3
@@ -1190,10 +1218,10 @@ MonoBehaviour:
       Data: Point, Assembly-CSharp
     - Name: x
       Entry: 3
-      Data: 6
+      Data: 5
     - Name: y
       Entry: 3
-      Data: 4
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -1251,14 +1279,11 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 4
     - Name: 
       Entry: 7
-      Data: 7|SpawnPointReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 0
-    - Name: spawnPoint
+      Data: 7|DialogueReaction, Assembly-CSharp
+    - Name: dialogue
       Entry: 10
       Data: 1
     - Name: 
@@ -1281,43 +1306,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|SpawnPointReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 1
-    - Name: spawnPoint
-      Entry: 10
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|SpawnPointReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 1
-    - Name: spawnPoint
-      Entry: 10
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 11|SpawnPointReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 1
-    - Name: spawnPoint
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|InteractableDataReaction, Assembly-CSharp
+      Data: 9|InteractableDataReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -1326,6 +1315,30 @@ MonoBehaviour:
       Data: true
     - Name: interactable
       Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|TileReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: tiles
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[Tile, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: 
       Entry: 8
@@ -1355,10 +1368,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76603182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5, y: 1.1, z: 4.5}
+  m_LocalPosition: {x: 4.5, y: 1, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 247856716}
+  - {fileID: 1011169395750111716}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3115,83 +3128,6 @@ MonoBehaviour:
   isActive: 0
   isSelected: 0
   sceneCtrl: {fileID: 1793904435}
---- !u!1 &247856713
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 247856716}
-  - component: {fileID: 247856715}
-  - component: {fileID: 247856714}
-  m_Layer: 0
-  m_Name: interactable_item
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!23 &247856714
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247856713}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 5faa7475a0dea2f4f9898fc1181fe25d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &247856715
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247856713}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &247856716
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247856713}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_Children: []
-  m_Father: {fileID: 76603184}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &248706400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8608,8 +8544,12 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1169614205}
-    - {fileID: 2120387478}
     - {fileID: 11400000, guid: d1bf6e0cc7907114a8f39c799125e906, type: 2}
+    - {fileID: 2120387478}
+    - {fileID: 1087967421}
+    - {fileID: 45437632}
+    - {fileID: 11400000, guid: 27713008971afc04fac29dee843ffcda, type: 2}
+    - {fileID: 1035420775}
     - {fileID: 76603183}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -8621,7 +8561,7 @@ MonoBehaviour:
       Data: 0|InteractableData, Assembly-CSharp
     - Name: isInteractableActive
       Entry: 5
-      Data: true
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -8707,20 +8647,38 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 4|InteractableAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Activate Spawn Point
+      Data: Try Enable Last Item
     - Name: conditions
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
       Data: 0
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: First Portal
+    - Name: subTaskId
+      Entry: 1
+      Data: FirstPortal
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -8729,106 +8687,86 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 7
     - Name: 
       Entry: 7
-      Data: 7|SpawnPointReaction, Assembly-CSharp
+      Data: 8|SpawnPointReaction, Assembly-CSharp
     - Name: type
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: spawnPoint
       Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 8|ObjectiveReaction, Assembly-CSharp
-    - Name: objective
-      Entry: 10
       Data: 2
-    - Name: taskId
-      Entry: 1
-      Data: First Portal
-    - Name: subTaskId
-      Entry: 1
-      Data: FirstPortal
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|InteractableDataReaction, Assembly-CSharp
+      Data: 9|SpawnPointReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+    - Name: spawnPoint
+      Entry: 10
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 10|InteractableAction, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Try Enable Last Item
-    - Name: conditions
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
+      Data: 10|SpawnPointReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
       Data: 1
+    - Name: spawnPoint
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 12|ObjectiveCondition, Assembly-CSharp
+      Data: 11|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 5
+    - Name: taskId
+      Entry: 1
+      Data: FindLastItem
+    - Name: subTaskId
+      Entry: 1
+      Data: FindLastItem
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|TileReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
-    - Name: objective
-      Entry: 10
-      Data: 2
-    - Name: taskId
-      Entry: 1
-      Data: First Portal
-    - Name: subTaskId
-      Entry: 1
-      Data: FirstPortal
+    - Name: tiles
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[Tile, Assembly-CSharp]], mscorlib
     - Name: 
-      Entry: 8
-      Data: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 10
+      Data: 6
     - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
-    - Name: reactions
-      Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
-        mscorlib
     - Name: 
-      Entry: 12
-      Data: 1
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
       Data: 14|InteractableDataReaction, Assembly-CSharp
@@ -8840,7 +8778,22 @@ MonoBehaviour:
       Data: false
     - Name: interactable
       Entry: 10
-      Data: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: useCurrentInteractable
+      Entry: 5
+      Data: true
+    - Name: interactable
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -12266,7 +12219,7 @@ PrefabInstance:
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: spawnPointDelay
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
@@ -13193,7 +13146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1169614206
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16639,9 +16592,9 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 185045551}
-    - {fileID: 1087967421}
+    - {fileID: 2120387478}
     - {fileID: 11400000, guid: d1bf6e0cc7907114a8f39c799125e906, type: 2}
-    - {fileID: 76603183}
+    - {fileID: 700086693}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -16785,10 +16738,10 @@ MonoBehaviour:
       Data: 2
     - Name: taskId
       Entry: 1
-      Data: Second Portal
+      Data: First Portal
     - Name: subTaskId
       Entry: 1
-      Data: SecondPortal
+      Data: FirstPortal
     - Name: 
       Entry: 8
       Data: 
@@ -16821,7 +16774,7 @@ MonoBehaviour:
       Data: 10|InteractableAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Try Enable Last Item
+      Data: Try Activate Last Item
     - Name: conditions
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
@@ -17265,9 +17218,9 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 1011430280}
-    - {fileID: 45437632}
+    - {fileID: 1087967421}
     - {fileID: 11400000, guid: d1bf6e0cc7907114a8f39c799125e906, type: 2}
-    - {fileID: 76603183}
+    - {fileID: 700086693}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -17411,10 +17364,10 @@ MonoBehaviour:
       Data: 2
     - Name: taskId
       Entry: 1
-      Data: Third Portal
+      Data: Second Portal
     - Name: subTaskId
       Entry: 1
-      Data: ThirdPortal
+      Data: SecondPortal
     - Name: 
       Entry: 8
       Data: 
@@ -17447,7 +17400,7 @@ MonoBehaviour:
       Data: 10|InteractableAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Try Enable Last Item
+      Data: Try Activate Last Item
     - Name: conditions
       Entry: 7
       Data: 11|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
@@ -22857,7 +22810,7 @@ PrefabInstance:
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: spawnPointDelay
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
@@ -22893,6 +22846,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972385217875741799, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8597d5cf86fa5124ca9ed04e0413ce84, type: 3}
@@ -23367,3 +23325,104 @@ Transform:
   m_Father: {fileID: 1165248026}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!4 &1011169395750111716 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4005802400644625272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4005802400644625272
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 76603184}
+    m_Modifications:
+    - target: {fileID: 5760984327023505404, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_Name
+      value: pf_shadow_green
+      objectReference: {fileID: 0}
+    - target: {fileID: 5760984327023505404, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017859517433550707, guid: 3112ddbbb83f9874baa826542a015c6c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3112ddbbb83f9874baa826542a015c6c, type: 3}
+--- !u!1 &6772187916564050283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5760984327023505404, guid: 3112ddbbb83f9874baa826542a015c6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4005802400644625272}
+  m_PrefabAsset: {fileID: 0}

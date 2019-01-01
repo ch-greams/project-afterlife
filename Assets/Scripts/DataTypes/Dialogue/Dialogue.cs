@@ -19,8 +19,7 @@ public class DialogueFragment
 {
     [InlineEditor]
     public ISpeaker speaker;
-    [HideLabel]
-    [MultiLineProperty]
+    [HideLabel, MultiLineProperty]
     public string speech;
 }
 
