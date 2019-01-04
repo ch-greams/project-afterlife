@@ -41,7 +41,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  visibleByDefault: 0
+  isDungeonScene: 1
   defaultMap:
   - point:
       x: 0
