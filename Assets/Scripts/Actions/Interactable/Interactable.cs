@@ -10,14 +10,14 @@ public class Interactable : SerializedMonoBehaviour
 
     public InteractableData data;
 
-    [FoldoutGroup("Interactable Config", expanded: false)]
+    [FoldoutGroup("Interactable Config", expanded: false, order: 1)]
     public SceneController sceneCtrl;
     
-    [FoldoutGroup("Interactable Config", expanded: false)]
+    [FoldoutGroup("Interactable Config", expanded: false, order: 1)]
     [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
     public List<InteractableAction> initializeActions = new List<InteractableAction>();
 
-    [FoldoutGroup("Interactable Config", expanded: false)]
+    [FoldoutGroup("Interactable Config", expanded: false, order: 1)]
     [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
     public List<InteractableAction> clickActions = new List<InteractableAction>();
 
@@ -33,6 +33,22 @@ public class Interactable : SerializedMonoBehaviour
     private void Awake()
     {
         base.StartCoroutine(this.OnInit());
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        this.sceneCtrl.globalCtrl.playerActionManager.TrySelectInteractable(
+            this,
+            this.sceneCtrl.sceneState.isDungeonScene
+        );
+    }
+
+    private void OnTriggerExit(Collider collider)
+    {
+        this.sceneCtrl.globalCtrl.playerActionManager.TrySelectInteractable(
+            null,
+            this.sceneCtrl.sceneState.isDungeonScene
+        );
     }
 
     public void OnClickSync()
@@ -61,6 +77,28 @@ public class Interactable : SerializedMonoBehaviour
             {
                 yield return action.React();
             }
+        }
+    }
+
+    [BoxGroup("Interactable Controls", order: 0), ShowInInspector]
+    private bool enableInteractions = false;
+    [BoxGroup("Interactable Controls", order: 0), ShowInInspector]
+    private bool showInteractableObject = false;
+
+    [BoxGroup("Interactable Controls", order: 0), Button(ButtonSizes.Medium)]
+    private void ToggleInteractable()
+    {
+        this.ToggleInteractable(this.enableInteractions, this.showInteractableObject);
+    }
+
+    public void ToggleInteractable(bool enable, bool show)
+    {
+        this.data.isInteractableActive = enable;
+        this.GetComponent<Collider>().enabled = enable;
+
+        if (this.data.interactableObject)
+        {
+            this.data.interactableObject.SetActive(show);
         }
     }
 }

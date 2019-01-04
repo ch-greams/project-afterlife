@@ -9,7 +9,6 @@ public class SceneController : SerializedMonoBehaviour
     [ValueDropdown("sceneNames")]
     public string id;
     
-    public bool isOpenWorldScene = false;
     public GlobalController globalCtrl;
     public GlobalState globalState;
     [InlineEditor]
@@ -18,39 +17,39 @@ public class SceneController : SerializedMonoBehaviour
     [InlineEditor]
     public Player player;
 
-    [BoxGroup("Enemy Spawn Points", order: 3), HideIf("isOpenWorldScene")]
+    [BoxGroup("Enemy Spawn Points", order: 3), ShowIf("isDungeonScene")]
     public List<EnemySpawnPoint> enemySpawnPoints = new List<EnemySpawnPoint>();
 
     [BoxGroup("Interactables", order: 4)]
     public List<Interactable> interactables = new List<Interactable>();
 
 
-    [ShowInInspector, HideIf("isOpenWorldScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/General", 360)]
+    [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/General", 360)]
     public Point size {
         get {
             return (
-                this.tiles.Any() ? this.tiles.Select(ts => ts.point).Max() + new Point(1, 1) : new Point()
+                this.tiles.Any() ? this.tiles.Select(ts => (ts != null) ? ts.point : Point.zero).Max() + new Point(1, 1) : Point.zero
             );
         }
     }
 
-    [ShowInInspector, HideIf("isOpenWorldScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/General")]
+    [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/General")]
     public int total { get { return this.tiles.Count; } }
-    [ShowInInspector, HideIf("isOpenWorldScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int _blocked { get { return this.tiles.Count(ts => ts.isBlocked); } }
-    [ShowInInspector, HideIf("isOpenWorldScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int _visible { get { return this.tiles.Count(ts => ts.isVisible); } }
-    [ShowInInspector, HideIf("isOpenWorldScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int _default { get { return this.tiles.Count(ts => !ts.isBlocked && !ts.isVisible); } }
+    [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int _blocked { get { return this.tiles.Count(ts => (ts != null) && ts.isBlocked); } }
+    [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int _visible { get { return this.tiles.Count(ts => (ts != null) && ts.isVisible); } }
+    [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/States")]
+    public int _default { get { return this.tiles.Count(ts => (ts != null) && !ts.isBlocked && !ts.isVisible); } }
 
 
-    [BoxGroup("Tile Settings", order: 2), HideIf("isOpenWorldScene")]
+    [BoxGroup("Tile Settings", order: 2), ShowIf("isDungeonScene")]
     public Color selectedTileColor;
-    [BoxGroup("Tile Settings", order: 2), HideIf("isOpenWorldScene")]
+    [BoxGroup("Tile Settings", order: 2), ShowIf("isDungeonScene")]
     public Color activeTileColor;
-    [BoxGroup("Tile Settings", order: 2), HideIf("isOpenWorldScene")]
+    [BoxGroup("Tile Settings", order: 2), ShowIf("isDungeonScene")]
     public Color visibleTileColor;
-    [BoxGroup("Tile Settings", order: 2), HideIf("isOpenWorldScene")]
+    [BoxGroup("Tile Settings", order: 2), ShowIf("isDungeonScene")]
     public Color disabledTileColor;
 
 
@@ -60,7 +59,7 @@ public class SceneController : SerializedMonoBehaviour
     [HideInInspector]
     public Dictionary<string, List<Tile>> highlightedTiles = new Dictionary<string, List<Tile>>();
 
-    
+    private bool isDungeonScene { get { return this.sceneState.isDungeonScene; } }
     private List<string> sceneNames { get { return GlobalController.sceneNames; } }
 
 
@@ -68,14 +67,14 @@ public class SceneController : SerializedMonoBehaviour
     private void Awake()
     {
         this.globalCtrl = GameObject.FindObjectOfType<GlobalController>();
-        this.globalCtrl.sceneCtrl = this;
+        this.globalCtrl.SetScene(this);
         
         this.globalCtrl.enemyManager.enemySpawnPoints = this.enemySpawnPoints;
 
         this.globalState = this.globalCtrl.globalState;
         this.sceneState = this.globalState.sceneStates[this.id];
 
-        if (this.isOpenWorldScene)
+        if (!this.sceneState.isDungeonScene)
         {
             // TODO: Replace Vector3.zero with something else
             this.player.InitPlayer(this.globalCtrl, Vector3.zero);
@@ -92,7 +91,7 @@ public class SceneController : SerializedMonoBehaviour
 
     private void Start()
     {
-        if (!this.sceneState.visibleByDefault)
+        if (this.sceneState.isDungeonScene)
         {
             this.UpdateTiles(this.player.tile);
         }
@@ -125,7 +124,7 @@ public class SceneController : SerializedMonoBehaviour
         }
     }
 
-    [Button(ButtonSizes.Medium), BoxGroup("Enemy Spawn Points", order: 3), HideIf("isOpenWorldScene")]
+    [Button(ButtonSizes.Medium), BoxGroup("Enemy Spawn Points", order: 3), HideIf("isDungeonScene")]
     public void CollectEnemySpawnPoints()
     {
         this.enemySpawnPoints = GameObject.FindObjectsOfType<EnemySpawnPoint>().ToList();

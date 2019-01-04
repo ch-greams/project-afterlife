@@ -188,7 +188,7 @@ public class Tile : SerializedMonoBehaviour
                 break;
             }
             
-            rayPath = rayPath.AddStep(currentTile, new Point().DistanceTo(deltaPoint));
+            rayPath = rayPath.AddStep(currentTile, Point.zero.DistanceTo(deltaPoint));
         }
 
         return rayPath;

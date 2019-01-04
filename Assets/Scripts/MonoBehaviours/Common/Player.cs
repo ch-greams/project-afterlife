@@ -232,7 +232,7 @@ public class Player : SerializedMonoBehaviour
 
     private void Update()
     {
-        if (this.globalCtrl.sceneCtrl.isOpenWorldScene && this.navMeshAgent != null)
+        if (!this.globalCtrl.sceneCtrl.sceneState.isDungeonScene && this.navMeshAgent != null)
         {
             this.MovePlayer("Left Stick Horizontal", "Left Stick Vertical");
         }

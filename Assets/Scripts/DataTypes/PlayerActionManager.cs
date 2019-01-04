@@ -8,6 +8,11 @@ using System;
 
 public class PlayerActionManager
 {
+    [BoxGroup("Group Configuration")]
+    public GameObject playerActionsGroup;
+    [BoxGroup("Group Configuration")]
+    public GameObject statsPanelGroup;
+
     [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
     public Button walkButton;
     [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
@@ -45,6 +50,15 @@ public class PlayerActionManager
     [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[Y] Granade Button")]
     public Text granadeButtonCooldownLabel;
 
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button")]
+    public Button skipTurnButton;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button")]
+    public RectTransform skipTurnButtonProgress;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button"), ReadOnly]
+    public float skipTurnButtonProgressCounter = 0;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button")]
+    public float skipTurnButtonProgressMax = 100;
+
     [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] Interaction Button")]
     public Button interactionButton;
     [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] Interaction Button")]
@@ -54,15 +68,14 @@ public class PlayerActionManager
     [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] Interaction Button")]
     public float interactionButtonProgressMax = 100;
 
-
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button")]
-    public Button skipTurnButton;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button")]
-    public RectTransform skipTurnButtonProgress;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button"), ReadOnly]
-    public float skipTurnButtonProgressCounter = 0;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button")]
-    public float skipTurnButtonProgressMax = 100;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button")]
+    public Button wInteractionButton;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button")]
+    public RectTransform wInteractionButtonProgress;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button"), ReadOnly]
+    public float wInteractionButtonProgressCounter = 0;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button")]
+    public float wInteractionButtonProgressMax = 100;
 
     public List<PlayerActionType> instantActions = new List<PlayerActionType>();
 
@@ -92,8 +105,10 @@ public class PlayerActionManager
         this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
         this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
         this.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
-        this.interactionButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Interaction));
         this.skipTurnButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.SkipTurn));
+        this.interactionButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Interaction));
+
+        this.wInteractionButton.onClick.AddListener(this.currentInteractable.OnClickSync);
     }
 
     // TODO: Make something more sophisticated for controller switch
@@ -106,6 +121,28 @@ public class PlayerActionManager
         );
     }
 
+
+    public void InputListener(bool isDungeonScene)
+    {
+        if (isDungeonScene)
+        {
+            this.InputListener();
+        }
+        else
+        {
+            if (this.currentInteractable != null)
+            {
+                this.HoldButton(
+                    buttonName: "Right Trigger",
+                    button: this.wInteractionButton,
+                    progressTransform: this.wInteractionButtonProgress,
+                    progressCounter: ref this.wInteractionButtonProgressCounter,
+                    progressCounterMax: this.wInteractionButtonProgressMax,
+                    progressBarWidth: 200
+                );
+            }
+        }
+    }
 
     public void InputListener()
     {
@@ -137,78 +174,26 @@ public class PlayerActionManager
                 this.granadeButton.onClick.Invoke();
             }
 
-            // Right Trigger
-
-            bool isInteractableSelected = this.currentInteractable != null;
-            float rightTriggerValue = Input.GetAxis("Right Trigger");
-
-            if (isInteractableSelected && rightTriggerValue > 0)
+            if (this.currentInteractable != null)
             {
-                this.interactionButtonProgressCounter += rightTriggerValue;
-
-                this.UpdateProgressBar(
-                    progressBar: this.interactionButtonProgress,
-                    progress: this.interactionButtonProgressCounter / this.interactionButtonProgressMax,
-                    progressBarWidth: 200
-                );
-
-                if (this.interactionButtonProgressCounter >= this.interactionButtonProgressMax)
-                {
-                    this.interactionButton.onClick.Invoke();
-
-                    this.interactionButtonProgressCounter = 0;
-                    this.UpdateProgressBar(
-                        progressBar: this.interactionButtonProgress,
-                        progress: 0,
-                        progressBarWidth: 200
-                    );
-                }
-            }
-            else
-            {
-                this.interactionButtonProgressCounter = 0;
-                this.UpdateProgressBar(
-                    progressBar: this.interactionButtonProgress,
-                    progress: 0,
+                this.HoldButton(
+                    buttonName: "Right Trigger",
+                    button: this.interactionButton,
+                    progressTransform: this.interactionButtonProgress,
+                    progressCounter: ref this.interactionButtonProgressCounter,
+                    progressCounterMax: this.interactionButtonProgressMax,
                     progressBarWidth: 200
                 );
             }
 
-            // Left Trigger
-
-            float leftTriggerValue = Input.GetAxis("Left Trigger");
-
-            if (leftTriggerValue > 0)
-            {
-                this.skipTurnButtonProgressCounter += leftTriggerValue;
-
-                this.UpdateProgressBar(
-                    progressBar: this.skipTurnButtonProgress,
-                    progress: this.skipTurnButtonProgressCounter / this.skipTurnButtonProgressMax,
-                    progressBarWidth: 300
-                );
-
-                if (this.skipTurnButtonProgressCounter >= this.skipTurnButtonProgressMax)
-                {
-                    this.skipTurnButton.onClick.Invoke();
-
-                    this.skipTurnButtonProgressCounter = 0;
-                    this.UpdateProgressBar(
-                        progressBar: this.skipTurnButtonProgress,
-                        progress: 0,
-                        progressBarWidth: 300
-                    );
-                }
-            }
-            else
-            {
-                this.skipTurnButtonProgressCounter = 0;
-                this.UpdateProgressBar(
-                    progressBar: this.skipTurnButtonProgress,
-                    progress: 0,
-                    progressBarWidth: 300
-                );
-            }
+            this.HoldButton(
+                buttonName: "Left Trigger",
+                button: this.skipTurnButton,
+                progressTransform: this.skipTurnButtonProgress,
+                progressCounter: ref this.skipTurnButtonProgressCounter,
+                progressCounterMax: this.skipTurnButtonProgressMax,
+                progressBarWidth: 300
+            );
 
             if (Input.GetButtonDown("Left Stick Button"))
             {
@@ -229,6 +214,49 @@ public class PlayerActionManager
                 default:
                     break;
             }
+        }
+    }
+
+    private void HoldButton(
+        string buttonName,
+        Button button,
+        RectTransform progressTransform,
+        ref float progressCounter,
+        float progressCounterMax,
+        float progressBarWidth
+    ) {
+        float axisValue = Input.GetAxis(buttonName);
+
+        if (axisValue > 0)
+        {
+            progressCounter += axisValue;
+
+            this.UpdateProgressBar(
+                progressBar: progressTransform,
+                progress: progressCounter / progressCounterMax,
+                progressBarWidth: progressBarWidth
+            );
+
+            if (progressCounter >= progressCounterMax)
+            {
+                button.onClick.Invoke();
+
+                progressCounter = 0;
+                this.UpdateProgressBar(
+                    progressBar: progressTransform,
+                    progress: 0,
+                    progressBarWidth: progressBarWidth
+                );
+            }
+        }
+        else
+        {
+            progressCounter = 0;
+            this.UpdateProgressBar(
+                progressBar: progressTransform,
+                progress: 0,
+                progressBarWidth: progressBarWidth
+            );
         }
     }
 
@@ -363,11 +391,19 @@ public class PlayerActionManager
         }
     }
 
-    public void TrySelectInteractable(Interactable interactable)
+    public void TrySelectInteractable(Interactable interactable, bool isDungeonScene)
     {
-        this.currentInteractable = interactable != null ? interactable : null;
+        bool isInteractableNotNull = interactable != null;
+        this.currentInteractable = isInteractableNotNull ? interactable : null;
 
-        this.interactionButton.gameObject.SetActive(interactable != null);
+        if (isDungeonScene)
+        {
+            this.interactionButton.gameObject.SetActive(isInteractableNotNull);
+        }
+        else
+        {
+            this.wInteractionButton.gameObject.SetActive(isInteractableNotNull);
+        }
     }
 
     private void DisableActionButton(PlayerActionType playerActionType)

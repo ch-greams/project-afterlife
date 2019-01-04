@@ -20,7 +20,7 @@ public class CheckInteractablesReaction : IEndOfTurnReaction
                 interactable.data.isInteractableActive && interactable.data.reachablePoints.Contains(sceneCtrl.player.tile.point)
             );
 
-        this.globalCtrl.playerActionManager.TrySelectInteractable(currentInteractable);
+        this.globalCtrl.playerActionManager.TrySelectInteractable(currentInteractable, sceneCtrl.sceneState.isDungeonScene);
 
         yield return null;
     }

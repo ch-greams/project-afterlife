@@ -664,6 +664,7 @@ GameObject:
   - component: {fileID: 6718698301903599709}
   - component: {fileID: 6718698301903599710}
   - component: {fileID: 3457276005185178639}
+  - component: {fileID: 6017123208584115845}
   m_Layer: 8
   m_Name: Liam
   m_TagString: Untagged
@@ -720,6 +721,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 86e8458b9b943d84aa458a2635ce56e1, type: 3}
+--- !u!54 &6017123208584115845
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3393795213383950125}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3393797991861691541
 GameObject:
   m_ObjectHideFlags: 0

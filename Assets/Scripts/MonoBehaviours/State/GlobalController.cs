@@ -11,9 +11,9 @@ using System.IO;
 public class GlobalController : SerializedMonoBehaviour
 {
 
-    [BoxGroup("Configuration")]
+    [BoxGroup("Scene Switch Configuration")]
     public float fadeDuration = 0.5f;
-    [BoxGroup("Configuration")]
+    [BoxGroup("Scene Switch Configuration")]
     public CanvasGroup faderCanvasGroup;
 
 
@@ -33,8 +33,11 @@ public class GlobalController : SerializedMonoBehaviour
     [FoldoutGroup("Interface Management")]
     public ObjectiveManager objectiveManager;
 
-    [FoldoutGroup("Interface Management")]
+    [FoldoutGroup("Interface Management"), BoxGroup("Interface Management/Player Actions")]
     public PlayerActionManager playerActionManager;
+
+    [FoldoutGroup("Interface Management"), BoxGroup("Interface Management/Player Actions")]
+    public EndOfTurnActionManager endOfTurnActionManager;
 
     // TODO: Do something smart about it
     [FoldoutGroup("Interface Management")]
@@ -54,10 +57,13 @@ public class GlobalController : SerializedMonoBehaviour
     public bool isGameOver = false;
 
     // TODO: Update this shit
-    public EndOfTurnActionManager endOfTurnActionManager;
     public SceneController sceneCtrl;
+
+    [BoxGroup("Player Controls")]
     public bool directionSwitch = false;
+    [BoxGroup("Player Controls")]
     public bool directionVerticalSignSwitch = false;
+    [BoxGroup("Player Controls")]
     public bool directionHorizontalSignSwitch = false;
 
 
@@ -96,12 +102,13 @@ public class GlobalController : SerializedMonoBehaviour
         this.dialogueManager.Init();
         this.saveManager.Init(this);
         this.objectiveManager.Init(this);
+
         this.playerActionManager.Init(this);
+        this.endOfTurnActionManager.Init(this);
+
         // State Management
         this.enemyManager.Init(this);
         this.collectableManager.Init(this);
-        // Other
-        this.endOfTurnActionManager.Init(this);
     }
 
     private IEnumerator Start()
@@ -111,13 +118,22 @@ public class GlobalController : SerializedMonoBehaviour
 
     private void Update()
     {
-        if (!SceneManager.sceneLoadingInProgress)
+        if (!SceneManager.sceneLoadingInProgress && this.sceneCtrl != null)
         {
-            this.playerActionManager.InputListener();
+            this.playerActionManager.InputListener(this.sceneCtrl.sceneState.isDungeonScene);
             this.dialogueManager.InputListener();
 
             base.StartCoroutine(this.objectiveManager.InputListener());
         }
+    }
+
+    public void SetScene(SceneController sceneCtrl)
+    {
+        this.sceneCtrl = sceneCtrl;
+
+        this.playerActionManager.playerActionsGroup.SetActive(this.sceneCtrl.sceneState.isDungeonScene);
+        this.playerActionManager.statsPanelGroup.SetActive(this.sceneCtrl.sceneState.isDungeonScene);
+        this.playerActionManager.arePlayerControlsLocked = !this.sceneCtrl.sceneState.isDungeonScene;
     }
 
     public void NextTurn()

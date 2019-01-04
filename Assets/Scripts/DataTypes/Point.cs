@@ -11,6 +11,8 @@ public struct Point : IComparable<Point>
 {
     public int x, y;
 
+    public static Point zero { get { return new Point(0, 0); } }
+
     /// <summary>
     /// Create point based on position in a grid
     /// </summary>

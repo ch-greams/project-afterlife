@@ -10,9 +10,13 @@ public class InteractableDataReaction : IInteractableReaction
     [HideIf("useCurrentInteractable")]
     public Interactable interactable;
 
+    private SceneController sceneCtrl;
+
 
     public void Init(Interactable interactable)
     {
+        this.sceneCtrl = interactable.sceneCtrl;
+
         if (this.useCurrentInteractable)
         {
             this.interactable = interactable;
@@ -21,23 +25,48 @@ public class InteractableDataReaction : IInteractableReaction
 
     public IEnumerator React()
     {
+        PlayerActionManager playerActionManager = this.sceneCtrl.globalCtrl.playerActionManager;
+
         switch (this.type)
         {
+            case InteractableDataReactionType.EnableAndShowInteractable:
+                this.interactable.ToggleInteractable(true, true);
+                break;
+            case InteractableDataReactionType.DisableAndHideInteractable:
+                this.interactable.ToggleInteractable(false, false);
+                this.TryDeselectInteractable();
+                break;
             case InteractableDataReactionType.EnableInteractable:
-                this.interactable.data.ToggleInteractable(true);
+                this.interactable.ToggleInteractable(true, this.interactable.data.interactableObject.activeSelf);
                 break;
             case InteractableDataReactionType.DisableInteractable:
-                this.interactable.data.ToggleInteractable(false);
+                this.interactable.ToggleInteractable(false, this.interactable.data.interactableObject.activeSelf);
+                this.TryDeselectInteractable();
                 break;
             default:
                 yield return null;
                 break;
         }
     }
+
+    /// <summary>
+    /// Deselect interactable if currently selected in PlayerActionManager
+    /// </summary>
+    private void TryDeselectInteractable()
+    {
+        PlayerActionManager playerActionManager = this.sceneCtrl.globalCtrl.playerActionManager;
+
+        if (playerActionManager.currentInteractable == this.interactable)
+        {
+            playerActionManager.TrySelectInteractable(null, this.sceneCtrl.sceneState.isDungeonScene);
+        }
+    }
 }
 
 public enum InteractableDataReactionType
 {
+    EnableAndShowInteractable,
+    DisableAndHideInteractable,
     EnableInteractable,
     DisableInteractable,
 }

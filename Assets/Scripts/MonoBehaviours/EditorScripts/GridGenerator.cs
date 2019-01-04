@@ -27,7 +27,7 @@ public class GridGenerator : MonoBehaviour
     public Point size {
         get {
             return (
-                this.tiles.Any() ? this.tiles.Where(tile => tile).Select(tile => tile.point).Max() + new Point(1, 1) : new Point()
+                this.tiles.Any() ? this.tiles.Where(tile => tile).Select(tile => tile.point).Max() + new Point(1, 1) : Point.zero
             );
         }
     }

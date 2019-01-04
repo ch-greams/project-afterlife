@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100110, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 100030, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 40
@@ -974,6 +978,214 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.001, y: 5, z: 6}
   m_Center: {x: 0.049999997, y: 1, z: 0}
+--- !u!1 &671905464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100110, guid: 04c11882f2548c1489695bc5deee6856,
+    type: 3}
+  m_PrefabInstance: {fileID: 671905447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &959859964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 959859967}
+  - component: {fileID: 959859966}
+  - component: {fileID: 959859965}
+  m_Layer: 0
+  m_Name: table_interactable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &959859965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959859964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9719588919376647b7fa704abb1cfe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 671905464}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|InteractableData, Assembly-CSharp
+    - Name: isInteractableActive
+      Entry: 5
+      Data: true
+    - Name: interactableObject
+      Entry: 10
+      Data: 0
+    - Name: animator
+      Entry: 6
+      Data: 
+    - Name: defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hasCollider
+      Entry: 5
+      Data: true
+    - Name: reachablePoints
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Point, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: initializeActions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[InteractableAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: clickActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[InteractableAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 4|InteractableAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Test
+    - Name: conditions
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 7|TestDebugReaction, Assembly-CSharp
+    - Name: logText
+      Entry: 1
+      Data: Interactable Triggered
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: useCurrentInteractable
+      Entry: 5
+      Data: true
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  showGizmo: 1
+  sceneCtrl: {fileID: 1311566517}
+--- !u!65 &959859966
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959859964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &959859967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959859964}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.75, y: 1, z: 1.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1311566516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,13 +1245,13 @@ MonoBehaviour:
       Entry: 8
       Data: 
   id: apartment_bedroom
-  isOpenWorldScene: 1
   globalCtrl: {fileID: 0}
   globalState: {fileID: 0}
   sceneState: {fileID: 11400000, guid: 90f502611efdd254095e74138351d7fa, type: 2}
   player: {fileID: 2030485170}
   enemySpawnPoints: []
-  interactables: []
+  interactables:
+  - {fileID: 959859965}
   selectedTileColor: {r: 0, g: 0, b: 0, a: 0}
   activeTileColor: {r: 0, g: 0, b: 0, a: 0}
   visibleTileColor: {r: 0, g: 0, b: 0, a: 0}

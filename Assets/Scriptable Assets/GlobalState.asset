@@ -281,6 +281,6 @@ MonoBehaviour:
     x: 4
     y: 0
   currentVisibility: 4.5
-  currentScene: apartment
+  currentScene: apartment_bedroom
   currentObjective: 4
   inventory: []
