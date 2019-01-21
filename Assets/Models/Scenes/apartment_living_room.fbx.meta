@@ -380,7 +380,7 @@ ModelImporter:
     4300134: kitchen2:kitchen_wall_cabinet:wall_cabinet
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
