@@ -108,7 +108,8 @@ public class PlayerActionManager
         this.skipTurnButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.SkipTurn));
         this.interactionButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Interaction));
 
-        this.wInteractionButton.onClick.AddListener(this.currentInteractable.OnClickSync);
+        // TODO: Fix this, not sure why I did this or why it worked, since it's obvious null pointer
+        // this.wInteractionButton.onClick.AddListener(this.currentInteractable.OnClickSync);
     }
 
     // TODO: Make something more sophisticated for controller switch

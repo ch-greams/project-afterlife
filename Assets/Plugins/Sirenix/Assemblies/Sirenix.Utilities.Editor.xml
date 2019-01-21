@@ -3387,6 +3387,11 @@
             <param name="allowSceneObjects">Wheather or not to allow scene objects.</param>
             <param name="options">Layout options.</param>
         </member>
+        <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.PolymorphicObjectField(UnityEngine.Rect,UnityEngine.GUIContent,System.Object,System.Type,System.Boolean)">
+            <summary>
+            Draws a polymorphic ObjectField.
+            </summary>
+        </member>
         <member name="M:Sirenix.Utilities.Editor.SirenixEditorFields.PolymorphicObjectField(UnityEngine.Rect,System.Object,System.Type,System.Boolean,System.Boolean,System.Int32)">
             <summary>
             Draws a polymorphic ObjectField.

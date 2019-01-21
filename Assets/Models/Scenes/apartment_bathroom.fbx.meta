@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 65db1e052d581da4ea06b4a927f89e2a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: bathtub1:bathtub
+    100004: door
+    100006: door_frame
+    100008: floor
+    100010: roof
+    100012: sink_and_mirror1
+    100014: sink_and_mirror:mirror
+    100016: sink_and_mirror:sink
+    100018: toilet1:toilet
+    100020: wall_back
+    100022: wall_back_outside
+    100024: wall_front
+    100026: wall_front_outside
+    100028: wall_left
+    100030: wall_left_outside
+    100032: wall_right
+    100034: wall_right_outside
+    100036: walls
+    100038: bathtub:bathtub
+    100040: sink_and_mirror2:mirror
+    100042: sink_and_mirror2:sink
+    100044: sink_and_mirror3
+    100046: toilet:toilet
+    400000: //RootNode
+    400002: bathtub1:bathtub
+    400004: door
+    400006: door_frame
+    400008: floor
+    400010: roof
+    400012: sink_and_mirror1
+    400014: sink_and_mirror:mirror
+    400016: sink_and_mirror:sink
+    400018: toilet1:toilet
+    400020: wall_back
+    400022: wall_back_outside
+    400024: wall_front
+    400026: wall_front_outside
+    400028: wall_left
+    400030: wall_left_outside
+    400032: wall_right
+    400034: wall_right_outside
+    400036: walls
+    400038: bathtub:bathtub
+    400040: sink_and_mirror2:mirror
+    400042: sink_and_mirror2:sink
+    400044: sink_and_mirror3
+    400046: toilet:toilet
+    2100000: phong1
+    2300000: bathtub1:bathtub
+    2300002: door
+    2300004: door_frame
+    2300006: floor
+    2300008: roof
+    2300010: sink_and_mirror:mirror
+    2300012: sink_and_mirror:sink
+    2300014: toilet1:toilet
+    2300016: wall_back
+    2300018: wall_back_outside
+    2300020: wall_front
+    2300022: wall_front_outside
+    2300024: wall_left
+    2300026: wall_left_outside
+    2300028: wall_right
+    2300030: wall_right_outside
+    2300032: bathtub:bathtub
+    2300034: sink_and_mirror2:mirror
+    2300036: sink_and_mirror2:sink
+    2300038: toilet:toilet
+    3300000: bathtub1:bathtub
+    3300002: door
+    3300004: door_frame
+    3300006: floor
+    3300008: roof
+    3300010: sink_and_mirror:mirror
+    3300012: sink_and_mirror:sink
+    3300014: toilet1:toilet
+    3300016: wall_back
+    3300018: wall_back_outside
+    3300020: wall_front
+    3300022: wall_front_outside
+    3300024: wall_left
+    3300026: wall_left_outside
+    3300028: wall_right
+    3300030: wall_right_outside
+    3300032: bathtub:bathtub
+    3300034: sink_and_mirror2:mirror
+    3300036: sink_and_mirror2:sink
+    3300038: toilet:toilet
+    4300000: roof
+    4300002: wall_back_outside
+    4300004: wall_front_outside
+    4300006: wall_right_outside
+    4300008: wall_left_outside
+    4300010: wall_right
+    4300012: wall_front
+    4300014: wall_back
+    4300016: wall_left
+    4300018: floor
+    4300020: toilet1:toilet
+    4300022: bathtub1:bathtub
+    4300024: sink_and_mirror:sink
+    4300026: sink_and_mirror:mirror
+    4300028: door_frame
+    4300030: door
+    4300032: toilet:toilet
+    4300034: bathtub:bathtub
+    4300036: sink_and_mirror2:sink
+    4300038: sink_and_mirror2:mirror
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

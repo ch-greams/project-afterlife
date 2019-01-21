@@ -8,22 +8,35 @@ using UnityEngine.AI;
 
 public class Player : SerializedMonoBehaviour
 {
+    [BoxGroup("General Params")]
     public float animationSpeed = 4.0F;
-    public bool isMoving = false;
-    public bool isTargetUpdating = false;
+    [BoxGroup("General Params")]
     public Transform playerTransform;
+    [BoxGroup("General Params")]
     public Transform characterTransform;
-    public Light playerSpotlight;
-    public GameObject flashlightRay;
-    public GameObject tileSelector;
+    [BoxGroup("General Params")]
     public Animator characterAnimator;
+
+    [FoldoutGroup("World Params")]
     public NavMeshAgent navMeshAgent;
+
+    [FoldoutGroup("Dungeon Params")]
+    public Light playerSpotlight;
+    [FoldoutGroup("Dungeon Params")]
+    public GameObject flashlightRay;
+    [FoldoutGroup("Dungeon Params")]
+    public GameObject tileSelector;
+    [FoldoutGroup("Dungeon Params")]
     public Tile tile;
+    [FoldoutGroup("Dungeon Params")]
     public float visibleRange = 2.5F;
+    [FoldoutGroup("Dungeon Params")]
     public float maxVisibleRange = 4.5F;
+    [FoldoutGroup("Dungeon Params")]
     public float flashlightRange = 5.0F;
 
     // TODO: Clean up this
+    [FoldoutGroup("Dungeon Params")]
     public Dictionary<Vector3, Tile> activeTiles = new Dictionary<Vector3, Tile>();
 
     private GlobalController globalCtrl;

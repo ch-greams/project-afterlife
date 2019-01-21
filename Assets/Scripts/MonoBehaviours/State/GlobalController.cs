@@ -91,7 +91,7 @@ public class GlobalController : SerializedMonoBehaviour
 
     private void Awake()
     {
-        this.globalState = CreatePlayModeInstance(this.globalState);
+        this.globalState = GlobalController.CreatePlayModeInstance(this.globalState);
         this.globalState.objectives = this.globalState.objectives
             .ToDictionary(kvp => kvp.Key, kvp => GlobalController.CreatePlayModeInstance(kvp.Value));
         this.globalState.sceneStates = this.globalState.sceneStates
