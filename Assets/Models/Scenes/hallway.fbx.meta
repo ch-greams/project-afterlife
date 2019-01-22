@@ -1,0 +1,287 @@
+fileFormatVersion: 2
+guid: e38f284155a386140aa669b76166c4bc
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: door
+    100002: door 1
+    100004: door 2
+    100006: door 3
+    100008: door 4
+    100010: door 5
+    100012: door_apt_00
+    100014: door_apt_01
+    100016: door_apt_02
+    100018: door_apt_03
+    100020: door_apt_04
+    100022: door_apt_05
+    100024: door_frame
+    100026: door_frame 1
+    100028: door_frame 2
+    100030: door_frame 3
+    100032: door_frame 4
+    100034: door_frame 5
+    100036: floor
+    100038: //RootNode
+    100040: roof
+    100042: wall_left
+    100044: wall_left_01
+    100046: wall_left_01_outside
+    100048: wall_left_02
+    100050: wall_left_02_outside
+    100052: wall_left_03
+    100054: wall_left_03_outside
+    100056: wall_left_bumper
+    100058: wall_left_bumper_01
+    100060: wall_left_bumper_02
+    100062: wall_left_bumper_03
+    100064: wall_left_bumper_04
+    100066: wall_right
+    100068: wall_right_01
+    100070: wall_right_01_outside
+    100072: wall_right_02
+    100074: wall_right_02_outside
+    100076: wall_right_03
+    100078: wall_right_03_outside
+    100080: wall_right_bumper
+    100082: wall_right_bumper_01
+    100084: wall_right_bumper_02
+    100086: wall_right_bumper_03
+    100088: wall_right_bumper_04
+    100090: walls
+    400000: door
+    400002: door 1
+    400004: door 2
+    400006: door 3
+    400008: door 4
+    400010: door 5
+    400012: door_apt_00
+    400014: door_apt_01
+    400016: door_apt_02
+    400018: door_apt_03
+    400020: door_apt_04
+    400022: door_apt_05
+    400024: door_frame
+    400026: door_frame 1
+    400028: door_frame 2
+    400030: door_frame 3
+    400032: door_frame 4
+    400034: door_frame 5
+    400036: floor
+    400038: //RootNode
+    400040: roof
+    400042: wall_left
+    400044: wall_left_01
+    400046: wall_left_01_outside
+    400048: wall_left_02
+    400050: wall_left_02_outside
+    400052: wall_left_03
+    400054: wall_left_03_outside
+    400056: wall_left_bumper
+    400058: wall_left_bumper_01
+    400060: wall_left_bumper_02
+    400062: wall_left_bumper_03
+    400064: wall_left_bumper_04
+    400066: wall_right
+    400068: wall_right_01
+    400070: wall_right_01_outside
+    400072: wall_right_02
+    400074: wall_right_02_outside
+    400076: wall_right_03
+    400078: wall_right_03_outside
+    400080: wall_right_bumper
+    400082: wall_right_bumper_01
+    400084: wall_right_bumper_02
+    400086: wall_right_bumper_03
+    400088: wall_right_bumper_04
+    400090: walls
+    2100000: phong1
+    2300000: door
+    2300002: door 1
+    2300004: door 2
+    2300006: door 3
+    2300008: door 4
+    2300010: door 5
+    2300012: door_frame
+    2300014: door_frame 1
+    2300016: door_frame 2
+    2300018: door_frame 3
+    2300020: door_frame 4
+    2300022: door_frame 5
+    2300024: floor
+    2300026: roof
+    2300028: wall_left_01
+    2300030: wall_left_01_outside
+    2300032: wall_left_02
+    2300034: wall_left_02_outside
+    2300036: wall_left_03
+    2300038: wall_left_03_outside
+    2300040: wall_left_bumper_01
+    2300042: wall_left_bumper_02
+    2300044: wall_left_bumper_03
+    2300046: wall_left_bumper_04
+    2300048: wall_right_01
+    2300050: wall_right_01_outside
+    2300052: wall_right_02
+    2300054: wall_right_02_outside
+    2300056: wall_right_03
+    2300058: wall_right_03_outside
+    2300060: wall_right_bumper_01
+    2300062: wall_right_bumper_02
+    2300064: wall_right_bumper_03
+    2300066: wall_right_bumper_04
+    3300000: door
+    3300002: door 1
+    3300004: door 2
+    3300006: door 3
+    3300008: door 4
+    3300010: door 5
+    3300012: door_frame
+    3300014: door_frame 1
+    3300016: door_frame 2
+    3300018: door_frame 3
+    3300020: door_frame 4
+    3300022: door_frame 5
+    3300024: floor
+    3300026: roof
+    3300028: wall_left_01
+    3300030: wall_left_01_outside
+    3300032: wall_left_02
+    3300034: wall_left_02_outside
+    3300036: wall_left_03
+    3300038: wall_left_03_outside
+    3300040: wall_left_bumper_01
+    3300042: wall_left_bumper_02
+    3300044: wall_left_bumper_03
+    3300046: wall_left_bumper_04
+    3300048: wall_right_01
+    3300050: wall_right_01_outside
+    3300052: wall_right_02
+    3300054: wall_right_02_outside
+    3300056: wall_right_03
+    3300058: wall_right_03_outside
+    3300060: wall_right_bumper_01
+    3300062: wall_right_bumper_02
+    3300064: wall_right_bumper_03
+    3300066: wall_right_bumper_04
+    4300000: floor
+    4300002: roof
+    4300004: wall_left_01
+    4300006: wall_left_02
+    4300008: wall_left_03
+    4300010: wall_left_01_outside
+    4300012: wall_left_02_outside
+    4300014: wall_left_03_outside
+    4300016: wall_right_01
+    4300018: wall_right_02
+    4300020: wall_right_03
+    4300022: wall_right_01_outside
+    4300024: wall_right_02_outside
+    4300026: wall_right_03_outside
+    4300028: wall_left_bumper_01
+    4300030: wall_left_bumper_02
+    4300032: wall_left_bumper_03
+    4300034: wall_left_bumper_04
+    4300036: wall_right_bumper_01
+    4300038: wall_right_bumper_02
+    4300040: wall_right_bumper_03
+    4300042: wall_right_bumper_04
+    4300044: door
+    4300046: door_frame
+    4300048: door
+    4300050: door_frame
+    4300052: door
+    4300054: door_frame
+    4300056: door
+    4300058: door_frame
+    4300060: door
+    4300062: door_frame
+    4300064: door
+    4300066: door_frame
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

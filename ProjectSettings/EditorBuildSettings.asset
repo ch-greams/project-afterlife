@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/apartment_bathroom.unity
     guid: 4afbf08517b973744a8f9dcdef2d851a
   - enabled: 1
+    path: Assets/Scenes/hallway.unity
+    guid: 114883ce25447e14b9e32be3b709c430
+  - enabled: 1
     path: Assets/Scenes/apartment.unity
     guid: 48ed01094e6268940bf4619775108c82
   - enabled: 1

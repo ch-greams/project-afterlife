@@ -27,6 +27,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 90f502611efdd254095e74138351d7fa, type: 2}
     - {fileID: 11400000, guid: 6d98e256f35ad6a4b870704942f199a5, type: 2}
     - {fileID: 11400000, guid: d5c6c65b16036da4b892bebd0b6f6867, type: 2}
+    - {fileID: 11400000, guid: efa583c090ec0ff42959de6d4a693006, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -143,7 +144,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 6
     - Name: 
       Entry: 7
       Data: 
@@ -201,6 +202,18 @@ MonoBehaviour:
     - Name: 
       Entry: 10
       Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: hallway
+    - Name: 
+      Entry: 10
+      Data: 11
     - Name: 
       Entry: 8
       Data: 
@@ -294,6 +307,6 @@ MonoBehaviour:
     x: 4
     y: 0
   currentVisibility: 4.5
-  currentScene: apartment_living_room
+  currentScene: hallway
   currentObjective: 4
   inventory: []
