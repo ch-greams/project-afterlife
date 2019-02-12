@@ -21,7 +21,13 @@ EditorBuildSettings:
     path: Assets/Scenes/hallway.unity
     guid: 114883ce25447e14b9e32be3b709c430
   - enabled: 1
-    path: Assets/Scenes/apartment.unity
+    path: Assets/Scenes/hallway_elevator.unity
+    guid: 33246681cdcce7d4d990f34ca3cc6df6
+  - enabled: 1
+    path: Assets/Scenes/hallway_elevator_dungeon.unity
+    guid: 1a3e7044a5fe4f545843a205838d27d7
+  - enabled: 1
+    path: Assets/Scenes/apartment_dungeon.unity
     guid: 48ed01094e6268940bf4619775108c82
   - enabled: 1
     path: Assets/Scenes/playground.unity

@@ -94,7 +94,11 @@ public class Interactable : SerializedMonoBehaviour
     public void ToggleInteractable(bool enable, bool show)
     {
         this.data.isInteractableActive = enable;
-        this.GetComponent<Collider>().enabled = enable;
+        
+        if (this.data.hasCollider)
+        {
+            this.GetComponent<Collider>().enabled = enable;
+        } 
 
         if (this.data.interactableObject)
         {

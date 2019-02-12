@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b3a744d259463d4fbde43472cd8e5a2, type: 3}
-  m_Name: apartment
+  m_Name: apartment_dungeon
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2

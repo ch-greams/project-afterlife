@@ -1168,14 +1168,13 @@ MonoBehaviour:
       Entry: 8
       Data: 
   animationSpeed: 4
-  isMoving: 0
-  isTargetUpdating: 0
   playerTransform: {fileID: 4726148827285812}
   characterTransform: {fileID: 4152343992694100}
+  characterAnimator: {fileID: 95259781090681068}
+  navMeshAgent: {fileID: 0}
   playerSpotlight: {fileID: 108518165867071486}
   flashlightRay: {fileID: 1689861385800626}
   tileSelector: {fileID: 6758027528881723223}
-  characterAnimator: {fileID: 95259781090681068}
   tile: {fileID: 0}
   visibleRange: 2.5
   maxVisibleRange: 4.5
@@ -1207,7 +1206,7 @@ Transform:
   m_GameObject: {fileID: 1440777410334956}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children:
   - {fileID: 4514269277714620}
   - {fileID: 4641440030341448}
@@ -2584,7 +2583,7 @@ Light:
   m_SpotAngle: 90
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2601,7 +2600,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0

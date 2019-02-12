@@ -43,13 +43,13 @@ public class SceneController : SerializedMonoBehaviour
     public int _default { get { return this.tiles.Count(ts => (ts != null) && !ts.isBlocked && !ts.isVisible); } }
 
 
-    [BoxGroup("Tile Settings", order: 2), ShowIf("isDungeonScene")]
+    [BoxGroup("Tile Settings", order: 2), ShowIf("isDungeonScene"), ColorPalette("Selected Tile Palette")]
     public Color selectedTileColor;
-    [BoxGroup("Tile Settings", order: 2), ShowIf("isDungeonScene")]
+    [BoxGroup("Tile Settings", order: 2), ShowIf("isDungeonScene"), ColorPalette("Active Tile Palette")]
     public Color activeTileColor;
-    [BoxGroup("Tile Settings", order: 2), ShowIf("isDungeonScene")]
+    [BoxGroup("Tile Settings", order: 2), ShowIf("isDungeonScene"), ColorPalette("Visible Tile Palette")]
     public Color visibleTileColor;
-    [BoxGroup("Tile Settings", order: 2), ShowIf("isDungeonScene")]
+    [BoxGroup("Tile Settings", order: 2), ShowIf("isDungeonScene"), ColorPalette("Disabled Tile Palette")]
     public Color disabledTileColor;
 
 

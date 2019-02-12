@@ -1,0 +1,951 @@
+fileFormatVersion: 2
+guid: fe6e2b6af283f9341876fcb4431f55b2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: elevator
+    100002: floor
+    100004: floor_01
+    100006: floor_02
+    100008: //RootNode
+    100010: stairs_01
+    100012: stairs_02
+    100014: stairs_03
+    100016: stairs_04
+    100018: wall_back
+    100020: wall_back_01
+    100022: wall_front_01
+    100024: wall_front_02
+    100026: wall_left_01
+    100028: wall_left_02
+    100030: wall_right
+    100032: walls_elevator
+    100034: walls_hallway
+    100036: floor1
+    100038: floor2
+    100040: floor_03
+    100042: stairs_05
+    100044: stairs_06
+    100046: wall_outside_01
+    100048: wall_outside_02
+    100050: wall_outside_03
+    100052: wall_outside_04
+    100054: wall_outside_05
+    100056: wall_outside_06
+    100058: floor3
+    100060: floor_04
+    100062: floor_05
+    100064: pCube1
+    100066: pCube2
+    100068: pCube5
+    100070: pCube6
+    100072: second_floor
+    100074: stairs_011
+    100076: stairs_013
+    100078: stairs_09
+    100080: wall_outside_08
+    100082: wall_outside_09
+    100084: wall_outside_10
+    100086: wall_outside_11
+    100088: wall_outside_13
+    100090: wall_outside_14
+    100092: wall_outside_15
+    100094: walls_elevator_outside
+    100096: pCube7
+    100098: roof
+    100100: bumper
+    100102: bumper1
+    100104: bumper2
+    100106: bumper3
+    100108: door
+    100110: door 1
+    100112: door1
+    100114: door2
+    100116: door_frame
+    100118: door_frame 1
+    100120: elevator4:cabin
+    100122: elevator4:control_panel
+    100124: elevator4:control_panel1
+    100126: elevator4:doors
+    100128: elevator4:doors1
+    100130: elevator4:elevator_cabin
+    100132: elevator4:elevator_door_left
+    100134: elevator4:elevator_door_rail_bottom
+    100136: elevator4:elevator_door_rail_bottom 1
+    100138: elevator4:elevator_door_rail_top
+    100140: elevator4:elevator_door_rail_top 1
+    100142: elevator4:elevator_door_right
+    100144: elevator4:elevator_hole
+    100146: elevator4:elevator_outside
+    100148: elevator4:elevator_outside_door_left
+    100150: elevator4:elevator_outside_door_left 1
+    100152: elevator4:elevator_outside_door_right
+    100154: elevator4:elevator_outside_door_right 1
+    100156: elevator4:elevator_wall_back
+    100158: elevator4:elevator_wall_front
+    100160: elevator4:elevator_wall_left
+    100162: elevator4:elevator_wall_right
+    100164: elevator4:floor_display
+    100166: elevator4:floor_display1
+    100168: elevator5
+    100170: floor_number
+    100172: floor_number1
+    100174: lava_surface
+    100176: notification_board
+    100178: notification_board1
+    100180: second_floor_wall_back
+    100182: second_floor_wall_front
+    100184: stair_rails
+    100186: stair_rails1
+    100188: stair_rails2
+    100190: stair_rails3
+    100192: stair_rails4
+    100194: stair_rails5
+    100196: stair_rails6
+    100198: wall_back_and_stuff
+    100200: wall_back_outside
+    100202: wall_front
+    100204: wall_front_and_stuff
+    100206: wall_front_outside
+    100208: wall_light
+    100210: wall_light1
+    100212: wall_light2
+    100214: wall_light3
+    100216: wall_light4
+    100218: wall_light5
+    100220: wall_light6
+    100222: wall_light7
+    100224: wall_lights
+    100226: bumper_01
+    100228: bumper_01 1
+    100230: bumper_02
+    100232: bumper_02 1
+    100234: elevator:base
+    100236: elevator:cabin
+    100238: elevator:control_panel
+    100240: elevator:control_panel 1
+    100242: elevator:doors
+    100244: elevator:doors 1
+    100246: elevator:elevator_cabin
+    100248: elevator:elevator_door_left
+    100250: elevator:elevator_door_rail_bottom
+    100252: elevator:elevator_door_rail_bottom 1
+    100254: elevator:elevator_door_rail_top
+    100256: elevator:elevator_door_rail_top 1
+    100258: elevator:elevator_door_right
+    100260: elevator:elevator_main_floor
+    100262: elevator:elevator_outside_door_left
+    100264: elevator:elevator_outside_door_left 1
+    100266: elevator:elevator_outside_door_right
+    100268: elevator:elevator_outside_door_right 1
+    100270: elevator:elevator_top_floor
+    100272: elevator:elevator_walls
+    100274: elevator:elevator_walls_under
+    100276: elevator:floor_display
+    100278: elevator:floor_display 1
+    100280: elevator_block
+    100282: elevator_block_base_walls
+    100284: elevator_block_base_walls_outside
+    100286: elevator_block_main_floor_misc
+    100288: elevator_block_top_floor_misc
+    100290: elevator_block_wall_back
+    100292: elevator_block_wall_back_outside
+    100294: elevator_block_wall_front
+    100296: elevator_block_wall_front_outside
+    100298: elevator_block_wall_left_01_outside
+    100300: elevator_block_wall_left_02_outside
+    100302: elevator_block_wall_left_03
+    100304: elevator_block_wall_left_04
+    100306: elevator_block_wall_right
+    100308: elevator_block_wall_right_outside
+    100310: elevator_block_walls
+    100312: floor 1
+    100314: floor_01 1
+    100316: floor_02 1
+    100318: floor_number 1
+    100320: main_floor
+    100322: main_floor 1
+    100324: notification_board 1
+    100326: stair_rails 1
+    100328: stair_rails_01
+    100330: stair_rails_01 1
+    100332: stair_rails_02
+    100334: stair_rails_02 1
+    100336: stair_rails_03
+    100338: stair_rails_03 1
+    100340: stairs
+    100342: stairs_01 1
+    100344: stairs_02 1
+    100346: top_floor
+    100348: top_floor 1
+    100350: wall_light_01
+    100352: wall_light_02
+    100354: wall_light_03
+    100356: wall_light_04
+    100358: wall_light_05
+    100360: wall_light_06
+    100362: wall_light_07
+    100364: wall_light_08
+    100366: rooftop
+    100368: roof_floor
+    100370: elevator_block_wall_left_01
+    100372: elevator_block_wall_left_02
+    100374: broken_stairs
+    100376: roof 1
+    100378: bumper_00
+    100380: empty_exit
+    400000: elevator
+    400002: floor
+    400004: floor_01
+    400006: floor_02
+    400008: //RootNode
+    400010: stairs_01
+    400012: stairs_02
+    400014: stairs_03
+    400016: stairs_04
+    400018: wall_back
+    400020: wall_back_01
+    400022: wall_front_01
+    400024: wall_front_02
+    400026: wall_left_01
+    400028: wall_left_02
+    400030: wall_right
+    400032: walls_elevator
+    400034: walls_hallway
+    400036: floor1
+    400038: floor2
+    400040: floor_03
+    400042: stairs_05
+    400044: stairs_06
+    400046: wall_outside_01
+    400048: wall_outside_02
+    400050: wall_outside_03
+    400052: wall_outside_04
+    400054: wall_outside_05
+    400056: wall_outside_06
+    400058: floor3
+    400060: floor_04
+    400062: floor_05
+    400064: pCube1
+    400066: pCube2
+    400068: pCube5
+    400070: pCube6
+    400072: second_floor
+    400074: stairs_011
+    400076: stairs_013
+    400078: stairs_09
+    400080: wall_outside_08
+    400082: wall_outside_09
+    400084: wall_outside_10
+    400086: wall_outside_11
+    400088: wall_outside_13
+    400090: wall_outside_14
+    400092: wall_outside_15
+    400094: walls_elevator_outside
+    400096: pCube7
+    400098: roof
+    400100: bumper
+    400102: bumper1
+    400104: bumper2
+    400106: bumper3
+    400108: door
+    400110: door 1
+    400112: door1
+    400114: door2
+    400116: door_frame
+    400118: door_frame 1
+    400120: elevator4:cabin
+    400122: elevator4:control_panel
+    400124: elevator4:control_panel1
+    400126: elevator4:doors
+    400128: elevator4:doors1
+    400130: elevator4:elevator_cabin
+    400132: elevator4:elevator_door_left
+    400134: elevator4:elevator_door_rail_bottom
+    400136: elevator4:elevator_door_rail_bottom 1
+    400138: elevator4:elevator_door_rail_top
+    400140: elevator4:elevator_door_rail_top 1
+    400142: elevator4:elevator_door_right
+    400144: elevator4:elevator_hole
+    400146: elevator4:elevator_outside
+    400148: elevator4:elevator_outside_door_left
+    400150: elevator4:elevator_outside_door_left 1
+    400152: elevator4:elevator_outside_door_right
+    400154: elevator4:elevator_outside_door_right 1
+    400156: elevator4:elevator_wall_back
+    400158: elevator4:elevator_wall_front
+    400160: elevator4:elevator_wall_left
+    400162: elevator4:elevator_wall_right
+    400164: elevator4:floor_display
+    400166: elevator4:floor_display1
+    400168: elevator5
+    400170: floor_number
+    400172: floor_number1
+    400174: lava_surface
+    400176: notification_board
+    400178: notification_board1
+    400180: second_floor_wall_back
+    400182: second_floor_wall_front
+    400184: stair_rails
+    400186: stair_rails1
+    400188: stair_rails2
+    400190: stair_rails3
+    400192: stair_rails4
+    400194: stair_rails5
+    400196: stair_rails6
+    400198: wall_back_and_stuff
+    400200: wall_back_outside
+    400202: wall_front
+    400204: wall_front_and_stuff
+    400206: wall_front_outside
+    400208: wall_light
+    400210: wall_light1
+    400212: wall_light2
+    400214: wall_light3
+    400216: wall_light4
+    400218: wall_light5
+    400220: wall_light6
+    400222: wall_light7
+    400224: wall_lights
+    400226: bumper_01
+    400228: bumper_01 1
+    400230: bumper_02
+    400232: bumper_02 1
+    400234: elevator:base
+    400236: elevator:cabin
+    400238: elevator:control_panel
+    400240: elevator:control_panel 1
+    400242: elevator:doors
+    400244: elevator:doors 1
+    400246: elevator:elevator_cabin
+    400248: elevator:elevator_door_left
+    400250: elevator:elevator_door_rail_bottom
+    400252: elevator:elevator_door_rail_bottom 1
+    400254: elevator:elevator_door_rail_top
+    400256: elevator:elevator_door_rail_top 1
+    400258: elevator:elevator_door_right
+    400260: elevator:elevator_main_floor
+    400262: elevator:elevator_outside_door_left
+    400264: elevator:elevator_outside_door_left 1
+    400266: elevator:elevator_outside_door_right
+    400268: elevator:elevator_outside_door_right 1
+    400270: elevator:elevator_top_floor
+    400272: elevator:elevator_walls
+    400274: elevator:elevator_walls_under
+    400276: elevator:floor_display
+    400278: elevator:floor_display 1
+    400280: elevator_block
+    400282: elevator_block_base_walls
+    400284: elevator_block_base_walls_outside
+    400286: elevator_block_main_floor_misc
+    400288: elevator_block_top_floor_misc
+    400290: elevator_block_wall_back
+    400292: elevator_block_wall_back_outside
+    400294: elevator_block_wall_front
+    400296: elevator_block_wall_front_outside
+    400298: elevator_block_wall_left_01_outside
+    400300: elevator_block_wall_left_02_outside
+    400302: elevator_block_wall_left_03
+    400304: elevator_block_wall_left_04
+    400306: elevator_block_wall_right
+    400308: elevator_block_wall_right_outside
+    400310: elevator_block_walls
+    400312: floor 1
+    400314: floor_01 1
+    400316: floor_02 1
+    400318: floor_number 1
+    400320: main_floor
+    400322: main_floor 1
+    400324: notification_board 1
+    400326: stair_rails 1
+    400328: stair_rails_01
+    400330: stair_rails_01 1
+    400332: stair_rails_02
+    400334: stair_rails_02 1
+    400336: stair_rails_03
+    400338: stair_rails_03 1
+    400340: stairs
+    400342: stairs_01 1
+    400344: stairs_02 1
+    400346: top_floor
+    400348: top_floor 1
+    400350: wall_light_01
+    400352: wall_light_02
+    400354: wall_light_03
+    400356: wall_light_04
+    400358: wall_light_05
+    400360: wall_light_06
+    400362: wall_light_07
+    400364: wall_light_08
+    400366: rooftop
+    400368: roof_floor
+    400370: elevator_block_wall_left_01
+    400372: elevator_block_wall_left_02
+    400374: broken_stairs
+    400376: roof 1
+    400378: bumper_00
+    400380: empty_exit
+    2100000: phong1
+    2300000: elevator
+    2300002: floor
+    2300004: floor_01
+    2300006: floor_02
+    2300008: stairs_01
+    2300010: stairs_02
+    2300012: stairs_03
+    2300014: stairs_04
+    2300016: wall_back
+    2300018: wall_back_01
+    2300020: wall_front_01
+    2300022: wall_front_02
+    2300024: wall_left_01
+    2300026: wall_left_02
+    2300028: wall_right
+    2300030: floor1
+    2300032: floor2
+    2300034: floor_03
+    2300036: stairs_05
+    2300038: stairs_06
+    2300040: wall_outside_01
+    2300042: wall_outside_02
+    2300044: wall_outside_03
+    2300046: wall_outside_04
+    2300048: wall_outside_05
+    2300050: wall_outside_06
+    2300052: floor3
+    2300054: floor_04
+    2300056: floor_05
+    2300058: pCube1
+    2300060: pCube2
+    2300062: pCube5
+    2300064: pCube6
+    2300066: stairs_011
+    2300068: stairs_013
+    2300070: stairs_09
+    2300072: wall_outside_08
+    2300074: wall_outside_09
+    2300076: wall_outside_10
+    2300078: wall_outside_11
+    2300080: wall_outside_13
+    2300082: wall_outside_14
+    2300084: wall_outside_15
+    2300086: pCube7
+    2300088: roof
+    2300090: bumper
+    2300092: bumper1
+    2300094: bumper2
+    2300096: bumper3
+    2300098: door
+    2300100: door 1
+    2300102: door_frame
+    2300104: door_frame 1
+    2300106: elevator4:cabin
+    2300108: elevator4:control_panel
+    2300110: elevator4:control_panel1
+    2300112: elevator4:elevator_door_left
+    2300114: elevator4:elevator_door_rail_bottom
+    2300116: elevator4:elevator_door_rail_bottom 1
+    2300118: elevator4:elevator_door_rail_top
+    2300120: elevator4:elevator_door_rail_top 1
+    2300122: elevator4:elevator_door_right
+    2300124: elevator4:elevator_hole
+    2300126: elevator4:elevator_outside_door_left
+    2300128: elevator4:elevator_outside_door_left 1
+    2300130: elevator4:elevator_outside_door_right
+    2300132: elevator4:elevator_outside_door_right 1
+    2300134: elevator4:elevator_wall_back
+    2300136: elevator4:elevator_wall_front
+    2300138: elevator4:elevator_wall_left
+    2300140: elevator4:elevator_wall_right
+    2300142: elevator4:floor_display
+    2300144: elevator4:floor_display1
+    2300146: floor_number
+    2300148: floor_number1
+    2300150: lava_surface
+    2300152: notification_board
+    2300154: notification_board1
+    2300156: second_floor_wall_back
+    2300158: second_floor_wall_front
+    2300160: stair_rails1
+    2300162: stair_rails2
+    2300164: stair_rails3
+    2300166: stair_rails4
+    2300168: stair_rails5
+    2300170: stair_rails6
+    2300172: wall_back_outside
+    2300174: wall_front
+    2300176: wall_front_outside
+    2300178: wall_light
+    2300180: wall_light1
+    2300182: wall_light2
+    2300184: wall_light3
+    2300186: wall_light4
+    2300188: wall_light5
+    2300190: wall_light6
+    2300192: wall_light7
+    2300194: bumper_01
+    2300196: bumper_01 1
+    2300198: bumper_02
+    2300200: bumper_02 1
+    2300202: elevator:cabin
+    2300204: elevator:control_panel
+    2300206: elevator:control_panel 1
+    2300208: elevator:elevator_door_left
+    2300210: elevator:elevator_door_rail_bottom
+    2300212: elevator:elevator_door_rail_bottom 1
+    2300214: elevator:elevator_door_rail_top
+    2300216: elevator:elevator_door_rail_top 1
+    2300218: elevator:elevator_door_right
+    2300220: elevator:elevator_outside_door_left
+    2300222: elevator:elevator_outside_door_left 1
+    2300224: elevator:elevator_outside_door_right
+    2300226: elevator:elevator_outside_door_right 1
+    2300228: elevator:elevator_walls
+    2300230: elevator:elevator_walls_under
+    2300232: elevator:floor_display
+    2300234: elevator:floor_display 1
+    2300236: elevator_block_base_walls
+    2300238: elevator_block_base_walls_outside
+    2300240: elevator_block_wall_back
+    2300242: elevator_block_wall_back_outside
+    2300244: elevator_block_wall_front
+    2300246: elevator_block_wall_front_outside
+    2300248: elevator_block_wall_left_01_outside
+    2300250: elevator_block_wall_left_02_outside
+    2300252: elevator_block_wall_left_03
+    2300254: elevator_block_wall_left_04
+    2300256: elevator_block_wall_right
+    2300258: elevator_block_wall_right_outside
+    2300260: floor 1
+    2300262: floor_01 1
+    2300264: floor_02 1
+    2300266: floor_number 1
+    2300268: notification_board 1
+    2300270: stair_rails_01
+    2300272: stair_rails_01 1
+    2300274: stair_rails_02
+    2300276: stair_rails_02 1
+    2300278: stair_rails_03
+    2300280: stair_rails_03 1
+    2300282: stairs_01 1
+    2300284: stairs_02 1
+    2300286: wall_light_01
+    2300288: wall_light_02
+    2300290: wall_light_03
+    2300292: wall_light_04
+    2300294: wall_light_05
+    2300296: wall_light_06
+    2300298: wall_light_07
+    2300300: wall_light_08
+    2300302: rooftop
+    2300304: roof_floor
+    2300306: elevator_block_wall_left_01
+    2300308: elevator_block_wall_left_02
+    2300310: broken_stairs
+    2300312: roof 1
+    2300314: bumper_00
+    2300316: empty_exit
+    3300000: elevator
+    3300002: floor
+    3300004: floor_01
+    3300006: floor_02
+    3300008: stairs_01
+    3300010: stairs_02
+    3300012: stairs_03
+    3300014: stairs_04
+    3300016: wall_back
+    3300018: wall_back_01
+    3300020: wall_front_01
+    3300022: wall_front_02
+    3300024: wall_left_01
+    3300026: wall_left_02
+    3300028: wall_right
+    3300030: floor1
+    3300032: floor2
+    3300034: floor_03
+    3300036: stairs_05
+    3300038: stairs_06
+    3300040: wall_outside_01
+    3300042: wall_outside_02
+    3300044: wall_outside_03
+    3300046: wall_outside_04
+    3300048: wall_outside_05
+    3300050: wall_outside_06
+    3300052: floor3
+    3300054: floor_04
+    3300056: floor_05
+    3300058: pCube1
+    3300060: pCube2
+    3300062: pCube5
+    3300064: pCube6
+    3300066: stairs_011
+    3300068: stairs_013
+    3300070: stairs_09
+    3300072: wall_outside_08
+    3300074: wall_outside_09
+    3300076: wall_outside_10
+    3300078: wall_outside_11
+    3300080: wall_outside_13
+    3300082: wall_outside_14
+    3300084: wall_outside_15
+    3300086: pCube7
+    3300088: roof
+    3300090: bumper
+    3300092: bumper1
+    3300094: bumper2
+    3300096: bumper3
+    3300098: door
+    3300100: door 1
+    3300102: door_frame
+    3300104: door_frame 1
+    3300106: elevator4:cabin
+    3300108: elevator4:control_panel
+    3300110: elevator4:control_panel1
+    3300112: elevator4:elevator_door_left
+    3300114: elevator4:elevator_door_rail_bottom
+    3300116: elevator4:elevator_door_rail_bottom 1
+    3300118: elevator4:elevator_door_rail_top
+    3300120: elevator4:elevator_door_rail_top 1
+    3300122: elevator4:elevator_door_right
+    3300124: elevator4:elevator_hole
+    3300126: elevator4:elevator_outside_door_left
+    3300128: elevator4:elevator_outside_door_left 1
+    3300130: elevator4:elevator_outside_door_right
+    3300132: elevator4:elevator_outside_door_right 1
+    3300134: elevator4:elevator_wall_back
+    3300136: elevator4:elevator_wall_front
+    3300138: elevator4:elevator_wall_left
+    3300140: elevator4:elevator_wall_right
+    3300142: elevator4:floor_display
+    3300144: elevator4:floor_display1
+    3300146: floor_number
+    3300148: floor_number1
+    3300150: lava_surface
+    3300152: notification_board
+    3300154: notification_board1
+    3300156: second_floor_wall_back
+    3300158: second_floor_wall_front
+    3300160: stair_rails1
+    3300162: stair_rails2
+    3300164: stair_rails3
+    3300166: stair_rails4
+    3300168: stair_rails5
+    3300170: stair_rails6
+    3300172: wall_back_outside
+    3300174: wall_front
+    3300176: wall_front_outside
+    3300178: wall_light
+    3300180: wall_light1
+    3300182: wall_light2
+    3300184: wall_light3
+    3300186: wall_light4
+    3300188: wall_light5
+    3300190: wall_light6
+    3300192: wall_light7
+    3300194: bumper_01
+    3300196: bumper_01 1
+    3300198: bumper_02
+    3300200: bumper_02 1
+    3300202: elevator:cabin
+    3300204: elevator:control_panel
+    3300206: elevator:control_panel 1
+    3300208: elevator:elevator_door_left
+    3300210: elevator:elevator_door_rail_bottom
+    3300212: elevator:elevator_door_rail_bottom 1
+    3300214: elevator:elevator_door_rail_top
+    3300216: elevator:elevator_door_rail_top 1
+    3300218: elevator:elevator_door_right
+    3300220: elevator:elevator_outside_door_left
+    3300222: elevator:elevator_outside_door_left 1
+    3300224: elevator:elevator_outside_door_right
+    3300226: elevator:elevator_outside_door_right 1
+    3300228: elevator:elevator_walls
+    3300230: elevator:elevator_walls_under
+    3300232: elevator:floor_display
+    3300234: elevator:floor_display 1
+    3300236: elevator_block_base_walls
+    3300238: elevator_block_base_walls_outside
+    3300240: elevator_block_wall_back
+    3300242: elevator_block_wall_back_outside
+    3300244: elevator_block_wall_front
+    3300246: elevator_block_wall_front_outside
+    3300248: elevator_block_wall_left_01_outside
+    3300250: elevator_block_wall_left_02_outside
+    3300252: elevator_block_wall_left_03
+    3300254: elevator_block_wall_left_04
+    3300256: elevator_block_wall_right
+    3300258: elevator_block_wall_right_outside
+    3300260: floor 1
+    3300262: floor_01 1
+    3300264: floor_02 1
+    3300266: floor_number 1
+    3300268: notification_board 1
+    3300270: stair_rails_01
+    3300272: stair_rails_01 1
+    3300274: stair_rails_02
+    3300276: stair_rails_02 1
+    3300278: stair_rails_03
+    3300280: stair_rails_03 1
+    3300282: stairs_01 1
+    3300284: stairs_02 1
+    3300286: wall_light_01
+    3300288: wall_light_02
+    3300290: wall_light_03
+    3300292: wall_light_04
+    3300294: wall_light_05
+    3300296: wall_light_06
+    3300298: wall_light_07
+    3300300: wall_light_08
+    3300302: rooftop
+    3300304: roof_floor
+    3300306: elevator_block_wall_left_01
+    3300308: elevator_block_wall_left_02
+    3300310: broken_stairs
+    3300312: roof 1
+    3300314: bumper_00
+    3300316: empty_exit
+    4300000: floor
+    4300002: wall_front_01
+    4300004: wall_back_01
+    4300006: wall_front_02
+    4300008: wall_left_01
+    4300010: wall_left_02
+    4300012: wall_back
+    4300014: wall_right
+    4300016: elevator
+    4300018: floor_01
+    4300020: floor_02
+    4300022: stairs_01
+    4300024: stairs_02
+    4300026: stairs_03
+    4300028: stairs_04
+    4300030: floor_03
+    4300032: stairs_05
+    4300034: floor1
+    4300036: stairs_06
+    4300038: floor2
+    4300040: wall_outside_01
+    4300042: wall_outside_02
+    4300044: wall_outside_03
+    4300046: wall_outside_04
+    4300048: wall_outside_05
+    4300050: wall_outside_06
+    4300052: wall_outside_15
+    4300054: wall_outside_14
+    4300056: wall_outside_13
+    4300058: wall_outside_11
+    4300060: wall_outside_10
+    4300062: wall_outside_09
+    4300064: wall_outside_08
+    4300066: pCube1
+    4300068: pCube2
+    4300070: stairs_011
+    4300072: floor_04
+    4300074: stairs_09
+    4300076: pCube6
+    4300078: floor3
+    4300080: pCube5
+    4300082: floor_05
+    4300084: stairs_013
+    4300086: roof
+    4300088: pCube7
+    4300090: second_floor_wall_back
+    4300092: second_floor_wall_front
+    4300094: lava_surface
+    4300096: door
+    4300098: door_frame
+    4300100: wall_front
+    4300102: wall_front_outside
+    4300104: bumper3
+    4300106: bumper2
+    4300108: bumper1
+    4300110: door_frame
+    4300112: wall_back_outside
+    4300114: bumper
+    4300116: door
+    4300118: floor_number
+    4300120: notification_board
+    4300122: stair_rails1
+    4300124: stair_rails2
+    4300126: stair_rails3
+    4300128: stair_rails4
+    4300130: stair_rails5
+    4300132: stair_rails6
+    4300134: notification_board1
+    4300136: floor_number1
+    4300138: elevator4:cabin
+    4300140: elevator4:elevator_door_right
+    4300142: elevator4:elevator_door_left
+    4300144: elevator4:elevator_door_rail_top
+    4300146: elevator4:elevator_door_rail_bottom
+    4300148: elevator4:elevator_outside_door_right
+    4300150: elevator4:elevator_outside_door_left
+    4300152: elevator4:elevator_wall_front
+    4300154: elevator4:elevator_wall_back
+    4300156: elevator4:elevator_wall_right
+    4300158: elevator4:elevator_wall_left
+    4300160: elevator4:control_panel
+    4300162: elevator4:floor_display
+    4300164: elevator4:elevator_hole
+    4300166: elevator4:floor_display1
+    4300168: elevator4:control_panel1
+    4300170: elevator4:elevator_door_rail_top
+    4300172: elevator4:elevator_door_rail_bottom
+    4300174: elevator4:elevator_outside_door_right
+    4300176: elevator4:elevator_outside_door_left
+    4300178: wall_light
+    4300180: wall_light1
+    4300182: wall_light2
+    4300184: wall_light3
+    4300186: wall_light4
+    4300188: wall_light5
+    4300190: wall_light6
+    4300192: wall_light7
+    4300194: bumper_02
+    4300196: bumper_01
+    4300198: bumper_02
+    4300200: bumper_01
+    4300202: floor
+    4300204: wall_light_01
+    4300206: wall_light_02
+    4300208: wall_light_03
+    4300210: wall_light_04
+    4300212: wall_light_05
+    4300214: wall_light_06
+    4300216: wall_light_07
+    4300218: wall_light_08
+    4300220: stair_rails_01
+    4300222: stair_rails_02
+    4300224: stair_rails_03
+    4300226: stairs_01
+    4300228: floor_01
+    4300230: stairs_02
+    4300232: floor_02
+    4300234: stair_rails_01
+    4300236: stair_rails_02
+    4300238: stair_rails_03
+    4300240: floor_number
+    4300242: notification_board
+    4300244: elevator_block_base_walls_outside
+    4300246: elevator_block_base_walls
+    4300248: elevator_block_wall_right_outside
+    4300250: elevator_block_wall_right
+    4300252: elevator_block_wall_front_outside
+    4300254: elevator_block_wall_front
+    4300256: elevator_block_wall_back_outside
+    4300258: elevator_block_wall_back
+    4300260: elevator_block_wall_left_01_outside
+    4300262: elevator_block_wall_left_03
+    4300264: elevator_block_wall_left_02_outside
+    4300266: elevator_block_wall_left_04
+    4300268: elevator:cabin
+    4300270: elevator:elevator_door_right
+    4300272: elevator:elevator_door_left
+    4300274: elevator:elevator_walls
+    4300276: elevator:elevator_walls_under
+    4300278: elevator:elevator_door_rail_top
+    4300280: elevator:elevator_door_rail_bottom
+    4300282: elevator:elevator_outside_door_right
+    4300284: elevator:elevator_outside_door_left
+    4300286: elevator:control_panel
+    4300288: elevator:floor_display
+    4300290: elevator:elevator_door_rail_top
+    4300292: elevator:elevator_door_rail_bottom
+    4300294: elevator:elevator_outside_door_left
+    4300296: elevator:elevator_outside_door_right
+    4300298: elevator:floor_display
+    4300300: elevator:control_panel
+    4300302: rooftop
+    4300304: roof_floor
+    4300306: elevator_block_wall_left_01
+    4300308: elevator_block_wall_left_02
+    4300310: roof
+    4300312: broken_stairs
+    4300314: bumper_00
+    4300316: empty_exit
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

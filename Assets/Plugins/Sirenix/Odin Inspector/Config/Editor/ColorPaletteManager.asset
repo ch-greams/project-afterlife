@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,17 +13,19 @@ MonoBehaviour:
   m_Name: ColorPaletteManager
   m_EditorClassIdentifier: 
   colorPalettes:
-  - name: Default Palette
+  - name: Selected Tile Palette
     showAlpha: 1
     colors:
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 0, g: 0.9916434, b: 1, a: 1}
-    - {r: 1, g: 0, b: 0, a: 1}
-    - {r: 1, g: 0, b: 0.98607254, a: 1}
-  - name: Tile Palette
+    - {r: 0, g: 1, b: 0.75, a: 1}
+  - name: Active Tile Palette
     showAlpha: 1
     colors:
-    - {r: 1, g: 1, b: 1, a: 0.039215688}
-    - {r: 0, g: 1, b: 0.0055708885, a: 0.39215687}
-    - {r: 0, g: 0.6573818, b: 1, a: 0.39215687}
-    - {r: 1, g: 1, b: 1, a: 0}
+    - {r: 1, g: 1, b: 1, a: 0.6}
+  - name: Visible Tile Palette
+    showAlpha: 1
+    colors:
+    - {r: 0.6, g: 0.6, b: 0.6, a: 0.6}
+  - name: Disabled Tile Palette
+    showAlpha: 1
+    colors:
+    - {r: 0, g: 0, b: 0, a: 0}

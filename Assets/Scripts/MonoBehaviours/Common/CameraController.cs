@@ -47,9 +47,11 @@ public class CameraController : MonoBehaviour
     {
         int layerMask = 1 << layer;
         Vector3 direction = cameraPivot.transform.position - transform.position;
+        Vector3 multipliedPosition = transform.position - direction * 5;
+        float maxDistance = Vector3.Distance(multipliedPosition, cameraPivot.transform.position);
 
         List<Renderer> wallsToHide = Physics
-            .RaycastAll(transform.position, direction, Mathf.Infinity, layerMask)
+            .RaycastAll(multipliedPosition, direction, maxDistance, layerMask, QueryTriggerInteraction.Collide)
             .Select(hit => hit.transform.GetComponent<Renderer>())
             .ToList();
 
