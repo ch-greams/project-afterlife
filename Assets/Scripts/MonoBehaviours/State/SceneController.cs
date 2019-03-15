@@ -20,8 +20,8 @@ public class SceneController : SerializedMonoBehaviour
     [BoxGroup("Enemy Spawn Points", order: 3), ShowIf("isDungeonScene")]
     public List<EnemySpawnPoint> enemySpawnPoints = new List<EnemySpawnPoint>();
 
-    [BoxGroup("Interactables", order: 4)]
-    public List<Interactable> interactables = new List<Interactable>();
+    [BoxGroup("Interactables", order: 4), DictionaryDrawerSettings(IsReadOnly = true)]
+    public Dictionary<string, Interactable> interactables = new Dictionary<string, Interactable>();
 
 
     [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/General", 360)]
@@ -74,18 +74,24 @@ public class SceneController : SerializedMonoBehaviour
         this.globalState = this.globalCtrl.globalState;
         this.sceneState = this.globalState.sceneStates[this.id];
 
+        // NOTE: Init player in the scene
         if (!this.sceneState.isDungeonScene)
         {
-            // TODO: Replace Vector3.zero with something else
-            this.player.InitPlayer(this.globalCtrl, Vector3.zero);
+            this.player.InitPlayer(this.globalCtrl, this.sceneState.currentPositionVector);
         }
         else
         {
             this.player.InitPlayer(
                 globalCtrl: this.globalCtrl,
-                tile: this.tiles.Find(t => t.point == this.globalState.currentPosition),
+                tile: this.tiles.Find(t => t.point == this.sceneState.currentPositionPoint),
                 visibleRange: this.globalState.currentVisibility
             );
+        }
+
+        // NOTE: Load interactables by state
+        foreach (KeyValuePair<string, InteractableState> kvp in this.sceneState.interactables)
+        {
+            this.interactables[kvp.Key].ToggleInteractable(kvp.Value.enabled, kvp.Value.visible);
         }
     }
 
@@ -124,15 +130,28 @@ public class SceneController : SerializedMonoBehaviour
         }
     }
 
-    [Button(ButtonSizes.Medium), BoxGroup("Enemy Spawn Points", order: 3), HideIf("isDungeonScene")]
-    public void CollectEnemySpawnPoints()
+
+    [Button(ButtonSizes.Medium), BoxGroup("Enemy Spawn Points", order: 3), ShowIf("isDungeonScene")]
+    private void CollectEnemySpawnPoints()
     {
         this.enemySpawnPoints = GameObject.FindObjectsOfType<EnemySpawnPoint>().ToList();
     }
 
     [Button(ButtonSizes.Medium), BoxGroup("Interactables", order: 4)]
-    public void CollectInteractables()
-    {
-        this.interactables = GameObject.FindObjectsOfType<Interactable>().ToList();
+    private void CollectInteractables()
+    {        
+        this.interactables = GameObject.FindObjectsOfType<Interactable>()
+            .ToDictionary(interactable => interactable.name, interactable => interactable);
+
+        this.sceneState.interactables = this.interactables.ToDictionary(
+            kvp => kvp.Key, kvp => new InteractableState(
+                enabled: kvp.Value.data.isInteractableActive,
+                visible: (
+                    kvp.Value.data.interactableObject != null
+                        ? kvp.Value.data.interactableObject.activeSelf
+                        : false
+                )
+            )
+        );
     }
 }

@@ -87,6 +87,7 @@ ModelImporter:
     100162: kitchen2:kitchen_stove1:stove
     100164: kitchen2:kitchen_wall_cabinet:wall_cabinet
     100166: kitchen3
+    100168: sunlight
     400000: //RootNode
     400002: couch:couch
     400004: door_bathroom
@@ -171,6 +172,7 @@ ModelImporter:
     400162: kitchen2:kitchen_stove1:stove
     400164: kitchen2:kitchen_wall_cabinet:wall_cabinet
     400166: kitchen3
+    400168: sunlight
     2100000: phong1
     2100002: kitchen_table_phong2
     2100004: phong2

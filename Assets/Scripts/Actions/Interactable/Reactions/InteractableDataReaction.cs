@@ -37,10 +37,10 @@ public class InteractableDataReaction : IInteractableReaction
                 this.TryDeselectInteractable();
                 break;
             case InteractableDataReactionType.EnableInteractable:
-                this.interactable.ToggleInteractable(true, this.interactable.data.interactableObject.activeSelf);
+                this.interactable.IsEnabled = true;
                 break;
             case InteractableDataReactionType.DisableInteractable:
-                this.interactable.ToggleInteractable(false, this.interactable.data.interactableObject.activeSelf);
+                this.interactable.IsEnabled = false;
                 this.TryDeselectInteractable();
                 break;
             default:

@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1b515263c267045831b245d0dc2e14, type: 3}
+  m_Name: 005_Intro_Denial
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: tasks
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Task,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: CheckAroundApartment
+    - Name: 
+      Entry: 7
+      Data: 2|Task, Assembly-CSharp
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: subTasks
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 4|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Answer the Phone
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Watch TV
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  title: Denial
+  completed: 0
+  comment: {fileID: 0}
+  nextObjective: {fileID: 0}

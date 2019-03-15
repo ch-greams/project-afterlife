@@ -67,7 +67,7 @@ public class DialogueManager
 
     private void DisplayNextDialogueFragment()
     {
-        DialogueFragment dialogueFragment = this.dialogue.NextDialogueFragment(ref this.currentFragment);
+        DialogueFragment dialogueFragment = this.dialogue.PlayNextDialogueFragment(ref this.currentFragment);
 
         if (dialogueFragment != default(DialogueFragment))
         {

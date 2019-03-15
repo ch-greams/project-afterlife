@@ -1,0 +1,8 @@
+---DamageWontFeelGood---
+Hero::I don't feel so good...
+Hero::Will have to keep those things away from me
+---InterruptedGreetings---
+Hero::Pleas...;;*poof*
+---ThatsEnough---
+Hero::Okay... that's weird enough
+Hero::I should probably go back home

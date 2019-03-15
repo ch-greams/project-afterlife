@@ -9,56 +9,86 @@ using UnityEditor;
 [CreateAssetMenu]
 public class GlobalState : SerializedScriptableObject
 {
-    public Point currentPosition;
     public float currentVisibility;
+
     [ValueDropdown("sceneNames")]
     public string currentScene;
-    public ObjectiveId currentObjective;
+
+    [ValueDropdown("objectiveNames")]
+    public string currentObjective;
 
     public List<Item> inventory = new List<Item>();
 
     [DictionaryDrawerSettings, BoxGroup("Objectives")]
-    public Dictionary<ObjectiveId, Objective> objectives = new Dictionary<ObjectiveId, Objective>();
+    public Dictionary<string, Objective> objectives = new Dictionary<string, Objective>();
 
     [DictionaryDrawerSettings]
     public Dictionary<string, SceneState> sceneStates = new Dictionary<string, SceneState>();
 
 
-    public Dictionary<string, object> eotState = new Dictionary<string, object>();
+    [BoxGroup("Variables by Type")]
+    public Dictionary<string, bool> booleanParameters = new Dictionary<string, bool>();
+
+    [BoxGroup("Variables by Type")]
+    public Dictionary<string, int> integerParameters = new Dictionary<string, int>();
 
 
     private List<string> sceneNames { get { return GlobalController.sceneNames; } }
+    private List<string> objectiveNames { get { return this.objectives.Keys.ToList(); } }
 
 
-    public T GetVariableFromState<T>(string key)
+
+    public bool GetBooleanParameterFromState(string key)
     {
         return (
-            this.eotState != null && this.eotState.ContainsKey(key)
-                ? (T)this.eotState[key]
-                : default(T)
+            this.booleanParameters != null && this.booleanParameters.ContainsKey(key)
+                ? this.booleanParameters[key]
+                : false
         );
     }
 
-    public void SetVariableInState(string key, object value)
+    public int GetIntegerParameterFromState(string key)
     {
-        if (this.eotState != null)
+        return (
+            this.integerParameters != null && this.integerParameters.ContainsKey(key)
+                ? this.integerParameters[key]
+                : 0
+        );
+    }
+
+
+    public void SetBooleanParameterInState(string key, bool value)
+    {
+        if (this.booleanParameters != null)
         {
-            this.eotState[key] = value;
+            this.booleanParameters[key] = value;
         }
         else
         {
-            this.eotState = new Dictionary<string, object>(){ { key, value } };
+            this.booleanParameters = new Dictionary<string, bool>(){ { key, value } };
         }
     }
 
+    public void SetIntegerParameterInState(string key, int value)
+    {
+        if (this.integerParameters != null)
+        {
+            this.integerParameters[key] = value;
+        }
+        else
+        {
+            this.integerParameters = new Dictionary<string, int>(){ { key, value } };
+        }
+    }
+
+
     public void LoadFromSerializable(GlobalStateSerializable serializedGlobalState)
     {
-        this.currentPosition = serializedGlobalState.currentPosition;
         this.currentVisibility = serializedGlobalState.currentVisibility;
         this.currentScene = serializedGlobalState.currentScene;
         this.currentObjective = serializedGlobalState.currentObjective;
 
-        foreach (KeyValuePair<ObjectiveId, Objective> kvp in this.objectives)
+        foreach (KeyValuePair<string, Objective> kvp in this.objectives)
         {
             kvp.Value.LoadFromSerializable(serializedGlobalState.objectives[kvp.Key]);
         }
@@ -73,7 +103,7 @@ public class GlobalState : SerializedScriptableObject
     [Button(ButtonSizes.Medium), BoxGroup("Objectives")]
     private void CollectObjectives()
     {
-        this.objectives = new Dictionary<ObjectiveId, Objective>();
+        this.objectives = new Dictionary<string, Objective>();
 
         string[] assets = AssetDatabase.FindAssets("t:Objective");
 
@@ -87,20 +117,19 @@ public class GlobalState : SerializedScriptableObject
     }
 }
 
+
 [Serializable]
 public class GlobalStateSerializable
 {
-    public Point currentPosition;
     public float currentVisibility;
     public string currentScene;
-    public ObjectiveId currentObjective;
-    public Dictionary<ObjectiveId, ObjectiveSerializable> objectives = new Dictionary<ObjectiveId, ObjectiveSerializable>();
+    public string currentObjective;
+    public Dictionary<string, ObjectiveSerializable> objectives = new Dictionary<string, ObjectiveSerializable>();
     public Dictionary<string, SceneStateSerializable> sceneStates = new Dictionary<string, SceneStateSerializable>();
 
 
     public GlobalStateSerializable(GlobalState globalState)
     {
-        this.currentPosition = globalState.currentPosition;
         this.currentVisibility = globalState.currentVisibility;
         this.currentScene = globalState.currentScene;
         this.currentObjective = globalState.currentObjective;

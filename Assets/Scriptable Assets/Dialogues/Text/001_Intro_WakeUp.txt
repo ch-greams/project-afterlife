@@ -1,0 +1,5 @@
+---PhoneIsDead---
+Hero::That was a weird dream.
+---WeirdDream---
+Hero::Huh, phone is dead and not charging.
+Hero::Maybe I can fix it during the day.

@@ -59,12 +59,9 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 4|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: CheckTime
     - Name: title
       Entry: 1
-      Data: Check Time
+      Data: Disable Alarm
     - Name: completed
       Entry: 5
       Data: false
@@ -95,8 +92,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  id: 1
   title: Wake Up
   completed: 0
-  comment: {fileID: 11400000, guid: bbc6c727f4adc4348b93badd209748b8, type: 2}
+  comment: {fileID: 11400000, guid: 8a28f07deb9f7ce4eae46d44e546e9b6, type: 2}
   nextObjective: {fileID: 11400000, guid: cfaeb9e4c3fcfec498021cfa91664385, type: 2}

@@ -25,15 +25,15 @@ public class GranadeChargeReaction : IEndOfTurnReaction
         switch (this.type)
         {
             case GranadeChargeReactionType.PutOnCooldown:
-                globalState.SetVariableInState("turnsTillGranadeChargeLeft", this.abilityCooldown);
-                playerActionManager.GranadeChargeEffect(globalState.GetVariableFromState<int>("turnsTillGranadeChargeLeft"));
+                globalState.SetIntegerParameterInState("turnsTillGranadeChargeLeft", this.abilityCooldown);
+                playerActionManager.GranadeChargeEffect(globalState.GetIntegerParameterFromState("turnsTillGranadeChargeLeft"));
                 break;
             case GranadeChargeReactionType.ReduceCooldown:
-                globalState.SetVariableInState(
+                globalState.SetIntegerParameterInState(
                     "turnsTillGranadeChargeLeft",
-                    (globalState.GetVariableFromState<int>("turnsTillGranadeChargeLeft") - 1)
+                    (globalState.GetIntegerParameterFromState("turnsTillGranadeChargeLeft") - 1)
                 );
-                playerActionManager.GranadeChargeEffect(globalState.GetVariableFromState<int>("turnsTillGranadeChargeLeft"));
+                playerActionManager.GranadeChargeEffect(globalState.GetIntegerParameterFromState("turnsTillGranadeChargeLeft"));
                 break;
             case GranadeChargeReactionType.Undefined:
             default:

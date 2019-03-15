@@ -193,7 +193,7 @@ public class Player : SerializedMonoBehaviour
                 yield return null;
             }
 
-            this.globalCtrl.UpdatePlayerPosition(tile.point);
+            this.globalCtrl.UpdatePlayerPositionPoint(tile.point);
 
             this.tile.isBlockedByPlayer = false;
             this.tile = tile;

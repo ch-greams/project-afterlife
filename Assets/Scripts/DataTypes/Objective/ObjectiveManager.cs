@@ -55,14 +55,14 @@ public class ObjectiveManager
 
                 Objective objective = this.globalState.objectives[this.globalState.currentObjective];
 
-                yield return this.globalCtrl.dialogueManager.StartDialogueAsync(objective.comment);
+                yield return this.globalCtrl.dialogueManager.StartDialogueAsync(objective.comment.dialogues["Comment"]);
 
                 playerActionManager.arePlayerControlsLocked = false;
             }
         }
     }
 
-    public void CompleteSubTask(ObjectiveId objectiveId, string taskId, string subTaskId)
+    public void CompleteSubTask(string objectiveId, string taskId, string subTaskId)
     {
         Objective objective = this.globalState.objectives[objectiveId];
         objective.Complete(taskId, subTaskId);

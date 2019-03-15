@@ -41,7 +41,31 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: interactables
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[InteractableState,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   isDungeonScene: 1
+  currentPositionPoint:
+    x: 4
+    y: 0
+  currentPositionVector: {x: 0, y: 0, z: 0}
   defaultMap:
   - point:
       x: 0

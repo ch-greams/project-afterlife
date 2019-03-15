@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5a3c9bc5e278eb4abdc8d4a199386ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c3cba17f38bf17408398cbb14f5a9b4, type: 3}
   m_Name: 001_Intro_WakeUp
   m_EditorClassIdentifier: 
   serializationData:
@@ -22,22 +22,45 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: dialogue
+    - Name: dialogues
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[DialogueFragment, Assembly-CSharp]],
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Dialogue,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: PhoneIsDead
+    - Name: 
+      Entry: 7
+      Data: 2|Dialogue, Assembly-CSharp
+    - Name: dialogueFragments
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[DialogueFragment, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 1|DialogueFragment, Assembly-CSharp
+      Data: 4|DialogueFragment, Assembly-CSharp
     - Name: speaker
       Entry: 10
       Data: 0
     - Name: speech
       Entry: 1
-      Data: Yep. I need to wake up.
+      Data: That was a weird dream.
     - Name: 
       Entry: 8
       Data: 
@@ -47,3 +70,68 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: WeirdDream
+    - Name: 
+      Entry: 7
+      Data: 5|Dialogue, Assembly-CSharp
+    - Name: dialogueFragments
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[DialogueFragment, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 7|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 0
+    - Name: speech
+      Entry: 1
+      Data: Huh, phone is dead and not charging.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 0
+    - Name: speech
+      Entry: 1
+      Data: Maybe I can fix it during the day.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  textFile: {fileID: 4900000, guid: 18ef021a28ae04e4a866f070f59bdf87, type: 3}

@@ -107,9 +107,6 @@ public class PlayerActionManager
         this.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
         this.skipTurnButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.SkipTurn));
         this.interactionButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Interaction));
-
-        // TODO: Fix this, not sure why I did this or why it worked, since it's obvious null pointer
-        // this.wInteractionButton.onClick.AddListener(this.currentInteractable.OnClickSync);
     }
 
     // TODO: Make something more sophisticated for controller switch
@@ -305,7 +302,7 @@ public class PlayerActionManager
             this.granadeButton.interactable = false;
             this.granadeButton.onClick.RemoveAllListeners();
         }
-        else if (this.globalCtrl.globalState.GetVariableFromState<int>("turnsTillGranadeChargeLeft") < 1)
+        else if (this.globalCtrl.globalState.GetIntegerParameterFromState("turnsTillGranadeChargeLeft") < 1)
         {
             this.granadeButton.interactable = true;
             this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
@@ -403,6 +400,15 @@ public class PlayerActionManager
         }
         else
         {
+            if (isInteractableNotNull)
+            {
+                this.wInteractionButton.onClick.AddListener(this.currentInteractable.OnClickSync);
+            }
+            else
+            {
+                this.wInteractionButton.onClick.RemoveAllListeners();
+            }
+
             this.wInteractionButton.gameObject.SetActive(isInteractableNotNull);
         }
     }

@@ -1,0 +1,18 @@
+---NeedFlashlight---
+Hero::Landline is dead too... Okay let's take flashlight and go already.
+---NothingWorks---
+Hero::Even elevator isn't working... the hell?!
+---NotNormal---
+Hero::Yep, that's not normal
+Hero::*slap*, *slap*, *slap*...
+Hero::Hmm, I'm definitely not asleep
+Hero::*ding*
+---ReadyToGo---
+Hero::Okay, now I'm ready to go...
+Hero::Just don't forget the bag.
+---TooDark---
+Hero::Damn, light went out again, I should probably call maintanence and get a flashlight.
+---WhoIsThis---
+Hero::Hey, who are you?
+Hero::Oh, right I have flashlight
+Hero::*click*;;*poof*

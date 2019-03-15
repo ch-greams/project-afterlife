@@ -88,7 +88,6 @@ public class GlobalController : SerializedMonoBehaviour
     }
 
 
-
     private void Awake()
     {
         this.globalState = GlobalController.CreatePlayModeInstance(this.globalState);
@@ -150,13 +149,19 @@ public class GlobalController : SerializedMonoBehaviour
 
     public void UpdatePlayerPosition(string scene, Point position)
     {
-        this.globalState.currentPosition = position;
         this.globalState.currentScene = scene;
+        this.globalState.sceneStates[scene].currentPositionPoint = position;
     }
 
-    public void UpdatePlayerPosition(Point position)
+    public void UpdatePlayerPosition(string scene, Vector3 position)
     {
-        this.globalState.currentPosition = position;
+        this.globalState.currentScene = scene;
+        this.globalState.sceneStates[scene].currentPositionVector = position;
+    }
+
+    public void UpdatePlayerPositionPoint(Point position)
+    {
+        this.globalState.sceneStates[this.globalState.currentScene].currentPositionPoint = position;
     }
 
     public void UpdatePlayerVisibility(float currentVisibility)

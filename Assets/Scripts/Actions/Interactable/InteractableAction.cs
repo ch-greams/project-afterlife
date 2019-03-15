@@ -56,8 +56,8 @@ public class InteractableAction
         return ocs.All(oc => {
             switch (oc.type)
             {
-                case ObjectiveConditionType.OBJECTIVE_IS_COMPLETE:
-                case ObjectiveConditionType.OBJECTIVE_IS_NOT_COMPLETE:
+                case ObjectiveConditionType.ObjectiveIsComplete:
+                case ObjectiveConditionType.ObjectiveIsNotComplete:
                     return true;
                 default:
                     return (oc.objective != null);

@@ -20,8 +20,8 @@ public class ObjectiveCondition : IInteractableCondition
         }
     }
 
-    [HideIf("type", ObjectiveConditionType.OBJECTIVE_IS_COMPLETE, false)]
-    [HideIf("type", ObjectiveConditionType.OBJECTIVE_IS_NOT_COMPLETE, false)]
+    [HideIf("type", ObjectiveConditionType.ObjectiveIsComplete, false)]
+    [HideIf("type", ObjectiveConditionType.ObjectiveIsNotComplete, false)]
     [ValueDropdown("taskIds")]
     public string taskId;
 
@@ -35,10 +35,10 @@ public class ObjectiveCondition : IInteractableCondition
         }
     }
 
-    [HideIf("type", ObjectiveConditionType.OBJECTIVE_IS_COMPLETE, false)]
-    [HideIf("type", ObjectiveConditionType.OBJECTIVE_IS_NOT_COMPLETE, false)]
-    [HideIf("type", ObjectiveConditionType.TASK_IS_COMPLETE, false)]
-    [HideIf("type", ObjectiveConditionType.TASK_IS_NOT_COMPLETE, false)]
+    [HideIf("type", ObjectiveConditionType.ObjectiveIsComplete, false)]
+    [HideIf("type", ObjectiveConditionType.ObjectiveIsNotComplete, false)]
+    [HideIf("type", ObjectiveConditionType.TaskIsComplete, false)]
+    [HideIf("type", ObjectiveConditionType.TaskIsNotComplete, false)]
     [ValueDropdown("subTaskIds")]
     public string subTaskId;
 
@@ -56,19 +56,19 @@ public class ObjectiveCondition : IInteractableCondition
 
         switch (this.type)
         {
-            case ObjectiveConditionType.OBJECTIVE_IS_COMPLETE:
+            case ObjectiveConditionType.ObjectiveIsComplete:
                 return objective.completed;
-            case ObjectiveConditionType.OBJECTIVE_IS_NOT_COMPLETE:
+            case ObjectiveConditionType.ObjectiveIsNotComplete:
                 return !objective.completed;
-            case ObjectiveConditionType.TASK_IS_COMPLETE:
+            case ObjectiveConditionType.TaskIsComplete:
                 return objective.tasks[this.taskId].completed;
-            case ObjectiveConditionType.TASK_IS_NOT_COMPLETE:
+            case ObjectiveConditionType.TaskIsNotComplete:
                 return !objective.tasks[this.taskId].completed;
-            case ObjectiveConditionType.SUB_TASK_IS_COMPLETE:
+            case ObjectiveConditionType.SubTaskIsComplete:
                 return objective.tasks[this.taskId].subTasks.Find(st => (st.id == this.subTaskId)).completed;
-            case ObjectiveConditionType.SUB_TASK_IS_NOT_COMPLETE:
+            case ObjectiveConditionType.SubTaskIsNotComplete:
                 return !objective.tasks[this.taskId].subTasks.Find(st => (st.id == this.subTaskId)).completed;
-            case ObjectiveConditionType.SUB_TASK_CAN_BE_COMPLETED:
+            case ObjectiveConditionType.SubTaskCanBeComplete:
                 List<SubTask> subTasks = objective.tasks[this.taskId].subTasks;
                 int subTaskIndex = subTasks.FindIndex(st => (st.id == this.subTaskId));
                 return
@@ -88,11 +88,11 @@ public class ObjectiveCondition : IInteractableCondition
 
 public enum ObjectiveConditionType
 {
-    OBJECTIVE_IS_COMPLETE,
-    OBJECTIVE_IS_NOT_COMPLETE,
-    TASK_IS_COMPLETE,
-    TASK_IS_NOT_COMPLETE,
-    SUB_TASK_IS_COMPLETE,
-    SUB_TASK_IS_NOT_COMPLETE,
-    SUB_TASK_CAN_BE_COMPLETED,
+    ObjectiveIsComplete,
+    ObjectiveIsNotComplete,
+    TaskIsComplete,
+    TaskIsNotComplete,
+    SubTaskIsComplete,
+    SubTaskIsNotComplete,
+    SubTaskCanBeComplete,
 }

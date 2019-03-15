@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5a3c9bc5e278eb4abdc8d4a199386ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c3cba17f38bf17408398cbb14f5a9b4, type: 3}
   m_Name: 002_Intro_GetReady
   m_EditorClassIdentifier: 
   serializationData:
@@ -22,46 +22,45 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: dialogue
+    - Name: dialogues
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[DialogueFragment, Assembly-CSharp]],
-        mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Dialogue,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 12
       Data: 3
     - Name: 
       Entry: 7
-      Data: 1|DialogueFragment, Assembly-CSharp
-    - Name: speaker
-      Entry: 10
-      Data: 0
-    - Name: speech
-      Entry: 1
-      Data: I need to check messages on computer...
-    - Name: 
-      Entry: 8
       Data: 
     - Name: 
+      Entry: 1
+      Data: CantSeeAnything
+    - Name: 
       Entry: 7
-      Data: 2|DialogueFragment, Assembly-CSharp
+      Data: 2|Dialogue, Assembly-CSharp
+    - Name: dialogueFragments
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[DialogueFragment, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 4|DialogueFragment, Assembly-CSharp
     - Name: speaker
       Entry: 10
       Data: 0
     - Name: speech
       Entry: 1
-      Data: And get something to eat...
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 3|DialogueFragment, Assembly-CSharp
-    - Name: speaker
-      Entry: 10
-      Data: 0
-    - Name: speech
-      Entry: 1
-      Data: And obviosly get dressed after that.
+      Data: Can't see shit, I need to close those blinds.
     - Name: 
       Entry: 8
       Data: 
@@ -71,3 +70,108 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: MorningLook
+    - Name: 
+      Entry: 7
+      Data: 5|Dialogue, Assembly-CSharp
+    - Name: dialogueFragments
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[DialogueFragment, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 7|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 0
+    - Name: speech
+      Entry: 1
+      Data: AAAAAAAAAAAAAAAHH!!!
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 0
+    - Name: speech
+      Entry: 1
+      Data: Oh, it's just my face.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: NoInternet
+    - Name: 
+      Entry: 7
+      Data: 9|Dialogue, Assembly-CSharp
+    - Name: dialogueFragments
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[DialogueFragment, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 11|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 0
+    - Name: speech
+      Entry: 1
+      Data: No connection...;; huh
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  textFile: {fileID: 4900000, guid: 71d4cd8a4a08fc44faac30c908f3fb09, type: 3}

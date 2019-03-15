@@ -41,7 +41,94 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  visibleByDefault: 1
+    - Name: interactables
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[InteractableState,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_shower
+    - Name: 
+      Entry: 7
+      Data: 4|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: false
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_mirror_and_sink
+    - Name: 
+      Entry: 7
+      Data: 5|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: false
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_door
+    - Name: 
+      Entry: 7
+      Data: 6|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  isDungeonScene: 0
+  currentPositionPoint:
+    x: 0
+    y: 0
+  currentPositionVector: {x: 0, y: 0, z: 0}
   defaultMap:
   - point:
       x: 0

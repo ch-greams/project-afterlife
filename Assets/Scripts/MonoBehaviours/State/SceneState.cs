@@ -9,9 +9,19 @@ using UnityEngine;
 public class SceneState : SerializedScriptableObject
 {
     public bool isDungeonScene = false;
-    
+
+    [DictionaryDrawerSettings(KeyLabel = "LightSource ID", ValueLabel = "IsEnabled"), ShowIf("isDungeonScene")]
+    public Point currentPositionPoint;
+
+    [DictionaryDrawerSettings(KeyLabel = "LightSource ID", ValueLabel = "IsEnabled"), HideIf("isDungeonScene")]
+    // TODO: Update during scene switch and save
+    public Vector3 currentPositionVector;
+
     [DictionaryDrawerSettings(KeyLabel = "LightSource ID", ValueLabel = "IsEnabled"), ShowIf("isDungeonScene")]
     public Dictionary<string, bool> lightSources = new Dictionary<string, bool>();
+
+    [DictionaryDrawerSettings(IsReadOnly = true)]
+    public Dictionary<string, InteractableState> interactables = new Dictionary<string, InteractableState>();
 
     [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Map Stats"), LabelWidth(60), HorizontalGroup("Map Stats/General", 360)]
     public Point size {

@@ -59,12 +59,9 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 4|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: TryCheckEmails
     - Name: title
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: Check PC
     - Name: completed
       Entry: 5
       Data: false
@@ -80,12 +77,9 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 5|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: CloseBlinds
     - Name: title
       Entry: 1
-      Data: 
+      Data: Close Blinds
     - Name: completed
       Entry: 5
       Data: false
@@ -101,9 +95,6 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 6|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: CheckEmails
     - Name: title
       Entry: 1
       Data: Check Emails
@@ -151,16 +142,13 @@ MonoBehaviour:
       Data: 8|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 2
     - Name: 
       Entry: 7
       Data: 9|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: CheckFridge
     - Name: title
       Entry: 1
-      Data: 
+      Data: Get Food
     - Name: completed
       Entry: 5
       Data: false
@@ -169,61 +157,16 @@ MonoBehaviour:
       Data: false
     - Name: hidden
       Entry: 5
-      Data: true
+      Data: false
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
       Data: 10|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: Cook
     - Name: title
       Entry: 1
-      Data: 
-    - Name: completed
-      Entry: 5
-      Data: false
-    - Name: optional
-      Entry: 5
-      Data: false
-    - Name: hidden
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 11|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: MakeCoffee
-    - Name: title
-      Entry: 1
-      Data: 
-    - Name: completed
-      Entry: 5
-      Data: false
-    - Name: optional
-      Entry: 5
-      Data: true
-    - Name: hidden
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: GetBreakfast
-    - Name: title
-      Entry: 1
-      Data: Get Breakfast
+      Data: Eat at the Table
     - Name: completed
       Entry: 5
       Data: false
@@ -256,7 +199,7 @@ MonoBehaviour:
       Data: GetDressed
     - Name: 
       Entry: 7
-      Data: 13|Task, Assembly-CSharp
+      Data: 11|Task, Assembly-CSharp
     - Name: completed
       Entry: 5
       Data: false
@@ -265,16 +208,13 @@ MonoBehaviour:
       Data: false
     - Name: subTasks
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
+      Data: 12|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
-      Data: 15|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: TakeAShower
+      Data: 13|SubTask, Assembly-CSharp
     - Name: title
       Entry: 1
       Data: Take a Shower
@@ -292,10 +232,25 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 16|SubTask, Assembly-CSharp
-    - Name: id
+      Data: 14|SubTask, Assembly-CSharp
+    - Name: title
       Entry: 1
-      Data: GetDressed
+      Data: Brush Teeth
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|SubTask, Assembly-CSharp
     - Name: title
       Entry: 1
       Data: Get Dressed
@@ -329,7 +284,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  id: 2
   title: Get Ready
   completed: 0
   comment: {fileID: 11400000, guid: 430ab06921f5b0c48b7b0710d8c0e80b, type: 2}

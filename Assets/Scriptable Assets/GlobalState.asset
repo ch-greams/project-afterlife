@@ -19,6 +19,9 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 1544ca40248dffa4fa93a9d1d5054fde, type: 2}
     - {fileID: 11400000, guid: cfaeb9e4c3fcfec498021cfa91664385, type: 2}
     - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
+    - {fileID: 11400000, guid: 7a4acdd631b20dc4aa4922b84900af4f, type: 2}
+    - {fileID: 11400000, guid: 3f05840fd1a502a46aa5d2cb6c827b1e, type: 2}
+    - {fileID: 11400000, guid: 0a66e3baf13f5c346a68777bf41f8abf, type: 2}
     - {fileID: 11400000, guid: d1bf6e0cc7907114a8f39c799125e906, type: 2}
     - {fileID: 11400000, guid: 27713008971afc04fac29dee843ffcda, type: 2}
     - {fileID: 11400000, guid: a25592d374703764c86e10b56e63d656, type: 2}
@@ -37,30 +40,24 @@ MonoBehaviour:
     SerializationNodes:
     - Name: objectives
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[ObjectiveId, Assembly-CSharp],[Objective,
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Objective,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ObjectiveId, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 9
     - Name: 
       Entry: 7
       Data: 
     - Name: 
-      Entry: 3
-      Data: 1
+      Entry: 1
+      Data: 001_Intro_WakeUp
     - Name: 
       Entry: 10
       Data: 0
@@ -71,8 +68,8 @@ MonoBehaviour:
       Entry: 7
       Data: 
     - Name: 
-      Entry: 3
-      Data: 2
+      Entry: 1
+      Data: 002_Intro_GetReady
     - Name: 
       Entry: 10
       Data: 1
@@ -83,8 +80,8 @@ MonoBehaviour:
       Entry: 7
       Data: 
     - Name: 
-      Entry: 3
-      Data: 3
+      Entry: 1
+      Data: 003_Intro_GetOutThere
     - Name: 
       Entry: 10
       Data: 2
@@ -95,8 +92,8 @@ MonoBehaviour:
       Entry: 7
       Data: 
     - Name: 
-      Entry: 3
-      Data: 4
+      Entry: 1
+      Data: 004_Intro_BackToTheApartment
     - Name: 
       Entry: 10
       Data: 3
@@ -107,8 +104,8 @@ MonoBehaviour:
       Entry: 7
       Data: 
     - Name: 
-      Entry: 3
-      Data: 5
+      Entry: 1
+      Data: 005_Intro_Denial
     - Name: 
       Entry: 10
       Data: 4
@@ -119,11 +116,47 @@ MonoBehaviour:
       Entry: 7
       Data: 
     - Name: 
-      Entry: 3
-      Data: 6
+      Entry: 1
+      Data: 006_Intro_DenialIsPainful
     - Name: 
       Entry: 10
       Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 010_Playground_Apartment_01
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 011_Playground_Apartment_02
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 012_Playground_Apartment_03
+    - Name: 
+      Entry: 10
+      Data: 8
     - Name: 
       Entry: 8
       Data: 
@@ -155,7 +188,7 @@ MonoBehaviour:
       Data: playground
     - Name: 
       Entry: 10
-      Data: 6
+      Data: 9
     - Name: 
       Entry: 8
       Data: 
@@ -167,7 +200,7 @@ MonoBehaviour:
       Data: apartment_living_room
     - Name: 
       Entry: 10
-      Data: 7
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -179,7 +212,7 @@ MonoBehaviour:
       Data: apartment_bedroom
     - Name: 
       Entry: 10
-      Data: 8
+      Data: 11
     - Name: 
       Entry: 8
       Data: 
@@ -191,7 +224,7 @@ MonoBehaviour:
       Data: apartment_dungeon
     - Name: 
       Entry: 10
-      Data: 9
+      Data: 12
     - Name: 
       Entry: 8
       Data: 
@@ -203,7 +236,7 @@ MonoBehaviour:
       Data: apartment_bathroom
     - Name: 
       Entry: 10
-      Data: 10
+      Data: 13
     - Name: 
       Entry: 8
       Data: 
@@ -215,7 +248,7 @@ MonoBehaviour:
       Data: hallway
     - Name: 
       Entry: 10
-      Data: 11
+      Data: 14
     - Name: 
       Entry: 8
       Data: 
@@ -227,7 +260,7 @@ MonoBehaviour:
       Data: hallway_elevator
     - Name: 
       Entry: 10
-      Data: 12
+      Data: 15
     - Name: 
       Entry: 8
       Data: 
@@ -239,7 +272,7 @@ MonoBehaviour:
       Data: hallway_elevator_dungeon
     - Name: 
       Entry: 10
-      Data: 13
+      Data: 16
     - Name: 
       Entry: 8
       Data: 
@@ -249,9 +282,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: eotState
+    - Name: booleanParameters
       Entry: 7
-      Data: 4|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+      Data: 4|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Boolean,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
@@ -262,7 +295,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 1
     - Name: 
       Entry: 7
       Data: 
@@ -270,35 +303,27 @@ MonoBehaviour:
       Entry: 1
       Data: isDoubleKillProcActive
     - Name: 
-      Entry: 7
-      Data: 6|System.Boolean, mscorlib
-    - Name: 
       Entry: 5
       Data: false
     - Name: 
       Entry: 8
       Data: 
     - Name: 
-      Entry: 8
+      Entry: 13
       Data: 
     - Name: 
+      Entry: 8
+      Data: 
+    - Name: integerParameters
       Entry: 7
-      Data: 
+      Data: 6|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Int32,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 5
     - Name: 
-      Entry: 1
-      Data: turnsTillGranadeChargeLeft
-    - Name: 
-      Entry: 7
-      Data: 7|System.Int32, mscorlib
-    - Name: 
-      Entry: 3
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+      Entry: 12
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -306,8 +331,8 @@ MonoBehaviour:
       Entry: 1
       Data: turnsTillResetLeft
     - Name: 
-      Entry: 9
-      Data: 7
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -318,8 +343,20 @@ MonoBehaviour:
       Entry: 1
       Data: enemiesKilled
     - Name: 
-      Entry: 9
-      Data: 7
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: turnsTillGranadeChargeLeft
+    - Name: 
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -329,10 +366,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  currentPosition:
-    x: 4
-    y: 0
   currentVisibility: 4.5
-  currentScene: apartment_dungeon
-  currentObjective: 4
+  currentScene: apartment_bedroom
+  currentObjective: 001_Intro_WakeUp
   inventory: []

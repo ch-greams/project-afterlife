@@ -1,0 +1,236 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3cba17f38bf17408398cbb14f5a9b4, type: 3}
+  m_Name: 005_Intro_Denial
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 562fb0b235a39be4ab790996a40504f6, type: 2}
+    - {fileID: 11400000, guid: 9039307ef42abef4bbccefb430c83501, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: dialogues
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Dialogue,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: "ItsNotReal\r\n"
+    - Name: 
+      Entry: 7
+      Data: 2|Dialogue, Assembly-CSharp
+    - Name: dialogueFragments
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[DialogueFragment, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 4|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 0
+    - Name: speech
+      Entry: 1
+      Data: I don't feel so good...;; And it looked like shadows were alive?!
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 0
+    - Name: speech
+      Entry: 1
+      Data: Were they even shadows?
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 1
+    - Name: speech
+      Entry: 1
+      Data: No...;; they...;; werent't...;; really...;; shadows...;;
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 0
+    - Name: speech
+      Entry: 1
+      Data: Great, now I hear voices in my head
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 1
+    - Name: speech
+      Entry: 1
+      Data: Well...;; yes...;; please...;; pick...;; up...;; the...;; phone...;;
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 1
+    - Name: speech
+      Entry: 1
+      Data: It...;; will...;; be...;; easier...;; that...;; way...;; *ding-ding*
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: "CallFromNowhere\r\n"
+    - Name: 
+      Entry: 7
+      Data: 10|Dialogue, Assembly-CSharp
+    - Name: dialogueFragments
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[DialogueFragment, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 12|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 1
+    - Name: speech
+      Entry: 1
+      Data: Okay let's get over this quickly, those as you call 'shadows' are basically
+        white blood cells and you're the virus.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 1
+    - Name: speech
+      Entry: 1
+      Data: And they can abuse certain items like mirros and disaplays as portals,
+        so I would recommend you to destroy those...
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 0
+    - Name: speech
+      Entry: 1
+      Data: Right, sure totally make sense...
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 0
+    - Name: speech
+      Entry: 1
+      Data: '*hangs phone*'
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|DialogueFragment, Assembly-CSharp
+    - Name: speaker
+      Entry: 10
+      Data: 0
+    - Name: speech
+      Entry: 1
+      Data: I need to get some rest, let's check TV.
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  textFile: {fileID: 4900000, guid: 34976243f3dfc9a45b16920a650e3d8d, type: 3}

@@ -17,9 +17,9 @@ public class DoubleKillStateCondition : IEndOfTurnCondition
         switch (this.type)
         {
             case DoubleKillStateConditionType.Active:
-                return this.globalState.GetVariableFromState<bool>("isDoubleKillProcActive");
+                return this.globalState.GetBooleanParameterFromState("isDoubleKillProcActive");
             case DoubleKillStateConditionType.Inactive:
-                return !this.globalState.GetVariableFromState<bool>("isDoubleKillProcActive");
+                return !this.globalState.GetBooleanParameterFromState("isDoubleKillProcActive");
             case DoubleKillStateConditionType.Undefined:
             default:
                 return false;

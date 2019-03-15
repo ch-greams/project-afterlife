@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 
 
 public class CheckInteractablesReaction : IEndOfTurnReaction
@@ -16,9 +17,10 @@ public class CheckInteractablesReaction : IEndOfTurnReaction
         SceneController sceneCtrl = this.globalCtrl.sceneCtrl;
 
         Interactable currentInteractable = sceneCtrl.interactables
-            .Find(interactable =>
-                interactable.data.isInteractableActive && interactable.data.reachablePoints.Contains(sceneCtrl.player.tile.point)
-            );
+            .FirstOrDefault(kvp =>
+                kvp.Value.data.isInteractableActive && kvp.Value.data.reachablePoints.Contains(sceneCtrl.player.tile.point)
+            )
+            .Value;
 
         this.globalCtrl.playerActionManager.TrySelectInteractable(currentInteractable, sceneCtrl.sceneState.isDungeonScene);
 

@@ -1,0 +1,224 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1b515263c267045831b245d0dc2e14, type: 3}
+  m_Name: 003_Intro_GetOutThere
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: tasks
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Task,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: GoOutside
+    - Name: 
+      Entry: 7
+      Data: 2|Task, Assembly-CSharp
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: subTasks
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 4|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Get the Schoolbag
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Go Outside
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Call Landlord
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Get Flashlight
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Go to the Elevator
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Use Elevator
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Check Stairs
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Check Elevator
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  title: Get Out There
+  completed: 0
+  comment: {fileID: 11400000, guid: cf1f6141fee8f7a44b1fabe621eb73f6, type: 2}
+  nextObjective: {fileID: 11400000, guid: 7a4acdd631b20dc4aa4922b84900af4f, type: 2}

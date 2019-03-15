@@ -8,18 +8,43 @@ public class Interactable : SerializedMonoBehaviour
 {
     public bool showGizmo = true;
 
+    [InlineProperty, HideLabel]
     public InteractableData data;
 
-    [FoldoutGroup("Interactable Config", expanded: false, order: 1)]
+
+    [BoxGroup("Interactable Config"), PropertyOrder(2)]
     public SceneController sceneCtrl;
     
-    [FoldoutGroup("Interactable Config", expanded: false, order: 1)]
+    [BoxGroup("Interactable Config"), PropertyOrder(3)]
     [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
     public List<InteractableAction> initializeActions = new List<InteractableAction>();
 
-    [FoldoutGroup("Interactable Config", expanded: false, order: 1)]
+    [BoxGroup("Interactable Config"), PropertyOrder(4)]
     [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
     public List<InteractableAction> clickActions = new List<InteractableAction>();
+
+
+    [BoxGroup("Interactable Config"), PropertyOrder(0), ShowInInspector]
+    public bool IsEnabled
+    {
+        get { return (
+            this.sceneCtrl.sceneState.interactables.ContainsKey(this.name)
+                ? this.sceneCtrl.sceneState.interactables[this.name].enabled
+                : false
+        ); }
+        set { this.ToggleInteractable(value, this.sceneCtrl.sceneState.interactables[this.name].visible); }
+    }
+
+    [BoxGroup("Interactable Config"), PropertyOrder(1), ShowInInspector]
+    public bool IsVisible
+    {
+        get { return (
+            this.sceneCtrl.sceneState.interactables.ContainsKey(this.name)
+                ? this.sceneCtrl.sceneState.interactables[this.name].visible
+                : false
+        ); }
+        set { this.ToggleInteractable(this.sceneCtrl.sceneState.interactables[this.name].enabled, value); }
+    }
 
 
     private void OnDrawGizmos()
@@ -80,29 +105,28 @@ public class Interactable : SerializedMonoBehaviour
         }
     }
 
-    [BoxGroup("Interactable Controls", order: 0), ShowInInspector]
-    private bool enableInteractions = false;
-    [BoxGroup("Interactable Controls", order: 0), ShowInInspector]
-    private bool showInteractableObject = false;
 
-    [BoxGroup("Interactable Controls", order: 0), Button(ButtonSizes.Medium)]
-    private void ToggleInteractable()
+    public void ToggleInteractable(bool enabled, bool visible)
     {
-        this.ToggleInteractable(this.enableInteractions, this.showInteractableObject);
-    }
-
-    public void ToggleInteractable(bool enable, bool show)
-    {
-        this.data.isInteractableActive = enable;
+        this.data.isInteractableActive = enabled;
         
         if (this.data.hasCollider)
         {
-            this.GetComponent<Collider>().enabled = enable;
+            this.GetComponent<Collider>().enabled = enabled;
         } 
 
         if (this.data.interactableObject)
         {
-            this.data.interactableObject.SetActive(show);
+            this.data.interactableObject.SetActive(visible);
+        }
+
+        if (this.sceneCtrl.sceneState.interactables.ContainsKey(this.name))
+        {
+            this.sceneCtrl.sceneState.interactables[this.name].Update(enabled, visible);
+        }
+        else
+        {
+            this.sceneCtrl.sceneState.interactables[this.name] = new InteractableState(enabled, visible);
         }
     }
 }

@@ -2,13 +2,14 @@ using System;
 using System.ComponentModel;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 
-[Serializable]
-[TypeConverter(typeof(PointConverter))]
+[Serializable, InlineProperty(LabelWidth = 13), TypeConverter(typeof(PointConverter))]
 public struct Point : IComparable<Point>
 {
+    [HorizontalGroup]
     public int x, y;
 
     public static Point zero { get { return new Point(0, 0); } }

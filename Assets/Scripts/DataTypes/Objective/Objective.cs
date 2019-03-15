@@ -8,13 +8,22 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Objective : SerializedScriptableObject
 {
-    public ObjectiveId id;
+    [ShowInInspector, PropertyOrder(0)]
+    public string id { get { return base.name; } }
+
+    [PropertyOrder(1)]
     public string title;
+    
+    [PropertyOrder(2)]
     public bool completed;
-    public Dialogue comment;
+    
+    [PropertyOrder(3)]
+    public DialogueCollection comment;
+    
+    [PropertyOrder(4)]
     public Objective nextObjective;
 
-    [GUIColor(0.7F, 0.7F, 0.7F, 1F)]
+    [PropertyOrder(5), GUIColor(0.7F, 0.7F, 0.7F, 1F)]
     [DictionaryDrawerSettings(KeyLabel = "Task", DisplayMode = DictionaryDisplayOptions.Foldout)]
     public Dictionary<string, Task> tasks = new Dictionary<string, Task>();
 
@@ -45,7 +54,7 @@ public class Objective : SerializedScriptableObject
 [Serializable]
 public class ObjectiveSerializable
 {
-    public ObjectiveId id;
+    public string id;
     public string title;
     public bool completed;
 
@@ -61,15 +70,4 @@ public class ObjectiveSerializable
         this.completed = objective.completed;
         this.tasks = objective.tasks.ToDictionary(kvp => kvp.Key, kvp => new TaskSerializable(kvp.Value));
     }
-}
-
-public enum ObjectiveId
-{
-    Undefined,
-    Intro_WakeUp,
-    Intro_GetReady,
-    Intro_GoToWork,
-    Playground_Apartment_01,
-    Playground_Apartment_02,
-    Playground_Apartment_03,
 }

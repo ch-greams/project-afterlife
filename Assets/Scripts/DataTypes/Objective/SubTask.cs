@@ -6,11 +6,15 @@ using UnityEngine;
 [Serializable]
 public class SubTask
 {
-    public string id;
-    [HideIf("hidden")]
+    [PropertyOrder(1)]
     public string title;
+    [ShowInInspector, PropertyOrder(0)]
+    public string id { get { return (this.title != null ? this.title.Replace(" ", "_") : ""); } }
+    [PropertyOrder(2)]
     public bool completed;
+    [PropertyOrder(3)]
     public bool optional;
+    [PropertyOrder(4)]
     public bool hidden;
 
 

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a1b515263c267045831b245d0dc2e14, type: 3}
-  m_Name: 003_Intro_GoToWork
+  m_Name: 006_Intro_DenialIsPainful
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -34,13 +34,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
     - Name: 
       Entry: 1
-      Data: GoOutside
+      Data: DestroyTV
     - Name: 
       Entry: 7
       Data: 2|Task, Assembly-CSharp
@@ -55,16 +55,13 @@ MonoBehaviour:
       Data: 3|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 7
       Data: 4|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: GoOutside
     - Name: title
       Entry: 1
-      Data: Go Outside
+      Data: Destroy First Portal
     - Name: completed
       Entry: 5
       Data: false
@@ -80,12 +77,60 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 5|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: CallLandlord
     - Name: title
       Entry: 1
-      Data: Call Landlord
+      Data: Kill Shadows from First Portal
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: DestroyPC
+    - Name: 
+      Entry: 7
+      Data: 6|Task, Assembly-CSharp
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: subTasks
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 8|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Destroy Second Portal
     - Name: completed
       Entry: 5
       Data: false
@@ -100,13 +145,79 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|SubTask, Assembly-CSharp
-    - Name: id
-      Entry: 1
-      Data: LookAround
+      Data: 9|SubTask, Assembly-CSharp
     - Name: title
       Entry: 1
-      Data: Look Around
+      Data: Kill Shadows from Second Portal
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: DestroyBathroomMirror
+    - Name: 
+      Entry: 7
+      Data: 10|Task, Assembly-CSharp
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: subTasks
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 12|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Destroy Third Portal
+    - Name: completed
+      Entry: 5
+      Data: false
+    - Name: optional
+      Entry: 5
+      Data: false
+    - Name: hidden
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|SubTask, Assembly-CSharp
+    - Name: title
+      Entry: 1
+      Data: Kill Shadows from Third Portal
     - Name: completed
       Entry: 5
       Data: false
@@ -137,8 +248,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  id: 3
-  title: Go to Work
+  title: Denial
   completed: 0
-  comment: {fileID: 11400000, guid: cf1f6141fee8f7a44b1fabe621eb73f6, type: 2}
-  nextObjective: {fileID: 0}
+  comment: {fileID: 0}
+  nextObjective: {fileID: 11400000}

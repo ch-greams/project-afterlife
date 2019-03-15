@@ -60,9 +60,9 @@ public class EnemyManager
         if (isEnemyDestroyed && byPlayer)
         {
             // TODO: Do something about this
-            this.globalCtrl.globalState.SetVariableInState(
+            this.globalCtrl.globalState.SetIntegerParameterInState(
                 "enemiesKilled",
-                (this.globalCtrl.globalState.GetVariableFromState<int>("enemiesKilled") + 1)
+                (this.globalCtrl.globalState.GetIntegerParameterFromState("enemiesKilled") + 1)
             );
             this.globalCtrl.statsManager.IncrementScore(10);
 
