@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class InteractableData
 {
-    [BoxGroup("Interactable Data")]
+    [BoxGroup("Interactable Data"), ReadOnly]
     public bool isInteractableActive;
     [BoxGroup("Interactable Data")]
     public GameObject interactableObject;
@@ -21,7 +21,7 @@ public class InteractableData
     [BoxGroup("Interactable Data")]
     public bool hasCollider = false;
 
-    [BoxGroup("Interactable Data"), HideIf("hasCollider")]
+    [BoxGroup("Interactable Data"), HideIf("hasCollider"), ListDrawerSettings(IsReadOnly = true), ReadOnly]
     public List<Point> reachablePoints = new List<Point>();
 }
 
