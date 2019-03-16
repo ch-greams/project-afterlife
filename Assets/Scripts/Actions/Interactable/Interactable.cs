@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -12,34 +13,34 @@ public class Interactable : SerializedMonoBehaviour
     public InteractableData data;
 
 
-    [BoxGroup("Interactable Config"), PropertyOrder(2)]
+    [BoxGroup("Interactable Config"), PropertyOrder(3)]
     public SceneController sceneCtrl;
     
-    [BoxGroup("Interactable Config"), PropertyOrder(3)]
+    [BoxGroup("Interactable Config"), PropertyOrder(4)]
     [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
     public List<InteractableAction> initializeActions = new List<InteractableAction>();
 
-    [BoxGroup("Interactable Config"), PropertyOrder(4)]
+    [BoxGroup("Interactable Config"), PropertyOrder(5)]
     [ListDrawerSettings(ListElementLabelName = "name", Expanded = false)]
     public List<InteractableAction> clickActions = new List<InteractableAction>();
 
 
-    [BoxGroup("Interactable Config"), PropertyOrder(0), ShowInInspector]
+    [BoxGroup("Interactable Config"), PropertyOrder(1), ShowInInspector]
     public bool IsEnabled
     {
         get { return (
-            this.sceneCtrl.sceneState.interactables.ContainsKey(this.name)
+            this.sceneCtrl != null && this.sceneCtrl.sceneState.interactables.ContainsKey(this.name)
                 ? this.sceneCtrl.sceneState.interactables[this.name].enabled
                 : false
         ); }
         set { this.ToggleInteractable(value, this.sceneCtrl.sceneState.interactables[this.name].visible); }
     }
 
-    [BoxGroup("Interactable Config"), PropertyOrder(1), ShowInInspector]
+    [BoxGroup("Interactable Config"), PropertyOrder(2), ShowInInspector]
     public bool IsVisible
     {
         get { return (
-            this.sceneCtrl.sceneState.interactables.ContainsKey(this.name)
+            this.sceneCtrl != null && this.sceneCtrl.sceneState.interactables.ContainsKey(this.name)
                 ? this.sceneCtrl.sceneState.interactables[this.name].visible
                 : false
         ); }
@@ -128,5 +129,21 @@ public class Interactable : SerializedMonoBehaviour
         {
             this.sceneCtrl.sceneState.interactables[this.name] = new InteractableState(enabled, visible);
         }
+    }
+
+
+    private bool isDungeonInteractable { get { return !this.data.hasCollider; } }
+
+    [BoxGroup("Interactable Config"), PropertyOrder(0), Button(ButtonSizes.Medium), ShowIf("isDungeonInteractable")]
+    private void UpdateReachablePoint()
+    {
+        ReachablePoint[] reachablePoints = this.gameObject.GetComponentsInChildren<ReachablePoint>();
+
+        foreach (ReachablePoint reachablePoint in reachablePoints)
+        {
+            reachablePoint.RefreshCurrentPoint();
+        }
+
+        this.data.reachablePoints = reachablePoints.Select(rp => rp.point).ToList();
     }
 }

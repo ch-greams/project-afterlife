@@ -671,6 +671,16 @@ PrefabInstance:
       propertyPath: isSpawnPointActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 1165248025}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: sceneCtrl
+      value: 
+      objectReference: {fileID: 1793904435}
     - target: {fileID: 7972385217893668767, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: m_IsActive
@@ -885,7 +895,6 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 6772187916564050283}
-    - {fileID: 11400000, guid: d091525ba1379be4aaaa8427ca5016b9, type: 2}
     - {fileID: 11400000, guid: a25592d374703764c86e10b56e63d656, type: 2}
     - {fileID: 1035420775}
     SerializedBytesString: 
@@ -1038,9 +1047,12 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 7|DialogueReaction, Assembly-CSharp
-    - Name: dialogue
-      Entry: 10
-      Data: 1
+    - Name: dialogueCollection
+      Entry: 6
+      Data: 
+    - Name: dialogueTitle
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1049,7 +1061,7 @@ MonoBehaviour:
       Data: 8|ObjectiveReaction, Assembly-CSharp
     - Name: objective
       Entry: 10
-      Data: 2
+      Data: 1
     - Name: taskId
       Entry: 1
       Data: SaySomething
@@ -1088,7 +1100,7 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 10
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 13
       Data: 
@@ -10615,6 +10627,16 @@ PrefabInstance:
       propertyPath: spawnPointCapacity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 1165248025}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: sceneCtrl
+      value: 
+      objectReference: {fileID: 1793904435}
     - target: {fileID: 7972385217893668767, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: m_IsActive
@@ -17173,13 +17195,33 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: highlightedTiles
+    - Name: interactables
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[Tile,
-        Assembly-CSharp]], mscorlib]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Interactable,
+        Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
       Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: highlightedTiles
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[Tile,
+        Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -17202,11 +17244,6 @@ MonoBehaviour:
   - {fileID: 1087967422}
   - {fileID: 2120387477}
   - {fileID: 45437633}
-  interactables:
-  - {fileID: 76603183}
-  - {fileID: 700086693}
-  - {fileID: 1410993170}
-  - {fileID: 1435636078}
   selectedTileColor: {r: 0, g: 1, b: 0.75, a: 1}
   activeTileColor: {r: 1, g: 1, b: 1, a: 0.6}
   visibleTileColor: {r: 0.6, g: 0.6, b: 0.6, a: 0.6}
@@ -19859,7 +19896,8 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: spawnPointDelay
@@ -19895,6 +19933,16 @@ PrefabInstance:
       propertyPath: spawnPointCapacity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 1165248025}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: sceneCtrl
+      value: 
+      objectReference: {fileID: 1793904435}
     - target: {fileID: 7972385217893668767, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: m_IsActive

@@ -62,7 +62,14 @@ public class GridGenerator : MonoBehaviour
             for (int y = 0; y < this.gridSize.y; y++)
             {
                 Point point = new Point(x, y);
-                GameObject gameObject = GameObject.Instantiate(this.tilePrefab, point.CalcWorldCoord(0), this.tilePrefab.transform.rotation);
+                GameObject gameObject = GameObject.Instantiate(
+                    original: this.tilePrefab, 
+                    position: point.CalcWorldCoord(
+                        // TODO: Validate that it works correctly (if not try +0.5F for x and z)
+                        new Vector3(this.sceneCtrl.transform.position.x, 0, this.sceneCtrl.transform.position.z)
+                    ), 
+                    rotation: this.tilePrefab.transform.rotation
+                );
                 gameObject.transform.SetParent(this.transform);
                 gameObject.name = point.ToString();
 

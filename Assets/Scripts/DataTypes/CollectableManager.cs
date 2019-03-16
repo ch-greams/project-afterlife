@@ -28,9 +28,13 @@ public class CollectableManager
             this.collectableItems[point].Destroy();
             this.collectableItems.Remove(point);
 
+            Vector3 sceneCtrlPosition = this.globalCtrl.sceneCtrl.transform.position;
             GameObject.Instantiate(
                 original: this.collectionEffectPrefab,
-                position: point.CalcWorldCoord(0.5F),
+                position: point.CalcWorldCoord(
+                    // TODO: Validate that it works correctly (if not try +0.5F for x and z)
+                    new Vector3(sceneCtrlPosition.x, 0.5F, sceneCtrlPosition.z)
+                ),
                 rotation: this.collectableItemPrefab.transform.rotation
             );
 

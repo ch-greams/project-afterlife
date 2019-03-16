@@ -115,14 +115,25 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
         return isSpawnTime;
     }
 
-    [FoldoutGroup("Enemy Settings", true)]
-    [Button(ButtonSizes.Medium)]
-    public void RefreshCurrentPoint()
-    {
-        Point point = new Point(this.transform.position);
 
-        this.point = point;
-        this.transform.position = point.CalcWorldCoord(0.5F);
+
+    [FoldoutGroup("Enemy Settings", true), BoxGroup("Enemy Settings/Current Point Refresh")]
+    public SceneController sceneCtrl;
+
+    [FoldoutGroup("Enemy Settings", true), BoxGroup("Enemy Settings/Current Point Refresh"), ShowInInspector]
+    private Vector3 offset { get { return (
+        (this.sceneCtrl != null)
+            ? new Vector3(x: this.sceneCtrl.transform.position.x, y: 0.5F, z: this.sceneCtrl.transform.position.z)
+            : Vector3.zero
+    ); } }
+
+    [FoldoutGroup("Enemy Settings", true), BoxGroup("Enemy Settings/Current Point Refresh"), Button(ButtonSizes.Medium)]
+    private void RefreshCurrentPoint()
+    {
+        this.point = new Point(this.transform.position - this.offset);
+        this.transform.position = this.point.CalcWorldCoord(new Vector3(
+            x: this.offset.x + 0.5F, y: this.offset.y, z: this.offset.z + 0.5F
+        ));
         this.transform.name = string.Format("spawn_{0} {1}", this.name, this.point);
     }
 }

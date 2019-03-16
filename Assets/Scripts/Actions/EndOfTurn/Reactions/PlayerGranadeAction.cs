@@ -33,7 +33,9 @@ public class PlayerGranadeAction : IEndOfTurnReaction
 
     private IEnumerator GranadeEffect(Player player, Point point)
     {
-        Vector3 targetPosition = point.CalcWorldCoord(0.1F);
+        Vector3 sceneCtrlPosition = this.globalCtrl.sceneCtrl.transform.position;
+        // TODO: Validate that it works correctly (if not try +0.5F for x and z)
+        Vector3 targetPosition = point.CalcWorldCoord(new Vector3(sceneCtrlPosition.x, 0.1F, sceneCtrlPosition.z));
 
         player.characterTransform.LookAt(targetPosition);
         GameObject.Instantiate(this.effectPrefab, targetPosition, this.effectPrefab.transform.rotation);

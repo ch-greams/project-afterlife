@@ -23,7 +23,6 @@ public class InteractableData
 
     [BoxGroup("Interactable Data"), HideIf("hasCollider")]
     public List<Point> reachablePoints = new List<Point>();
-
 }
 
 [Serializable, InlineProperty(LabelWidth = 80)]

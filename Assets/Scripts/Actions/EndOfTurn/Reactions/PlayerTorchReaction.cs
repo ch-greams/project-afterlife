@@ -36,7 +36,11 @@ public class PlayerTorchReaction : IEndOfTurnReaction
 
     private IEnumerator SlashEffect(Player player, Point targetPoint)
     {
-        player.characterTransform.LookAt(targetPoint.CalcWorldCoord(0.1F));
+        Vector3 sceneCtrlPosition = this.globalCtrl.sceneCtrl.transform.position;
+        // TODO: Validate that it works correctly (if not try +0.5F for x and z)
+        player.characterTransform.LookAt(targetPoint.CalcWorldCoord(
+            new Vector3(sceneCtrlPosition.x, 0.1F, sceneCtrlPosition.z)
+        ));
 
         Quaternion effectRotation = Quaternion.Euler(
             x: this.effectPrefab.transform.rotation.eulerAngles.x,
@@ -44,7 +48,12 @@ public class PlayerTorchReaction : IEndOfTurnReaction
             z: this.effectPrefab.transform.rotation.eulerAngles.z
         );
 
-        GameObject.Instantiate(this.effectPrefab, player.tile.point.CalcWorldCoord(1F), effectRotation);
+        GameObject.Instantiate(
+            this.effectPrefab,
+            // TODO: Validate that it works correctly (if not try +0.5F for x and z)
+            player.tile.point.CalcWorldCoord(new Vector3(sceneCtrlPosition.x, 1F, sceneCtrlPosition.z)),
+            effectRotation
+        );
 
         yield return new WaitForSeconds(this.effectTimeout);
     }

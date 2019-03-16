@@ -87,9 +87,9 @@ public struct Point : IComparable<Point>
         return (this.x == other.x) ? (this.y - other.y) : (this.x - other.x);
     }
 
-    public Vector3 CalcWorldCoord(float height)
+    public Vector3 CalcWorldCoord(Vector3 offset)
     {
-        return new Vector3(( this.x + 0.5F ), height, ( this.y + 0.5F ));
+        return new Vector3(( this.x + offset.x ), offset.y, ( this.y + offset.z ));
     }
 
     public float DistanceTo(Point point)
@@ -106,7 +106,7 @@ public struct Point : IComparable<Point>
     }
 }
 
-// check this later
+// TODO: check this later
 public class PointConverter : TypeConverter
 {
     public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
