@@ -264,6 +264,9 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 671905467}
+    - {fileID: 11400000, guid: cfaeb9e4c3fcfec498021cfa91664385, type: 2}
+    - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
+    - {fileID: 11400000, guid: a7b5fdd29ad36404183ef99ca8a7ad14, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -336,7 +339,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 4|InteractableAction, Assembly-CSharp
@@ -349,7 +352,25 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: GetDressed
+    - Name: subTaskId
+      Entry: 1
+      Data: Get_Dressed
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -358,11 +379,121 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 8|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: item
+      Entry: 3
       Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: GetDressed
+    - Name: subTaskId
+      Entry: 1
+      Data: Get_Dressed
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|InteractableAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Start Next Objective
+    - Name: conditions
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 12|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 2
+    - Name: taskId
+      Entry: 1
+      Data: GoOutside
+    - Name: subTaskId
+      Entry: 1
+      Data: Get_the_Schoolbag
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 14|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 2
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 10
+      Data: 3
+    - Name: interactableName
+      Entry: 1
+      Data: int_schoolbag
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -446,6 +577,8 @@ MonoBehaviour:
     - {fileID: 959859965}
     - {fileID: 1142259699}
     - {fileID: 510233636}
+    - {fileID: 11400000, guid: d5c6c65b16036da4b892bebd0b6f6867, type: 2}
+    - {fileID: 11400000, guid: a7b5fdd29ad36404183ef99ca8a7ad14, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -562,17 +695,23 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 7
     - Name: 
       Entry: 7
       Data: 8|InteractableDataReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -599,12 +738,18 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 2
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: false
+    - Name: item
+      Entry: 3
+      Data: 1
     - Name: interactable
       Entry: 10
       Data: 2
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -614,12 +759,18 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 2
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: false
+    - Name: item
+      Entry: 3
+      Data: 1
     - Name: interactable
       Entry: 10
       Data: 3
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -629,12 +780,60 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 2
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: false
+    - Name: item
+      Entry: 3
+      Data: 1
     - Name: interactable
       Entry: 10
       Data: 4
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 2
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 10
+      Data: 5
+    - Name: interactableName
+      Entry: 1
+      Data: int_shower
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 2
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 10
+      Data: 6
+    - Name: interactableName
+      Entry: 1
+      Data: int_fridge
     - Name: 
       Entry: 8
       Data: 
@@ -822,10 +1021,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 3
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -876,10 +1081,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 2
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -1749,6 +1960,8 @@ MonoBehaviour:
     - {fileID: 671905464}
     - {fileID: 11400000, guid: cfaeb9e4c3fcfec498021cfa91664385, type: 2}
     - {fileID: 11400000, guid: 364c109836f28694d86712c8157c739e, type: 2}
+    - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
+    - {fileID: 11400000, guid: a7b5fdd29ad36404183ef99ca8a7ad14, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -1821,26 +2034,44 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 4|InteractableAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Can't See Shit
+      Data: Still Can't See Shit
     - Name: conditions
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 6|ObjectiveCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: CheckEmails
+    - Name: subTaskId
+      Entry: 1
+      Data: Close_Blinds
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 4
     - Name: objective
       Entry: 10
       Data: 1
@@ -1861,38 +2092,29 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 8|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 7
-      Data: 8|InteractableDataReaction, Assembly-CSharp
+      Data: 9|InteractableDataReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 3
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
       Entry: 6
       Data: 
-    - Name: 
-      Entry: 8
+    - Name: sceneState
+      Entry: 6
       Data: 
-    - Name: 
-      Entry: 7
-      Data: 9|ObjectiveReaction, Assembly-CSharp
-    - Name: objective
-      Entry: 10
-      Data: 1
-    - Name: taskId
-      Entry: 1
-      Data: CheckEmails
-    - Name: subTaskId
-      Entry: 1
-      Data: Check_PC
+    - Name: interactableName
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -1914,10 +2136,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 2
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -1937,7 +2165,7 @@ MonoBehaviour:
       Data: 12|InteractableAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Still Can't See Shit
+      Data: Can't See Shit
     - Name: conditions
       Entry: 7
       Data: 13|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
@@ -1959,7 +2187,7 @@ MonoBehaviour:
       Data: CheckEmails
     - Name: subTaskId
       Entry: 1
-      Data: Close_Blinds
+      Data: Check_PC
     - Name: 
       Entry: 8
       Data: 
@@ -1975,17 +2203,23 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 16|InteractableDataReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 3
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -1993,7 +2227,22 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 17|DialogueReaction, Assembly-CSharp
+      Data: 17|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: CheckEmails
+    - Name: subTaskId
+      Entry: 1
+      Data: Check_PC
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 18|DialogueReaction, Assembly-CSharp
     - Name: dialogueCollection
       Entry: 10
       Data: 2
@@ -2005,14 +2254,20 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 18|InteractableDataReaction, Assembly-CSharp
+      Data: 19|InteractableDataReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -2029,20 +2284,20 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 19|InteractableAction, Assembly-CSharp
+      Data: 20|InteractableAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Now I Can See
     - Name: conditions
       Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
+      Data: 21|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 21|ObjectiveCondition, Assembly-CSharp
+      Data: 22|ObjectiveCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 6
@@ -2066,21 +2321,27 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 23|InteractableDataReaction, Assembly-CSharp
+      Data: 24|InteractableDataReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 3
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -2088,7 +2349,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 24|ObjectiveReaction, Assembly-CSharp
+      Data: 25|ObjectiveReaction, Assembly-CSharp
     - Name: objective
       Entry: 10
       Data: 1
@@ -2098,6 +2359,80 @@ MonoBehaviour:
     - Name: subTaskId
       Entry: 1
       Data: Check_Emails
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 26|InteractableAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Start Next Objective
+    - Name: conditions
+      Entry: 7
+      Data: 27|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 28|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 3
+    - Name: taskId
+      Entry: 1
+      Data: GoOutside
+    - Name: subTaskId
+      Entry: 1
+      Data: Get_the_Schoolbag
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 29|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 30|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 2
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 10
+      Data: 4
+    - Name: interactableName
+      Entry: 1
+      Data: int_schoolbag
     - Name: 
       Entry: 8
       Data: 
@@ -2304,10 +2639,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 3
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 

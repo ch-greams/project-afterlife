@@ -54,13 +54,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 8
     - Name: 
       Entry: 7
       Data: 
     - Name: 
       Entry: 1
-      Data: int_kitchen_table
+      Data: int_schoolbag
     - Name: 
       Entry: 7
       Data: 4|InteractableState, Assembly-CSharp
@@ -81,31 +81,10 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_fridge
-    - Name: 
-      Entry: 7
-      Data: 5|InteractableState, Assembly-CSharp
-    - Name: enabled
-      Entry: 5
-      Data: false
-    - Name: visible
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 1
       Data: int_door_bathroom
     - Name: 
       Entry: 7
-      Data: 6|InteractableState, Assembly-CSharp
+      Data: 5|InteractableState, Assembly-CSharp
     - Name: enabled
       Entry: 5
       Data: true
@@ -126,7 +105,91 @@ MonoBehaviour:
       Data: int_door_hallway
     - Name: 
       Entry: 7
+      Data: 6|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: false
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_kitchen_table
+    - Name: 
+      Entry: 7
       Data: 7|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: false
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_fridge
+    - Name: 
+      Entry: 7
+      Data: 8|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: false
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_flashlight
+    - Name: 
+      Entry: 7
+      Data: 9|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: false
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_landline_phone
+    - Name: 
+      Entry: 7
+      Data: 10|InteractableState, Assembly-CSharp
     - Name: enabled
       Entry: 5
       Data: false
@@ -147,7 +210,7 @@ MonoBehaviour:
       Data: int_door_bedroom
     - Name: 
       Entry: 7
-      Data: 8|InteractableState, Assembly-CSharp
+      Data: 11|InteractableState, Assembly-CSharp
     - Name: enabled
       Entry: 5
       Data: true
@@ -171,6 +234,7 @@ MonoBehaviour:
     x: 0
     y: 0
   currentPositionVector: {x: 0, y: 0, z: 0}
+  walkableAreas: 1
   defaultMap:
   - point:
       x: 0

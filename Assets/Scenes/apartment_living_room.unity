@@ -146,7 +146,9 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 205526410}
+    - {fileID: 614265213}
+    - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
+    - {fileID: 1486615021}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -232,7 +234,25 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: GoOutside
+    - Name: subTaskId
+      Entry: 1
+      Data: Get_the_Schoolbag
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -241,11 +261,68 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 8|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: item
+      Entry: 3
       Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: GoOutside
+    - Name: subTaskId
+      Entry: 1
+      Data: Get_the_Schoolbag
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 1
+    - Name: interactable
+      Entry: 10
+      Data: 2
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -286,7 +363,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 614265216}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1751,12 +1829,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 205526380}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &205526410 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100118, guid: 862b25e3bc1771f4398ef504f30347a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 205526380}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &205526411 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100126, guid: 862b25e3bc1771f4398ef504f30347a0,
@@ -3099,6 +3171,83 @@ MonoBehaviour:
   isActive: 0
   isSelected: 0
   sceneCtrl: {fileID: 0}
+--- !u!1 &614265213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 614265216}
+  - component: {fileID: 614265215}
+  - component: {fileID: 614265214}
+  m_Layer: 0
+  m_Name: ph_schoolbag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &614265214
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614265213}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &614265215
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614265213}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &614265216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614265213}
+  m_LocalRotation: {x: -0, y: -0.19330657, z: -0, w: 0.98113847}
+  m_LocalPosition: {x: -0.49, y: 0.024999976, z: 0.028}
+  m_LocalScale: {x: 0.2, y: 0.05, z: 0.4}
+  m_Children: []
+  m_Father: {fileID: 35599756}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -22.292002, z: 0}
 --- !u!1 &627980015
 GameObject:
   m_ObjectHideFlags: 0
@@ -3239,10 +3388,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 3
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -3254,10 +3409,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 3
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -5474,10 +5635,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 3
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -5489,10 +5656,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 3
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -5764,6 +5937,10 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 205526409}
+    - {fileID: 11400000, guid: cfaeb9e4c3fcfec498021cfa91664385, type: 2}
+    - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
+    - {fileID: 35599754}
+    - {fileID: 11400000, guid: a7b5fdd29ad36404183ef99ca8a7ad14, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -5836,7 +6013,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 4|InteractableAction, Assembly-CSharp
@@ -5849,7 +6026,25 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: Breakfast
+    - Name: subTaskId
+      Entry: 1
+      Data: Eat_at_the_Table
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -5858,11 +6053,121 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 8|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: item
+      Entry: 3
       Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: Breakfast
+    - Name: subTaskId
+      Entry: 1
+      Data: Eat_at_the_Table
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|InteractableAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Start Next Objective
+    - Name: conditions
+      Entry: 7
+      Data: 11|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 12|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 2
+    - Name: taskId
+      Entry: 1
+      Data: GoOutside
+    - Name: subTaskId
+      Entry: 1
+      Data: Get_the_Schoolbag
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 13|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 14|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 1
+    - Name: interactable
+      Entry: 10
+      Data: 3
+    - Name: sceneState
+      Entry: 10
+      Data: 4
+    - Name: interactableName
+      Entry: 1
+      Data: int_schoolbag
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -6684,6 +6989,8 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 205526408}
+    - {fileID: 11400000, guid: cfaeb9e4c3fcfec498021cfa91664385, type: 2}
+    - {fileID: 1577842394}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -6769,7 +7076,25 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: Breakfast
+    - Name: subTaskId
+      Entry: 1
+      Data: Get_Food
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -6778,11 +7103,68 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 8|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: item
+      Entry: 3
       Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: Breakfast
+    - Name: subTaskId
+      Entry: 1
+      Data: Get_Food
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 1
+    - Name: interactable
+      Entry: 10
+      Data: 2
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -6948,13 +7330,13 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 1978907194}
-    - {fileID: 2141094049}
     - {fileID: 35599754}
-    - {fileID: 1577842394}
-    - {fileID: 1773816482}
     - {fileID: 627980016}
     - {fileID: 1486615021}
+    - {fileID: 1577842394}
+    - {fileID: 1773816482}
+    - {fileID: 1978907194}
+    - {fileID: 2141094049}
     - {fileID: 6630729650905987124}
     SerializedBytesString: 
     Prefab: {fileID: 0}
@@ -6980,7 +7362,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_flashlight
+      Data: int_schoolbag
     - Name: 
       Entry: 10
       Data: 0
@@ -6992,7 +7374,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_landline_phone
+      Data: int_door_bathroom
     - Name: 
       Entry: 10
       Data: 1
@@ -7004,7 +7386,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_schoolbag
+      Data: int_door_hallway
     - Name: 
       Entry: 10
       Data: 2
@@ -7040,7 +7422,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_door_bathroom
+      Data: int_flashlight
     - Name: 
       Entry: 10
       Data: 5
@@ -7052,7 +7434,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_door_hallway
+      Data: int_landline_phone
     - Name: 
       Entry: 10
       Data: 6
@@ -8226,10 +8608,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 3
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -8241,10 +8629,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 3
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 

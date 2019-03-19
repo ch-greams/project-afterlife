@@ -1,23 +1,43 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
 
 public class InteractableDataReaction : IInteractableReaction
 {
     public InteractableDataReactionType type;
+    public InteractableDataReactionItem item;
 
-    public bool useCurrentInteractable = false;
-    [HideIf("useCurrentInteractable")]
+    
+    [ShowIf("item", InteractableDataReactionItem.InteractableInCurrentScene)]
     public Interactable interactable;
 
-    private SceneController sceneCtrl;
+    // NOTE: Use only as a reference for constant values in there
+    [ShowIf("item", InteractableDataReactionItem.InteractableInOtherScene), Required]
+    public SceneState sceneState;
+
+    [ShowIf("item", InteractableDataReactionItem.InteractableInOtherScene), ValueDropdown("interactableNames")]
+    public string interactableName;
+
+    private List<string> interactableNames
+    {
+        get
+        {
+            return (this.sceneState != null)
+                ? new List<string>(this.sceneState.interactables.Keys)
+                : new List<string>();
+        }
+    }
+    
+    private GlobalController globalCtrl;
+
 
 
     public void Init(Interactable interactable)
     {
-        this.sceneCtrl = interactable.sceneCtrl;
+        this.globalCtrl = interactable.sceneCtrl.globalCtrl;
 
-        if (this.useCurrentInteractable)
+        if (this.item == InteractableDataReactionItem.CurrentInteractable)
         {
             this.interactable = interactable;
         }
@@ -25,27 +45,61 @@ public class InteractableDataReaction : IInteractableReaction
 
     public IEnumerator React()
     {
-        PlayerActionManager playerActionManager = this.sceneCtrl.globalCtrl.playerActionManager;
-
         switch (this.type)
         {
             case InteractableDataReactionType.EnableAndShowInteractable:
-                this.interactable.ToggleInteractable(true, true);
+                this.ToggleBasedOnItem(true, true);
                 break;
             case InteractableDataReactionType.DisableAndHideInteractable:
-                this.interactable.ToggleInteractable(false, false);
-                this.TryDeselectInteractable();
+                this.ToggleBasedOnItem(false, false);
                 break;
             case InteractableDataReactionType.EnableInteractable:
-                this.interactable.IsEnabled = true;
+                this.ToggleBasedOnItem(true);
                 break;
             case InteractableDataReactionType.DisableInteractable:
-                this.interactable.IsEnabled = false;
-                this.TryDeselectInteractable();
+                this.ToggleBasedOnItem(false);
                 break;
             default:
                 yield return null;
                 break;
+        }
+    }
+
+    private void ToggleBasedOnItem(bool enabled)
+    {
+        if (this.item == InteractableDataReactionItem.InteractableInOtherScene)
+        {
+            SceneState sceneState = this.globalCtrl.globalState.sceneStates[this.sceneState.name];
+            InteractableState interactableState = sceneState.interactables[this.interactableName];
+
+            interactableState.enabled = enabled;
+        }
+        else
+        {
+            this.interactable.IsEnabled = enabled;
+            if (!enabled)
+            {
+                this.TryDeselectInteractable();
+            }
+        }
+    }
+
+    private void ToggleBasedOnItem(bool enabled, bool visible)
+    {
+        if (this.item == InteractableDataReactionItem.InteractableInOtherScene)
+        {
+            SceneState sceneState = this.globalCtrl.globalState.sceneStates[this.sceneState.name];
+            InteractableState interactableState = sceneState.interactables[this.interactableName];
+
+            interactableState.Update(enabled, visible);
+        }
+        else
+        {
+            this.interactable.ToggleInteractable(enabled, visible);
+            if (!enabled)
+            {
+                this.TryDeselectInteractable();
+            }
         }
     }
 
@@ -54,11 +108,11 @@ public class InteractableDataReaction : IInteractableReaction
     /// </summary>
     private void TryDeselectInteractable()
     {
-        PlayerActionManager playerActionManager = this.sceneCtrl.globalCtrl.playerActionManager;
+        PlayerActionManager playerActionManager = this.globalCtrl.playerActionManager;
 
         if (playerActionManager.currentInteractable == this.interactable)
         {
-            playerActionManager.TrySelectInteractable(null, this.sceneCtrl.sceneState.isDungeonScene);
+            playerActionManager.TrySelectInteractable(null, this.globalCtrl.sceneCtrl.sceneState.isDungeonScene);
         }
     }
 }
@@ -69,4 +123,11 @@ public enum InteractableDataReactionType
     DisableAndHideInteractable,
     EnableInteractable,
     DisableInteractable,
+}
+
+public enum InteractableDataReactionItem
+{
+    CurrentInteractable,
+    InteractableInCurrentScene,
+    InteractableInOtherScene,
 }

@@ -20,6 +20,9 @@ public class SceneState : SerializedScriptableObject
     [DictionaryDrawerSettings(KeyLabel = "LightSource ID", ValueLabel = "IsEnabled"), ShowIf("isDungeonScene")]
     public Dictionary<string, bool> lightSources = new Dictionary<string, bool>();
 
+    [HideIf("isDungeonScene")]
+    public WalkableAreaMask walkableAreas = WalkableAreaMask.Walkable;
+
     [DictionaryDrawerSettings(IsReadOnly = true)]
     public Dictionary<string, InteractableState> interactables = new Dictionary<string, InteractableState>();
 
@@ -83,4 +86,15 @@ public class SceneStateSerializable
         this.lightSources = sceneState.lightSources;
         this.defaultMap = sceneState.defaultMap;
     }
+}
+
+
+[Flags]
+public enum WalkableAreaMask
+{
+    Walkable = 1 << 0,
+    NotWalkable = 1 << 1,
+    Jump = 1 << 2,
+    WalkablePhaseOne = 1 << 3,
+    All = Walkable | NotWalkable | Jump | WalkablePhaseOne
 }

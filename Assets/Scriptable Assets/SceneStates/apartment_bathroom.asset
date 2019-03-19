@@ -129,6 +129,7 @@ MonoBehaviour:
     x: 0
     y: 0
   currentPositionVector: {x: 0, y: 0, z: 0}
+  walkableAreas: 1
   defaultMap:
   - point:
       x: 0

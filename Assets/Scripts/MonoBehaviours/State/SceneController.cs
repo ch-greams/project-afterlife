@@ -75,16 +75,20 @@ public class SceneController : SerializedMonoBehaviour
         this.sceneState = this.globalState.sceneStates[this.id];
 
         // NOTE: Init player in the scene
-        if (!this.sceneState.isDungeonScene)
-        {
-            this.player.InitPlayer(this.globalCtrl, this.sceneState.currentPositionVector);
-        }
-        else
+        if (this.sceneState.isDungeonScene)
         {
             this.player.InitPlayer(
                 globalCtrl: this.globalCtrl,
                 tile: this.tiles.Find(t => t.point == this.sceneState.currentPositionPoint),
                 visibleRange: this.globalState.currentVisibility
+            );
+        }
+        else
+        {
+            this.player.InitPlayer(
+                globalCtrl: this.globalCtrl,
+                playerPosition: this.sceneState.currentPositionVector,
+                walkableAreaMask: this.sceneState.walkableAreas
             );
         }
 

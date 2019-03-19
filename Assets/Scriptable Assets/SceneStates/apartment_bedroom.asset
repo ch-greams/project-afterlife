@@ -54,37 +54,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 5
     - Name: 
       Entry: 7
       Data: 
     - Name: 
       Entry: 1
-      Data: alarm_interactable
+      Data: int_closet
     - Name: 
       Entry: 7
-      Data: InteractableState, Assembly-CSharp
-    - Name: enabled
-      Entry: 5
-      Data: true
-    - Name: visible
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 1
-      Data: door_interactable
-    - Name: 
-      Entry: 7
-      Data: InteractableState, Assembly-CSharp
+      Data: 4|InteractableState, Assembly-CSharp
     - Name: enabled
       Entry: 5
       Data: false
@@ -102,10 +81,31 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: table_interactable
+      Data: int_alarm
     - Name: 
       Entry: 7
-      Data: InteractableState, Assembly-CSharp
+      Data: 5|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_door
+    - Name: 
+      Entry: 7
+      Data: 6|InteractableState, Assembly-CSharp
     - Name: enabled
       Entry: 5
       Data: false
@@ -123,10 +123,31 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: blinds_interactable
+      Data: int_table
     - Name: 
       Entry: 7
-      Data: InteractableState, Assembly-CSharp
+      Data: 7|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: false
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_blinds
+    - Name: 
+      Entry: 7
+      Data: 8|InteractableState, Assembly-CSharp
     - Name: enabled
       Entry: 5
       Data: false
@@ -150,6 +171,7 @@ MonoBehaviour:
     x: 0
     y: 0
   currentPositionVector: {x: -1.5, y: 0, z: 1.5}
+  walkableAreas: 1
   defaultMap:
   - point:
       x: 0

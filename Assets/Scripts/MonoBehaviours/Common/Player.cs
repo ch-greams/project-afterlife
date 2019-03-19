@@ -45,12 +45,14 @@ public class Player : SerializedMonoBehaviour
 
     public Player() { }
 
-    public void InitPlayer(GlobalController globalCtrl, Vector3 playerPosition)
+    public void InitPlayer(GlobalController globalCtrl, Vector3 playerPosition, WalkableAreaMask walkableAreaMask)
     {
         this.playerTransform.position = playerPosition;
 
         this.globalCtrl = globalCtrl;
         this.speedParamHash = Animator.StringToHash("Speed");
+
+        this.navMeshAgent.areaMask = (int)walkableAreaMask;
     }
 
     public void InitPlayer(GlobalController globalCtrl, Tile tile, float visibleRange)
