@@ -275,6 +275,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Get Dressed
     - Name: isInteractableActive
       Entry: 5
       Data: false
@@ -587,6 +590,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Check Alarm
     - Name: isInteractableActive
       Entry: 5
       Data: true
@@ -695,7 +701,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 7
+      Data: 8
     - Name: 
       Entry: 7
       Data: 8|InteractableDataReaction, Assembly-CSharp
@@ -838,6 +844,21 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 15|PlayerReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: sceneName
+      Entry: 1
+      Data: apartment_bedroom
+    - Name: walkableAreas
+      Entry: 3
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -924,6 +945,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Go To Living Room
     - Name: isInteractableActive
       Entry: 5
       Data: false
@@ -1174,6 +1198,10 @@ PrefabInstance:
     - target: {fileID: 100030, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100072, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 100060, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
       propertyPath: m_Layer
@@ -1739,6 +1767,38 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 2.97
       objectReference: {fileID: 0}
+    - target: {fileID: 100112, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100112, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100138, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100138, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100152, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100152, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100160, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100160, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04c11882f2548c1489695bc5deee6856, type: 3}
 --- !u!1 &671905448 stripped
@@ -1970,6 +2030,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Check PC
     - Name: isInteractableActive
       Entry: 5
       Data: false
@@ -2480,6 +2543,98 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1079901948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079901952}
+  - component: {fileID: 1079901951}
+  - component: {fileID: 1079901950}
+  - component: {fileID: 1079901949}
+  m_Layer: 0
+  m_Name: ph_walkable_phase_one
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 3
+  m_StaticEditorFlags: 8
+  m_IsActive: 0
+--- !u!64 &1079901949
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079901948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1079901950
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079901948}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1079901951
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079901948}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1079901952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079901948}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -1.5, y: 0.001, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1142259698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,6 +2679,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Close Blinds
     - Name: isInteractableActive
       Entry: 5
       Data: false

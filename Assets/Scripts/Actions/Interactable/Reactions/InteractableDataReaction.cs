@@ -112,7 +112,11 @@ public class InteractableDataReaction : IInteractableReaction
 
         if (playerActionManager.currentInteractable == this.interactable)
         {
-            playerActionManager.TrySelectInteractable(null, this.globalCtrl.sceneCtrl.sceneState.isDungeonScene);
+            playerActionManager.TrySelectInteractable(
+                interactable: null,
+                isDungeonScene: this.globalCtrl.sceneCtrl.sceneState.isDungeonScene,
+                buttonLabel: null
+            );
         }
     }
 }

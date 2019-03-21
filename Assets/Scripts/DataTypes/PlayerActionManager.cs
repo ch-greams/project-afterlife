@@ -72,6 +72,8 @@ public class PlayerActionManager
     public Button wInteractionButton;
     [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button")]
     public RectTransform wInteractionButtonProgress;
+    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button")]
+    public Text wInteractionButtonLabel;
     [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button"), ReadOnly]
     public float wInteractionButtonProgressCounter = 0;
     [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button")]
@@ -119,7 +121,6 @@ public class PlayerActionManager
         );
     }
 
-
     public void InputListener(bool isDungeonScene)
     {
         if (isDungeonScene)
@@ -136,7 +137,7 @@ public class PlayerActionManager
                     progressTransform: this.wInteractionButtonProgress,
                     progressCounter: ref this.wInteractionButtonProgressCounter,
                     progressCounterMax: this.wInteractionButtonProgressMax,
-                    progressBarWidth: 200
+                    progressBarWidth: this.wInteractionButton.GetComponent<RectTransform>().rect.width
                 );
             }
         }
@@ -180,7 +181,8 @@ public class PlayerActionManager
                     progressTransform: this.interactionButtonProgress,
                     progressCounter: ref this.interactionButtonProgressCounter,
                     progressCounterMax: this.interactionButtonProgressMax,
-                    progressBarWidth: 200
+                    // TODO: Remove this comment and/or optimize (replaced hardcoded 200)
+                    progressBarWidth: this.interactionButton.GetComponent<RectTransform>().rect.width
                 );
             }
 
@@ -190,7 +192,8 @@ public class PlayerActionManager
                 progressTransform: this.skipTurnButtonProgress,
                 progressCounter: ref this.skipTurnButtonProgressCounter,
                 progressCounterMax: this.skipTurnButtonProgressMax,
-                progressBarWidth: 300
+                // TODO: Remove this comment and/or optimize (replaced hardcoded 300)
+                progressBarWidth: this.skipTurnButton.GetComponent<RectTransform>().rect.width
             );
 
             if (Input.GetButtonDown("Left Stick Button"))
@@ -389,7 +392,7 @@ public class PlayerActionManager
         }
     }
 
-    public void TrySelectInteractable(Interactable interactable, bool isDungeonScene)
+    public void TrySelectInteractable(Interactable interactable, bool isDungeonScene, string buttonLabel)
     {
         bool isInteractableNotNull = interactable != null;
         this.currentInteractable = isInteractableNotNull ? interactable : null;
@@ -409,6 +412,9 @@ public class PlayerActionManager
                 this.wInteractionButton.onClick.RemoveAllListeners();
             }
 
+            this.wInteractionButtonLabel.text = string.Format("[RT] {0}", (
+                string.IsNullOrWhiteSpace(buttonLabel) ? "Use" : buttonLabel
+            ));
             this.wInteractionButton.gameObject.SetActive(isInteractableNotNull);
         }
     }

@@ -2904,8 +2904,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 0}
-  m_SizeDelta: {x: -200, y: 60}
+  m_AnchoredPosition: {x: -130, y: 0}
+  m_SizeDelta: {x: -260, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &479932820
 MonoBehaviour:
@@ -6971,7 +6971,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2cdd665c966cec94ba26670afa16f569, type: 3}
-    m_FontSize: 28
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -8301,6 +8301,7 @@ MonoBehaviour:
     - {fileID: 667809967}
     - {fileID: 1752621305}
     - {fileID: 479932819}
+    - {fileID: 1100932353}
     - {fileID: 711672767}
     - {fileID: 1405953027}
     - {fileID: 1784520782}
@@ -8992,6 +8993,9 @@ MonoBehaviour:
     - Name: wInteractionButtonProgress
       Entry: 10
       Data: 104
+    - Name: wInteractionButtonLabel
+      Entry: 10
+      Data: 105
     - Name: wInteractionButtonProgressCounter
       Entry: 4
       Data: 0
@@ -9019,7 +9023,7 @@ MonoBehaviour:
       Data: 
     - Name: enemyTurnFadeImage
       Entry: 10
-      Data: 105
+      Data: 106
     - Name: arePlayerControlsLocked
       Entry: 5
       Data: false
@@ -9037,10 +9041,10 @@ MonoBehaviour:
       Data: 32|StatsManager, Assembly-CSharp
     - Name: scoreText
       Entry: 10
-      Data: 106
+      Data: 107
     - Name: turnCountText
       Entry: 10
-      Data: 107
+      Data: 108
     - Name: 
       Entry: 8
       Data: 
@@ -9080,10 +9084,10 @@ MonoBehaviour:
       Data: 36|CollectableManager, Assembly-CSharp
     - Name: collectableItemPrefab
       Entry: 10
-      Data: 108
+      Data: 109
     - Name: collectionEffectPrefab
       Entry: 10
-      Data: 109
+      Data: 110
     - Name: collectableItems
       Entry: 7
       Data: 37|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
@@ -13668,7 +13672,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 760, y: -420}
-  m_SizeDelta: {x: 200, y: 60}
+  m_SizeDelta: {x: 260, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1752621303
 MonoBehaviour:

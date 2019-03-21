@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 76213974}
   - component: {fileID: 76213973}
   m_Layer: 0
-  m_Name: door_apt_dungeon_interactable
+  m_Name: int_door_apt_01_dungeon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,6 +427,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Go To Dungeon
     - Name: isInteractableActive
       Entry: 5
       Data: true
@@ -746,6 +749,36 @@ MonoBehaviour:
   isActive: 0
   isSelected: 0
   sceneCtrl: {fileID: 0}
+--- !u!1 &113700240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 113700241}
+  m_Layer: 0
+  m_Name: ph_nothing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &113700241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113700240}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 821809516}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &166563637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,7 +1608,7 @@ GameObject:
   - component: {fileID: 394588437}
   - component: {fileID: 394588438}
   m_Layer: 0
-  m_Name: hallway_light_03
+  m_Name: light_hallway_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1979,7 +2012,7 @@ GameObject:
   - component: {fileID: 444242859}
   - component: {fileID: 444242858}
   m_Layer: 0
-  m_Name: exit_elevator_interactable
+  m_Name: int_exit_elevator_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2009,6 +2042,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 6
+      Data: 
     - Name: isInteractableActive
       Entry: 5
       Data: true
@@ -4165,6 +4201,243 @@ MonoBehaviour:
   isActive: 0
   isSelected: 0
   sceneCtrl: {fileID: 0}
+--- !u!1 &821809513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 821809516}
+  - component: {fileID: 821809515}
+  - component: {fileID: 821809514}
+  m_Layer: 0
+  m_Name: int_look_around
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &821809514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821809513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9719588919376647b7fa704abb1cfe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 113700240}
+    - {fileID: 11400000, guid: 1d0a040926183444da5ead45a6cc3789, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Look Around
+    - Name: isInteractableActive
+      Entry: 5
+      Data: true
+    - Name: interactableObject
+      Entry: 10
+      Data: 0
+    - Name: animator
+      Entry: 6
+      Data: 
+    - Name: defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hasCollider
+      Entry: 5
+      Data: true
+    - Name: reachablePoints
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Point, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: initializeActions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[InteractableAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: clickActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[InteractableAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 4|InteractableAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Look Around
+    - Name: conditions
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 7|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: item
+      Entry: 3
+      Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|DialogueReaction, Assembly-CSharp
+    - Name: dialogueCollection
+      Entry: 10
+      Data: 1
+    - Name: dialogueTitle
+      Entry: 1
+      Data: TooDark
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  showGizmo: 1
+  sceneCtrl: {fileID: 1793904435}
+--- !u!65 &821809515
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821809513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &821809516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821809513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 113700241}
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &823153001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5003,7 +5276,7 @@ GameObject:
   - component: {fileID: 951877231}
   - component: {fileID: 951877230}
   m_Layer: 0
-  m_Name: sunlight
+  m_Name: light_sunlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5072,7 +5345,7 @@ GameObject:
   - component: {fileID: 967109940}
   - component: {fileID: 967109941}
   m_Layer: 0
-  m_Name: hallway_light_01
+  m_Name: light_hallway_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5142,7 +5415,7 @@ GameObject:
   - component: {fileID: 974731321}
   - component: {fileID: 974731320}
   m_Layer: 0
-  m_Name: exit_elevator_interactable
+  m_Name: int_exit_elevator_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5172,6 +5445,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 6
+      Data: 
     - Name: isInteractableActive
       Entry: 5
       Data: true
@@ -9308,7 +9584,7 @@ GameObject:
   - component: {fileID: 1736469697}
   - component: {fileID: 1736469698}
   m_Layer: 0
-  m_Name: hallway_light_02
+  m_Name: light_hallway_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9412,7 +9688,12 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 821809514}
+    - {fileID: 76213973}
+    - {fileID: 444242858}
+    - {fileID: 974731320}
+    - {fileID: 9209016253642775505}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -9431,7 +9712,67 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_look_around
+    - Name: 
+      Entry: 10
       Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_door_apt_01_dungeon
+    - Name: 
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_exit_elevator_02
+    - Name: 
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_exit_elevator_01
+    - Name: 
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_door_apt_01
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -10618,6 +10959,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Go Home
     - Name: isInteractableActive
       Entry: 5
       Data: true
@@ -10812,7 +11156,7 @@ GameObject:
   - component: {fileID: 9209016253642775504}
   - component: {fileID: 9209016253642775505}
   m_Layer: 0
-  m_Name: door_apt_01_interactable
+  m_Name: int_door_apt_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

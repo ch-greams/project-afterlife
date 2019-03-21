@@ -64,16 +64,18 @@ public class Interactable : SerializedMonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         this.sceneCtrl.globalCtrl.playerActionManager.TrySelectInteractable(
-            this,
-            this.sceneCtrl.sceneState.isDungeonScene
+            interactable: this,
+            isDungeonScene: this.sceneCtrl.sceneState.isDungeonScene,
+            buttonLabel: this.data.actionLabel
         );
     }
 
     private void OnTriggerExit(Collider collider)
     {
         this.sceneCtrl.globalCtrl.playerActionManager.TrySelectInteractable(
-            null,
-            this.sceneCtrl.sceneState.isDungeonScene
+            interactable: null,
+            isDungeonScene: this.sceneCtrl.sceneState.isDungeonScene,
+            buttonLabel: null
         );
     }
 

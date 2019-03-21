@@ -220,5 +220,5 @@ MonoBehaviour:
       Data: 
   title: Get Out There
   completed: 0
-  comment: {fileID: 11400000, guid: cf1f6141fee8f7a44b1fabe621eb73f6, type: 2}
+  comment: {fileID: 0}
   nextObjective: {fileID: 11400000, guid: 7a4acdd631b20dc4aa4922b84900af4f, type: 2}

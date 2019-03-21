@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class InteractableData
 {
+    [BoxGroup("Interactable Data")]
+    public string actionLabel;
+
     [BoxGroup("Interactable Data"), ReadOnly]
     public bool isInteractableActive;
     [BoxGroup("Interactable Data")]

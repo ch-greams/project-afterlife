@@ -41,7 +41,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: "NeedFlashlight\r\n"
+      Data: NeedFlashlight
     - Name: 
       Entry: 7
       Data: 2|Dialogue, Assembly-CSharp
@@ -81,7 +81,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: "NothingWorks\r\n"
+      Data: NothingWorks
     - Name: 
       Entry: 7
       Data: 5|Dialogue, Assembly-CSharp
@@ -121,7 +121,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: "NotNormal\r\n"
+      Data: NotNormal
     - Name: 
       Entry: 7
       Data: 8|Dialogue, Assembly-CSharp
@@ -197,7 +197,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: "ReadyToGo\r\n"
+      Data: ReadyToGo
     - Name: 
       Entry: 7
       Data: 14|Dialogue, Assembly-CSharp
@@ -249,7 +249,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: "TooDark\r\n"
+      Data: TooDark
     - Name: 
       Entry: 7
       Data: 18|Dialogue, Assembly-CSharp
@@ -290,7 +290,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: "WhoIsThis\r\n"
+      Data: WhoIsThis
     - Name: 
       Entry: 7
       Data: 21|Dialogue, Assembly-CSharp

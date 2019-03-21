@@ -22,7 +22,11 @@ public class CheckInteractablesReaction : IEndOfTurnReaction
             )
             .Value;
 
-        this.globalCtrl.playerActionManager.TrySelectInteractable(currentInteractable, sceneCtrl.sceneState.isDungeonScene);
+        this.globalCtrl.playerActionManager.TrySelectInteractable(
+            interactable: currentInteractable,
+            isDungeonScene: sceneCtrl.sceneState.isDungeonScene,
+            buttonLabel: currentInteractable.data.actionLabel
+        );
 
         yield return null;
     }

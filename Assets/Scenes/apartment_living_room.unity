@@ -265,7 +265,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 8|InteractableDataReaction, Assembly-CSharp
@@ -320,6 +320,21 @@ MonoBehaviour:
     - Name: interactableName
       Entry: 6
       Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|PlayerReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: sceneName
+      Entry: 1
+      Data: hallway
+    - Name: walkableAreas
+      Entry: 3
+      Data: 8
     - Name: 
       Entry: 8
       Data: 
