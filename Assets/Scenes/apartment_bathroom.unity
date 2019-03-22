@@ -1115,6 +1115,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 6
+      Data: 
     - Name: isInteractableActive
       Entry: 5
       Data: false
@@ -1818,6 +1821,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 6
+      Data: 
     - Name: isInteractableActive
       Entry: 5
       Data: false
@@ -2057,6 +2063,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 635851633}
+    - {fileID: 11400000, guid: a7b5fdd29ad36404183ef99ca8a7ad14, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -2065,6 +2072,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 6
+      Data: 
     - Name: isInteractableActive
       Entry: 5
       Data: true
@@ -2204,9 +2214,9 @@ MonoBehaviour:
     - Name: sceneName
       Entry: 1
       Data: apartment_living_room
-    - Name: isDungeonScene
-      Entry: 5
-      Data: false
+    - Name: scene
+      Entry: 10
+      Data: 1
     - Name: startPositionPoint
       Entry: 7
       Data: Point, Assembly-CSharp

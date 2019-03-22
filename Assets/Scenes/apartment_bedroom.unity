@@ -267,6 +267,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: cfaeb9e4c3fcfec498021cfa91664385, type: 2}
     - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
     - {fileID: 11400000, guid: a7b5fdd29ad36404183ef99ca8a7ad14, type: 2}
+    - {fileID: 11400000, guid: 1d0a040926183444da5ead45a6cc3789, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -475,7 +476,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 14|InteractableDataReaction, Assembly-CSharp
@@ -494,6 +495,18 @@ MonoBehaviour:
     - Name: interactableName
       Entry: 1
       Data: int_schoolbag
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|DialogueReaction, Assembly-CSharp
+    - Name: dialogueCollection
+      Entry: 10
+      Data: 4
+    - Name: dialogueTitle
+      Entry: 1
+      Data: ReadyToGo
     - Name: 
       Entry: 8
       Data: 
@@ -937,6 +950,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 671905465}
+    - {fileID: 11400000, guid: a7b5fdd29ad36404183ef99ca8a7ad14, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -1066,9 +1080,9 @@ MonoBehaviour:
     - Name: sceneName
       Entry: 1
       Data: apartment_living_room
-    - Name: isDungeonScene
-      Entry: 5
-      Data: false
+    - Name: scene
+      Entry: 10
+      Data: 1
     - Name: startPositionPoint
       Entry: 7
       Data: Point, Assembly-CSharp
@@ -2022,6 +2036,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 364c109836f28694d86712c8157c739e, type: 2}
     - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
     - {fileID: 11400000, guid: a7b5fdd29ad36404183ef99ca8a7ad14, type: 2}
+    - {fileID: 11400000, guid: 1d0a040926183444da5ead45a6cc3789, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -2477,7 +2492,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 30|InteractableDataReaction, Assembly-CSharp
@@ -2496,6 +2511,18 @@ MonoBehaviour:
     - Name: interactableName
       Entry: 1
       Data: int_schoolbag
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 31|DialogueReaction, Assembly-CSharp
+    - Name: dialogueCollection
+      Entry: 10
+      Data: 5
+    - Name: dialogueTitle
+      Entry: 1
+      Data: ReadyToGo
     - Name: 
       Entry: 8
       Data: 

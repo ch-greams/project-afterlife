@@ -157,6 +157,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Get the Bag
     - Name: isInteractableActive
       Entry: 5
       Data: false
@@ -3298,6 +3301,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 205526406}
+    - {fileID: 11400000, guid: d5c6c65b16036da4b892bebd0b6f6867, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -3306,6 +3310,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Go To Bathroom
     - Name: isInteractableActive
       Entry: 5
       Data: true
@@ -3420,34 +3427,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 8|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 3
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 9|SceneReaction, Assembly-CSharp
+      Data: 8|SceneReaction, Assembly-CSharp
     - Name: sceneName
       Entry: 1
       Data: apartment_bathroom
-    - Name: isDungeonScene
-      Entry: 5
-      Data: false
+    - Name: scene
+      Entry: 10
+      Data: 1
     - Name: startPositionPoint
       Entry: 7
       Data: Point, Assembly-CSharp
@@ -3474,6 +3460,27 @@ MonoBehaviour:
       Data: -0.5
     - Name: 
       Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -5545,6 +5552,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 205526407}
+    - {fileID: 11400000, guid: efa583c090ec0ff42959de6d4a693006, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -5553,6 +5561,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Go To Hallway
     - Name: isInteractableActive
       Entry: 5
       Data: false
@@ -5667,34 +5678,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 8|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 3
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 9|SceneReaction, Assembly-CSharp
+      Data: 8|SceneReaction, Assembly-CSharp
     - Name: sceneName
       Entry: 1
       Data: hallway
-    - Name: isDungeonScene
-      Entry: 5
-      Data: false
+    - Name: scene
+      Entry: 10
+      Data: 1
     - Name: startPositionPoint
       Entry: 7
       Data: Point, Assembly-CSharp
@@ -5721,6 +5711,27 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -5956,6 +5967,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
     - {fileID: 35599754}
     - {fileID: 11400000, guid: a7b5fdd29ad36404183ef99ca8a7ad14, type: 2}
+    - {fileID: 11400000, guid: 1d0a040926183444da5ead45a6cc3789, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -5964,6 +5976,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Eat
     - Name: isInteractableActive
       Entry: 5
       Data: false
@@ -6161,7 +6176,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 14|InteractableDataReaction, Assembly-CSharp
@@ -6180,6 +6195,18 @@ MonoBehaviour:
     - Name: interactableName
       Entry: 1
       Data: int_schoolbag
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|DialogueReaction, Assembly-CSharp
+    - Name: dialogueCollection
+      Entry: 10
+      Data: 5
+    - Name: dialogueTitle
+      Entry: 1
+      Data: ReadyToGo
     - Name: 
       Entry: 8
       Data: 
@@ -7014,6 +7041,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Get Some Food
     - Name: isInteractableActive
       Entry: 5
       Data: false
@@ -7836,6 +7866,8 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 205526412}
+    - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
+    - {fileID: 11400000, guid: efa583c090ec0ff42959de6d4a693006, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -7844,6 +7876,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Get Flashlight
     - Name: isInteractableActive
       Entry: 5
       Data: false
@@ -7921,7 +7956,25 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: GoOutside
+    - Name: subTaskId
+      Entry: 1
+      Data: Get_Flashlight
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -7930,11 +7983,104 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 8|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: item
+      Entry: 3
       Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: GoOutside
+    - Name: subTaskId
+      Entry: 1
+      Data: Get_Flashlight
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|PlayerReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: sceneName
+      Entry: 1
+      Data: hallway
+    - Name: walkableAreas
+      Entry: 3
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 2
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 10
+      Data: 2
+    - Name: interactableName
+      Entry: 1
+      Data: int_exit_elevator_01
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 2
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 10
+      Data: 2
+    - Name: interactableName
+      Entry: 1
+      Data: int_exit_elevator_02
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -8340,6 +8486,9 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 205526411}
+    - {fileID: 11400000, guid: 0f790e3a35af55745accbac2b2bfa992, type: 2}
+    - {fileID: 11400000, guid: 1d0a040926183444da5ead45a6cc3789, type: 2}
+    - {fileID: 1978907194}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -8348,6 +8497,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Use Phone
     - Name: isInteractableActive
       Entry: 5
       Data: false
@@ -8425,7 +8577,25 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: GoOutside
+    - Name: subTaskId
+      Entry: 1
+      Data: Call_Landlord
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -8434,11 +8604,80 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 8|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: item
+      Entry: 3
       Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|DialogueReaction, Assembly-CSharp
+    - Name: dialogueCollection
+      Entry: 10
+      Data: 2
+    - Name: dialogueTitle
+      Entry: 1
+      Data: NeedFlashlight
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: GoOutside
+    - Name: subTaskId
+      Entry: 1
+      Data: Call_Landlord
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 1
+    - Name: interactable
+      Entry: 10
+      Data: 3
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -8518,6 +8757,7 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 205526405}
+    - {fileID: 11400000, guid: 90f502611efdd254095e74138351d7fa, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -8526,6 +8766,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: Go To Bedroom
     - Name: isInteractableActive
       Entry: 5
       Data: true
@@ -8640,34 +8883,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 8|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 3
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 9|SceneReaction, Assembly-CSharp
+      Data: 8|SceneReaction, Assembly-CSharp
     - Name: sceneName
       Entry: 1
       Data: apartment_bedroom
-    - Name: isDungeonScene
-      Entry: 5
-      Data: false
+    - Name: scene
+      Entry: 10
+      Data: 1
     - Name: startPositionPoint
       Entry: 7
       Data: Point, Assembly-CSharp
@@ -8694,6 +8916,27 @@ MonoBehaviour:
       Data: -1.5
     - Name: 
       Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8

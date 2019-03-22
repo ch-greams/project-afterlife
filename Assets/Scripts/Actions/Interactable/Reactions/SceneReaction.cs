@@ -1,13 +1,13 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+
 public class SceneReaction : IInteractableReaction
 {
-    [ValueDropdown("sceneNames")]
-    public string sceneName;
-    public bool isDungeonScene = false;
+    // NOTE: Use only as a reference for constant values in there
+    [Required]
+    public SceneState scene;
 
     [ShowIf("isDungeonScene")]
     public Point startPositionPoint;
@@ -15,7 +15,7 @@ public class SceneReaction : IInteractableReaction
     public Vector3 startPositionVector;
 
     private GlobalController globalCtrl;
-    private List<string> sceneNames { get { return GlobalController.sceneNames; } }
+    private bool isDungeonScene { get { return this.scene ? this.scene.isDungeonScene : false; } }
 
 
     public void Init(Interactable interactable)
@@ -25,16 +25,16 @@ public class SceneReaction : IInteractableReaction
 
     public IEnumerator React()
     {
-        if (this.isDungeonScene)
+        if (this.scene.isDungeonScene)
         {
-            this.globalCtrl.UpdatePlayerPosition(this.sceneName, this.startPositionPoint);
+            this.globalCtrl.UpdatePlayerPosition(this.scene.name, this.startPositionPoint);
         }
         else
         {
-            this.globalCtrl.UpdatePlayerPosition(this.sceneName, this.startPositionVector);
+            this.globalCtrl.UpdatePlayerPosition(this.scene.name, this.startPositionVector);
         }
 
-        SceneManager.FadeAndLoadScene(this.sceneName);
+        SceneManager.FadeAndLoadScene(this.scene.name);
 
         yield return null;
     }

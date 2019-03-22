@@ -392,30 +392,37 @@ public class PlayerActionManager
         }
     }
 
-    public void TrySelectInteractable(Interactable interactable, bool isDungeonScene, string buttonLabel)
+    public void SelectInteractable(Interactable interactable, bool isDungeonScene, string buttonLabel)
     {
-        bool isInteractableNotNull = interactable != null;
-        this.currentInteractable = isInteractableNotNull ? interactable : null;
+        this.currentInteractable = interactable;
 
         if (isDungeonScene)
         {
-            this.interactionButton.gameObject.SetActive(isInteractableNotNull);
+            this.interactionButton.gameObject.SetActive(true);
         }
         else
         {
-            if (isInteractableNotNull)
-            {
-                this.wInteractionButton.onClick.AddListener(this.currentInteractable.OnClickSync);
-            }
-            else
-            {
-                this.wInteractionButton.onClick.RemoveAllListeners();
-            }
-
             this.wInteractionButtonLabel.text = string.Format("[RT] {0}", (
                 string.IsNullOrWhiteSpace(buttonLabel) ? "Use" : buttonLabel
             ));
-            this.wInteractionButton.gameObject.SetActive(isInteractableNotNull);
+
+            this.wInteractionButton.onClick.AddListener(this.currentInteractable.OnClickSync);
+            this.wInteractionButton.gameObject.SetActive(true);
+        }
+    }
+
+    public void DeselectInteractable(bool isDungeonScene)
+    {
+        this.currentInteractable = null;
+
+        if (isDungeonScene)
+        {
+            this.interactionButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            this.wInteractionButton.onClick.RemoveAllListeners();
+            this.wInteractionButton.gameObject.SetActive(false);
         }
     }
 

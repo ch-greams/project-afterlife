@@ -22,11 +22,18 @@ public class CheckInteractablesReaction : IEndOfTurnReaction
             )
             .Value;
 
-        this.globalCtrl.playerActionManager.TrySelectInteractable(
-            interactable: currentInteractable,
-            isDungeonScene: sceneCtrl.sceneState.isDungeonScene,
-            buttonLabel: currentInteractable.data.actionLabel
-        );
+        if (currentInteractable != null)
+        {
+            this.globalCtrl.playerActionManager.SelectInteractable(
+                interactable: currentInteractable,
+                isDungeonScene: sceneCtrl.sceneState.isDungeonScene,
+                buttonLabel: currentInteractable.data.actionLabel
+            );
+        }
+        else
+        {
+            this.globalCtrl.playerActionManager.DeselectInteractable(sceneCtrl.sceneState.isDungeonScene);
+        }
 
         yield return null;
     }

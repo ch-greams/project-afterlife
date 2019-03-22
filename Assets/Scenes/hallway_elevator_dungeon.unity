@@ -588,7 +588,7 @@ MonoBehaviour:
     x: 4
     y: 16
   isVisible: 0
-  isBlocked: 0
+  isBlocked: 1
   isBlockedByPlayer: 0
   isActive: 0
   isSelected: 0
@@ -12645,7 +12645,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: efa583c090ec0ff42959de6d4a693006, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -12654,6 +12655,9 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 6
+      Data: 
     - Name: isInteractableActive
       Entry: 5
       Data: true
@@ -12811,10 +12815,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 3
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -12823,12 +12833,9 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 8|SceneReaction, Assembly-CSharp
-    - Name: sceneName
-      Entry: 1
-      Data: hallway
-    - Name: isDungeonScene
-      Entry: 5
-      Data: false
+    - Name: scene
+      Entry: 10
+      Data: 0
     - Name: startPositionPoint
       Entry: 7
       Data: Point, Assembly-CSharp

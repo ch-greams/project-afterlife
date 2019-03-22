@@ -63,7 +63,7 @@ public class Interactable : SerializedMonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        this.sceneCtrl.globalCtrl.playerActionManager.TrySelectInteractable(
+        this.sceneCtrl.globalCtrl.playerActionManager.SelectInteractable(
             interactable: this,
             isDungeonScene: this.sceneCtrl.sceneState.isDungeonScene,
             buttonLabel: this.data.actionLabel
@@ -72,11 +72,7 @@ public class Interactable : SerializedMonoBehaviour
 
     private void OnTriggerExit(Collider collider)
     {
-        this.sceneCtrl.globalCtrl.playerActionManager.TrySelectInteractable(
-            interactable: null,
-            isDungeonScene: this.sceneCtrl.sceneState.isDungeonScene,
-            buttonLabel: null
-        );
+        this.sceneCtrl.globalCtrl.playerActionManager.DeselectInteractable(this.sceneCtrl.sceneState.isDungeonScene);
     }
 
     public void OnClickSync()
