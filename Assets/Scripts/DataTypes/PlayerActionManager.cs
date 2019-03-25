@@ -392,7 +392,7 @@ public class PlayerActionManager
         }
     }
 
-    public void SelectInteractable(Interactable interactable, bool isDungeonScene, string buttonLabel)
+    public void SelectInteractable(Interactable interactable, bool isDungeonScene)
     {
         this.currentInteractable = interactable;
 
@@ -403,7 +403,9 @@ public class PlayerActionManager
         else
         {
             this.wInteractionButtonLabel.text = string.Format("[RT] {0}", (
-                string.IsNullOrWhiteSpace(buttonLabel) ? "Use" : buttonLabel
+                string.IsNullOrWhiteSpace(this.currentInteractable.data.actionLabel)
+                    ? "Use"
+                    : this.currentInteractable.data.actionLabel
             ));
 
             this.wInteractionButton.onClick.AddListener(this.currentInteractable.OnClickSync);

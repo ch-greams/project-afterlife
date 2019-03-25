@@ -10743,7 +10743,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 5
     - Name: 
       Entry: 7
       Data: 8|PlayerWalkReaction, Assembly-CSharp
@@ -10770,7 +10770,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 11|GranadeChargeReaction, Assembly-CSharp
+      Data: 11|InteractionReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|GranadeChargeReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -10791,7 +10800,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|EndOfTurnAction, Assembly-CSharp
+      Data: 13|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -10800,14 +10809,14 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 14|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 14|DoubleKillStateCondition, Assembly-CSharp
+      Data: 15|DoubleKillStateCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -10822,14 +10831,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 16|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 16|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 17|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -10838,7 +10847,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 17|EnemyManagerReaction, Assembly-CSharp
+      Data: 18|EnemyManagerReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -10853,7 +10862,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 18|EndOfTurnAction, Assembly-CSharp
+      Data: 19|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Game Over
@@ -10862,14 +10871,14 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 20|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 20|GameOverCondition, Assembly-CSharp
+      Data: 21|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -10884,14 +10893,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 22|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 23|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -10900,7 +10909,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 23|GameOverReaction, Assembly-CSharp
+      Data: 24|GameOverReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -10915,7 +10924,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 24|EndOfTurnAction, Assembly-CSharp
+      Data: 25|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try MultiKillProc
@@ -10924,14 +10933,14 @@ MonoBehaviour:
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 26|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 26|GameOverCondition, Assembly-CSharp
+      Data: 27|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -10946,14 +10955,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 27|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 28|MultiKillProcReaction, Assembly-CSharp
+      Data: 29|MultiKillProcReaction, Assembly-CSharp
     - Name: turnsTillReset
       Entry: 3
       Data: 1
@@ -10977,7 +10986,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 29|EndOfTurnAction, Assembly-CSharp
+      Data: 30|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
@@ -10986,14 +10995,14 @@ MonoBehaviour:
       Data: 5
     - Name: conditions
       Entry: 7
-      Data: 30|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 31|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 31|GameOverCondition, Assembly-CSharp
+      Data: 32|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -11008,23 +11017,17 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 32|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 33|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 33|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 34|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 34|CheckInteractablesReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11125,7 +11128,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 43|PlayerFlashlightReaction, Assembly-CSharp
@@ -11149,7 +11152,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 45|GranadeChargeReaction, Assembly-CSharp
+      Data: 45|InteractionReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 46|GranadeChargeReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -11170,7 +11182,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 46|EndOfTurnAction, Assembly-CSharp
+      Data: 47|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -11179,14 +11191,14 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 47|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 48|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 48|DoubleKillStateCondition, Assembly-CSharp
+      Data: 49|DoubleKillStateCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -11201,14 +11213,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 49|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 50|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 50|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 51|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -11217,7 +11229,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 51|EnemyManagerReaction, Assembly-CSharp
+      Data: 52|EnemyManagerReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11232,7 +11244,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 52|EndOfTurnAction, Assembly-CSharp
+      Data: 53|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Game Over
@@ -11241,14 +11253,14 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 53|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 54|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 54|GameOverCondition, Assembly-CSharp
+      Data: 55|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -11263,14 +11275,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 55|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 56|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 56|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 57|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -11279,7 +11291,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 57|GameOverReaction, Assembly-CSharp
+      Data: 58|GameOverReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11294,7 +11306,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 58|EndOfTurnAction, Assembly-CSharp
+      Data: 59|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try MultiKillProc
@@ -11303,14 +11315,14 @@ MonoBehaviour:
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 59|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 60|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 60|GameOverCondition, Assembly-CSharp
+      Data: 61|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -11325,14 +11337,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 61|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 62|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 62|MultiKillProcReaction, Assembly-CSharp
+      Data: 63|MultiKillProcReaction, Assembly-CSharp
     - Name: turnsTillReset
       Entry: 3
       Data: 1
@@ -11356,7 +11368,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 63|EndOfTurnAction, Assembly-CSharp
+      Data: 64|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
@@ -11365,14 +11377,14 @@ MonoBehaviour:
       Data: 5
     - Name: conditions
       Entry: 7
-      Data: 64|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 65|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 65|GameOverCondition, Assembly-CSharp
+      Data: 66|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -11387,23 +11399,17 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 66|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 67|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 67|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 68|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 68|CheckInteractablesReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11504,7 +11510,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 77|PlayerGranadeAction, Assembly-CSharp
@@ -11531,7 +11537,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 79|GranadeChargeReaction, Assembly-CSharp
+      Data: 79|InteractionReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 80|GranadeChargeReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -11552,7 +11567,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 80|EndOfTurnAction, Assembly-CSharp
+      Data: 81|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -11561,14 +11576,14 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 81|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 82|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 82|DoubleKillStateCondition, Assembly-CSharp
+      Data: 83|DoubleKillStateCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -11583,14 +11598,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 83|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 84|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 84|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 85|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -11599,7 +11614,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 85|EnemyManagerReaction, Assembly-CSharp
+      Data: 86|EnemyManagerReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11614,7 +11629,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 86|EndOfTurnAction, Assembly-CSharp
+      Data: 87|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Game Over
@@ -11623,14 +11638,14 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 87|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 88|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 88|GameOverCondition, Assembly-CSharp
+      Data: 89|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -11645,14 +11660,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 89|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 90|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 90|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 91|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -11661,7 +11676,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 91|GameOverReaction, Assembly-CSharp
+      Data: 92|GameOverReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11676,7 +11691,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 92|EndOfTurnAction, Assembly-CSharp
+      Data: 93|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try MultiKillProc
@@ -11685,14 +11700,14 @@ MonoBehaviour:
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 93|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 94|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 94|GameOverCondition, Assembly-CSharp
+      Data: 95|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -11707,14 +11722,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 95|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 96|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 96|MultiKillProcReaction, Assembly-CSharp
+      Data: 97|MultiKillProcReaction, Assembly-CSharp
     - Name: turnsTillReset
       Entry: 3
       Data: 1
@@ -11738,7 +11753,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 97|EndOfTurnAction, Assembly-CSharp
+      Data: 98|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
@@ -11747,14 +11762,14 @@ MonoBehaviour:
       Data: 5
     - Name: conditions
       Entry: 7
-      Data: 98|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 99|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 99|GameOverCondition, Assembly-CSharp
+      Data: 100|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -11769,23 +11784,17 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 100|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 101|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 101|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 102|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 102|CheckInteractablesReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11886,7 +11895,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 111|PlayerTorchReaction, Assembly-CSharp
@@ -11913,7 +11922,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 113|GranadeChargeReaction, Assembly-CSharp
+      Data: 113|InteractionReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 114|GranadeChargeReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -11934,7 +11952,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 114|EndOfTurnAction, Assembly-CSharp
+      Data: 115|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -11943,14 +11961,14 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 115|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 116|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 116|DoubleKillStateCondition, Assembly-CSharp
+      Data: 117|DoubleKillStateCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -11965,14 +11983,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 117|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 118|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 118|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 119|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -11981,7 +11999,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 119|EnemyManagerReaction, Assembly-CSharp
+      Data: 120|EnemyManagerReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -11996,7 +12014,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 120|EndOfTurnAction, Assembly-CSharp
+      Data: 121|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Game Over
@@ -12005,14 +12023,14 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 121|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 122|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 122|GameOverCondition, Assembly-CSharp
+      Data: 123|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -12027,14 +12045,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 123|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 124|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 124|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 125|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -12043,7 +12061,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 125|GameOverReaction, Assembly-CSharp
+      Data: 126|GameOverReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -12058,7 +12076,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 126|EndOfTurnAction, Assembly-CSharp
+      Data: 127|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try MultiKillProc
@@ -12067,14 +12085,14 @@ MonoBehaviour:
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 127|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 128|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 128|GameOverCondition, Assembly-CSharp
+      Data: 129|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -12089,14 +12107,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 129|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 130|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 130|MultiKillProcReaction, Assembly-CSharp
+      Data: 131|MultiKillProcReaction, Assembly-CSharp
     - Name: turnsTillReset
       Entry: 3
       Data: 1
@@ -12120,7 +12138,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 131|EndOfTurnAction, Assembly-CSharp
+      Data: 132|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
@@ -12129,14 +12147,14 @@ MonoBehaviour:
       Data: 5
     - Name: conditions
       Entry: 7
-      Data: 132|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 133|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 133|GameOverCondition, Assembly-CSharp
+      Data: 134|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -12151,23 +12169,17 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 134|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 135|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 135|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 136|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 136|CheckInteractablesReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -12268,10 +12280,13 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 145|InteractionReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -12289,7 +12304,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 147|GranadeChargeReaction, Assembly-CSharp
+      Data: 147|InteractionReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 148|GranadeChargeReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -12310,7 +12334,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 148|EndOfTurnAction, Assembly-CSharp
+      Data: 149|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -12319,14 +12343,14 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 149|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 150|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 150|DoubleKillStateCondition, Assembly-CSharp
+      Data: 151|DoubleKillStateCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -12341,14 +12365,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 151|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 152|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 152|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 153|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -12357,7 +12381,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 153|EnemyManagerReaction, Assembly-CSharp
+      Data: 154|EnemyManagerReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -12372,7 +12396,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 154|EndOfTurnAction, Assembly-CSharp
+      Data: 155|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Game Over
@@ -12381,14 +12405,14 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 155|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 156|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 156|GameOverCondition, Assembly-CSharp
+      Data: 157|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -12403,14 +12427,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 157|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 158|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 158|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 159|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -12419,7 +12443,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 159|GameOverReaction, Assembly-CSharp
+      Data: 160|GameOverReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -12434,7 +12458,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 160|EndOfTurnAction, Assembly-CSharp
+      Data: 161|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try MultiKillProc
@@ -12443,14 +12467,14 @@ MonoBehaviour:
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 161|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 162|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 162|GameOverCondition, Assembly-CSharp
+      Data: 163|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -12465,14 +12489,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 163|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 164|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 164|MultiKillProcReaction, Assembly-CSharp
+      Data: 165|MultiKillProcReaction, Assembly-CSharp
     - Name: turnsTillReset
       Entry: 3
       Data: 1
@@ -12496,7 +12520,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 165|EndOfTurnAction, Assembly-CSharp
+      Data: 166|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
@@ -12505,14 +12529,14 @@ MonoBehaviour:
       Data: 5
     - Name: conditions
       Entry: 7
-      Data: 166|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 167|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 167|GameOverCondition, Assembly-CSharp
+      Data: 168|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -12527,23 +12551,17 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 168|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 169|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 169|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 170|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 170|CheckInteractablesReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -12644,7 +12662,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 179|ScoreReaction, Assembly-CSharp
@@ -12659,7 +12677,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 180|GranadeChargeReaction, Assembly-CSharp
+      Data: 180|InteractionReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 181|GranadeChargeReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -12680,7 +12707,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 181|EndOfTurnAction, Assembly-CSharp
+      Data: 182|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -12689,14 +12716,14 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 182|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 183|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 183|DoubleKillStateCondition, Assembly-CSharp
+      Data: 184|DoubleKillStateCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -12711,14 +12738,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 184|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 185|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 185|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 186|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -12727,7 +12754,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 186|EnemyManagerReaction, Assembly-CSharp
+      Data: 187|EnemyManagerReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -12742,7 +12769,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 187|EndOfTurnAction, Assembly-CSharp
+      Data: 188|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Game Over
@@ -12751,14 +12778,14 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 188|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 189|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 189|GameOverCondition, Assembly-CSharp
+      Data: 190|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -12773,14 +12800,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 190|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 191|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 191|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 192|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -12789,7 +12816,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 192|GameOverReaction, Assembly-CSharp
+      Data: 193|GameOverReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -12804,7 +12831,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 193|EndOfTurnAction, Assembly-CSharp
+      Data: 194|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try MultiKillProc
@@ -12813,14 +12840,14 @@ MonoBehaviour:
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 194|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 195|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 195|GameOverCondition, Assembly-CSharp
+      Data: 196|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -12835,14 +12862,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 196|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 197|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 197|MultiKillProcReaction, Assembly-CSharp
+      Data: 198|MultiKillProcReaction, Assembly-CSharp
     - Name: turnsTillReset
       Entry: 3
       Data: 1
@@ -12866,7 +12893,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 198|EndOfTurnAction, Assembly-CSharp
+      Data: 199|EndOfTurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
@@ -12875,14 +12902,14 @@ MonoBehaviour:
       Data: 5
     - Name: conditions
       Entry: 7
-      Data: 199|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 200|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
       Data: 1
     - Name: 
       Entry: 7
-      Data: 200|GameOverCondition, Assembly-CSharp
+      Data: 201|GameOverCondition, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
@@ -12897,23 +12924,17 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 201|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 202|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 202|LockPlayerControlsReaction, Assembly-CSharp
+      Data: 203|LockPlayerControlsReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 203|CheckInteractablesReaction, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 

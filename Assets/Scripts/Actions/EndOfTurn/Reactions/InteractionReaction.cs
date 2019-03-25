@@ -3,6 +3,8 @@
 
 public class InteractionReaction : IEndOfTurnReaction
 {
+    public InteractionReactionType type = InteractionReactionType.TriggerInteractable;
+
     private GlobalController globalCtrl;
 
 
@@ -13,6 +15,56 @@ public class InteractionReaction : IEndOfTurnReaction
 
     public IEnumerator React()
     {
-        yield return this.globalCtrl.playerActionManager.currentInteractable.OnClickAsync();
+        switch (this.type)
+        {
+            case InteractionReactionType.TriggerInteractable:
+                yield return this.TryTriggerInteractable();
+                break;
+            case InteractionReactionType.TrySelectInteractable:
+                yield return this.TrySelectInteractable();
+                break;
+            default:
+                break;
+        }
     }
+
+    private IEnumerator TryTriggerInteractable()
+    {
+        if (this.globalCtrl.playerActionManager.currentInteractable != null)
+        {
+            yield return this.globalCtrl.playerActionManager.currentInteractable.OnClickAsync();
+        }
+    }
+
+    private IEnumerator TrySelectInteractable()
+    {
+        SceneController sceneCtrl = this.globalCtrl.sceneCtrl;
+        Interactable interactable = sceneCtrl.GetInteractableInReach();
+
+        if (interactable != null)
+        {
+            this.globalCtrl.playerActionManager.SelectInteractable(
+                interactable: interactable,
+                isDungeonScene: sceneCtrl.sceneState.isDungeonScene
+            );
+
+            if (interactable.data.isAutoTriggerInteractable)
+            {
+                yield return this.TryTriggerInteractable();
+            }
+        }
+        else
+        {
+            this.globalCtrl.playerActionManager.DeselectInteractable(
+                isDungeonScene: sceneCtrl.sceneState.isDungeonScene
+            );
+        }
+    }
+}
+
+
+public enum InteractionReactionType
+{
+    TriggerInteractable,
+    TrySelectInteractable,
 }

@@ -65,8 +65,7 @@ public class Interactable : SerializedMonoBehaviour
     {
         this.sceneCtrl.globalCtrl.playerActionManager.SelectInteractable(
             interactable: this,
-            isDungeonScene: this.sceneCtrl.sceneState.isDungeonScene,
-            buttonLabel: this.data.actionLabel
+            isDungeonScene: this.sceneCtrl.sceneState.isDungeonScene
         );
     }
 
@@ -77,11 +76,15 @@ public class Interactable : SerializedMonoBehaviour
 
     public void OnClickSync()
     {
+        this.DeselectCurrentInteractable();
+
         base.StartCoroutine(this.TriggerValidActions(this.clickActions));
     }
 
     public IEnumerator OnClickAsync()
     {
+        this.DeselectCurrentInteractable();
+
         yield return this.TriggerValidActions(this.clickActions);
     }
 
@@ -102,6 +105,14 @@ public class Interactable : SerializedMonoBehaviour
                 yield return action.React();
             }
         }
+    }
+
+    // NOTE: Be careful, this can mess up something if non-current interactable was triggered
+    private void DeselectCurrentInteractable()
+    {
+        this.sceneCtrl.globalCtrl.playerActionManager.DeselectInteractable(
+            isDungeonScene: this.sceneCtrl.sceneState.isDungeonScene
+        );
     }
 
 

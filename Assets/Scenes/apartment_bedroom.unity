@@ -282,6 +282,9 @@ MonoBehaviour:
     - Name: isInteractableActive
       Entry: 5
       Data: false
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -609,6 +612,9 @@ MonoBehaviour:
     - Name: isInteractableActive
       Entry: 5
       Data: true
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -965,6 +971,9 @@ MonoBehaviour:
     - Name: isInteractableActive
       Entry: 5
       Data: false
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -1052,34 +1061,10 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 7|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 3
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 8|SceneReaction, Assembly-CSharp
-    - Name: sceneName
-      Entry: 1
-      Data: apartment_living_room
+      Data: 7|SceneReaction, Assembly-CSharp
     - Name: scene
       Entry: 10
       Data: 1
@@ -1109,27 +1094,6 @@ MonoBehaviour:
       Data: 1.5
     - Name: 
       Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 9|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 2
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -2051,6 +2015,9 @@ MonoBehaviour:
     - Name: isInteractableActive
       Entry: 5
       Data: false
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -2712,6 +2679,9 @@ MonoBehaviour:
     - Name: isInteractableActive
       Entry: 5
       Data: false
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -3188,12 +3158,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
-        type: 3}
-      propertyPath: serializationData.Prefab
-      value: 
-      objectReference: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
-        type: 3}
     - target: {fileID: 6718698301903599708, guid: b54322231f2a9ec4490ef46b2934c0b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3249,16 +3213,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3353949383777998089, guid: b54322231f2a9ec4490ef46b2934c0b8,
+    - target: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
         type: 3}
-      propertyPath: sceneCtrl
+      propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 1311566517}
+      objectReference: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
+        type: 3}
     - target: {fileID: 3393795213383950125, guid: b54322231f2a9ec4490ef46b2934c0b8,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3353949383777998089, guid: b54322231f2a9ec4490ef46b2934c0b8,
+        type: 3}
+      propertyPath: sceneCtrl
+      value: 
+      objectReference: {fileID: 1311566517}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b54322231f2a9ec4490ef46b2934c0b8, type: 3}
 --- !u!114 &2030485170 stripped

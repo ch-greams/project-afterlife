@@ -54,7 +54,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 
@@ -64,6 +64,27 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 4|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: visible
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_shadow_spawn_trigger
+    - Name: 
+      Entry: 7
+      Data: 5|InteractableState, Assembly-CSharp
     - Name: enabled
       Entry: 5
       Data: true
@@ -273,7 +294,7 @@ MonoBehaviour:
       x: 4
       y: 16
     isVisible: 0
-    isBlocked: 0
+    isBlocked: 1
   - point:
       x: 5
       y: 3

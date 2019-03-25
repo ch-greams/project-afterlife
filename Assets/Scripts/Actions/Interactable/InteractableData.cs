@@ -12,6 +12,8 @@ public class InteractableData
     [BoxGroup("Interactable Data"), ReadOnly]
     public bool isInteractableActive;
     [BoxGroup("Interactable Data")]
+    public bool isAutoTriggerInteractable;
+    [BoxGroup("Interactable Data")]
     public GameObject interactableObject;
 
     // TODO: Remove later if necessary
