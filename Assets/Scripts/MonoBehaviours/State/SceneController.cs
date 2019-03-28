@@ -14,50 +14,32 @@ public class SceneController : SerializedMonoBehaviour
     [InlineEditor]
     public SceneState sceneState;
 
+
     [InlineEditor]
     public Player player;
 
-    [BoxGroup("Enemy Spawn Points", order: 3), ShowIf("isDungeonScene")]
-    public List<EnemySpawnPoint> enemySpawnPoints = new List<EnemySpawnPoint>();
 
-    [BoxGroup("Interactables", order: 4), DictionaryDrawerSettings(IsReadOnly = true)]
-    public Dictionary<string, Interactable> interactables = new Dictionary<string, Interactable>();
-
-
-    [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/General", 360)]
-    public Point size {
-        get {
-            return (
-                this.tiles.Any() ? this.tiles.Select(ts => (ts != null) ? ts.point : Point.zero).Max() + new Point(1, 1) : Point.zero
-            );
-        }
-    }
-
-    [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/General")]
-    public int total { get { return this.tiles.Count; } }
-    [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int _blocked { get { return this.tiles.Count(ts => (ts != null) && ts.isBlocked); } }
-    [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int _visible { get { return this.tiles.Count(ts => (ts != null) && ts.isVisible); } }
-    [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Grid Management", order: 1), LabelWidth(60), HorizontalGroup("Grid Management/States")]
-    public int _default { get { return this.tiles.Count(ts => (ts != null) && !ts.isBlocked && !ts.isVisible); } }
-
-
-    [FoldoutGroup("Tile Settings", order: 2), ShowIf("isDungeonScene"), ColorPalette("Selected Tile Palette")]
+    [FoldoutGroup("Scene Settings/Tile Settings"), ShowIf("isDungeonScene"), ColorPalette("Selected Tile Palette")]
     public Color selectedTileColor;
-    [FoldoutGroup("Tile Settings", order: 2), ShowIf("isDungeonScene"), ColorPalette("Active Tile Palette")]
+    [FoldoutGroup("Scene Settings/Tile Settings"), ShowIf("isDungeonScene"), ColorPalette("Active Tile Palette")]
     public Color activeTileColor;
-    [FoldoutGroup("Tile Settings", order: 2), ShowIf("isDungeonScene"), ColorPalette("Visible Tile Palette")]
+    [FoldoutGroup("Scene Settings/Tile Settings"), ShowIf("isDungeonScene"), ColorPalette("Visible Tile Palette")]
     public Color visibleTileColor;
-    [FoldoutGroup("Tile Settings", order: 2), ShowIf("isDungeonScene"), ColorPalette("Disabled Tile Palette")]
+    [FoldoutGroup("Scene Settings/Tile Settings"), ShowIf("isDungeonScene"), ColorPalette("Disabled Tile Palette")]
     public Color disabledTileColor;
+
+
+    [FoldoutGroup("Scene Settings"), DictionaryDrawerSettings(IsReadOnly = true), ShowIf("isDungeonScene")]
+    public Dictionary<string, EnemySpawnPoint> enemySpawnPoints = new Dictionary<string, EnemySpawnPoint>();
+    [FoldoutGroup("Scene Settings"), DictionaryDrawerSettings(IsReadOnly = true)]
+    public Dictionary<string, Interactable> interactables = new Dictionary<string, Interactable>();
 
 
     [HideInInspector]
     public List<Tile> tiles = new List<Tile>();
-
     [HideInInspector]
     public Dictionary<string, List<Tile>> highlightedTiles = new Dictionary<string, List<Tile>>();
+
 
     private bool isDungeonScene { get { return this.sceneState.isDungeonScene; } }
     private List<string> sceneNames { get { return GlobalController.sceneNames; } }
@@ -69,7 +51,7 @@ public class SceneController : SerializedMonoBehaviour
         this.globalCtrl = GameObject.FindObjectOfType<GlobalController>();
         this.globalCtrl.SetScene(this);
         
-        this.globalCtrl.enemyManager.enemySpawnPoints = this.enemySpawnPoints;
+        this.globalCtrl.enemyManager.enemySpawnPoints = this.enemySpawnPoints.Values.ToList();
 
         this.globalState = this.globalCtrl.globalState;
         this.sceneState = this.globalState.sceneStates[this.id];
@@ -96,6 +78,13 @@ public class SceneController : SerializedMonoBehaviour
         foreach (KeyValuePair<string, InteractableState> kvp in this.sceneState.interactables)
         {
             this.interactables[kvp.Key].ToggleInteractable(kvp.Value.enabled, kvp.Value.visible);
+        }
+
+        // NOTE: Load spawn points by state
+        foreach (KeyValuePair<string, EnemySpawnPointState> kvp in this.sceneState.enemySpawnPoints)
+        {
+            // TODO: Clone? Check later.
+            this.enemySpawnPoints[kvp.Key].state = new EnemySpawnPointState(kvp.Value);
         }
     }
 
@@ -149,13 +138,15 @@ public class SceneController : SerializedMonoBehaviour
     }
 
 
-    [Button(ButtonSizes.Medium), BoxGroup("Enemy Spawn Points", order: 3), ShowIf("isDungeonScene")]
     private void CollectEnemySpawnPoints()
     {
-        this.enemySpawnPoints = GameObject.FindObjectsOfType<EnemySpawnPoint>().ToList();
+        this.enemySpawnPoints = GameObject.FindObjectsOfType<EnemySpawnPoint>()
+            .ToDictionary(esp => esp.gameObject.name, esp => esp);
+
+        this.sceneState.enemySpawnPoints = this.enemySpawnPoints
+            .ToDictionary(kvp => kvp.Key, kvp => kvp.Value.state);
     }
 
-    [Button(ButtonSizes.Medium), BoxGroup("Interactables", order: 4)]
     private void CollectInteractables()
     {        
         this.interactables = GameObject.FindObjectsOfType<Interactable>()
@@ -171,5 +162,16 @@ public class SceneController : SerializedMonoBehaviour
                 )
             )
         );
+    }
+
+    [Button(ButtonSizes.Medium), FoldoutGroup("Scene Settings")]
+    private void CollectSceneElements()
+    {
+        if (this.isDungeonScene)
+        {
+            this.CollectEnemySpawnPoints();
+        }
+
+        this.CollectInteractables();
     }
 }

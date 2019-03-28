@@ -1,4 +1,5 @@
 ﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,18 +28,11 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
     [FoldoutGroup("Enemy Settings/Parameters")]
     public float itemDropRate = 0.30F;
 
-    [FoldoutGroup("SpawnPoint Settings")]
-    public bool isSpawnPointActive = true;
+
     [FoldoutGroup("SpawnPoint Settings")]
     public GameObject spawnPointObject;
-    [FoldoutGroup("SpawnPoint Settings")]
-    public int spawnPointDelay = 3;
-    [FoldoutGroup("SpawnPoint Settings")]
-    public bool isSpawnPointCapacityInfinite = false;
-    [FoldoutGroup("SpawnPoint Settings"), HideIf("isSpawnPointCapacityInfinite")]
-    public int spawnPointCapacity = 3;
-    [FoldoutGroup("SpawnPoint Settings")]
-    public int turnsLeftTillNextSpawn = 3;
+    [FoldoutGroup("SpawnPoint Settings"), BoxGroup("SpawnPoint Settings/State"), InlineProperty, HideLabel]
+    public EnemySpawnPointState state;
 
 
     private void OnDrawGizmos()
@@ -55,12 +49,12 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
 
     public Enemy TrySpawnEnemy(List<Tile> tiles)
     {
-        if (this.isSpawnPointActive)
+        if (this.state.isActive)
         {
             Tile tile = this.CheckTurnForSpawn() ? tiles.Find(t => t.point == this.point) : null;
 
             bool isTileAvailable = ( (tile != null) && !tile.isBlocked && !tile.isBlockedByPlayer );
-            bool isSpawnPointHasCharge = this.isSpawnPointCapacityInfinite || ( this.spawnPointCapacity > 0 );
+            bool isSpawnPointHasCharge = this.state.hasInfiniteCapacity || ( this.state.capacity > 0 );
 
             this.ToggleSpawnPoint(isSpawnPointHasCharge);
 
@@ -73,24 +67,24 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
     [FoldoutGroup("SpawnPoint Settings"), Button(ButtonSizes.Medium)]
     public void ToggleSpawnPoint()
     {
-        this.ToggleSpawnPoint(!this.isSpawnPointActive);
+        this.ToggleSpawnPoint(!this.state.isActive);
     }
 
     public void ToggleSpawnPoint(bool enable)
     {
-        this.isSpawnPointActive = enable;
+        this.state.isActive = enable;
 
         if (this.spawnPointObject)
         {
-            this.spawnPointObject.SetActive(this.isSpawnPointActive);
+            this.spawnPointObject.SetActive(this.state.isActive);
         }
     }
 
     private Enemy SpawnEnemy(Tile tile)
     {
-        if (!this.isSpawnPointCapacityInfinite)
+        if (!this.state.hasInfiniteCapacity)
         {
-            this.spawnPointCapacity--;
+            this.state.capacity--;
         }
 
         return new Enemy(
@@ -108,9 +102,9 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
 
     private bool CheckTurnForSpawn()
     {
-        bool isSpawnTime = !(this.turnsLeftTillNextSpawn > 0);
+        bool isSpawnTime = !(this.state.nextSpawn > 0);
 
-        this.turnsLeftTillNextSpawn = isSpawnTime ? this.spawnPointDelay : (this.turnsLeftTillNextSpawn - 1);
+        this.state.nextSpawn = isSpawnTime ? this.state.spawnDelay : (this.state.nextSpawn - 1);
 
         return isSpawnTime;
     }
@@ -135,5 +129,36 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
             x: this.offset.x + 0.5F, y: this.offset.y, z: this.offset.z + 0.5F
         ));
         this.transform.name = string.Format("spawn_{0} {1}", this.name, this.point);
+    }
+}
+
+
+[Serializable, InlineProperty]
+public class EnemySpawnPointState
+{
+    public bool isActive = true;
+
+
+    [HorizontalGroup("Spawn", 0.5F)]
+    public int nextSpawn = 3;
+    [HorizontalGroup("Spawn", 0.5F)]
+    public int spawnDelay = 3;
+
+
+    [HorizontalGroup("Capacity", 0.5F)]
+    public bool hasInfiniteCapacity = false;
+    [HorizontalGroup("Capacity", 0.5F), HideIf("hasInfiniteCapacity", false)]
+    public int capacity = 3;
+
+
+    public EnemySpawnPointState(EnemySpawnPointState esps)
+    {
+        this.isActive = esps.isActive;
+        
+        this.nextSpawn = esps.nextSpawn;
+        this.spawnDelay = esps.spawnDelay;
+
+        this.hasInfiniteCapacity = esps.hasInfiniteCapacity;
+        this.capacity = esps.capacity;
     }
 }

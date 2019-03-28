@@ -26,6 +26,10 @@ public class SceneState : SerializedScriptableObject
     [DictionaryDrawerSettings(IsReadOnly = true)]
     public Dictionary<string, InteractableState> interactables = new Dictionary<string, InteractableState>();
 
+    [DictionaryDrawerSettings(IsReadOnly = true, DisplayMode = DictionaryDisplayOptions.ExpandedFoldout), ShowIf("isDungeonScene")]
+    public Dictionary<string, EnemySpawnPointState> enemySpawnPoints = new Dictionary<string, EnemySpawnPointState>();
+
+
     [ShowInInspector, ShowIf("isDungeonScene"), BoxGroup("Map Stats"), LabelWidth(60), HorizontalGroup("Map Stats/General", 360)]
     public Point size {
         get {

@@ -103,6 +103,107 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: enemySpawnPoints
+      Entry: 7
+      Data: 6|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[EnemySpawnPointState,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 7|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: spawn_enemy_yellow (003, 011)
+    - Name: 
+      Entry: 7
+      Data: 8|EnemySpawnPointState, Assembly-CSharp
+    - Name: isActive
+      Entry: 5
+      Data: false
+    - Name: nextSpawn
+      Entry: 3
+      Data: 0
+    - Name: hasInfiniteCapacity
+      Entry: 5
+      Data: false
+    - Name: capacity
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: spawn_enemy_yellow (004, 003)
+    - Name: 
+      Entry: 7
+      Data: 9|EnemySpawnPointState, Assembly-CSharp
+    - Name: isActive
+      Entry: 5
+      Data: true
+    - Name: nextSpawn
+      Entry: 3
+      Data: 0
+    - Name: hasInfiniteCapacity
+      Entry: 5
+      Data: true
+    - Name: capacity
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: spawn_enemy_yellow (005, 011)
+    - Name: 
+      Entry: 7
+      Data: 10|EnemySpawnPointState, Assembly-CSharp
+    - Name: isActive
+      Entry: 5
+      Data: false
+    - Name: nextSpawn
+      Entry: 3
+      Data: 0
+    - Name: hasInfiniteCapacity
+      Entry: 5
+      Data: false
+    - Name: capacity
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   isDungeonScene: 1
   currentPositionPoint:
     x: 4
