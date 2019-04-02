@@ -3,70 +3,74 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnitySceneManager = UnityEngine.SceneManagement.SceneManager;
 using UnityScene = UnityEngine.SceneManagement.Scene;
+using Sirenix.OdinInspector;
 
 
-public static class SceneManager
+public class SceneManager : SerializedMonoBehaviour
 {
-    public static bool sceneLoadingInProgress { get { return SceneManager.isFading; } }
+    public float fadeDuration = 0.5f;
+    public CanvasGroup faderCanvasGroup;
 
-    private static GlobalController globalCtrl;
-    private static bool isFading;
+    public bool sceneLoadingInProgress { get { return this.isFading; } }
+
+    private GlobalController globalCtrl;
+    private bool isFading;
+
 
     private const float ALPHA_TRANSPARENT = 0F;
     private const float ALPHA_OPAQUE = 1F;
 
 
-    public static IEnumerator Init(GlobalController globalCtrl, CanvasGroup faderCanvasGroup, string sceneName)
+    public IEnumerator Init(GlobalController globalCtrl, string sceneName)
     {
-        SceneManager.globalCtrl = globalCtrl;
-        faderCanvasGroup.alpha = ALPHA_OPAQUE;
+        this.globalCtrl = globalCtrl;
+        this.faderCanvasGroup.alpha = ALPHA_OPAQUE;
 
-        yield return SceneManager.FadeAndSwitchScenes(sceneName, false);
+        yield return this.FadeAndSwitchScenes(sceneName, false);
     }
 
-    public static void FadeAndLoadScene(string sceneName)
+    public IEnumerator FadeAndLoadScene(string sceneName)
     {
-        if (!SceneManager.isFading)
+        if (!this.isFading)
         {
-            SceneManager.globalCtrl.StartCoroutine(SceneManager.FadeAndSwitchScenes(sceneName, true));
+            yield return this.FadeAndSwitchScenes(sceneName, true);
         }
     }
 
-    private static IEnumerator FadeAndSwitchScenes(string sceneName, bool unloadCurrentScene)
+
+    private IEnumerator FadeAndSwitchScenes(string sceneName, bool unloadCurrentScene)
     {
         if (unloadCurrentScene)
         {
-            yield return SceneManager.globalCtrl.StartCoroutine(SceneManager.Fade(ALPHA_OPAQUE));
+            yield return this.globalCtrl.StartCoroutine(this.Fade(ALPHA_OPAQUE));
             yield return UnitySceneManager.UnloadSceneAsync(UnitySceneManager.GetActiveScene().buildIndex);
         }
 
-        yield return SceneManager.globalCtrl.StartCoroutine(SceneManager.LoadSceneAndSetActive(sceneName));
-        yield return SceneManager.globalCtrl.StartCoroutine(SceneManager.Fade(ALPHA_TRANSPARENT));
+        yield return this.globalCtrl.StartCoroutine(this.LoadSceneAndSetActive(sceneName));
+        yield return this.globalCtrl.StartCoroutine(this.Fade(ALPHA_TRANSPARENT));
     }
 
-    private static IEnumerator LoadSceneAndSetActive(string sceneName)
+    private IEnumerator LoadSceneAndSetActive(string sceneName)
     {
         yield return UnitySceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         UnityScene loadedScene = UnitySceneManager.GetSceneAt(UnitySceneManager.sceneCount - 1);
         UnitySceneManager.SetActiveScene(loadedScene);
     }
 
-    private static IEnumerator Fade(float finalAlpha)
+    private IEnumerator Fade(float finalAlpha)
     {
-        CanvasGroup faderCanvasGroup = SceneManager.globalCtrl.faderCanvasGroup;
+        this.isFading = true;
+        this.faderCanvasGroup.blocksRaycasts = true;
 
-        SceneManager.isFading = true;
-        faderCanvasGroup.blocksRaycasts = true;
+        float fadeSpeed = Mathf.Abs(this.faderCanvasGroup.alpha - finalAlpha) / this.fadeDuration;
 
-        float fadeSpeed = Mathf.Abs(faderCanvasGroup.alpha - finalAlpha) / SceneManager.globalCtrl.fadeDuration;
-
-        while (!Mathf.Approximately(faderCanvasGroup.alpha, finalAlpha))
+        while (!Mathf.Approximately(this.faderCanvasGroup.alpha, finalAlpha))
         {
-            faderCanvasGroup.alpha = Mathf.MoveTowards(faderCanvasGroup.alpha, finalAlpha, fadeSpeed * Time.deltaTime);
+            this.faderCanvasGroup.alpha = Mathf.MoveTowards(this.faderCanvasGroup.alpha, finalAlpha, fadeSpeed * Time.deltaTime);
             yield return null;
         }
 
-        SceneManager.isFading = false;
-        faderCanvasGroup.blocksRaycasts = false;
+        this.isFading = false;
+        this.faderCanvasGroup.blocksRaycasts = false;
     }
 }

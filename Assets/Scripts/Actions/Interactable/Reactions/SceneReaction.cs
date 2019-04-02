@@ -34,8 +34,11 @@ public class SceneReaction : IInteractableReaction
             this.globalCtrl.UpdatePlayerPosition(this.scene.name, this.startPositionVector);
         }
 
-        SceneManager.FadeAndLoadScene(this.scene.name);
+        if (this.globalCtrl.sceneCtrl.isDungeonScene)
+        {
+            this.globalCtrl.endOfTurnActionManager.TrySkipActions();
+        }
 
-        yield return null;
+        yield return this.globalCtrl.sceneManager.FadeAndLoadScene(this.scene.name);
     }
 }

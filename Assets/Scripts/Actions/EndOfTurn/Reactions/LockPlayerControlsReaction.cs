@@ -5,28 +5,43 @@ public class LockPlayerControlsReaction : IEndOfTurnReaction
 {
     public LockPlayerControlsReactionType type = LockPlayerControlsReactionType.Undefined;
 
-    private PlayerActionManager playerActionManager;
+    private GlobalController globalCtrl;
 
 
     public void Init(GlobalController globalCtrl)
     {
-        this.playerActionManager = globalCtrl.playerActionManager;
+        this.globalCtrl = globalCtrl;
     }
 
+    // TODO: Clean up this
     public IEnumerator React()
     {
+        PlayerActionManager playerActionManager = globalCtrl.playerActionManager;
+        PlayerActionInterface interfaceElements = playerActionManager.interfaceElements;
+        
         switch (this.type)
         {
             case LockPlayerControlsReactionType.LockPlayerControls:
-                this.playerActionManager.arePlayerControlsLocked = true;
+                playerActionManager.arePlayerControlsLocked = true;                 // NOTE: Disable player controls
+                interfaceElements.interactionButton.gameObject.SetActive(false);    // NOTE: Show use button
+                interfaceElements.skipTurnButton.gameObject.SetActive(false);       // NOTE: Hide skip button
                 break;
-            case LockPlayerControlsReactionType.LockPlayerControlsWithFade:
-                this.playerActionManager.arePlayerControlsLocked = true;
-                this.playerActionManager.enemyTurnFadeImage.SetActive(true);
+            case LockPlayerControlsReactionType.ShowFade:
+                playerActionManager.enemyTurnFadeImage.SetActive(true);             // NOTE: Show fade canvas
                 break;
             case LockPlayerControlsReactionType.UnlockPlayerControlsWithFade:
-                this.playerActionManager.arePlayerControlsLocked = false;
-                this.playerActionManager.enemyTurnFadeImage.SetActive(false);
+                playerActionManager.arePlayerControlsLocked = false;                // NOTE: Enable player controls
+                playerActionManager.enemyTurnFadeImage.SetActive(false);            // NOTE: Hide fade canvas
+                interfaceElements.skipTurnButton.gameObject.SetActive(true);        // NOTE: Show skip button
+                break;
+            case LockPlayerControlsReactionType.GameOver:
+                playerActionManager.arePlayerControlsLocked = true;                 // NOTE: Disable player controls
+                playerActionManager.enemyTurnFadeImage.SetActive(false);            // NOTE: Hide fade canvas
+                interfaceElements.interactionButton.gameObject.SetActive(false);    // NOTE: Show use button
+                interfaceElements.skipTurnButton.gameObject.SetActive(false);       // NOTE: Hide skip button
+
+                playerActionManager.gameOverFade.SetActive(true);                   // NOTE: Show GameOver fade canvas
+                this.globalCtrl.endOfTurnActionManager.TrySkipActions();            // NOTE: Skip following actions
                 break;
             case LockPlayerControlsReactionType.Undefined:
             default:
@@ -39,7 +54,8 @@ public class LockPlayerControlsReaction : IEndOfTurnReaction
 public enum LockPlayerControlsReactionType
 {
     Undefined,
-    LockPlayerControlsWithFade,
+    ShowFade,
     UnlockPlayerControlsWithFade,
     LockPlayerControls,
+    GameOver,
 }

@@ -65,13 +65,13 @@ public class Interactable : SerializedMonoBehaviour
     {
         this.sceneCtrl.globalCtrl.playerActionManager.SelectInteractable(
             interactable: this,
-            isDungeonScene: this.sceneCtrl.sceneState.isDungeonScene
+            isDungeonScene: this.sceneCtrl.isDungeonScene
         );
     }
 
     private void OnTriggerExit(Collider collider)
     {
-        this.sceneCtrl.globalCtrl.playerActionManager.DeselectInteractable(this.sceneCtrl.sceneState.isDungeonScene);
+        this.sceneCtrl.globalCtrl.playerActionManager.DeselectInteractable(this.sceneCtrl.isDungeonScene);
     }
 
     public void OnClickSync()
@@ -111,7 +111,7 @@ public class Interactable : SerializedMonoBehaviour
     private void DeselectCurrentInteractable()
     {
         this.sceneCtrl.globalCtrl.playerActionManager.DeselectInteractable(
-            isDungeonScene: this.sceneCtrl.sceneState.isDungeonScene
+            isDungeonScene: this.sceneCtrl.isDungeonScene
         );
     }
 

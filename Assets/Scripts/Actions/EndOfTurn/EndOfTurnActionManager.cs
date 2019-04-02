@@ -1,49 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
-#if UNITY_EDITOR
-using Sirenix.Utilities.Editor;
-#endif
 
 
 public class EndOfTurnActionManager : SerializedMonoBehaviour
 {
-    [ListDrawerSettings(
-        Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawWalkActionListRefreshButton",
-        OnBeginListElementGUI = "BeginDrawWalkActionListElement", OnEndListElementGUI = "EndDrawListElement"
-    )]
-    public List<EndOfTurnAction> walkActions = new List<EndOfTurnAction>();
+    public Dictionary<PlayerActionType, EndOfTurnActionList> actionLists = new Dictionary<PlayerActionType, EndOfTurnActionList>();
 
-    [ListDrawerSettings(
-        Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawFlashlightActionListRefreshButton",
-        OnBeginListElementGUI = "BeginDrawFlashlightActionListElement", OnEndListElementGUI = "EndDrawListElement"
-    )]
-    public List<EndOfTurnAction> flashlightActions = new List<EndOfTurnAction>();
-
-    [ListDrawerSettings(
-        Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawGranadeActionListRefreshButton",
-        OnBeginListElementGUI = "BeginDrawGranadeActionListElement", OnEndListElementGUI = "EndDrawListElement"
-    )]
-    public List<EndOfTurnAction> granadeActions = new List<EndOfTurnAction>();
-
-    [ListDrawerSettings(
-        Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawTorchActionListRefreshButton",
-        OnBeginListElementGUI = "BeginDrawTorchActionListElement", OnEndListElementGUI = "EndDrawListElement"
-    )]
-    public List<EndOfTurnAction> torchActions = new List<EndOfTurnAction>();
-
-    [ListDrawerSettings(
-        Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawInteractionActionListRefreshButton",
-        OnBeginListElementGUI = "BeginDrawInteractionActionListElement", OnEndListElementGUI = "EndDrawListElement"
-    )]
-    public List<EndOfTurnAction> interactionActions = new List<EndOfTurnAction>();
-
-    [ListDrawerSettings(
-        Expanded = false, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawSkipTurnActionListRefreshButton",
-        OnBeginListElementGUI = "BeginDrawSkipTurnActionListElement", OnEndListElementGUI = "EndDrawListElement"
-    )]
-    public List<EndOfTurnAction> skipTurnActions = new List<EndOfTurnAction>();
-
+    private bool isInProgress = false;
+    private bool skipActions = false;
 
     private GlobalController globalCtrl;
 
@@ -52,161 +17,41 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
     {
         this.globalCtrl = globalCtrl;
 
-        foreach (EndOfTurnAction action in this.walkActions)
+        foreach (EndOfTurnActionList actionList in this.actionLists.Values)
         {
-            action.Init(this.globalCtrl);   
-        }
-
-        foreach (EndOfTurnAction action in this.flashlightActions)
-        {
-            action.Init(this.globalCtrl);   
-        }
-
-        foreach (EndOfTurnAction action in this.granadeActions)
-        {
-            action.Init(this.globalCtrl);   
-        }
-
-        foreach (EndOfTurnAction action in this.torchActions)
-        {
-            action.Init(this.globalCtrl);   
-        }
-
-        foreach (EndOfTurnAction action in this.interactionActions)
-        {
-            action.Init(this.globalCtrl);   
-        }
-
-        foreach (EndOfTurnAction action in this.skipTurnActions)
-        {
-            action.Init(this.globalCtrl);   
+            actionList.Init(this.globalCtrl);
         }
     }
 
 
-    public IEnumerator ReactOnValidActions()
+    public IEnumerator TriggerValidActions()
     {
         PlayerActionType actionType = this.globalCtrl.playerActionManager.currentAction;
 
-        foreach (EndOfTurnAction action in this.GetActionsByType(actionType))
+        this.isInProgress = true;
+
+        foreach (EndOfTurnAction action in this.actionLists[actionType].actions)
         {
-            if (action.IsValid()) {
+            if (action.IsValid())
+            {
                 yield return action.React();
             }
-        }
-    }
 
-    private List<EndOfTurnAction> GetActionsByType(PlayerActionType playerActionType)
-    {
-        switch (playerActionType)
-        {
-            case PlayerActionType.Walk:
-                return this.walkActions;
-            case PlayerActionType.Flashlight:
-                return this.flashlightActions;
-            case PlayerActionType.Granade:
-                return this.granadeActions;
-            case PlayerActionType.Torch:
-                return this.torchActions;
-            case PlayerActionType.Interaction:
-                return this.interactionActions;
-            case PlayerActionType.SkipTurn:
-                return this.skipTurnActions;
-            case PlayerActionType.Undefined:
-            default:
-                return new List<EndOfTurnAction>();
-        }
-    }
-
-#if UNITY_EDITOR
-
-    private void DrawActionListRefreshButton(List<EndOfTurnAction> actions)
-    {
-        if (SirenixEditorGUI.ToolbarButton(EditorIcons.Refresh))
-        {
-            actions.Sort();
-
-            for (int i = 0; i < actions.Count; i++)
+            if (this.skipActions)
             {
-                actions[i].index = i;
+                break;
             }
         }
+
+        this.isInProgress = false;
+        this.skipActions = false;
     }
 
-    private void DrawWalkActionListRefreshButton()
+    public void TrySkipActions()
     {
-        this.DrawActionListRefreshButton(this.walkActions);
+        if (this.isInProgress)
+        {
+            this.skipActions = true;
+        }
     }
-    
-    private void DrawFlashlightActionListRefreshButton()
-    {
-        this.DrawActionListRefreshButton(this.flashlightActions);
-    }
-
-    private void DrawGranadeActionListRefreshButton()
-    {
-        this.DrawActionListRefreshButton(this.granadeActions);
-    }
-
-    private void DrawTorchActionListRefreshButton()
-    {
-        this.DrawActionListRefreshButton(this.torchActions);
-    }
-
-    private void DrawInteractionActionListRefreshButton()
-    {
-        this.DrawActionListRefreshButton(this.interactionActions);
-    }
-
-    private void DrawSkipTurnActionListRefreshButton()
-    {
-        this.DrawActionListRefreshButton(this.skipTurnActions);
-    }
-
-    private void BeginDrawActionListElement(EndOfTurnAction action, int index)
-    {
-        string title = (
-            index == action.index
-                ? string.Format("{0} - {1}", index, action.name)
-                : string.Format("{0} -> {1} - {2}", index, action.index, action.name)
-        );
-        SirenixEditorGUI.BeginBox(title);
-    }
-
-    private void BeginDrawWalkActionListElement(int index)
-    {
-        this.BeginDrawActionListElement(this.walkActions[index], index);
-    }
-
-    private void BeginDrawFlashlightActionListElement(int index)
-    {
-        this.BeginDrawActionListElement(this.flashlightActions[index], index);
-    }
-
-    private void BeginDrawGranadeActionListElement(int index)
-    {
-        this.BeginDrawActionListElement(this.granadeActions[index], index);
-    }
-
-    private void BeginDrawTorchActionListElement(int index)
-    {
-        this.BeginDrawActionListElement(this.torchActions[index], index);
-    }
-
-    private void BeginDrawInteractionActionListElement(int index)
-    {
-        this.BeginDrawActionListElement(this.interactionActions[index], index);
-    }
-
-    private void BeginDrawSkipTurnActionListElement(int index)
-    {
-        this.BeginDrawActionListElement(this.skipTurnActions[index], index);
-    }
-
-    private void EndDrawListElement(int index)
-    {
-        SirenixEditorGUI.EndBox();
-    }
-
-#endif
 }

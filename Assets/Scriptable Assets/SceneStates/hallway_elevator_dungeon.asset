@@ -108,12 +108,8 @@ MonoBehaviour:
       Data: 6|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[EnemySpawnPointState,
         Assembly-CSharp]], mscorlib
     - Name: comparer
-      Entry: 7
-      Data: 7|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
-        mscorlib]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
+      Entry: 9
+      Data: 3
     - Name: 
       Entry: 12
       Data: 3
@@ -122,14 +118,17 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: spawn_enemy_yellow (003, 011)
+      Data: sp_left_door (003, 011)
     - Name: 
       Entry: 7
-      Data: 8|EnemySpawnPointState, Assembly-CSharp
+      Data: 7|EnemySpawnPointState, Assembly-CSharp
     - Name: isActive
       Entry: 5
       Data: false
     - Name: nextSpawn
+      Entry: 3
+      Data: 0
+    - Name: spawnDelay
       Entry: 3
       Data: 0
     - Name: hasInfiniteCapacity
@@ -149,22 +148,25 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: spawn_enemy_yellow (004, 003)
+      Data: sp_elevator (004, 003)
     - Name: 
       Entry: 7
-      Data: 9|EnemySpawnPointState, Assembly-CSharp
+      Data: 8|EnemySpawnPointState, Assembly-CSharp
     - Name: isActive
       Entry: 5
       Data: true
     - Name: nextSpawn
       Entry: 3
       Data: 0
+    - Name: spawnDelay
+      Entry: 3
+      Data: 1
     - Name: hasInfiniteCapacity
       Entry: 5
       Data: true
     - Name: capacity
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -176,14 +178,17 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: spawn_enemy_yellow (005, 011)
+      Data: sp_right_door (005, 011)
     - Name: 
       Entry: 7
-      Data: 10|EnemySpawnPointState, Assembly-CSharp
+      Data: 9|EnemySpawnPointState, Assembly-CSharp
     - Name: isActive
       Entry: 5
       Data: false
     - Name: nextSpawn
+      Entry: 3
+      Data: 0
+    - Name: spawnDelay
       Entry: 3
       Data: 0
     - Name: hasInfiniteCapacity

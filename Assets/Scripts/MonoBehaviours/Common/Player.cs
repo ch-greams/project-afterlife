@@ -98,7 +98,8 @@ public class Player : SerializedMonoBehaviour
         }
         else
         {
-            this.globalCtrl.isGameOver = true;
+            // TODO: Update this to something more sophisticated
+            this.visibleRange = 0;
         }
     }
 
@@ -247,7 +248,7 @@ public class Player : SerializedMonoBehaviour
 
     private void Update()
     {
-        if (!this.globalCtrl.sceneCtrl.sceneState.isDungeonScene && this.navMeshAgent != null)
+        if (!this.globalCtrl.sceneCtrl.isDungeonScene && this.navMeshAgent != null)
         {
             this.MovePlayer("Left Stick Horizontal", "Left Stick Vertical");
         }

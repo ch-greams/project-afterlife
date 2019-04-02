@@ -14,12 +14,14 @@ public class GameOverCondition : IEndOfTurnCondition
 
     public bool IsValid()
     {
+        Player player = this.globalCtrl.sceneCtrl.player;
+
         switch (this.type)
         {
             case GameOverConditionType.isOver:
-                return this.globalCtrl.isGameOver;
+                return player.visibleRange < 1.5F;
             case GameOverConditionType.isNotOver:
-                return !this.globalCtrl.isGameOver;
+                return player.visibleRange >= 1.5F;
             case GameOverConditionType.Undefined:
             default:
                 return false;

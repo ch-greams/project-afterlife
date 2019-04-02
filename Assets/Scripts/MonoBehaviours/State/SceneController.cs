@@ -41,7 +41,7 @@ public class SceneController : SerializedMonoBehaviour
     public Dictionary<string, List<Tile>> highlightedTiles = new Dictionary<string, List<Tile>>();
 
 
-    private bool isDungeonScene { get { return this.sceneState.isDungeonScene; } }
+    public bool isDungeonScene { get { return this.sceneState.isDungeonScene; } }
     private List<string> sceneNames { get { return GlobalController.sceneNames; } }
 
 
@@ -57,7 +57,7 @@ public class SceneController : SerializedMonoBehaviour
         this.sceneState = this.globalState.sceneStates[this.id];
 
         // NOTE: Init player in the scene
-        if (this.sceneState.isDungeonScene)
+        if (this.isDungeonScene)
         {
             this.player.InitPlayer(
                 globalCtrl: this.globalCtrl,
@@ -85,12 +85,13 @@ public class SceneController : SerializedMonoBehaviour
         {
             // TODO: Clone? Check later.
             this.enemySpawnPoints[kvp.Key].state = new EnemySpawnPointState(kvp.Value);
+            this.enemySpawnPoints[kvp.Key].spawnPointObject.SetActive(kvp.Value.isActive);
         }
     }
 
     private void Start()
     {
-        if (this.sceneState.isDungeonScene)
+        if (this.isDungeonScene)
         {
             this.UpdateTiles(this.player.tile);
         }

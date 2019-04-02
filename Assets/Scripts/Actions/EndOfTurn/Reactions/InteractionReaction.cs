@@ -45,7 +45,7 @@ public class InteractionReaction : IEndOfTurnReaction
         {
             this.globalCtrl.playerActionManager.SelectInteractable(
                 interactable: interactable,
-                isDungeonScene: sceneCtrl.sceneState.isDungeonScene
+                isDungeonScene: sceneCtrl.isDungeonScene
             );
 
             if (interactable.data.isAutoTriggerInteractable)
@@ -56,7 +56,7 @@ public class InteractionReaction : IEndOfTurnReaction
         else
         {
             this.globalCtrl.playerActionManager.DeselectInteractable(
-                isDungeonScene: sceneCtrl.sceneState.isDungeonScene
+                isDungeonScene: sceneCtrl.isDungeonScene
             );
         }
     }

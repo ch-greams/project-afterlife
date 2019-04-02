@@ -6,83 +6,18 @@ using UnityEngine.UI;
 using System;
 
 
-public class PlayerActionManager
+public class PlayerActionManager : SerializedMonoBehaviour
 {
-    [BoxGroup("Group Configuration")]
-    public GameObject playerActionsGroup;
-    [BoxGroup("Group Configuration")]
-    public GameObject statsPanelGroup;
-
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
-    public Button walkButton;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
-    public Sprite walkButtonActive;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
-    public Sprite walkButtonInactive;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
-    public Image walkButtonProc;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
-    public Sprite walkButtonProcActive;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[B] Walk Button")]
-    public Sprite walkButtonProcInactive;
-
-
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[X] Flashlight Button")]
-    public Button flashlightButton;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[X] Flashlight Button")]
-    public Sprite flashlightButtonActive;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[X] Flashlight Button")]
-    public Sprite flashlightButtonInactive;
-
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[A] Torch Button")]
-    public Button torchButton;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[A] Torch Button")]
-    public Sprite torchButtonActive;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[A] Torch Button")]
-    public Sprite torchButtonInactive;
-
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[Y] Granade Button")]
-    public Button granadeButton;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[Y] Granade Button")]
-    public Sprite granadeButtonActive;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[Y] Granade Button")]
-    public Sprite granadeButtonInactive;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[Y] Granade Button")]
-    public Text granadeButtonCooldownLabel;
-
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button")]
-    public Button skipTurnButton;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button")]
-    public RectTransform skipTurnButtonProgress;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button"), ReadOnly]
-    public float skipTurnButtonProgressCounter = 0;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[LT] Skip Turn Button")]
-    public float skipTurnButtonProgressMax = 100;
-
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] Interaction Button")]
-    public Button interactionButton;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] Interaction Button")]
-    public RectTransform interactionButtonProgress;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] Interaction Button"), ReadOnly]
-    public float interactionButtonProgressCounter = 0;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] Interaction Button")]
-    public float interactionButtonProgressMax = 100;
-
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button")]
-    public Button wInteractionButton;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button")]
-    public RectTransform wInteractionButtonProgress;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button")]
-    public Text wInteractionButtonLabel;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button"), ReadOnly]
-    public float wInteractionButtonProgressCounter = 0;
-    [FoldoutGroup("Button Configuration"), BoxGroup("Button Configuration/[RT] World Interaction Button")]
-    public float wInteractionButtonProgressMax = 100;
+    public PlayerActionInterface interfaceElements;
 
     public List<PlayerActionType> instantActions = new List<PlayerActionType>();
 
+    // TODO: Update boxGroup below
+    [BoxGroup("Other")]
     public GameObject enemyTurnFadeImage;
-
+    [BoxGroup("Other")]
+    public GameObject gameOverFade;
+    
 
     public bool arePlayerControlsLocked = false;
     public float moveSpeed = 5;
@@ -103,12 +38,12 @@ public class PlayerActionManager
         this.globalCtrl = globalCtrl;
         this.isXboxJoystick = this.IsXboxJoystick();
 
-        this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
-        this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
-        this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
-        this.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
-        this.skipTurnButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.SkipTurn));
-        this.interactionButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Interaction));
+        this.interfaceElements.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
+        this.interfaceElements.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
+        this.interfaceElements.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
+        this.interfaceElements.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
+        this.interfaceElements.skipTurnButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.SkipTurn));
+        this.interfaceElements.interactionButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Interaction));
     }
 
     // TODO: Make something more sophisticated for controller switch
@@ -133,11 +68,11 @@ public class PlayerActionManager
             {
                 this.HoldButton(
                     buttonName: "Right Trigger",
-                    button: this.wInteractionButton,
-                    progressTransform: this.wInteractionButtonProgress,
-                    progressCounter: ref this.wInteractionButtonProgressCounter,
-                    progressCounterMax: this.wInteractionButtonProgressMax,
-                    progressBarWidth: this.wInteractionButton.GetComponent<RectTransform>().rect.width
+                    button: this.interfaceElements.wInteractionButton,
+                    progressTransform: this.interfaceElements.wInteractionButtonProgress,
+                    progressCounter: ref this.interfaceElements.wInteractionButtonProgressCounter,
+                    progressCounterMax: this.interfaceElements.wInteractionButtonProgressMax,
+                    progressBarWidth: this.interfaceElements.wInteractionButton.GetComponent<RectTransform>().rect.width
                 );
             }
         }
@@ -145,55 +80,49 @@ public class PlayerActionManager
 
     public void InputListener()
     {
-        this.skipTurnButton.gameObject.SetActive(!this.arePlayerControlsLocked);
-
-        if (this.arePlayerControlsLocked)
-        {
-            this.interactionButton.gameObject.SetActive(false);
-        }
-        else
+        if (!this.arePlayerControlsLocked)
         {
             if (Input.GetButtonDown(this.isXboxJoystick ? "Button A" : "Button B"))
             {
-                this.torchButton.onClick.Invoke();
+                this.interfaceElements.torchButton.onClick.Invoke();
             }
 
             if (Input.GetButtonDown(this.isXboxJoystick ? "Button B" : "Button X"))
             {
-                this.walkButton.onClick.Invoke();
+                this.interfaceElements.walkButton.onClick.Invoke();
             }
 
             if (Input.GetButtonDown(this.isXboxJoystick ? "Button X" : "Button A"))
             {
-                this.flashlightButton.onClick.Invoke();
+                this.interfaceElements.flashlightButton.onClick.Invoke();
             }
 
             if (Input.GetButtonDown("Button Y"))
             {
-                this.granadeButton.onClick.Invoke();
+                this.interfaceElements.granadeButton.onClick.Invoke();
             }
 
             if (this.currentInteractable != null)
             {
                 this.HoldButton(
                     buttonName: "Right Trigger",
-                    button: this.interactionButton,
-                    progressTransform: this.interactionButtonProgress,
-                    progressCounter: ref this.interactionButtonProgressCounter,
-                    progressCounterMax: this.interactionButtonProgressMax,
+                    button: this.interfaceElements.interactionButton,
+                    progressTransform: this.interfaceElements.interactionButtonProgress,
+                    progressCounter: ref this.interfaceElements.interactionButtonProgressCounter,
+                    progressCounterMax: this.interfaceElements.interactionButtonProgressMax,
                     // TODO: Remove this comment and/or optimize (replaced hardcoded 200)
-                    progressBarWidth: this.interactionButton.GetComponent<RectTransform>().rect.width
+                    progressBarWidth: this.interfaceElements.interactionButton.GetComponent<RectTransform>().rect.width
                 );
             }
 
             this.HoldButton(
                 buttonName: "Left Trigger",
-                button: this.skipTurnButton,
-                progressTransform: this.skipTurnButtonProgress,
-                progressCounter: ref this.skipTurnButtonProgressCounter,
-                progressCounterMax: this.skipTurnButtonProgressMax,
+                button: this.interfaceElements.skipTurnButton,
+                progressTransform: this.interfaceElements.skipTurnButtonProgress,
+                progressCounter: ref this.interfaceElements.skipTurnButtonProgressCounter,
+                progressCounterMax: this.interfaceElements.skipTurnButtonProgressMax,
                 // TODO: Remove this comment and/or optimize (replaced hardcoded 300)
-                progressBarWidth: this.skipTurnButton.GetComponent<RectTransform>().rect.width
+                progressBarWidth: this.interfaceElements.skipTurnButton.GetComponent<RectTransform>().rect.width
             );
 
             if (Input.GetButtonDown("Left Stick Button"))
@@ -284,31 +213,31 @@ public class PlayerActionManager
 
     public void SwitchWalkProcEffect(bool isProcActive)
     {
-        this.walkButtonProc.gameObject.SetActive(isProcActive);
+        this.interfaceElements.walkButtonProc.gameObject.SetActive(isProcActive);
         
-        this.flashlightButton.interactable = !isProcActive;
-        this.torchButton.interactable = !isProcActive;
+        this.interfaceElements.flashlightButton.interactable = !isProcActive;
+        this.interfaceElements.torchButton.interactable = !isProcActive;
 
         if (isProcActive)
         {
-            this.flashlightButton.onClick.RemoveAllListeners();
-            this.torchButton.onClick.RemoveAllListeners();
+            this.interfaceElements.flashlightButton.onClick.RemoveAllListeners();
+            this.interfaceElements.torchButton.onClick.RemoveAllListeners();
         }
         else
         {
-            this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
-            this.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
+            this.interfaceElements.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
+            this.interfaceElements.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
         }
 
         if (isProcActive)
         {
-            this.granadeButton.interactable = false;
-            this.granadeButton.onClick.RemoveAllListeners();
+            this.interfaceElements.granadeButton.interactable = false;
+            this.interfaceElements.granadeButton.onClick.RemoveAllListeners();
         }
         else if (this.globalCtrl.globalState.GetIntegerParameterFromState("turnsTillGranadeChargeLeft") < 1)
         {
-            this.granadeButton.interactable = true;
-            this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
+            this.interfaceElements.granadeButton.interactable = true;
+            this.interfaceElements.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
         }
     }
 
@@ -317,18 +246,18 @@ public class PlayerActionManager
     {
         if (turnsTillChargeLeft > 0)
         {
-            this.granadeButton.interactable = false;
-            this.granadeButton.onClick.RemoveAllListeners();
+            this.interfaceElements.granadeButton.interactable = false;
+            this.interfaceElements.granadeButton.onClick.RemoveAllListeners();
 
-            this.granadeButtonCooldownLabel.text = turnsTillChargeLeft.ToString();
-            this.granadeButtonCooldownLabel.gameObject.SetActive(true);
+            this.interfaceElements.granadeButtonCooldownLabel.text = turnsTillChargeLeft.ToString();
+            this.interfaceElements.granadeButtonCooldownLabel.gameObject.SetActive(true);
         }
         else
         {
-            this.granadeButton.interactable = true;
-            this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
+            this.interfaceElements.granadeButton.interactable = true;
+            this.interfaceElements.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
 
-            this.granadeButtonCooldownLabel.gameObject.SetActive(false);
+            this.interfaceElements.granadeButtonCooldownLabel.gameObject.SetActive(false);
         }
     }
 
@@ -350,32 +279,32 @@ public class PlayerActionManager
             switch (playerActionType)
             {
                 case PlayerActionType.Walk:
-                    this.walkButton.image.sprite = this.walkButtonActive;
-                    this.walkButtonProc.sprite = this.walkButtonProcActive;
-                    this.walkButton.onClick.RemoveAllListeners();
-                    this.walkButton.onClick.AddListener(this.ConfirmAction);
+                    this.interfaceElements.walkButton.image.sprite = this.interfaceElements.walkButtonActive;
+                    this.interfaceElements.walkButtonProc.sprite = this.interfaceElements.walkButtonProcActive;
+                    this.interfaceElements.walkButton.onClick.RemoveAllListeners();
+                    this.interfaceElements.walkButton.onClick.AddListener(this.ConfirmAction);
 
                     player.HighlightActive(true, true, (t) => (!t.isBlocked));
                     break;
                 case PlayerActionType.Flashlight:
-                    this.flashlightButton.image.sprite = this.flashlightButtonActive;
-                    this.flashlightButton.onClick.RemoveAllListeners();
-                    this.flashlightButton.onClick.AddListener(this.ConfirmAction);
+                    this.interfaceElements.flashlightButton.image.sprite = this.interfaceElements.flashlightButtonActive;
+                    this.interfaceElements.flashlightButton.onClick.RemoveAllListeners();
+                    this.interfaceElements.flashlightButton.onClick.AddListener(this.ConfirmAction);
 
                     player.HighlightActive(false, true, (t) => (true));
                     player.HighlightActive(true, false, (t) => (true));
                     break;
                 case PlayerActionType.Granade:
-                    this.granadeButton.image.sprite = this.granadeButtonActive;
-                    this.granadeButton.onClick.RemoveAllListeners();
-                    this.granadeButton.onClick.AddListener(this.ConfirmAction);
+                    this.interfaceElements.granadeButton.image.sprite = this.interfaceElements.granadeButtonActive;
+                    this.interfaceElements.granadeButton.onClick.RemoveAllListeners();
+                    this.interfaceElements.granadeButton.onClick.AddListener(this.ConfirmAction);
                     
                     player.HighlightActive(true, true, (t) => (true));
                     break;
                 case PlayerActionType.Torch:
-                    this.torchButton.image.sprite = this.torchButtonActive;
-                    this.torchButton.onClick.RemoveAllListeners();
-                    this.torchButton.onClick.AddListener(this.ConfirmAction);
+                    this.interfaceElements.torchButton.image.sprite = this.interfaceElements.torchButtonActive;
+                    this.interfaceElements.torchButton.onClick.RemoveAllListeners();
+                    this.interfaceElements.torchButton.onClick.AddListener(this.ConfirmAction);
 
                     player.HighlightActive(false, true, (t) => (true));
                     player.HighlightActive(true, false, (t) => (true));
@@ -398,18 +327,18 @@ public class PlayerActionManager
 
         if (isDungeonScene)
         {
-            this.interactionButton.gameObject.SetActive(true);
+            this.interfaceElements.interactionButton.gameObject.SetActive(true);
         }
         else
         {
-            this.wInteractionButtonLabel.text = string.Format("[RT] {0}", (
+            this.interfaceElements.wInteractionButtonLabel.text = string.Format("[RT] {0}", (
                 string.IsNullOrWhiteSpace(this.currentInteractable.data.actionLabel)
                     ? "Use"
                     : this.currentInteractable.data.actionLabel
             ));
 
-            this.wInteractionButton.onClick.AddListener(this.currentInteractable.OnClickSync);
-            this.wInteractionButton.gameObject.SetActive(true);
+            this.interfaceElements.wInteractionButton.onClick.AddListener(this.currentInteractable.OnClickSync);
+            this.interfaceElements.wInteractionButton.gameObject.SetActive(true);
         }
     }
 
@@ -419,12 +348,12 @@ public class PlayerActionManager
 
         if (isDungeonScene)
         {
-            this.interactionButton.gameObject.SetActive(false);
+            this.interfaceElements.interactionButton.gameObject.SetActive(false);
         }
         else
         {
-            this.wInteractionButton.onClick.RemoveAllListeners();
-            this.wInteractionButton.gameObject.SetActive(false);
+            this.interfaceElements.wInteractionButton.onClick.RemoveAllListeners();
+            this.interfaceElements.wInteractionButton.gameObject.SetActive(false);
         }
     }
 
@@ -433,25 +362,25 @@ public class PlayerActionManager
         switch (playerActionType)
         {
             case PlayerActionType.Walk:
-                this.walkButton.image.sprite = this.walkButtonInactive;
-                this.walkButtonProc.sprite = this.walkButtonProcInactive;
-                this.walkButton.onClick.RemoveAllListeners();
-                this.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
+                this.interfaceElements.walkButton.image.sprite = this.interfaceElements.walkButtonInactive;
+                this.interfaceElements.walkButtonProc.sprite = this.interfaceElements.walkButtonProcInactive;
+                this.interfaceElements.walkButton.onClick.RemoveAllListeners();
+                this.interfaceElements.walkButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Walk));
                 break;
             case PlayerActionType.Flashlight:
-                this.flashlightButton.image.sprite = this.flashlightButtonInactive;
-                this.flashlightButton.onClick.RemoveAllListeners();
-                this.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
+                this.interfaceElements.flashlightButton.image.sprite = this.interfaceElements.flashlightButtonInactive;
+                this.interfaceElements.flashlightButton.onClick.RemoveAllListeners();
+                this.interfaceElements.flashlightButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Flashlight));
                 break;
             case PlayerActionType.Granade:
-                this.granadeButton.image.sprite = this.granadeButtonInactive;
-                this.granadeButton.onClick.RemoveAllListeners();
-                this.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
+                this.interfaceElements.granadeButton.image.sprite = this.interfaceElements.granadeButtonInactive;
+                this.interfaceElements.granadeButton.onClick.RemoveAllListeners();
+                this.interfaceElements.granadeButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Granade));
                 break;
             case PlayerActionType.Torch:
-                this.torchButton.image.sprite = this.torchButtonInactive;
-                this.torchButton.onClick.RemoveAllListeners();
-                this.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
+                this.interfaceElements.torchButton.image.sprite = this.interfaceElements.torchButtonInactive;
+                this.interfaceElements.torchButton.onClick.RemoveAllListeners();
+                this.interfaceElements.torchButton.onClick.AddListener(() => this.SelectActionType(PlayerActionType.Torch));
                 break;
             case PlayerActionType.Interaction:
             case PlayerActionType.SkipTurn:

@@ -10,13 +10,6 @@ using System.IO;
 
 public class GlobalController : SerializedMonoBehaviour
 {
-
-    [BoxGroup("Scene Switch Configuration")]
-    public float fadeDuration = 0.5f;
-    [BoxGroup("Scene Switch Configuration")]
-    public CanvasGroup faderCanvasGroup;
-
-
     [InlineEditor(Expanded = true)]
     public GlobalState globalState;
 
@@ -33,9 +26,9 @@ public class GlobalController : SerializedMonoBehaviour
     [FoldoutGroup("Interface Management")]
     public ObjectiveManager objectiveManager;
 
+
     [FoldoutGroup("Interface Management"), BoxGroup("Interface Management/Player Actions")]
     public PlayerActionManager playerActionManager;
-
     [FoldoutGroup("Interface Management"), BoxGroup("Interface Management/Player Actions")]
     public EndOfTurnActionManager endOfTurnActionManager;
 
@@ -50,11 +43,7 @@ public class GlobalController : SerializedMonoBehaviour
     [FoldoutGroup("State Management")]
     public CollectableManager collectableManager;
 
-    // TODO: Update "Game Over" shit
-    [BoxGroup("Game Over")]
-    public GameObject gameOverFade;
-    [BoxGroup("Game Over")]
-    public bool isGameOver = false;
+    public SceneManager sceneManager;
 
     // TODO: Update this shit
     public SceneController sceneCtrl;
@@ -112,14 +101,14 @@ public class GlobalController : SerializedMonoBehaviour
 
     private IEnumerator Start()
     {
-        yield return SceneManager.Init(this, this.faderCanvasGroup, this.globalState.currentScene);
+        yield return this.sceneManager.Init(this, this.globalState.currentScene);
     }
 
     private void Update()
     {
-        if (!SceneManager.sceneLoadingInProgress && this.sceneCtrl != null)
+        if (!this.sceneManager.sceneLoadingInProgress && this.sceneCtrl != null)
         {
-            this.playerActionManager.InputListener(this.sceneCtrl.sceneState.isDungeonScene);
+            this.playerActionManager.InputListener(this.sceneCtrl.isDungeonScene);
             this.dialogueManager.InputListener();
 
             base.StartCoroutine(this.objectiveManager.InputListener());
@@ -130,21 +119,21 @@ public class GlobalController : SerializedMonoBehaviour
     {
         this.sceneCtrl = sceneCtrl;
 
-        this.playerActionManager.playerActionsGroup.SetActive(this.sceneCtrl.sceneState.isDungeonScene);
-        this.playerActionManager.statsPanelGroup.SetActive(this.sceneCtrl.sceneState.isDungeonScene);
-        this.playerActionManager.arePlayerControlsLocked = !this.sceneCtrl.sceneState.isDungeonScene;
+        this.playerActionManager.interfaceElements.playerActionsGroup.SetActive(this.sceneCtrl.isDungeonScene);
+        this.playerActionManager.interfaceElements.statsPanelGroup.SetActive(this.sceneCtrl.isDungeonScene);
+        this.playerActionManager.arePlayerControlsLocked = !this.sceneCtrl.isDungeonScene;
     }
 
     public void NextTurn()
     {
         this.statsManager.IncrementTurnCount();
-        base.StartCoroutine(this.endOfTurnActionManager.ReactOnValidActions());
+        base.StartCoroutine(this.endOfTurnActionManager.TriggerValidActions());
     }
 
     public void LoadFromState()
     {
         this.objectiveManager.Init(this);
-        SceneManager.FadeAndLoadScene(this.globalState.currentScene);
+        base.StartCoroutine(this.sceneManager.FadeAndLoadScene(this.globalState.currentScene));
     }
 
     public void UpdatePlayerPosition(string scene, Point position)
