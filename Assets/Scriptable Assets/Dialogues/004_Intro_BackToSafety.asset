@@ -41,7 +41,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: "DamageWontFeelGood\r\n"
+      Data: DamageWontFeelGood
     - Name: 
       Entry: 7
       Data: 2|Dialogue, Assembly-CSharp
@@ -93,7 +93,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: "InterruptedGreetings\r\n"
+      Data: InterruptedGreetings
     - Name: 
       Entry: 7
       Data: 6|Dialogue, Assembly-CSharp
@@ -133,7 +133,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: "ThatsEnough\r\n"
+      Data: ThatsEnough
     - Name: 
       Entry: 7
       Data: 9|Dialogue, Assembly-CSharp

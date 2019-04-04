@@ -434,6 +434,9 @@ MonoBehaviour:
     - Name: isInteractableActive
       Entry: 5
       Data: false
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -546,9 +549,6 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 8|SceneReaction, Assembly-CSharp
-    - Name: sceneName
-      Entry: 1
-      Data: apartment_dungeon
     - Name: scene
       Entry: 10
       Data: 1
@@ -2051,6 +2051,9 @@ MonoBehaviour:
     - Name: isInteractableActive
       Entry: 5
       Data: false
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 6
       Data: 
@@ -2181,9 +2184,6 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 9|SceneReaction, Assembly-CSharp
-    - Name: sceneName
-      Entry: 1
-      Data: hallway_elevator
     - Name: scene
       Entry: 10
       Data: 1
@@ -4310,6 +4310,9 @@ MonoBehaviour:
     - Name: isInteractableActive
       Entry: 5
       Data: true
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -5566,6 +5569,9 @@ MonoBehaviour:
     - Name: isInteractableActive
       Entry: 5
       Data: false
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 6
       Data: 
@@ -5696,9 +5702,6 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 9|SceneReaction, Assembly-CSharp
-    - Name: sceneName
-      Entry: 1
-      Data: hallway_elevator
     - Name: scene
       Entry: 10
       Data: 1
@@ -9868,9 +9871,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: interactables
+    - Name: enemySpawnPoints
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Interactable,
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[EnemySpawnPoint,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
@@ -9879,6 +9882,22 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: interactables
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Interactable,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 1
     - Name: 
       Entry: 12
       Data: 5
@@ -9950,11 +9969,11 @@ MonoBehaviour:
       Data: 
     - Name: highlightedTiles
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[Tile,
+      Data: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[Tile,
         Assembly-CSharp]], mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 4|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -9973,7 +9992,6 @@ MonoBehaviour:
   globalState: {fileID: 0}
   sceneState: {fileID: 11400000, guid: efa583c090ec0ff42959de6d4a693006, type: 2}
   player: {fileID: 939025600}
-  enemySpawnPoints: []
   selectedTileColor: {r: 0, g: 0, b: 0, a: 0}
   activeTileColor: {r: 0, g: 0, b: 0, a: 0}
   visibleTileColor: {r: 0, g: 0, b: 0, a: 0}
@@ -11135,6 +11153,9 @@ MonoBehaviour:
     - Name: isInteractableActive
       Entry: 5
       Data: true
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -11247,9 +11268,6 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 8|SceneReaction, Assembly-CSharp
-    - Name: sceneName
-      Entry: 1
-      Data: apartment_living_room
     - Name: scene
       Entry: 10
       Data: 1
