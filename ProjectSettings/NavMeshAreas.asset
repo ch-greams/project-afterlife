@@ -13,7 +13,7 @@ NavMeshProjectSettings:
     cost: 2
   - name: Walkable Phase One
     cost: 1
-  - name: 
+  - name: Walkable Phase Two
     cost: 1
   - name: 
     cost: 1

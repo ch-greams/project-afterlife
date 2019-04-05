@@ -100,5 +100,6 @@ public enum WalkableAreaMask
     NotWalkable = 1 << 1,
     Jump = 1 << 2,
     WalkablePhaseOne = 1 << 3,
-    All = Walkable | NotWalkable | Jump | WalkablePhaseOne
+    WalkablePhaseTwo = 1 << 4,
+    All = Walkable | NotWalkable | Jump | WalkablePhaseOne | WalkablePhaseTwo
 }

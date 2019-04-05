@@ -13225,28 +13225,7 @@ MonoBehaviour:
       Data: 4
     - Name: 
       Entry: 7
-      Data: 7|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 3
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 8|DialogueReaction, Assembly-CSharp
+      Data: 7|DialogueReaction, Assembly-CSharp
     - Name: dialogueCollection
       Entry: 10
       Data: 1
@@ -13258,7 +13237,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|PlayerReaction, Assembly-CSharp
+      Data: 8|PlayerReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
@@ -13267,7 +13246,28 @@ MonoBehaviour:
       Data: hallway
     - Name: walkableAreas
       Entry: 3
-      Data: 9
+      Data: 16
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 2
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 10
+      Data: 2
+    - Name: interactableName
+      Entry: 1
+      Data: int_door_apt_01_dungeon
     - Name: 
       Entry: 8
       Data: 
@@ -13294,13 +13294,13 @@ MonoBehaviour:
       Data: UnityEngine.Vector3, UnityEngine.CoreModule
     - Name: 
       Entry: 4
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 4
       Data: 0
     - Name: 
       Entry: 4
-      Data: 11
+      Data: 0
     - Name: 
       Entry: 8
       Data: 

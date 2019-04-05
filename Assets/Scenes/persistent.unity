@@ -1027,25 +1027,7 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: conditionToFind
-      Entry: 6
-      Data: 
-    - Name: reactionToFind
-      Entry: 7
-      Data: 0|ObjectiveReaction, Assembly-CSharp
-    - Name: objective
-      Entry: 6
-      Data: 
-    - Name: taskId
-      Entry: 6
-      Data: 
-    - Name: subTaskId
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
+    SerializationNodes: []
 --- !u!1 &121558459
 GameObject:
   m_ObjectHideFlags: 0
@@ -8471,6 +8453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1160246231}
+  - component: {fileID: 1160246232}
   m_Layer: 0
   m_Name: ObjectiveManager
   m_TagString: Untagged
@@ -8492,6 +8475,54 @@ Transform:
   m_Father: {fileID: 1303165733}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1160246232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160246230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b035ba838e167f43948f3596b910f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: tasks
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  objectiveTitle: {fileID: 1997033063}
+  taskList: {fileID: 570439466}
+  taskPrefab: {fileID: 1386020220025524, guid: bc68fa5219bb2e54f874154a759fe635, type: 3}
+  activeTaskFont: {fileID: 12800000, guid: 68004938172dc964a9906810cd49962b, type: 3}
+  activeTaskColor: {r: 0.154, g: 0.154, b: 0.154, a: 1}
+  completedTaskFont: {fileID: 12800000, guid: 100b0e266215d8a43bec5b5c94a70d05, type: 3}
+  completedTaskColor: {r: 0.154, g: 0.154, b: 0.154, a: 0.5019608}
 --- !u!1 &1162699835
 GameObject:
   m_ObjectHideFlags: 0
@@ -9589,11 +9620,6 @@ MonoBehaviour:
     - {fileID: 1955544692}
     - {fileID: 206658681}
     - {fileID: 1833184596}
-    - {fileID: 1997033063}
-    - {fileID: 570439466}
-    - {fileID: 1386020220025524, guid: bc68fa5219bb2e54f874154a759fe635, type: 3}
-    - {fileID: 12800000, guid: 68004938172dc964a9906810cd49962b, type: 3}
-    - {fileID: 12800000, guid: 100b0e266215d8a43bec5b5c94a70d05, type: 3}
     - {fileID: 1405953027}
     - {fileID: 1784520782}
     - {fileID: 154084, guid: ea460298bf221684caba050027fd1370, type: 3}
@@ -10120,101 +10146,24 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: objectiveManager
-      Entry: 7
-      Data: 27|ObjectiveManager, Assembly-CSharp
-    - Name: objectiveTitle
-      Entry: 10
-      Data: 76
-    - Name: taskList
-      Entry: 10
-      Data: 77
-    - Name: taskPrefab
-      Entry: 10
-      Data: 78
-    - Name: activeTaskFont
-      Entry: 10
-      Data: 79
-    - Name: activeTaskColor
-      Entry: 7
-      Data: UnityEngine.Color, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0.154
-    - Name: 
-      Entry: 4
-      Data: 0.154
-    - Name: 
-      Entry: 4
-      Data: 0.154
-    - Name: 
-      Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: completedTaskFont
-      Entry: 10
-      Data: 80
-    - Name: completedTaskColor
-      Entry: 7
-      Data: UnityEngine.Color, UnityEngine.CoreModule
-    - Name: 
-      Entry: 4
-      Data: 0.154
-    - Name: 
-      Entry: 4
-      Data: 0.154
-    - Name: 
-      Entry: 4
-      Data: 0.154
-    - Name: 
-      Entry: 4
-      Data: 0.5019608
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: tasks
-      Entry: 7
-      Data: 28|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[UnityEngine.GameObject,
-        UnityEngine.CoreModule]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 29|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
-        mscorlib]], mscorlib
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: statsManager
       Entry: 7
-      Data: 30|StatsManager, Assembly-CSharp
+      Data: 27|StatsManager, Assembly-CSharp
     - Name: scoreText
       Entry: 10
-      Data: 81
+      Data: 76
     - Name: turnCountText
       Entry: 10
-      Data: 82
+      Data: 77
     - Name: 
       Entry: 8
       Data: 
     - Name: enemyManager
       Entry: 7
-      Data: 31|EnemyManager, Assembly-CSharp
+      Data: 28|EnemyManager, Assembly-CSharp
     - Name: enemies
       Entry: 7
-      Data: 32|System.Collections.Generic.List`1[[Enemy, Assembly-CSharp]], mscorlib
+      Data: 29|System.Collections.Generic.List`1[[Enemy, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -10226,7 +10175,7 @@ MonoBehaviour:
       Data: 
     - Name: enemySpawnPoints
       Entry: 7
-      Data: 33|System.Collections.Generic.List`1[[EnemySpawnPoint, Assembly-CSharp]],
+      Data: 30|System.Collections.Generic.List`1[[EnemySpawnPoint, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -10242,20 +10191,20 @@ MonoBehaviour:
       Data: 
     - Name: collectableManager
       Entry: 7
-      Data: 34|CollectableManager, Assembly-CSharp
+      Data: 31|CollectableManager, Assembly-CSharp
     - Name: collectableItemPrefab
       Entry: 10
-      Data: 83
+      Data: 78
     - Name: collectionEffectPrefab
       Entry: 10
-      Data: 84
+      Data: 79
     - Name: collectableItems
       Entry: 7
-      Data: 35|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
+      Data: 32|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 36|System.Collections.Generic.ObjectEqualityComparer`1[[Point, Assembly-CSharp]],
+      Data: 33|System.Collections.Generic.ObjectEqualityComparer`1[[Point, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 8
@@ -10273,6 +10222,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   globalState: {fileID: 11400000, guid: aa13c8b3ee1928c47bb12361015f462b, type: 2}
+  objectiveManager: {fileID: 1160246232}
   playerActionManager: {fileID: 1742319161}
   endOfTurnActionManager: {fileID: 1607163986}
   sceneManager: {fileID: 1752437329}

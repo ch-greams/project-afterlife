@@ -3525,9 +3525,15 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 6
+      Data: 
     - Name: isInteractableActive
       Entry: 5
       Data: true
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -7424,7 +7430,6 @@ MonoBehaviour:
     - {fileID: 45437632}
     - {fileID: 11400000, guid: 27713008971afc04fac29dee843ffcda, type: 2}
     - {fileID: 1035420775}
-    - {fileID: 0}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -7433,7 +7438,13 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 6
+      Data: 
     - Name: isInteractableActive
+      Entry: 5
+      Data: false
+    - Name: isAutoTriggerInteractable
       Entry: 5
       Data: false
     - Name: interactableObject
@@ -7635,12 +7646,18 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 0
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: false
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
-      Entry: 10
-      Data: 7
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -7650,10 +7667,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 1
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -13712,9 +13735,15 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 6
+      Data: 
     - Name: isInteractableActive
       Entry: 5
       Data: true
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -13860,10 +13889,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 1
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -13928,12 +13963,18 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 0
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: false
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
       Entry: 10
       Data: 3
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -14865,9 +14906,15 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 6
+      Data: 
     - Name: isInteractableActive
       Entry: 5
       Data: true
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -15013,10 +15060,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 1
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -15081,12 +15134,18 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 0
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: false
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
       Entry: 10
       Data: 3
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -15401,9 +15460,15 @@ MonoBehaviour:
     - Name: data
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 6
+      Data: 
     - Name: isInteractableActive
       Entry: 5
       Data: true
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: false
     - Name: interactableObject
       Entry: 10
       Data: 0
@@ -15549,10 +15614,16 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 1
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: true
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
       Entry: 6
       Data: 
     - Name: 
@@ -15617,12 +15688,18 @@ MonoBehaviour:
     - Name: type
       Entry: 3
       Data: 0
-    - Name: useCurrentInteractable
-      Entry: 5
-      Data: false
+    - Name: item
+      Entry: 3
+      Data: 0
     - Name: interactable
       Entry: 10
       Data: 3
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -17905,9 +17982,12 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 45437633}
+    - {fileID: 1087967422}
+    - {fileID: 2120387477}
     - {fileID: 407706577}
-    - {fileID: 1358759003}
     - {fileID: 700086693}
+    - {fileID: 1358759003}
     - {fileID: 1410993170}
     - {fileID: 1435636078}
     SerializedBytesString: 
@@ -17915,9 +17995,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: interactables
+    - Name: enemySpawnPoints
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Interactable,
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[EnemySpawnPoint,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
@@ -17928,13 +18008,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
     - Name: 
       Entry: 1
-      Data: int_landline_phone
+      Data: spawn_enemy_yellow (008, 006)
     - Name: 
       Entry: 10
       Data: 0
@@ -17946,7 +18026,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_remote
+      Data: spawn_enemy_yellow (010, 002)
     - Name: 
       Entry: 10
       Data: 1
@@ -17958,7 +18038,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_bathroom_mirror
+      Data: spawn_enemy_yellow (002, 010)
     - Name: 
       Entry: 10
       Data: 2
@@ -17966,11 +18046,27 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: interactables
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Interactable,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 1
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
       Entry: 7
       Data: 
     - Name: 
       Entry: 1
-      Data: int_computer
+      Data: int_landline_phone
     - Name: 
       Entry: 10
       Data: 3
@@ -17982,10 +18078,46 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_tv
+      Data: int_bathroom_mirror
     - Name: 
       Entry: 10
       Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_remote
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_computer
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_tv
+    - Name: 
+      Entry: 10
+      Data: 7
     - Name: 
       Entry: 8
       Data: 
@@ -17997,11 +18129,11 @@ MonoBehaviour:
       Data: 
     - Name: highlightedTiles
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[Tile,
+      Data: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[Tile,
         Assembly-CSharp]], mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 4|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -18020,10 +18152,6 @@ MonoBehaviour:
   globalState: {fileID: 0}
   sceneState: {fileID: 11400000, guid: 6d98e256f35ad6a4b870704942f199a5, type: 2}
   player: {fileID: 248706406}
-  enemySpawnPoints:
-  - {fileID: 45437633}
-  - {fileID: 1087967422}
-  - {fileID: 2120387477}
   selectedTileColor: {r: 0, g: 1, b: 0.75, a: 1}
   activeTileColor: {r: 1, g: 1, b: 1, a: 0.6}
   visibleTileColor: {r: 0.6, g: 0.6, b: 0.6, a: 0.6}

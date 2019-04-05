@@ -54,7 +54,218 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_landline_phone
+    - Name: 
+      Entry: 7
+      Data: 4|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_bathroom_mirror
+    - Name: 
+      Entry: 7
+      Data: 5|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: false
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_remote
+    - Name: 
+      Entry: 7
+      Data: 6|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_computer
+    - Name: 
+      Entry: 7
+      Data: 7|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_tv
+    - Name: 
+      Entry: 7
+      Data: 8|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: enemySpawnPoints
+      Entry: 7
+      Data: 9|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[EnemySpawnPointState,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 3
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: spawn_enemy_yellow (008, 006)
+    - Name: 
+      Entry: 7
+      Data: 10|EnemySpawnPointState, Assembly-CSharp
+    - Name: isActive
+      Entry: 5
+      Data: false
+    - Name: nextSpawn
+      Entry: 3
       Data: 0
+    - Name: spawnDelay
+      Entry: 3
+      Data: 0
+    - Name: hasInfiniteCapacity
+      Entry: 5
+      Data: false
+    - Name: capacity
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: spawn_enemy_yellow (010, 002)
+    - Name: 
+      Entry: 7
+      Data: 11|EnemySpawnPointState, Assembly-CSharp
+    - Name: isActive
+      Entry: 5
+      Data: false
+    - Name: nextSpawn
+      Entry: 3
+      Data: 0
+    - Name: spawnDelay
+      Entry: 3
+      Data: 0
+    - Name: hasInfiniteCapacity
+      Entry: 5
+      Data: false
+    - Name: capacity
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: spawn_enemy_yellow (002, 010)
+    - Name: 
+      Entry: 7
+      Data: 12|EnemySpawnPointState, Assembly-CSharp
+    - Name: isActive
+      Entry: 5
+      Data: false
+    - Name: nextSpawn
+      Entry: 3
+      Data: 0
+    - Name: spawnDelay
+      Entry: 3
+      Data: 0
+    - Name: hasInfiniteCapacity
+      Entry: 5
+      Data: false
+    - Name: capacity
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -66,6 +277,7 @@ MonoBehaviour:
     x: 4
     y: 0
   currentPositionVector: {x: 0, y: 0, z: 0}
+  walkableAreas: 1
   defaultMap:
   - point:
       x: 0

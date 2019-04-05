@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 using System.Linq;
 using System;
 
+
 public class InteractableSearch : SerializedMonoBehaviour
 {
-    [BoxGroup("Condition Search"), ShowInInspector]
+    [BoxGroup("Condition Search"), NonSerialized, ShowInInspector]
     public IInteractableCondition conditionToFind;
-    [BoxGroup("Reaction Search"), ShowInInspector]
+    [BoxGroup("Reaction Search"), NonSerialized, ShowInInspector]
     public IInteractableReaction reactionToFind;
 
     [BoxGroup("Interactable Search"), ValueDropdown("interactableNames"), NonSerialized, ShowInInspector]
@@ -42,7 +43,7 @@ public class InteractableSearch : SerializedMonoBehaviour
     
 
 
-    [BoxGroup("Condition Search"), Button(ButtonSizes.Medium)]
+    [BoxGroup("Condition Search"), Button(ButtonSizes.Medium), EnableIf("conditionToFind")]
     public void FindConditionReferences()
     {
         Debug.Log("TODO: " + this.conditionToFind.GetType().ToString());
@@ -142,7 +143,7 @@ public class InteractableSearch : SerializedMonoBehaviour
     }
 
 
-    [BoxGroup("Reaction Search"), Button(ButtonSizes.Medium)]
+    [BoxGroup("Reaction Search"), Button(ButtonSizes.Medium), EnableIf("reactionToFind")]
     public void FindReactionReferences()
     {
         Type reactionType = this.reactionToFind.GetType();
@@ -157,7 +158,7 @@ public class InteractableSearch : SerializedMonoBehaviour
 
 
     
-    [BoxGroup("Interactable Search"), Button(ButtonSizes.Medium)]
+    [BoxGroup("Interactable Search"), Button(ButtonSizes.Medium), DisableIf("interactablePathToFind", null)]
     public void FindInteractableReferences()
     {
         string[] interactablePathArr = this.interactablePathToFind.Split('/');

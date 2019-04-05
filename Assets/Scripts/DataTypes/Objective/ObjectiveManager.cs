@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class ObjectiveManager
+public class ObjectiveManager : SerializedMonoBehaviour
 {
     public Text objectiveTitle;
     public GameObject taskList;
