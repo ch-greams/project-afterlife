@@ -69,7 +69,7 @@ MonoBehaviour:
       Data: true
     - Name: visible
       Entry: 5
-      Data: false
+      Data: true
     - Name: 
       Entry: 8
       Data: 
@@ -118,7 +118,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: sp_left_door (003, 011)
+      Data: sp_right_door (005, 011)
     - Name: 
       Entry: 7
       Data: 7|EnemySpawnPointState, Assembly-CSharp
@@ -136,7 +136,7 @@ MonoBehaviour:
       Data: false
     - Name: capacity
       Entry: 3
-      Data: 1
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -154,19 +154,19 @@ MonoBehaviour:
       Data: 8|EnemySpawnPointState, Assembly-CSharp
     - Name: isActive
       Entry: 5
-      Data: true
+      Data: false
     - Name: nextSpawn
       Entry: 3
       Data: 0
     - Name: spawnDelay
       Entry: 3
-      Data: 1
+      Data: 0
     - Name: hasInfiniteCapacity
       Entry: 5
-      Data: true
+      Data: false
     - Name: capacity
       Entry: 3
-      Data: 2
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -178,7 +178,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: sp_right_door (005, 011)
+      Data: sp_left_door (003, 011)
     - Name: 
       Entry: 7
       Data: 9|EnemySpawnPointState, Assembly-CSharp
@@ -196,7 +196,7 @@ MonoBehaviour:
       Data: false
     - Name: capacity
       Entry: 3
-      Data: 1
+      Data: 0
     - Name: 
       Entry: 8
       Data: 

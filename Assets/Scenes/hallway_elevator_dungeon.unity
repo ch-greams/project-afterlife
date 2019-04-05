@@ -3889,15 +3889,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 100338, guid: fe6e2b6af283f9341876fcb4431f55b2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100374, guid: fe6e2b6af283f9341876fcb4431f55b2, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100380, guid: fe6e2b6af283f9341876fcb4431f55b2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100338, guid: fe6e2b6af283f9341876fcb4431f55b2, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -11156,9 +11156,9 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
-    - {fileID: 6010298247346409979}
-    - {fileID: 6010298247134776291}
     - {fileID: 6010298247124036453}
+    - {fileID: 6010298247134776291}
+    - {fileID: 6010298247346409979}
     - {fileID: 1492191466036848475}
     - {fileID: 6228196727538135733}
     SerializedBytesString: 
@@ -11185,7 +11185,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: sp_left_door (003, 011)
+      Data: sp_right_door (005, 011)
     - Name: 
       Entry: 10
       Data: 0
@@ -11209,7 +11209,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: sp_right_door (005, 011)
+      Data: sp_left_door (003, 011)
     - Name: 
       Entry: 10
       Data: 2

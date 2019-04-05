@@ -69,8 +69,9 @@ public class InteractableDataReaction : IInteractableReaction
     {
         if (this.item == InteractableDataReactionItem.InteractableInOtherScene)
         {
-            SceneState sceneState = this.globalCtrl.globalState.sceneStates[this.sceneState.name];
-            InteractableState interactableState = sceneState.interactables[this.interactableName];
+            InteractableState interactableState = this.globalCtrl.globalState
+                .sceneStates[this.sceneState.name]
+                .interactables[this.interactableName];
 
             interactableState.enabled = enabled;
         }
@@ -88,8 +89,9 @@ public class InteractableDataReaction : IInteractableReaction
     {
         if (this.item == InteractableDataReactionItem.InteractableInOtherScene)
         {
-            SceneState sceneState = this.globalCtrl.globalState.sceneStates[this.sceneState.name];
-            InteractableState interactableState = sceneState.interactables[this.interactableName];
+            InteractableState interactableState = this.globalCtrl.globalState
+                .sceneStates[this.sceneState.name]
+                .interactables[this.interactableName];
 
             interactableState.Update(enabled, visible);
         }

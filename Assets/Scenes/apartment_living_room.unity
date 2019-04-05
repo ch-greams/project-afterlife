@@ -2618,6 +2618,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_player_world
       objectReference: {fileID: 0}
+    - target: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
+        type: 3}
     - target: {fileID: 6718698301903599708, guid: b54322231f2a9ec4490ef46b2934c0b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2673,12 +2679,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
-        type: 3}
-      propertyPath: serializationData.Prefab
-      value: 
-      objectReference: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
-        type: 3}
     - target: {fileID: 3353949383777998089, guid: b54322231f2a9ec4490ef46b2934c0b8,
         type: 3}
       propertyPath: sceneCtrl
@@ -3409,31 +3409,10 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 7|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 3
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 8|SceneReaction, Assembly-CSharp
+      Data: 7|SceneReaction, Assembly-CSharp
     - Name: scene
       Entry: 10
       Data: 1
@@ -3463,27 +3442,6 @@ MonoBehaviour:
       Data: -0.5
     - Name: 
       Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 9|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 2
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -5660,31 +5618,10 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 7|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 3
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 8|SceneReaction, Assembly-CSharp
+      Data: 7|SceneReaction, Assembly-CSharp
     - Name: scene
       Entry: 10
       Data: 1
@@ -5714,27 +5651,6 @@ MonoBehaviour:
       Data: 0
     - Name: 
       Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 9|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 2
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -7397,13 +7313,33 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: interactables
+    - Name: enemySpawnPoints
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Interactable,
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[EnemySpawnPoint,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
       Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: interactables
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[Interactable,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -7515,11 +7451,11 @@ MonoBehaviour:
       Data: 
     - Name: highlightedTiles
       Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[Tile,
+      Data: 4|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.List`1[[Tile,
         Assembly-CSharp]], mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 5|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -7538,7 +7474,6 @@ MonoBehaviour:
   globalState: {fileID: 0}
   sceneState: {fileID: 11400000, guid: a7b5fdd29ad36404183ef99ca8a7ad14, type: 2}
   player: {fileID: 451749741}
-  enemySpawnPoints: []
   selectedTileColor: {r: 0, g: 0, b: 0, a: 0}
   activeTileColor: {r: 0, g: 0, b: 0, a: 0}
   visibleTileColor: {r: 0, g: 0, b: 0, a: 0}

@@ -25,6 +25,7 @@ public class SceneReaction : IInteractableReaction
 
     public IEnumerator React()
     {
+        // NOTE: Update state        
         if (this.scene.isDungeonScene)
         {
             this.globalCtrl.UpdatePlayerPosition(this.scene.name, this.startPositionPoint);
@@ -34,11 +35,13 @@ public class SceneReaction : IInteractableReaction
             this.globalCtrl.UpdatePlayerPosition(this.scene.name, this.startPositionVector);
         }
 
+        // NOTE: Skip actions in EoT
         if (this.globalCtrl.sceneCtrl.isDungeonScene)
         {
             this.globalCtrl.endOfTurnActionManager.TrySkipActions();
         }
 
+        // NOTE: Load scene
         yield return this.globalCtrl.sceneManager.FadeAndLoadScene(this.scene.name);
     }
 }

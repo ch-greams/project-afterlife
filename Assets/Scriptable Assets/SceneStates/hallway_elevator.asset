@@ -54,7 +54,49 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_elevator_doors
+    - Name: 
+      Entry: 7
+      Data: 4|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: false
+    - Name: visible
+      Entry: 5
+      Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_broken_stairs
+    - Name: 
+      Entry: 7
+      Data: 5|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: false
+    - Name: visible
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
       Data: 
@@ -63,10 +105,10 @@ MonoBehaviour:
       Data: int_elevator_control_panel
     - Name: 
       Entry: 7
-      Data: 4|InteractableState, Assembly-CSharp
+      Data: 6|InteractableState, Assembly-CSharp
     - Name: enabled
       Entry: 5
-      Data: true
+      Data: false
     - Name: visible
       Entry: 5
       Data: true
@@ -84,7 +126,7 @@ MonoBehaviour:
       Data: int_exit_hallway
     - Name: 
       Entry: 7
-      Data: 5|InteractableState, Assembly-CSharp
+      Data: 7|InteractableState, Assembly-CSharp
     - Name: enabled
       Entry: 5
       Data: true
@@ -103,11 +145,32 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: enemySpawnPoints
+      Entry: 7
+      Data: 8|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[EnemySpawnPointState,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 9|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   isDungeonScene: 0
   currentPositionPoint:
     x: 0
     y: 0
   currentPositionVector: {x: 0, y: 0, z: 12}
+  walkableAreas: 1
   defaultMap:
   - point:
       x: 0

@@ -78,7 +78,8 @@ public class Interactable : SerializedMonoBehaviour
     {
         this.DeselectCurrentInteractable();
 
-        base.StartCoroutine(this.TriggerValidActions(this.clickActions));
+        // NOTE: Use Coroutine from globalCtrl so it'll persist on scene switch
+        this.sceneCtrl.globalCtrl.StartCoroutine(this.TriggerValidActions(this.clickActions));
     }
 
     public IEnumerator OnClickAsync()

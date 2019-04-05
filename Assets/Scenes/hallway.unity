@@ -2159,31 +2159,46 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 7
-      Data: 8|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 3
-    - Name: item
-      Entry: 3
+      Data: 8|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
       Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
+    - Name: taskId
+      Entry: 1
+      Data: GoOutside
+    - Name: subTaskId
+      Entry: 1
+      Data: Go_to_the_Elevator
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|SceneReaction, Assembly-CSharp
+      Data: 9|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 2
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 10
+      Data: 1
+    - Name: interactableName
+      Entry: 1
+      Data: int_elevator_control_panel
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|SceneReaction, Assembly-CSharp
     - Name: scene
       Entry: 10
       Data: 1
@@ -2214,42 +2229,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|ObjectiveReaction, Assembly-CSharp
-    - Name: objective
-      Entry: 10
-      Data: 0
-    - Name: taskId
-      Entry: 1
-      Data: GoOutside
-    - Name: subTaskId
-      Entry: 1
-      Data: Go_to_the_Elevator
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 11|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 2
-    - Name: item
-      Entry: 3
-      Data: 2
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 10
-      Data: 1
-    - Name: interactableName
-      Entry: 1
-      Data: int_elevator_control_panel
     - Name: 
       Entry: 8
       Data: 
@@ -4418,7 +4397,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 4
     - Name: 
       Entry: 7
       Data: 8|InteractableDataReaction, Assembly-CSharp
@@ -4485,27 +4464,6 @@ MonoBehaviour:
     - Name: interactableName
       Entry: 1
       Data: int_landline_phone
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 2
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -5222,12 +5180,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_player_world
       objectReference: {fileID: 0}
-    - target: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
-        type: 3}
-      propertyPath: serializationData.Prefab
-      value: 
-      objectReference: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
-        type: 3}
     - target: {fileID: 6718698301903599708, guid: b54322231f2a9ec4490ef46b2934c0b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5283,6 +5235,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
+        type: 3}
     - target: {fileID: 3353949383777998089, guid: b54322231f2a9ec4490ef46b2934c0b8,
         type: 3}
       propertyPath: sceneCtrl
@@ -5677,31 +5635,46 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 7
-      Data: 8|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 3
-    - Name: item
-      Entry: 3
+      Data: 8|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
       Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
+    - Name: taskId
+      Entry: 1
+      Data: GoOutside
+    - Name: subTaskId
+      Entry: 1
+      Data: Go_to_the_Elevator
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|SceneReaction, Assembly-CSharp
+      Data: 9|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 2
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 10
+      Data: 1
+    - Name: interactableName
+      Entry: 1
+      Data: int_elevator_control_panel
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|SceneReaction, Assembly-CSharp
     - Name: scene
       Entry: 10
       Data: 1
@@ -5732,42 +5705,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|ObjectiveReaction, Assembly-CSharp
-    - Name: objective
-      Entry: 10
-      Data: 0
-    - Name: taskId
-      Entry: 1
-      Data: GoOutside
-    - Name: subTaskId
-      Entry: 1
-      Data: Go_to_the_Elevator
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 11|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 2
-    - Name: item
-      Entry: 3
-      Data: 2
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 10
-      Data: 1
-    - Name: interactableName
-      Entry: 1
-      Data: int_elevator_control_panel
     - Name: 
       Entry: 8
       Data: 
@@ -11243,31 +11180,10 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 7|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 3
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 8|SceneReaction, Assembly-CSharp
+      Data: 7|SceneReaction, Assembly-CSharp
     - Name: scene
       Entry: 10
       Data: 1

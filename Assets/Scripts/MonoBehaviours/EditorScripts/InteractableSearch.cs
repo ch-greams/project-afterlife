@@ -13,7 +13,7 @@ public class InteractableSearch : SerializedMonoBehaviour
     [BoxGroup("Reaction Search"), ShowInInspector]
     public IInteractableReaction reactionToFind;
 
-    [BoxGroup("Interactable Search"), ValueDropdown("interactableNames")]
+    [BoxGroup("Interactable Search"), ValueDropdown("interactableNames"), NonSerialized, ShowInInspector]
     public string interactablePathToFind;
 
 
