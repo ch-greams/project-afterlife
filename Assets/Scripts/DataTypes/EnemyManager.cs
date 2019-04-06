@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 
-public class EnemyManager
+public class EnemyManager : SerializedMonoBehaviour
 {
     [ListDrawerSettings(Expanded = false, DraggableItems = false)]
     public List<Enemy> enemies = new List<Enemy>();

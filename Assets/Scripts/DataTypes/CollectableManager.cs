@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 
-public class CollectableManager
+public class CollectableManager : SerializedMonoBehaviour
 {
     public GameObject collectableItemPrefab;
     public GameObject collectionEffectPrefab;

@@ -113,4 +113,4 @@ MonoBehaviour:
   title: Denial
   completed: 0
   comment: {fileID: 0}
-  nextObjective: {fileID: 0}
+  nextObjective: {fileID: 11400000, guid: 0a66e3baf13f5c346a68777bf41f8abf, type: 2}

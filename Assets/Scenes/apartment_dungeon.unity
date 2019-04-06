@@ -564,7 +564,7 @@ PrefabInstance:
     - target: {fileID: 4536994867280395223, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: m_Name
-      value: spawn_enemy_yellow (008, 006)
+      value: spawn_pc_shadow (008, 006)
       objectReference: {fileID: 0}
     - target: {fileID: 4536994867280395223, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
@@ -630,8 +630,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: spawnPointDelay
@@ -655,7 +654,7 @@ PrefabInstance:
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: movementSpeed
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
@@ -682,10 +681,30 @@ PrefabInstance:
       propertyPath: sceneCtrl
       value: 
       objectReference: {fileID: 1793904435}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: state.isActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: name
+      value: pc_shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: state.hasInfiniteCapacity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: state.spawnDelay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7972385217893668767, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8597d5cf86fa5124ca9ed04e0413ce84, type: 3}
@@ -3517,6 +3536,8 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 2010216002}
+    - {fileID: 11400000, guid: 3f05840fd1a502a46aa5d2cb6c827b1e, type: 2}
+    - {fileID: 11400000, guid: 3b74e5a629deb304eaa3fe591d2a0f08, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -3526,8 +3547,8 @@ MonoBehaviour:
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
     - Name: actionLabel
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: Take the Call
     - Name: isInteractableActive
       Entry: 5
       Data: true
@@ -3620,7 +3641,25 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: CheckAroundApartment
+    - Name: subTaskId
+      Entry: 1
+      Data: Answer_the_Phone
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -3629,11 +3668,80 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 8|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: item
+      Entry: 3
       Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: CheckAroundApartment
+    - Name: subTaskId
+      Entry: 1
+      Data: Answer_the_Phone
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|DialogueReaction, Assembly-CSharp
+    - Name: dialogueCollection
+      Entry: 10
+      Data: 2
+    - Name: dialogueTitle
+      Entry: 1
+      Data: CallFromNowhere
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 1
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -7424,12 +7532,8 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 2010215999}
-    - {fileID: 11400000, guid: d1bf6e0cc7907114a8f39c799125e906, type: 2}
-    - {fileID: 2120387478}
+    - {fileID: 11400000, guid: 0a66e3baf13f5c346a68777bf41f8abf, type: 2}
     - {fileID: 1087967421}
-    - {fileID: 45437632}
-    - {fileID: 11400000, guid: 27713008971afc04fac29dee843ffcda, type: 2}
-    - {fileID: 1035420775}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -7439,8 +7543,8 @@ MonoBehaviour:
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
     - Name: actionLabel
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: Break Mirror
     - Name: isInteractableActive
       Entry: 5
       Data: false
@@ -7526,7 +7630,7 @@ MonoBehaviour:
       Data: 4|InteractableAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Try Enable Last Item
+      Data: Break Mirror
     - Name: conditions
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
@@ -7539,16 +7643,16 @@ MonoBehaviour:
       Data: 6|ObjectiveCondition, Assembly-CSharp
     - Name: type
       Entry: 3
-      Data: 0
+      Data: 6
     - Name: objective
       Entry: 10
       Data: 1
     - Name: taskId
       Entry: 1
-      Data: First Portal
+      Data: DestroyBathroomMirror
     - Name: subTaskId
       Entry: 1
-      Data: FirstPortal
+      Data: Destroy_Third_Portal
     - Name: 
       Entry: 8
       Data: 
@@ -7564,16 +7668,19 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 7
+      Data: 2
     - Name: 
       Entry: 7
-      Data: 8|SpawnPointReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 1
-    - Name: spawnPoint
+      Data: 8|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
       Entry: 10
-      Data: 2
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: DestroyBathroomMirror
+    - Name: subTaskId
+      Entry: 1
+      Data: Destroy_Third_Portal
     - Name: 
       Entry: 8
       Data: 
@@ -7585,100 +7692,7 @@ MonoBehaviour:
       Data: 1
     - Name: spawnPoint
       Entry: 10
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|SpawnPointReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 1
-    - Name: spawnPoint
-      Entry: 10
-      Data: 4
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 11|ObjectiveReaction, Assembly-CSharp
-    - Name: objective
-      Entry: 10
-      Data: 5
-    - Name: taskId
-      Entry: 1
-      Data: FindLastItem
-    - Name: subTaskId
-      Entry: 1
-      Data: FindLastItem
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 12|TileReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 0
-    - Name: tiles
-      Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[Tile, Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 10
-      Data: 6
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 14|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 0
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 15|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 1
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -10649,7 +10663,7 @@ PrefabInstance:
     - target: {fileID: 4536994867280395223, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: m_Name
-      value: spawn_enemy_yellow (010, 002)
+      value: spawn_mirror_shadow (010, 002)
       objectReference: {fileID: 0}
     - target: {fileID: 4536994867280395223, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
@@ -10715,8 +10729,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: spawnPointDelay
@@ -10735,7 +10748,7 @@ PrefabInstance:
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: movementSpeed
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
@@ -10761,6 +10774,21 @@ PrefabInstance:
         type: 3}
       propertyPath: point.x
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: name
+      value: mirror_shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: state.hasInfiniteCapacity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: state.spawnDelay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7972385217893668767, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
@@ -10942,6 +10970,102 @@ Transform:
   m_Father: {fileID: 1165248026}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1001 &1111972682
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1279651751}
+    m_Modifications:
+    - target: {fileID: 8647755910181720888, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: m_Name
+      value: reachable_point (004, 000)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720889, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720889, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720889, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720889, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720889, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720889, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720889, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720889, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720889, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720889, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720889, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720870, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 8647755910181720870, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+    - target: {fileID: 8647755910181720870, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: point.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720870, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: point.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647755910181720870, guid: 4a5436cf10911f1419c9e0e67046fd12,
+        type: 3}
+      propertyPath: sceneCtrl
+      value: 
+      objectReference: {fileID: 1793904435}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a5436cf10911f1419c9e0e67046fd12, type: 3}
+--- !u!4 &1111972683 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8647755910181720889, guid: 4a5436cf10911f1419c9e0e67046fd12,
+    type: 3}
+  m_PrefabInstance: {fileID: 1111972682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1121789065
 GameObject:
   m_ObjectHideFlags: 0
@@ -12914,6 +13038,222 @@ MonoBehaviour:
   isActive: 0
   isSelected: 0
   sceneCtrl: {fileID: 1793904435}
+--- !u!1 &1279651749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1279651751}
+  - component: {fileID: 1279651750}
+  m_Layer: 0
+  m_Name: int_hearing_voices
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1279651750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279651749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9719588919376647b7fa704abb1cfe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 3b74e5a629deb304eaa3fe591d2a0f08, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: data
+      Entry: 7
+      Data: 0|InteractableData, Assembly-CSharp
+    - Name: actionLabel
+      Entry: 1
+      Data: 
+    - Name: isInteractableActive
+      Entry: 5
+      Data: true
+    - Name: isAutoTriggerInteractable
+      Entry: 5
+      Data: true
+    - Name: interactableObject
+      Entry: 6
+      Data: 
+    - Name: animator
+      Entry: 6
+      Data: 
+    - Name: defaultColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: hasCollider
+      Entry: 5
+      Data: false
+    - Name: reachablePoints
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Point, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: Point, Assembly-CSharp
+    - Name: x
+      Entry: 3
+      Data: 4
+    - Name: y
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: initializeActions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[InteractableAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: clickActions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[InteractableAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 4|InteractableAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Hearing Voices
+    - Name: conditions
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 7|DialogueReaction, Assembly-CSharp
+    - Name: dialogueCollection
+      Entry: 10
+      Data: 0
+    - Name: dialogueTitle
+      Entry: 1
+      Data: ItsNotReal
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: item
+      Entry: 3
+      Data: 0
+    - Name: interactable
+      Entry: 6
+      Data: 
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  showGizmo: 1
+  sceneCtrl: {fileID: 1793904435}
+--- !u!4 &1279651751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279651749}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.5, y: 1.5, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1111972683}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1280817476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13724,9 +14064,13 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 742257431}
+    - {fileID: 11400000, guid: 3f05840fd1a502a46aa5d2cb6c827b1e, type: 2}
+    - {fileID: 2120387478}
     - {fileID: 1087967421}
-    - {fileID: 11400000, guid: d1bf6e0cc7907114a8f39c799125e906, type: 2}
+    - {fileID: 45437632}
     - {fileID: 700086693}
+    - {fileID: 1410993170}
+    - {fileID: 1435636078}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -13740,7 +14084,7 @@ MonoBehaviour:
       Data: 
     - Name: isInteractableActive
       Entry: 5
-      Data: true
+      Data: false
     - Name: isAutoTriggerInteractable
       Entry: 5
       Data: false
@@ -13829,7 +14173,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 4|InteractableAction, Assembly-CSharp
@@ -13842,7 +14186,25 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: CheckAroundApartment
+    - Name: subTaskId
+      Entry: 1
+      Data: Watch_TV
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -13851,41 +14213,14 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 8
     - Name: 
       Entry: 7
-      Data: 7|SpawnPointReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 0
-    - Name: spawnPoint
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 8|ObjectiveReaction, Assembly-CSharp
-    - Name: objective
-      Entry: 10
-      Data: 2
-    - Name: taskId
-      Entry: 1
-      Data: Second Portal
-    - Name: subTaskId
-      Entry: 1
-      Data: SecondPortal
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 9|InteractableDataReaction, Assembly-CSharp
+      Data: 8|InteractableDataReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
@@ -13905,70 +14240,110 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
       Entry: 7
-      Data: 10|InteractableAction, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Try Activate Last Item
-    - Name: conditions
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
+      Data: 9|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
       Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: CheckAroundApartment
+    - Name: subTaskId
+      Entry: 1
+      Data: Watch_TV
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
-      Data: 12|ObjectiveCondition, Assembly-CSharp
+      Data: 10|SpawnPointReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 0
-    - Name: objective
+    - Name: spawnPoint
       Entry: 10
       Data: 2
-    - Name: taskId
-      Entry: 1
-      Data: First Portal
-    - Name: subTaskId
-      Entry: 1
-      Data: FirstPortal
     - Name: 
       Entry: 8
       Data: 
     - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: reactions
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
-        mscorlib
+      Data: 11|SpawnPointReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: spawnPoint
+      Entry: 10
+      Data: 3
     - Name: 
-      Entry: 12
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|SpawnPointReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: spawnPoint
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
       Data: 1
+    - Name: interactable
+      Entry: 10
+      Data: 5
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 7
       Data: 14|InteractableDataReaction, Assembly-CSharp
     - Name: type
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: item
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: interactable
       Entry: 10
-      Data: 3
+      Data: 6
+    - Name: sceneState
+      Entry: 6
+      Data: 
+    - Name: interactableName
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|InteractableDataReaction, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 2
+    - Name: item
+      Entry: 3
+      Data: 1
+    - Name: interactable
+      Entry: 10
+      Data: 7
     - Name: sceneState
       Entry: 6
       Data: 
@@ -14895,9 +15270,8 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 2010216000}
-    - {fileID: 2120387478}
-    - {fileID: 11400000, guid: d1bf6e0cc7907114a8f39c799125e906, type: 2}
-    - {fileID: 700086693}
+    - {fileID: 11400000, guid: 0a66e3baf13f5c346a68777bf41f8abf, type: 2}
+    - {fileID: 45437632}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -14907,11 +15281,11 @@ MonoBehaviour:
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
     - Name: actionLabel
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: Destroy PC
     - Name: isInteractableActive
       Entry: 5
-      Data: true
+      Data: false
     - Name: isAutoTriggerInteractable
       Entry: 5
       Data: false
@@ -15000,20 +15374,38 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 4|InteractableAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Activate Spawn Point
+      Data: Destroy PC
     - Name: conditions
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: DestroyPC
+    - Name: subTaskId
+      Entry: 1
+      Data: Destroy_Second_Portal
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -15022,130 +15414,35 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 7|SpawnPointReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 0
-    - Name: spawnPoint
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 2
     - Name: 
       Entry: 7
       Data: 8|ObjectiveReaction, Assembly-CSharp
     - Name: objective
       Entry: 10
-      Data: 2
+      Data: 1
     - Name: taskId
       Entry: 1
-      Data: First Portal
+      Data: DestroyPC
     - Name: subTaskId
       Entry: 1
-      Data: FirstPortal
+      Data: Destroy_Second_Portal
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|InteractableDataReaction, Assembly-CSharp
+      Data: 9|SpawnPointReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|InteractableAction, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Try Activate Last Item
-    - Name: conditions
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 12|ObjectiveCondition, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 0
-    - Name: objective
+    - Name: spawnPoint
       Entry: 10
       Data: 2
-    - Name: taskId
-      Entry: 1
-      Data: First Portal
-    - Name: subTaskId
-      Entry: 1
-      Data: FirstPortal
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: reactions
-      Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 14|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 0
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 10
-      Data: 3
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -15449,9 +15746,8 @@ MonoBehaviour:
     SerializedBytes: 
     ReferencedUnityObjects:
     - {fileID: 2010216001}
-    - {fileID: 1087967421}
-    - {fileID: 11400000, guid: d1bf6e0cc7907114a8f39c799125e906, type: 2}
-    - {fileID: 700086693}
+    - {fileID: 11400000, guid: 0a66e3baf13f5c346a68777bf41f8abf, type: 2}
+    - {fileID: 2120387478}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -15461,11 +15757,11 @@ MonoBehaviour:
       Entry: 7
       Data: 0|InteractableData, Assembly-CSharp
     - Name: actionLabel
-      Entry: 6
-      Data: 
+      Entry: 1
+      Data: Destroy TV
     - Name: isInteractableActive
       Entry: 5
-      Data: true
+      Data: false
     - Name: isAutoTriggerInteractable
       Entry: 5
       Data: false
@@ -15554,20 +15850,38 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 4|InteractableAction, Assembly-CSharp
     - Name: name
       Entry: 1
-      Data: Activate Spawn Point
+      Data: Destroy TV
     - Name: conditions
       Entry: 7
       Data: 5|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 0
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 1
+    - Name: taskId
+      Entry: 1
+      Data: DestroyTV
+    - Name: subTaskId
+      Entry: 1
+      Data: Destroy_First_Portal
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -15576,130 +15890,35 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
-    - Name: 
-      Entry: 7
-      Data: 7|SpawnPointReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 0
-    - Name: spawnPoint
-      Entry: 10
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 2
     - Name: 
       Entry: 7
       Data: 8|ObjectiveReaction, Assembly-CSharp
     - Name: objective
       Entry: 10
-      Data: 2
+      Data: 1
     - Name: taskId
       Entry: 1
-      Data: Second Portal
+      Data: DestroyTV
     - Name: subTaskId
       Entry: 1
-      Data: SecondPortal
+      Data: Destroy_First_Portal
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|InteractableDataReaction, Assembly-CSharp
+      Data: 9|SpawnPointReaction, Assembly-CSharp
     - Name: type
       Entry: 3
       Data: 1
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 6
-      Data: 
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 10|InteractableAction, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Try Activate Last Item
-    - Name: conditions
-      Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 12|ObjectiveCondition, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 0
-    - Name: objective
+    - Name: spawnPoint
       Entry: 10
       Data: 2
-    - Name: taskId
-      Entry: 1
-      Data: First Portal
-    - Name: subTaskId
-      Entry: 1
-      Data: FirstPortal
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: reactions
-      Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 14|InteractableDataReaction, Assembly-CSharp
-    - Name: type
-      Entry: 3
-      Data: 0
-    - Name: item
-      Entry: 3
-      Data: 0
-    - Name: interactable
-      Entry: 10
-      Data: 3
-    - Name: sceneState
-      Entry: 6
-      Data: 
-    - Name: interactableName
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -17985,6 +18204,7 @@ MonoBehaviour:
     - {fileID: 45437633}
     - {fileID: 1087967422}
     - {fileID: 2120387477}
+    - {fileID: 1279651750}
     - {fileID: 407706577}
     - {fileID: 700086693}
     - {fileID: 1358759003}
@@ -18014,7 +18234,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: spawn_enemy_yellow (008, 006)
+      Data: spawn_pc_shadow (008, 006)
     - Name: 
       Entry: 10
       Data: 0
@@ -18026,7 +18246,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: spawn_enemy_yellow (010, 002)
+      Data: spawn_mirror_shadow (010, 002)
     - Name: 
       Entry: 10
       Data: 1
@@ -18038,7 +18258,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: spawn_enemy_yellow (002, 010)
+      Data: spawn_tv_shadow (002, 010)
     - Name: 
       Entry: 10
       Data: 2
@@ -18060,13 +18280,13 @@ MonoBehaviour:
       Data: 1
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 6
     - Name: 
       Entry: 7
       Data: 
     - Name: 
       Entry: 1
-      Data: int_landline_phone
+      Data: int_hearing_voices
     - Name: 
       Entry: 10
       Data: 3
@@ -18078,7 +18298,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_bathroom_mirror
+      Data: int_landline_phone
     - Name: 
       Entry: 10
       Data: 4
@@ -18090,7 +18310,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_remote
+      Data: int_bathroom_mirror
     - Name: 
       Entry: 10
       Data: 5
@@ -18102,7 +18322,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_computer
+      Data: int_remote
     - Name: 
       Entry: 10
       Data: 6
@@ -18114,10 +18334,22 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_tv
+      Data: int_computer
     - Name: 
       Entry: 10
       Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_tv
+    - Name: 
+      Entry: 10
+      Data: 8
     - Name: 
       Entry: 8
       Data: 
@@ -20866,7 +21098,7 @@ PrefabInstance:
     - target: {fileID: 4536994867280395223, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: m_Name
-      value: spawn_enemy_yellow (002, 010)
+      value: spawn_tv_shadow (002, 010)
       objectReference: {fileID: 0}
     - target: {fileID: 4536994867280395223, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
@@ -20932,8 +21164,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: spawnPointDelay
@@ -20957,7 +21188,7 @@ PrefabInstance:
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: movementSpeed
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
@@ -20979,6 +21210,21 @@ PrefabInstance:
       propertyPath: sceneCtrl
       value: 
       objectReference: {fileID: 1793904435}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: name
+      value: tv_shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: state.hasInfiniteCapacity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: state.spawnDelay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7972385217893668767, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: m_IsActive

@@ -1061,7 +1061,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 7|SceneReaction, Assembly-CSharp
@@ -1095,15 +1095,6 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 8|TestDebugReaction, Assembly-CSharp
-    - Name: logText
-      Entry: 1
-      Data: Triggered Test
     - Name: 
       Entry: 8
       Data: 
@@ -3247,16 +3238,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7233454470354331867, guid: b54322231f2a9ec4490ef46b2934c0b8,
         type: 3}
-    - target: {fileID: 3393795213383950125, guid: b54322231f2a9ec4490ef46b2934c0b8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3353949383777998089, guid: b54322231f2a9ec4490ef46b2934c0b8,
         type: 3}
       propertyPath: sceneCtrl
       value: 
       objectReference: {fileID: 1311566517}
+    - target: {fileID: 3393795213383950125, guid: b54322231f2a9ec4490ef46b2934c0b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b54322231f2a9ec4490ef46b2934c0b8, type: 3}
 --- !u!114 &2030485170 stripped

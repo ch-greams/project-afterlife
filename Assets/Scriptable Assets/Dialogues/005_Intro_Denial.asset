@@ -42,7 +42,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: "ItsNotReal\r\n"
+      Data: ItsNotReal
     - Name: 
       Entry: 7
       Data: 2|Dialogue, Assembly-CSharp
@@ -142,7 +142,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: "CallFromNowhere\r\n"
+      Data: CallFromNowhere
     - Name: 
       Entry: 7
       Data: 10|Dialogue, Assembly-CSharp

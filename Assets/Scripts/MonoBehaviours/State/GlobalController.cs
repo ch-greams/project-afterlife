@@ -37,10 +37,10 @@ public class GlobalController : SerializedMonoBehaviour
     public StatsManager statsManager;
 
 
-    [FoldoutGroup("State Management")]
+    [BoxGroup("State Management")]
     public EnemyManager enemyManager;
 
-    [FoldoutGroup("State Management")]
+    [BoxGroup("State Management")]
     public CollectableManager collectableManager;
 
     public SceneManager sceneManager;
