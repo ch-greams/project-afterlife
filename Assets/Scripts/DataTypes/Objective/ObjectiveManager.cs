@@ -11,7 +11,7 @@ public class ObjectiveManager : SerializedMonoBehaviour
     public Text objectiveTitle;
     public GameObject taskList;
 
-    [FoldoutGroup("Task")]
+    [BoxGroup("Task")]
     public GameObject taskPrefab;
 
     [BoxGroup("Task/Active Task")]

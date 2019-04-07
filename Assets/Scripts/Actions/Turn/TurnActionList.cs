@@ -5,18 +5,18 @@ using Sirenix.Utilities.Editor;
 #endif
 
 
-public class EndOfTurnActionList : SerializedMonoBehaviour
+public class TurnActionList : SerializedMonoBehaviour
 {
     [ListDrawerSettings(
         Expanded = true, NumberOfItemsPerPage = 10, OnTitleBarGUI = "DrawActionListRefreshButton",
         OnBeginListElementGUI = "BeginDrawActionListElement", OnEndListElementGUI = "EndDrawListElement"
     )]
-    public List<EndOfTurnAction> actions = new List<EndOfTurnAction>();
+    public List<TurnAction> actions = new List<TurnAction>();
 
 
     public void Init(GlobalController globalCtrl)
     {
-        foreach (EndOfTurnAction action in this.actions)
+        foreach (TurnAction action in this.actions)
         {
             action.Init(globalCtrl);   
         }
@@ -41,7 +41,7 @@ public class EndOfTurnActionList : SerializedMonoBehaviour
 
     private void BeginDrawActionListElement(int index)
     {
-        EndOfTurnAction action = this.actions[index];
+        TurnAction action = this.actions[index];
 
         string title = (
             index == action.index

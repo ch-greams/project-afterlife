@@ -41,7 +41,7 @@ public class LockPlayerControlsReaction : IEndOfTurnReaction
                 interfaceElements.skipTurnButton.gameObject.SetActive(false);       // NOTE: Hide skip button
 
                 playerActionManager.gameOverFade.SetActive(true);                   // NOTE: Show GameOver fade canvas
-                this.globalCtrl.endOfTurnActionManager.TrySkipActions();            // NOTE: Skip following actions
+                this.globalCtrl.turnActionManager.TrySkipActions();            // NOTE: Skip following actions
                 break;
             case LockPlayerControlsReactionType.Undefined:
             default:

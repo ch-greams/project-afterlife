@@ -30,7 +30,7 @@ public class GlobalController : SerializedMonoBehaviour
     [FoldoutGroup("Interface Management"), BoxGroup("Interface Management/Player Actions")]
     public PlayerActionManager playerActionManager;
     [FoldoutGroup("Interface Management"), BoxGroup("Interface Management/Player Actions")]
-    public EndOfTurnActionManager endOfTurnActionManager;
+    public TurnActionManager turnActionManager;
 
     // TODO: Do something smart about it
     [FoldoutGroup("Interface Management")]
@@ -92,7 +92,7 @@ public class GlobalController : SerializedMonoBehaviour
         this.objectiveManager.Init(this);
 
         this.playerActionManager.Init(this);
-        this.endOfTurnActionManager.Init(this);
+        this.turnActionManager.Init(this);
 
         // State Management
         this.enemyManager.Init(this);
@@ -127,7 +127,7 @@ public class GlobalController : SerializedMonoBehaviour
     public void NextTurn()
     {
         this.statsManager.IncrementTurnCount();
-        base.StartCoroutine(this.endOfTurnActionManager.TriggerValidActions());
+        base.StartCoroutine(this.turnActionManager.TriggerValidActions());
     }
 
     public void LoadFromState()

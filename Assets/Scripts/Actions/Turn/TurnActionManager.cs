@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
 
-public class EndOfTurnActionManager : SerializedMonoBehaviour
+public class TurnActionManager : SerializedMonoBehaviour
 {
-    public Dictionary<PlayerActionType, EndOfTurnActionList> actionLists = new Dictionary<PlayerActionType, EndOfTurnActionList>();
+    public Dictionary<PlayerActionType, TurnActionList> actionLists = new Dictionary<PlayerActionType, TurnActionList>();
 
     private bool isInProgress = false;
     private bool skipActions = false;
@@ -17,7 +17,7 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
     {
         this.globalCtrl = globalCtrl;
 
-        foreach (EndOfTurnActionList actionList in this.actionLists.Values)
+        foreach (TurnActionList actionList in this.actionLists.Values)
         {
             actionList.Init(this.globalCtrl);
         }
@@ -30,7 +30,7 @@ public class EndOfTurnActionManager : SerializedMonoBehaviour
 
         this.isInProgress = true;
 
-        foreach (EndOfTurnAction action in this.actionLists[actionType].actions)
+        foreach (TurnAction action in this.actionLists[actionType].actions)
         {
             if (action.IsValid())
             {

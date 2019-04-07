@@ -22,6 +22,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 7a4acdd631b20dc4aa4922b84900af4f, type: 2}
     - {fileID: 11400000, guid: 3f05840fd1a502a46aa5d2cb6c827b1e, type: 2}
     - {fileID: 11400000, guid: 0a66e3baf13f5c346a68777bf41f8abf, type: 2}
+    - {fileID: 11400000, guid: 96675182dc66f7c4da77acf19a319a1e, type: 2}
+    - {fileID: 11400000, guid: af21f23591a5d2c43a5e8651471e1c3f, type: 2}
     - {fileID: 11400000, guid: e6d8631b9a2822b4a8c7f2f15a240207, type: 2}
     - {fileID: 11400000, guid: a7b5fdd29ad36404183ef99ca8a7ad14, type: 2}
     - {fileID: 11400000, guid: 90f502611efdd254095e74138351d7fa, type: 2}
@@ -48,7 +50,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 6
+      Data: 8
     - Name: 
       Entry: 7
       Data: 
@@ -122,6 +124,30 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 007_Intro_CleanUp
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: 008_Intro_Beginning
+    - Name: 
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
       Entry: 13
       Data: 
     - Name: 
@@ -149,7 +175,7 @@ MonoBehaviour:
       Data: playground
     - Name: 
       Entry: 10
-      Data: 6
+      Data: 8
     - Name: 
       Entry: 8
       Data: 
@@ -161,7 +187,7 @@ MonoBehaviour:
       Data: apartment_living_room
     - Name: 
       Entry: 10
-      Data: 7
+      Data: 9
     - Name: 
       Entry: 8
       Data: 
@@ -173,7 +199,7 @@ MonoBehaviour:
       Data: apartment_bedroom
     - Name: 
       Entry: 10
-      Data: 8
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -185,7 +211,7 @@ MonoBehaviour:
       Data: apartment_dungeon
     - Name: 
       Entry: 10
-      Data: 9
+      Data: 11
     - Name: 
       Entry: 8
       Data: 
@@ -197,7 +223,7 @@ MonoBehaviour:
       Data: apartment_bathroom
     - Name: 
       Entry: 10
-      Data: 10
+      Data: 12
     - Name: 
       Entry: 8
       Data: 
@@ -209,7 +235,7 @@ MonoBehaviour:
       Data: hallway
     - Name: 
       Entry: 10
-      Data: 11
+      Data: 13
     - Name: 
       Entry: 8
       Data: 
@@ -221,7 +247,7 @@ MonoBehaviour:
       Data: hallway_elevator
     - Name: 
       Entry: 10
-      Data: 12
+      Data: 14
     - Name: 
       Entry: 8
       Data: 
@@ -233,7 +259,7 @@ MonoBehaviour:
       Data: hallway_elevator_dungeon
     - Name: 
       Entry: 10
-      Data: 13
+      Data: 15
     - Name: 
       Entry: 8
       Data: 

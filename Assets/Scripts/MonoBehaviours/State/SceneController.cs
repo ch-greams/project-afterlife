@@ -64,6 +64,14 @@ public class SceneController : SerializedMonoBehaviour
                 tile: this.tiles.Find(t => t.point == this.sceneState.currentPositionPoint),
                 visibleRange: this.globalState.currentVisibility
             );
+        
+            // NOTE: Load spawn points by state
+            foreach (KeyValuePair<string, EnemySpawnPointState> kvp in this.sceneState.enemySpawnPoints)
+            {
+                // TODO: Clone? Check later.
+                this.enemySpawnPoints[kvp.Key].state = new EnemySpawnPointState(kvp.Value);
+                this.enemySpawnPoints[kvp.Key].spawnPointObject.SetActive(kvp.Value.isActive);
+            }
         }
         else
         {
@@ -78,14 +86,6 @@ public class SceneController : SerializedMonoBehaviour
         foreach (KeyValuePair<string, InteractableState> kvp in this.sceneState.interactables)
         {
             this.interactables[kvp.Key].ToggleInteractable(kvp.Value.enabled, kvp.Value.visible);
-        }
-
-        // NOTE: Load spawn points by state
-        foreach (KeyValuePair<string, EnemySpawnPointState> kvp in this.sceneState.enemySpawnPoints)
-        {
-            // TODO: Clone? Check later.
-            this.enemySpawnPoints[kvp.Key].state = new EnemySpawnPointState(kvp.Value);
-            this.enemySpawnPoints[kvp.Key].spawnPointObject.SetActive(kvp.Value.isActive);
         }
     }
 

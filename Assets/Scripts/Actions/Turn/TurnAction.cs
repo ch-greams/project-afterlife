@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
 
-public class EndOfTurnAction : IComparable<EndOfTurnAction>
+public class TurnAction : IComparable<TurnAction>
 {
     public string name;
     public int index;
@@ -18,7 +18,7 @@ public class EndOfTurnAction : IComparable<EndOfTurnAction>
     public List<IEndOfTurnReaction> reactions = new List<IEndOfTurnReaction>();
 
 
-    public EndOfTurnAction() { }
+    public TurnAction() { }
 
     public void Init(GlobalController globalCtrl)
     {
@@ -39,7 +39,7 @@ public class EndOfTurnAction : IComparable<EndOfTurnAction>
         }
     }
 
-    public int CompareTo(EndOfTurnAction other)
+    public int CompareTo(TurnAction other)
     {
         return this.index - other.index;
     }

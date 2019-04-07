@@ -38,7 +38,7 @@ public class SceneReaction : IInteractableReaction
         // NOTE: Skip actions in EoT
         if (this.globalCtrl.sceneCtrl.isDungeonScene)
         {
-            this.globalCtrl.endOfTurnActionManager.TrySkipActions();
+            this.globalCtrl.turnActionManager.TrySkipActions();
         }
 
         // NOTE: Load scene

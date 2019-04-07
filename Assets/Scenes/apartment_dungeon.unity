@@ -3538,6 +3538,7 @@ MonoBehaviour:
     - {fileID: 2010216002}
     - {fileID: 11400000, guid: 3f05840fd1a502a46aa5d2cb6c827b1e, type: 2}
     - {fileID: 11400000, guid: 3b74e5a629deb304eaa3fe591d2a0f08, type: 2}
+    - {fileID: 1358759003}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -3731,8 +3732,8 @@ MonoBehaviour:
       Entry: 3
       Data: 1
     - Name: interactable
-      Entry: 6
-      Data: 
+      Entry: 10
+      Data: 3
     - Name: sceneState
       Entry: 6
       Data: 

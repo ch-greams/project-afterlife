@@ -55,31 +55,13 @@ MonoBehaviour:
       Data: 3|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 4|SubTask, Assembly-CSharp
     - Name: title
       Entry: 1
       Data: Destroy First Portal
-    - Name: completed
-      Entry: 5
-      Data: false
-    - Name: optional
-      Entry: 5
-      Data: false
-    - Name: hidden
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 5|SubTask, Assembly-CSharp
-    - Name: title
-      Entry: 1
-      Data: Kill Shadows from First Portal
     - Name: completed
       Entry: 5
       Data: false
@@ -112,7 +94,7 @@ MonoBehaviour:
       Data: DestroyPC
     - Name: 
       Entry: 7
-      Data: 6|Task, Assembly-CSharp
+      Data: 5|Task, Assembly-CSharp
     - Name: completed
       Entry: 5
       Data: false
@@ -121,34 +103,16 @@ MonoBehaviour:
       Data: false
     - Name: subTasks
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
+      Data: 6|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 8|SubTask, Assembly-CSharp
+      Data: 7|SubTask, Assembly-CSharp
     - Name: title
       Entry: 1
       Data: Destroy Second Portal
-    - Name: completed
-      Entry: 5
-      Data: false
-    - Name: optional
-      Entry: 5
-      Data: false
-    - Name: hidden
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 9|SubTask, Assembly-CSharp
-    - Name: title
-      Entry: 1
-      Data: Kill Shadows from Second Portal
     - Name: completed
       Entry: 5
       Data: false
@@ -181,7 +145,7 @@ MonoBehaviour:
       Data: DestroyBathroomMirror
     - Name: 
       Entry: 7
-      Data: 10|Task, Assembly-CSharp
+      Data: 8|Task, Assembly-CSharp
     - Name: completed
       Entry: 5
       Data: false
@@ -190,34 +154,16 @@ MonoBehaviour:
       Data: false
     - Name: subTasks
       Entry: 7
-      Data: 11|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
+      Data: 9|System.Collections.Generic.List`1[[SubTask, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
-      Data: 12|SubTask, Assembly-CSharp
+      Data: 10|SubTask, Assembly-CSharp
     - Name: title
       Entry: 1
       Data: Destroy Third Portal
-    - Name: completed
-      Entry: 5
-      Data: false
-    - Name: optional
-      Entry: 5
-      Data: false
-    - Name: hidden
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 13|SubTask, Assembly-CSharp
-    - Name: title
-      Entry: 1
-      Data: Kill Shadows from Third Portal
     - Name: completed
       Entry: 5
       Data: false
@@ -251,4 +197,4 @@ MonoBehaviour:
   title: Denial
   completed: 0
   comment: {fileID: 0}
-  nextObjective: {fileID: 11400000}
+  nextObjective: {fileID: 11400000, guid: 96675182dc66f7c4da77acf19a319a1e, type: 2}

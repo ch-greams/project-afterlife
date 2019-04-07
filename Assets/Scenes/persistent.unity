@@ -167,14 +167,13 @@ MonoBehaviour:
     SerializationNodes:
     - Name: actions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[EndOfTurnAction, Assembly-CSharp]],
-        mscorlib
+      Data: 0|System.Collections.Generic.List`1[[TurnAction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 6
     - Name: 
       Entry: 7
-      Data: 1|EndOfTurnAction, Assembly-CSharp
+      Data: 1|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Lock Player Controls
@@ -221,7 +220,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 5|EndOfTurnAction, Assembly-CSharp
+      Data: 5|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Player Action
@@ -304,7 +303,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|EndOfTurnAction, Assembly-CSharp
+      Data: 12|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -366,7 +365,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 18|EndOfTurnAction, Assembly-CSharp
+      Data: 18|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Game Over
@@ -422,7 +421,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 23|EndOfTurnAction, Assembly-CSharp
+      Data: 23|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try MultiKillProc
@@ -475,7 +474,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 27|EndOfTurnAction, Assembly-CSharp
+      Data: 27|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
@@ -965,14 +964,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
+    SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: collectableItems
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Point, Assembly-CSharp],[CollectableItem,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.ObjectEqualityComparer`1[[Point, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   collectableItemPrefab: {fileID: 154084, guid: ea460298bf221684caba050027fd1370,
     type: 3}
   collectionEffectPrefab: {fileID: 152564, guid: c65f01f5682ed7c4fa8a9f4b7627328c,
@@ -4919,14 +4938,13 @@ MonoBehaviour:
     SerializationNodes:
     - Name: actions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[EndOfTurnAction, Assembly-CSharp]],
-        mscorlib
+      Data: 0|System.Collections.Generic.List`1[[TurnAction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 6
     - Name: 
       Entry: 7
-      Data: 1|EndOfTurnAction, Assembly-CSharp
+      Data: 1|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Lock Player Controls
@@ -4973,7 +4991,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 5|EndOfTurnAction, Assembly-CSharp
+      Data: 5|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Player Action
@@ -5053,7 +5071,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|EndOfTurnAction, Assembly-CSharp
+      Data: 12|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -5115,7 +5133,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 18|EndOfTurnAction, Assembly-CSharp
+      Data: 18|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Game Over
@@ -5171,7 +5189,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 23|EndOfTurnAction, Assembly-CSharp
+      Data: 23|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try MultiKillProc
@@ -5224,7 +5242,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 27|EndOfTurnAction, Assembly-CSharp
+      Data: 27|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
@@ -6213,14 +6231,13 @@ MonoBehaviour:
     SerializationNodes:
     - Name: actions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[EndOfTurnAction, Assembly-CSharp]],
-        mscorlib
+      Data: 0|System.Collections.Generic.List`1[[TurnAction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 6
     - Name: 
       Entry: 7
-      Data: 1|EndOfTurnAction, Assembly-CSharp
+      Data: 1|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Lock Player Controls
@@ -6267,7 +6284,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 5|EndOfTurnAction, Assembly-CSharp
+      Data: 5|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Player Action
@@ -6347,7 +6364,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|EndOfTurnAction, Assembly-CSharp
+      Data: 12|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -6409,7 +6426,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 18|EndOfTurnAction, Assembly-CSharp
+      Data: 18|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Game Over
@@ -6465,7 +6482,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 23|EndOfTurnAction, Assembly-CSharp
+      Data: 23|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try MultiKillProc
@@ -6518,7 +6535,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 27|EndOfTurnAction, Assembly-CSharp
+      Data: 27|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
@@ -10304,7 +10321,7 @@ MonoBehaviour:
   globalState: {fileID: 11400000, guid: aa13c8b3ee1928c47bb12361015f462b, type: 2}
   objectiveManager: {fileID: 1160246232}
   playerActionManager: {fileID: 1742319161}
-  endOfTurnActionManager: {fileID: 1607163986}
+  turnActionManager: {fileID: 1607163986}
   enemyManager: {fileID: 191079241}
   collectableManager: {fileID: 96947239}
   sceneManager: {fileID: 1752437329}
@@ -11956,14 +11973,13 @@ MonoBehaviour:
     SerializationNodes:
     - Name: actions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[EndOfTurnAction, Assembly-CSharp]],
-        mscorlib
+      Data: 0|System.Collections.Generic.List`1[[TurnAction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 6
     - Name: 
       Entry: 7
-      Data: 1|EndOfTurnAction, Assembly-CSharp
+      Data: 1|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Lock Player Controls
@@ -12010,7 +12026,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 5|EndOfTurnAction, Assembly-CSharp
+      Data: 5|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Player Action
@@ -12093,7 +12109,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 13|EndOfTurnAction, Assembly-CSharp
+      Data: 13|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -12155,7 +12171,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 19|EndOfTurnAction, Assembly-CSharp
+      Data: 19|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Game Over
@@ -12211,7 +12227,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 24|EndOfTurnAction, Assembly-CSharp
+      Data: 24|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try MultiKillProc
@@ -12264,7 +12280,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 28|EndOfTurnAction, Assembly-CSharp
+      Data: 28|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
@@ -12370,14 +12386,13 @@ MonoBehaviour:
     SerializationNodes:
     - Name: actions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[EndOfTurnAction, Assembly-CSharp]],
-        mscorlib
+      Data: 0|System.Collections.Generic.List`1[[TurnAction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 6
     - Name: 
       Entry: 7
-      Data: 1|EndOfTurnAction, Assembly-CSharp
+      Data: 1|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Lock Player Controls
@@ -12424,7 +12439,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 5|EndOfTurnAction, Assembly-CSharp
+      Data: 5|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Player Action
@@ -12507,7 +12522,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|EndOfTurnAction, Assembly-CSharp
+      Data: 12|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -12569,7 +12584,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 18|EndOfTurnAction, Assembly-CSharp
+      Data: 18|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Game Over
@@ -12625,7 +12640,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 23|EndOfTurnAction, Assembly-CSharp
+      Data: 23|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try MultiKillProc
@@ -12678,7 +12693,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 27|EndOfTurnAction, Assembly-CSharp
+      Data: 27|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
@@ -12740,7 +12755,7 @@ GameObject:
   - component: {fileID: 1607163987}
   - component: {fileID: 1607163986}
   m_Layer: 0
-  m_Name: EndOfTurnActionManager
+  m_Name: TurnActionManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12776,7 +12791,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: actionLists
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[PlayerActionType, Assembly-CSharp],[EndOfTurnActionList,
+      Data: 0|System.Collections.Generic.Dictionary`2[[PlayerActionType, Assembly-CSharp],[TurnActionList,
         Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
@@ -14736,14 +14751,13 @@ MonoBehaviour:
     SerializationNodes:
     - Name: actions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[EndOfTurnAction, Assembly-CSharp]],
-        mscorlib
+      Data: 0|System.Collections.Generic.List`1[[TurnAction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 6
     - Name: 
       Entry: 7
-      Data: 1|EndOfTurnAction, Assembly-CSharp
+      Data: 1|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Lock Player Controls
@@ -14790,7 +14804,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 5|EndOfTurnAction, Assembly-CSharp
+      Data: 5|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Player Action
@@ -14861,7 +14875,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 11|EndOfTurnAction, Assembly-CSharp
+      Data: 11|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: 'Enemies: Move & Spawn'
@@ -14923,7 +14937,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 17|EndOfTurnAction, Assembly-CSharp
+      Data: 17|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try Game Over
@@ -14979,7 +14993,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 22|EndOfTurnAction, Assembly-CSharp
+      Data: 22|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Try MultiKillProc
@@ -15032,7 +15046,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 26|EndOfTurnAction, Assembly-CSharp
+      Data: 26|TurnAction, Assembly-CSharp
     - Name: name
       Entry: 1
       Data: Unlock Player Controls
@@ -15601,8 +15615,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: actions
       Entry: 7
-      Data: 0|System.Collections.Generic.List`1[[EndOfTurnAction, Assembly-CSharp]],
-        mscorlib
+      Data: 0|System.Collections.Generic.List`1[[TurnAction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
