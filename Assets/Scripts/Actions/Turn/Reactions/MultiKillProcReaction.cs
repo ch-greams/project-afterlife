@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 
 
-public class MultiKillProcReaction : IEndOfTurnReaction
+public class MultiKillProcReaction : ITurnActionReaction
 {
     public int turnsTillReset = 1;
     public int amountForProc = 2;

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 
 
-public class InteractionReaction : IEndOfTurnReaction
+public class InteractionReaction : ITurnActionReaction
 {
     public InteractionReactionType type = InteractionReactionType.TriggerInteractable;
 

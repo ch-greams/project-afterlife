@@ -1,6 +1,6 @@
 ﻿
 
-public class DoubleKillStateCondition : IEndOfTurnCondition
+public class DoubleKillStateCondition : ITurnActionCondition
 {
     public DoubleKillStateConditionType type = DoubleKillStateConditionType.Undefined;
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerFlashlightReaction : IEndOfTurnReaction
+public class PlayerFlashlightReaction : ITurnActionReaction
 {
     [Range(0, 2)]
     public float animationTimeout = 0.25F;

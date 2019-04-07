@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 
 
-public class ScoreReaction : IEndOfTurnReaction
+public class ScoreReaction : ITurnActionReaction
 {
     public ScoreReactionType type = ScoreReactionType.Undefined;
     public int value = 0;

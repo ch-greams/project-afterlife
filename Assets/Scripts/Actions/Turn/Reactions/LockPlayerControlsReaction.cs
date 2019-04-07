@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 
 
-public class LockPlayerControlsReaction : IEndOfTurnReaction
+public class LockPlayerControlsReaction : ITurnActionReaction
 {
     public LockPlayerControlsReactionType type = LockPlayerControlsReactionType.Undefined;
 

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 
 
-public interface IEndOfTurnReaction
+public interface ITurnActionReaction
 {
     void Init(GlobalController globalCtrl);
     IEnumerator React();

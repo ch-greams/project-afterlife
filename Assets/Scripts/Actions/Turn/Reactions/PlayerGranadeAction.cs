@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerGranadeAction : IEndOfTurnReaction
+public class PlayerGranadeAction : ITurnActionReaction
 {
     public GameObject effectPrefab;
     public float effectTimeout = 0;

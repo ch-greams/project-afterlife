@@ -1,6 +1,6 @@
 ﻿
 
-public interface IEndOfTurnCondition
+public interface ITurnActionCondition
 {
     void Init(GlobalController globalCtrl);
     bool IsValid();

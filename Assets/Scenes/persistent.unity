@@ -182,7 +182,7 @@ MonoBehaviour:
       Data: 0
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -195,7 +195,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -229,7 +229,7 @@ MonoBehaviour:
       Data: 1
     - Name: conditions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -242,7 +242,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -312,7 +312,7 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 13|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -334,7 +334,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 15|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -374,7 +374,7 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -396,7 +396,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 21|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -430,7 +430,7 @@ MonoBehaviour:
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 24|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 24|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -443,7 +443,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 25|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -483,7 +483,7 @@ MonoBehaviour:
       Data: 5
     - Name: conditions
       Entry: 7
-      Data: 28|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -496,7 +496,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 29|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -4953,7 +4953,7 @@ MonoBehaviour:
       Data: 0
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -4966,7 +4966,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5000,7 +5000,7 @@ MonoBehaviour:
       Data: 1
     - Name: conditions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5013,7 +5013,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5080,7 +5080,7 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 13|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5102,7 +5102,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 15|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5142,7 +5142,7 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5164,7 +5164,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 21|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5198,7 +5198,7 @@ MonoBehaviour:
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 24|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 24|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5211,7 +5211,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 25|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5251,7 +5251,7 @@ MonoBehaviour:
       Data: 5
     - Name: conditions
       Entry: 7
-      Data: 28|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -5264,7 +5264,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 29|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6246,7 +6246,7 @@ MonoBehaviour:
       Data: 0
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6259,7 +6259,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6293,7 +6293,7 @@ MonoBehaviour:
       Data: 1
     - Name: conditions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6306,7 +6306,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6373,7 +6373,7 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 13|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6395,7 +6395,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 15|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6435,7 +6435,7 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6457,7 +6457,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 21|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6491,7 +6491,7 @@ MonoBehaviour:
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 24|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 24|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6504,7 +6504,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 25|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6544,7 +6544,7 @@ MonoBehaviour:
       Data: 5
     - Name: conditions
       Entry: 7
-      Data: 28|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -6557,7 +6557,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 29|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -11988,7 +11988,7 @@ MonoBehaviour:
       Data: 0
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12001,7 +12001,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12035,7 +12035,7 @@ MonoBehaviour:
       Data: 1
     - Name: conditions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12048,7 +12048,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12118,7 +12118,7 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 14|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12140,7 +12140,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 16|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 16|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12180,7 +12180,7 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 20|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12202,7 +12202,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 22|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 22|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12236,7 +12236,7 @@ MonoBehaviour:
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 25|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12249,7 +12249,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 26|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 26|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12289,7 +12289,7 @@ MonoBehaviour:
       Data: 5
     - Name: conditions
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 29|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12302,7 +12302,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 30|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 30|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12401,7 +12401,7 @@ MonoBehaviour:
       Data: 0
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12414,7 +12414,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12448,7 +12448,7 @@ MonoBehaviour:
       Data: 1
     - Name: conditions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12461,7 +12461,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12531,7 +12531,7 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 13|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 13|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12553,7 +12553,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 15|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 15|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12593,7 +12593,7 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 19|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 19|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12615,7 +12615,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 21|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 21|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12649,7 +12649,7 @@ MonoBehaviour:
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 24|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 24|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12662,7 +12662,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 25|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 25|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12702,7 +12702,7 @@ MonoBehaviour:
       Data: 5
     - Name: conditions
       Entry: 7
-      Data: 28|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -12715,7 +12715,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 29|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 29|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -14766,7 +14766,7 @@ MonoBehaviour:
       Data: 0
     - Name: conditions
       Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 2|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -14779,7 +14779,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -14813,7 +14813,7 @@ MonoBehaviour:
       Data: 1
     - Name: conditions
       Entry: 7
-      Data: 6|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 6|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -14826,7 +14826,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 7|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 7|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -14884,7 +14884,7 @@ MonoBehaviour:
       Data: 2
     - Name: conditions
       Entry: 7
-      Data: 12|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 12|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -14906,7 +14906,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 14|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 14|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -14946,7 +14946,7 @@ MonoBehaviour:
       Data: 3
     - Name: conditions
       Entry: 7
-      Data: 18|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 18|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -14968,7 +14968,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 20|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 20|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -15002,7 +15002,7 @@ MonoBehaviour:
       Data: 4
     - Name: conditions
       Entry: 7
-      Data: 23|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 23|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -15015,7 +15015,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 24|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 24|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -15055,7 +15055,7 @@ MonoBehaviour:
       Data: 5
     - Name: conditions
       Entry: 7
-      Data: 27|System.Collections.Generic.List`1[[IEndOfTurnCondition, Assembly-CSharp]],
+      Data: 27|System.Collections.Generic.List`1[[ITurnActionCondition, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -15068,7 +15068,7 @@ MonoBehaviour:
       Data: 
     - Name: reactions
       Entry: 7
-      Data: 28|System.Collections.Generic.List`1[[IEndOfTurnReaction, Assembly-CSharp]],
+      Data: 28|System.Collections.Generic.List`1[[ITurnActionReaction, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12

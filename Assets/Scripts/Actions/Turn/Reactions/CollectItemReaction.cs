@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 
 
-public class CollectItemReaction : IEndOfTurnReaction
+public class CollectItemReaction : ITurnActionReaction
 {
     private GlobalController globalCtrl;
 

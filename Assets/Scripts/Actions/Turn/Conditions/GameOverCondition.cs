@@ -1,6 +1,6 @@
 ﻿
 
-public class GameOverCondition : IEndOfTurnCondition
+public class GameOverCondition : ITurnActionCondition
 {
     public GameOverConditionType type = GameOverConditionType.Undefined;
     

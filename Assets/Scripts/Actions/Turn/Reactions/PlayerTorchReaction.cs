@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlayerTorchReaction : IEndOfTurnReaction
+public class PlayerTorchReaction : ITurnActionReaction
 {
     public GameObject effectPrefab;
     public float effectTimeout = 0;

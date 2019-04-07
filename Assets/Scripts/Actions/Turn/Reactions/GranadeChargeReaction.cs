@@ -2,7 +2,7 @@
 using Sirenix.OdinInspector;
 
 
-public class GranadeChargeReaction : IEndOfTurnReaction
+public class GranadeChargeReaction : ITurnActionReaction
 {
     public GranadeChargeReactionType type = GranadeChargeReactionType.Undefined;
 

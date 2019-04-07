@@ -11,11 +11,11 @@ public class TurnAction : IComparable<TurnAction>
 
     [GUIColor(0.85F, 1F, 1F, 1F)]
     [ListDrawerSettings(Expanded = false, DraggableItems = false)]
-    public List<IEndOfTurnCondition> conditions = new List<IEndOfTurnCondition>();
+    public List<ITurnActionCondition> conditions = new List<ITurnActionCondition>();
 
     [GUIColor(1F, 0.85F, 0.85F, 1F)]
     [ListDrawerSettings(Expanded = false)]
-    public List<IEndOfTurnReaction> reactions = new List<IEndOfTurnReaction>();
+    public List<ITurnActionReaction> reactions = new List<ITurnActionReaction>();
 
 
     public TurnAction() { }
@@ -33,7 +33,7 @@ public class TurnAction : IComparable<TurnAction>
 
     public IEnumerator React()
     {
-        foreach (IEndOfTurnReaction reaction in this.reactions)
+        foreach (ITurnActionReaction reaction in this.reactions)
         {
             yield return reaction.React();
         }
