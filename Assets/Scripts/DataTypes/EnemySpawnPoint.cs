@@ -8,30 +8,15 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
 {
     public bool showGizmo = true;
 
-    [FoldoutGroup("Enemy Settings", true)]
-    public new string name = "Enemy";
-    [FoldoutGroup("Enemy Settings", true)]
-    public Point point;
-    
-    [FoldoutGroup("Enemy Settings/Parameters")]
-    public GameObject prefab;
-    [FoldoutGroup("Enemy Settings/Parameters")]
-    public GameObject deathEffectPrefab;
-    [FoldoutGroup("Enemy Settings/Parameters")]
-    public float movementSpeed = 3.0F;
-    [FoldoutGroup("Enemy Settings/Parameters")]
-    public float animationSpeed = 2.0F;
-    [FoldoutGroup("Enemy Settings/Parameters")]
-    public float attackPower = 1.0F;
-    [FoldoutGroup("Enemy Settings/Parameters")]
-    public bool isLockedOnPlayer = false;
-    [FoldoutGroup("Enemy Settings/Parameters")]
-    public float itemDropRate = 0.30F;
+    [BoxGroup("Enemy Settings", true)]
+    public Enemy enemy;
 
+    [BoxGroup("Enemy Settings/State", true), InlineProperty, HideLabel]
+    public EnemyState enemyState;
 
-    [FoldoutGroup("SpawnPoint Settings")]
+    [BoxGroup("SpawnPoint Settings")]
     public GameObject spawnPointObject;
-    [FoldoutGroup("SpawnPoint Settings"), BoxGroup("SpawnPoint Settings/State"), InlineProperty, HideLabel]
+    [BoxGroup("SpawnPoint Settings"), BoxGroup("SpawnPoint Settings/State"), InlineProperty, HideLabel]
     public EnemySpawnPointState state;
 
 
@@ -47,24 +32,24 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
     public EnemySpawnPoint() { }
 
 
-    public Enemy TrySpawnEnemy(List<Tile> tiles)
+    public Enemy TrySpawnEnemy(List<Tile> tiles, SceneController sceneCtrl)
     {
         if (this.state.isActive)
         {
-            Tile tile = this.CheckTurnForSpawn() ? tiles.Find(t => t.point == this.point) : null;
+            Tile tile = this.CheckTurnForSpawn() ? tiles.Find(t => t.point == this.enemyState.position) : null;
 
             bool isTileAvailable = ( (tile != null) && !tile.isBlocked && !tile.isBlockedByPlayer );
             bool isSpawnPointHasCharge = this.state.hasInfiniteCapacity || ( this.state.capacity > 0 );
 
             this.ToggleSpawnPoint(isSpawnPointHasCharge);
 
-            return ( (isTileAvailable && isSpawnPointHasCharge) ? this.SpawnEnemy(tile) : null );
+            return ( (isTileAvailable && isSpawnPointHasCharge) ? this.SpawnEnemy(tile, sceneCtrl) : null );
         }
 
         return null;
     }
 
-    [FoldoutGroup("SpawnPoint Settings"), Button(ButtonSizes.Medium)]
+    [BoxGroup("SpawnPoint Settings"), Button(ButtonSizes.Medium)]
     public void ToggleSpawnPoint()
     {
         this.ToggleSpawnPoint(!this.state.isActive);
@@ -80,24 +65,30 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
         }
     }
 
-    private Enemy SpawnEnemy(Tile tile)
+    private Enemy SpawnEnemy(Tile tile, SceneController sceneCtrl)
     {
         if (!this.state.hasInfiniteCapacity)
         {
             this.state.capacity--;
         }
 
-        return new Enemy(
-            name: string.Format("{0} {1}", this.name, point),
-            animationSpeed: this.animationSpeed,
-            movementSpeed: this.movementSpeed,
-            attackPower: this.attackPower,
-            isLockedOnPlayer: this.isLockedOnPlayer,
-            itemDropRate: this.itemDropRate,
-            characterObject: GameObject.Instantiate(this.prefab, tile.gameObject.transform.position, Quaternion.identity),
-            deathEffectPrefab: this.deathEffectPrefab,
-            tile: tile
+        this.state.spawnCount++;
+
+        EnemyState enemyState = new EnemyState(
+            id: string.Format("{0}_{1:D3}", this.enemyState.type, this.state.spawnCount),
+            position: this.enemyState.position,
+            enemyState: this.enemyState
         );
+
+        Enemy enemy = Enemy.Instantiate(
+            original: this.enemy,
+            tile: tile,
+            enemyState: enemyState
+        );
+
+        enemy.InitActions(sceneCtrl.globalCtrl);
+
+        return enemy;
     }
 
     private bool CheckTurnForSpawn()
@@ -111,24 +102,24 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
 
 
 
-    [FoldoutGroup("Enemy Settings", true), BoxGroup("Enemy Settings/Current Point Refresh")]
+    [BoxGroup("Enemy Settings", true), BoxGroup("Enemy Settings/Current Point Refresh")]
     public SceneController sceneCtrl;
 
-    [FoldoutGroup("Enemy Settings", true), BoxGroup("Enemy Settings/Current Point Refresh"), ShowInInspector]
+    [BoxGroup("Enemy Settings", true), BoxGroup("Enemy Settings/Current Point Refresh"), ShowInInspector]
     private Vector3 offset { get { return (
         (this.sceneCtrl != null)
             ? new Vector3(x: this.sceneCtrl.transform.position.x, y: 0.5F, z: this.sceneCtrl.transform.position.z)
             : Vector3.zero
     ); } }
 
-    [FoldoutGroup("Enemy Settings", true), BoxGroup("Enemy Settings/Current Point Refresh"), Button(ButtonSizes.Medium)]
+    [BoxGroup("Enemy Settings", true), BoxGroup("Enemy Settings/Current Point Refresh"), Button(ButtonSizes.Medium)]
     private void RefreshCurrentPoint()
     {
-        this.point = new Point(this.transform.position - this.offset);
-        this.transform.position = this.point.CalcWorldCoord(new Vector3(
+        this.enemyState.position = new Point(this.transform.position - this.offset);
+        this.transform.position = this.enemyState.position.CalcWorldCoord(new Vector3(
             x: this.offset.x + 0.5F, y: this.offset.y, z: this.offset.z + 0.5F
         ));
-        this.transform.name = string.Format("spawn_{0} {1}", this.name, this.point);
+        this.transform.name = string.Format("spawn_{0} {1}", this.enemyState.type, this.enemyState.position);
     }
 }
 
@@ -138,6 +129,7 @@ public class EnemySpawnPointState
 {
     public bool isActive = true;
 
+    public int spawnCount = 0;
 
     [HorizontalGroup("Spawn", 0.5F)]
     public int nextSpawn = 3;
@@ -155,6 +147,8 @@ public class EnemySpawnPointState
     {
         this.isActive = esps.isActive;
         
+        this.spawnCount = esps.spawnCount;
+
         this.nextSpawn = esps.nextSpawn;
         this.spawnDelay = esps.spawnDelay;
 

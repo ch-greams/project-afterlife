@@ -1,68 +1,92 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 
-public class Enemy
+public class Enemy : SerializedMonoBehaviour
 {
-    public string name;
-    public float animationSpeed = 6.0F;
-    public float movementSpeed = 3.0F;
-    public float attackPower = 1.0F;
-    public bool isLockedOnPlayer = false;
-    public float itemDropRate = 0.30F;
+    [BoxGroup("State"), InlineProperty, HideLabel]
+    public EnemyState state;
 
+    public float animationSpeed = 6.0F;
     public GameObject characterObject;
     public GameObject deathEffectPrefab;
+
     public Tile tile;
 
+    public List<EnemyAction> spawnActions = new List<EnemyAction>();
+    public List<EnemyAction> deathActions = new List<EnemyAction>();
 
-    public Enemy() { }
 
     public Enemy(string name, float movementSpeed, GameObject characterObject, Tile tile)
     {
-        this.name = name;
-        this.movementSpeed = movementSpeed;
+        this.state = new EnemyState(
+            id: name,
+            type: "default",
+            position: tile.point,
+            movementSpeed: movementSpeed,
+            attackPower: 1.0F,
+            itemDropRate: 0.3F,
+            isLockedOn: true
+        );
 
         this.characterObject = characterObject;
-        this.characterObject.name = this.name;
+        this.characterObject.name = this.state.id;
 
         this.tile = tile;
         this.tile.RefreshTileState(this.tile.isVisible, true);
     }
 
-    public Enemy(
-        string name,
-        float animationSpeed,
-        float movementSpeed,
-        float attackPower,
-        bool isLockedOnPlayer,
-        float itemDropRate,
-        GameObject characterObject,
-        GameObject deathEffectPrefab,
-        Tile tile
-    ) {
-        this.name = name;
-        this.animationSpeed = animationSpeed;
+    public static Enemy Instantiate(Enemy original, Tile tile, EnemyState enemyState)
+    {
+        Enemy enemy = GameObject.Instantiate(
+            original: original, 
+            position: tile.gameObject.transform.position,
+            rotation: Quaternion.identity
+        );
 
-        this.movementSpeed = movementSpeed;
-        this.attackPower = attackPower;
-        this.isLockedOnPlayer = isLockedOnPlayer;
-        this.itemDropRate = itemDropRate;
+        enemy.state = enemyState;
+        enemy.characterObject.name = enemy.state.id;
 
-        this.characterObject = characterObject;
-        this.characterObject.name = this.name;
+        enemy.tile = tile;
+        enemy.tile.RefreshTileState(tile.isVisible, true);
 
-        this.deathEffectPrefab = deathEffectPrefab;
+        return enemy;
+    }
 
-        this.tile = tile;
-        this.tile.RefreshTileState(this.tile.isVisible, true);
+    public void InitActions(GlobalController globalCtrl)
+    {
+        this.spawnActions.ForEach(action => action.Init(globalCtrl));
+        this.deathActions.ForEach(action => action.Init(globalCtrl));
+    }
+
+    public IEnumerator OnSpawn()
+    {
+        yield return this.TriggerValidActions(this.spawnActions);
+    }
+
+    public IEnumerator OnDeath()
+    {
+        yield return this.TriggerValidActions(this.deathActions);
+    }
+
+    private IEnumerator TriggerValidActions(List<EnemyAction> actions)
+    {
+        foreach (EnemyAction action in actions)
+        {
+            if (action.IsValid())
+            {
+                yield return action.React();
+            }
+        }
     }
 
     public IEnumerator MoveToPlayer(Player player, EnemyManager enemyManager)
     {
-        Path<Tile> path = player.tile.FindPathFrom(this.tile, (t) => (!t.isBlocked), this.movementSpeed);
+        Path<Tile> path = player.tile.FindPathFrom(this.tile, (t) => (!t.isBlocked), this.state.movementSpeed);
         
         if (path != null)
         {
@@ -75,7 +99,7 @@ public class Enemy
         if (this.tile.isBlockedByPlayer)
         {
             // Attack player
-            player.ChangeVisibleRange(player.visibleRange - this.attackPower);
+            player.ChangeVisibleRange(player.visibleRange - this.state.attackPower);
 
             // Destroy enemy
             return enemyManager.TryDestroyEnemyOnPoint(this.tile.point, false);
@@ -126,5 +150,58 @@ public class Enemy
         this.tile.RefreshTileState(this.tile.isVisible, false);
         this.tile = tile;
         this.tile.RefreshTileState(this.tile.isVisible, true);
+
+        this.state.position = tile.point;
+    }
+}
+
+
+[Serializable, InlineProperty]
+public class EnemyState
+{
+    public string id;
+    public string type;
+
+    public float movementSpeed;
+    public float attackPower;
+    public float itemDropRate;
+
+    public Point position;
+    public bool isLockedOn = false;
+
+
+    public EnemyState(
+        string id, 
+        string type, 
+        Point position, 
+        float movementSpeed, 
+        float attackPower, 
+        float itemDropRate, 
+        bool isLockedOn
+    ) {
+        this.id = id;
+        this.type = type;
+        this.position = position;
+
+        this.movementSpeed = movementSpeed; 
+        this.attackPower = attackPower; 
+        this.itemDropRate = itemDropRate; 
+        
+        this.isLockedOn = isLockedOn;
+    }
+
+    public EnemyState(
+        string id, 
+        Point position, 
+        EnemyState enemyState
+    ) {
+        this.id = id;
+        this.position = position;
+
+        this.type = enemyState.type;
+        this.movementSpeed = enemyState.movementSpeed; 
+        this.attackPower = enemyState.attackPower; 
+        this.itemDropRate = enemyState.itemDropRate; 
+        this.isLockedOn = enemyState.isLockedOn;
     }
 }

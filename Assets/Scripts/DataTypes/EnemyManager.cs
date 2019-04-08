@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class EnemyManager : SerializedMonoBehaviour
 {
-    [ListDrawerSettings(Expanded = false, DraggableItems = false)]
+    [ListDrawerSettings(DraggableItems = false)]
     public List<Enemy> enemies = new List<Enemy>();
-    [ListDrawerSettings(Expanded = false, DraggableItems = false)]
+    [ListDrawerSettings(DraggableItems = false)]
     public List<EnemySpawnPoint> enemySpawnPoints = new List<EnemySpawnPoint>();
 
     private GlobalController globalCtrl;
@@ -22,24 +22,30 @@ public class EnemyManager : SerializedMonoBehaviour
     }
 
 
-    public void SpawnEnemies()
+    public IEnumerator SpawnEnemies()
     {
+        SceneController sceneCtrl = this.globalCtrl.sceneCtrl;
+
         foreach (EnemySpawnPoint esp in this.enemySpawnPoints)
         {
-            Enemy enemy = esp.TrySpawnEnemy(this.globalCtrl.sceneCtrl.tiles);
+            Enemy enemy = esp.TrySpawnEnemy(sceneCtrl.tiles, sceneCtrl);
             
             if (enemy != null)
             {
                 this.enemies.Add(enemy);
+
+                sceneCtrl.sceneState.enemies.Add(enemy.state.id, enemy.state);
+
+                yield return enemy.OnSpawn();
             }
         }
     }
 
     public IEnumerator MoveEnemies()
     {
-        this.enemies.FindAll(this.EnemyInSight).ForEach((enemy) => { enemy.isLockedOnPlayer = true; });
+        this.enemies.FindAll(this.EnemyInSight).ForEach((enemy) => { enemy.state.isLockedOn = true; });
 
-        List<Enemy> enemiesLockedOnPlayer = this.enemies.FindAll((enemy) => (enemy.isLockedOnPlayer));
+        List<Enemy> enemiesLockedOnPlayer = this.enemies.FindAll((enemy) => (enemy.state.isLockedOn));
         
         foreach (Enemy enemy in enemiesLockedOnPlayer)
         {
@@ -84,7 +90,9 @@ public class EnemyManager : SerializedMonoBehaviour
             enemy.Destroy();
             this.enemies.Remove(enemy);
 
-            return (true, enemy.itemDropRate);
+            this.globalCtrl.sceneCtrl.sceneState.enemies.Remove(enemy.state.id);
+
+            return (true, enemy.state.itemDropRate);
         }
 
         return (false, 0F);

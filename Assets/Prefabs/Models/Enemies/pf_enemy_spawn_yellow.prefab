@@ -53,23 +53,27 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  name: enemy_yellow
-  point:
-    x: 8
-    y: 2
-  prefab: {fileID: 5761136564612889726, guid: 68effd2e9e2067b42a6d40e364264f87, type: 3}
-  deathEffectPrefab: {fileID: 187952, guid: ab27e0ef730b4ce45992d4c5e47bbb29, type: 3}
-  movementSpeed: 2.5
-  animationSpeed: 20
-  attackPower: 1
-  isLockedOnPlayer: 1
-  itemDropRate: 0.3
-  isSpawnPointActive: 0
+  showGizmo: 1
+  enemy: {fileID: 8588963862329239300, guid: 68effd2e9e2067b42a6d40e364264f87, type: 3}
+  enemyState:
+    id: tv_shadow
+    type: tv_shadow
+    movementSpeed: 1.5
+    attackPower: 1
+    itemDropRate: 0.3
+    position:
+      x: 0
+      y: 0
+    isLockedOn: 1
   spawnPointObject: {fileID: 7972385217893668767}
-  spawnPointDelay: 0
-  isSpawnPointCapacityInfinite: 1
-  spawnPointCapacity: 0
-  turnsLeftTillNextSpawn: 0
+  state:
+    isActive: 0
+    spawnCount: 0
+    nextSpawn: 0
+    spawnDelay: 2
+    hasInfiniteCapacity: 1
+    capacity: 0
+  sceneCtrl: {fileID: 0}
 --- !u!1001 &7972385217893720431
 PrefabInstance:
   m_ObjectHideFlags: 0

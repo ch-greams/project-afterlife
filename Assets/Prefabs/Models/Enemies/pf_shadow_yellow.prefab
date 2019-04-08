@@ -1295,8 +1295,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1387759615029931682}
+  - component: {fileID: 8588963862329239300}
   m_Layer: 0
-  m_Name: shadow_yellow
+  m_Name: pf_shadow_yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1319,6 +1320,109 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &8588963862329239300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5761136564612889726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd14fe71c52cdd418fe19c773e9eaf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: spawnActions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[EnemyAction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|EnemyAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Alive
+    - Name: conditions
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[IEnemyActionCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[IEnemyActionReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 4|TestDebugReaction, Assembly-CSharp
+    - Name: logText
+      Entry: 1
+      Data: I'm Alive!
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: deathActions
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[EnemyAction, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  state:
+    id: 
+    type: 
+    movementSpeed: 0
+    attackPower: 0
+    itemDropRate: 0
+    position:
+      x: 0
+      y: 0
+    isLockedOn: 0
+  animationSpeed: 10
+  characterObject: {fileID: 5761136564612889726}
+  deathEffectPrefab: {fileID: 187952, guid: ab27e0ef730b4ce45992d4c5e47bbb29, type: 3}
+  tile: {fileID: 0}
 --- !u!1 &5846276138686129479
 GameObject:
   m_ObjectHideFlags: 0

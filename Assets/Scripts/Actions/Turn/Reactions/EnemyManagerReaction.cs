@@ -17,6 +17,6 @@ public class EnemyManagerReaction : ITurnActionReaction
 
         yield return enemyManager.MoveEnemies();
 
-        enemyManager.SpawnEnemies();
+        yield return enemyManager.SpawnEnemies();
     }
 }

@@ -34,7 +34,7 @@ public class PlaygroundGenerator : SerializedMonoBehaviour
 
     [FoldoutGroup("Enemy Generator")]
     [Button("Spawn Shadows", ButtonSizes.Medium)]
-    public void SpawnShadows()
+    private void SpawnShadows()
     {
         List<Tile> tiles = this.globalCtrl.sceneCtrl.tiles;
 
@@ -50,7 +50,7 @@ public class PlaygroundGenerator : SerializedMonoBehaviour
 
     [FoldoutGroup("Collectable Item Generator")]
     [Button("Spawn Collectable Items", ButtonSizes.Medium)]
-    public void SpawnCollectableItems()
+    private void SpawnCollectableItems()
     {
         foreach (Point point in this.collectableItemPositions)
         {
@@ -59,7 +59,7 @@ public class PlaygroundGenerator : SerializedMonoBehaviour
     }
 
     [Button("Next Turn", ButtonSizes.Medium)]
-    public void NextTurn()
+    private void NextTurn()
     {
         this.globalCtrl.NextTurn();
     }

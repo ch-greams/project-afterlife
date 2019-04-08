@@ -94,6 +94,11 @@ public class SceneController : SerializedMonoBehaviour
         if (this.isDungeonScene)
         {
             this.UpdateTiles(this.player.tile);
+
+            // NOTE: This part triggers interactables with isAutoTriggerInteractable onSceneStart
+            // TODO: Clean up later
+            this.globalCtrl.playerActionManager.SelectActionType(PlayerActionType.SkipTurn);
+            this.globalCtrl.NextTurn();
         }
     }
 

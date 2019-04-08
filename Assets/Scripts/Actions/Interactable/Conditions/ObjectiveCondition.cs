@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
 
-public class ObjectiveCondition : IInteractableCondition
+public class ObjectiveCondition : IInteractableCondition, IEnemyActionCondition
 {
     public ObjectiveConditionType type;
 
@@ -48,6 +48,11 @@ public class ObjectiveCondition : IInteractableCondition
     public void Init(Interactable interactable)
     {
         this.globalState = interactable.sceneCtrl.globalState;
+    }
+
+    public void Init(GlobalController globalCtrl)
+    {
+        this.globalState = globalCtrl.globalState;
     }
 
     public bool IsValid()

@@ -60,31 +60,10 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 1
-      Data: int_hearing_voices
-    - Name: 
-      Entry: 7
-      Data: 4|InteractableState, Assembly-CSharp
-    - Name: enabled
-      Entry: 5
-      Data: true
-    - Name: visible
-      Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: 
-      Entry: 1
       Data: int_landline_phone
     - Name: 
       Entry: 7
-      Data: 5|InteractableState, Assembly-CSharp
+      Data: 4|InteractableState, Assembly-CSharp
     - Name: enabled
       Entry: 5
       Data: true
@@ -105,13 +84,34 @@ MonoBehaviour:
       Data: int_bathroom_mirror
     - Name: 
       Entry: 7
-      Data: 6|InteractableState, Assembly-CSharp
+      Data: 5|InteractableState, Assembly-CSharp
     - Name: enabled
       Entry: 5
       Data: false
     - Name: visible
       Entry: 5
       Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: 
+      Entry: 1
+      Data: int_hearing_voices
+    - Name: 
+      Entry: 7
+      Data: 6|InteractableState, Assembly-CSharp
+    - Name: enabled
+      Entry: 5
+      Data: true
+    - Name: visible
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -209,12 +209,15 @@ MonoBehaviour:
     - Name: isActive
       Entry: 5
       Data: false
+    - Name: spawnCount
+      Entry: 3
+      Data: 0
     - Name: nextSpawn
       Entry: 3
       Data: 0
     - Name: spawnDelay
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: hasInfiniteCapacity
       Entry: 5
       Data: true
@@ -239,12 +242,15 @@ MonoBehaviour:
     - Name: isActive
       Entry: 5
       Data: false
+    - Name: spawnCount
+      Entry: 3
+      Data: 0
     - Name: nextSpawn
       Entry: 3
       Data: 0
     - Name: spawnDelay
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: hasInfiniteCapacity
       Entry: 5
       Data: true
@@ -269,12 +275,15 @@ MonoBehaviour:
     - Name: isActive
       Entry: 5
       Data: false
+    - Name: spawnCount
+      Entry: 3
+      Data: 0
     - Name: nextSpawn
       Entry: 3
       Data: 0
     - Name: spawnDelay
       Entry: 3
-      Data: 1
+      Data: 2
     - Name: hasInfiniteCapacity
       Entry: 5
       Data: true
@@ -287,6 +296,26 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: enemies
+      Entry: 7
+      Data: 14|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[EnemyState,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 15|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
     - Name: 
       Entry: 13
       Data: 

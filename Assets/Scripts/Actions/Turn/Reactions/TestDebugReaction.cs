@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public class TestDebugReaction : ITurnActionReaction, IInteractableReaction
+public class TestDebugReaction : ITurnActionReaction, IInteractableReaction, IEnemyActionReaction
 {
     public string logText = "Triggered";
     private GlobalController globalCtrl;
