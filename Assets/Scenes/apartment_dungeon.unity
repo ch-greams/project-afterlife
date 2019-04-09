@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
@@ -62,6 +62,7 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 0
@@ -76,10 +77,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 500
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -88,6 +95,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
+    m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 0
 --- !u!196 &4
@@ -7556,6 +7564,7 @@ MonoBehaviour:
     - {fileID: 2010215999}
     - {fileID: 11400000, guid: 0a66e3baf13f5c346a68777bf41f8abf, type: 2}
     - {fileID: 1087967421}
+    - {fileID: 11400000, guid: 96675182dc66f7c4da77acf19a319a1e, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -7646,7 +7655,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 4|InteractableAction, Assembly-CSharp
@@ -7736,6 +7745,86 @@ MonoBehaviour:
     - Name: spawnPoint
       Entry: 10
       Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|InteractableAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Check Clean Up Task
+    - Name: conditions
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 13|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 3
+    - Name: taskId
+      Entry: 1
+      Data: KillAllShadows
+    - Name: subTaskId
+      Entry: 1
+      Data: Kill_All_Spawned_Shadows
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|EnemiesInSceneCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: enemyType
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 16|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 3
+    - Name: taskId
+      Entry: 1
+      Data: KillAllShadows
+    - Name: subTaskId
+      Entry: 1
+      Data: Kill_All_Spawned_Shadows
     - Name: 
       Entry: 8
       Data: 
@@ -15341,6 +15430,7 @@ MonoBehaviour:
     - {fileID: 2010216000}
     - {fileID: 11400000, guid: 0a66e3baf13f5c346a68777bf41f8abf, type: 2}
     - {fileID: 45437632}
+    - {fileID: 11400000, guid: 96675182dc66f7c4da77acf19a319a1e, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -15443,7 +15533,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 4|InteractableAction, Assembly-CSharp
@@ -15533,6 +15623,86 @@ MonoBehaviour:
     - Name: spawnPoint
       Entry: 10
       Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|InteractableAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Check Clean Up Task
+    - Name: conditions
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 13|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 3
+    - Name: taskId
+      Entry: 1
+      Data: KillAllShadows
+    - Name: subTaskId
+      Entry: 1
+      Data: Kill_All_Spawned_Shadows
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|EnemiesInSceneCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: enemyType
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 16|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 3
+    - Name: taskId
+      Entry: 1
+      Data: KillAllShadows
+    - Name: subTaskId
+      Entry: 1
+      Data: Kill_All_Spawned_Shadows
     - Name: 
       Entry: 8
       Data: 
@@ -15838,6 +16008,7 @@ MonoBehaviour:
     - {fileID: 2010216001}
     - {fileID: 11400000, guid: 0a66e3baf13f5c346a68777bf41f8abf, type: 2}
     - {fileID: 2120387478}
+    - {fileID: 11400000, guid: 96675182dc66f7c4da77acf19a319a1e, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -15940,7 +16111,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 4|InteractableAction, Assembly-CSharp
@@ -16030,6 +16201,86 @@ MonoBehaviour:
     - Name: spawnPoint
       Entry: 10
       Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|InteractableAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: Check Clean Up Task
+    - Name: conditions
+      Entry: 7
+      Data: 12|System.Collections.Generic.List`1[[IInteractableCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 13|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 3
+    - Name: taskId
+      Entry: 1
+      Data: KillAllShadows
+    - Name: subTaskId
+      Entry: 1
+      Data: Kill_All_Spawned_Shadows
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|EnemiesInSceneCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: enemyType
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 15|System.Collections.Generic.List`1[[IInteractableReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 16|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 3
+    - Name: taskId
+      Entry: 1
+      Data: KillAllShadows
+    - Name: subTaskId
+      Entry: 1
+      Data: Kill_All_Spawned_Shadows
     - Name: 
       Entry: 8
       Data: 
@@ -18343,10 +18594,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: spawn_pc_shadow (008, 006)
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 0
     - Name: 
@@ -18355,10 +18606,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: spawn_mirror_shadow (010, 002)
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 1
     - Name: 
@@ -18367,10 +18618,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: spawn_tv_shadow (002, 010)
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 2
     - Name: 
@@ -18395,10 +18646,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: int_landline_phone
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 3
     - Name: 
@@ -18407,10 +18658,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: int_bathroom_mirror
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 4
     - Name: 
@@ -18419,10 +18670,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: int_hearing_voices
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 5
     - Name: 
@@ -18431,10 +18682,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: int_remote
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 6
     - Name: 
@@ -18443,10 +18694,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: int_computer
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 7
     - Name: 
@@ -18455,10 +18706,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: int_tv
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 8
     - Name: 

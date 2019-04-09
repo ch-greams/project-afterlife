@@ -2,7 +2,7 @@
 using Sirenix.OdinInspector;
 
 
-public class EnemiesInSceneCondition : IEnemyActionCondition
+public class EnemiesInSceneCondition : IEnemyActionCondition, IInteractableCondition
 {
     public EnemiesInSceneConditionType type = EnemiesInSceneConditionType.NoEnemiesLeft;
 
@@ -16,6 +16,12 @@ public class EnemiesInSceneCondition : IEnemyActionCondition
     {
         this.globalCtrl = globalCtrl;
     }
+
+    public void Init(Interactable interactable)
+    {
+        this.globalCtrl = interactable.sceneCtrl.globalCtrl;
+    }
+
 
     public bool IsValid()
     {
