@@ -59,42 +59,31 @@ public class EnemyManager : SerializedMonoBehaviour
         return enemy.tile.FindPathFrom(playerTile, (t) => (t.isVisible)) != null;
     }
 
-    public bool TryDestroyEnemyOnPoint(Point point, bool byPlayer)
-    {
-        (bool isEnemyDestroyed, float itemDropRate) = this.TryDestroyEnemyOnPoint(point);
-
-        if (isEnemyDestroyed && byPlayer)
-        {
-            // TODO: Do something about this
-            this.globalCtrl.globalState.SetIntegerParameterInState(
-                "enemiesKilled",
-                (this.globalCtrl.globalState.GetIntegerParameterFromState("enemiesKilled") + 1)
-            );
-            this.globalCtrl.statsManager.IncrementScore(10);
-
-            if (itemDropRate > Random.Range(0F, 1F))
-            {
-                this.globalCtrl.collectableManager.TrySpawnItem(point, "Healthpack");
-            }
-        }
-
-        return isEnemyDestroyed;
-    }
-
-    private (bool isEnemyDestroyed, float itemDropRate) TryDestroyEnemyOnPoint(Point point)
+    public IEnumerator TryDestroyEnemyOnPoint(Point point, bool byPlayer)
     {
         Enemy enemy = this.enemies.Find((e) => e.tile.point == point);
 
         if (enemy != null)
         {
-            enemy.Destroy();
             this.enemies.Remove(enemy);
-
             this.globalCtrl.sceneCtrl.sceneState.enemies.Remove(enemy.state.id);
 
-            return (true, enemy.state.itemDropRate);
-        }
+            yield return enemy.Destroy();
 
-        return (false, 0F);
+            if (byPlayer)
+            {
+                // TODO: Move into deathActions list
+                this.globalCtrl.globalState.SetIntegerParameterInState(
+                    "enemiesKilled",
+                    (this.globalCtrl.globalState.GetIntegerParameterFromState("enemiesKilled") + 1)
+                );
+                this.globalCtrl.statsManager.IncrementScore(10);
+
+                if (enemy.state.itemDropRate > Random.Range(0F, 1F))
+                {
+                    this.globalCtrl.collectableManager.TrySpawnItem(point, "Healthpack");
+                }
+            }
+        }
     }
 }

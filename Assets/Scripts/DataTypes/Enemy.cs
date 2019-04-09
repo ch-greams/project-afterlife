@@ -94,7 +94,7 @@ public class Enemy : SerializedMonoBehaviour
         }
     }
 
-    private bool TryAttackPlayer(Player player, EnemyManager enemyManager)
+    private IEnumerator TryAttackPlayer(Player player, EnemyManager enemyManager)
     {
         if (this.tile.isBlockedByPlayer)
         {
@@ -102,14 +102,14 @@ public class Enemy : SerializedMonoBehaviour
             player.ChangeVisibleRange(player.visibleRange - this.state.attackPower);
 
             // Destroy enemy
-            return enemyManager.TryDestroyEnemyOnPoint(this.tile.point, false);
+            yield return enemyManager.TryDestroyEnemyOnPoint(this.tile.point, false);
         }
-
-        return false;
     }
 
-    public void Destroy()
+    public IEnumerator Destroy()
     {
+        yield return this.OnDeath();
+
         Vector3 effectPosition = this.characterObject.transform.position + new Vector3(0, 0.5F, 0);
         GameObject.Instantiate(this.deathEffectPrefab, effectPosition, Quaternion.identity);
 
@@ -124,7 +124,7 @@ public class Enemy : SerializedMonoBehaviour
             yield return this.MoveToTile(tile);
 
             // TODO: Make this shit bearable
-            this.TryAttackPlayer(player, enemyManager);
+            yield return this.TryAttackPlayer(player, enemyManager);
         }
     }
 

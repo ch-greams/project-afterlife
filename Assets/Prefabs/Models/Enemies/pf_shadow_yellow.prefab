@@ -1335,7 +1335,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 96675182dc66f7c4da77acf19a319a1e, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -1346,51 +1347,7 @@ MonoBehaviour:
       Data: 0|System.Collections.Generic.List`1[[EnemyAction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 1|EnemyAction, Assembly-CSharp
-    - Name: name
-      Entry: 1
-      Data: Alive
-    - Name: conditions
-      Entry: 7
-      Data: 2|System.Collections.Generic.List`1[[IEnemyActionCondition, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
       Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: reactions
-      Entry: 7
-      Data: 3|System.Collections.Generic.List`1[[IEnemyActionReaction, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 4|TestDebugReaction, Assembly-CSharp
-    - Name: logText
-      Entry: 1
-      Data: I'm Alive!
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -1399,10 +1356,90 @@ MonoBehaviour:
       Data: 
     - Name: deathActions
       Entry: 7
-      Data: 5|System.Collections.Generic.List`1[[EnemyAction, Assembly-CSharp]], mscorlib
+      Data: 1|System.Collections.Generic.List`1[[EnemyAction, Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 2|EnemyAction, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: No Enemies Left SubTask
+    - Name: conditions
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[IEnemyActionCondition, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 4|EnemiesInSceneCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
       Data: 0
+    - Name: enemyType
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|ObjectiveCondition, Assembly-CSharp
+    - Name: type
+      Entry: 3
+      Data: 6
+    - Name: objective
+      Entry: 10
+      Data: 0
+    - Name: taskId
+      Entry: 1
+      Data: KillAllShadows
+    - Name: subTaskId
+      Entry: 1
+      Data: Kill_All_Spawned_Shadows
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: reactions
+      Entry: 7
+      Data: 6|System.Collections.Generic.List`1[[IEnemyActionReaction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 7|ObjectiveReaction, Assembly-CSharp
+    - Name: objective
+      Entry: 10
+      Data: 0
+    - Name: taskId
+      Entry: 1
+      Data: KillAllShadows
+    - Name: subTaskId
+      Entry: 1
+      Data: Kill_All_Spawned_Shadows
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 

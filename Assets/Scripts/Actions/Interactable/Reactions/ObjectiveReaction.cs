@@ -4,7 +4,7 @@ using System.Linq;
 using Sirenix.OdinInspector;
 
 
-public class ObjectiveReaction : IInteractableReaction
+public class ObjectiveReaction : IInteractableReaction, IEnemyActionReaction
 {
     // NOTE: Use only as a reference for constant values in there
     public Objective objective;
@@ -42,6 +42,12 @@ public class ObjectiveReaction : IInteractableReaction
     {
         this.objectiveManager = interactable.sceneCtrl.globalCtrl.objectiveManager;
     }
+
+    public void Init(GlobalController globalCtrl)
+    {
+        this.objectiveManager = globalCtrl.objectiveManager;
+    }
+
 
     public IEnumerator React()
     {

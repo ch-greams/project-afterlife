@@ -155,11 +155,13 @@ public class Player : SerializedMonoBehaviour
     /// </summary>
     /// <param name="selectedTiles">Tile collection to kill enemies in</param>
 
-    public void KillEnemiesOnTiles(IEnumerable<Tile> selectedTiles)
+    public IEnumerator KillEnemiesOnTiles(IEnumerable<Tile> selectedTiles)
     {
+        EnemyManager enemyManager = this.globalCtrl.enemyManager;
+
         foreach (Tile tile in selectedTiles)
         {
-            this.globalCtrl.enemyManager.TryDestroyEnemyOnPoint(tile.point, true);
+            yield return enemyManager.TryDestroyEnemyOnPoint(tile.point, true);
         }
     }
 

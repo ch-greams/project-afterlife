@@ -25,7 +25,7 @@ public class PlayerFlashlightReaction : ITurnActionReaction
             player.characterTransform.LookAt(playerActionManager.selectedTile.gameObject.transform.position);
             player.flashlightRay.SetActive(true);
 
-            player.KillEnemiesOnTiles(playerActionManager.selectedTiles);
+            yield return player.KillEnemiesOnTiles(playerActionManager.selectedTiles);
 
             yield return new WaitForSeconds(this.animationTimeout);
 

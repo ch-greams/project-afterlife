@@ -25,7 +25,7 @@ public class PlayerTorchReaction : ITurnActionReaction
         {
             yield return this.SlashEffect(player, playerActionManager.selectedTile.point);
 
-            player.KillEnemiesOnTiles(playerActionManager.selectedTiles);
+            yield return player.KillEnemiesOnTiles(playerActionManager.selectedTiles);
         }
     
         playerActionManager.UpdateSelectedTiles(new HashSet<Tile>());

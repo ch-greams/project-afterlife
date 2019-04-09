@@ -24,7 +24,7 @@ public class PlayerGranadeAction : ITurnActionReaction
         {
             yield return this.GranadeEffect(player, playerActionManager.selectedTile.point);
 
-            player.KillEnemiesOnTiles(playerActionManager.selectedTiles);
+            yield return player.KillEnemiesOnTiles(playerActionManager.selectedTiles);
         }    
 
         playerActionManager.UpdateSelectedTiles(new HashSet<Tile>());
