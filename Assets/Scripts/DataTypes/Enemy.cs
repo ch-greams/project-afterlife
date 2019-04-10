@@ -94,6 +94,19 @@ public class Enemy : SerializedMonoBehaviour
         }
     }
 
+    public IEnumerator MoveToRandomNeighbourTile(Player player, EnemyManager enemyManager)
+    {
+        Tile target = this.tile.allNeighbours.Where(t => !t.isBlocked).Random();
+
+        Path<Tile> path = target.FindPathFrom(this.tile, (t) => (!t.isBlocked), 1.5F);
+        
+        if (path != null)
+        {
+            yield return this.MoveOnPath(path.Reverse(), player, enemyManager);
+        }
+    }
+
+
     private IEnumerator TryAttackPlayer(Player player, EnemyManager enemyManager)
     {
         if (this.tile.isBlockedByPlayer)

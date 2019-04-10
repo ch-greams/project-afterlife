@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -44,13 +45,26 @@ public class EnemyManager : SerializedMonoBehaviour
     public IEnumerator MoveEnemies()
     {
         this.enemies.FindAll(this.EnemyInSight).ForEach((enemy) => { enemy.state.isLockedOn = true; });
+      
+        Dictionary<bool, List<Enemy>> enemiesByLockedOnValue = this.enemies
+            .GroupBy(e => e.state.isLockedOn)
+            .ToDictionary(group => group.Key, group => group.ToList());
 
-        List<Enemy> enemiesLockedOnPlayer = this.enemies.FindAll((enemy) => (enemy.state.isLockedOn));
-        
-        foreach (Enemy enemy in enemiesLockedOnPlayer)
+        if (enemiesByLockedOnValue.ContainsKey(true))
         {
-            yield return enemy.MoveToPlayer(this.globalCtrl.sceneCtrl.player, this);
-        }   
+            foreach (Enemy enemy in enemiesByLockedOnValue[true])
+            {
+                yield return enemy.MoveToPlayer(this.globalCtrl.sceneCtrl.player, this);
+            }
+        }
+        
+        if (enemiesByLockedOnValue.ContainsKey(false))
+        {
+            foreach (Enemy enemy in enemiesByLockedOnValue[false])
+            {
+                yield return enemy.MoveToRandomNeighbourTile(this.globalCtrl.sceneCtrl.player, this);
+            }
+        }
     }
 
     private bool EnemyInSight(Enemy enemy)

@@ -1456,7 +1456,7 @@ MonoBehaviour:
       x: 0
       y: 0
     isLockedOn: 0
-  animationSpeed: 10
+  animationSpeed: 15
   characterObject: {fileID: 5761136564612889726}
   deathEffectPrefab: {fileID: 187952, guid: ab27e0ef730b4ce45992d4c5e47bbb29, type: 3}
   tile: {fileID: 0}

@@ -638,8 +638,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: spawnPointDelay
@@ -729,6 +728,11 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyState.type
       value: pc_shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: enemyState.isLockedOn
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7972385217893668767, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
@@ -10861,8 +10865,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: spawnPointDelay
@@ -10947,6 +10950,11 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyState.type
       value: mirror_shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
+        type: 3}
+      propertyPath: enemyState.isLockedOn
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7972385217893668767, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
@@ -21526,8 +21534,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serializationData.Prefab
       value: 
-      objectReference: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: spawnPointDelay
@@ -21607,7 +21614,7 @@ PrefabInstance:
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
       propertyPath: enemyState.isLockedOn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6010298246667975450, guid: 8597d5cf86fa5124ca9ed04e0413ce84,
         type: 3}
