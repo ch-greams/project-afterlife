@@ -33,9 +33,8 @@ public class ReachablePoint : SerializedMonoBehaviour
     public void RefreshCurrentPoint()
     {
         this.point = new Point(this.transform.position - this.offset);
-        this.transform.position = point.CalcWorldCoord(new Vector3(
-            x: this.offset.x + 0.5F, y: this.offset.y, z: this.offset.z + 0.5F
-        ));
+        this.transform.position = point.CalcWorldCoord(this.offset, this.offset.y, 0.5F);
+
         this.transform.name = string.Format("reachable_point {0}", this.point);
     }
 

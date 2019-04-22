@@ -92,6 +92,16 @@ public struct Point : IComparable<Point>
         return new Vector3(( this.x + offset.x ), offset.y, ( this.y + offset.z ));
     }
 
+    public Vector3 CalcWorldCoord(Vector3 offset, float height)
+    {
+        return this.CalcWorldCoord(new Vector3(offset.x, height, offset.z));
+    }
+
+    public Vector3 CalcWorldCoord(Vector3 offset, float height, float shift)
+    {
+        return this.CalcWorldCoord(new Vector3(offset.x + shift, height, offset.z + shift));
+    }
+
     public float DistanceTo(Point point)
     {
         return (Math.Abs(point.x - this.x) == Math.Abs(point.y - this.y)) ? 1.5F : 1F;

@@ -32,10 +32,7 @@ public class CollectableManager : SerializedMonoBehaviour
             Vector3 sceneCtrlPosition = this.globalCtrl.sceneCtrl.transform.position;
             GameObject.Instantiate(
                 original: this.collectionEffectPrefab,
-                position: point.CalcWorldCoord(
-                    // TODO: Validate that it works correctly (if not try +0.5F for x and z)
-                    new Vector3(sceneCtrlPosition.x, 0.5F, sceneCtrlPosition.z)
-                ),
+                position: point.CalcWorldCoord(sceneCtrlPosition, 0.5F),
                 rotation: this.collectableItemPrefab.transform.rotation
             );
 

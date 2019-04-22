@@ -54,10 +54,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: 001_Intro_WakeUp
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 0
     - Name: 
@@ -66,10 +66,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: 002_Intro_GetReady
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 1
     - Name: 
@@ -78,10 +78,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: 003_Intro_GetOutThere
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 2
     - Name: 
@@ -90,10 +90,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: 004_Intro_BackToTheApartment
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 3
     - Name: 
@@ -102,10 +102,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: 005_Intro_Denial
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 4
     - Name: 
@@ -114,10 +114,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: 006_Intro_DenialIsPainful
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 5
     - Name: 
@@ -126,10 +126,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: 007_Intro_CleanUp
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 6
     - Name: 
@@ -138,10 +138,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: 008_Intro_Beginning
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 7
     - Name: 
@@ -170,10 +170,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: playground
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 8
     - Name: 
@@ -182,10 +182,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: apartment_living_room
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 9
     - Name: 
@@ -194,10 +194,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: apartment_bedroom
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 10
     - Name: 
@@ -206,10 +206,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: apartment_dungeon
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 11
     - Name: 
@@ -218,10 +218,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: apartment_bathroom
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 12
     - Name: 
@@ -230,10 +230,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: hallway
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 13
     - Name: 
@@ -242,10 +242,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: hallway_elevator
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 14
     - Name: 
@@ -254,10 +254,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: hallway_elevator_dungeon
-    - Name: 
+    - Name: $v
       Entry: 10
       Data: 15
     - Name: 
@@ -286,10 +286,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: isDoubleKillProcActive
-    - Name: 
+    - Name: $v
       Entry: 5
       Data: false
     - Name: 
@@ -314,10 +314,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: turnsTillResetLeft
-    - Name: 
+    - Name: $v
       Entry: 3
       Data: 0
     - Name: 
@@ -326,10 +326,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: enemiesKilled
-    - Name: 
+    - Name: $v
       Entry: 3
       Data: 0
     - Name: 
@@ -338,10 +338,10 @@ MonoBehaviour:
     - Name: 
       Entry: 7
       Data: 
-    - Name: 
+    - Name: $k
       Entry: 1
       Data: turnsTillGranadeChargeLeft
-    - Name: 
+    - Name: $v
       Entry: 3
       Data: 0
     - Name: 

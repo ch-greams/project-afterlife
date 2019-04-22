@@ -116,9 +116,8 @@ public class EnemySpawnPoint : SerializedMonoBehaviour
     private void RefreshCurrentPoint()
     {
         this.enemyState.position = new Point(this.transform.position - this.offset);
-        this.transform.position = this.enemyState.position.CalcWorldCoord(new Vector3(
-            x: this.offset.x + 0.5F, y: this.offset.y, z: this.offset.z + 0.5F
-        ));
+        this.transform.position = this.enemyState.position.CalcWorldCoord(this.offset, this.offset.y, 0.5F);
+
         this.transform.name = string.Format("spawn_{0} {1}", this.enemyState.type, this.enemyState.position);
     }
 }

@@ -21,7 +21,7 @@ public class InteractableSearch : SerializedMonoBehaviour
     [ShowInInspector]
     private List<string> sceneNames
     {
-        get { return GlobalController.sceneNames.Where(sn => (sn != "persistent")).ToList(); }
+        get { return GlobalController.sceneNames; }
     }
 
 

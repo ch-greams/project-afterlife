@@ -65,11 +65,13 @@ public class GlobalController : SerializedMonoBehaviour
 
             for (int sceneIndex = 0; sceneIndex < UnitySceneManager.sceneCountInBuildSettings; sceneIndex++)
             {
-                result.Add(
-                    Path.GetFileNameWithoutExtension(
-                        SceneUtility.GetScenePathByBuildIndex(sceneIndex)
-                    )
-                );
+                string scenePath = SceneUtility.GetScenePathByBuildIndex(sceneIndex);
+                string sceneName = Path.GetFileNameWithoutExtension(scenePath);
+
+                if (sceneName != "persistent")
+                {
+                    result.Add(sceneName);
+                }
             }
 
             return result;
